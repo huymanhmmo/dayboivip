@@ -27,7 +27,7 @@ export const blogPosts = [
     title: 'Cách Học Bơi Nhanh Nhất: 7 Bí Quyết Biết Bơi Sau 5-7 Buổi',
     slug: 'cach-hoc-boi-nhanh-nhat',
     excerpt: 'Hướng dẫn cách học bơi nhanh nhất cho người mới bắt đầu. 7 bí quyết từ HLV chuyên nghiệp giúp bạn biết bơi chỉ sau 5-7 buổi tập luyện.',
-    image: '/images/classes/khoi-dong-tren-can.jpg',
+    image: '/images/classes/hoc-sinh-tap-tren-thanh-be.jpg',
     date: '20/05',
     category: 'Hướng Dẫn Học Bơi',
     categorySlug: 'huong-dan-hoc-boi',
