@@ -8,36 +8,8 @@ const breadcrumbs = [
   { label: 'Người cao tuổi' },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Học Bơi Người Cao Tuổi: Lớp Học Bơi Cho Người Lớn Tuổi Bảo Vệ Xương Khớp",
-  "description": "Lớp học bơi chuyên biệt dành cho người cao tuổi, người lớn tuổi tại Swim For Life. Giáo trình nhẹ nhàng giúp giảm đau xương khớp, nâng cao tim mạch và ngủ ngon.",
-  "author": {
-    "@type": "Person",
-    "name": "Thầy Nguyễn Huy Mạnh",
-    "jobTitle": "Giám đốc đào tạo",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Swim For Life Việt Nam"
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Swim For Life Việt Nam",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
-    }
-  },
-  "datePublished": "2026-02-10",
-  "dateModified": "2026-05-21",
-  "image": "https://dayboi.vip/images/classes/giao-vien-ho-tro-tan-tam.jpg",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://dayboi.vip/khoa-hoc-boi/nguoi-cao-tuoi/"
-  }
-};
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nguoiCaoTuoi, 'https://dayboi.vip/khoa-hoc-boi/nguoi-cao-tuoi/');
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -70,7 +42,7 @@ const faqSchema = {
   ]
 };
 
-const combinedSchema = [articleSchema, faqSchema];
+const combinedSchema = [courseSchema, faqSchema];
 ---
 
 <CourseLayout

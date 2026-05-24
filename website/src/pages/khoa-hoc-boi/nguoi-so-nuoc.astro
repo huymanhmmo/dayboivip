@@ -8,36 +8,8 @@ const breadcrumbs = [
   { label: 'Người sợ nước' },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Học Bơi Cho Người Sợ Nước: Khóa Học Cho Người Nhát Nước Vượt Qua Nỗi Sợ",
-  "description": "Khóa học bơi chuyên biệt dành cho người sợ nước, nhát nước lâu năm tại Swim For Life. Giáo trình tâm lý đặc biệt giúp bạn tự tin nổi nước sau 3-5 buổi.",
-  "author": {
-    "@type": "Person",
-    "name": "Thầy Nguyễn Huy Mạnh",
-    "jobTitle": "Giám đốc đào tạo",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Swim For Life Việt Nam"
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Swim For Life Việt Nam",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
-    }
-  },
-  "datePublished": "2026-02-15",
-  "dateModified": "2026-05-21",
-  "image": "https://dayboi.vip/images/classes/giao-vien-vui-ve-tam-ly.jpeg",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://dayboi.vip/khoa-hoc-boi/nguoi-so-nuoc/"
-  }
-};
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nguoiSoNuoc, 'https://dayboi.vip/khoa-hoc-boi/nguoi-so-nuoc/');
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -70,7 +42,7 @@ const faqSchema = {
   ]
 };
 
-const combinedSchema = [articleSchema, faqSchema];
+const combinedSchema = [courseSchema, faqSchema];
 ---
 
 <CourseLayout

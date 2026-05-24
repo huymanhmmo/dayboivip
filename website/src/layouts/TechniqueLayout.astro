@@ -15,6 +15,7 @@ export interface Props {
     breadcrumbs: Array<{ label: string; href?: string }>;
     articleSchema?: any;
     faqSchema?: any;
+    howToSchema?: any;
   };
   technique: {
     slug: string;
@@ -234,6 +235,11 @@ const themeStyles = (() => {
   {metadata.faqSchema && (
     <Fragment slot="head">
       <script type="application/ld+json" set:html={JSON.stringify(metadata.faqSchema)} />
+    </Fragment>
+  )}
+  {metadata.howToSchema && (
+    <Fragment slot="head">
+      <script type="application/ld+json" set:html={JSON.stringify(metadata.howToSchema)} />
     </Fragment>
   )}
 

@@ -1,4 +1,5 @@
 ---
+import { generateHowToSchema } from '../../utils/howToSchema.js';
 const currentYear = new Date().getFullYear();
 import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
 
@@ -90,6 +91,20 @@ const technique = {
   videoPoster: '/images/techniques/chinh-sua-ky-thuat-boi-ech.jpg',
   videoAlt: 'HLV Swim For Life chỉnh sửa kỹ thuật uốn sóng thân cho học viên học bơi bướm'
 };
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "Đang cập nhật bước 1",
+    "text": "Tham khảo chi tiết kỹ thuật bên dưới.",
+    "url": "https://dayboi.vip/ky-thuat-boi/hoc-boi-buom/",
+    "position": 1
+  }
+];
+
+const howToSchema = generateHowToSchema(technique, howToSteps, 'https://dayboi.vip/ky-thuat-boi/hoc-boi-buom/');
+
+metadata.howToSchema = howToSchema;
 
 const toc = [
   { id: 'tong-quan', label: '1. Tổng quan bơi bướm' },

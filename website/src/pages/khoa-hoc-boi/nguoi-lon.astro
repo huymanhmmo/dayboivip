@@ -9,36 +9,8 @@ const breadcrumbs = [
   { label: 'Học bơi người lớn' },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Học Bơi Cho Người Lớn: Vượt Qua Nỗi Sợ Nước, Tự Tin Bơi Lội",
-  "description": "Hướng dẫn toàn diện về khóa học bơi cho người lớn. Phương pháp dạy bơi 1 kèm 1, lịch linh hoạt, cam kết biết bơi sau 10-12 buổi tại Swim For Life Việt Nam.",
-  "author": {
-    "@type": "Person",
-    "name": "Thầy Nguyễn Huy Mạnh",
-    "jobTitle": "Giám đốc đào tạo",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Swim For Life Việt Nam"
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Swim For Life Việt Nam",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
-    }
-  },
-  "datePublished": "2026-01-20",
-  "dateModified": "2026-05-21",
-  "image": "https://dayboi.vip/images/classes/hoc-vien-khoi-dong.jpg",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://dayboi.vip/khoa-hoc-boi/nguoi-lon/"
-  }
-};
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nguoiLon, 'https://dayboi.vip/khoa-hoc-boi/nguoi-lon/');
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -103,7 +75,7 @@ const faqSchema = {
   ]
 };
 
-const combinedSchema = [articleSchema, faqSchema];
+const combinedSchema = [courseSchema, faqSchema];
 ---
 
 <CourseLayout

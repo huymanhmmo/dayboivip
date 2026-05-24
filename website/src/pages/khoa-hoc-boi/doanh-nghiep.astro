@@ -8,36 +8,8 @@ const breadcrumbs = [
   { label: 'Doanh nghiệp & Vinhomes' },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Dạy Bơi Doanh Nghiệp & Vinhomes: Chương Trình Đào Tạo Chuyên Biệt",
-  "description": "Chương trình dạy bơi cho doanh nghiệp, trường học và các khu đô thị Vinhomes. Tổ chức giải bơi chuyên nghiệp, dạy bơi miễn phí cho cư dân Vinhomes cùng Swim For Life.",
-  "author": {
-    "@type": "Person",
-    "name": "Thầy Nguyễn Huy Mạnh",
-    "jobTitle": "Giám đốc đào tạo",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Swim For Life Việt Nam"
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Swim For Life Việt Nam",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
-    }
-  },
-  "datePublished": "2026-02-20",
-  "dateModified": "2026-05-21",
-  "image": "https://dayboi.vip/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://dayboi.vip/khoa-hoc-boi/doanh-nghiep/"
-  }
-};
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(doanhNghiep, 'https://dayboi.vip/khoa-hoc-boi/doanh-nghiep/');
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -70,7 +42,7 @@ const faqSchema = {
   ]
 };
 
-const combinedSchema = [articleSchema, faqSchema];
+const combinedSchema = [courseSchema, faqSchema];
 ---
 
 <CourseLayout

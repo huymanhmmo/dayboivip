@@ -125,8 +125,8 @@ const currentYear = new Date().getFullYear().toString();
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "21.0285",
-      "longitude": "105.8542"
+      "latitude": "20.9820",
+      "longitude": "105.9145"
     },
     "areaServed": [
       { "@type": "City", "name": "Hà Nội" },
@@ -139,6 +139,44 @@ const currentYear = new Date().getFullYear().toString();
       "opens": "06:00",
       "closes": "21:00"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "387",
+      "reviewCount": "245"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Chị Minh Thư"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Con tôi cực kỳ nhát nước. Học ở Swim For Life chỉ sau 4 buổi bé đã tự tin ngụp lặn. Hết khóa 12 buổi con bơi ếch nhoay nhoáy, còn biết tự nổi ngửa.",
+        "datePublished": "2026-03-15"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Anh Minh Quân"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Đi học bơi 1 kèm 1 được thầy Mạnh thiết kế giáo trình riêng. Sau 10 buổi tôi biết bơi Ếch, lưng đỡ đau hẳn. Dịch vụ rất chất lượng!",
+        "datePublished": "2026-02-20"
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/swimforlifevietnam"
     ],
@@ -152,6 +190,65 @@ const currentYear = new Date().getFullYear().toString();
       "name": "Công ty Cổ phần Your Dreams",
       "taxID": "0108879900"
     }
+  })} />
+
+  <!-- WebSite Schema (global) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://dayboi.vip/#website",
+    "name": "Swim For Life Việt Nam",
+    "alternateName": ["Dạy Bơi VIP", "Swim For Life Vietnam", "dayboi.vip"],
+    "url": "https://dayboi.vip",
+    "description": "Trung tâm dạy bơi chuyên nghiệp - Cam kết biết bơi sau 10-12 buổi. Dạy bơi 1 kèm 1 cho trẻ em & người lớn tại Hà Nội, TPHCM.",
+    "inLanguage": "vi",
+    "publisher": {
+      "@id": "https://dayboi.vip/#organization"
+    }
+  })} />
+
+  <!-- Person Schema - HLV (global) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://dayboi.vip/#founder",
+    "name": "Nguyễn Huy Mạnh",
+    "alternateName": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc - HLV Bơi lội",
+    "description": "Giám đốc Trung tâm dạy bơi Swim For Life Việt Nam. Tốt nghiệp ĐH Sư phạm Hà Nội, hơn 12 năm kinh nghiệm đào tạo bơi lội.",
+    "url": "https://dayboi.vip/gioi-thieu/",
+    "image": "https://dayboi.vip/images/team/thay-nguyen-huy-manh-2.png",
+    "worksFor": {
+      "@id": "https://dayboi.vip/#organization"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Đại học Sư phạm Hà Nội"
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Cử nhân Giáo dục Thể chất chuyên sâu Bơi lội"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certificate",
+        "name": "Chứng chỉ Cứu hộ cứu đuối Quốc gia"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certificate",
+        "name": "Chứng chỉ huấn luyện viên bơi lội chuyên nghiệp"
+      }
+    ],
+    "knowsAbout": [
+      "Dạy bơi trẻ em", "Dạy bơi người lớn",
+      "Kỹ thuật bơi ếch", "Kỹ thuật bơi sải",
+      "Kỹ thuật bơi ngửa", "Kỹ thuật bơi bướm",
+      "Kỹ năng đứng nước", "Cứu hộ bơi lội"
+    ],
+    "sameAs": ["https://www.facebook.com/swimforlifevietnam"]
   })} />
 
   <slot name="head" />

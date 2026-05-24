@@ -1,4 +1,5 @@
 ---
+import { generateHowToSchema } from '../../utils/howToSchema.js';
 const currentYear = new Date().getFullYear();
 import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
 
@@ -90,6 +91,20 @@ const technique = {
   videoPoster: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
   videoAlt: 'Huấn luyện viên Swim For Life hướng dẫn học viên tập nổi ngửa thả lỏng'
 };
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "Đang cập nhật bước 1",
+    "text": "Tham khảo chi tiết kỹ thuật bên dưới.",
+    "url": "https://dayboi.vip/ky-thuat-boi/hoc-boi-ngua/",
+    "position": 1
+  }
+];
+
+const howToSchema = generateHowToSchema(technique, howToSteps, 'https://dayboi.vip/ky-thuat-boi/hoc-boi-ngua/');
+
+metadata.howToSchema = howToSchema;
 
 const toc = [
   { id: 'tong-quan', label: '1. Tổng quan bơi ngửa' },
