@@ -9,7 +9,7 @@ export const blogPosts = [
     categorySlug: 'an-toan-boi-loi',
     tags: ['Phòng chống đuối nước', 'Bơi sinh tồn', 'Trẻ em'],
     tagSlugs: ['phong-chong-duoi-nuoc', 'boi-sinh-ton', 'tre-em'],
-    readTime: '10 phút',
+    readTime: '25 phút đọc',
   },
   {
     title: 'Nên Học Bơi Ếch Hay Bơi Sải Trước? Lời Khuyên Từ Chuyên Gia',

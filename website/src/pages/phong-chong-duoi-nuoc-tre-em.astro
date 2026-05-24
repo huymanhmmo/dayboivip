@@ -3,97 +3,202 @@ import BlogLayout from '../layouts/BlogLayout.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 const post = blogPosts.find((p) => p.slug === 'phong-chong-duoi-nuoc-tre-em');
-
-if (!post) {
-  throw new Error('Post not found in blogPosts.js');
-}
+if (!post) throw new Error('Post not found in blogPosts.js');
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Tin tức', href: '/tin-tuc/' },
-  { label: post.category, href: `/tin-tuc/${post.categorySlug}/` },
+  { label: post.category, href: `/${post.categorySlug}/` },
   { label: post.title },
 ];
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   "headline": post.title,
   "description": post.excerpt,
   "image": `https://dayboi.vip${post.image}`,
-  "author": {
-    "@type": "Person",
-    "name": "Thầy Nguyễn Huy Mạnh",
-    "jobTitle": "Giám đốc đào tạo",
-    "url": "https://dayboi.vip/#founder"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Swim For Life Việt Nam",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+  "author": { "@type": "Person", "name": "Nguyễn Huy Mạnh", "jobTitle": "Giám đốc đào tạo", "url": "https://dayboi.vip/#founder" },
+  "publisher": { "@type": "Organization", "name": "Swim For Life Việt Nam", "logo": { "@type": "ImageObject", "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png" } },
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-05-25",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://dayboi.vip/${post.slug}/` }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trẻ em mấy tuổi có thể học kỹ năng phòng chống đuối nước?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Trẻ từ 4-5 tuổi đã có thể bắt đầu làm quen với nước và học các kỹ năng bơi sinh tồn cơ bản như thở nước, nổi ngửa và bám vào bờ." }
+    },
+    {
+      "@type": "Question",
+      "name": "Nguyên nhân đuối nước ở trẻ em chủ yếu là gì?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chủ yếu do thiếu sự giám sát của người lớn, trẻ không có kỹ năng bơi sinh tồn, và sự chủ quan khi chơi gần vùng nước sâu." }
+    },
+    {
+      "@type": "Question",
+      "name": "Nên làm gì khi thấy người đang bị đuối nước?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tuyệt đối không tự ý nhảy xuống cứu nếu không có chuyên môn. Hãy hô hoán, ném áo phao, sào dài hoặc dây thừng để nạn nhân bám vào, sau đó gọi cấp cứu." }
     }
-  },
-  "datePublished": "2026-05-24",
-  "dateModified": "2026-05-24",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://dayboi.vip/${post.slug}/`
-  }
+  ]
 };
 
 const tocItems = [
-  { id: 'tam-quan-trong', text: '1. Tầm quan trọng của việc phòng chống đuối nước ở trẻ em' },
-  { id: 'nguyen-nhan', text: '2. Nguyên nhân đuối nước ở trẻ em' },
-  { id: 'cach-phong-chong', text: '3. Cách phòng chống đuối nước cho trẻ' }
+  { id: 'loi-mo-dau', text: '1. Khái quát về tình trạng đuối nước ở trẻ em' },
+  { id: 'nguyen-nhan', text: '2. Nguyên nhân đuối nước ở trẻ em là gì?' },
+  { id: 'ky-nang-sinh-ton', text: '3. 5 Kỹ năng bơi sinh tồn quan trọng nhất' },
+  { id: 'tam-ly-hoang-loan', text: '4. Phân tích tâm lý hoảng loạn khi gặp sự cố' },
+  { id: 'so-cuu-duoi-nuoc', text: '5. Cách cứu người đuối nước và sơ cứu chuẩn y khoa' },
+  { id: 'vai-tro-phu-huynh', text: '6. Vai trò của phụ huynh trong an toàn dưới nước' },
+  { id: 'khoa-hoc-swim-for-life', text: '7. Dạy trẻ em tập bơi tại Swim For Life' },
+  { id: 'cau-hoi-thuong-gap', text: '8. Các câu hỏi thường gặp (FAQ)' }
 ];
 ---
 
 <BlogLayout
-  title={`${post.title} | Swim For Life Việt Nam`}
+  title={`${post.title} | Swim For Life`}
   description={post.excerpt}
   canonical={`https://dayboi.vip/${post.slug}/`}
   breadcrumbs={breadcrumbs}
-  schema={articleSchema}
+  schema={[articleSchema, faqSchema]}
   category={post.category}
-  readTime={post.readTime}
+  readTime="25 phút đọc"
   publishDate={post.date}
   featuredImage={post.image}
-  featuredImageAlt="Phòng chống đuối nước trẻ em"
+  featuredImageAlt={post.title}
   intro={post.excerpt}
   tocItems={tocItems}
 >
-  <h2 id="tam-quan-trong">1. Tầm quan trọng của việc phòng chống đuối nước ở trẻ em</h2>
-  <p>Mùa hè đến cũng là lúc các hoạt động bơi lội, vui chơi dưới nước tăng cao. Tuy nhiên, đây cũng là thời điểm tiềm ẩn nhiều nguy cơ đuối nước, đặc biệt là đối với trẻ em. Việc trang bị kiến thức và kỹ năng phòng chống đuối nước là vô cùng cần thiết để bảo vệ an toàn cho trẻ.</p>
 
-  <h2 id="nguyen-nhan">2. Nguyên nhân đuối nước ở trẻ em</h2>
+  <p><strong>**Phòng chống đuối nước trẻ em**</strong> là việc trang bị cho trẻ sự giám sát an toàn và các **kỹ năng bơi lội cơ bản** để xử lý tình huống khi rơi xuống nước. Đây không chỉ là việc học bơi để thể thao, mà là **kỹ năng bơi sinh tồn** bắt buộc phải có. Tại Swim For Life, HLV Nguyễn Huy Mạnh luôn nhấn mạnh: "Biết bơi chưa đủ, trẻ cần biết cách tự cứu mình và giữ bình tĩnh trước khi người lớn đến hỗ trợ."</p>
+
+  <h2 id="loi-mo-dau">1. Khái quát về tình trạng đuối nước ở trẻ em</h2>
+  <p>Tại Việt Nam, tỷ lệ **tai nạn đuối nước** ở trẻ em luôn nằm ở mức báo động trong khu vực. Dù môi trường xung quanh chúng ta có rất nhiều kênh rạch, ao hồ và thậm chí là các khu vực **hồ bơi an toàn** tại các khu chung cư, nhưng sự lơ là chỉ trong tích tắc có thể dẫn đến thảm kịch.</p>
+  <p>Việc **an toàn dưới nước** cần được xem xét dưới góc độ phòng ngừa (chủ động) hơn là xử lý hậu quả (bị động). Hàng năm, hàng ngàn trường hợp đuối nước thương tâm xảy ra không phải vì vùng nước quá sâu, mà vì trẻ em chưa được trang bị **kỹ năng tự cứu** và sự hiểu biết về **lực cản của nước**.</p>
+  
+  <figure class="post-image">
+    <img src="/images/classes/lop-boi-tre-em-bai-ban.jpg" alt="**Dạy trẻ em tập bơi** tại Swim For Life" loading="lazy" />
+    <figcaption>Chú thích: **Dạy trẻ em tập bơi** ngay từ nhỏ là giải pháp phòng chống đuối nước hiệu quả nhất tại Swim For Life.</figcaption>
+  </figure>
+
+  <h2 id="nguyen-nhan">2. Nguyên nhân đuối nước ở trẻ em là gì?</h2>
+  <p>Để tìm ra giải pháp, chúng ta phải đi sâu vào **nguyên nhân đuối nước ở trẻ**. Có rất nhiều lý do, nhưng các chuyên gia tại Swim For Life tổng hợp lại thành các yếu tố chính sau:</p>
+
   <ul>
-    <li>Thiếu sự giám sát của người lớn khi trẻ vui chơi gần ao, hồ, sông, suối, biển hoặc thậm chí là hồ bơi.</li>
-    <li>Trẻ chưa biết bơi hoặc bơi chưa thành thạo nhưng lại quá tự tin vào khả năng của mình.</li>
-    <li>Môi trường bơi lội không an toàn, thiếu biển báo nguy hiểm hoặc lực lượng cứu hộ.</li>
-    <li>Trẻ gặp sự cố bất ngờ như chuột rút, đuối sức khi đang bơi.</li>
+    <li><strong>Sự giám sát lỏng lẻo của người lớn:</strong> Tai nạn thường xảy ra trong sự im lặng. Trẻ nhỏ khi rơi xuống **vùng nước sâu** thường bị sặc nước ngay lập tức và không thể kêu cứu.</li>
+    <li><strong>Thiếu kỹ năng bơi sinh tồn:</strong> Nhiều trẻ biết bơi (nhờ dùng phao) nhưng khi rơi xuống nước bất ngờ lại không có phản xạ **nổi sấp nổi ngửa** hay **kỹ thuật đứng nước**.</li>
+    <li><strong>Chủ quan và tâm lý tò mò:</strong> Trẻ em rất thích chơi gần nước nhưng không lường trước được độ trơn trượt của rêu phong hay sự thay đổi của dòng chảy.</li>
+    <li><strong>Chứng sợ nước ở trẻ:</strong> Nhiều trẻ bị ám ảnh bởi nước, dẫn đến tình trạng **nhịp tim hoảng loạn** khi tiếp xúc với nước, cơ bắp căng cứng và dễ bị chìm nhanh hơn.</li>
+    <li><strong>Môi trường khách quan:</strong> Đáy hồ bơi quá dốc, **nhiệt độ nước** thay đổi đột ngột làm trẻ bị lạnh, dễ dẫn đến hiện tượng chuột rút. Phải luôn biết cách **chống chuột rút** trước khi bơi.</li>
   </ul>
 
-  <h2 id="cach-phong-chong">3. Cách phòng chống đuối nước cho trẻ</h2>
-  <h3>Luôn giám sát trẻ em</h3>
-  <p>Dù trẻ đã biết bơi hay chưa, sự giám sát của người lớn vẫn là yếu tố quan trọng nhất. Tuyệt đối không để trẻ một mình dưới nước hoặc gần khu vực có nước mà không có người lớn theo dõi sát sao.</p>
+  <h2 id="ky-nang-sinh-ton">3. 5 Kỹ năng bơi sinh tồn quan trọng nhất</h2>
+  <p>Dưới góc độ khoa học bơi lội, **phòng chống đuối nước trẻ em** không đồng nghĩa với việc trẻ phải bơi nhanh hay bơi đẹp. Cốt lõi là việc duy trì nhịp thở và giữ cơ thể nổi trên mặt nước. Dưới đây là 5 kỹ năng bắt buộc:</p>
 
-  <h3>Trang bị kỹ năng bơi lội và sinh tồn</h3>
-  <p>Cho trẻ tham gia các lớp học bơi chuyên nghiệp từ sớm. Tại Swim For Life Việt Nam, chúng tôi có các <a href="/khoa-hoc-boi/tre-em/">khóa học bơi dành riêng cho trẻ em</a>, không chỉ dạy kỹ thuật bơi mà còn đặc biệt chú trọng vào các kỹ năng sinh tồn như đứng nước, xử lý tình huống khi bị đuối sức.</p>
+  <h3>3.1. Kỹ thuật thở nước (Bubble)</h3>
+  <p>Kiểm soát hơi thở là bài học vỡ lòng. Trẻ cần học cách **thở nước** bằng mũi và lấy hơi bằng miệng. Việc **lấy hơi ngụp lặn** đúng cách giúp thiết lập một **chu kỳ thở** đều đặn. Khi rơi xuống nước, nếu giữ được nhịp thở, não bộ sẽ được cung cấp đủ oxy, từ đó trẻ sẽ không bị hoảng loạn.</p>
 
-  <h3>Mặc áo phao cho trẻ</h3>
-  <p>Khi tham gia các hoạt động vui chơi dưới nước hoặc trên tàu thuyền, luôn đảm bảo trẻ mặc áo phao đúng tiêu chuẩn và vừa vặn với cơ thể.</p>
+  <h3>3.2. Kỹ năng nổi ngửa (Back float)</h3>
+  <p>Khi kiệt sức hoặc không xác định được phương hướng, kỹ năng thả nổi ngửa là vị cứu tinh. Do phổi của chúng ta giống như hai quả bóng bay, nếu biết hít một hơi thật sâu và thả lỏng toàn bộ cơ thể, trẻ có thể nổi hoàn toàn trên mặt nước mà không tốn sức.</p>
 
-  <h3>Lựa chọn địa điểm bơi lội an toàn</h3>
-  <p>Chỉ cho trẻ bơi ở những nơi có lực lượng cứu hộ, hồ bơi đạt tiêu chuẩn an toàn. Tránh bơi ở ao hồ, sông suối không có biển báo an toàn.</p>
+  <figure class="post-image">
+    <img src="/images/classes/hoc-sinh-trang-bi-phao.jpg" alt="Học sinh sử dụng **trang bị áo phao**" loading="lazy" />
+    <figcaption>Chú thích: Luôn **trang bị áo phao** đúng chuẩn cho trẻ khi đi chơi gần sông nước.</figcaption>
+  </figure>
+
+  <h3>3.3. Kỹ thuật đứng nước (Treading water)</h3>
+  <p>**Kỹ thuật đứng nước** giúp trẻ giữ đầu luôn cao hơn mặt nước để quan sát và kêu cứu. Nó kết hợp nhịp nhàng giữa đôi chân đạp rẽ quạt và đôi tay xoa nước để tạo ra lực đẩy thắng được trọng lực.</p>
+
+  <h3>3.4. Di chuyển sinh tồn (Survival stroke)</h3>
+  <p>Khi đã nổi được, trẻ cần biết cách bơi chậm rãi vào bờ. Các động tác như bơi chó hoặc biến thể của bơi ếch là phù hợp nhất. Mặc dù **kỹ thuật quạt tay bơi ếch** sinh tồn không cần đúng chuẩn thi đấu, nhưng nó phải đảm bảo tối ưu hóa sức lực.</p>
+
+  <h3>3.5. Xử lý khi bị chìm đột ngột</h3>
+  <p>Nếu trẻ bị ngã từ trên cao hoặc lọt thỏm xuống nước, phản xạ nhắm mắt, nín thở và co người lại chờ cơ thể trồi lên (phản xạ con ếch) là bài học sống còn mà HLV Mạnh thường xuyên huấn luyện.</p>
+
+  <h2 id="tam-ly-hoang-loan">4. Phân tích tâm lý hoảng loạn khi gặp sự cố</h2>
+  <p>Trong vật lý học, **lực cản của nước** lớn gấp 800 lần không khí. Khi một người không biết bơi rơi xuống nước, não bộ lập tức kích hoạt trạng thái "chiến đấu hay bỏ chạy" (Fight or Flight). Tuy nhiên, môi trường nước làm vô hiệu hóa các phản xạ thông thường.</p>
+  <p>Trẻ em sẽ bắt đầu quẫy đạp điên cuồng. Sự quẫy đạp này không tạo ra lực đẩy mà chỉ đẩy hết không khí ra khỏi phổi, đồng thời làm **kiểm soát nhịp thở** bị phá vỡ. Việc tiêu hao năng lượng quá mức dẫn đến kiệt sức và chìm chỉ trong vòng 30 đến 60 giây.</p>
+  <p>Đó là lý do các lớp học tại Swim For Life luôn có các bài kiểm tra áp lực giả lập (ném trẻ xuống nước một cách an toàn) để rèn luyện tinh thần thép cho các con.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/khoi-dong-lam-nong.jpg" alt="Học viên **khởi động trên cạn**" loading="lazy" />
+    <figcaption>Chú thích: Việc **khởi động trên cạn** thật kỹ giúp ngăn ngừa chuột rút và chấn thương.</figcaption>
+  </figure>
+
+  <h2 id="so-cuu-duoi-nuoc">5. Cách cứu người đuối nước và sơ cứu chuẩn y khoa</h2>
+  <p>Rất nhiều người lớn mắc sai lầm nghiêm trọng khi cố gắng nhảy xuống cứu nạn nhân mà không hề có kỹ năng. Hãy ghi nhớ quy tắc vàng về **cách cứu người đuối nước**: "Reach, Throw, Row, Go" (Chìa ra, Ném tới, Chèo thuyền, Bơi đến).</p>
+
+  <table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <thead>
+      <tr>
+        <th style="padding: 10px; background-color: #f4f4f4;">Phương pháp</th>
+        <th style="padding: 10px; background-color: #f4f4f4;">Cách thực hiện an toàn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px;">Reach (Chìa sào/gậy)</td>
+        <td style="padding: 10px;">Dùng sào dài, nhánh cây, hoặc quần áo vươn ra cho nạn nhân bám vào, trong khi bạn nằm bò sát bờ để giữ thăng bằng.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Throw (Ném phao)</td>
+        <td style="padding: 10px;">Ném phao tròn, can nhựa rỗng, hoặc dây thừng chính xác đến vị trí của trẻ.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Row (Tiếp cận bằng thuyền)</td>
+        <td style="padding: 10px;">Dùng thuyền, ván chèo tiến lại gần nạn nhân. Đưa dụng cụ cho họ bám chứ không trực tiếp kéo tay họ nếu thuyền không vững.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Go (Trực tiếp xuống nước)</td>
+        <td style="padding: 10px;">Chỉ áp dụng cho lực lượng cứu hộ chuyên nghiệp. Nạn nhân hoảng loạn có sức mạnh vô song, có thể dìm chết cả người đến cứu.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Sau khi đưa được nạn nhân lên bờ, thao tác **sơ cứu đuối nước** (Hô hấp nhân tạo và ép tim ngoài lồng ngực - CPR) phải được tiến hành ngay lập tức nếu nạn nhân bất tỉnh và ngưng thở. Tuyệt đối không dốc ngược nạn nhân chạy quanh sân vì đây là quan niệm cổ hủ làm mất đi thời gian vàng cứu não.</p>
+
+  <h2 id="vai-tro-phu-huynh">6. Vai trò của phụ huynh trong an toàn dưới nước</h2>
+  <p>Người lớn chính là chốt chặn cuối cùng bảo vệ sự sống của trẻ nhỏ. Dù bạn có đăng ký cho con học bơi ở trung tâm đắt tiền nhất, sự giám sát vẫn không bao giờ là thừa.</p>
+  <ul>
+    <li>Luôn để mắt đến trẻ (Keep an eye on them) trong cự ly một cánh tay khi ở gần nước.</li>
+    <li>Mặc đồ bơi màu sáng (neon, cam, vàng) để dễ nhận diện dưới nước. Tránh màu xanh lam vì nó hòa lẫn với màu hồ bơi.</li>
+    <li>Dạy trẻ nhận biết các biển báo nguy hiểm ở ao hồ tự nhiên.</li>
+    <li>Bản thân cha mẹ cũng cần đi học bơi và học sơ cứu. Đừng nghĩ rằng "tôi không bao giờ bơi" thì sẽ an toàn. <a href="/khoa-hoc-boi/nguoi-lon/">Khóa học bơi người lớn</a> tại Swim For Life luôn rộng mở.</li>
+  </ul>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-sinh-tap-tren-thanh-be.jpg" alt="Trẻ em thực hành trên thành bể" loading="lazy" />
+    <figcaption>Chú thích: Bài tập làm quen với nước trên thành bể giúp giảm **chứng sợ nước ở trẻ**.</figcaption>
+  </figure>
+
+  <h2 id="khoa-hoc-swim-for-life">7. Dạy trẻ em tập bơi tại Swim For Life</h2>
+  <p>Tại Swim For Life Việt Nam, chương trình huấn luyện <a href="/khoa-hoc-boi/tre-em/">Dạy trẻ em tập bơi</a> được HLV Nguyễn Huy Mạnh thiết kế đặc biệt không chỉ chú trọng vào bơi thể thao mà còn rèn luyện bản lĩnh sinh tồn. Chúng tôi không sử dụng các phao tay hay phao cổ cồng kềnh, bởi điều đó tạo cho trẻ ảo giác sai lầm về độ nổi của cơ thể. Thay vào đó, trẻ sẽ học cách kiểm soát trọng tâm tự nhiên của bản thân.</p>
+  <p>Khóa học gồm 10-12 buổi, cam kết đầu ra 100% trẻ tự bơi được ít nhất 25 mét và biết thả nổi thư giãn. Chúng tôi tin rằng, món quà quý giá nhất mà cha mẹ tặng cho con cái không phải là những bộ quần áo đắt tiền, mà là một kỹ năng có thể cứu mạng chúng cả đời.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-vien-khoi-dong.jpg" alt="Học viên khởi động kỹ càng" loading="lazy" />
+    <figcaption>Chú thích: Sự cẩn thận trong từng bước huấn luyện là kim chỉ nam của trung tâm.</figcaption>
+  </figure>
+
+  <h2 id="cau-hoi-thuong-gap">8. Các câu hỏi thường gặp (FAQ) về đuối nước</h2>
   
+  <h3>Nước nông có gây đuối nước không?</h3>
+  <p>Có. Đuối nước có thể xảy ra trong bồn tắm, chậu nước hoặc thậm chí xô nước có độ sâu chỉ vài centimet đối với trẻ nhỏ (đặc biệt là trẻ sơ sinh và trẻ chập chững biết đi) nếu trẻ ngã sấp mặt và không biết cách lật lại.</p>
+
+  <h3>Làm sao để nhận biết một người đang đuối nước?</h3>
+  <p>Không giống như trong phim, người đuối nước thường im lặng (vì phải dành sức để thở). Đầu của họ ngửa ra sau, miệng ngang hoặc dưới mặt nước, mắt nhắm hoặc nhìn chằm chằm vô hồn. Họ không vẫy tay kêu cứu mà thường có động tác đập tay xuống nước (bản năng trèo cầu thang ảo) để cố ngoi lên.</p>
+
   <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
-    <h2>Học Bơi Sinh Tồn Cùng Swim For Life</h2>
-    <p>Trang bị cho con kỹ năng bơi lội và sinh tồn dưới nước là món quà vô giá giúp con tự bảo vệ bản thân suốt đời.</p>
+    <h2>Đừng để sự hối tiếc xảy ra quá muộn!</h2>
+    <p>Hãy trang bị cho con yêu kỹ năng bơi sinh tồn tốt nhất. Đăng ký học thử miễn phí cùng Swim For Life ngay hôm nay!</p>
     <div class="btn-group">
-      <a href="/khoa-hoc-boi/tre-em/" class="btn btn-accent btn-lg">Tìm hiểu khóa học</a>
-      <a href="/lien-he/" class="btn btn-white btn-lg">Đăng Ký Học Thử</a>
+      <a href="/khoa-hoc-boi/" class="btn btn-accent btn-lg">Xem Khóa Học Trẻ Em</a>
+      <a href="tel:0979121097" class="btn btn-white btn-lg">📞 Hotline tư vấn: 0979.121.097</a>
     </div>
   </div>
+
 </BlogLayout>
