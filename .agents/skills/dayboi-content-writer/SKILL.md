@@ -36,7 +36,7 @@ Bài viết bắt buộc phải thiết kế xoay quanh 3 lớp từ khóa sau, 
 ```html
 <figure class="post-image">
   <img src="/images/classes/lop-hoc-boi-tre-em.jpg" alt="Khóa học bơi trẻ em tại Swim For Life" loading="lazy" />
-  <figcaption>Chú thích: Học viên nhí tại Swim For Life đang thực hành kỹ thuật <strong>thở nước</strong>.</figcaption>
+  <figcaption>Học viên nhí tại Swim For Life đang thực hành kỹ thuật <strong>thở nước</strong>.</figcaption>
 </figure>
 ```
 
