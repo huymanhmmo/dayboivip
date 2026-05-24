@@ -1,0 +1,78 @@
+---
+export interface Props {
+  pricing: {
+    note: string;
+    tiers: Array<{
+      name: string;
+      highlight: boolean;
+      badge?: string;
+      price: string;
+      period: string;
+      features: string[];
+      cta: string;
+    }>;
+  };
+}
+
+const { pricing } = Astro.props;
+---
+
+<section class="cl-section" id="bang-gia">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Bảng Giá Khóa Học
+      </span>
+      <h2 class="cl-section-title__heading">
+        Học Phí Ưu Đãi & Gói Lớp Học
+      </h2>
+      <p class="cl-section-title__sub">
+        Cam kết hiệu quả tối đa cho từng học viên với mức chi phí hợp lý nhất. Chọn gói học phù hợp với nhu cầu của bạn.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-pricing">
+      {pricing.tiers.map((tier, index) => (
+        <div class={`cl-pricing__card ${tier.highlight ? 'cl-pricing__card--featured' : ''} cl-animate cl-animate--delay-${index + 1}`}>
+          {tier.badge && (
+            <span class="cl-pricing__badge">{tier.badge}</span>
+          )}
+          <h3 class="cl-pricing__name">{tier.name}</h3>
+          
+          <div class="cl-pricing__price" style={tier.price === "Liên hệ báo giá" ? "font-size: 1.8rem; line-height: 1.2;" : ""}>
+            {tier.price}{tier.price !== "Liên hệ báo giá" && <sup>đ</sup>}
+          </div>
+          <p class="cl-pricing__period">/{tier.period}</p>
+          
+          <ul class="cl-pricing__features">
+            {tier.features.map(feature => (
+              <li set:html={feature.replace(/\(([^)]+)\)/g, '<strong>($1)</strong>')}></li>
+            ))}
+          </ul>
+          
+          <a href="#dang-ky" class={`cl-btn ${tier.highlight ? 'cl-btn-primary' : 'cl-btn-secondary'} cl-btn-lg`} style="width: 100%;">
+            {tier.cta || "Đăng Ký Ngay"}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    {pricing.note && (
+      <p class="cl-pricing__note cl-animate">
+        * <strong>Lưu ý:</strong> {pricing.note}
+      </p>
+    )}
+  </div>
+</section>
+
+<style>
+  .cl-pricing__note {
+    max-width: 800px;
+    margin: 32px auto 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--cl-text-light);
+    line-height: 1.5;
+  }
+</style>

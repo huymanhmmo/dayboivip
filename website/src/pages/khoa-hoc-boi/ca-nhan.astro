@@ -1,0 +1,80 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { caNhan } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Khóa cá nhân 1 kèm 1' },
+];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Khóa Học Bơi 1 Kèm 1 - Dạy Bơi Cá Nhân",
+  "description": "Khóa học bơi cá nhân 1 kèm 1, HLV riêng, linh hoạt lịch và địa điểm. Cam kết biết bơi 100% sau 10-12 buổi tại Swim For Life.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
+    "url": "https://dayboi.vip"
+  },
+  "courseMode": "onsite",
+  "numberOfCredits": "10-12 buổi",
+  "occupationalCategory": "Swimming Instruction"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Khóa bơi cá nhân 1 kèm 1 có gì khác biệt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khóa bơi cá nhân 1 kèm 1 tại Swim For Life có HLV riêng dành toàn bộ thời gian cho 1 học viên, chương trình được cá nhân hóa 100%, linh hoạt hoàn toàn về thời gian và địa điểm, tốc độ tiến bộ nhanh gấp 2-3 lần học nhóm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi 1 kèm 1 bao lâu thì biết bơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Với khóa 1 kèm 1, đa số học viên biết bơi sau 10-12 buổi, mỗi buổi 60-90 phút. Người có cơ sở vận động tốt có thể biết bơi nhanh hơn, từ 7-8 buổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "HLV dạy bơi 1 kèm 1 có trình độ gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tất cả HLV tại Swim For Life đều có bằng cấp chuyên ngành Giáo dục thể chất hoặc chứng chỉ bơi lội chuyên nghiệp, được đào tạo thêm về tâm lý học viên và kỹ thuật sư phạm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi được chọn bể bơi khi học 1 kèm 1 không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Học viên hoàn toàn được chọn bể bơi phù hợp gần nhà hoặc nơi làm việc. Swim For Life có mạng lưới bể bơi đối tác rộng khắp Hà Nội và TPHCM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khóa 1 kèm 1 có phù hợp cho người sợ nước không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuyệt đối phù hợp! Khóa 1 kèm 1 là lựa chọn tốt nhất cho người sợ nước vì HLV dành toàn bộ sự chú ý, kiên nhẫn hướng dẫn từng bước, giúp vượt qua nỗi sợ một cách tự nhiên."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [courseSchema, faqSchema];
+---
+
+<CourseLayout
+  course={caNhan}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

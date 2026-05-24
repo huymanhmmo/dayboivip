@@ -1,0 +1,301 @@
+---
+import PageLayout from './PageLayout.astro';
+import CourseHero from '../components/course/CourseHero.astro';
+import CourseOverview from '../components/course/CourseOverview.astro';
+import CourseProblem from '../components/course/CourseProblem.astro';
+import CourseUSP from '../components/course/CourseUSP.astro';
+import CourseCurriculum from '../components/course/CourseCurriculum.astro';
+import CourseStats from '../components/course/CourseStats.astro';
+import CourseInstructor from '../components/course/CourseInstructor.astro';
+import CourseTestimonial from '../components/course/CourseTestimonial.astro';
+import CourseGallery from '../components/course/CourseGallery.astro';
+import CoursePricing from '../components/course/CoursePricing.astro';
+import CourseTrust from '../components/course/CourseTrust.astro';
+import CourseFAQ from '../components/course/CourseFAQ.astro';
+import CourseCTA from '../components/course/CourseCTA.astro';
+import FloatingCTA from '../components/course/FloatingCTA.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+
+import '../styles/course-landing.css';
+
+export interface Props {
+  course: {
+    slug: string;
+    title: string;
+    shortTitle: string;
+    subtitle: string;
+    description: string;
+    targetAudience: string;
+    duration: string;
+    sessionLength: string;
+    classSize: string;
+    heroImage: string;
+    priceFrom: string;
+    stats: Array<{ number: number; suffix: string; label: string }>;
+    problems: {
+      title: string;
+      subtitle: string;
+      items: Array<{ icon: string; title: string; description: string }>;
+    };
+    benefits: Array<{ icon: string; title: string; description: string }>;
+    overview: Array<{ icon: string; label: string; value: string }>;
+    curriculum: {
+      title: string;
+      stages: Array<{
+        phase: string;
+        title: string;
+        sessions: string;
+        items: string[];
+      }>;
+    };
+    instructor: {
+      name: string;
+      title: string;
+      experience: string;
+      certifications: string[];
+      quote: string;
+    };
+    pricing: {
+      note: string;
+      tiers: Array<{
+        name: string;
+        highlight: boolean;
+        badge?: string;
+        price: string;
+        period: string;
+        features: string[];
+        cta: string;
+      }>;
+    };
+    testimonials: Array<{
+      name: string;
+      detail: string;
+      rating: number;
+      text: string;
+    }>;
+    faqs: Array<{
+      question: string;
+      answer: string;
+    }>;
+  };
+  breadcrumbs: Array<{ label: string; href?: string }>;
+  schema?: any;
+}
+
+const { course, breadcrumbs, schema } = Astro.props;
+---
+
+<PageLayout
+  title={course.title}
+  description={course.description}
+  canonical={`https://dayboi.vip/khoa-hoc-boi/${course.slug}/`}
+  image={course.heroImage}
+  type="article"
+  breadcrumbs={breadcrumbs}
+  schema={schema}
+>
+  <div class="course-landing">
+    <!-- Hero Section (Attention) -->
+    <CourseHero 
+      title={course.title}
+      subtitle={course.subtitle}
+      description={course.description}
+      image={course.heroImage}
+      stats={course.stats}
+      slug={course.slug}
+    />
+
+    <!-- Quick Info Grid (Interest) -->
+    <CourseOverview 
+      overview={course.overview}
+      slug={course.slug}
+    />
+
+    <!-- Problem Section (Interest) -->
+    <CourseProblem 
+      problems={course.problems}
+    />
+
+    <!-- Benefits / Unique Value Proposition (Desire) -->
+    <CourseUSP 
+      benefits={course.benefits}
+    />
+
+    <!-- Curriculum Section (Desire) -->
+    <CourseCurriculum 
+      curriculum={course.curriculum}
+    />
+
+    <!-- Animated Statistics Banner (Action / Social Proof) -->
+    <CourseStats 
+      stats={course.stats}
+    />
+
+    <!-- Instructor Showcase -->
+    <CourseInstructor 
+      instructor={course.instructor}
+    />
+
+    <!-- Testimonials Section (Social Proof) -->
+    <CourseTestimonial 
+      testimonials={course.testimonials}
+    />
+
+    <!-- Class Gallery Section -->
+    <CourseGallery 
+      slug={course.slug}
+    />
+
+    <!-- Pricing Tables (Action) -->
+    <CoursePricing 
+      pricing={course.pricing}
+    />
+
+    <!-- Trust & Quality Guarantee Badges -->
+    <CourseTrust />
+
+    <!-- FAQ Accordion -->
+    <CourseFAQ 
+      faqs={course.faqs}
+    />
+
+    <!-- Form Section -->
+    <section class="cl-section cl-section--alt" id="dang-ky">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Đăng Ký Ngay
+          </span>
+          <h2 class="cl-section-title__heading">
+            Bắt Đầu Hành Trình Học Bơi Hôm Nay
+          </h2>
+          <p class="cl-section-title__sub">
+            Để lại thông tin dưới đây, Swim For Life sẽ liên hệ tư vấn lộ trình và xếp lịch học thử MIỄN PHÍ sớm nhất cho bạn/bé.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-form-container">
+          <div class="cl-form-info">
+            <h3 class="cl-form-info__title">Hỗ Trợ Nhanh 24/7</h3>
+            <p class="cl-form-info__text">
+              Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:
+            </p>
+            <div class="cl-form-info__links">
+              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
+                <span class="cl-form-info__icon">📞</span>
+                <div>
+                  <span class="cl-form-info__label">Hotline tư vấn</span>
+                  <span class="cl-form-info__value">0979.121.097</span>
+                </div>
+              </a>
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
+                <span class="cl-form-info__icon">💬</span>
+                <div>
+                  <span class="cl-form-info__label">Trò chuyện Zalo</span>
+                  <span class="cl-form-info__value">Mr.Mạnh (0979.121.097)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="cl-form-wrapper">
+            <RegistrationForm id="course-register-form" className="cl-astro-form" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Mobile CTA -->
+    <FloatingCTA />
+  </div>
+</PageLayout>
+
+<script>
+  // Intersection Observer for scroll animations (.cl-animate)
+  const setupAnimations = () => {
+    const animElements = document.querySelectorAll('.course-landing .cl-animate');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cl-visible');
+          // Once animated, we don't need to observe it anymore
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animElements.forEach(el => observer.observe(el));
+  };
+
+  // Stats counter animation (data-counter)
+  const setupCounters = () => {
+    const counterElements = document.querySelectorAll('.course-landing [data-counter]');
+
+    const animateCounter = (el: HTMLElement) => {
+      const target = parseInt(el.getAttribute('data-target') || '0', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 2000; // 2 seconds
+      const startTime = performance.now();
+
+      const updateCount = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (easeOutQuad)
+        const easeProgress = progress * (2 - progress);
+        
+        const currentValue = Math.floor(easeProgress * target);
+        
+        // Format with thousand separator for VN locale
+        el.textContent = currentValue.toLocaleString('vi-VN') + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = target.toLocaleString('vi-VN') + suffix;
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    };
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          if (!el.classList.contains('counted')) {
+            el.classList.add('counted');
+            animateCounter(el);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    counterElements.forEach(el => observer.observe(el));
+  };
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    setupAnimations();
+    setupCounters();
+  });
+
+  // Execute immediately in case DOMContentLoaded has already fired
+  setupAnimations();
+  setupCounters();
+</script>
+

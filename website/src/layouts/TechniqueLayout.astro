@@ -1,0 +1,1043 @@
+---
+import PageLayout from './PageLayout.astro';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+import { blogPosts } from '../data/blogPosts.js';
+
+import '../styles/technique-landing.css';
+
+export interface Props {
+  metadata: {
+    title: string;
+    description: string;
+    canonical: string;
+    image?: string;
+    breadcrumbs: Array<{ label: string; href?: string }>;
+    articleSchema?: any;
+    faqSchema?: any;
+  };
+  technique: {
+    slug: string;
+    name: string;
+    badge: string;
+    description: string;
+    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao' | 'Sinh tồn';
+    speed: 'Chậm' | 'Trung bình' | 'Nhanh' | 'Rất nhanh';
+    calories: string;
+    muscles: string;
+    videoId: string;
+    videoPoster: string;
+    videoAlt: string;
+  };
+  toc: Array<{ id: string; label: string }>;
+  errors: Array<{
+    title: string;
+    problem: string;
+    solution: string;
+  }>;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+  relatedKeywords: string[];
+}
+
+const { metadata, technique, toc, errors, faqs, relatedKeywords } = Astro.props;
+
+// Lọc bài viết liên quan dựa trên từ khóa
+const relatedPosts = blogPosts.filter(post => {
+  return relatedKeywords.some(keyword => {
+    const kw = keyword.toLowerCase();
+    const inTitle = post.title.toLowerCase().includes(kw);
+    const inExcerpt = post.excerpt.toLowerCase().includes(kw);
+    const inTags = post.tags && post.tags.some(tag => tag.toLowerCase().includes(kw));
+    return inTitle || inExcerpt || inTags;
+  });
+}).slice(0, 3);
+
+// Nếu không có bài viết liên quan, lấy 3 bài viết mặc định mới nhất
+const displayPosts = relatedPosts.length > 0 ? relatedPosts : blogPosts.slice(0, 3);
+
+// Dữ liệu cho các kỹ thuật bơi lội khác để liên kết chéo
+const allTechniques = [
+  { slug: 'hoc-boi-ech', name: 'Học Bơi Ếch', icon: '🐸', desc: 'Kiểu bơi cơ bản nhất, dễ học, nền tảng sinh tồn hàng đầu.', link: '/ky-thuat-boi/hoc-boi-ech/' },
+  { slug: 'hoc-boi-sai', name: 'Học Bơi Sải', icon: '🏊', desc: 'Kiểu bơi nhanh nhất, tăng sức bền và phát triển thể lực toàn diện.', link: '/ky-thuat-boi/hoc-boi-sai/' },
+  { slug: 'hoc-boi-ngua', name: 'Học Bơi Ngửa', icon: '🤽', desc: 'Kiểu bơi thư giãn nhất, dễ thở, giúp kéo giãn cột sống tự nhiên.', link: '/ky-thuat-boi/hoc-boi-ngua/' },
+  { slug: 'hoc-boi-buom', name: 'Học Bơi Bướm', icon: '🦋', desc: 'Kiểu bơi đẹp mắt, mạnh mẽ nhất, uốn sóng cá heo độc đáo.', link: '/ky-thuat-boi/hoc-boi-buom/' },
+  { slug: 'ky-nang-dung-nuoc', name: 'Kỹ Năng Đứng Nước', icon: '🛟', desc: 'Kỹ năng sinh tồn cốt lõi giúp tự nổi tại chỗ không mất sức.', link: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
+];
+
+const otherTechniques = allTechniques.filter(t => t.slug !== technique.slug);
+
+// Helpers cho hiển thị Specs Dashboard V2
+const difficultyLevels = ['Sinh tồn', 'Cơ bản', 'Trung bình', 'Nâng cao'];
+const diffIndex = difficultyLevels.indexOf(technique.difficulty);
+const diffOffset = 213.6 - (Math.max(0, diffIndex) / 3) * 213.6;
+
+const speedLevels = ['Chậm', 'Trung bình', 'Nhanh', 'Rất nhanh'];
+const speedIndex = speedLevels.indexOf(technique.speed);
+const speedOffset = 213.6 - (Math.max(0, speedIndex) / 3) * 213.6;
+
+const calVal = parseInt(technique.calories.replace(/[^0-9]/g, '')) || 600;
+const calOffset = 213.6 - (Math.min(1000, calVal) / 1000) * 213.6;
+
+const musclesList = technique.muscles.split(',').map(m => m.trim());
+
+// Dữ liệu cho Swimmer Anatomy Widget
+const anatomyData = {
+  'hoc-boi-ech': {
+    head: { title: 'Tư thế Đầu & Thở', subtitle: 'Hít thở nhịp nhàng', desc: 'Đầu giữ thẳng trục với cột sống khi lướt nước. Khi nhô lên lấy hơi, chỉ nâng cằm vừa đủ khỏi mặt nước, mắt nhìn chéo xuống dưới góc 45 độ để tránh đau cổ và giữ thăng bằng.', icon: '🗣️' },
+    arms: { title: 'Động tác Tay', subtitle: 'Quạt nước hình trái tim', desc: 'Tỳ nước rộng bằng vai, quạt chéo xuống dưới và hướng ra sau vẽ hình trái tim. Khép cùi chỏ sát sườn trước ngực rồi duỗi thẳng tay ngay lập tức để giảm lực cản.', icon: '👐' },
+    core: { title: 'Tư thế Thân người', subtitle: 'Lướt nước phẳng', desc: 'Giữ thân người thẳng, nằm ngang, song song với mặt nước. Tránh võng lưng hoặc gập hông quá mức để không làm tăng lực cản của nước.', icon: '🧍' },
+    legs: { title: 'Động tác Chân', subtitle: 'Đạp chân ếch mạnh mẽ', desc: 'Co chân nhẹ nhàng bằng cách kéo gót về phía mông, bẻ cổ chân ra ngoài góc 90 độ (úp mu bàn chân). Đạp mạnh mẽ vòng cung rộng sang hai bên rồi khép chặt hai chân lại để lướt nước.', icon: '🦵' }
+  },
+  'hoc-boi-sai': {
+    head: { title: 'Tư thế Đầu & Thở', subtitle: 'Xoay nghiêng thở tự nhiên', desc: 'Đầu luôn úp dưới nước, mắt nhìn thẳng xuống đáy bể hoặc chếch nhẹ về trước. Khi thở, xoay nghiêng đầu sang một bên vừa đủ để 1 mắt nằm dưới nước, 1 mắt trên nước để hớp hơi nhanh.', icon: '🗣️' },
+    arms: { title: 'Động tác Tay', subtitle: 'Quạt nước luân phiên', desc: 'Tay quạt nước theo chu kỳ liên tục: Tỳ nước bằng lòng bàn tay, kéo nước chéo xuống dưới bụng, đẩy nước mạnh ra sau đùi. Vung tay trên không với cùi chỏ cao, thả lỏng cơ vai.', icon: '👐' },
+    core: { title: 'Tư thế Thân người', subtitle: 'Trục thẳng xoay hông', desc: 'Thân người giữ trên một đường thẳng. Khi quạt tay, hông và vai tự động xoay nhẹ góc 30-45 độ sang hai bên theo nhịp quạt tay giúp kéo dài sải tay và giảm cản.', icon: '🧍' },
+    legs: { title: 'Động tác Chân', subtitle: 'Đập chân sải liên tục', desc: 'Đập chân luân phiên từ khớp hông (không gập đầu gối quá mức), cổ chân thả lỏng hoàn toàn để mu bàn chân vẩy nước như đuôi cá. Biên độ đập chân lý tưởng là 30-40cm.', icon: '🦵' }
+  },
+  'hoc-boi-ngua': {
+    head: { title: 'Tư thế Đầu & Thở', subtitle: 'Ngửa mặt tự nhiên', desc: 'Mặt hướng thẳng lên trần hoặc bầu trời, hai tai ngập hoàn toàn dưới mặt nước. Giữ đầu ổn định không nghiêng lắc, cằm hơi hướng về phía ngực để giữ phần thân trên nổi.', icon: '🗣️' },
+    arms: { title: 'Động tác Tay', subtitle: 'Quạt tay chữ S luân phiên', desc: 'Hai tay vung luân phiên tạo vòng tròn 360 độ. Ngón cái rời nước trước, ngón út vào nước trước. Dưới nước, tay quạt cong hình chữ S để đẩy nước hiệu quả ra sau.', icon: '👐' },
+    core: { title: 'Tư thế Thân người', subtitle: 'Ưỡn ngực nổi hông', desc: 'Thân người nằm ngửa phẳng trên mặt nước, hông đẩy cao lên sát mặt nước để tránh bị chìm mông. Tránh gập bụng tạo tư thế ngồi dưới nước.', icon: '🧍' },
+    legs: { title: 'Động tác Chân', subtitle: 'Đập chân ngửa luân phiên', desc: 'Đập chân từ hông luân phiên ngược từ dưới lên trên. Cổ chân thả lỏng, dùng mu bàn chân để đẩy nước lên sát mặt nước tạo bọt trắng mịn.', icon: '🦵' }
+  },
+  'hoc-boi-buom': {
+    head: { title: 'Tư thế Đầu & Thở', subtitle: 'Nhô đầu lấy hơi sớm', desc: 'Đầu nhô lên thở sớm ngay khi tay bắt đầu pha đẩy nước ra sau đùi. Tránh ngẩng đầu quá cao làm chìm hông. Khi tay vung qua vai vào nước, đầu phải úp xuống trước tay.', icon: '🗣️' },
+    arms: { title: 'Động tác Tay', subtitle: 'Quạt tay hình lỗ khóa', desc: 'Cả hai tay hoạt động đồng thời. Pha quạt nước dưới bụng tạo đường cong giống chiếc lỗ khóa (kéo sát vào ngực rồi đẩy mạnh ra sau). Vung tay ngang thẳng trên mặt nước.', icon: '👐' },
+    core: { title: 'Tư thế Thân người', subtitle: 'Uốn sóng cơ thể liên tục', desc: 'Chuyển động uốn sóng nhịp nhàng (Dolphin Kick) xuất phát từ ngực, truyền xuống hông rồi ra chân. Hông nhô lên hạ xuống liên tục tạo lực truyền động học.', icon: '🧍' },
+    legs: { title: 'Động tác Chân', subtitle: 'Đập chân bướm đôi', desc: 'Hai chân khép sát đập đồng thời. Một chu kỳ bơi bướm có 2 nhịp đập chân: Nhịp 1 đập khi tay vào nước để nâng hông nổi, nhịp 2 đập khi tay đẩy nước ra sau để tạo lực tiến.', icon: '🦵' }
+  },
+  'ky-nang-dung-nuoc': {
+    head: { title: 'Tư thế Đầu & Thở', subtitle: 'Thẳng đứng & Thở đều', desc: 'Giữ đầu thẳng đứng ổn định trên mặt nước. Hít thở sâu bằng miệng, thở ra bằng mũi một cách bình tĩnh, tránh hoảng loạn để phổi luôn chứa không khí giúp cơ thể tự nổi.', icon: '🗣️' },
+    arms: { title: 'Động tác Tay', subtitle: 'Quạt nước tạo lực nâng', desc: 'Hai tay dang rộng sang hai bên dưới mặt nước, úp lòng bàn tay vẽ hình số 8 nằm ngang liên tục để tạo lực nâng (sculling) hỗ trợ cơ thể nổi ổn định.', icon: '👐' },
+    core: { title: 'Tư thế Thân người', subtitle: 'Thẳng đứng thả lỏng', desc: 'Thân người giữ tư thế đứng hoặc hơi ngả nhẹ ra sau trong nước. Thả lỏng toàn bộ các nhóm cơ không tham gia vận động để tiết kiệm tối đa năng lượng sinh tồn.', icon: '🧍' },
+    legs: { title: 'Động tác Chân', subtitle: 'Đạp chân ếch luân phiên', desc: 'Thực hiện đạp chân ếch luân phiên từng chân một (chân động cơ/eggbeater kick) hoặc đạp chân ếch đồng thời hướng xuống dưới đáy bể để tạo lực đẩy liên tục hướng lên.', icon: '🦵' }
+  }
+};
+
+const currentAnatomy = anatomyData[technique.slug] || anatomyData['hoc-boi-sai'];
+
+// Cấu hình tọa độ điểm hotspot tương ứng với từng hình ảnh giải phẫu học kiểu bơi (tính chính xác theo tỷ lệ % từ viewBox 600x300 của SVG)
+const hotspotCoords = (() => {
+  switch (technique.slug) {
+    case 'hoc-boi-ech':
+      return {
+        head: { top: '33.3%', left: '69.2%' },
+        arms: { top: '56.7%', left: '66.7%' },
+        core: { top: '50%', left: '55.4%' },
+        legs: { top: '65%', left: '50.8%' }
+      };
+    case 'hoc-boi-sai':
+      return {
+        head: { top: '40%', left: '68.3%' },
+        arms: { top: '28.3%', left: '66.7%' },
+        core: { top: '45.8%', left: '54.2%' },
+        legs: { top: '55%', left: '28.7%' }
+      };
+    case 'hoc-boi-ngua':
+      return {
+        head: { top: '44%', left: '68.3%' },
+        arms: { top: '25%', left: '56.7%' },
+        core: { top: '50%', left: '54.2%' },
+        legs: { top: '47.3%', left: '28.7%' }
+      };
+    case 'hoc-boi-buom':
+      return {
+        head: { top: '43.3%', left: '68.3%' },
+        arms: { top: '30%', left: '69.2%' },
+        core: { top: '49.2%', left: '54.2%' },
+        legs: { top: '51.7%', left: '28.7%' }
+      };
+    case 'ky-nang-dung-nuoc':
+      return {
+        head: { top: '26.7%', left: '50%' },
+        arms: { top: '48.3%', left: '56.7%' },
+        core: { top: '54.2%', left: '50%' },
+        legs: { top: '86.7%', left: '55.8%' }
+      };
+    default:
+      return {
+        head: { top: '40%', left: '80%' },
+        arms: { top: '62%', left: '63%' },
+        core: { top: '46%', left: '45%' },
+        legs: { top: '38%', left: '20%' }
+      };
+  }
+})();
+
+// Cấu hình tone màu động dựa trên slug
+const themeStyles = (() => {
+  switch (technique.slug) {
+    case 'hoc-boi-ech':
+      return `
+        --theme-primary: #009688;
+        --theme-secondary: #00bcd4;
+        --theme-dark: #004d40;
+        --theme-glow: rgba(0, 150, 136, 0.35);
+        --theme-accent: #ff6b6b;
+      `;
+    case 'hoc-boi-sai':
+      return `
+        --theme-primary: #0a4d8c;
+        --theme-secondary: #00bcd4;
+        --theme-dark: #052e56;
+        --theme-glow: rgba(0, 188, 212, 0.35);
+        --theme-accent: #ff6b6b;
+      `;
+    case 'hoc-boi-ngua':
+      return `
+        --theme-primary: #0288d1;
+        --theme-secondary: #3f51b5;
+        --theme-dark: #01579b;
+        --theme-glow: rgba(2, 136, 209, 0.35);
+        --theme-accent: #ff6b6b;
+      `;
+    case 'hoc-boi-buom':
+      return `
+        --theme-primary: #6a1b9a;
+        --theme-secondary: #ff6e40;
+        --theme-dark: #4a148c;
+        --theme-glow: rgba(255, 110, 64, 0.35);
+        --theme-accent: #ffd54f;
+      `;
+    case 'ky-nang-dung-nuoc':
+      return `
+        --theme-primary: #f57c00;
+        --theme-secondary: #0077b6;
+        --theme-dark: #e65100;
+        --theme-glow: rgba(245, 124, 0, 0.35);
+        --theme-accent: #ffeb3b;
+      `;
+    default:
+      return `
+        --theme-primary: #0a4d8c;
+        --theme-secondary: #00bcd4;
+        --theme-dark: #052e56;
+        --theme-glow: rgba(0, 188, 212, 0.35);
+        --theme-accent: #ff6b6b;
+      `;
+  }
+})();
+---
+
+<PageLayout
+  title={metadata.title}
+  description={metadata.description}
+  canonical={metadata.canonical}
+  image={metadata.image}
+  type="article"
+  breadcrumbs={metadata.breadcrumbs}
+  schema={metadata.articleSchema}
+>
+  {metadata.faqSchema && (
+    <Fragment slot="head">
+      <script type="application/ld+json" set:html={JSON.stringify(metadata.faqSchema)} />
+    </Fragment>
+  )}
+
+  <div class="technique-landing" style={themeStyles}>
+    <!-- Reading Progress Line -->
+    <div class="tl-reading-progress" id="reading-progress"></div>
+
+    <!-- Hidden element for passing anatomy data to script -->
+    <script type="application/json" id="anatomy-data-script" set:html={JSON.stringify(anatomyData[technique.slug] || anatomyData['hoc-boi-sai'])} />
+
+    <!-- Hero Section -->
+    <section class="tl-hero">
+      <div class="tl-hero__refractions">
+        <div class="tl-light-ray"></div>
+        <div class="tl-light-ray"></div>
+        <div class="tl-light-ray"></div>
+        <div class="tl-light-ray"></div>
+      </div>
+      
+      <div class="tl-hero__container">
+        <div class="tl-hero__main-row">
+          <div class="tl-hero__text-side">
+            <span class="tl-hero__badge">{technique.badge}</span>
+            <h1 class="tl-hero__title">
+              {technique.name}: Hướng Dẫn Kỹ Thuật <span class="highlight">Chi Tiết Nhất</span>
+            </h1>
+            <p class="tl-hero__description">
+              {technique.description}
+            </p>
+            
+            <div class="tl-hero__ctas">
+              <a href="#dang-ky" class="tl-btn tl-btn--accent tl-btn--pulse">📞 Học Thử Miễn Phí</a>
+              <a href={`#${toc[0]?.id || 'gioi-thieu'}`} class="tl-btn tl-btn--outline">📖 Xem Kỹ Thuật</a>
+            </div>
+          </div>
+
+          <div class="tl-hero__video-side">
+            <div class="tl-hero__video">
+              <YouTubeVideo
+                videoId={technique.videoId}
+                poster={technique.videoPoster}
+                alt={technique.videoAlt}
+                width={560}
+                height={315}
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Specs Row (Sports Science Dashboard style V2 - Circular Gauges) -->
+        <div class="tl-hero__stats">
+          <div class="tl-gauge-card tl-gauge-card--difficulty">
+            <div class="tl-gauge-wrapper">
+              <svg class="tl-gauge-svg" viewBox="0 0 80 80">
+                <circle class="tl-gauge-bg" cx="40" cy="40" r="34" fill="none" stroke-width="6"></circle>
+                <circle class="tl-gauge-fg" cx="40" cy="40" r="34" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset={diffOffset} stroke="var(--theme-secondary)"></circle>
+              </svg>
+              <div class="tl-gauge-text">
+                <span class="tl-gauge-num">{diffIndex + 1}</span><span class="tl-gauge-total">/4</span>
+              </div>
+            </div>
+            <div class="tl-gauge-info">
+              <span class="tl-gauge-label">Độ khó</span>
+              <span class="tl-gauge-val">{technique.difficulty}</span>
+            </div>
+          </div>
+          
+          <div class="tl-gauge-card tl-gauge-card--speed">
+            <div class="tl-gauge-wrapper">
+              <svg class="tl-gauge-svg" viewBox="0 0 80 80">
+                <circle class="tl-gauge-bg" cx="40" cy="40" r="34" fill="none" stroke-width="6"></circle>
+                <circle class="tl-gauge-fg" cx="40" cy="40" r="34" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset={speedOffset} stroke="var(--theme-secondary)"></circle>
+              </svg>
+              <div class="tl-gauge-text">
+                <span class="tl-gauge-icon">⚡</span>
+              </div>
+            </div>
+            <div class="tl-gauge-info">
+              <span class="tl-gauge-label">Tốc độ</span>
+              <span class="tl-gauge-val">{technique.speed}</span>
+            </div>
+          </div>
+          
+          <div class="tl-gauge-card tl-gauge-card--calories">
+            <div class="tl-gauge-wrapper">
+              <svg class="tl-gauge-svg" viewBox="0 0 80 80">
+                <circle class="tl-gauge-bg" cx="40" cy="40" r="34" fill="none" stroke-width="6"></circle>
+                <circle class="tl-gauge-fg tl-gauge-fg--energy" cx="40" cy="40" r="34" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset={calOffset} stroke="#FF8E53"></circle>
+              </svg>
+              <div class="tl-gauge-text">
+                <span class="tl-gauge-icon">🔥</span>
+              </div>
+            </div>
+            <div class="tl-gauge-info">
+              <span class="tl-gauge-label">Calo tiêu thụ</span>
+              <span class="tl-gauge-val">{technique.calories}</span>
+            </div>
+          </div>
+          
+          <div class="tl-gauge-card tl-gauge-card--muscles">
+            <div class="tl-muscles-hub">
+              <span class="tl-muscles-hub__icon">💪</span>
+              <span class="tl-gauge-label">Cơ tác động chính</span>
+            </div>
+            <div class="tl-muscles-tags">
+              {musclesList.map(muscle => (
+                <span class="tl-muscle-tag">{muscle}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents sticky bar / vertical navigation -->
+    <div class="tl-toc-wrapper">
+      <nav class="tl-toc-nav" aria-label="Mục lục nhanh">
+        {toc.map((item, idx) => {
+          const numMatch = item.label.match(/^(\d+\.?)\s*(.*)/);
+          const num = numMatch ? numMatch[1] : `${idx + 1}.`;
+          const text = numMatch ? numMatch[2] : item.label;
+          return (
+            <a href={`#${item.id}`} class="tl-toc-link">
+              <span class="tl-toc-num">{num}</span>
+              <span class="tl-toc-text">{text}</span>
+            </a>
+          );
+        })}
+      </nav>
+    </div>
+
+    <!-- Swimmer Anatomy Section (Sports Science biomechanics map) -->
+    <section class="tl-anatomy-section" id="giai-phau-ky-thuat">
+      <div class="tl-section__container">
+        <div class="tl-section-title">
+          <span class="tl-section-title__badge">Khoa học bơi lội</span>
+          <h2 class="tl-section-title__heading">Phân Tích Động Học Thể Thao</h2>
+          <p class="tl-section-title__sub">
+            Click hoặc di chuột qua các điểm nút phát sáng trên cơ thể người bơi để xem chi tiết kỹ thuật cốt lõi.
+          </p>
+          <span class="tl-section-title__decoration"></span>
+        </div>
+
+        <div class="tl-anatomy">
+          <!-- Visual Side -->
+          <div class="tl-anatomy__visual">
+            <div class="tl-anatomy__wrapper">
+              <svg class="tl-anatomy__silhouette" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--theme-primary)" stop-opacity="0.15"/>
+                    <stop offset="100%" stop-color="var(--theme-secondary)" stop-opacity="0.75"/>
+                  </linearGradient>
+                </defs>
+
+                {technique.slug === 'hoc-boi-ech' && (
+                  <g>
+                    <!-- Water Surface -->
+                    <line x1="50" y1="130" x2="550" y2="130" stroke="var(--theme-glow)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.6" />
+                    
+                    <!-- Flowing motion guides -->
+                    <path d="M 330 170 C 370 180, 410 180, 450 170" fill="none" stroke="var(--theme-secondary)" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+                    
+                    <!-- Left Leg (background co chân - slightly offset) -->
+                    <path class="swimmer-body-part" d="M 280 165 L 308 192 L 273 157 L 258 162" fill="none" stroke="var(--theme-primary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    <path class="swimmer-body-part" d="M 280 165 L 308 192 L 273 157 L 258 162" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" />
+
+                    <!-- Left Arm (background inward sweep - slightly offset) -->
+                    <path class="swimmer-body-part" d="M 385 135 L 400 165 L 425 150" fill="none" stroke="var(--theme-primary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+
+                    <!-- Torso (Inclined body positioning, chest high, hips low) -->
+                    <path class="swimmer-body-fill" d="M 280 165 Q 332.5 150 385 135 L 395 142 Q 337.5 172 280 173 Z" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    
+                    <!-- Head (Raised above water surface y=130 for breathing) -->
+                    <ellipse class="swimmer-body-fill" cx="415" cy="100" rx="14" ry="11" transform="rotate(15 415 100)" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    <!-- Neck connection -->
+                    <path d="M 385 135 L 408 112" stroke="var(--theme-primary)" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+
+                    <!-- Right Arm (foreground inward sweep - elbows bent down-forward, hands under chin) -->
+                    <path class="swimmer-body-part" d="M 385 135 L 400 170 L 425 158" fill="none" stroke="var(--theme-secondary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 385 135 L 400 170 L 425 158" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    
+                    <!-- Right Leg (foreground co chân - thigh forward-down, shin bent up to butt, ankle dorsiflexed outward) -->
+                    <path class="swimmer-body-part" d="M 280 165 L 305 195 L 270 160 L 255 165" fill="none" stroke="var(--theme-secondary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 280 165 L 305 195 L 270 160 L 255 165" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+                    
+                    <!-- Joint indicators (Technical sports-science overlays) -->
+                    <circle cx="385" cy="135" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Shoulder -->
+                    <circle cx="400" cy="170" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Elbow -->
+                    <circle cx="425" cy="158" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Wrist -->
+                    <circle cx="280" cy="165" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Hip -->
+                    <circle cx="305" cy="195" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Knee -->
+                    <circle cx="270" cy="160" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Ankle -->
+                  </g>
+                )}
+
+                {technique.slug === 'hoc-boi-sai' && (
+                  <g>
+                    <!-- Water Surface -->
+                    <line x1="50" y1="130" x2="550" y2="130" stroke="var(--theme-glow)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.6" />
+                    
+                    <!-- Flow / wave contours -->
+                    <path d="M 50 145 Q 150 135 250 145 T 450 140 T 550 145" fill="none" stroke="var(--theme-glow)" stroke-width="1.5" opacity="0.3" />
+                    
+                    <!-- Left Leg (background flutter kick - kicking up, ankle extended) -->
+                    <path class="swimmer-body-part" d="M 270 140 L 220 130 L 170 120 L 155 115" fill="none" stroke="var(--theme-primary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    <path class="swimmer-body-part" d="M 270 140 L 220 130 L 170 120 L 155 115" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" />
+
+                    <!-- Left Arm (background glide/extension - straight forward under water) -->
+                    <path class="swimmer-body-part" d="M 380 135 L 440 138 L 500 140" fill="none" stroke="var(--theme-primary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    
+                    <!-- Torso (Prone line, horizontal stream-line) -->
+                    <path class="swimmer-body-fill" d="M 270 140 Q 325 137.5 380 135 L 380 143 Q 325 145.5 270 140 Z" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    
+                    <!-- Head (Tilted slightly to the right for lateral breathing) -->
+                    <ellipse class="swimmer-body-fill" cx="410" cy="120" rx="14" ry="11" transform="rotate(-15 410 120)" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    <path d="M 380 135 L 400 125" stroke="var(--theme-primary)" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+                    
+                    <!-- Right Arm (foreground high-elbow recovery - clearing the surface) -->
+                    <path class="swimmer-body-part" d="M 380 135 L 400 85 L 450 110" fill="none" stroke="var(--theme-secondary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 380 135 L 400 85 L 450 110" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    
+                    <!-- Right Leg (foreground flutter kick - kicking down, knee slightly bent, toes pointed) -->
+                    <path class="swimmer-body-part" d="M 270 140 L 220 160 L 172 165 L 157 163" fill="none" stroke="var(--theme-secondary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 270 140 L 220 160 L 172 165 L 157 163" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+                    
+                    <!-- Joint indicators (Technical sports-science overlays) -->
+                    <circle cx="380" cy="135" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Shoulder -->
+                    <circle cx="400" cy="85" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Elbow -->
+                    <circle cx="450" cy="110" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Wrist -->
+                    <circle cx="270" cy="140" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Hip -->
+                    <circle cx="220" cy="160" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Knee -->
+                    <circle cx="172" cy="165" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Ankle -->
+                  </g>
+                )}
+
+                {technique.slug === 'hoc-boi-ngua' && (
+                  <g>
+                    <!-- Water Surface -->
+                    <line x1="50" y1="140" x2="550" y2="140" stroke="var(--theme-glow)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.6" />
+                    
+                    <!-- Left Arm (background underwater pull - elbow bent at 90 degrees) -->
+                    <path class="swimmer-body-part" d="M 380 150 L 350 185 L 300 175" fill="none" stroke="var(--theme-primary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    <path class="swimmer-body-part" d="M 380 150 L 350 185 L 300 175" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" />
+
+                    <!-- Left Leg (background kick down - hip/knee extended down) -->
+                    <path class="swimmer-body-part" d="M 270 150 L 220 160 L 170 170 L 155 173" fill="none" stroke="var(--theme-primary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    
+                    <!-- Torso (Supine flat horizontal alignment, hips high at surface) -->
+                    <path class="swimmer-body-fill" d="M 270 150 Q 325 150 380 150 L 380 158 Q 325 158 270 150 Z" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    
+                    <!-- Head (Face up, ears submerged, forehead/nose breaking surface) -->
+                    <ellipse class="swimmer-body-fill" cx="410" cy="132" rx="14" ry="11" transform="rotate(10 410 132)" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    <path d="M 380 150 L 400 140" stroke="var(--theme-primary)" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+                    
+                    <!-- Right Arm (foreground straight-arm recovery - pointing high up/back in air) -->
+                    <path class="swimmer-body-part" d="M 380 150 L 340 75" fill="none" stroke="var(--theme-secondary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 380 150 L 340 75" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    
+                    <!-- Right Leg (foreground kick up - knee slightly bent, foot flicking up) -->
+                    <path class="swimmer-body-part" d="M 270 150 L 220 135 L 172 142 L 157 145" fill="none" stroke="var(--theme-secondary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 270 150 L 220 135 L 172 142 L 157 145" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+                    
+                    <!-- Joint indicators (Technical sports-science overlays) -->
+                    <circle cx="380" cy="150" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Shoulder -->
+                    <circle cx="340" cy="75" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Hand / Wrist -->
+                    <circle cx="270" cy="150" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Hip -->
+                    <circle cx="220" cy="135" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Knee -->
+                    <circle cx="172" cy="142" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Ankle -->
+                  </g>
+                )}
+
+                {technique.slug === 'hoc-boi-buom' && (
+                  <g>
+                    <!-- Water Surface -->
+                    <line x1="50" y1="130" x2="550" y2="130" stroke="var(--theme-glow)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.6" />
+                    
+                    <!-- Wave motion guide behind the swimmer -->
+                    <path d="M 100 190 Q 200 130 300 145 T 500 110" fill="none" stroke="var(--theme-glow)" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4" />
+                    
+                    <!-- Left Leg (background dolphin kick - synchronized slightly offset) -->
+                    <path class="swimmer-body-part" d="M 270 130 L 225 162 L 175 152 L 160 147" fill="none" stroke="var(--theme-primary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    
+                    <!-- Left Arm (background arm recovery - sweeping forward over water) -->
+                    <path class="swimmer-body-part" d="M 380 145 L 410 95 L 460 110" fill="none" stroke="var(--theme-primary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+
+                    <!-- Torso (Classic Dolphin S-Curve wave - chest pressed down, hips high) -->
+                    <path class="swimmer-body-fill" d="M 270 130 Q 325 147.5 380 145 L 382 153 Q 325 157.5 270 138 Z" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    
+                    <!-- Head (Dipped down, face in water looking down) -->
+                    <ellipse class="swimmer-body-fill" cx="410" cy="130" rx="14" ry="11" transform="rotate(5 410 130)" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    <path d="M 380 145 L 400 135" stroke="var(--theme-primary)" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+                    
+                    <!-- Right Arm (foreground recovery - sweeping forward over water, symmetrical) -->
+                    <path class="swimmer-body-part" d="M 380 145 L 415 90 L 468 105" fill="none" stroke="var(--theme-secondary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 380 145 L 415 90 L 468 105" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    
+                    <!-- Right Leg (foreground dolphin kick - whipping down together) -->
+                    <path class="swimmer-body-part" d="M 270 130 L 220 165 L 172 155 L 157 150" fill="none" stroke="var(--theme-secondary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 270 130 L 220 165 L 172 155 L 157 150" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+                    
+                    <!-- Joint indicators (Technical sports-science overlays) -->
+                    <circle cx="380" cy="145" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Shoulder -->
+                    <circle cx="415" cy="90" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Elbow -->
+                    <circle cx="468" cy="105" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Wrist -->
+                    <circle cx="270" cy="130" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Hip -->
+                    <circle cx="220" cy="165" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Knee -->
+                    <circle cx="172" cy="155" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Ankle -->
+                  </g>
+                )}
+
+                {technique.slug === 'ky-nang-dung-nuoc' && (
+                  <g>
+                    <!-- Water Level -->
+                    <line x1="50" y1="110" x2="550" y2="110" stroke="var(--theme-glow)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.6" />
+                    
+                    <!-- Left Arm (background sculling - bent elbow out) -->
+                    <path class="swimmer-body-part" d="M 300 130 L 260 145 L 220 150" fill="none" stroke="var(--theme-primary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    
+                    <!-- Left Leg (background eggbeater kick - knee bent wide outwards) -->
+                    <path class="swimmer-body-part" d="M 300 195 L 250 220 L 265 260 L 280 265" fill="none" stroke="var(--theme-primary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+                    
+                    <!-- Torso (Vertical body alignment, maintaining stable floating) -->
+                    <path class="swimmer-body-fill" d="M 285 130 L 315 130 C 320 150, 320 175, 312 195 L 288 195 C 280 175, 280 150, 285 130 Z" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    
+                    <!-- Head (Upright, fully above water for steady breathing) -->
+                    <ellipse class="swimmer-body-fill" cx="300" cy="80" rx="14" ry="15" fill="url(#bodyGrad)" stroke="var(--theme-primary)" stroke-width="2" />
+                    <!-- Neck -->
+                    <path d="M 300 130 L 300 95" stroke="var(--theme-primary)" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+                    
+                    <!-- Right Arm (foreground sculling - horizontal support movement) -->
+                    <path class="swimmer-body-part" d="M 300 130 L 340 145 L 380 150" fill="none" stroke="var(--theme-secondary)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 300 130 L 340 145 L 380 150" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+                    
+                    <!-- Right Leg (foreground eggbeater kick - thigh wide, knee bent, foot rotating) -->
+                    <path class="swimmer-body-part" d="M 300 195 L 350 220 L 335 260 L 320 265" fill="none" stroke="var(--theme-secondary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="swimmer-body-part" d="M 300 195 L 350 220 L 335 260 L 320 265" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+                    
+                    <!-- Joint indicators (Technical sports-science overlays) -->
+                    <circle cx="300" cy="130" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Shoulder -->
+                    <circle cx="340" cy="145" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Elbow -->
+                    <circle cx="380" cy="150" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Hand / Wrist -->
+                    <circle cx="300" cy="195" r="5" fill="#ffffff" stroke="var(--theme-primary)" stroke-width="2" /> <!-- Hip -->
+                    <circle cx="350" cy="220" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Knee -->
+                    <circle cx="335" cy="260" r="4" fill="#ffffff" stroke="var(--theme-secondary)" stroke-width="2" /> <!-- Ankle -->
+                  </g>
+                )}
+              </svg>
+
+              <!-- Hotspots over the container -->
+              <div class="tl-anatomy__hotspots-container">
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--head active" style={`top: ${hotspotCoords.head.top}; left: ${hotspotCoords.head.left};`} data-part="head" aria-label="Kỹ thuật Đầu và Thở">
+                  <div class="tl-anatomy__hotspot-ring"></div>
+                  <div class="tl-anatomy__hotspot-core"></div>
+                  <span class="tl-anatomy__hotspot-label">Đầu & Thở</span>
+                </button>
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--arms" style={`top: ${hotspotCoords.arms.top}; left: ${hotspotCoords.arms.left};`} data-part="arms" aria-label="Kỹ thuật Tay">
+                  <div class="tl-anatomy__hotspot-ring"></div>
+                  <div class="tl-anatomy__hotspot-core"></div>
+                  <span class="tl-anatomy__hotspot-label">Động tác Tay</span>
+                </button>
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--core" style={`top: ${hotspotCoords.core.top}; left: ${hotspotCoords.core.left};`} data-part="core" aria-label="Tư thế Thân người">
+                  <div class="tl-anatomy__hotspot-ring"></div>
+                  <div class="tl-anatomy__hotspot-core"></div>
+                  <span class="tl-anatomy__hotspot-label">Thân người</span>
+                </button>
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--legs" style={`top: ${hotspotCoords.legs.top}; left: ${hotspotCoords.legs.left};`} data-part="legs" aria-label="Kỹ thuật Chân">
+                  <div class="tl-anatomy__hotspot-ring"></div>
+                  <div class="tl-anatomy__hotspot-core"></div>
+                  <span class="tl-anatomy__hotspot-label">Động tác Chân</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Pane Side -->
+          <div class="tl-anatomy__info">
+            <div class="tl-anatomy__card">
+              <div class="tl-anatomy__card-header">
+                <span class="tl-anatomy__card-icon" id="anatomy-icon">{currentAnatomy.head.icon}</span>
+                <div class="tl-anatomy__card-title-group">
+                  <h3 class="tl-anatomy__card-title" id="anatomy-title">{currentAnatomy.head.title}</h3>
+                  <span class="tl-anatomy__card-subtitle" id="anatomy-subtitle">{currentAnatomy.head.subtitle}</span>
+                </div>
+              </div>
+              <p class="tl-anatomy__card-desc" id="anatomy-desc">{currentAnatomy.head.desc}</p>
+            </div>
+
+            <!-- Mobile/Desktop selectors -->
+            <div class="tl-anatomy__selector-grid">
+              <button class="tl-anatomy__select-btn active" data-part="head">Đầu & Thở</button>
+              <button class="tl-anatomy__select-btn" data-part="arms">Tay</button>
+              <button class="tl-anatomy__select-btn" data-part="core">Thân</button>
+              <button class="tl-anatomy__select-btn" data-part="legs">Chân</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Body (Prose) -->
+    <section class="tl-section">
+      <div class="tl-section__container">
+        <article class="tl-prose" itemscope itemtype="https://schema.org/Article">
+          <slot />
+        </article>
+      </div>
+    </section>
+
+    <!-- Common Errors Grid (Visual Highlight) -->
+    {errors && errors.length > 0 && (
+      <section class="tl-section tl-section--alt" id="loi-thuong-gap">
+        <div class="tl-section__container">
+          <div class="tl-section-title">
+            <span class="tl-section-title__badge">Khắc phục lỗi</span>
+            <h2 class="tl-section-title__heading">Những Lỗi Thường Gặp & Cách Sửa</h2>
+            <p class="tl-section-title__sub">
+              Tránh những sai lầm phổ biến dưới đây để bơi đúng kỹ thuật, tiết kiệm sức lực và nâng cao hiệu quả luyện tập.
+            </p>
+            <span class="tl-section-title__decoration"></span>
+          </div>
+
+          <div class="tl-errors-table-wrapper">
+            <table class="tl-errors-table">
+              <thead>
+                <tr>
+                  <th>Lỗi thường gặp & Sai tư thế ❌</th>
+                  <th>Cách khắc phục chuẩn kỹ thuật ✅</th>
+                </tr>
+              </thead>
+              {errors.map((err, idx) => (
+                <tbody class="tl-error-group">
+                  <tr class="tl-error-row-title">
+                    <td colspan="2">
+                      <strong class="tl-error-cell__title">⚠️ Lỗi {idx + 1}: {err.title}</strong>
+                    </td>
+                  </tr>
+                  <tr class="tl-error-row-content">
+                    <td>
+                      <div class="tl-error-cell__problem">
+                        <span class="tl-error-indicator">❌</span>
+                        <p class="tl-error-cell__problem-desc">{err.problem}</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="tl-error-cell__solution">
+                        <span class="tl-success-indicator">✅ Sửa đúng:</span>
+                        <p class="tl-error-cell__solution-desc">{err.solution}</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              ))}
+            </table>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Dynamic Blog Section -->
+    <section class="tl-section">
+      <div class="tl-section__container">
+        <div class="tl-section-title">
+          <span class="tl-section-title__badge">Góc chia sẻ</span>
+          <h2 class="tl-section-title__heading">Bài Viết Hướng Dẫn Bơi Lập Liên Quan</h2>
+          <p class="tl-section-title__sub">
+            Cập nhật kiến thức bơi lội bổ ích từ kinh nghiệm giảng dạy thực tế của các Huấn luyện viên trưởng.
+          </p>
+          <span class="tl-section-title__decoration"></span>
+        </div>
+
+        <div class="tl-blogs-grid">
+          {displayPosts.map(post => (
+            <a href={`/${post.slug}/`} class="tl-blog-card">
+              <div class="tl-blog-card__image-wrapper">
+                <img src={post.image} alt={post.title} class="tl-blog-card__image" loading="lazy" />
+                <span class="tl-blog-card__category">{post.category}</span>
+              </div>
+              <div class="tl-blog-card__body">
+                <div class="tl-blog-card__meta">
+                  <span>📅 {post.date}</span>
+                  <span>⏱️ {post.readTime}</span>
+                </div>
+                <h3 class="tl-blog-card__title">{post.title}</h3>
+                <p class="tl-blog-card__excerpt">{post.excerpt}</p>
+                <span class="tl-blog-card__link">Đọc bài viết →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form Block -->
+    <section class="tl-section tl-section--alt" id="dang-ky">
+      <div class="tl-section__container">
+        <div class="tl-section-title">
+          <span class="tl-section-title__badge">Đăng ký học bơi</span>
+          <h2 class="tl-section-title__heading">Luyện Tập Cùng Huấn Luyện Viên Chuyên Nghiệp</h2>
+          <p class="tl-section-title__sub">
+            Đăng ký học thử 1 buổi MIỄN PHÍ cùng HLV 1 kèm 1 tại Swim For Life Việt Nam để chỉnh sửa lỗi kỹ thuật bơi chuẩn nhất.
+          </p>
+          <span class="tl-section-title__decoration"></span>
+        </div>
+
+        <div class="tl-form-container">
+          <div class="tl-form-info">
+            <h3 class="tl-form-info__title">Swim For Life Việt Nam</h3>
+            <p class="tl-form-info__text">
+              Chúng tôi cam kết 100% học viên biết bơi sau khóa học 10-12 buổi. HLV kèm riêng tận tâm dưới nước, giáo án cá nhân hóa theo thể trạng từng học viên.
+            </p>
+            <div class="tl-form-info__links">
+              <a href="tel:0979121097" class="tl-form-info__link">
+                <span class="tl-form-info__icon">📞</span>
+                <div>
+                  <span class="tl-form-info__label">Hotline / Zalo tư vấn</span>
+                  <span class="tl-form-info__value">0979.121.097</span>
+                </div>
+              </a>
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-form-info__link">
+                <span class="tl-form-info__icon">💬</span>
+                <div>
+                  <span class="tl-form-info__label">Trò chuyện qua Zalo</span>
+                  <span class="tl-form-info__value">Mr.Mạnh (0979.121.097)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="tl-form-wrapper">
+            <RegistrationForm id="technique-register-form" className="tl-astro-form" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    {faqs && faqs.length > 0 && (
+      <section class="tl-section" id="faq">
+        <div class="tl-section__container">
+          <div class="tl-section-title">
+            <span class="tl-section-title__badge">Giải đáp thắc mắc</span>
+            <h2 class="tl-section-title__heading">Câu Hỏi Thường Gặp</h2>
+            <p class="tl-section-title__sub">
+              Trả lời các câu hỏi phổ biến của học viên về việc tập luyện kỹ thuật {technique.name}.
+            </p>
+            <span class="tl-section-title__decoration"></span>
+          </div>
+
+          <div class="tl-faq">
+            {faqs.map(faq => (
+              <div class="tl-faq__item">
+                <button class="tl-faq__question" aria-expanded="false">
+                  <span>{faq.question}</span>
+                  <span class="tl-faq__icon">+</span>
+                </button>
+                <div class="tl-faq__answer">
+                  <div class="tl-faq__answer-inner">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Cross-Linking / Other Techniques Section -->
+    <section class="tl-section tl-section--alt">
+      <div class="tl-section__container">
+        <div class="tl-section-title">
+          <span class="tl-section-title__badge">Liên kết kỹ thuật</span>
+          <h2 class="tl-section-title__heading">Khám Phá Các Kỹ Thuật Bơi Khác</h2>
+          <p class="tl-section-title__sub">
+            Nâng cao kỹ năng bơi lội của bạn bằng cách làm chủ các kiểu bơi thể thao và kỹ năng sinh tồn hữu ích khác.
+          </p>
+          <span class="tl-section-title__decoration"></span>
+        </div>
+
+        <div class="tl-cross-grid">
+          {otherTechniques.map(t => (
+            <a href={t.link} class="tl-cross-card">
+              <span class="tl-cross-card__icon">{t.icon}</span>
+              <h3 class="tl-cross-card__title">{t.name}</h3>
+              <p class="tl-cross-card__desc">{t.desc}</p>
+              <span class="tl-cross-card__link">Xem hướng dẫn →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating CTA Mobile -->
+    <div class="tl-floating-cta">
+      <div class="tl-floating-cta-inner">
+        <a href="tel:0979121097" class="tl-btn tl-btn--accent">📞 Gọi Hotline</a>
+        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-btn tl-btn--outline" style="color: #0077B6; border-color: #0077B6;">💬 Chat Zalo</a>
+      </div>
+    </div>
+  </div>
+</PageLayout>
+
+<script>
+  // FAQ Accordion Toggle
+  const setupFAQ = () => {
+    const faqItems = document.querySelectorAll('.tl-faq__item');
+    faqItems.forEach(item => {
+      const button = item.querySelector('.tl-faq__question');
+      if (button) {
+        button.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all
+          faqItems.forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.tl-faq__question')?.setAttribute('aria-expanded', 'false');
+          });
+          
+          if (!isActive) {
+            item.classList.add('active');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
+    });
+  };
+
+  // Sticky TOC highlighting on scroll & dynamic layout scroll margins
+  const setupTOC = () => {
+    const sections = document.querySelectorAll('article.tl-prose section[id], section#loi-thuong-gap, section#faq');
+    const tocLinks = document.querySelectorAll('.tl-toc-link');
+    
+    if (sections.length === 0 || tocLinks.length === 0) return;
+
+    // Apply scroll margin dynamically for sticky elements offset
+    const updateScrollMargin = () => {
+      const isDesktop = window.innerWidth >= 1024;
+      sections.forEach(sec => {
+        (sec as HTMLElement).style.scrollMarginTop = isDesktop ? '90px' : '140px';
+      });
+    };
+
+    updateScrollMargin();
+    window.addEventListener('resize', updateScrollMargin);
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      const isDesktop = window.innerWidth >= 1024;
+      const scrollPosition = window.scrollY + (isDesktop ? 110 : 180); // Offset for header + TOC bar
+
+      sections.forEach(section => {
+        const top = (section as HTMLElement).offsetTop;
+        const height = (section as HTMLElement).offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          currentSectionId = section.getAttribute('id') || '';
+        }
+      });
+
+      if (currentSectionId) {
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+            
+            // Scroll the TOC bar horizontally to keep active link visible on mobile
+            const nav = document.querySelector('.tl-toc-nav');
+            if (nav) {
+              const linkOffsetLeft = (link as HTMLElement).offsetLeft;
+              const linkWidth = (link as HTMLElement).offsetWidth;
+              const navScrollLeft = nav.scrollLeft;
+              const navWidth = nav.clientWidth;
+              
+              if (linkOffsetLeft < navScrollLeft) {
+                nav.scrollTo({ left: linkOffsetLeft - 20, behavior: 'smooth' });
+              } else if (linkOffsetLeft + linkWidth > navScrollLeft + navWidth) {
+                nav.scrollTo({ left: linkOffsetLeft - navWidth + linkWidth + 20, behavior: 'smooth' });
+              }
+            }
+          }
+        });
+      }
+    });
+  };
+
+  // Reading Progress Indicator
+  const setupReadingProgress = () => {
+    const progressBar = document.getElementById('reading-progress');
+    if (!progressBar) return;
+    
+    const updateProgress = () => {
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (scrollHeight <= 0) return;
+      const scrollPosition = window.scrollY;
+      const progressPercent = Math.min(100, Math.max(0, (scrollPosition / scrollHeight) * 100));
+      progressBar.style.width = `${progressPercent}%`;
+    };
+    
+    window.addEventListener('scroll', updateProgress);
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  };
+
+  // Swimmer Anatomy Interactive Widget
+  const setupAnatomyWidget = () => {
+    const scriptEl = document.getElementById('anatomy-data-script');
+    if (!scriptEl) return;
+    
+    let data: any;
+    try {
+      data = JSON.parse(scriptEl.textContent || '{}');
+    } catch (e) {
+      console.error("Failed to parse anatomy data", e);
+      return;
+    }
+    
+    const hotspots = document.querySelectorAll('.tl-anatomy__hotspot');
+    const selectBtns = document.querySelectorAll('.tl-anatomy__select-btn');
+    
+    const iconEl = document.getElementById('anatomy-icon');
+    const titleEl = document.getElementById('anatomy-title');
+    const subtitleEl = document.getElementById('anatomy-subtitle');
+    const descEl = document.getElementById('anatomy-desc');
+    
+    if (!iconEl || !titleEl || !subtitleEl || !descEl) return;
+    
+    const updateDisplay = (part: string) => {
+      const partData = data[part];
+      if (!partData) return;
+      
+      // Update text with transition effect
+      const card = document.querySelector('.tl-anatomy__card');
+      if (card) {
+        card.classList.add('tl-updating');
+        setTimeout(() => {
+          iconEl.textContent = partData.icon || '💡';
+          titleEl.textContent = partData.title || '';
+          subtitleEl.textContent = partData.subtitle || '';
+          descEl.textContent = partData.desc || '';
+          card.classList.remove('tl-updating');
+        }, 150);
+      } else {
+        iconEl.textContent = partData.icon || '💡';
+        titleEl.textContent = partData.title || '';
+        subtitleEl.textContent = partData.subtitle || '';
+        descEl.textContent = partData.desc || '';
+      }
+      
+      // Update hotspots active state
+      hotspots.forEach(h => {
+        if (h.getAttribute('data-part') === part) {
+          h.classList.add('active');
+        } else {
+          h.classList.remove('active');
+        }
+      });
+      
+      // Update selector buttons active state
+      selectBtns.forEach(b => {
+        if (b.getAttribute('data-part') === part) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+    };
+    
+    // Add event listeners for hotspots
+    hotspots.forEach(h => {
+      const part = h.getAttribute('data-part');
+      if (!part) return;
+      
+      h.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateDisplay(part);
+      });
+      
+      h.addEventListener('mouseenter', () => {
+        updateDisplay(part);
+      });
+    });
+    
+    // Add event listeners for selection buttons (mobile selectors)
+    selectBtns.forEach(b => {
+      const part = b.getAttribute('data-part');
+      if (!part) return;
+      
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateDisplay(part);
+      });
+    });
+  };
+
+  // Run immediately and on DOMContentLoaded
+  setupFAQ();
+  setupTOC();
+  setupReadingProgress();
+  setupAnatomyWidget();
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    setupFAQ();
+    setupTOC();
+    setupReadingProgress();
+    setupAnatomyWidget();
+  });
+</script>

@@ -1,0 +1,627 @@
+---
+const currentYear = new Date().getFullYear();
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Học bơi TPHCM' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi TPHCM: Trung Tâm Dạy Bơi Chuyên Nghiệp Tại Sài Gòn",
+  "description": "Trung tâm dạy bơi uy tín nhất TPHCM. Lớp học bơi tại Quận 7, Gò Vấp, Bình Thạnh, Quận 12 và hệ thống Vinhomes. Dạy bơi 1 kèm 1 cho trẻ em và người lớn.",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-02-01",
+  "dateModified": "2026-05-21",
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/dia-diem/tphcm/"
+  }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Trung tâm dạy bơi Swim For Life Việt Nam - TPHCM",
+  "description": "Trung tâm dạy bơi chuyên nghiệp tại TPHCM. Dạy bơi 1 kèm 1 cho trẻ em và người lớn tại Quận 7, Gò Vấp, Bình Thạnh, Quận 12.",
+  "telephone": "0979121097",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Thành phố Hồ Chí Minh",
+    "addressCountry": "VN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "10.8231",
+    "longitude": "106.6297"
+  },
+  "url": "https://dayboi.vip/dia-diem/tphcm/",
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "05:30",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "20:00"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Swim For Life dạy bơi ở những quận nào tại TPHCM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life hoạt động tại nhiều quận ở TPHCM: Quận 7 (Phú Mỹ Hưng, Sunrise City), Gò Vấp, Bình Thạnh, Quận 12, Quận 2 (Thủ Đức), Quận 9 (Vinhomes Grand Park), và nhiều khu vực khác. Liên hệ hotline 0979.121.097 để tìm bể bơi gần bạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi ở TPHCM có học được quanh năm không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! TPHCM có khí hậu nóng quanh năm nên rất thuận lợi cho việc học bơi. Swim For Life hoạt động 12 tháng/năm tại tất cả các bể bơi đối tác. Bạn có thể đăng ký học bất kỳ lúc nào."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi Quận 7 ở đâu tốt nhất?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tại Quận 7, Swim For Life hoạt động tại các bể bơi: Hồ bơi Phú Mỹ Hưng (Tân Phú), Hồ bơi Sunrise City, các bể bơi trong khu chung cư cao cấp. Đây là khu vực có nhiều bể bơi chất lượng tốt, phù hợp cho cả trẻ em và người lớn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chi phí học bơi ở TPHCM là bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chi phí khóa học bơi tại TPHCM phụ thuộc vào hình thức học (1 kèm 1 hoặc nhóm nhỏ) và địa điểm bể bơi. Liên hệ hotline 0979.121.097 để được báo giá chi tiết và nhận ưu đãi hiện hành."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life TPHCM có dạy bơi cho người lớn không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Swim For Life TPHCM có chương trình dạy bơi chuyên biệt cho người lớn, bao gồm cả người sợ nước. Phương pháp 1 kèm 1, lịch linh hoạt sáng-trưa-tối, bể bơi riêng tư. Cam kết biết bơi sau 10-12 buổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi ở Gò Vấp, có bể bơi Swim For Life gần không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Tại Gò Vấp, Swim For Life hoạt động tại nhiều bể bơi trong khu vực. Ngoài ra, các bể bơi ở Quận 12 và Bình Thạnh cũng rất gần Gò Vấp. Gọi hotline 0979.121.097, nhân viên sẽ tư vấn bể bơi gần nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm thế nào để đăng ký học bơi tại TPHCM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đăng ký rất đơn giản: Gọi hotline 0979.121.097 hoặc nhắn Zalo. Nhân viên tư vấn sẽ hỗ trợ bạn chọn bể bơi, HLV phù hợp và đặt lịch học thử miễn phí. Bạn cũng có thể đến trực tiếp các bể bơi đối tác để đăng ký."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life có dạy bơi ở Vinhomes Grand Park Quận 9 không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Swim For Life là đối tác chính thức của Vinhomes và có lớp bơi tại Vinhomes Grand Park (Quận 9/TP Thủ Đức), Vinhomes Central Park (Bình Thạnh), Vinhomes Golden River (Quận 1). Cư dân Vinhomes được hưởng ưu đãi đặc biệt."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
+---
+
+<PageLayout
+  title={`Học Bơi TPHCM: Lớp Dạy Bơi Sài Gòn Uy Tín Nhất [${currentYear}]`}
+  description="Trung tâm dạy bơi uy tín nhất TPHCM - Swim For Life. Lớp học bơi Quận 7, Gò Vấp, Bình Thạnh, Quận 12. Dạy bơi 1 kèm 1, cam kết biết bơi sau 10-12 buổi. Hotline: 0979.121.097"
+  canonical="https://dayboi.vip/dia-diem/tphcm/"
+  image="/images/classes/lop-hoc-boi-tre-em-tphcm.jpg"
+  type="article"
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+>
+
+  <!-- Hero Section -->
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-content" style="grid-template-columns: 1fr;">
+      <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="hero-badge">📍 Dạy Bơi Tại TPHCM</span>
+        <h1>Học Bơi TPHCM: Trung Tâm Dạy Bơi <span class="highlight">Chuyên Nghiệp</span> Tại Sài Gòn</h1>
+        <p class="hero-description" style="max-width: 700px; margin: 0 auto var(--space-10);">
+          Hệ thống bể bơi chất lượng cao tại Quận 7, Gò Vấp, Bình Thạnh, Quận 12 và nhiều khu vực khác. Dạy bơi 1 kèm 1 quanh năm, cam kết biết bơi sau 10-12 buổi.
+        </p>
+        <div class="hero-cta" style="justify-content: center;">
+          <a href="tel:0979121097" class="btn btn-accent btn-lg pulse">📞 Hotline / Zalo: 0979.121.097</a>
+          <a href="#be-boi-theo-quan" class="btn btn-white btn-lg">📍 Tìm Bể Bơi Gần Bạn</a>
+        </div>
+        <div class="hero-stats" style="justify-content: center; margin-top: var(--space-8);">
+          <div class="hero-stat">
+            <span class="hero-stat-number">15+</span>
+            <span class="hero-stat-label">Bể bơi đối tác</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">40+</span>
+            <span class="hero-stat-label">HLV tại TPHCM</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">6,000+</span>
+            <span class="hero-stat-label">Học viên đã biết bơi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <article class="section">
+    <div class="container">
+      <div class="content-body">
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+          <h2 class="toc-title">📋 Nội dung bài viết</h2>
+          <ol class="toc-list">
+            <li><a href="#tong-quan-tphcm">Tổng quan dạy bơi tại TPHCM</a></li>
+            <li><a href="#be-boi-theo-quan">Bể bơi theo từng quận/khu vực</a></li>
+            <li><a href="#hoc-boi-quan-7">Học bơi Quận 7 — Phú Mỹ Hưng</a></li>
+            <li><a href="#hoc-boi-go-vap">Học bơi Gò Vấp & các quận lân cận</a></li>
+            <li><a href="#hoc-boi-binh-thanh">Học bơi Bình Thạnh & Quận 2</a></li>
+            <li><a href="#chuong-trinh-tphcm">Chương trình dạy bơi tại TPHCM</a></li>
+            <li><a href="#uu-diem-hoc-boi-tphcm">Ưu điểm học bơi tại TPHCM</a></li>
+            <li><a href="#huong-dan-dang-ky-tphcm">Hướng dẫn đăng ký</a></li>
+            <li><a href="#cau-hoi-thuong-gap-tphcm">Câu hỏi thường gặp</a></li>
+          </ol>
+        </nav>
+
+        <!-- Section 1: Tổng quan -->
+        <section id="tong-quan-tphcm">
+          <h2>Tổng Quan Dạy Bơi Tại TPHCM — Thành Phố Lý Tưởng Để Học Bơi</h2>
+
+          <p>Thành phố Hồ Chí Minh (Sài Gòn) với khí hậu nhiệt đới nóng ẩm quanh năm là <strong>thành phố lý tưởng nhất để học bơi</strong> tại Việt Nam. Nhiệt độ trung bình 27-35°C giúp việc <strong>học bơi TPHCM</strong> có thể diễn ra suốt 12 tháng, không bị gián đoạn bởi thời tiết lạnh như miền Bắc.</p>
+
+          <p>Với dân số hơn 10 triệu người, TPHCM là thị trường dạy bơi lớn nhất cả nước. Tuy nhiên, chất lượng dịch vụ dạy bơi không đồng đều. Nhiều cơ sở hoạt động tự phát, HLV không có chứng chỉ, bể bơi không đảm bảo vệ sinh. Swim For Life tự hào là trung tâm dạy bơi chuyên nghiệp, uy tín hàng đầu tại Sài Gòn, đáp ứng mọi tiêu chuẩn khắt khe về chất lượng.</p>
+
+          <img src="/images/classes/lop-hoc-boi-tre-em-tphcm.jpg" alt="Lớp học bơi trẻ em TPHCM tại bể bơi chất lượng cao, HLV Swim For Life hướng dẫn tận tình" loading="lazy" />
+
+          <h3>Tại sao chọn Swim For Life tại TPHCM?</h3>
+
+          <ul>
+            <li><strong>15+ bể bơi đối tác:</strong> Phủ khắp các quận trọng điểm: Quận 7, Gò Vấp, Bình Thạnh, Quận 12, TP Thủ Đức, Quận 1, Tân Bình...</li>
+            <li><strong>40+ HLV chuyên nghiệp:</strong> Đội ngũ HLV tại TPHCM được tuyển chọn kỹ lưỡng, 100% có bằng cấp và được đào tạo theo phương pháp Swim For Life</li>
+            <li><strong>Hoạt động quanh năm:</strong> Khí hậu TPHCM cho phép học bơi 365 ngày/năm, không phụ thuộc thời tiết</li>
+            <li><strong>Đối tác Vinhomes:</strong> Lớp bơi tại Vinhomes Central Park, Grand Park, Golden River</li>
+            <li><strong>Cam kết chất lượng:</strong> Biết bơi sau 10-12 buổi hoặc học thêm miễn phí, bảo lưu 2.5 tháng</li>
+          </ul>
+
+          <h3>Nhu cầu học bơi tại TPHCM — Xu hướng tăng mạnh</h3>
+
+          <p>Theo khảo sát của Swim For Life, nhu cầu <strong>học bơi ở Sài Gòn</strong> tăng trung bình 25-30% mỗi năm, đặc biệt ở nhóm:</p>
+
+          <ul>
+            <li><strong>Trẻ em 3-10 tuổi:</strong> Phụ huynh ngày càng ý thức về phòng chống đuối nước và phát triển thể chất cho con</li>
+            <li><strong>Người lớn 25-45 tuổi:</strong> Nhân viên văn phòng muốn rèn luyện sức khỏe, giảm stress qua bơi lội</li>
+            <li><strong>Cư dân Vinhomes:</strong> Cư dân các dự án Vinhomes muốn tận dụng tiện ích bể bơi nội khu</li>
+            <li><strong>Doanh nghiệp:</strong> Công ty tổ chức lớp bơi cho nhân viên như hoạt động chăm sóc sức khỏe</li>
+          </ul>
+        </section>
+
+        <!-- Section 2: Bể bơi theo quận -->
+        <section id="be-boi-theo-quan">
+          <h2>Bể Bơi Swim For Life Tại TPHCM — Theo Từng Quận/Khu Vực</h2>
+
+          <p>Dưới đây là bản đồ chi tiết các bể bơi đối tác của Swim For Life tại TPHCM, được phân theo khu vực để bạn dễ dàng tìm bể bơi gần nhất:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Khu vực</th>
+                <th>Quận</th>
+                <th>Bể bơi đối tác</th>
+                <th>Đặc điểm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Nam Sài Gòn</strong></td>
+                <td>Quận 7</td>
+                <td>Hồ bơi Phú Mỹ Hưng, Sunrise City, SC VivoCity</td>
+                <td>Khu vực cao cấp, bể đạt chuẩn quốc tế</td>
+              </tr>
+              <tr>
+                <td><strong>Tây Sài Gòn</strong></td>
+                <td>Gò Vấp</td>
+                <td>Hồ bơi Cityland, Lotte Mart Gò Vấp</td>
+                <td>Nhiều bể bơi, giá hợp lý</td>
+              </tr>
+              <tr>
+                <td><strong>Đông Sài Gòn</strong></td>
+                <td>Bình Thạnh</td>
+                <td>Vinhomes Central Park, Landmark 81, Saigon Pearl</td>
+                <td>Bể bơi chung cư cao cấp</td>
+              </tr>
+              <tr>
+                <td><strong>Bắc Sài Gòn</strong></td>
+                <td>Quận 12</td>
+                <td>Hồ bơi Quận 12, các CLB bơi lội</td>
+                <td>Khu dân cư mới, bể bơi hiện đại</td>
+              </tr>
+              <tr>
+                <td><strong>TP Thủ Đức</strong></td>
+                <td>Q2, Q9</td>
+                <td>Vinhomes Grand Park, Sala Đại Quang Minh</td>
+                <td>Khu đô thị mới, bể tiêu chuẩn cao</td>
+              </tr>
+              <tr>
+                <td><strong>Trung tâm</strong></td>
+                <td>Q1, Q3</td>
+                <td>Vinhomes Golden River, Lam Sơn Swimming Pool</td>
+                <td>Vị trí trung tâm, tiện di chuyển</td>
+              </tr>
+              <tr>
+                <td><strong>Tây Bắc</strong></td>
+                <td>Tân Bình, Tân Phú</td>
+                <td>Hồ bơi Tân Bình, Đầm Sen Water Park</td>
+                <td>Nhiều lựa chọn, bể ngoài trời lớn</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Section 3: Học bơi Quận 7 -->
+        <section id="hoc-boi-quan-7">
+          <h2>Học Bơi Quận 7 — Khu Vực Có Nhu Cầu Cao Nhất TPHCM</h2>
+
+          <p><strong>Học bơi Quận 7</strong> luôn nằm trong top tìm kiếm cao nhất tại TPHCM. Quận 7 với khu đô thị Phú Mỹ Hưng là nơi sinh sống của nhiều gia đình trẻ, có thu nhập tốt và đặc biệt quan tâm đến giáo dục thể chất cho con cái.</p>
+
+          <h3>Bể bơi nổi bật tại Quận 7</h3>
+
+          <h4>Hồ bơi Phú Mỹ Hưng</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Khu đô thị Phú Mỹ Hưng, Quận 7</li>
+            <li><strong>Loại:</strong> Bể ngoài trời, 50m chuẩn Olympic</li>
+            <li><strong>Ưu điểm:</strong> Bể lớn, nước sạch, cơ sở vật chất đầy đủ, an ninh tốt</li>
+            <li><strong>Phù hợp:</strong> Trẻ em, người lớn, bơi sức bền</li>
+          </ul>
+
+          <h4>Hồ bơi Sunrise City</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Sunrise City, Nguyễn Hữu Thọ, Quận 7</li>
+            <li><strong>Loại:</strong> Bể trong nhà, 25m</li>
+            <li><strong>Ưu điểm:</strong> Bể trong nhà mát mẻ, ít đông, riêng tư</li>
+            <li><strong>Phù hợp:</strong> Người lớn sợ nước, trẻ em nhỏ</li>
+          </ul>
+
+          <p>Quận 7 cũng là nơi có many <strong>khóa học bơi cho người lớn TPHCM</strong> được tổ chức, đặc biệt phù hợp cho nhân viên văn phòng tại các tòa nhà Sunrise, Crescent Mall, SC VivoCity. Tìm hiểu thêm về chương trình người lớn tại trang <a href="/khoa-hoc-boi/nguoi-lon/">Học bơi cho người lớn</a>.</p>
+        </section>
+
+        <!-- Section 4: Gò Vấp -->
+        <section id="hoc-boi-go-vap">
+          <h2>Học Bơi Gò Vấp & Các Quận Lân Cận</h2>
+
+          <p><strong>Học bơi Gò Vấp</strong> là nhu cầu lớn thứ hai tại TPHCM, sau Quận 7. Gò Vấp với mật độ dân cư cao, nhiều khu dân cư mới và gia đình trẻ, là thị trường dạy bơi sôi động.</p>
+
+          <h3>Bể bơi tại khu vực Gò Vấp — Quận 12 — Tân Bình</h3>
+
+          <ul>
+            <li><strong>Hồ bơi Cityland Gò Vấp:</strong> Bể bơi trong khu đô thị Cityland Park Hills, nước sạch, cơ sở mới</li>
+            <li><strong>Hồ bơi Lotte Mart Gò Vấp:</strong> Trên tầng thượng Lotte Mart, bể ngoài trời thoáng mát</li>
+            <li><strong>Các hồ bơi Quận 12:</strong> Nhiều bể bơi mới xây, giá hợp lý, ít đông hơn các quận trung tâm</li>
+          </ul>
+
+          <p>Khu vực Gò Vấp — Quận 12 đặc biệt phù hợp cho gia đình tìm kiếm <strong>học bơi giá rẻ ở Sài Gòn</strong> mà vẫn đảm bảo chất lượng. Swim For Life có chương trình ưu đãi đặc biệt cho nhóm đăng ký từ 2 người trở lên tại khu vực này.</p>
+
+          <h3>Ưu điểm học bơi tại Gò Vấp</h3>
+          <ul>
+            <li>Bể bơi ít đông hơn so với Quận 7, Quận 1 — không gian thoải mái để học</li>
+            <li>Chi phí bể bơi hợp lý hơn, giúp giảm tổng chi phí khóa học</li>
+            <li>Nhiều lựa chọn khung giờ vắng: sáng sớm, buổi trưa, chiều</li>
+            <li>HLV Swim For Life tại khu vực này có kinh nghiệm dày dặn, nhiều HLV sống ngay tại Gò Vấp</li>
+          </ul>
+        </section>
+
+        <!-- Section 5: Bình Thạnh -->
+        <section id="hoc-boi-binh-thanh">
+          <h2>Học Bơi Bình Thạnh & TP Thủ Đức — Khu Vực Phát Triển Mạnh</h2>
+
+          <p><strong>Học bơi Bình Thạnh</strong> và khu vực TP Thủ Đức (bao gồm Quận 2, Quận 9 cũ) đang phát triển mạnh với nhiều dự án bất động sản lớn có tiện ích bể bơi cao cấp.</p>
+
+          <h3>Bể bơi tại Bình Thạnh</h3>
+
+          <h4>Vinhomes Central Park</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> 208 Nguyễn Hữu Cảnh, Bình Thạnh</li>
+            <li><strong>Loại:</strong> Bể ngoài trời tiêu chuẩn 5 sao, view sông Sài Gòn</li>
+            <li><strong>Ưu điểm:</strong> Cơ sở vật chất sang trọng, nước sạch, an ninh 24/7</li>
+            <li><strong>Phù hợp:</strong> Cư dân Vinhomes, trẻ em, người lớn cao cấp</li>
+          </ul>
+
+          <h4>Saigon Pearl</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> 92 Nguyễn Hữu Cảnh, Bình Thạnh</li>
+            <li><strong>Loại:</strong> Bể ngoài trời, 25m</li>
+            <li><strong>Ưu điểm:</strong> Không gian đẹp, nước sạch, ít đông</li>
+            <li><strong>Phù hợp:</strong> Cư dân khu vực Bình Thạnh, học bơi riêng tư</li>
+          </ul>
+
+          <h3>Bể bơi tại TP Thủ Đức</h3>
+
+          <h4>Vinhomes Grand Park</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Phường Long Thạnh Mỹ, TP Thủ Đức</li>
+            <li><strong>Loại:</strong> Hệ thống bể bơi ngoài trời lớn nhất TPHCM</li>
+            <li><strong>Ưu điểm:</strong> Bể đa dạng (bể lớn, bể trẻ em, bể sóng), cơ sở mới</li>
+            <li><strong>Phù hợp:</strong> Cư dân Vinhomes Grand Park, gia đình, trẻ em</li>
+          </ul>
+
+          <h4>Sala Đại Quang Minh</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Khu đô thị Sala, TP Thủ Đức</li>
+            <li><strong>Loại:</strong> Bể bơi tiêu chuẩn cao</li>
+            <li><strong>Ưu điểm:</strong> Khu đô thị xanh, không gian thoáng, yên tĩnh</li>
+            <li><strong>Phù hợp:</strong> Cư dân khu vực Thủ Đức, người yêu thích không gian xanh</li>
+          </ul>
+
+          <img src="/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg" alt="Lớp học bơi TPHCM được tổ chức bài bản chuyên nghiệp tại bể bơi tiêu chuẩn cao" loading="lazy" />
+        </section>
+
+        <!-- Section 6: Chương trình TPHCM -->
+        <section id="chuong-trinh-tphcm">
+          <h2>Chương Trình Dạy Bơi Tại TPHCM — Trẻ Em & Người Lớn</h2>
+
+          <p>Swim For Life TPHCM cung cấp đầy đủ các chương trình dạy bơi cho mọi đối tượng:</p>
+
+          <h3>Chương trình dạy bơi trẻ em TPHCM</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Chương trình</th>
+                <th>Độ tuổi</th>
+                <th>Số buổi</th>
+                <th>Kết quả</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Làm quen nước</td>
+                <td>3-4 tuổi</td>
+                <td>12-15 buổi</td>
+                <td>Thoải mái trong nước, nổi, đạp chân</td>
+              </tr>
+              <tr>
+                <td>Bơi cơ bản</td>
+                <td>4-6 tuổi</td>
+                <td>10-12 buổi</td>
+                <td>Bơi Ếch 15-25m</td>
+              </tr>
+              <tr>
+                <td>Bơi chuyên sâu</td>
+                <td>6-10 tuổi</td>
+                <td>10-12 buổi</td>
+                <td>2-3 kiểu bơi + đứng nước</td>
+              </tr>
+              <tr>
+                <td>Bơi nâng cao</td>
+                <td>10-15 tuổi</td>
+                <td>10-12 buổi</td>
+                <td>4 kiểu bơi + sức bền</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Chi tiết về phương pháp dạy bơi trẻ em, phụ huynh xem thêm tại trang <a href="/khoa-hoc-boi/tre-em/">Học bơi trẻ em</a>.</p>
+
+          <h3>Chương trình dạy bơi người lớn TPHCM</h3>
+
+          <p><strong>Khóa học bơi cho người lớn TPHCM</strong> tại Swim For Life được thiết kế đặc biệt cho người trưởng thành, với các tính năng nổi bật:</p>
+
+          <ul>
+            <li><strong>Dạy 1 kèm 1:</strong> HLV riêng, tập trung 100% vào bạn, không bị chia sẻ thời gian</li>
+            <li><strong>Lịch linh hoạt:</strong> Sáng sớm 5h30, buổi trưa, tối đến 21h, cuối tuần — phù hợp người đi làm văn phòng</li>
+            <li><strong>Bể bơi riêng tư:</strong> Chọn khung giờ vắng, lane riêng, không ngại bị nhìn</li>
+            <li><strong>Phương pháp tâm lý:</strong> Đặc biệt dành cho người sợ nước, HLV tiếp cận từ từ, không ép buộc</li>
+            <li><strong>Cam kết kết quả:</strong> Biết bơi sau 10-12 buổi hoặc học thêm miễn phí</li>
+          </ul>
+
+          <h3>Chương trình bơi doanh nghiệp TPHCM</h3>
+
+          <p>TPHCM là trung tâm kinh tế lớn nhất cả nước với hàng nghìn doanh nghiệp. Swim For Life cung cấp chương trình <strong>dạy bơi cho doanh nghiệp</strong> tại Sài Gòn — tổ chức lớp bơi cho nhân viên công ty, kết hợp team building và chăm sóc sức khỏe. Đặc biệt phù hợp cho các công ty tại Quận 7 (Phú Mỹ Hưng), Quận 1, Bình Thạnh (Vinhomes Central Park).</p>
+        </section>
+
+        <!-- Section 7: Ưu điểm -->
+        <section id="uu-diem-hoc-boi-tphcm">
+          <h2>Ưu Điểm Vượt Trội Của Việc Học Bơi Tại TPHCM</h2>
+
+          <p>So với các tỉnh thành khác, <strong>học bơi tại TPHCM</strong> có nhiều ưu điểm vượt trội:</p>
+
+          <h3>Khí hậu lý tưởng quanh năm</h3>
+          <p>TPHCM có nhiệt độ trung bình 27-35°C suốt năm, nước bể bơi ngoài trời luôn ở mức ấm áp tự nhiên 28-32°C. Không cần hệ thống sưởi, không bị gián đoạn bởi mùa đông. Bạn có thể <strong>học bơi ở Sài Gòn</strong> bất kỳ tháng nào trong năm.</p>
+
+          <h3>Hệ thống bể bơi phong phú</h3>
+          <p>TPHCM sở hữu hệ thống bể bơi đa dạng nhất cả nước: từ bể bơi công cộng giá rẻ đến bể bơi resort 5 sao; từ bể ngoài trời rộng lớn đến bể trong nhà riêng tư. Bạn luôn tìm được bể bơi phù hợp với ngân sách và nhu cầu.</p>
+
+          <h3>Đội ngũ HLV chất lượng cao</h3>
+          <p>TPHCM là nơi tập trung nhiều HLV bơi lội chuyên nghiệp nhất cả nước. Swim For Life TPHCM tuyển chọn HLV từ các trường ĐH Thể dục Thể thao, ĐH Sư phạm, các CLB bơi lội chuyên nghiệp. Nhiều HLV từng là vận động viên bơi lội cấp quốc gia.</p>
+
+          <h3>Giao thông thuận tiện</h3>
+          <p>Với hệ thống Metro đang mở rộng, Grab/xe buýt phủ khắp, việc di chuyển đến bể bơi tại TPHCM ngày càng thuận tiện. Swim For Life chọn các bể bơi ở vị trí giao thông thuận lợi, gần trạm Metro, bến xe buýt.</p>
+
+          <div class="info-box tip">
+            <span style="font-size: 1.5rem;">☀️</span>
+            <div>
+              <strong>Mẹo cho bạn:</strong> Tại TPHCM, nên chọn học bơi vào sáng sớm (5h30-7h) hoặc chiều tối (17h-19h) để tránh nắng gắt giữa trưa. Bôi kem chống nắng SPF50+ nếu bơi bể ngoài trời.
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Hướng dẫn đăng ký -->
+        <section id="huong-dan-dang-ky-tphcm">
+          <h2>Hướng Dẫn Đăng Ký Học Bơi Tại TPHCM — Nhanh Chóng & Đơn Giản</h2>
+
+          <p>Quy trình đăng ký <strong>học bơi tại TPHCM</strong> với Swim For Life cực kỳ đơn giản:</p>
+
+          <h3>Bước 1: Liên hệ hotline</h3>
+          <p>Gọi <strong>0979.121.097</strong> hoặc nhắn Zalo. Nhân viên tư vấn sẽ lắng nghe nhu cầu của bạn: học cho ai (bản thân hay con), độ tuổi, khu vực sinh sống, khung giờ mong muốn, mức độ sợ nước (nếu có).</p>
+
+          <h3>Bước 2: Nhận tư vấn bể bơi & HLV</h3>
+          <p>Dựa trên thông tin của bạn, nhân viên sẽ gợi ý 2-3 bể bơi gần nhất và HLV phù hợp nhất. Bạn được đặt lịch <strong>học thử miễn phí</strong> để trải nghiệm trước khi quyết định.</p>
+
+          <h3>Bước 3: Học thử & Đăng ký</h3>
+          <p>Đến bể bơi vào ngày hẹn, gặp HLV, trải nghiệm buổi học thử 30 phút miễn phí. Nếu hài lòng, đăng ký chính thức ngay tại chỗ hoặc qua điện thoại. Thanh toán linh hoạt: chuyển khoản, tiền mặt, hoặc trả theo buổi.</p>
+
+          <div class="info-box important">
+            <span style="font-size: 1.5rem;">🎁</span>
+            <div>
+              <strong>Ưu đãi TPHCM:</strong> Đăng ký trong tháng này để nhận: học thử MIỄN PHÍ + giảm 10% cho nhóm 2+ người + tặng kính bơi cao cấp. Gọi ngay <strong>0979.121.097</strong>!
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 9: FAQ -->
+        <section id="cau-hoi-thuong-gap-tphcm">
+          <h2>Câu Hỏi Thường Gặp Về Học Bơi Tại TPHCM</h2>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Swim For Life dạy bơi ở những quận nào tại TPHCM?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Swim For Life hoạt động tại nhiều quận ở TPHCM: Quận 7 (Phú Mỹ Hưng), Gò Vấp, Bình Thạnh, Quận 12, TP Thủ Đức (Q2, Q9 cũ), Quận 1, Tân Bình và nhiều khu vực khác. Gọi hotline 0979.121.097 để tìm bể bơi gần bạn.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Học bơi ở TPHCM có học được quanh năm không?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Có! TPHCM có khí hậu nóng quanh năm nên rất thuận lợi cho việc học bơi 365 ngày/năm. Swim For Life hoạt động 12 tháng tại tất cả các bể bơi đối tác.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Học bơi Quận 7 ở đâu tốt nhất?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Tại Quận 7, Swim For Life hoạt động tại Hồ bơi Phú Mỹ Hưng, Sunrise City, SC VivoCity. Đây là khu vực có bể bơi chất lượng cao nhất TPHCM, phù hợp cho cả trẻ em và người lớn.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Chi phí học bơi ở TPHCM là bao nhiêu?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Chi phí phụ thuộc vào hình thức học và bể bơi. Liên hệ hotline 0979.121.097 để được báo giá chi tiết. Swim For Life cam kết giá cạnh tranh với chất lượng tốt nhất TPHCM.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Swim For Life TPHCM có dạy bơi cho người lớn không?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Có! Chương trình dạy bơi chuyên biệt cho người lớn, bao gồm cả người sợ nước. Phương pháp 1 kèm 1, lịch linh hoạt sáng-trưa-tối. Cam kết biết bơi sau 10-12 buổi.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Tôi ở Gò Vấp, có bể bơi Swim For Life gần không?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Có! Tại Gò Vấp, Swim For Life hoạt động tại nhiều bể bơi trong khu vực: Cityland, Lotte Mart và các bể lân cận ở Quận 12, Bình Thạnh. Gọi 0979.121.097 để được tư vấn chi tiết.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Làm thế nào để đăng ký học bơi tại TPHCM?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Rất đơn giản: Gọi hotline 0979.121.097 hoặc Zalo. Nhân viên tư vấn sẽ hỗ trợ chọn bể bơi, HLV và đặt lịch học thử miễn phí cho bạn.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Swim For Life có dạy bơi ở Vinhomes Grand Park Quận 9 không?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Có! Swim For Life là đối tác chính thức của Vinhomes. Chúng tôi có lớp bơi tại Vinhomes Grand Park (TP Thủ Đức), Vinhomes Central Park (Bình Thạnh), Vinhomes Golden River (Quận 1). Cư dân Vinhomes nhận ưu đãi đặc biệt.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-banner" style="margin-top: var(--space-16);">
+          <h2>🏊 Đăng Ký Học Bơi Tại TPHCM Ngay!</h2>
+          <p>15+ bể bơi chất lượng cao — Học thử MIỄN PHÍ — Biết bơi sau 10-12 buổi!</p>
+          <div class="btn-group">
+            <a href="tel:0979121097" class="btn btn-accent btn-lg pulse">📞 Hotline: 0979.121.097</a>
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-lg">💬 Zalo Tư Vấn</a>
+          </div>
+        </div>
+
+        <!-- Internal Links -->
+        <div style="margin-top: var(--space-16); padding: var(--space-8); background: var(--color-bg-alt); border-radius: var(--radius-xl);">
+          <h3 style="margin-bottom: var(--space-6);">📚 Bài viết liên quan</h3>
+          <ul>
+            <li><a href="/khoa-hoc-boi/tre-em/"><strong>Học Bơi Trẻ Em</strong></a> — Lớp học bơi cho bé an toàn & chuyên nghiệp</li>
+            <li><a href="/khoa-hoc-boi/nguoi-lon/"><strong>Học Bơi Cho Người Lớn</strong></a> — Vượt qua nỗi sợ nước, khóa học 1 kèm 1</li>
+            <li><a href="/dia-diem/ha-noi/"><strong>Học Bơi Hà Nội</strong></a> — Trung tâm dạy bơi tại Hà Nội</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+</PageLayout>

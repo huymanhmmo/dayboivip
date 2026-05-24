@@ -1,0 +1,475 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const title = '404 - Không Tìm Thấy Trang | Swim For Life Việt Nam';
+const description = 'Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển. Khám phá các khóa học bơi lội và kỹ thuật bơi chuyên nghiệp tại Swim For Life Việt Nam.';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Lỗi 404 - Không tìm thấy trang' },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  canonical="https://dayboi.vip/404.html"
+>
+  <div class="error-page-wrapper">
+    <div class="container container-wide">
+      <div class="error-grid">
+        <!-- Cột 1: Thông điệp lỗi trực quan -->
+        <div class="error-visual-card">
+          <div class="wave-bg-circle">
+            <div class="wave-pulse pulse-1"></div>
+            <div class="wave-pulse pulse-2"></div>
+            <div class="wave-pulse pulse-3"></div>
+            <span class="giant-404">404</span>
+            <div class="lifesaver-icon">🛟</div>
+          </div>
+          
+          <h1 class="error-title">Rất Tiếc! Trang Này Đã Chìm Dưới Đáy Bể... 🌊</h1>
+          <p class="error-desc">
+            Đường dẫn bạn truy cập không tồn tại hoặc đã được chuyển dịch sang cấu trúc URL mới tối ưu hơn. Đừng lo lắng, hãy để chúng tôi ném phao cứu sinh giúp bạn!
+          </p>
+          
+          <div class="error-actions">
+            <a href="/" class="btn-primary-gradient">
+              🏠 Quay Lại Trang Chủ
+            </a>
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn-outline-zalo">
+              💬 Trò Chuyện Zalo HLV
+            </a>
+          </div>
+        </div>
+
+        <!-- Cột 2: Gợi ý xem tiếp đa dạng -->
+        <div class="error-suggestions-card">
+          <h2 class="suggestions-heading">🧭 Bạn muốn tìm kiếm nội dung nào?</h2>
+          <p class="suggestions-intro">Chọn một trong những chuyên mục chính dưới đây để tiếp tục khám phá:</p>
+          
+          <div class="suggestions-grid">
+            <!-- Chuyên mục Khóa Học -->
+            <div class="suggestion-group">
+              <h3 class="group-title">🎓 Các Khóa Học Bơi</h3>
+              <ul class="suggestion-list">
+                <li>
+                  <a href="/khoa-hoc-boi/tre-em/">
+                    👶 Học bơi Trẻ em <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/khoa-hoc-boi/nguoi-lon/">
+                    🧑 Học bơi Người lớn <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/khoa-hoc-boi/ca-nhan/">
+                    🥇 Lớp học bơi 1 Kèm 1 <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/khoa-hoc-boi/doanh-nghiep/">
+                    🏢 Dạy bơi Doanh nghiệp & Vinhomes <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/khoa-hoc-boi/nhom/">
+                    👥 Lớp học bơi theo nhóm <span class="arrow">→</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Chuyên mục Kỹ Thuật -->
+            <div class="suggestion-group">
+              <h3 class="group-title">🏊 Kỹ Thuật Bơi Lội</h3>
+              <ul class="suggestion-list">
+                <li>
+                  <a href="/ky-thuat-boi/hoc-boi-ech/">
+                    🐸 Kỹ thuật Bơi Ếch chuẩn <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/ky-thuat-boi/hoc-boi-sai/">
+                    ⚡ Kỹ thuật Bơi Sải nhanh <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/ky-thuat-boi/hoc-boi-ngua/">
+                    🛶 Kỹ thuật Bơi Ngửa đúng <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/ky-thuat-boi/hoc-boi-buom/">
+                    🦋 Kỹ thuật Bơi Bướm đẹp <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/ky-thuat-boi/ky-nang-dung-nuoc/">
+                    🛟 Kỹ năng Đứng nước sinh tồn <span class="arrow">→</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Chuyên mục Địa điểm & Tin tức -->
+            <div class="suggestion-group wide-group">
+              <h3 class="group-title">📍 Địa Điểm & Cẩm Nang</h3>
+              <ul class="suggestion-list two-cols">
+                <li>
+                  <a href="/dia-diem/ha-noi/">
+                    🏢 Học bơi tại Hà Nội <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/dia-diem/tphcm/">
+                    🌴 Học bơi tại TP.HCM <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/tin-tuc/">
+                    📰 Tin tức & Cẩm nang bơi lội <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/gioi-thieu/">
+                    🤝 Về Swim For Life Việt Nam <span class="arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/lien-he/">
+                    📞 Liên hệ & Bản đồ bể bơi <span class="arrow">→</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .error-page-wrapper {
+    padding: var(--space-12) 0 var(--space-20);
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    min-height: calc(100vh - var(--header-height) - 400px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Bubble decorative background */
+  .error-page-wrapper::before,
+  .error-page-wrapper::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 119, 182, 0.05);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .error-page-wrapper::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .error-page-wrapper::after {
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    left: 10%;
+  }
+
+  .error-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: var(--space-8);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 1024px) {
+    .error-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+  }
+
+  /* Left Column: Visual Card */
+  .error-visual-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10) var(--space-6);
+    box-shadow: 0 15px 35px rgba(0, 77, 122, 0.08);
+  }
+
+  .wave-bg-circle {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, var(--color-primary-light) 0%, rgba(0, 119, 182, 0.15) 70%);
+    border-radius: 50%;
+    margin: 0 auto var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .giant-404 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    letter-spacing: -2px;
+    z-index: 3;
+    text-shadow: 0 4px 10px rgba(0, 119, 182, 0.15);
+  }
+
+  .lifesaver-icon {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(15deg);
+    z-index: 4;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(15deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(22deg);
+    }
+  }
+
+  /* Wave animation background */
+  .wave-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    opacity: 0;
+    animation: wavePulse 3s linear infinite;
+  }
+
+  .pulse-1 { animation-delay: 0s; }
+  .pulse-2 { animation-delay: 1s; }
+  .pulse-3 { animation-delay: 2s; }
+
+  @keyframes wavePulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  .error-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-dark);
+    margin-bottom: var(--space-4);
+    line-height: 1.3;
+  }
+
+  .error-desc {
+    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .error-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .btn-primary-gradient {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .btn-primary-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 119, 182, 0.35);
+  }
+
+  .btn-outline-zalo {
+    background: white;
+    color: #0077b6;
+    border: 2px solid rgba(0, 119, 182, 0.35);
+    padding: 12px 28px;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .btn-outline-zalo:hover {
+    border-color: #0077b6;
+    background: #f0f8ff;
+    transform: translateY(-2px);
+  }
+
+  /* Right Column: Suggestions Card */
+  .error-suggestions-card {
+    background: white;
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10) var(--space-8);
+    box-shadow: 0 10px 30px rgba(0, 77, 122, 0.04);
+    border: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .suggestions-heading {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-dark);
+    margin-bottom: var(--space-2);
+    border: none;
+    padding: 0;
+  }
+
+  .suggestions-intro {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    font-size: var(--text-base);
+  }
+
+  .suggestions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 600px) {
+    .suggestions-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  .suggestion-group {
+    background: #f8fbfe;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    border: 1px solid rgba(0, 119, 182, 0.05);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+  }
+
+  .suggestion-group:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 119, 182, 0.15);
+    box-shadow: 0 6px 18px rgba(0, 119, 182, 0.03);
+  }
+
+  .wide-group {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 600px) {
+    .wide-group {
+      grid-column: span 1;
+    }
+  }
+
+  .group-title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    border-bottom: 2px solid rgba(0, 119, 182, 0.1);
+    padding-bottom: var(--space-2);
+  }
+
+  .suggestion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .suggestion-list.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 768px) {
+    .suggestion-list.two-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .suggestion-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px var(--space-3);
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    transition: all var(--transition-fast);
+  }
+
+  .suggestion-list a:hover {
+    color: var(--color-primary-dark);
+    background: #eef7fc;
+    border-color: rgba(0, 119, 182, 0.15);
+    padding-left: calc(var(--space-3) + 4px);
+  }
+
+  .suggestion-list a .arrow {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--transition-fast);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .suggestion-list a:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>

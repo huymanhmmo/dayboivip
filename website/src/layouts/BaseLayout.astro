@@ -1,0 +1,479 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  image = '/images/og-default.jpg',
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const siteName = 'Swim For Life Việt Nam';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Dynamic Year Auto-Update Script -->
+  <script is:inline>
+    (function() {
+      const currentYear = new Date().getFullYear().toString();
+      
+      // 1. Update title immediately to prevent flash
+      document.title = document.title.replace(/\[\d{4}\]/g, `[${currentYear}]`);
+      
+      // 2. Update meta tags
+      const updateMeta = (selector) => {
+        const meta = document.querySelector(selector);
+        if (meta) {
+          const content = meta.getAttribute('content');
+          if (content) {
+            meta.setAttribute('content', content.replace(/\[\d{4}\]/g, `[${currentYear}]`));
+          }
+        }
+      };
+      
+      const metaSelectors = [
+        'meta[name="title"]',
+        'meta[name="description"]',
+        'meta[property="og:title"]',
+        'meta[property="og:description"]',
+        'meta[property="twitter:title"]',
+        'meta[property="twitter:description"]'
+      ];
+      metaSelectors.forEach(updateMeta);
+
+      // 3. Update body elements once the DOM is ready
+      const updateDOM = () => {
+        document.querySelectorAll('.current-year').forEach(el => {
+          el.textContent = currentYear;
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateDOM);
+      } else {
+        updateDOM();
+      }
+    })();
+  </script>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="vi_VN" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonical} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={image} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/logo/favicon.png" />
+  <link rel="apple-touch-icon" href="/images/logo/favicon.png" />
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Organization Schema (global) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://dayboi.vip/#organization",
+    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
+    "alternateName": "Swim For Life Vietnam",
+    "description": "Trung tâm dạy bơi chuyên nghiệp - Cam kết biết bơi sau 10-12 buổi",
+    "url": "https://dayboi.vip",
+    "logo": "https://dayboi.vip/images/logo/swim-for-life-logo.png",
+    "image": "https://dayboi.vip/images/logo/swim-for-life-logo.png",
+    "telephone": ["+84979121097"],
+    "email": "dayboivip@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hà Nội",
+      "addressCountry": "VN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "21.0285",
+      "longitude": "105.8542"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Hà Nội" },
+      { "@type": "City", "name": "Hồ Chí Minh" }
+    ],
+    "priceRange": "Liên hệ",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "06:00",
+      "closes": "21:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/swimforlifevietnam"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Nguyễn Huy Mạnh",
+      "jobTitle": "Giám đốc"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Công ty Cổ phần Your Dreams",
+      "taxID": "0108879900"
+    }
+  })} />
+
+  <slot name="head" />
+</head>
+<body>
+  <slot name="header" />
+  <main>
+    <slot />
+  </main>
+  <slot name="footer" />
+
+  <!-- Scroll Reveal Animation Script -->
+  <script>
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+        const isOpen = navMenu.classList.contains('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Close menu when clicking a link
+      navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+        const isActive = item.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+        // Open clicked (if it wasn't active)
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-target') || '0');
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current).toLocaleString('vi-VN') + suffix;
+      }, 16);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+    // Smooth scroll for anchor links & update URL hash
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          
+          const header = document.querySelector('.site-header') || document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 72;
+          const offset = headerHeight + 24; // Header height + spacing
+          
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = target.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Update URL hash without causing a default browser jump
+          history.pushState(null, null, href);
+        }
+      });
+    });
+
+    // Scroll Spy: Highlight active Table of Contents item on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const tocLists = document.querySelectorAll('.toc-list');
+      if (tocLists.length > 0) {
+        // Collect all target headings based on TOC links
+        const tocLinks = [];
+        tocLists.forEach(list => {
+          list.querySelectorAll('a[href^="#"]').forEach(link => tocLinks.push(link));
+        });
+
+        const headings = tocLinks
+          .map(link => document.querySelector(link.getAttribute('href')))
+          .filter(Boolean);
+
+        if (headings.length > 0) {
+          const header = document.querySelector('.site-header') || document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 72;
+          const offset = headerHeight + 60; // Offset before activating
+
+          const scrollSpy = () => {
+            let activeId = '';
+            const scrollPosition = window.scrollY || window.pageYOffset;
+
+            // Find the current heading in view
+            for (let i = 0; i < headings.length; i++) {
+              const heading = headings[i];
+              // OffsetTop relative to document
+              const top = heading.getBoundingClientRect().top + scrollPosition;
+              if (scrollPosition >= top - offset) {
+                activeId = heading.getAttribute('id');
+              } else {
+                break;
+              }
+            }
+
+            // Fallback for first heading if near top of the content
+            if (!activeId && scrollPosition > 100 && headings.length > 0) {
+              activeId = headings[0].getAttribute('id');
+            }
+
+            // Highlight links matching the active heading ID
+            tocLinks.forEach(link => {
+              const href = link.getAttribute('href');
+              if (href === `#${activeId}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          };
+
+          window.addEventListener('scroll', scrollSpy);
+          // Run immediately to set initial active state
+          scrollSpy();
+        }
+      }
+    });
+
+    // Dynamic Sticky Sidebar scroll listener for tall sidebars
+    const initStickySidebars = () => {
+      const sidebars = document.querySelectorAll('.blog-sidebar-left, .blog-sidebar-right, .news-sidebar');
+      if (sidebars.length === 0) return;
+      
+      const header = document.querySelector('.site-header') || document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 72;
+      const topOffset = headerHeight + 24;
+      const bottomOffset = 24;
+
+      // Track translation state for each sidebar separately
+      const sidebarStates = Array.from(sidebars).map(sidebar => ({
+        element: sidebar,
+        lastTranslation: 0
+      }));
+
+      let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      const handleSticky = () => {
+        // Only apply custom sticky sidebar on desktop (>= 1024px)
+        if (window.innerWidth < 1024) {
+          sidebarStates.forEach(state => {
+            const sidebar = state.element;
+            if (sidebar) {
+              sidebar.style.position = '';
+              sidebar.style.top = '';
+              sidebar.style.bottom = '';
+              sidebar.style.transform = '';
+              state.lastTranslation = 0;
+            }
+          });
+          return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const isScrollingDown = scrollTop > lastScrollTop;
+        lastScrollTop = scrollTop;
+
+        const viewportHeight = window.innerHeight;
+
+        sidebarStates.forEach(state => {
+          const sidebar = state.element;
+          if (!sidebar) return;
+
+          const container = sidebar.parentElement;
+          if (!container) return;
+
+          const sidebarHeight = sidebar.offsetHeight;
+          const containerHeight = container.offsetHeight;
+
+          // If container is not taller than the sidebar, do not stick
+          if (containerHeight <= sidebarHeight) {
+            sidebar.style.position = '';
+            sidebar.style.top = '';
+            sidebar.style.bottom = '';
+            sidebar.style.transform = '';
+            state.lastTranslation = 0;
+            return;
+          }
+
+          // Absolute top coordinates of container
+          const containerTop = container.getBoundingClientRect().top + scrollTop;
+          const availableViewportSpace = viewportHeight - topOffset - bottomOffset;
+
+          if (sidebarHeight <= availableViewportSpace) {
+            // Sidebar fits inside viewport space: standard sticky top
+            sidebar.style.position = 'sticky';
+            sidebar.style.top = `${topOffset}px`;
+            sidebar.style.bottom = '';
+            sidebar.style.transform = '';
+            state.lastTranslation = 0;
+          } else {
+            // Sidebar is taller than viewport: dynamic translation
+            sidebar.style.position = 'relative';
+            sidebar.style.top = 'auto';
+            sidebar.style.bottom = 'auto';
+
+            let translation = state.lastTranslation;
+
+            if (isScrollingDown) {
+              const minTranslation = scrollTop + viewportHeight - bottomOffset - containerTop - sidebarHeight;
+              translation = Math.max(translation, minTranslation);
+            } else {
+              const maxTranslation = scrollTop + topOffset - containerTop;
+              translation = Math.min(translation, maxTranslation);
+            }
+
+            // Clamp translation within container
+            const maxAllowedTranslation = containerHeight - sidebarHeight;
+            translation = Math.max(0, Math.min(translation, maxAllowedTranslation));
+
+            sidebar.style.transform = `translateY(${translation}px)`;
+            state.lastTranslation = translation;
+          }
+        });
+      };
+
+      window.addEventListener('scroll', handleSticky, { passive: true });
+      window.addEventListener('resize', handleSticky, { passive: true });
+      window.addEventListener('load', handleSticky, { passive: true });
+      // Run once immediately
+      handleSticky();
+    };
+    initStickySidebars();
+
+    // Back to top button logic
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        if (scrollTop > 400) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  </script>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Quay lại đầu trang">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+</body>
+</html>

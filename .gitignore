@@ -1,0 +1,39 @@
+# Dependency directories
+website/node_modules/
+
+# Build outputs
+website/dist/
+website/.astro/
+
+# Logs
+website/npm-debug.log*
+website/yarn-debug.log*
+website/yarn-error.log*
+website/pnpm-debug.log*
+
+# Environment variables
+website/.env
+website/.env.production
+website/.env.local
+website/.env.development
+website/.env.test
+
+# IDEs and editors
+website/.idea/
+website/.vscode/
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

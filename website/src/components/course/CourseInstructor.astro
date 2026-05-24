@@ -1,0 +1,133 @@
+---
+export interface Props {
+  instructor: {
+    name: string;
+    title: string;
+    experience: string;
+    certifications: string[];
+    quote: string;
+  };
+}
+
+const { instructor } = Astro.props;
+---
+
+<section class="cl-section">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Đội Ngũ Huấn Luyện Viên
+      </span>
+      <h2 class="cl-section-title__heading">
+        Giám Đốc Đào Tạo & Ban Huấn Luyện
+      </h2>
+      <p class="cl-section-title__sub">
+        Được dẫn dắt bởi chuyên gia nhiều năm kinh nghiệm, đội ngũ HLV tận tâm và có chứng chỉ cứu hộ quốc gia.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-instructor__container-inner">
+      <div class="cl-instructor cl-animate">
+        <img 
+          src="/images/team/thay-nguyen-huy-manh.jpg" 
+          alt={instructor.name} 
+          class="cl-instructor__photo" 
+          loading="lazy"
+          width="240"
+          height="320"
+        />
+        <div class="cl-instructor__body">
+          <span class="cl-instructor__badge">Người Sáng Lập</span>
+          <h3 class="cl-instructor__name">{instructor.name}</h3>
+          <p class="cl-instructor__title">{instructor.title}</p>
+          
+          <div class="cl-instructor__experience">
+            <strong>Kinh nghiệm:</strong> {instructor.experience}
+          </div>
+          
+          <div class="cl-instructor__certs-title">Bằng cấp & Chứng chỉ:</div>
+          <ul class="cl-instructor__certs">
+            {instructor.certifications.map(cert => (
+              <li>{cert}</li>
+            ))}
+          </ul>
+          
+          <div class="cl-instructor__more">
+            <blockquote class="cl-instructor__quote">
+              <span class="cl-instructor__quote-mark">“</span>
+              {instructor.quote}
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cl-instructor__container-inner {
+    max-width: 900px;
+    margin: 40px auto 0;
+  }
+
+  .cl-instructor__experience {
+    font-size: 0.95rem;
+    color: var(--cl-text);
+    margin-bottom: 12px;
+  }
+
+  .cl-instructor__certs-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--cl-dark);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cl-instructor__certs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .cl-instructor__certs li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--cl-text-light);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .cl-instructor__certs li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--cl-primary-light);
+    font-weight: bold;
+  }
+
+  .cl-instructor__quote {
+    margin: 16px 0 0 0;
+    padding: 12px 16px;
+    background: var(--cl-bg-alt);
+    border-left: 4px solid var(--cl-primary);
+    border-radius: 0 var(--cl-radius-sm) var(--cl-radius-sm) 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--cl-text);
+    position: relative;
+  }
+
+  .cl-instructor__quote-mark {
+    font-size: 2rem;
+    position: absolute;
+    top: -5px;
+    left: 4px;
+    opacity: 0.15;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+</style>

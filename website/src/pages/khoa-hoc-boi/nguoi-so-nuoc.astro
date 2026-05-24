@@ -1,0 +1,80 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { nguoiSoNuoc } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Người sợ nước' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Cho Người Sợ Nước: Khóa Học Cho Người Nhát Nước Vượt Qua Nỗi Sợ",
+  "description": "Khóa học bơi chuyên biệt dành cho người sợ nước, nhát nước lâu năm tại Swim For Life. Giáo trình tâm lý đặc biệt giúp bạn tự tin nổi nước sau 3-5 buổi.",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-02-15",
+  "dateModified": "2026-05-21",
+  "image": "https://dayboi.vip/images/classes/giao-vien-vui-ve-tam-ly.jpeg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/khoa-hoc-boi/nguoi-so-nuoc/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi bị nhát nước từ nhỏ, từng suýt đuối nước có học được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được. Hơn 80% học viên người lớn tại Swim For Life đều có tâm lý sợ nước hoặc từng có ký ức không vui liên quan đến nước. HLV của chúng tôi được đào tạo bài bản về tâm lý sư phạm, sẽ đồng hành giúp bạn vượt qua nỗi sợ từng bước một, bắt đầu từ chỗ nước cực nông."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khóa học có bắt buộc phải úp mặt xuống nước ngay không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuyệt đối không. Trong 1-2 buổi đầu, bạn sẽ không phải úp mặt xuống nước nếu chưa sẵn sàng. HLV sẽ hướng dẫn bạn các bài tập làm quen nước, tập đứng vững và cách kiểm soát nhịp thở trên mặt nước trước để xây dựng sự tự tin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Người sợ nước thì mất bao lâu để biết bơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thông thường, học viên sợ nước sẽ mất khoảng 3 buổi đầu để vượt qua rào cản tâm lý. Từ buổi thứ 4 trở đi, tiến độ sẽ nhanh tương đương người bình thường. Cam kết bạn sẽ biết bơi cơ bản và tự nổi đứng nước sau khóa học 10-12 buổi."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [articleSchema, faqSchema];
+---
+
+<CourseLayout
+  course={nguoiSoNuoc}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

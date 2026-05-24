@@ -1,0 +1,23 @@
+---
+import { blogPosts } from '../../../data/blogPosts.js';
+
+export async function getStaticPaths() {
+  const tagsMap = new Map();
+  blogPosts.forEach(post => {
+    if (post.tags && post.tagSlugs) {
+      post.tags.forEach((tag, idx) => {
+        const slug = post.tagSlugs[idx];
+        if (slug) {
+          tagsMap.set(slug, { slug });
+        }
+      });
+    }
+  });
+  return Array.from(tagsMap.values()).map(tagItem => ({
+    params: { tag: tagItem.slug }
+  }));
+}
+
+const { tag } = Astro.params;
+return Astro.redirect(`/the/${tag}/`, 301);
+---

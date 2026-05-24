@@ -1,0 +1,2037 @@
+/* ===========================================================================
+   COURSE LANDING PAGE — DESIGN SYSTEM
+   Swim For Life Việt Nam  ·  dayboi.vip
+   ---------------------------------------------------------------------------
+   Scoped under `.course-landing` to avoid collisions with global.css.
+   Every utility class is prefixed with `cl-`.
+   Font: Be Vietnam Pro & Inter (loaded globally).
+   =========================================================================== */
+
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES
+   ========================================================================== */
+
+.course-landing {
+  /* ---- Fonts ---- */
+  --cl-font:           'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+
+  /* ---- Brand Palette ---- */
+  --cl-primary:        #0A4D8C;
+  --cl-primary-light:  #0077B6;
+  --cl-cyan:           #00BCD4;
+  --cl-cyan-light:     #4DD0E1;
+  --cl-teal:           #009688;
+  --cl-cta:            #FF6B6B;
+  --cl-cta-hover:      #FF5252;
+  --cl-cta-gradient:   linear-gradient(135deg, #FF6B6B, #FF8E53);
+  --cl-gold:           #FFD93D;
+  --cl-green:          #4CAF50;
+
+  /* ---- Hero ---- */
+  --cl-hero-gradient:  linear-gradient(135deg, #0A4D8C 0%, #00838F 50%, #00BCD4 100%);
+
+  /* ---- Neutrals ---- */
+  --cl-dark:           #1A1A2E;
+  --cl-text:           #2D3436;
+  --cl-text-light:     #636E72;
+  --cl-bg:             #FFFFFF;
+  --cl-bg-alt:         #F0F9FF;
+  --cl-bg-dark:        #0A1628;
+
+  /* ---- Glass ---- */
+  --cl-glass:          rgba(255, 255, 255, 0.12);
+  --cl-glass-border:   rgba(255, 255, 255, 0.2);
+
+  /* ---- Shadows ---- */
+  --cl-shadow-sm:  0 2px 8px rgba(10, 77, 140, 0.08);
+  --cl-shadow-md:  0 8px 32px rgba(10, 77, 140, 0.12);
+  --cl-shadow-lg:  0 16px 48px rgba(10, 77, 140, 0.16);
+
+  /* ---- Radii ---- */
+  --cl-radius:      16px;
+  --cl-radius-sm:   8px;
+  --cl-radius-lg:   24px;
+  --cl-radius-full: 9999px;
+
+  /* ---- Internal helpers ---- */
+  --cl-ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --cl-ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --cl-container:    1200px;
+}
+
+
+/* ==========================================================================
+   2. HERO SECTION  (.cl-hero)
+   ========================================================================== */
+
+.course-landing .cl-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cl-hero-gradient);
+  overflow: hidden;
+  padding: 100px 24px 120px;
+}
+
+/* Radial light spots */
+.course-landing .cl-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(0, 188, 212, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(10, 77, 140, 0.20) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* SVG Wave at bottom */
+.course-landing .cl-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z'/%3E%3Cpath fill='%23ffffff' fill-opacity='0.5' d='M0,80 C240,40 480,100 720,80 C960,60 1200,100 1440,80 L1440,120 L0,120 Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.course-landing .cl-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--cl-container);
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.course-landing .cl-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--cl-radius-full);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+
+.course-landing .cl-hero__title {
+  font-family: var(--cl-font);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.course-landing .cl-hero__subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+/* Stats badges row */
+.course-landing .cl-hero__stats {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.course-landing .cl-hero__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--cl-glass-border);
+  border-radius: var(--cl-radius-full);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.course-landing .cl-hero__stat-icon {
+  font-size: 1.1rem;
+}
+
+/* CTA row */
+.course-landing .cl-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ---- Floating Bubbles ---- */
+.course-landing .cl-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  z-index: 0;
+  animation: cl-bubble var(--dur, 12s) var(--delay, 0s) infinite ease-in;
+}
+
+.course-landing .cl-bubble:nth-child(1)  { width:18px; height:18px; left:5%;   --dur:10s; --delay:0s; }
+.course-landing .cl-bubble:nth-child(2)  { width:28px; height:28px; left:15%;  --dur:14s; --delay:2s; }
+.course-landing .cl-bubble:nth-child(3)  { width:12px; height:12px; left:25%;  --dur:11s; --delay:4s; }
+.course-landing .cl-bubble:nth-child(4)  { width:22px; height:22px; left:40%;  --dur:16s; --delay:1s; }
+.course-landing .cl-bubble:nth-child(5)  { width:14px; height:14px; left:55%;  --dur:12s; --delay:3s; }
+.course-landing .cl-bubble:nth-child(6)  { width:32px; height:32px; left:65%;  --dur:18s; --delay:5s; }
+.course-landing .cl-bubble:nth-child(7)  { width:10px; height:10px; left:75%;  --dur:9s;  --delay:2.5s; }
+.course-landing .cl-bubble:nth-child(8)  { width:24px; height:24px; left:85%;  --dur:15s; --delay:0.5s; }
+.course-landing .cl-bubble:nth-child(9)  { width:16px; height:16px; left:92%;  --dur:13s; --delay:3.5s; }
+.course-landing .cl-bubble:nth-child(10) { width:20px; height:20px; left:48%;  --dur:17s; --delay:6s; }
+
+
+/* ==========================================================================
+   3. WAVE DIVIDER  (.cl-wave-divider)
+   ========================================================================== */
+
+.course-landing .cl-wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin: -1px 0;
+}
+
+.course-landing .cl-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.course-landing .cl-wave-divider--flip {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-wave-divider svg {
+    height: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .course-landing .cl-wave-divider svg {
+    height: 100px;
+  }
+}
+
+
+/* ==========================================================================
+   4. SECTION BASE  (.cl-section)
+   ========================================================================== */
+
+.course-landing .cl-section {
+  padding: 48px 0;
+  position: relative;
+}
+
+.course-landing .cl-section__container {
+  max-width: var(--cl-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.course-landing .cl-section--alt {
+  background-color: var(--cl-bg-alt);
+}
+
+.course-landing .cl-section--dark {
+  background-color: var(--cl-bg-dark);
+  color: #fff;
+}
+
+.course-landing .cl-section--dark .cl-section-title__heading {
+  color: #fff;
+}
+
+.course-landing .cl-section--dark .cl-section-title__sub {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-section {
+    padding: 64px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .course-landing .cl-section {
+    padding: 80px 0;
+  }
+}
+
+
+/* ==========================================================================
+   5. SECTION TITLE  (.cl-section-title)
+   ========================================================================== */
+
+.course-landing .cl-section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.course-landing .cl-section-title--left {
+  text-align: left;
+}
+
+.course-landing .cl-section-title--left .cl-section-title__decoration {
+  margin-left: 0;
+}
+
+.course-landing .cl-section-title__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgba(10, 77, 140, 0.08), rgba(0, 188, 212, 0.08));
+  color: var(--cl-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--cl-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.course-landing .cl-section-title__heading {
+  font-family: var(--cl-font);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--cl-dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.course-landing .cl-section-title__heading--gradient {
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.course-landing .cl-section-title__sub {
+  font-size: clamp(0.95rem, 1.8vw, 1.125rem);
+  color: var(--cl-text-light);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.course-landing .cl-section-title--left .cl-section-title__sub {
+  margin-left: 0;
+}
+
+/* Decorative element */
+.course-landing .cl-section-title__decoration {
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--cl-primary), var(--cl-cyan));
+}
+
+
+/* ==========================================================================
+   6. STATS COUNTER  (.cl-stats)
+   ========================================================================== */
+
+.course-landing .cl-stats {
+  background: var(--cl-hero-gradient);
+  padding: 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-landing .cl-stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(0, 188, 212, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 100% 50%, rgba(10, 77, 140, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.course-landing .cl-stats__inner {
+  position: relative;
+  max-width: var(--cl-container);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.course-landing .cl-stats__item {
+  flex: 1 1 140px;
+  max-width: 240px;
+  text-align: center;
+  padding: 16px;
+}
+
+.course-landing .cl-stats__number {
+  font-family: var(--cl-font);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.course-landing .cl-stats__label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-stats {
+    padding: 64px 0;
+  }
+
+  .course-landing .cl-stats__item {
+    flex: 1 1 200px;
+  }
+}
+
+
+/* ==========================================================================
+   7. CARDS  (.cl-card)
+   ========================================================================== */
+
+.course-landing .cl-card {
+  background: var(--cl-bg);
+  border-radius: var(--cl-radius);
+  padding: 32px;
+  box-shadow: var(--cl-shadow-sm);
+  border: 1px solid rgba(10, 77, 140, 0.06);
+  transition: all 0.4s var(--cl-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.course-landing .cl-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--cl-shadow-lg);
+}
+
+/* Top accent line on hover */
+.course-landing .cl-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cl-primary), var(--cl-cyan));
+  transform: scaleX(0);
+  transition: transform 0.4s var(--cl-ease);
+  transform-origin: left;
+}
+
+.course-landing .cl-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Glass variant */
+.course-landing .cl-card--glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--cl-glass-border);
+  color: #fff;
+}
+
+.course-landing .cl-card--glass:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Highlight variant */
+.course-landing .cl-card--highlight {
+  border: 2px solid var(--cl-cyan);
+  box-shadow: var(--cl-shadow-sm), 0 0 20px rgba(0, 188, 212, 0.1);
+}
+
+.course-landing .cl-card--highlight:hover {
+  box-shadow: var(--cl-shadow-lg), 0 0 30px rgba(0, 188, 212, 0.15);
+}
+
+
+/* ==========================================================================
+   8. FEATURE GRID  (.cl-features)
+   ========================================================================== */
+
+.course-landing .cl-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.course-landing .cl-features__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-landing .cl-features__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--cl-radius-sm);
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.course-landing .cl-features__title {
+  font-family: var(--cl-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cl-dark);
+  margin-bottom: 8px;
+}
+
+.course-landing .cl-features__desc {
+  font-size: 0.95rem;
+  color: var(--cl-text-light);
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .course-landing .cl-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ==========================================================================
+   9. CURRICULUM TIMELINE  (.cl-timeline)
+   ========================================================================== */
+
+.course-landing .cl-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical line */
+.course-landing .cl-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--cl-cyan-light), var(--cl-primary));
+  border-radius: 2px;
+}
+
+.course-landing .cl-timeline__step {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.course-landing .cl-timeline__step:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot */
+.course-landing .cl-timeline__dot {
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--cl-bg);
+  border: 3px solid var(--cl-cyan);
+  z-index: 1;
+  transition: all 0.4s var(--cl-ease);
+}
+
+/* Completed state */
+.course-landing .cl-timeline__step--completed .cl-timeline__dot {
+  background: var(--cl-cyan);
+  border-color: var(--cl-cyan);
+  box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.2);
+}
+
+.course-landing .cl-timeline__step--completed .cl-timeline__dot::after {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+}
+
+/* Current state */
+.course-landing .cl-timeline__step--current .cl-timeline__dot {
+  background: var(--cl-primary);
+  border-color: var(--cl-primary);
+  box-shadow: 0 0 0 6px rgba(10, 77, 140, 0.2);
+  animation: cl-pulse 2s infinite;
+}
+
+/* Step number badge */
+.course-landing .cl-timeline__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+  color: #fff;
+  font-family: var(--cl-font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Content card */
+.course-landing .cl-timeline__content {
+  background: var(--cl-bg);
+  border-radius: var(--cl-radius);
+  padding: 24px;
+  box-shadow: var(--cl-shadow-sm);
+  border: 1px solid rgba(10, 77, 140, 0.06);
+  transition: all 0.3s var(--cl-ease);
+}
+
+.course-landing .cl-timeline__content:hover {
+  box-shadow: var(--cl-shadow-md);
+}
+
+.course-landing .cl-timeline__title {
+  font-family: var(--cl-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cl-dark);
+  margin-bottom: 6px;
+}
+
+.course-landing .cl-timeline__desc {
+  font-size: 0.95rem;
+  color: var(--cl-text-light);
+  line-height: 1.65;
+}
+
+/* Desktop: alternating sides */
+@media (min-width: 1024px) {
+  .course-landing .cl-timeline {
+    padding-left: 0;
+  }
+
+  .course-landing .cl-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .course-landing .cl-timeline__step {
+    width: 50%;
+    padding-right: 48px;
+    margin-left: 0;
+  }
+
+  .course-landing .cl-timeline__step .cl-timeline__dot {
+    left: auto;
+    right: -12px;
+  }
+
+  .course-landing .cl-timeline__step:nth-child(even) {
+    margin-left: 50%;
+    padding-right: 0;
+    padding-left: 48px;
+  }
+
+  .course-landing .cl-timeline__step:nth-child(even) .cl-timeline__dot {
+    right: auto;
+    left: -12px;
+  }
+}
+
+
+/* ==========================================================================
+   10. PRICING CARDS  (.cl-pricing)
+   ========================================================================== */
+
+.course-landing .cl-pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.course-landing .cl-pricing__card {
+  flex: 1 1 280px;
+  max-width: 380px;
+  background: var(--cl-bg);
+  border-radius: var(--cl-radius-lg);
+  padding: 36px 28px;
+  box-shadow: var(--cl-shadow-sm);
+  border: 2px solid transparent;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s var(--cl-ease);
+}
+
+.course-landing .cl-pricing__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--cl-shadow-lg);
+}
+
+/* Popular / featured card */
+.course-landing .cl-pricing__card--featured {
+  border-color: var(--cl-cyan);
+  transform: scale(1.05);
+  box-shadow: var(--cl-shadow-md), 0 0 40px rgba(0, 188, 212, 0.12);
+  z-index: 2;
+}
+
+.course-landing .cl-pricing__card--featured:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: var(--cl-shadow-lg), 0 0 50px rgba(0, 188, 212, 0.18);
+}
+
+/* Badge */
+.course-landing .cl-pricing__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 20px;
+  background: var(--cl-cta-gradient);
+  color: #fff;
+  font-family: var(--cl-font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--cl-radius-full);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.course-landing .cl-pricing__name {
+  font-family: var(--cl-font);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cl-dark);
+  margin-bottom: 4px;
+}
+
+.course-landing .cl-pricing__price {
+  font-family: var(--cl-font);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cl-primary);
+  line-height: 1.2;
+  margin: 16px 0 4px;
+}
+
+.course-landing .cl-pricing__price sup {
+  font-size: 1rem;
+  font-weight: 600;
+  vertical-align: super;
+}
+
+.course-landing .cl-pricing__period {
+  font-size: 0.875rem;
+  color: var(--cl-text-light);
+  margin-bottom: 24px;
+}
+
+/* Feature list */
+.course-landing .cl-pricing__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.course-landing .cl-pricing__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: var(--cl-text);
+  border-bottom: 1px solid rgba(10, 77, 140, 0.06);
+  line-height: 1.5;
+}
+
+.course-landing .cl-pricing__features li:last-child {
+  border-bottom: none;
+}
+
+.course-landing .cl-pricing__features li::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--cl-green);
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.course-landing .cl-pricing__features li strong {
+  font-weight: 700;
+  color: var(--cl-dark);
+}
+
+
+/* ==========================================================================
+   11. TESTIMONIALS  (.cl-testimonials)
+   ========================================================================== */
+
+.course-landing .cl-testimonials {
+  position: relative;
+}
+
+.course-landing .cl-testimonials__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.course-landing .cl-testimonials__track::-webkit-scrollbar {
+  display: none;
+}
+
+.course-landing .cl-testimonials__card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background: var(--cl-bg);
+  border-radius: var(--cl-radius);
+  padding: 28px;
+  box-shadow: var(--cl-shadow-sm);
+  border: 1px solid rgba(10, 77, 140, 0.06);
+  position: relative;
+}
+
+/* Decorative quote */
+.course-landing .cl-testimonials__card::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 4rem;
+  line-height: 1;
+  font-family: 'Georgia', serif;
+  color: rgba(0, 188, 212, 0.12);
+  pointer-events: none;
+}
+
+.course-landing .cl-testimonials__stars {
+  color: var(--cl-gold);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.course-landing .cl-testimonials__text {
+  font-size: 0.95rem;
+  color: var(--cl-text);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.course-landing .cl-testimonials__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.course-landing .cl-testimonials__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.course-landing .cl-testimonials__name {
+  font-family: var(--cl-font);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--cl-dark);
+}
+
+.course-landing .cl-testimonials__detail {
+  font-size: 0.8rem;
+  color: var(--cl-text-light);
+}
+
+/* Navigation dots */
+.course-landing .cl-testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.course-landing .cl-testimonials__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(10, 77, 140, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.course-landing .cl-testimonials__dot--active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--cl-primary);
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-testimonials__card {
+    flex: 0 0 360px;
+  }
+}
+
+
+/* ==========================================================================
+   12. FAQ ACCORDION  (.cl-faq)
+   ========================================================================== */
+
+.course-landing .cl-faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.course-landing .cl-faq__item {
+  border-bottom: 1px solid rgba(10, 77, 140, 0.1);
+}
+
+.course-landing .cl-faq__item:last-child {
+  border-bottom: none;
+}
+
+.course-landing .cl-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--cl-font);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cl-dark);
+  text-align: left;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.course-landing .cl-faq__question:hover {
+  color: var(--cl-primary);
+}
+
+/* Arrow icon */
+.course-landing .cl-faq__icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cl-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--cl-ease);
+}
+
+.course-landing .cl-faq__icon::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--cl-primary);
+  border-bottom: 2px solid var(--cl-primary);
+  transform: rotate(45deg);
+  margin-top: -2px;
+  transition: transform 0.4s var(--cl-ease);
+}
+
+/* Answer */
+.course-landing .cl-faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.course-landing .cl-faq__answer-inner {
+  padding: 0 0 20px;
+  font-size: 0.95rem;
+  color: var(--cl-text-light);
+  line-height: 1.75;
+}
+
+/* Active state */
+.course-landing .cl-faq__item.active .cl-faq__icon {
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+}
+
+.course-landing .cl-faq__item.active .cl-faq__icon::before {
+  border-color: #fff;
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.course-landing .cl-faq__item.active .cl-faq__answer {
+  max-height: 500px;
+}
+
+
+/* ==========================================================================
+   13. CTA BANNER  (.cl-cta-banner)
+   ========================================================================== */
+
+.course-landing .cl-cta-banner {
+  background: var(--cl-hero-gradient);
+  padding: 56px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-landing .cl-cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(0, 188, 212, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(10, 77, 140, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.course-landing .cl-cta-banner__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.course-landing .cl-cta-banner__title {
+  font-family: var(--cl-font);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.course-landing .cl-cta-banner__text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.course-landing .cl-cta-banner__urgency {
+  font-size: 0.875rem;
+  color: var(--cl-gold);
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.course-landing .cl-cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-cta-banner {
+    padding: 72px 24px;
+  }
+}
+
+
+/* ==========================================================================
+   14. TRUST BADGES  (.cl-trust)
+   ========================================================================== */
+
+.course-landing .cl-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.course-landing .cl-trust__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--cl-bg);
+  border: 1px solid rgba(10, 77, 140, 0.1);
+  border-radius: var(--cl-radius-sm);
+  font-size: 0.9rem;
+  color: var(--cl-text);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.course-landing .cl-trust__item:hover {
+  border-color: var(--cl-cyan);
+  box-shadow: var(--cl-shadow-sm);
+}
+
+.course-landing .cl-trust__icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+
+/* ==========================================================================
+   15. GALLERY  (.cl-gallery)
+   ========================================================================== */
+
+.course-landing .cl-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.course-landing .cl-gallery__item {
+  position: relative;
+  border-radius: var(--cl-radius);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.course-landing .cl-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--cl-ease);
+}
+
+.course-landing .cl-gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 22, 40, 0.6) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.course-landing .cl-gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+.course-landing .cl-gallery__item:hover::after {
+  opacity: 1;
+}
+
+.course-landing .cl-gallery__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 1;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: all 0.4s var(--cl-ease);
+}
+
+.course-landing .cl-gallery__item:hover .cl-gallery__caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .course-landing .cl-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Masonry-like effect: vary heights */
+  .course-landing .cl-gallery__item:nth-child(3n + 1) {
+    grid-row: span 2;
+  }
+}
+
+/* Progressive enhancement: CSS masonry */
+@supports (grid-template-rows: masonry) {
+  .course-landing .cl-gallery {
+    grid-template-rows: masonry;
+  }
+
+  .course-landing .cl-gallery__item:nth-child(3n + 1) {
+    grid-row: auto;
+  }
+}
+
+
+/* ==========================================================================
+   16. INSTRUCTOR CARD  (.cl-instructor)
+   ========================================================================== */
+
+.course-landing .cl-instructor {
+  display: flex;
+  flex-direction: column;
+  background: var(--cl-bg);
+  border-radius: var(--cl-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cl-shadow-sm);
+  border: 1px solid rgba(10, 77, 140, 0.06);
+  transition: all 0.4s var(--cl-ease);
+}
+
+.course-landing .cl-instructor:hover {
+  box-shadow: var(--cl-shadow-md);
+}
+
+.course-landing .cl-instructor__photo {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+}
+
+.course-landing .cl-instructor__body {
+  padding: 24px;
+  position: relative;
+}
+
+.course-landing .cl-instructor__badge {
+  position: absolute;
+  top: -16px;
+  right: 24px;
+  padding: 6px 16px;
+  background: var(--cl-cta-gradient);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--cl-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
+}
+
+.course-landing .cl-instructor__name {
+  font-family: var(--cl-font);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cl-dark);
+  margin-bottom: 4px;
+}
+
+.course-landing .cl-instructor__title {
+  font-size: 0.9rem;
+  color: var(--cl-primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.course-landing .cl-instructor__certs {
+  font-size: 0.85rem;
+  color: var(--cl-text-light);
+  line-height: 1.6;
+}
+
+.course-landing .cl-instructor__more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.course-landing .cl-instructor:hover .cl-instructor__more {
+  max-height: 200px;
+}
+
+@media (min-width: 768px) {
+  .course-landing .cl-instructor {
+    flex-direction: row;
+  }
+
+  .course-landing .cl-instructor__photo {
+    width: 240px;
+    height: auto;
+    min-height: 280px;
+  }
+}
+
+
+/* ==========================================================================
+   17. BUTTONS  (.cl-btn)
+   ========================================================================== */
+
+.course-landing .cl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--cl-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--cl-radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect on hover */
+.course-landing .cl-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.course-landing .cl-btn:hover::after {
+  left: 100%;
+}
+
+/* Primary (CTA coral) */
+.course-landing .cl-btn-primary {
+  background: var(--cl-cta-gradient);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3);
+}
+
+.course-landing .cl-btn-primary:hover {
+  background: linear-gradient(135deg, var(--cl-cta-hover), #FF7043);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 107, 107, 0.4);
+  color: #fff;
+}
+
+/* Secondary */
+.course-landing .cl-btn-secondary {
+  background: #fff;
+  color: var(--cl-primary);
+  box-shadow: var(--cl-shadow-sm);
+}
+
+.course-landing .cl-btn-secondary:hover {
+  background: var(--cl-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(10, 77, 140, 0.25);
+}
+
+/* Outline (for dark backgrounds) */
+.course-landing .cl-btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.course-landing .cl-btn-outline:hover {
+  background: #fff;
+  color: var(--cl-primary);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Large */
+.course-landing .cl-btn-lg {
+  padding: 18px 40px;
+  font-size: 1.05rem;
+}
+
+/* Pulse glow */
+.course-landing .cl-btn-pulse {
+  animation: cl-pulse 2.5s infinite;
+}
+
+/* Phone / Zalo special */
+.course-landing .cl-btn-phone {
+  background: var(--cl-green);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3);
+}
+
+.course-landing .cl-btn-phone:hover {
+  background: #43A047;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(76, 175, 80, 0.4);
+  color: #fff;
+}
+
+.course-landing .cl-btn-zalo {
+  background: #0068FF;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 104, 255, 0.3);
+}
+
+.course-landing .cl-btn-zalo:hover {
+  background: #0055D4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 104, 255, 0.4);
+  color: #fff;
+}
+
+
+/* ==========================================================================
+   18. FLOATING CTA  (.cl-floating-cta)
+   ========================================================================== */
+
+.course-landing .cl-floating-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(10, 77, 140, 0.1);
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--cl-ease);
+}
+
+.course-landing .cl-floating-cta--visible {
+  transform: translateY(0);
+}
+
+.course-landing .cl-floating-cta .cl-btn {
+  flex: 1;
+  max-width: 200px;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .course-landing .cl-floating-cta {
+    display: none;
+  }
+}
+
+
+/* ==========================================================================
+   19. REGISTRATION FORM  (.cl-form)
+   ========================================================================== */
+
+.course-landing .cl-form {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--cl-glass-border);
+  border-radius: var(--cl-radius-lg);
+  padding: 36px;
+}
+
+/* Light mode variant */
+.course-landing .cl-form--light {
+  background: var(--cl-bg);
+  backdrop-filter: none;
+  border: 1px solid rgba(10, 77, 140, 0.1);
+  box-shadow: var(--cl-shadow-md);
+}
+
+.course-landing .cl-form__title {
+  font-family: var(--cl-font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.course-landing .cl-form--light .cl-form__title {
+  color: var(--cl-dark);
+}
+
+.course-landing .cl-form__group {
+  margin-bottom: 20px;
+}
+
+.course-landing .cl-form__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.course-landing .cl-form--light .cl-form__label {
+  color: var(--cl-text-light);
+}
+
+.course-landing .cl-form__input,
+.course-landing .cl-form__select {
+  width: 100%;
+  padding: 14px 0;
+  font-family: var(--cl-font);
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.course-landing .cl-form--light .cl-form__input,
+.course-landing .cl-form--light .cl-form__select {
+  border-bottom-color: rgba(10, 77, 140, 0.15);
+  color: var(--cl-text);
+}
+
+.course-landing .cl-form__input:focus,
+.course-landing .cl-form__select:focus {
+  border-bottom-color: var(--cl-cyan);
+}
+
+.course-landing .cl-form__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.course-landing .cl-form--light .cl-form__input::placeholder {
+  color: rgba(45, 52, 54, 0.35);
+}
+
+.course-landing .cl-form__select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  background-size: 10px;
+  padding-right: 24px;
+}
+
+.course-landing .cl-form--light .cl-form__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23636E72' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+}
+
+.course-landing .cl-form__submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   19a. FORM LAYOUT & INFO CONTAINER
+   ========================================================================== */
+
+/* Layout wrapper */
+.course-landing .cl-form-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .course-landing .cl-form-container {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+  }
+}
+
+/* Form info side */
+.course-landing .cl-form-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-landing .cl-form-info__title {
+  font-family: var(--cl-font);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--cl-primary);
+  margin: 0;
+}
+
+.course-landing .cl-section--dark .cl-form-info__title {
+  color: #ffffff;
+}
+
+.course-landing .cl-form-info__text {
+  font-size: 0.95rem;
+  color: var(--cl-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.course-landing .cl-section--dark .cl-form-info__text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.course-landing .cl-form-info__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.course-landing .cl-form-info__link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(10, 77, 140, 0.08);
+  border-radius: var(--cl-radius);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--cl-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.course-landing .cl-section--dark .cl-form-info__link {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.course-landing .cl-form-info__link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cl-shadow-md);
+  border-color: rgba(0, 119, 182, 0.2);
+}
+
+.course-landing .cl-section--dark .cl-form-info__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.course-landing .cl-form-info__icon {
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 119, 182, 0.08);
+  border-radius: var(--cl-radius-full);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.course-landing .cl-section--dark .cl-form-info__icon {
+  background: rgba(0, 188, 212, 0.15);
+  color: var(--cl-cyan);
+}
+
+.course-landing .cl-form-info__link:hover .cl-form-info__icon {
+  transform: scale(1.1);
+  background: rgba(0, 119, 182, 0.15);
+}
+
+.course-landing .cl-form-info__label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cl-text-light);
+  margin-bottom: 2px;
+}
+
+.course-landing .cl-section--dark .cl-form-info__label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.course-landing .cl-form-info__value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cl-cta);
+}
+
+.course-landing .cl-section--dark .cl-form-info__value {
+  color: var(--cl-cyan);
+}
+
+.course-landing .cl-form-wrapper {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   20. ANIMATIONS
+   ========================================================================== */
+
+/* ---- Float ---- */
+@keyframes cl-float {
+  0%, 100% { transform: translateY(-10px); }
+  50%      { transform: translateY(10px);  }
+}
+
+/* ---- Bubble ---- */
+@keyframes cl-bubble {
+  0% {
+    bottom: -20px;
+    opacity: 0.6;
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateX(10px) scale(1.05);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-8px) scale(1);
+  }
+  75% {
+    opacity: 0.3;
+    transform: translateX(6px) scale(0.95);
+  }
+  100% {
+    bottom: 110%;
+    opacity: 0;
+    transform: translateX(-4px) scale(0.8);
+  }
+}
+
+/* ---- Pulse ---- */
+@keyframes cl-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+  50%  { box-shadow: 0 0 0 12px rgba(0, 188, 212, 0);  }
+  100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0);    }
+}
+
+/* CTA Pulse (coral) */
+@keyframes cl-pulse-cta {
+  0%   { box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3), 0 0 0 0 rgba(255, 107, 107, 0.3); }
+  50%  { box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3), 0 0 0 12px rgba(255, 107, 107, 0); }
+  100% { box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3), 0 0 0 0 rgba(255, 107, 107, 0); }
+}
+
+.course-landing .cl-btn-pulse {
+  animation: cl-pulse-cta 2.5s infinite;
+}
+
+/* ---- Fade-in variants ---- */
+@keyframes cl-fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes cl-fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
+@keyframes cl-fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ---- Counter prep ---- */
+@keyframes cl-countUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ---- Wave motion ---- */
+@keyframes cl-wave {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- Shimmer ---- */
+@keyframes cl-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0;  }
+}
+
+/* ---- Scroll-reveal utility ---- */
+.course-landing .cl-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--cl-ease), transform 0.7s var(--cl-ease);
+}
+
+.course-landing .cl-animate.cl-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.course-landing .cl-animate--left {
+  transform: translateX(-30px);
+}
+
+.course-landing .cl-animate--left.cl-visible {
+  transform: translateX(0);
+}
+
+.course-landing .cl-animate--right {
+  transform: translateX(30px);
+}
+
+.course-landing .cl-animate--right.cl-visible {
+  transform: translateX(0);
+}
+
+/* Stagger delays */
+.course-landing .cl-animate--delay-1 { transition-delay: 0.15s; }
+.course-landing .cl-animate--delay-2 { transition-delay: 0.30s; }
+.course-landing .cl-animate--delay-3 { transition-delay: 0.45s; }
+.course-landing .cl-animate--delay-4 { transition-delay: 0.60s; }
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .course-landing .cl-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .course-landing .cl-bubble,
+  .course-landing .cl-btn-pulse {
+    animation: none;
+  }
+}
+
+
+/* ==========================================================================
+   21. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* ---- 480px: Small phones up ---- */
+@media (min-width: 480px) {
+  .course-landing .cl-hero {
+    padding: 100px 32px 140px;
+  }
+
+  .course-landing .cl-hero__stats {
+    gap: 16px;
+  }
+
+  .course-landing .cl-testimonials__card {
+    flex: 0 0 300px;
+  }
+
+  .course-landing .cl-form {
+    padding: 40px;
+  }
+}
+
+/* ---- 768px: Tablet ---- */
+@media (min-width: 768px) {
+  .course-landing .cl-hero {
+    padding: 120px 40px 160px;
+  }
+
+  .course-landing .cl-hero__title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+  }
+
+  .course-landing .cl-section__container {
+    padding: 0 40px;
+  }
+
+  .course-landing .cl-section-title {
+    margin-bottom: 56px;
+  }
+
+  .course-landing .cl-card {
+    padding: 36px;
+  }
+
+  .course-landing .cl-pricing__card {
+    padding: 40px 32px;
+  }
+
+  .course-landing .cl-trust {
+    gap: 20px;
+  }
+}
+
+/* ---- 1024px: Desktop ---- */
+@media (min-width: 1024px) {
+  .course-landing .cl-hero {
+    min-height: 100vh;
+    padding: 140px 48px 180px;
+  }
+
+  .course-landing .cl-hero::after {
+    height: 150px;
+  }
+
+  .course-landing .cl-section__container {
+    padding: 0 48px;
+  }
+
+  .course-landing .cl-section-title {
+    margin-bottom: 64px;
+  }
+
+  .course-landing .cl-stats__number {
+    font-size: 3.5rem;
+  }
+
+  .course-landing .cl-cta-banner {
+    padding: 80px 48px;
+  }
+
+  .course-landing .cl-form {
+    padding: 48px;
+  }
+
+  .course-landing .cl-testimonials__card {
+    flex: 0 0 380px;
+  }
+}
+
+/* ---- 1280px: Large desktop ---- */
+@media (min-width: 1280px) {
+  .course-landing .cl-hero__inner {
+    max-width: 1200px;
+  }
+
+  .course-landing .cl-stats__inner {
+    gap: 40px;
+  }
+
+  .course-landing .cl-pricing {
+    gap: 32px;
+  }
+
+  .course-landing .cl-features {
+    gap: 32px;
+  }
+}
+
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+/* Quick text helpers */
+.course-landing .cl-text-center  { text-align: center; }
+.course-landing .cl-text-left    { text-align: left; }
+.course-landing .cl-text-white   { color: #fff; }
+.course-landing .cl-text-primary { color: var(--cl-primary); }
+.course-landing .cl-text-cyan    { color: var(--cl-cyan); }
+.course-landing .cl-text-gold    { color: var(--cl-gold); }
+
+/* Gradient text */
+.course-landing .cl-gradient-text {
+  background: linear-gradient(135deg, var(--cl-primary), var(--cl-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Spacing helpers */
+.course-landing .cl-mb-0  { margin-bottom: 0; }
+.course-landing .cl-mb-1  { margin-bottom: 8px; }
+.course-landing .cl-mb-2  { margin-bottom: 16px; }
+.course-landing .cl-mb-3  { margin-bottom: 24px; }
+.course-landing .cl-mb-4  { margin-bottom: 32px; }
+.course-landing .cl-mb-6  { margin-bottom: 48px; }
+
+/* Container shorthand */
+.course-landing .cl-container {
+  max-width: var(--cl-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Shimmer loading placeholder */
+.course-landing .cl-shimmer {
+  background: linear-gradient(90deg,
+    rgba(10, 77, 140, 0.06) 25%,
+    rgba(10, 77, 140, 0.12) 50%,
+    rgba(10, 77, 140, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: cl-shimmer 1.5s infinite;
+  border-radius: var(--cl-radius-sm);
+}

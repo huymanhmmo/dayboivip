@@ -1,0 +1,224 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
+  { label: 'Bơi bướm' },
+];
+
+const faqData = [
+  {
+    question: 'Bơi bướm có phải là kiểu bơi khó nhất không?',
+    answer: 'Đúng vậy. Bơi bướm được đánh giá là kiểu bơi khó nhất và tốn nhiều sức nhất trong 4 kiểu bơi thể thao. Kiểu bơi này đòi hỏi thể lực tốt, sự linh hoạt của cột sống và khớp vai, cùng khả năng phối hợp nhịp điệu uốn sóng toàn thân cực kỳ chuẩn xác.'
+  },
+  {
+    question: 'Nên học bơi bướm khi nào?',
+    answer: 'Bạn chỉ nên bắt đầu học bơi bướm sau khi đã thành thạo bơi ếch và bơi sải (trườn sấp). Có nền tảng thể lực tốt và cảm giác nước từ 2 kiểu bơi cơ bản kia sẽ giúp bạn tiếp thu kỹ thuật uốn sóng và quạt tay bơi bướm nhanh hơn rất nhiều.'
+  },
+  {
+    question: 'Làm thế nào để không bị mỏi vai khi bơi bướm?',
+    answer: 'Mỏi vai thường xảy ra do bạn cố dùng lực cơ vai để nhấc tay lên khỏi nước thay vì tận dụng lực đẩy từ động tác uốn sóng hông và đập chân. Hãy tập trung vào việc uốn sóng cơ thể thật tốt để đẩy vai tự động nhô lên sát mặt nước, lúc đó việc vung tay qua không trung sẽ trở nên nhẹ nhàng hơn nhiều.'
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Bướm: Hướng Dẫn Kỹ Thuật Bơi Bướm Chi Tiết Từ Cơ Bản Đến Nâng Cao",
+  "description": "Hướng dẫn học bơi bướm chi tiết từ cơ bản đến nâng cao. Kỹ thuật uốn sóng cơ thể, đập chân cá heo, quạt tay hình lỗ khóa và nhịp phối hợp chu kỳ chuẩn HLV.",
+  "image": "https://dayboi.vip/images/techniques/chinh-sua-ky-thuat-boi-ech.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc - HLV Bơi lội",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-02-01",
+  "dateModified": "2026-05-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/ky-thuat-boi/hoc-boi-buom/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const metadata = {
+  title: `Học Bơi Bướm: Hướng Dẫn Kỹ Thuật Bơi Bướm Chi Tiết Từ Cơ Bản Đến Nâng Cao [${currentYear}]`,
+  description: 'Hướng dẫn học bơi bướm chi tiết từ cơ bản đến nâng cao. Kỹ thuật uốn sóng cơ thể, đập chân cá heo, quạt tay hình lỗ khóa và nhịp phối hợp chu kỳ chuẩn HLV.',
+  canonical: "https://dayboi.vip/ky-thuat-boi/hoc-boi-buom/",
+  image: "/images/techniques/chinh-sua-ky-thuat-boi-ech.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema
+};
+
+const technique = {
+  slug: 'hoc-boi-buom',
+  name: 'Bơi Bướm',
+  badge: '🦋 Kiểu bơi nghệ thuật & sức mạnh',
+  description: 'Bơi bướm (butterfly stroke) là kiểu bơi đẹp mắt nhưng đòi hỏi thể lực và kỹ thuật uốn sóng uyển chuyển nhất. Học bơi bướm đúng kỹ thuật cùng các chuyên gia hàng đầu tại Swim For Life Việt Nam.',
+  difficulty: 'Nâng cao' as const,
+  speed: 'Nhanh' as const,
+  calories: '700 - 800 kcal/h',
+  muscles: 'Cơ bụng, cơ lưng dưới, khớp vai, cơ vai',
+  videoId: 'wnxSNuvYBJI',
+  videoPoster: '/images/techniques/chinh-sua-ky-thuat-boi-ech.jpg',
+  videoAlt: 'HLV Swim For Life chỉnh sửa kỹ thuật uốn sóng thân cho học viên học bơi bướm'
+};
+
+const toc = [
+  { id: 'tong-quan', label: '1. Tổng quan bơi bướm' },
+  { id: 'loi-ich', label: '2. Lợi ích sức khỏe' },
+  { id: 'uon-song', label: '3. Kỹ thuật uốn sóng' },
+  { id: 'dong-tac-tay', label: '4. Kỹ thuật tay' },
+  { id: 'cach-tho', label: '5. Kỹ thuật thở' },
+  { id: 'phoi-hop', label: '6. Phối hợp chu kỳ' },
+  { id: 'loi-thuong-gap', label: '7. Lỗi thường gặp' },
+  { id: 'loi-khuyen', label: '8. Lời khuyên tập luyện' },
+  { id: 'faq', label: '9. Câu hỏi thường gặp' }
+];
+
+const errors = [
+  {
+    title: 'Lỗi đập chân co gối quá nhiều',
+    problem: 'Khiến đùi kéo nước ngược lại tạo lực cản cực kỳ lớn và làm cơ thể bị chìm sâu.',
+    solution: 'Tập trung phát lực uốn sóng từ hông, đùi đi xuống kéo theo cẳng chân, cổ chân thả lỏng duỗi thẳng hoàn toàn.'
+  },
+  {
+    title: 'Lỗi ngẩng đầu quá muộn',
+    problem: 'Ngoi đầu lên thở khi hai tay đã bắt đầu vung qua đầu, làm mất đà lướt và khiến nước tràn vào miệng.',
+    solution: 'Hãy ngẩng đầu để cằm hướng về trước và nhô lên thở ngay khi hai tay đang quạt nước dưới ngực.'
+  },
+  {
+    title: 'Lỗi gồng cứng vai',
+    problem: 'Làm khớp vai mau mỏi, căng cơ và khó đưa hai tay vung qua không trung một cách nhẹ nhàng.',
+    solution: 'Thả lỏng khớp vai hoàn toàn khi tay ở pha vung trên không trung, tập bài xoay dẻo khớp vai trên cạn hàng ngày.'
+  }
+];
+
+const relatedKeywords = ['bơi bướm', 'uốn sóng', 'bơi nâng cao'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+>
+  <!-- 1. Tổng quan -->
+  <section id="tong-quan">
+    <h2>Bơi Bướm Là Gì? Tổng Quan Về Kiểu Bơi Cá Heo Đẹp Mắt</h2>
+    <p>
+      <strong>Bơi bướm</strong> (tên tiếng Anh: Butterfly stroke) là kiểu bơi mới nhất trong các kiểu bơi thể thao, xuất hiện từ việc cải tiến kỹ thuật bơi ếch vào những năm 1930. Kiểu bơi này nổi bật bởi động tác vung hai tay đối xứng qua không trung đồng thời uốn lượn cơ thể như một chú cá heo lướt sóng.
+    </p>
+    <p>
+      Mặc dù đòi hỏi thể lực cao và kỹ thuật phức tạp, bơi bướm lại là kiểu bơi đẹp mắt nhất và mang lại tốc độ bơi cực kỳ ấn tượng, chỉ đứng sau bơi sải.
+    </p>
+  </section>
+
+  <!-- 2. Lợi ích -->
+  <section id="loi-ich">
+    <h2>Lợi Ích Sức Khỏe Vượt Trội Của Bơi Bướm</h2>
+    <p>
+      Khi đã làm chủ được kỹ thuật bơi bướm, bạn sẽ nhận được những lợi ích sức khỏe tuyệt vời:
+    </p>
+    <ul>
+      <li><strong>Đốt cháy calo tối đa:</strong> Bơi bướm là "vua" đốt mỡ thừa, tiêu thụ tới 700 - 800 calo mỗi giờ tập luyện tích cực.</li>
+      <li><strong>Xây dựng cơ bụng và cơ lưng cực khỏe:</strong> Chuyển động uốn sóng liên tục bắt buộc cơ bụng (abs) và cơ lưng dưới (lower back) phải làm việc hết công suất, giúp bạn có vòng 2 thon gọn săn chắc.</li>
+      <li><strong>Tăng cường độ linh hoạt khớp vai và cột sống:</strong> Động tác vung tay rộng và uốn người giúp kéo giãn tối đa các khớp, tăng biên độ chuyển động linh hoạt toàn thân.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Kỹ thuật uốn sóng -->
+  <section id="uon-song">
+    <h2>Kỹ Thuật Uốn Sóng Thân Người (Dolphin Kick)</h2>
+    <p>
+      Khác với bơi ếch hay bơi sải phát lực từ chân, bơi bướm đòi hỏi lực đẩy bắt nguồn từ sự uốn sóng nhịp nhàng của toàn bộ cơ thể.
+    </p>
+    <p><strong>Cách tập uốn sóng cá heo chuẩn xác:</strong></p>
+    <ul>
+      <li><strong>Bắt đầu từ đầu:</strong> Chuyển động uốn sóng bắt đầu từ đầu gật nhẹ xuống → ngực ép xuống → hông đẩy lên → đùi và bàn chân đập xuống. Tất cả tạo thành một đường sóng trơn tru chạy dọc cơ thể.</li>
+      <li><strong>Đập chân cá heo:</strong> Khép chặt hai chân, hai bàn chân hơi xoay hướng vào nhau. Đập chân xuống mạnh mẽ bằng mu bàn chân và đùi, cổ chân thả lỏng hoàn toàn.</li>
+      <li><strong>Đập chân 2 nhịp trong một chu kỳ:</strong> Nhịp 1 đập khi tay vào nước (để nâng hông lên), nhịp 2 đập khi tay đẩy nước về phía sau (để đẩy đầu và vai lên lấy hơi).</li>
+    </ul>
+  </section>
+
+  <!-- 4. Kỹ thuật tay -->
+  <section id="dong-tac-tay">
+    <h2>Kỹ Thuật Quạt Tay Bơi Bướm Hình Chiếc Lỗ Khóa</h2>
+    <p>
+      Động tác tay bơi bướm đối xứng hoàn toàn và đi theo quỹ đạo hình chiếc lỗ khóa (keyhole path) dưới nước:
+    </p>
+    <ol>
+      <li><strong>Pha vào nước:</strong> Hai tay duỗi thẳng hướng phía trước rộng bằng vai, lòng bàn tay hướng ra ngoài, ngón cái chạm nước trước.</li>
+      <li><strong>Pha quạt nước (Pull & Push):</strong> Xoay lòng bàn tay ôm nước, kéo tay cong dưới bụng tạo hình chữ S (hình lỗ khóa), rồi đẩy mạnh tay ra sau qua đùi.</li>
+      <li><strong>Pha vung tay trên không (Recovery):</strong> Khi tay hết đà đẩy nước sau đùi, vung thẳng hai tay sang ngang, sát mặt nước và đưa nhanh về phía trước để bắt đầu chu kỳ mới. Khớp vai cần thả lỏng tối đa ở pha này.</li>
+    </ol>
+  </section>
+
+  <!-- 5. Kỹ thuật thở -->
+  <section id="cach-tho">
+    <h2>Kỹ Thuật Thở Nhịp Nhàng Khi Bơi Bướm</h2>
+    <p>
+      Lấy hơi trong bơi bướm đòi hỏi sự căn thời gian cực kỳ chuẩn xác để không làm hỏng dòng chảy uốn sóng của cơ thể:
+    </p>
+    <ul>
+      <li>Khi hai tay thực hiện pha đẩy nước về phía đùi, đầu và vai được lực đạp chân nhịp 2 đẩy nhô lên khỏi mặt nước.</li>
+      <li>Nhanh chóng ngẩng đầu nhìn về phía trước và hít vào thật sâu bằng miệng.</li>
+      <li>Đầu phải úp xuống nước trước khi hai tay vung chạm nước ở phía trước.</li>
+      <li>Thở ra từ từ bằng mũi suốt thời gian cơ thể uốn sóng dưới nước.</li>
+    </ul>
+  </section>
+
+  <!-- 6. Phối hợp chu kỳ -->
+  <section id="phoi-hop">
+    <h2>Phối Hợp Chu Kỳ Bơi Bướm Hoàn Chỉnh</h2>
+    <p>
+      Công thức phối hợp kinh điển của bơi bướm là: <strong>"1 chu kỳ tay + 2 nhịp đập chân + 1 lần hít thở"</strong>.
+    </p>
+    <p>
+      - Tay vào nước → Đập chân nhịp 1 (Nâng hông).<br/>
+      - Tay quạt dưới nước → Chuẩn bị ngẩng đầu lấy hơi.<br/>
+      - Tay đẩy nước ra sau đùi → Đập chân nhịp 2 + Hít vào bằng miệng.<br/>
+      - Tay vung trên không → Đầu úp xuống nước trước tay.
+    </p>
+  </section>
+
+  <!-- 8. Lời khuyên tập luyện -->
+  <section id="loi-khuyen">
+    <h2>Lời Khuyên Tập Luyện Từ Huấn Luyện Viên Trưởng</h2>
+    <p>
+      Bơi bướm đòi hỏi nền tảng cơ bụng và lưng dẻo dai. Bạn nên kết hợp tập luyện các bài tập Gym/Cardio trên cạn như Plank, Ab Wheel Roller và hít xà để tăng cường thể lực bổ trợ.
+    </p>
+    <p>
+      Đặc biệt, tại <a href="/gioi-thieu/">Trung tâm dạy bơi Swim For Life</a>, chúng tôi có các giáo án chuyên biệt giúp học viên chuyển tiếp từ bơi ếch, bơi sải sang bơi bướm một cách tự nhiên, tránh chấn thương khớp vai nhờ kỹ thuật thả lỏng cơ xương khớp dưới nước độc quyền.
+    </p>
+  </section>
+</TechniqueLayout>

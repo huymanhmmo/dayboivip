@@ -1,0 +1,104 @@
+---
+export interface Props {
+  overview: Array<{ icon: string; label: string; value: string }>;
+  slug: string;
+}
+
+const { overview, slug } = Astro.props;
+---
+
+<section class="cl-section cl-section--alt">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Thông Tin Nhanh
+      </span>
+      <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
+        Thông Tin Chi Tiết Khóa Học
+      </h2>
+      <p class="cl-section-title__sub">
+        Mọi chi tiết về thời gian, hình thức và lịch học đều được thiết kế tối ưu nhất cho học viên.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-overview__grid">
+      {overview.map((item, index) => (
+        <div class={`cl-card cl-overview__card cl-animate cl-animate--delay-${index + 1}`}>
+          <div class="cl-overview__icon-wrapper">
+            <span class="cl-overview__icon">{item.icon}</span>
+          </div>
+          <div class="cl-overview__content">
+            <h3 class="cl-overview__label">{item.label}</h3>
+            <p class="cl-overview__value">{item.value}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cl-overview__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cl-overview__card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .cl-overview__icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(10, 77, 140, 0.08), rgba(0, 188, 212, 0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 188, 212, 0.15);
+  }
+
+  .cl-overview__icon {
+    font-size: 1.8rem;
+  }
+
+  .cl-overview__label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-light);
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  .cl-overview__value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cl-dark);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .cl-overview__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cl-overview__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* If 5 items, make the last items span nicely or center them */
+    .cl-overview__grid > *:nth-child(4) {
+      grid-column: span 1;
+    }
+  }
+</style>

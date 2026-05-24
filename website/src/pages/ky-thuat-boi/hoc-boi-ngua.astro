@@ -1,0 +1,242 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
+  { label: 'Bơi ngửa' },
+];
+
+const faqData = [
+  {
+    question: 'Bơi ngửa có dễ học hơn bơi ếch không?',
+    answer: 'Bơi ngửa có ưu điểm cực lớn là mặt luôn ở trên mặt nước, giúp bạn thở dễ dàng hơn mà không sợ bị sặc nước. Tuy nhiên, bơi ngửa đòi hỏi cảm giác giữ thăng bằng tốt và khả năng định hướng khi không nhìn thấy phía trước. Đối với nhiều người, bơi ngửa dễ học hơn bơi sải nhưng khó hơn bơi ếch.'
+  },
+  {
+    question: 'Tại sao khi bơi ngửa chân tôi cứ bị chìm?',
+    answer: 'Chân bị chìm khi bơi ngửa thường do 3 nguyên nhân: 1. Bạn ngẩng đầu quá cao (nhìn về phía chân thay vì nhìn lên trần/trời), khiến hông bị hạ thấp. 2. Bạn chưa đẩy hông lên cao sát mặt nước. 3. Động tác đạp chân của bạn bị co đầu gối quá nhiều. Để khắc phục, hãy thả lỏng cổ, nhìn thẳng lên trên, ưỡn nhẹ hông và đập chân từ khớp hông với cổ chân thả lỏng.'
+  },
+  {
+    question: 'Làm thế nào để không bị nước vào mũi khi bơi ngửa?',
+    answer: 'Mặc dù mặt luôn trên nước, nước vẫn có thể bắn vào mũi khi bạn quạt tay hoặc đạp chân mạnh. Để tránh điều này, hãy duy trì nhịp thở ra nhẹ nhàng bằng mũi khi tay chuẩn bị vung qua mặt, hoặc dùng kẹp mũi (nose clip) hỗ trợ trong những buổi đầu tập luyện.'
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Ngửa: Hướng Dẫn Kỹ Thuật Bơi Ngửa Đúng Cách Từ A-Z",
+  "description": "Hướng dẫn học bơi ngửa chi tiết cho người mới bắt đầu. Các bước tập nổi ngửa, đạp chân ngửa, quạt tay ngửa và cách thở đúng kỹ thuật cùng HLV Swim For Life.",
+  "image": "https://dayboi.vip/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc - HLV Bơi lội",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-01-25",
+  "dateModified": "2026-05-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/ky-thuat-boi/hoc-boi-ngua/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const metadata = {
+  title: `Học Bơi Ngửa: Hướng Dẫn Kỹ Thuật Bơi Ngửa Đúng Cách Từ A-Z [${currentYear}]`,
+  description: 'Hướng dẫn học bơi ngửa chi tiết cho người mới bắt đầu. Các bước tập nổi ngửa, đạp chân ngửa, quạt tay ngửa và cách thở đúng kỹ thuật cùng HLV Swim For Life.',
+  canonical: "https://dayboi.vip/ky-thuat-boi/hoc-boi-ngua/",
+  image: "/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema
+};
+
+const technique = {
+  slug: 'hoc-boi-ngua',
+  name: 'Bơi Ngửa',
+  badge: '🤽 Kiểu bơi thư giãn nhất',
+  description: 'Bơi ngửa (backstroke) là kiểu bơi duy nhất mà bạn nằm ngửa trên mặt nước, giúp thở tự do và thư giãn cột sống tuyệt đối. Học bơi ngửa chuẩn kỹ thuật cùng Swim For Life Việt Nam.',
+  difficulty: 'Trung bình' as const,
+  speed: 'Trung bình' as const,
+  calories: '400 - 500 kcal/h',
+  muscles: 'Cơ vai, cơ lưng rộng, cơ core',
+  videoId: 'K0swxw49SMc',
+  videoPoster: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
+  videoAlt: 'Huấn luyện viên Swim For Life hướng dẫn học viên tập nổi ngửa thả lỏng'
+};
+
+const toc = [
+  { id: 'tong-quan', label: '1. Tổng quan bơi ngửa' },
+  { id: 'loi-ich', label: '2. Lợi ích sức khỏe' },
+  { id: 'ky-thuat-nen-tang', label: '3. Nổi ngửa nền tảng' },
+  { id: 'dong-tac-chan', label: '4. Kỹ thuật chân' },
+  { id: 'dong-tac-tay', label: '5. Kỹ thuật tay' },
+  { id: 'cach-tho', label: '6. Kỹ thuật thở' },
+  { id: 'phoi-hop', label: '7. Phối hợp toàn thân' },
+  { id: 'loi-thuong-gap', label: '8. Lỗi thường gặp' },
+  { id: 'khoa-hoc', label: '9. Khóa học bơi ngửa' },
+  { id: 'faq', label: '10. Câu hỏi thường gặp' }
+];
+
+const errors = [
+  {
+    title: 'Lỗi gập cổ nhìn chân',
+    problem: 'Ngẩng đầu lên quá cao khiến hông và phần thân dưới chìm sâu xuống nước, tạo nhiều lực cản.',
+    solution: 'Thả lỏng cổ, giữ đầu thẳng hàng với cột sống, tai chìm dưới mặt nước, mắt nhìn thẳng lên trên.'
+  },
+  {
+    title: 'Lỗi co đầu gối quá nhiều (như đạp xe đạp)',
+    problem: 'Đầu gối nhô cao lên mặt nước tạo lực cản lớn làm cơ thể chìm và không tạo ra lực tiến.',
+    solution: 'Giữ chân tương đối thẳng, đập chân từ khớp hông, cảm giác hai đùi di chuyển lên xuống nhịp nhàng.'
+  },
+  {
+    title: 'Lỗi nín thở khi bơi',
+    problem: 'Gây cảm giác căng thẳng, nhanh mệt và dễ bị sặc nước khi quạt tay tạo bọt nước.',
+    solution: 'Duy trì nhịp thở đều đặn: hít vào nhanh bằng miệng khi một bên tay vung và thở ra từ từ bằng mũi/miệng dưới nước.'
+  }
+];
+
+const relatedKeywords = ['bơi ngửa', 'nổi ngửa', 'tự học bơi'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+>
+  <!-- 1. Tổng quan -->
+  <section id="tong-quan">
+    <h2>Bơi Ngửa Là Gì? Tổng Quan Về Kiểu Bơi Nằm Ngửa</h2>
+    <p>
+      <strong>Bơi ngửa</strong> (tên tiếng Anh: Backstroke) là kiểu bơi duy nhất trong 4 kiểu bơi thi đấu mà học viên nằm ngửa trên mặt nước. Về mặt kỹ thuật, bơi ngửa có nhiều nét tương đồng với <a href="/ky-thuat-boi/hoc-boi-sai/">bơi sải</a> (trườn sấp) nhưng đảo ngược tư thế cơ thể.
+    </p>
+    <p>
+      Điểm đặc trưng nhất của bơi ngửa là khuôn mặt của bạn luôn nằm phía trên mặt nước. Điều này giúp loại bỏ hoàn toàn nỗi sợ hãi về việc phải nín thở hay ngụp mặt sâu dưới nước - rào cản tâm lý lớn nhất của người mới học bơi.
+    </p>
+  </section>
+
+  <!-- 2. Lợi ích -->
+  <section id="loi-ich">
+    <h2>Lợi Ích Tuyệt Vời Của Bơi Ngửa Đối Với Sức Khỏe</h2>
+    <p>
+      Bơi ngửa không chỉ là một kiểu bơi thư giãn mà còn mang lại rất nhiều lợi ích vượt trội cho sức khỏe:
+    </p>
+    <ul>
+      <li><strong>Tốt cho cột sống và tư thế:</strong> Nằm ngửa giúp kéo giãn cột sống tự nhiên, hỗ trợ điều trị đau lưng, thoát vị đĩa đệm và điều chỉnh tư thế gù lưng cực kỳ hiệu quả.</li>
+      <li><strong>Phát triển nhóm cơ vai và lưng trên:</strong> Động tác quạt tay ngửa đòi hỏi sự tham gia mạnh mẽ của cơ vai (deltoid) và cơ lưng rộng (latissimus dorsi), giúp bạn có bờ vai săn chắc và linh hoạt.</li>
+      <li><strong>Đốt cháy calo hiệu quả:</strong> Bơi ngửa tiêu tốn khoảng 400 - 500 calo/giờ, tương đương với đi bộ nhanh hoặc đạp xe.</li>
+      <li><strong>Thư giãn tinh thần tối đa:</strong> Nằm ngửa trôi tự do trên mặt nước tạo cảm giác nhẹ nhàng, giải tỏa căng thẳng sau những giờ làm việc mệt mỏi.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Kỹ thuật nền tảng -->
+  <section id="ky-thuat-nen-tang">
+    <h2>Kỹ Thuật Nổi Ngửa Nền Tảng (Bài Tập Bắt Buộc)</h2>
+    <p>
+      Để bơi ngửa được, trước hết bạn phải biết cách thả nổi ngửa cơ thể trên mặt nước. Đây là bài tập quan trọng nhất để xây dựng cảm giác thăng bằng trong môi trường nước.
+    </p>
+    <p><strong>Các bước thực hiện bài tập nổi ngửa:</strong></p>
+    <ol>
+      <li>Đứng ở phần bể nước nông ngang ngực.</li>
+      <li>Hít một hơi thật sâu bằng miệng và giữ hơi trong phổi (phổi lúc này hoạt động như chiếc phao cứu sinh tự nhiên).</li>
+      <li>Từ từ ngả người về phía sau, tai ngập hoàn toàn trong nước, mắt nhìn thẳng lên trần nhà hoặc bầu trời.</li>
+      <li>Đẩy nhẹ hông lên sát mặt nước, hai tay giang rộng sang hai bên chữ T để tăng diện tích nổi.</li>
+      <li>Thả lỏng toàn bộ cơ thể, đặc biệt là vùng cổ và vai. Đừng gồng mình vì gồng sẽ làm bạn chìm nhanh hơn.</li>
+    </ol>
+  </section>
+
+  <!-- 4. Kỹ thuật chân -->
+  <section id="dong-tac-chan">
+    <h2>Kỹ Thuật Đạp Chân Bơi Ngửa Chuẩn</h2>
+    <p>
+      Lực đẩy chính trong bơi ngửa đến từ động tác đập chân. Động tác chân bơi ngửa tương tự như chân bơi sải nhưng được thực hiện ở tư thế ngửa.
+    </p>
+    <p><strong>Kỹ thuật đập chân chuẩn:</strong></p>
+    <ul>
+      <li><strong>Phát lực từ hông:</strong> Động tác đập chân phải bắt đầu từ khớp hông, không phải từ đầu gối. Đầu gối chỉ hơi co nhẹ (khoảng 15 độ) và co tự nhiên khi chân di chuyển.</li>
+      <li><strong>Duỗi thẳng cổ chân:</strong> Cổ chân phải thả lỏng và duỗi thẳng, các ngón chân hơi hướng vào trong (hình chữ V ngược) để tạo bề mặt đẩy nước lớn nhất.</li>
+      <li><strong>Đập luân phiên nhịp nhàng:</strong> Hai chân đập lên xuống luân phiên liên tục, tạo ra những làn sóng nước nhẹ ở đầu ngón chân nhưng không làm bắn nước quá mạnh.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Kỹ thuật tay -->
+  <section id="dong-tac-tay">
+    <h2>Kỹ Thuật Quạt Tay Bơi Ngửa</h2>
+    <p>
+      Động tác tay giúp kéo cơ thể tiến về phía trước và giữ cho cơ thể thẳng hàng. Chu kỳ tay bơi ngửa chia thành 3 pha rõ rệt:
+    </p>
+    <ol>
+      <li><strong>Pha vào nước:</strong> Tay vung thẳng lên từ dưới đùi, đưa qua không trung và chạm nước ở vị trí thẳng hàng với vai. Ngón út là bộ phận tiếp nước đầu tiên.</li>
+      <li><strong>Pha ôm nước và quạt nước:</strong> Khi tay chìm sâu dưới nước khoảng 15-20cm, xoay lòng bàn tay hướng về phía chân, hơi co cùi chỏ và thực hiện động tác quạt nước mạnh mẽ dọc sát thân người về phía đùi.</li>
+      <li><strong>Pha vung tay trên cạn (Recovery):</strong> Khi tay chạm đùi, xoay ngón tay cái lên trên để đưa tay ra khỏi mặt nước, vung thẳng qua không trung để bắt đầu chu kỳ tiếp theo. Khớp vai cần thả lỏng tối đa ở pha này.</li>
+    </ol>
+  </section>
+
+  <!-- 6. Kỹ thuật thở -->
+  <section id="cach-tho">
+    <h2>Kỹ Thuật Thở Và Định Hướng Khi Bơi Ngửa</h2>
+    <p>
+      Dù mặt luôn ở trên nước, bạn vẫn cần có một nhịp thở khoa học để tránh bị mệt và sặc nước:
+    </p>
+    <ul>
+      <li><strong>Quy tắc thở:</strong> Hít vào bằng miệng khi một tay vung trên không trung, và thở ra từ từ bằng mũi/miệng khi tay đó thực hiện quạt nước dưới nước.</li>
+      <li><strong>Định hướng đường bơi:</strong> Vì không nhìn thấy phía trước, bạn hãy tìm một điểm mốc cố định trên trần nhà (bóng đèn, đường kẻ) hoặc dây phao chia làn để giữ cho mình bơi thẳng hàng.</li>
+    </ul>
+  </section>
+
+  <!-- 7. Phối hợp toàn thân -->
+  <section id="phoi-hop">
+    <h2>Phối Hợp Toàn Thân Nhịp Nhàng</h2>
+    <p>
+      Để bơi ngửa nhanh và không mệt, bạn cần phối hợp nhịp nhàng giữa tay, chân và chuyển động xoay thân:
+    </p>
+    <p>
+      Khi tay trái vào nước, thân người hơi xoay nhẹ sang bên trái (khoảng 30 độ). Khi tay phải vào nước, xoay nhẹ sang bên phải. Sự xoay vai và hông này giúp tăng lực quạt tay và giảm lực cản của nước lên vai. Duy trì nhịp 6 lần đập chân cho 1 chu kỳ tay (phải - trái).
+    </p>
+  </section>
+
+  <!-- 9. Khóa học -->
+  <section id="khoa-hoc">
+    <h2>Khóa Học Bơi Ngửa Chuyên Nghiệp Tại Swim For Life</h2>
+    <p>
+      Nếu bạn muốn học bơi ngửa đúng kỹ thuật một cách nhanh nhất, hãy tham khảo các khóa học tại <a href="/khoa-hoc-boi/">Swim For Life Việt Nam</a>. Với đội ngũ HLV tận tâm, giàu kinh nghiệm từ ĐH Sư phạm Hà Nội, chúng tôi cam kết giúp bạn làm chủ làn nước chỉ sau một khóa học 10-12 buổi.
+    </p>
+    <h3>Tại sao nên học bơi ngửa tại Swim For Life?</h3>
+    <ul>
+      <li>HLV giàu kinh nghiệm kèm riêng 1:1 tận tâm dưới nước.</li>
+      <li>Đội ngũ giáo viên tốt nghiệp Thể dục Thể thao chuyên môn cao.</li>
+      <li>Giáo trình thiết kế riêng phù hợp với từng độ tuổi học viên.</li>
+      <li>Học viên được cam kết biết bơi 100% khi kết thúc khóa học.</li>
+      <li>Địa điểm học linh động, hỗ trợ học viên chọn bể bơi gần nhà nhất.</li>
+    </ul>
+  </section>
+</TechniqueLayout>

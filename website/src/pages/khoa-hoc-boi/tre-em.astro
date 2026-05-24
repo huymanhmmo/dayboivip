@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { treEm } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Học bơi trẻ em' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Trẻ Em: Lớp Học Bơi Cho Bé An Toàn & Chuyên Nghiệp",
+  "description": "Hướng dẫn toàn diện về lớp học bơi cho trẻ em từ 3-15 tuổi. Phương pháp dạy bơi chuyên nghiệp, an toàn, giúp bé biết bơi sau 10-12 buổi tại Swim For Life Việt Nam.",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-05-21",
+  "image": "https://dayboi.vip/images/classes/lop-boi-tre-em-bai-ban.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/khoa-hoc-boi/tre-em/"
+  }
+};
+
+const combinedSchema = [articleSchema];
+---
+
+<CourseLayout
+  course={treEm}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

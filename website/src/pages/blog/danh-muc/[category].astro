@@ -1,0 +1,18 @@
+---
+import { blogPosts } from '../../../data/blogPosts.js';
+
+export async function getStaticPaths() {
+  const categoriesMap = new Map();
+  blogPosts.forEach(post => {
+    if (post.category && post.categorySlug) {
+      categoriesMap.set(post.categorySlug, { slug: post.categorySlug });
+    }
+  });
+  return Array.from(categoriesMap.values()).map(cat => ({
+    params: { category: cat.slug }
+  }));
+}
+
+const { category } = Astro.params;
+return Astro.redirect(`/${category}/`, 301);
+---

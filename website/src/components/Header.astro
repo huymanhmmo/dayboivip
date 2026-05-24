@@ -1,0 +1,123 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Giới thiệu', href: '/gioi-thieu/' },
+  {
+    label: 'Khóa học',
+    href: '/khoa-hoc-boi/',
+    children: [
+      { label: 'Khóa 1 kèm 1', href: '/khoa-hoc-boi/ca-nhan/' },
+      { label: 'Khóa học nhóm', href: '/khoa-hoc-boi/nhom/' },
+      { label: 'Doanh nghiệp & Vinhomes', href: '/khoa-hoc-boi/doanh-nghiep/' },
+      { label: 'Học bơi trẻ em', href: '/khoa-hoc-boi/tre-em/' },
+      { label: 'Học bơi người lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
+      { label: 'Học bơi người cao tuổi', href: '/khoa-hoc-boi/nguoi-cao-tuoi/' },
+      { label: 'Học bơi người sợ nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/' },
+    ],
+  },
+  {
+    label: 'Kỹ thuật bơi',
+    href: '/ky-thuat-boi/hoc-boi-ech/',
+    children: [
+      { label: 'Kỹ thuật bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/' },
+      { label: 'Kỹ thuật bơi sải', href: '/ky-thuat-boi/hoc-boi-sai/' },
+      { label: 'Kỹ thuật bơi ngửa', href: '/ky-thuat-boi/hoc-boi-ngua/' },
+      { label: 'Kỹ thuật bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/' },
+      { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/' },
+    ],
+  },
+  {
+    label: 'Địa điểm',
+    href: '/dia-diem/ha-noi/',
+    children: [
+      { label: 'Học bơi tại Hà Nội', href: '/dia-diem/ha-noi/' },
+      { label: 'Học bơi tại TP.HCM', href: '/dia-diem/tphcm/' },
+    ],
+  },
+  { label: 'Blog', href: '/tin-tuc/' },
+  { label: 'Liên hệ', href: '/lien-he/' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="Swim For Life Việt Nam - Trang chủ">
+      <img
+        src="/images/logo/swim-for-life-logo.png"
+        alt="Logo Trung tâm dạy bơi Swim For Life Việt Nam"
+        width="44"
+        height="44"
+        loading="eager"
+      />
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav-menu" id="nav-menu" aria-label="Menu chính">
+      {navItems.map((item) =>
+        item.children ? (
+          <div class="nav-dropdown">
+            <a
+              href={item.href}
+              class={`nav-link ${isActive(item.href) ? 'active' : ''}`}
+            >
+              {item.label}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px;">
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              {item.children.map((child) => (
+                <a href={child.href} class="nav-dropdown-item">
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class={`nav-link ${isActive(item.href) ? 'active' : ''}`}
+          >
+            {item.label}
+          </a>
+        )
+      )}
+    </nav>
+
+    <!-- CTA & Phone -->
+    <div class="header-cta">
+      <a href="tel:0979121097" class="header-phone" aria-label="Gọi hotline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        0979.121.097
+      </a>
+      <a href="/lien-he/" class="btn btn-accent btn-sm pulse" id="header-cta-btn">
+        Đăng Ký Học Thử
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Mở menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>

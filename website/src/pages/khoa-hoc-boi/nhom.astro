@@ -1,0 +1,79 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { nhom } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Khóa nhóm 3-5 người' },
+];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Khóa Học Bơi Nhóm 3-5 Người",
+  "description": "Khóa học bơi nhóm 3-5 người tại Swim For Life. Học cùng bạn bè, gia đình, tiết kiệm chi phí. Cam kết biết bơi sau 10-12 buổi.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
+    "url": "https://dayboi.vip"
+  },
+  "courseMode": "onsite",
+  "maximumAttendeeCapacity": 5
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Khóa bơi nhóm tại Swim For Life có bao nhiêu người?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mỗi nhóm tại Swim For Life chỉ có 3-5 học viên, đảm bảo HLV có thể quan tâm đến từng người. Số lượng này ít hơn nhiều so với các lớp bơi thông thường 10-15 người."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi nhóm có hiệu quả bằng học 1 kèm 1 không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khóa nhóm Swim For Life vẫn đảm bảo hiệu quả cao với tỷ lệ biết bơi 98%. Tuy tốc độ có thể chậm hơn 1 kèm 1, nhưng môi trường nhóm tạo động lực, sự cạnh tranh lành mạnh giúp học viên hào hứng hơn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có cần tự tập nhóm hay Swim For Life sẽ ghép nhóm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cả hai cách đều được! Bạn có thể tự tập nhóm bạn bè, gia đình hoặc đồng nghiệp (3-5 người). Nếu đăng ký cá nhân, Swim For Life sẽ ghép nhóm cùng trình độ và lứa tuổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trẻ em có học nhóm được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Trẻ em từ 5 tuổi trở lên hoàn toàn phù hợp với khóa nhóm. Trẻ em học nhóm thường hào hứng hơn nhờ có bạn đồng hành, đặc biệt khi được tổ chức các trò chơi dưới nước."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lịch học nhóm có cố định không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lịch học nhóm thường cố định theo khung giờ đã chọn khi đăng ký, nhưng có thể linh hoạt điều chỉnh nếu cả nhóm đồng ý. Swim For Life có nhiều khung giờ cho bạn lựa chọn."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [courseSchema, faqSchema];
+---
+
+<CourseLayout
+  course={nhom}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

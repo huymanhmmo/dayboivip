@@ -1,0 +1,235 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
+  { label: 'Đứng nước' },
+];
+
+const faqData = [
+  {
+    question: 'Người sợ nước có học đứng nước được không?',
+    answer: 'Hoàn toàn được. Thực tế đứng nước giúp người sợ nước tự tin hơn rất nhiều khi ra chỗ sâu vì họ biết mình có thể tự nổi tại chỗ mà không cần bám vào thành bể. Quá trình học sẽ bắt đầu ở bể nông có phao hỗ trợ, sau đó mới chuyển dần sang bể sâu dưới sự giám sát 1 kèm 1 của HLV.'
+  },
+  {
+    question: 'Đứng nước kiểu nào đỡ mệt nhất?',
+    answer: 'Đứng nước kiểu đạp chân vịt (Eggbeater kick) được đánh giá là hiệu quả và đỡ tốn sức nhất. Đây là kỹ thuật mà các vận động viên bóng nước thường xuyên sử dụng. Tuy nhiên kỹ thuật này hơi khó tập hơn so với đứng nước bằng chân ếch.'
+  },
+  {
+    question: 'Học đứng nước mất bao lâu?',
+    answer: 'Với người đã biết bơi cơ bản (bơi ếch hoặc sải), việc học đứng nước chỉ mất từ 2-4 buổi để giữ nổi thoải mái. Với người hoàn toàn chưa biết bơi, kỹ năng đứng nước sẽ được lồng ghép vào khóa học bơi 10-12 buổi ở giai đoạn cuối.'
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kỹ Năng Đứng Nước: Hướng Dẫn Kỹ Thuật Đứng Nước Không Mệt Từ A-Z",
+  "description": "Hướng dẫn kỹ năng đứng nước an toàn cho người mới bắt đầu. 3 kỹ thuật đứng nước hiệu quả: đạp chân ếch, đứng nước kiểu đạp vịt (eggbeater) và vẫy tay số 8 giúp nổi lâu không mệt.",
+  "image": "https://dayboi.vip/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc - HLV Bơi lội",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-02-05",
+  "dateModified": "2026-05-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/ky-thuat-boi/ky-nang-dung-nuoc/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const metadata = {
+  title: `Kỹ Năng Đứng Nước: Hướng Dẫn Kỹ Thuật Đứng Nước Không Mệt Từ A-Z [${currentYear}]`,
+  description: 'Hướng dẫn kỹ năng đứng nước an toàn cho người mới bắt đầu. 3 kỹ thuật đứng nước hiệu quả: đạp chân ếch, đứng nước kiểu đạp vịt (eggbeater) và vẫy tay số 8 giúp nổi lâu không mệt.',
+  canonical: "https://dayboi.vip/ky-thuat-boi/ky-nang-dung-nuoc/",
+  image: "/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema
+};
+
+const technique = {
+  slug: 'ky-nang-dung-nuoc',
+  name: 'Kỹ Năng Đứng Nước',
+  badge: '🛟 Kỹ năng sinh tồn cốt lõi',
+  description: 'Đứng nước (treading water) là kỹ năng sinh tồn quan trọng nhất dưới nước, giúp bạn tự nổi tại chỗ không tốn sức ở bất kỳ độ sâu nào. Làm chủ kỹ năng đứng nước cùng Swim For Life Việt Nam.',
+  difficulty: 'Sinh tồn' as const,
+  speed: 'Chậm' as const,
+  calories: '300 - 450 kcal/h',
+  muscles: 'Cơ đùi, cơ bắp chân, cơ core, cơ cánh tay',
+  videoId: 'c4GBGpEv3JQ',
+  videoPoster: '/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg',
+  videoAlt: 'HLV Swim For Life hỗ trợ học viên tập đứng nước bằng chân ếch ở bể sâu'
+};
+
+const toc = [
+  { id: 'tam-quan-trong', label: '1. Tầm quan trọng' },
+  { id: 'nguyen-ly', label: '2. Nguyên lý vật lý' },
+  { id: 'ky-thuat-chan-ech', label: '3. Đứng nước chân ếch' },
+  { id: 'ky-thuat-dap-vit', label: '4. Đứng nước đạp vịt' },
+  { id: 'ky-thuat-tay', label: '5. Kỹ thuật quạt tay' },
+  { id: 'cach-tho', label: '6. Kiểm soát nhịp thở' },
+  { id: 'tien-trinh-tap', label: '7. Tiến trình tập luyện' },
+  { id: 'loi-thuong-gap', label: '8. Sai lầm thường gặp' },
+  { id: 'faq', label: '9. Câu hỏi thường gặp' }
+];
+
+const errors = [
+  {
+    title: 'Lỗi gồng cứng người',
+    problem: 'Tạo sức cản nước rất lớn và tiêu hao oxy của cơ bắp cực kỳ nhanh chóng.',
+    solution: 'Hãy thả lỏng toàn thân, chỉ dùng lực vừa đủ từ đầu gối trở xuống và từ khuỷu tay trở xuống.'
+  },
+  {
+    title: 'Lỗi đập tay từ trên xuống dưới',
+    problem: 'Làm cơ thể nhấp nhô không ổn định, bắn nước lên mặt gây khó thở và sặc nước.',
+    solution: 'Quạt hai tay theo phương ngang hình số 8 nằm ngang (∞) với lòng bàn tay luôn hướng úp xuống đáy bể.'
+  },
+  {
+    title: 'Lỗi duỗi thẳng chân đứng đứng',
+    problem: 'Làm giảm diện tích cản nước dưới bàn chân, triệt tiêu lực nâng và khó phát lực đẩy nước.',
+    solution: 'Luôn giữ tư thế hơi ngồi xổm nhẹ trong nước, đùi mở rộng sang hai bên để thực hiện động tác xoay.'
+  }
+];
+
+const relatedKeywords = ['đứng nước', 'sinh tồn', 'tự nổi'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+>
+  <!-- 1. Tầm quan trọng -->
+  <section id="tam-quan-trong">
+    <h2>Tầm Quan Trọng Của Kỹ Năng Đứng Nước Trong Sinh Tồn</h2>
+    <p>
+      Khi đi bơi hoặc hoạt động ở các nguồn nước tự nhiên (sông, hồ, biển), điều khiến nhiều người lo sợ nhất là gì? Đó chính là việc bị rơi vào vùng nước sâu quá đầu người mà không có điểm bám. Trong tình huống đó, bơi liên tục sẽ khiến bạn nhanh chóng kiệt sức.
+    </p>
+    <p>
+      <strong>Kỹ năng đứng nước (Treading water)</strong> chính là giải pháp. Nó cho phép bạn giữ đầu thẳng trên mặt nước tại chỗ mà không cần di chuyển tiến về phía trước. Đây là kỹ năng sinh tồn tối thượng giúp bạn:
+    </p>
+    <ul>
+      <li>Giữ bình tĩnh, quan sát xung quanh để tìm sự giúp đỡ.</li>
+      <li>Nghỉ ngơi lấy lại sức khi đang bơi xa bờ bị mỏi cơ chuột rút.</li>
+      <li>Tự tin bơi lội ở bất kỳ độ sâu nào mà không sợ hãi.</li>
+      <li>Hỗ trợ hoặc cứu hộ người khác gặp nạn dưới nước một cách an toàn.</li>
+    </ul>
+  </section>
+
+  <!-- 2. Nguyên lý -->
+  <section id="nguyen-ly">
+    <h2>Nguyên Lý Vật Lý Giúp Bạn Tự Nổi Không Mệt</h2>
+    <p>
+      Nhiều người nghĩ đứng nước là phải dùng sức đập nước thật mạnh để đẩy người lên. Đó là quan niệm hoàn toàn sai lầm và là lý do họ bị mệt chỉ sau 30 giây.
+    </p>
+    <p>
+      Đứng nước thông minh dựa trên 2 yếu tố:
+    </p>
+    <ol>
+      <li><strong>Lực đẩy Archimedes:</strong> Phổi chứa đầy không khí là chiếc phao tốt nhất. Hãy luôn giữ phổi ở trạng thái chứa từ 60-80% thể tích khí bằng cách thở nông, hít vào nhanh và thở ra từ từ.</li>
+      <li><strong>Tạo lực nâng liên tục:</strong> Thay vị đập nước từ trên xuống dưới (tạo lực nâng ngắt quãng và tốn sức), ta thực hiện quạt nước theo phương ngang để tạo lực nâng liên tục giống như cánh quạt trực thăng hoặc mái chèo xuồng.</li>
+    </ol>
+  </section>
+
+  <!-- 3. Đứng nước chân ếch -->
+  <section id="ky-thuat-chan-ech">
+    <h2>Đứng Nước Bằng Chân Bơi Ếch (Dễ Tập Nhất)</h2>
+    <p>
+      Đây là kỹ thuật phổ biến nhất cho người mới bắt đầu vì nó tận dụng động tác chân ếch mà bạn đã biết.
+    </p>
+    <p><strong>Cách thực hiện:</strong></p>
+    <ul>
+      <li>Tư thế thân người thẳng đứng trong nước, hơi ngả nhẹ về phía trước.</li>
+      <li>Co hai đầu gối sang hai bên, bẻ cổ chân hướng ra ngoài (như động tác chân bơi ếch).</li>
+      <li>Đạp mạnh chân xuống và khép lại để tạo lực nâng cơ thể nhô lên.</li>
+      <li><strong>Điểm khác biệt:</strong> Thay vì lướt nước như khi bơi nằm sấp, ở tư thế đứng nước, sau khi đạp khép chân, bạn ngay lập tức co chân lên để chuẩn bị cho nhịp đạp tiếp theo. Nhịp đạp nhanh và liên tục hơn.</li>
+    </ul>
+  </section>
+
+  <!-- 4. Đứng nước đạp vịt -->
+  <section id="ky-thuat-dap-vit">
+    <h2>Đứng Nước Kiểu Đạp Vịt (Eggbeater Kick - Hiệu Quả Nhất)</h2>
+    <p>
+      Đây là kỹ thuật đỉnh cao của đứng nước, giúp giữ cơ thể cực kỳ ổn định và tiết kiệm năng lượng tối đa.
+    </p>
+    <p><strong>Cách thực hiện động tác đạp vịt:</strong></p>
+    <ul>
+      <li>Tư thế ngồi xổm trong nước (đùi song song với mặt nước, hông hơi đẩy ra sau).</li>
+      <li>Hai chân thực hiện động tác xoay vòng tròn luân phiên ngược chiều nhau (như chuyển động của dụng cụ đánh trứng - eggbeater). Chân trái xoay theo chiều kim đồng hồ, chân phải xoay ngược chiều kim đồng hồ.</li>
+      <li>Lòng bàn chân và ống chân trong thực hiện việc miết nước liên tục hướng xuống dưới. Vì hai chân chuyển động luân phiên nên lực nâng cơ thể được duy trì liên tục 100% thời gian, không có nhịp dừng.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Kỹ thuật tay -->
+  <section id="ky-thuat-tay">
+    <h2>Động Tác Tay Quạt Nước Số 8 (Sculling)</h2>
+    <p>
+      Để hỗ trợ cho chân và giữ thăng bằng đầu không bị lắc lư, động tác quạt tay số 8 đóng vai trò cực kỳ quan trọng:
+    </p>
+    <ul>
+      <li>Đặt hai tay dưới mặt nước khoảng 15-20cm, lòng bàn tay hướng xuống đáy bể, cùi chỏ hơi cong nhẹ.</li>
+      <li>Di chuyển hai bàn tay sang ngang theo hình số 8 nằm ngang (∞) trước ngực.</li>
+      <li>Khi gạt tay ra ngoài, hơi nghiêng lòng bàn tay hướng ra ngoài. Khi gạt tay vào trong, nghiêng lòng bàn tay hướng vào trong. Việc thay đổi góc nghiêng lòng bàn tay này tạo ra lực nâng liên tục hướng lên trên.</li>
+    </ul>
+  </section>
+
+  <!-- 6. Kiểm soát nhịp thở -->
+  <section id="cach-tho">
+    <h2>Cách Kiểm Soát Nhịp Thở Tránh Mất Sức</h2>
+    <p>
+      Khi đứng nước ở vùng bể sâu, tâm lý hoảng loạn sẽ làm bạn thở nhanh, nông dẫn đến nhanh kiệt sức. Hãy áp dụng kỹ thuật thở sau:
+    </p>
+    <ul>
+      <li>Giữ bình tĩnh, thả lỏng cơ vai và cổ. Tai có thể ngập nhẹ dưới nước nhưng giữ miệng luôn trên mặt nước.</li>
+      <li>Hít vào thật sâu bằng miệng trong 1 giây, giữ hơi lại trong lồng ngực khoảng 2-3 giây để tăng sức nổi, rồi thở ra từ từ bằng mũi trong 3-4 giây.</li>
+      <li>Tuyệt đối không thở gấp. Thở càng đều, bạn đứng nước càng lâu và nhẹ nhàng.</li>
+    </ul>
+  </section>
+
+  <!-- 7. Tiến trình tập luyện -->
+  <section id="tien-trinh-tap">
+    <h2>Tiến Trình Tập Luyện Đứng Nước An Toàn</h2>
+    <p>Đứng nước nên được tập theo các bước tăng dần độ khó dưới đây để đảm bảo an toàn:</p>
+    <ol>
+      <li><strong>Tập tại bể nông (có phao):</strong> Đứng ở bể nông sâu ngang ngực, đeo phao lưng hoặc phao tay, tập động tác chân đạp vịt hoặc chân ếch kết hợp quạt tay số 8.</li>
+      <li><strong>Tập bám thành bể:</strong> Di chuyển ra vùng bể sâu, một tay bám nhẹ thành bể để hỗ trợ, tay còn lại và hai chân tập đứng nước.</li>
+      <li><strong>Tập không phao ở bể sâu (HLV giám sát):</strong> Buông tay khỏi thành bể, tự đứng nước trong 10 giây, 20 giây rồi tăng dần lên 1-2 phút. Luôn có HLV đứng sát bên cạnh hỗ trợ.</li>
+    </ol>
+    <p>
+      Tại <a href="/gioi-thieu/">Swim For Life Việt Nam</a>, kỹ năng đứng nước là cấu phần bắt buộc và được <strong>tặng kèm miễn phí</strong> trong mọi khóa học bơi từ cơ bản đến nâng cao. Chúng tôi cam kết 100% học viên sau khi tốt nghiệp đều tự tin đứng nước tối thiểu 2-3 phút ở độ sâu 2m.
+    </p>
+  </section>
+</TechniqueLayout>

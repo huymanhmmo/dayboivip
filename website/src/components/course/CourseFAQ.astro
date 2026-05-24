@@ -1,0 +1,96 @@
+---
+export interface Props {
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { faqs } = Astro.props;
+---
+
+<section class="cl-section" id="faq">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Hỏi Đáp Lớp Bơi
+      </span>
+      <h2 class="cl-section-title__heading">
+        Giải Đáp Thắc Mắc Thường Gặp
+      </h2>
+      <p class="cl-section-title__sub">
+        Những thắc mắc phổ biến của học viên và phụ huynh khi đăng ký học bơi tại trung tâm.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-faq">
+      {faqs.map((faq, index) => (
+        <div class="cl-faq__item cl-animate">
+          <button class="cl-faq__question" aria-expanded="false" data-index={index}>
+            <span>{faq.question}</span>
+            <span class="cl-faq__icon"></span>
+          </button>
+          <div class="cl-faq__answer">
+            <div class="cl-faq__answer-inner">
+              {faq.answer}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Structured Data for FAQ SEO -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+})} />
+
+<script>
+  // Simple interactive accordion script
+  const faqItems = document.querySelectorAll('.course-landing .cl-faq__item') as NodeListOf<HTMLDivElement>;
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.cl-faq__question') as HTMLButtonElement | null;
+    const answerDiv = item.querySelector('.cl-faq__answer') as HTMLDivElement | null;
+
+    if (questionBtn && answerDiv) {
+      questionBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            const otherBtn = otherItem.querySelector('.cl-faq__question') as HTMLButtonElement | null;
+            const otherAnswer = otherItem.querySelector('.cl-faq__answer') as HTMLDivElement | null;
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAnswer) otherAnswer.style.maxHeight = '0px';
+          }
+        });
+
+        // Toggle current item
+        if (isActive) {
+          item.classList.remove('active');
+          questionBtn.setAttribute('aria-expanded', 'false');
+          answerDiv.style.maxHeight = '0px';
+        } else {
+          item.classList.add('active');
+          questionBtn.setAttribute('aria-expanded', 'true');
+          // Set to scrollHeight for a smooth transition with dynamic text heights
+          answerDiv.style.maxHeight = `${answerDiv.scrollHeight}px`;
+        }
+      });
+    }
+  });
+</script>

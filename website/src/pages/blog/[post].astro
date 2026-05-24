@@ -1,0 +1,12 @@
+---
+import { blogPosts } from '../../data/blogPosts.js';
+
+export async function getStaticPaths() {
+  return blogPosts.map(post => ({
+    params: { post: post.slug }
+  }));
+}
+
+const { post } = Astro.params;
+return Astro.redirect(`/${post}/`, 301);
+---

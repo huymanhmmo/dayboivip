@@ -1,0 +1,22 @@
+---
+export interface Props {
+  id?: string;
+  title?: string;
+  text?: string;
+}
+
+const { 
+  id = 'success-modal',
+  title = 'Đăng Ký Thành Công!',
+  text = 'Cảm ơn bạn đã đăng ký học thử tại Swim For Life Việt Nam. Đội ngũ HLV sẽ liên hệ lại với bạn qua Số điện thoại/Zalo trong vòng 15-30 phút để xác nhận lịch học.'
+} = Astro.props;
+---
+
+<div class="modal-overlay" id={id}>
+  <div class="modal-card">
+    <div class="modal-icon">✓</div>
+    <h3 class="modal-title">{title}</h3>
+    <p class="modal-text">{text}</p>
+    <button class="btn btn-primary" id="close-modal-btn" style="width: 100%; justify-content: center;">Đóng</button>
+  </div>
+</div>

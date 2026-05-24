@@ -1,0 +1,643 @@
+---
+const currentYear = new Date().getFullYear();
+import PageLayout from '../../layouts/PageLayout.astro';
+import CourseHero from '../../components/course/CourseHero.astro';
+import CourseTrust from '../../components/course/CourseTrust.astro';
+import CourseFAQ from '../../components/course/CourseFAQ.astro';
+import FloatingCTA from '../../components/course/FloatingCTA.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+import { courses } from '../../data/courses.js';
+import '../../styles/course-landing.css';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Khóa Học Bơi Swim For Life",
+  "description": "Khóa học bơi từ cơ bản đến nâng cao, cam kết biết bơi sau 10-12 buổi. Dạy bơi 1 kèm 1, nhóm, doanh nghiệp tại Hà Nội và TPHCM.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
+    "url": "https://dayboi.vip"
+  },
+  "hasCourseInstance": [
+    {
+      "@type": "CourseInstance",
+      "name": "Khóa Bơi Cá Nhân 1 Kèm 1",
+      "courseMode": "onsite",
+      "courseWorkload": "PT10H"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Khóa Bơi Nhóm 3-5 Người",
+      "courseMode": "onsite",
+      "courseWorkload": "PT12H"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Chương Trình Doanh Nghiệp & Vinhomes",
+      "courseMode": "onsite"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Khóa học bơi Swim For Life kéo dài bao lâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khóa học bơi cơ bản tại Swim For Life thường kéo dài 10-12 buổi, mỗi buổi 60-90 phút. Cam kết học viên sẽ biết bơi thành thạo ít nhất 1 kiểu bơi sau khóa học."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life có những loại khóa học nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life cung cấp 3 loại khóa học: Khóa cá nhân 1 kèm 1, Khóa nhóm 3-5 người, và Chương trình doanh nghiệp/Vinhomes. Mỗi loại có ưu điểm riêng phù hợp với nhu cầu khác nhau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học phí khóa bơi tại Swim For Life là bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Học phí được tính theo từng loại khóa và số buổi. Swim For Life cam kết mức học phí cạnh tranh, minh bạch. Liên hệ hotline 0979.121.097 để nhận báo giá chi tiết."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life dạy những kỹ thuật bơi nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life dạy đầy đủ 4 kỹ thuật bơi: Bơi ếch, Bơi sải (bơi tự do), Bơi ngửa, Bơi bướm, cộng thêm kỹ năng đứng nước. Học viên sẽ được học từ kỹ thuật cơ bản nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có được học thử miễn phí không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Swim For Life cung cấp buổi học thử miễn phí để học viên trải nghiệm phương pháp giảng dạy, gặp gỡ huấn luyện viên và đánh giá trình độ trước khi đăng ký chính thức."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chính sách bảo lưu khóa học như thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life cho phép bảo lưu khóa học lên đến 2.5 tháng. Học viên có thể linh hoạt sắp xếp lịch học phù hợp với công việc và sinh hoạt cá nhân."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [schema, faqSchema];
+
+const hubHeroStats = [
+  { number: 5000, suffix: '+', label: 'Học viên đã biết bơi' },
+  { number: 10, suffix: '-12', label: 'Buổi cam kết biết bơi' },
+  { number: 98, suffix: '%', label: 'Tỉ lệ biết bơi' }
+];
+
+const faqs = [
+  {
+    question: "Khóa học bơi Swim For Life kéo dài bao lâu?",
+    answer: "Khóa học bơi cơ bản tại Swim For Life thường kéo dài 10-12 buổi, mỗi buổi 60-90 phút. Cam kết học viên sẽ biết bơi thành thạo ít nhất 1 kiểu bơi sau khóa học. Tần suất học lý tưởng là 3-4 buổi/tuần để đạt kết quả tốt nhất."
+  },
+  {
+    question: "Swim For Life có những loại khóa học nào?",
+    answer: "Swim For Life cung cấp 3 loại khóa học chính: Khóa cá nhân 1 kèm 1 (HLV riêng, linh hoạt tối đa), Khóa nhóm 3-5 người (tiết kiệm, vui vẻ), và Chương trình doanh nghiệp/Vinhomes (quy mô lớn, chương trình đặc biệt). Mỗi loại có ưu điểm riêng phù hợp với nhu cầu khác nhau."
+  },
+  {
+    question: "Học phí khóa bơi tại Swim For Life là bao nhiêu?",
+    answer: "Học phí được tính theo từng loại khóa và số buổi. Swim For Life cam kết mức học phí bơi lội cạnh tranh, minh bạch, không phát sinh chi phí. Liên hệ hotline/zalo 0979.121.097 để nhận báo giá chi tiết nhất."
+  },
+  {
+    question: "Swim For Life dạy những kỹ thuật bơi nào?",
+    answer: "Swim For Life dạy đầy đủ 4 kỹ thuật bơi: Bơi ếch (cơ bản, dễ học), Bơi sải/tự do (nhanh nhất), Bơi ngửa (thở thoải mái), Bơi bướm (nâng cao). Ngoài ra còn dạy kỹ năng đứng nước – kỹ năng sinh tồn quan trọng nhất."
+  },
+  {
+    question: "Có được học thử miễn phí không?",
+    answer: "Có! Swim For Life cung cấp buổi học thử miễn phí để bạn trải nghiệm phương pháp giảng dạy, gặp gỡ huấn luyện viên và đánh giá trình độ trước khi đăng ký chính thức. Liên hệ hotline để đặt lịch học thử."
+  },
+  {
+    question: "Chính sách bảo lưu khóa học như thế nào?",
+    answer: "Swim For Life cho phép bảo lưu khóa học lên đến 2.5 tháng. Bạn có thể linh hoạt sắp xếp lịch học phù hợp với công việc và sinh hoạt cá nhân mà không lo mất phí đã đóng."
+  }
+];
+---
+
+<PageLayout
+  title={`Khóa Học Bơi Swim For Life: Từ Cơ Bản Đến Nâng Cao [${currentYear}]`}
+  description="Khóa học bơi chuyên nghiệp tại Swim For Life - Cam kết biết bơi sau 10-12 buổi. Dạy bơi 1 kèm 1, nhóm, doanh nghiệp. HLV tâm lý, học thử miễn phí. Hotline: 0979.121.097"
+  canonical="https://dayboi.vip/khoa-hoc-boi/"
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+>
+  <div class="course-landing">
+    <!-- Hero Section -->
+    <CourseHero 
+      title={`Khóa Học Bơi Swim For Life: Từ Cơ Bản Đến Nâng Cao [${currentYear}]`}
+      subtitle="Chương trình dạy bơi bài bản, khoa học – cam kết biết bơi sau 10-12 buổi. HLV tâm lý, phương pháp giảng dạy hiện đại, phù hợp mọi lứa tuổi."
+      description="Chương trình dạy bơi bài bản, khoa học – cam kết biết bơi sau 10-12 buổi. HLV tâm lý, phương pháp giảng dạy hiện đại, phù hợp mọi lứa tuổi."
+      image="/images/classes/giang-vien-huong-dan-ky-thuat.jpg"
+      stats={hubHeroStats}
+      slug="hub"
+    />
+
+    <!-- Course Grid Section -->
+    <section class="cl-section" id="khoa-hoc">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Danh Sách Lớp Học
+          </span>
+          <h2 class="cl-section-title__heading">
+            Các Khóa Học Bơi Thiết Kế Riêng Cho Bạn
+          </h2>
+          <p class="cl-section-title__sub">
+            Từ lớp dạy bơi cho trẻ nhỏ từ 3 tuổi đến các lớp cho người lớn nhát nước lâu năm, chúng tôi có chương trình phù hợp với mọi nhu cầu.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-course-grid">
+          {courses.map((course) => (
+            <div class="cl-hub-card cl-animate">
+              <div class="cl-hub-card__image-wrapper">
+                <img src={course.heroImage} alt={course.title} class="cl-hub-card__image" loading="lazy" />
+                <span class="cl-hub-card__badge">{course.targetAudience}</span>
+              </div>
+              <div class="cl-hub-card__content">
+                <div class="cl-hub-card__icon-title">
+                  <span class="cl-hub-card__icon">{course.icon}</span>
+                  <h3 class="cl-hub-card__title">{course.shortTitle}</h3>
+                </div>
+                <p class="cl-hub-card__description">
+                  {course.subtitle}
+                </p>
+                <div class="cl-hub-card__specs">
+                  <div class="cl-hub-card__spec">
+                    <span class="cl-hub-card__spec-icon">⏱️</span>
+                    <span>{course.duration}</span>
+                  </div>
+                  <div class="cl-hub-card__spec">
+                    <span class="cl-hub-card__spec-icon">👥</span>
+                    <span>{course.classSize}</span>
+                  </div>
+                </div>
+                <div class="cl-hub-card__footer">
+                  <div class="cl-hub-card__price-wrapper">
+                    <span class="cl-hub-card__price-label">{course.priceFrom === "Liên hệ báo giá" ? "Học phí" : "Giá chỉ từ"}</span>
+                    <span class="cl-hub-card__price">{course.priceFrom}</span>
+                  </div>
+                  <a href={`/khoa-hoc-boi/${course.slug}/`} class="cl-hub-card__btn">
+                    Xem chi tiết →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare Section -->
+    <section class="cl-section cl-section--alt" id="so-sanh">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Lựa Chọn Phù Hợp
+          </span>
+          <h2 class="cl-section-title__heading">
+            So Sánh Các Hình Thức Học Bơi
+          </h2>
+          <p class="cl-section-title__sub">
+            Bảng so sánh chi tiết giúp học viên và phụ huynh lựa chọn hình thức học bơi tối ưu nhất với nhu cầu của mình.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-comparison-table-wrapper cl-animate">
+          <table class="cl-comparison-table">
+            <thead>
+              <tr>
+                <th>Tiêu chí</th>
+                <th>Khóa Cá Nhân 1 Kèm 1</th>
+                <th>Khóa Nhóm 3 - 5 Bé</th>
+                <th>Doanh Nghiệp & Đoàn Thể</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Số học viên / HLV</strong></td>
+                <td>1 học viên / 1 thầy</td>
+                <td>3 - 5 học viên / 1 thầy</td>
+                <td>Số lượng lớn (HLV tương ứng)</td>
+              </tr>
+              <tr>
+                <td><strong>Giáo trình học</strong></td>
+                <td>Cá nhân hóa theo thể trạng & tâm lý</td>
+                <td>Giáo trình chuẩn, thi đua cùng bạn bè</td>
+                <td>Thiết kế riêng theo nhu cầu doanh nghiệp</td>
+              </tr>
+              <tr>
+                <td><strong>Địa điểm học</strong></td>
+                <td>Tự chọn bể bơi gần nhà / bể bơi gia đình</td>
+                <td>Hệ thống bể bơi bốn mùa liên kết</td>
+                <td>Gần văn phòng hoặc tại cơ sở liên kết</td>
+              </tr>
+              <tr>
+                <td><strong>Lịch học</strong></td>
+                <td>Linh hoạt 100% theo học viên</td>
+                <td>Cố định theo ca chọn khi đăng ký</td>
+                <td>Theo thỏa thuận, linh hoạt ca kíp</td>
+              </tr>
+              <tr>
+                <td><strong>Cam kết đầu ra</strong></td>
+                <td>Biết bơi 100% (học tiếp miễn phí)</td>
+                <td>Tỉ lệ biết bơi trên 98%</td>
+                <td>Cam kết theo hợp đồng dịch vụ</td>
+              </tr>
+              <tr>
+                <td><strong>Thời gian trung bình</strong></td>
+                <td>7 - 10 buổi biết bơi</td>
+                <td>10 - 12 buổi biết bơi</td>
+                <td>10 - 12 buổi biết bơi</td>
+              </tr>
+              <tr>
+                <td><strong>Mức học phí</strong></td>
+                <td>Cao (Đáng giá từng đồng)</td>
+                <td>Tiết kiệm, ưu đãi theo nhóm</td>
+                <td>Mức chiết khấu cao cho số lượng lớn</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Quality Guarantee Badges -->
+    <CourseTrust />
+
+    <!-- FAQ Accordion -->
+    <CourseFAQ 
+      faqs={faqs}
+    />
+
+    <!-- Form Section -->
+    <section class="cl-section cl-section--alt" id="dang-ky">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Đăng Ký Ngay
+          </span>
+          <h2 class="cl-section-title__heading">
+            Bắt Đầu Hành Trình Học Bơi Hôm Nay
+          </h2>
+          <p class="cl-section-title__sub">
+            Để lại thông tin dưới đây, Swim For Life sẽ liên hệ tư vấn lộ trình và xếp lịch học thử MIỄN PHÍ sớm nhất cho bạn/bé.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-form-container">
+          <div class="cl-form-info">
+            <h3 class="cl-form-info__title">Hỗ Trợ Nhanh 24/7</h3>
+            <p class="cl-form-info__text">
+              Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:
+            </p>
+            <div class="cl-form-info__links">
+              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
+                <span class="cl-form-info__icon">📞</span>
+                <div>
+                  <span class="cl-form-info__label">Hotline tư vấn</span>
+                  <span class="cl-form-info__value">0979.121.097</span>
+                </div>
+              </a>
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
+                <span class="cl-form-info__icon">💬</span>
+                <div>
+                  <span class="cl-form-info__label">Trò chuyện Zalo</span>
+                  <span class="cl-form-info__value">Mr.Mạnh (0979.121.097)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="cl-form-wrapper">
+            <RegistrationForm id="course-register-form" className="cl-astro-form" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Mobile CTA -->
+    <FloatingCTA />
+  </div>
+</PageLayout>
+
+<style>
+  .cl-course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  
+  @media (min-width: 768px) {
+    .cl-course-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cl-course-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .cl-hub-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(10, 77, 140, 0.05);
+    border: 1px solid rgba(10, 77, 140, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cl-hub-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(10, 77, 140, 0.12);
+    border-color: var(--cl-primary-light);
+  }
+  
+  .cl-hub-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .cl-hub-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cl-hub-card:hover .cl-hub-card__image {
+    transform: scale(1.08);
+  }
+  
+  .cl-hub-card__badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(10, 77, 140, 0.9);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+  
+  .cl-hub-card__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .cl-hub-card__icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .cl-hub-card__icon {
+    font-size: 1.5rem;
+  }
+  
+  .cl-hub-card__title {
+    font-family: var(--cl-font);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cl-dark);
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .cl-hub-card__description {
+    font-size: 0.9rem;
+    color: var(--cl-text-light);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  
+  .cl-hub-card__specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px dashed rgba(10, 77, 140, 0.1);
+  }
+  
+  .cl-hub-card__spec {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--cl-text);
+  }
+  
+  .cl-hub-card__spec-icon {
+    color: var(--cl-primary-light);
+    font-size: 1rem;
+  }
+  
+  .cl-hub-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(10, 77, 140, 0.08);
+  }
+  
+  .cl-hub-card__price-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cl-hub-card__price-label {
+    font-size: 0.75rem;
+    color: var(--cl-text-light);
+  }
+  
+  .cl-hub-card__price {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--cl-primary);
+  }
+  
+  .cl-hub-card__btn {
+    padding: 8px 16px;
+    background: var(--cl-cta-gradient);
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .cl-hub-card__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+  }
+  
+  /* Comparison Table section styling */
+  .cl-comparison-table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--cl-shadow-md);
+    border: 1px solid rgba(10, 77, 140, 0.08);
+    margin-top: 32px;
+  }
+  
+  .cl-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 800px;
+  }
+  
+  .cl-comparison-table th, 
+  .cl-comparison-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(10, 77, 140, 0.08);
+    font-size: 0.95rem;
+  }
+  
+  .cl-comparison-table th {
+    background: rgba(10, 77, 140, 0.03);
+    color: var(--cl-primary);
+    font-weight: 700;
+    font-family: var(--cl-font);
+  }
+  
+  .cl-comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .cl-comparison-table tr:hover {
+    background: rgba(10, 77, 140, 0.01);
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations (.cl-animate)
+  const setupAnimations = () => {
+    const animElements = document.querySelectorAll('.course-landing .cl-animate');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cl-visible');
+          // Once animated, we don't need to observe it anymore
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animElements.forEach(el => observer.observe(el));
+  };
+
+  // Stats counter animation (data-counter)
+  const setupCounters = () => {
+    const counterElements = document.querySelectorAll('.course-landing [data-counter]');
+
+    const animateCounter = (el: HTMLElement) => {
+      const target = parseInt(el.getAttribute('data-target') || '0', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 2000; // 2 seconds
+      const startTime = performance.now();
+
+      const updateCount = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (easeOutQuad)
+        const easeProgress = progress * (2 - progress);
+        
+        const currentValue = Math.floor(easeProgress * target);
+        
+        // Format with thousand separator for VN locale
+        el.textContent = currentValue.toLocaleString('vi-VN') + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = target.toLocaleString('vi-VN') + suffix;
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    };
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          if (!el.classList.contains('counted')) {
+            el.classList.add('counted');
+            animateCounter(el);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    counterElements.forEach(el => observer.observe(el));
+  };
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    setupAnimations();
+    setupCounters();
+  });
+
+  // Execute immediately in case DOMContentLoaded has already fired
+  setupAnimations();
+  setupCounters();
+</script>
+

@@ -1,0 +1,619 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
+
+const title = 'Học Bơi Chuyên Nghiệp | Swim For Life Việt Nam - Dạy Bơi Uy Tín #1';
+const description = 'Trung tâm dạy bơi Swim For Life Việt Nam - Học bơi 1 kèm 1 với HLV chuyên nghiệp. Cam kết biết bơi sau 10-12 buổi. Dạy bơi cho trẻ em & người lớn tại Hà Nội, TPHCM.';
+
+const faqData = [
+  {
+    question: 'Học bơi mất bao lâu để biết bơi?',
+    answer: 'Tại Swim For Life, cam kết học viên biết bơi sau 10-12 buổi học. Tùy theo thể trạng và mức độ tiếp thu, một số học viên có thể biết bơi sớm hơn. Chúng tôi đánh giá "biết bơi" là có thể tự bơi được tối thiểu 25m liên tục mà không cần hỗ trợ.'
+  },
+  {
+    question: 'Chi phí học bơi 1 kèm 1 là bao nhiêu?',
+    answer: 'Chi phí học bơi 1 kèm 1 tùy thuộc vào gói học và khu vực. Bạn vui lòng liên hệ hotline: 0979.121.097 để được tư vấn chi tiết về học phí và chương trình ưu đãi hiện tại.'
+  },
+  {
+    question: 'Trẻ em bao nhiêu tuổi có thể bắt đầu học bơi?',
+    answer: 'Trẻ em từ 4 tuổi trở lên có thể bắt đầu học bơi tại Swim For Life. Đối với trẻ dưới 6 tuổi, chúng tôi có chương trình đặc biệt với HLV chuyên trẻ nhỏ, phương pháp vui chơi kết hợp học bơi giúp trẻ làm quen với nước một cách tự nhiên.'
+  },
+  {
+    question: 'Học bơi có an toàn không?',
+    answer: 'An toàn là ưu tiên hàng đầu tại Swim For Life. HLV luôn ở sát bên học viên, sử dụng các dụng cụ hỗ trợ chuyên nghiệp (phao, ván bơi), bể bơi đạt chuẩn. Với chương trình 1 kèm 1, HLV giám sát 100% thời gian học, đảm bảo an toàn tuyệt đối cho học viên.'
+  },
+  {
+    question: 'Có được học thử miễn phí không?',
+    answer: 'Có! Swim For Life cung cấp buổi học thử miễn phí để bạn trải nghiệm phương pháp giảng dạy trước khi đăng ký khóa học chính thức. Đây là cơ hội để bạn đánh giá chất lượng HLV và môi trường học bơi.'
+  },
+  {
+    question: 'Chính sách bảo lưu khóa học như thế nào?',
+    answer: 'Swim For Life cho phép bảo lưu khóa học lên đến 2.5 tháng kể từ ngày bắt đầu. Trong trường hợp đặc biệt (ốm đau, di chuyển), chúng tôi linh hoạt hỗ trợ gia hạn thêm. Chính sách bảo lưu áp dụng cho tất cả các gói học.'
+  },
+  {
+    question: 'HLV dạy bơi có chứng chỉ chuyên môn không?',
+    answer: 'Tất cả HLV tại Swim For Life đều tốt nghiệp từ các trường Đại học Thể dục Thể thao hoặc ĐH Sư phạm chuyên ngành, có chứng chỉ HLV bơi lội, chứng chỉ sơ cứu cấp cứu, và được đào tạo tâm lý sư phạm. Đội ngũ HLV trải qua quy trình tuyển chọn nghiêm ngặt.'
+  },
+  {
+    question: 'Swim For Life có dạy bơi tại bể Vinhomes không?',
+    answer: 'Có! Swim For Life là đối tác chính thức của Vinhomes, cung cấp chương trình dạy bơi miễn phí cho cư dân tại các dự án Vinhomes trên toàn quốc. Chúng tôi hiện có mặt tại Vinhomes Times City, Vinhomes Ocean Park, Vinhomes Smart City và nhiều khu đô thị khác.'
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "description": description,
+  "url": "https://dayboi.vip/",
+  "inLanguage": "vi",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Swim For Life Việt Nam",
+    "url": "https://dayboi.vip"
+  }
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://dayboi.vip/">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">🏊 Trung tâm dạy bơi uy tín #1 Việt Nam</span>
+        <h1>
+          Trung Tâm Dạy Bơi <span class="highlight">Swim For Life</span> Việt Nam
+        </h1>
+        <p class="hero-description">
+          Cam kết biết bơi sau <strong>10-12 buổi</strong> với đội ngũ HLV chuyên nghiệp, tận tâm. 
+          Dạy bơi 1 kèm 1 cho trẻ em và người lớn tại Hà Nội, TP.HCM.
+        </p>
+        <div class="hero-cta">
+          <a href="/lien-he/" class="btn btn-accent btn-lg pulse">
+            🎯 Đăng Ký Học Thử Miễn Phí
+          </a>
+          <a href="/khoa-hoc-boi/" class="btn btn-white btn-lg">
+            📚 Xem Khóa Học
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-counter data-target="10000" data-suffix="+">0</span>
+            <span class="hero-stat-label">Học viên</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-counter data-target="10" data-suffix="+">0</span>
+            <span class="hero-stat-label">Năm kinh nghiệm</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-counter data-target="50" data-suffix="+">0</span>
+            <span class="hero-stat-label">Bể bơi liên kết</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <YouTubeVideo
+          videoId="b4B7GfHEsuk"
+          poster="/images/team/thay-nguyen-huy-manh-2.png"
+          alt="Video giới thiệu Trung tâm dạy bơi Swim For Life Việt Nam - Thầy Nguyễn Huy Mạnh"
+          width={500}
+          height={400}
+          className="hero-image"
+        />
+        <div class="hero-float-badge top-right">
+          <span style="font-size: 24px;">✅</span>
+          <div>
+            <strong style="color: var(--color-dark); font-size: var(--text-sm);">Cam kết đầu ra</strong><br/>
+            <span style="color: var(--color-text-secondary); font-size: var(--text-xs);">Biết bơi 10-12 buổi</span>
+          </div>
+        </div>
+        <div class="hero-float-badge bottom-left" style="animation-delay: 1s;">
+          <span style="font-size: 24px;">🏅</span>
+          <div>
+            <strong style="color: var(--color-dark); font-size: var(--text-sm);">Đối tác Vinhomes</strong><br/>
+            <span style="color: var(--color-text-secondary); font-size: var(--text-xs);">Chính thức toàn quốc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Animated Waves -->
+    <div class="hero-waves">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="wave-animate">
+        <path d="M0,40 C150,80 350,0 500,40 C650,80 800,0 960,40 C1120,80 1280,0 1440,40 C1600,80 1800,0 1920,40 C2080,80 2280,0 2400,40 L2400,80 L0,80 Z" fill="rgba(255,255,255,0.1)"/>
+        <path d="M0,50 C200,20 400,70 600,50 C800,30 1000,60 1200,50 C1400,40 1600,70 1800,50 C2000,30 2200,60 2400,50 L2400,80 L0,80 Z" fill="rgba(255,255,255,0.06)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ USP / FEATURES SECTION ============ -->
+  <section class="section" id="tai-sao-chon-chung-toi" style="background: var(--color-bg-section);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">⭐ Tại sao chọn chúng tôi</span>
+        <h2 class="section-title">Điểm Khác Biệt Của Swim For Life</h2>
+        <p class="section-subtitle">
+          Với hơn 10 năm kinh nghiệm đào tạo bơi lội, chúng tôi tự hào mang đến dịch vụ dạy bơi chuyên nghiệp, an toàn và hiệu quả nhất.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card feature-card reveal reveal-delay-1">
+          <div class="feature-icon">👨‍🏫</div>
+          <h3 class="feature-title">HLV Chuyên Nghiệp</h3>
+          <p class="feature-text">
+            Đội ngũ HLV tốt nghiệp ĐH Sư phạm, ĐH TDTT, có chứng chỉ chuyên môn và kỹ năng tâm lý sư phạm. Tận tâm, nhiệt huyết với nghề.
+          </p>
+        </div>
+
+        <div class="card feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🎯</div>
+          <h3 class="feature-title">Dạy Bơi 1 Kèm 1</h3>
+          <p class="feature-text">
+            Chương trình cá nhân hóa, HLV chỉ dạy riêng 1 học viên. Tập trung sửa lỗi, nâng cao kỹ thuật nhanh gấp 3 lần so với học nhóm.
+          </p>
+        </div>
+
+        <div class="card feature-card reveal reveal-delay-3">
+          <div class="feature-icon">✅</div>
+          <h3 class="feature-title">Cam Kết Đầu Ra</h3>
+          <p class="feature-text">
+            Cam kết biết bơi sau 10-12 buổi học. Nếu chưa biết bơi, được học lại miễn phí cho đến khi biết bơi thành thạo.
+          </p>
+        </div>
+
+        <div class="card feature-card reveal reveal-delay-1">
+          <div class="feature-icon">🆓</div>
+          <h3 class="feature-title">Học Thử Miễn Phí</h3>
+          <p class="feature-text">
+            Trải nghiệm 1 buổi học thử hoàn toàn miễn phí trước khi quyết định đăng ký. Không ràng buộc, không áp lực.
+          </p>
+        </div>
+
+        <div class="card feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🏠</div>
+          <h3 class="feature-title">Đối Tác Vinhomes</h3>
+          <p class="feature-text">
+            Đối tác chính thức của Vinhomes, tổ chức chương trình dạy bơi miễn phí cho cư dân tại các khu đô thị trên toàn quốc.
+          </p>
+        </div>
+
+        <div class="card feature-card reveal reveal-delay-3">
+          <div class="feature-icon">📜</div>
+          <h3 class="feature-title">Chứng Chỉ Hoàn Thành</h3>
+          <p class="feature-text">
+            Học viên được cấp chứng chỉ hoàn thành khóa học có giá trị, xác nhận kỹ năng bơi đạt chuẩn an toàn.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KHÓA HỌC SECTION ============ -->
+  <section class="section" id="khoa-hoc">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">📚 Chương trình đào tạo</span>
+        <h2 class="section-title">Các Khóa Học Bơi</h2>
+        <p class="section-subtitle">
+          Đa dạng chương trình phù hợp mọi đối tượng - từ cá nhân, nhóm đến doanh nghiệp. 
+          Linh hoạt thời gian, địa điểm theo nhu cầu.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Khóa Cá nhân -->
+        <div class="card course-card reveal reveal-delay-1">
+          <div style="position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-6);">
+            <img
+              src="/images/classes/giao-vien-ho-tro-tan-tam.jpg"
+              alt="Khóa học bơi 1 kèm 1 cá nhân - HLV hỗ trợ tận tâm cho học viên tại bể bơi"
+              class="card-image"
+              width="400"
+              height="260"
+              loading="lazy"
+              style="margin-bottom: 0;"
+            />
+            <span class="course-badge">Hot 🔥</span>
+          </div>
+          <h3 class="card-title">Khóa Cá Nhân 1 Kèm 1</h3>
+          <p class="card-text">
+            Chương trình đào tạo bơi riêng, 1 HLV dạy 1 học viên. Linh hoạt thời gian, tiến độ nhanh, chất lượng đảm bảo. Phù hợp cho mọi lứa tuổi.
+          </p>
+          <a href="/khoa-hoc-boi/ca-nhan/" class="card-link">
+            Xem chi tiết <span>→</span>
+          </a>
+        </div>
+
+        <!-- Khóa Nhóm -->
+        <div class="card course-card reveal reveal-delay-2">
+          <div style="position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-6);">
+            <img
+              src="/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg"
+              alt="Khóa học bơi nhóm 3-5 người tràn ngập tiếng cười và niềm vui tại Swim For Life"
+              class="card-image"
+              width="400"
+              height="260"
+              loading="lazy"
+              style="margin-bottom: 0;"
+            />
+            <span class="course-badge">Tiết kiệm 💰</span>
+          </div>
+          <h3 class="card-title">Khóa Nhóm 3-5 Người</h3>
+          <p class="card-text">
+            Học cùng bạn bè, người thân với chi phí tiết kiệm hơn. Tối đa 5 học viên/nhóm, đảm bảo HLV hỗ trợ từng người. Tạo động lực học tập hiệu quả.
+          </p>
+          <a href="/khoa-hoc-boi/nhom/" class="card-link">
+            Xem chi tiết <span>→</span>
+          </a>
+        </div>
+
+        <!-- Khóa Doanh nghiệp -->
+        <div class="card course-card reveal reveal-delay-3">
+          <div style="position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-6);">
+            <img
+              src="/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg"
+              alt="Chương trình dạy bơi doanh nghiệp tổ chức bài bản chuyên nghiệp tại Swim For Life"
+              class="card-image"
+              width="400"
+              height="260"
+              loading="lazy"
+              style="margin-bottom: 0;"
+            />
+            <span class="course-badge">B2B 🏢</span>
+          </div>
+          <h3 class="card-title">Chương Trình Doanh Nghiệp</h3>
+          <p class="card-text">
+            Giải pháp team building qua bơi lội cho doanh nghiệp. Thiết kế chương trình riêng, tổ chức sự kiện, thi đấu nội bộ. Nâng cao sức khỏe đội ngũ.
+          </p>
+          <a href="/khoa-hoc-boi/doanh-nghiep/" class="card-link">
+            Xem chi tiết <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KỸ THUẬT BƠI SECTION ============ -->
+  <section class="section" id="ky-thuat-boi" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">🏊 Kỹ thuật bơi</span>
+        <h2 class="section-title">5 Kỹ Thuật Bơi Chuyên Nghiệp</h2>
+        <p class="section-subtitle">
+          Đào tạo đầy đủ 4 kiểu bơi cơ bản (Ếch, Sải, Ngửa, Bướm) và kỹ năng đứng nước - kỹ năng sinh tồn quan trọng nhất dưới nước.
+        </p>
+      </div>
+
+      <div class="technique-grid">
+        <!-- Bơi Ếch -->
+        <a href="/ky-thuat-boi/hoc-boi-ech/" class="technique-card reveal reveal-delay-1">
+          <img
+            src="/images/techniques/chinh-sua-ky-thuat-boi-ech.jpg"
+            alt="HLV chỉnh sửa kỹ thuật bơi ếch cho học viên tại bể bơi"
+            class="technique-card-image"
+            width="400"
+            height="300"
+            loading="lazy"
+          />
+          <div class="technique-card-overlay">
+            <h3 class="technique-card-title">Bơi Ếch</h3>
+            <p class="technique-card-desc">Kiểu bơi cơ bản nhất, dễ học, phù hợp cho người mới bắt đầu</p>
+            <span class="technique-card-link">Tìm hiểu thêm →</span>
+          </div>
+        </a>
+
+        <!-- Bơi Sải -->
+        <a href="/ky-thuat-boi/hoc-boi-sai/" class="technique-card reveal reveal-delay-2">
+          <img
+            src="/images/techniques/hoc-boi-sai-tay-tren-can.jpg"
+            alt="Học viên tập động tác tay bơi sải trên cạn tại Swim For Life"
+            class="technique-card-image"
+            width="400"
+            height="300"
+            loading="lazy"
+          />
+          <div class="technique-card-overlay">
+            <h3 class="technique-card-title">Bơi Sải</h3>
+            <p class="technique-card-desc">Kiểu bơi nhanh nhất, giúp rèn luyện sức bền và thể lực</p>
+            <span class="technique-card-link">Tìm hiểu thêm →</span>
+          </div>
+        </a>
+
+        <!-- Bơi Ngửa -->
+        <a href="/ky-thuat-boi/hoc-boi-ngua/" class="technique-card reveal reveal-delay-3">
+          <img
+            src="/images/techniques/hoc-boi-tren-can-khoi-dong.jpg"
+            alt="Học viên khởi động trước khi tập kỹ thuật bơi ngửa tại bể bơi"
+            class="technique-card-image"
+            width="400"
+            height="300"
+            loading="lazy"
+          />
+          <div class="technique-card-overlay">
+            <h3 class="technique-card-title">Bơi Ngửa</h3>
+            <p class="technique-card-desc">Kiểu bơi thoải mái, dễ thở, lý tưởng cho người mới</p>
+            <span class="technique-card-link">Tìm hiểu thêm →</span>
+          </div>
+        </a>
+
+        <!-- Bơi Bướm -->
+        <a href="/ky-thuat-boi/hoc-boi-buom/" class="technique-card reveal reveal-delay-4">
+          <img
+            src="/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg"
+            alt="Kỹ thuật bơi bướm nâng cao - động tác tay mạnh mẽ và uyển chuyển"
+            class="technique-card-image"
+            width="400"
+            height="300"
+            loading="lazy"
+          />
+          <div class="technique-card-overlay">
+            <h3 class="technique-card-title">Bơi Bướm</h3>
+            <p class="technique-card-desc">Kiểu bơi đẹp nhất, đòi hỏi kỹ thuật cao và sức mạnh</p>
+            <span class="technique-card-link">Tìm hiểu thêm →</span>
+          </div>
+        </a>
+
+        <!-- Đứng Nước -->
+        <a href="/ky-thuat-boi/ky-nang-dung-nuoc/" class="technique-card reveal reveal-delay-1">
+          <img
+            src="/images/classes/dam-bao-an-toan.jpg"
+            alt="Kỹ năng đứng nước - kỹ năng sinh tồn quan trạng nhất dưới nước được dạy tại Swim For Life"
+            class="technique-card-image"
+            width="400"
+            height="300"
+            loading="lazy"
+          />
+          <div class="technique-card-overlay">
+            <h3 class="technique-card-title">Đứng Nước</h3>
+            <p class="technique-card-desc">Kỹ năng sinh tồn quan trọng nhất, được dạy trong mọi khóa học</p>
+            <span class="technique-card-link">Tìm hiểu thêm →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ĐỐI TƯỢNG SECTION ============ -->
+  <section class="section" id="doi-tuong">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">👥 Đối tượng học viên</span>
+        <h2 class="section-title">Dạy Bơi Cho Mọi Lứa Tuổi</h2>
+        <p class="section-subtitle">
+          Chương trình được thiết kế riêng biệt cho từng nhóm đối tượng, từ trẻ em 4 tuổi đến người lớn, 
+          đảm bảo phù hợp về tâm lý, thể chất và phương pháp giảng dạy.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- Trẻ em -->
+        <div class="card reveal reveal-delay-1" style="padding: 0; overflow: hidden;">
+          <div style="position: relative;">
+            <img
+              src="/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg"
+              alt="Lớp học bơi trẻ em vui nhộn tại bể bơi Vinhomes - Trẻ em hào hứng học bơi an toàn"
+              style="width: 100%; height: 280px; object-fit: cover;"
+              width="600"
+              height="280"
+              loading="lazy"
+            />
+          </div>
+          <div style="padding: var(--space-8);">
+            <h3 class="card-title" style="font-size: var(--text-2xl);">🧒 Học Bơi Trẻ Em (4-15 tuổi)</h3>
+            <p class="card-text">
+              Chương trình dạy bơi trẻ em được xây dựng với phương pháp sư phạm đặc biệt. HLV vừa là thầy vừa là bạn, giúp trẻ vượt qua nỗi sợ nước, 
+              phát triển thể chất toàn diện và trang bị kỹ năng sinh tồn quan trọng. Mỗi buổi học đều tràn ngập niềm vui và sự hứng khởi.
+            </p>
+            <ul style="margin-bottom: var(--space-6);">
+              <li style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> Phương pháp vui chơi kết hợp học bơi
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> HLV chuyên tâm lý trẻ nhỏ
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> An toàn tuyệt đối, giám sát 100%
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> Phát triển thể chất toàn diện
+              </li>
+            </ul>
+            <a href="/khoa-hoc-boi/tre-em/" class="btn btn-primary">Tìm hiểu thêm →</a>
+          </div>
+        </div>
+
+        <!-- Người lớn -->
+        <div class="card reveal reveal-delay-2" style="padding: 0; overflow: hidden;">
+          <div style="position: relative;">
+            <img
+              src="/images/classes/hoc-vien-khoi-dong.jpg"
+              alt="Lớp học bơi người lớn - Học viên khởi động trước buổi tập tại bể bơi chuyên nghiệp"
+              style="width: 100%; height: 280px; object-fit: cover;"
+              width="600"
+              height="280"
+              loading="lazy"
+            />
+          </div>
+          <div style="padding: var(--space-8);">
+            <h3 class="card-title" style="font-size: var(--text-2xl);">🏊 Học Bơi Người Lớn (16+ tuổi)</h3>
+            <p class="card-text">
+              Không bao giờ là quá muộn để học bơi! Chương trình dành cho người lớn được thiết kế để vượt qua nỗi sợ nước, 
+              học bơi đúng kỹ thuật và rèn luyện sức khỏe. HLV kiên nhẫn, tế nhị, giúp bạn tự tin dưới nước chỉ sau vài buổi học.
+            </p>
+            <ul style="margin-bottom: var(--space-6);">
+              <li style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> Không lo ngại dù chưa từng biết bơi
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> Lịch học linh hoạt sáng/tối
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> Riêng tư, kín đáo, không áp lực
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-text-secondary);">
+                <span style="color: var(--color-success);">✓</span> Rèn luyện sức khỏe, giảm stress
+              </li>
+            </ul>
+            <a href="/khoa-hoc-boi/nguoi-lon/" class="btn btn-primary">Tìm hiểu thêm →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VINHOMES SECTION ============ -->
+  <section class="section" id="vinhomes" style="background: var(--gradient-dark); color: white;">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div class="reveal">
+          <span class="section-badge" style="background: rgba(255,255,255,0.15); color: var(--color-secondary-light);">🏠 Đối tác chiến lược</span>
+          <h2 style="font-size: var(--text-4xl); font-weight: 800; color: white; margin-bottom: var(--space-6);">
+            Chương Trình Dạy Bơi <span style="color: var(--color-secondary-light);">Vinhomes</span>
+          </h2>
+          <p style="font-size: var(--text-lg); color: rgba(255,255,255,0.8); margin-bottom: var(--space-6); line-height: var(--leading-relaxed);">
+            Swim For Life tự hào là đối tác chính thức của <strong style="color: white;">Vinhomes</strong>, 
+            cung cấp chương trình dạy bơi miễn phí cho cư dân tại các khu đô thị trên toàn quốc. 
+            Hàng nghìn cư dân nhí đã được trang bị kỹ năng bơi lội và sinh tồn dưới nước.
+          </p>
+          <ul style="margin-bottom: var(--space-8);">
+            <li style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); color: rgba(255,255,255,0.85);">
+              <span style="color: var(--color-secondary-light);">✓</span>
+              <span>Dạy bơi <strong style="color: white;">MIỄN PHÍ</strong> cho cư dân Vinhomes</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); color: rgba(255,255,255,0.85);">
+              <span style="color: var(--color-secondary-light);">✓</span>
+              <span>Có mặt tại Vinhomes Times City, Ocean Park, Smart City...</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); color: rgba(255,255,255,0.85);">
+              <span style="color: var(--color-secondary-light);">✓</span>
+              <span>Tổ chức Giải bơi Kình ngư Ocean City hàng năm</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: var(--space-3); color: rgba(255,255,255,0.85);">
+              <span style="color: var(--color-secondary-light);">✓</span>
+              <span>Hàng nghìn cư dân nhí đã được dạy bơi thành công</span>
+            </li>
+          </ul>
+          <a href="/lien-he/" class="btn btn-accent btn-lg">Đăng Ký Cho Cư Dân Vinhomes</a>
+        </div>
+        <div class="reveal reveal-delay-2" style="text-align: center; max-width: 600px; width: 100%; margin: 0 auto;">
+          <YouTubeVideo
+            videoId="tmq7JMRIJsA"
+            poster="/images/classes/lop-boi-vinhomes-times-city.jpg"
+            alt="Chương trình dạy bơi miễn phí cho cư dân tại bể bơi Vinhomes Times City - Swim For Life đối tác chính thức"
+            width={600}
+            height={400}
+            style="border: 4px solid rgba(255,255,255,0.15);"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GIÁM ĐỐC SECTION ============ -->
+  <section class="section" id="giam-doc">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+        <div class="reveal" style="text-align: center; max-width: 380px; width: 100%; margin: 0 auto;">
+          <YouTubeVideo
+            videoId="b4B7GfHEsuk"
+            poster="/images/team/thay-nguyen-huy-manh-2.png"
+            alt="Thầy Nguyễn Huy Mạnh - Giám đốc Trung tâm dạy bơi Swim For Life Việt Nam, tốt nghiệp ĐH Sư phạm Hà Nội"
+            width={380}
+            height={450}
+          />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <span class="section-badge">👤 Người sáng lập</span>
+          <h2 style="font-size: var(--text-3xl); font-weight: 800; margin-bottom: var(--space-6);">
+            Thầy <span style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nguyễn Huy Mạnh</span>
+          </h2>
+          <p style="font-size: var(--text-sm); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing: 0.05em;">
+            Giám đốc Trung tâm Swim For Life Việt Nam
+          </p>
+          <p style="font-size: var(--text-lg); color: var(--color-text-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">
+            Tốt nghiệp <strong style="color: var(--color-dark);">Đại học Sư phạm Hà Nội</strong>, với hơn 10 năm kinh nghiệm trong lĩnh vực đào tạo bơi lội. 
+            Thầy Mạnh là người sáng lập và xây dựng Swim For Life từ những ngày đầu tiên với sứ mệnh phổ cập bơi lội, 
+            góp phần phòng chống đuối nước cho trẻ em Việt Nam.
+          </p>
+          <p style="font-size: var(--text-lg); color: var(--color-text-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-8);">
+            Dưới sự dẫn dắt của thầy, Swim For Life đã đào tạo thành công hơn <strong style="color: var(--color-dark);">10.000 học viên</strong>, 
+            trở thành đối tác chính thức của <strong style="color: var(--color-dark);">Vinhomes</strong> và tổ chức thành công nhiều giải bơi lớn.
+          </p>
+          <a href="/gioi-thieu/" class="btn btn-primary">Tìm hiểu thêm về Swim For Life →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="section" id="dang-ky" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>🎉 Đăng Ký Học Thử Miễn Phí Ngay Hôm Nay!</h2>
+        <p>
+          Trải nghiệm 1 buổi học bơi miễn phí với HLV chuyên nghiệp. 
+          Không ràng buộc, không áp lực - chỉ cần bạn sẵn sàng!
+        </p>
+        <div class="btn-group">
+          <a href="/lien-he/" class="btn btn-accent btn-lg pulse">
+            🎯 Đăng Ký Học Thử
+          </a>
+          <a href="tel:0979121097" class="btn btn-white btn-lg">
+            📞 Gọi Ngay: 0979.121.097
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ SECTION ============ -->
+  <section class="section" id="cau-hoi-thuong-gap">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">❓ Giải đáp thắc mắc</span>
+        <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+        <p class="section-subtitle">
+          Giải đáp những thắc mắc phổ biến nhất về việc học bơi tại Swim For Life Việt Nam.
+        </p>
+      </div>
+
+      <div class="faq-list reveal">
+        {faqData.map((item) => (
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>{item.question}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>{item.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

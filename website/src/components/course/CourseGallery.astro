@@ -1,0 +1,58 @@
+---
+export interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+
+// Define default pools and training photos
+const commonPhotos = [
+  { src: "/images/classes/lop-hoc-boi-ha-noi.jpg", caption: "Không khí lớp học sôi nổi tại bể bơi bốn mùa" },
+  { src: "/images/classes/giao-vien-chinh-sua-ky-thuat.jpg", caption: "Huấn luyện viên chỉnh sửa chi tiết tư thế bơi" },
+  { src: "/images/classes/giao-vien-ho-tro-tan-tam.jpg", caption: "Kèm cặp sát sao, đảm bảo an toàn tuyệt đối" },
+  { src: "/images/classes/hoc-vien-khoi-dong.jpg", caption: "Lớp khởi động bài bản trên cạn trước khi xuống nước" },
+  { src: "/images/classes/dam-bao-an-toan.jpg", caption: "Giám sát chặt chẽ mọi học viên trong làn bơi" },
+  { src: "/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg", caption: "Lớp học được tổ chức quy củ và chuyên nghiệp" }
+];
+
+// Special photos for kids
+const kidsPhotos = [
+  { src: "/images/classes/lop-boi-tre-em-bai-ban.jpg", caption: "Các bé tập trung học động tác chân trên thành bể" },
+  { src: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg", caption: "Lớp học vui vẻ, kết hợp trò chơi dưới nước" },
+  { src: "/images/classes/lop-boi-vinhomes-times-city.jpg", caption: "Buổi thực hành hào hứng của học viên nhí" },
+  { src: "/images/classes/hoc-sinh-tap-tren-thanh-be.jpg", caption: "Tập đập chân nước chuẩn kỹ thuật dưới sự hướng dẫn" },
+  { src: "/images/classes/hoc-sinh-trang-bi-phao.jpg", caption: "Trang bị đầy đủ phao bơi an toàn cho bé" },
+  { src: "/images/classes/giao-vien-vui-ve-tam-ly.jpeg", caption: "Huấn luyện viên vô cùng tâm lý và yêu trẻ" }
+];
+
+// Select photos based on course slug
+const photos = slug === "tre-em" ? kidsPhotos : commonPhotos;
+---
+
+<section class="cl-section">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Hình Ảnh Thực Tế
+      </span>
+      <h2 class="cl-section-title__heading">
+        Khoảnh Khắc Lớp Học Bơi
+      </h2>
+      <p class="cl-section-title__sub">
+        Hình ảnh ghi lại từ các buổi thực hành thực tế của huấn luyện viên và học viên tại Swim For Life.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-gallery">
+      {photos.map((photo, index) => (
+        <div class={`cl-gallery__item cl-animate cl-animate--delay-${(index % 3) + 1}`}>
+          <img src={photo.src} alt={photo.caption} loading="lazy" width="400" height="300" />
+          <div class="cl-gallery__caption">
+            {photo.caption}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

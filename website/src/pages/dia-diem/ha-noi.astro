@@ -1,0 +1,609 @@
+---
+const currentYear = new Date().getFullYear();
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Học bơi Hà Nội' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Hà Nội: Trung Tâm Dạy Bơi Chuyên Nghiệp Tại Hà Nội",
+  "description": "Trung tâm dạy bơi uy tín nhất Hà Nội. Bể bơi Tăng Bạt Hổ, Bách Khoa, Times City, Vinhomes. Dạy bơi 1 kèm 1 cho trẻ em và người lớn. Cam kết biết bơi sau 10-12 buổi.",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-01-25",
+  "dateModified": "2026-05-21",
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-ha-noi.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/dia-diem/ha-noi/"
+  }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Trung tâm dạy bơi Swim For Life Việt Nam - Hà Nội",
+  "description": "Trung tâm dạy bơi chuyên nghiệp tại Hà Nội. Dạy bơi 1 kèm 1 cho trẻ em và người lớn.",
+  "telephone": "0979121097",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hà Nội",
+    "addressCountry": "VN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "21.0285",
+    "longitude": "105.8542"
+  },
+  "url": "https://dayboi.vip/dia-diem/ha-noi/",
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-ha-noi.jpg",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "05:30",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "20:00"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Swim For Life dạy bơi ở những bể bơi nào tại Hà Nội?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life hoạt động tại nhiều bể bơi chất lượng cao ở Hà Nội: Bể bơi Tăng Bạt Hổ (Hoàn Kiếm), Bể bơi Bách Khoa (Hai Bà Trưng), Bể bơi Times City (Hai Bà Trưng), Bể bơi Kim Liên (Đống Đa), Bể bơi Bảo Sơn (Thanh Xuân), Bể bơi Hapulico (Thanh Xuân), và các bể bơi Vinhomes trên toàn Hà Nội."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi ở Hà Nội giá bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chi phí học bơi tại Hà Nội phụ thuộc vào hình thức học (1 kèm 1 hoặc nhóm), địa điểm bể bơi và đối tượng học viên. Vui lòng liên hệ hotline 0979.121.097 để được tư vấn chi tiết và nhận ưu đãi mới nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi ở Hà Nội mùa đông có được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được! Swim For Life Hà Nội hoạt động quanh năm, bao gồm cả mùa đông. Nhiều bể bơi đối tác có hệ thống sưởi nước, duy trì nhiệt độ 28-30°C ấm áp. Bể bơi trong nhà như Times City, Hapulico, các bể Vinhomes đều có hệ thống điều hòa, phù hợp để học bơi mùa lạnh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi ở Cầu Giấy, nên học bơi ở bể nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu bạn ở Cầu Giấy, có thể học tại Bể bơi Bảo Sơn hoặc các bể bơi Vinhomes gần khu vực (Vinhomes Green Bay, Vinhomes Smart City). Liên hệ hotline 0979.121.097, nhân viên tư vấn sẽ gợi ý bể bơi gần nhất và thuận tiện nhất cho bạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life có chương trình cho trẻ em ở Hà Nội không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Swim For Life có chương trình dạy bơi trẻ em từ 3 tuổi trở lên tại tất cả các bể bơi ở Hà Nội. Chương trình được thiết kế riêng theo từng nhóm tuổi, với HLV chuyên dạy trẻ em, đảm bảo an toàn và hiệu quả. Cam kết bé biết bơi sau 10-12 buổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm sao để đăng ký học bơi tại Hà Nội?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rất đơn giản! Bạn có thể đăng ký bằng cách gọi hotline 0979.121.097 hoặc nhắn Zalo. Nhân viên tư vấn sẽ hỗ trợ bạn chọn bể bơi, HLV, lịch học phù hợp và đặt lịch học thử miễn phí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi người lớn ở Hà Nội ở đâu tốt nhất?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life là trung tâm dạy bơi cho người lớn uy tín nhất tại Hà Nội với đội ngũ HLV chuyên nghiệp, phương pháp dạy 1 kèm 1, lịch linh hoạt (sáng sớm, trưa, tối). Các bể bơi phổ biến cho người lớn: Tăng Bạt Hổ, Bách Khoa, Hapulico, Times City."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
+---
+
+<PageLayout
+  title={`Học Bơi Hà Nội: Lớp Học Bơi Uy Tín & Chuyên Nghiệp Nhất [${currentYear}]`}
+  description="Trung tâm dạy bơi uy tín nhất Hà Nội - Swim For Life. Bể bơi Tăng Bạt Hổ, Bách Khoa, Times City, Vinhomes. Dạy bơi 1 kèm 1, cam kết biết bơi sau 10-12 buổi. Hotline: 0979.121.097"
+  canonical="https://dayboi.vip/dia-diem/ha-noi/"
+  image="/images/classes/lop-hoc-boi-ha-noi.jpg"
+  type="article"
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+>
+
+  <!-- Hero Section -->
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-content" style="grid-template-columns: 1fr;">
+      <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="hero-badge">📍 Dạy Bơi Tại Hà Nội</span>
+        <h1>Học Bơi Hà Nội: Trung Tâm Dạy Bơi <span class="highlight">Chuyên Nghiệp</span> Tại Hà Nội</h1>
+        <p class="hero-description" style="max-width: 700px; margin: 0 auto var(--space-10);">
+          Hệ thống bể bơi chất lượng cao khắp Hà Nội. Dạy bơi 1 kèm 1 cho trẻ em & người lớn. Đội ngũ 50+ HLV chuyên nghiệp, cam kết biết bơi sau 10-12 buổi.
+        </p>
+        <div class="hero-cta" style="justify-content: center;">
+          <a href="tel:0979121097" class="btn btn-accent btn-lg pulse">📞 Hotline HN: 0979.121.097</a>
+          <a href="#danh-sach-be-boi" class="btn btn-white btn-lg">📍 Xem Bể Bơi Gần Bạn</a>
+        </div>
+        <div class="hero-stats" style="justify-content: center; margin-top: var(--space-8);">
+          <div class="hero-stat">
+            <span class="hero-stat-number">10+</span>
+            <span class="hero-stat-label">Bể bơi đối tác</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">50+</span>
+            <span class="hero-stat-label">HLV tại Hà Nội</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">8,000+</span>
+            <span class="hero-stat-label">Học viên đã biết bơi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <article class="section">
+    <div class="container">
+      <div class="content-body">
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+          <h2 class="toc-title">📋 Nội dung bài viết</h2>
+          <ol class="toc-list">
+            <li><a href="#tong-quan-day-boi-ha-noi">Tổng quan dạy bơi tại Hà Nội</a></li>
+            <li><a href="#danh-sach-be-boi">Danh sách bể bơi Swim For Life tại Hà Nội</a></li>
+            <li><a href="#chuong-trinh-tre-em-hn">Chương trình dạy bơi trẻ em Hà Nội</a></li>
+            <li><a href="#chuong-trinh-nguoi-lon-hn">Chương trình dạy bơi người lớn Hà Nội</a></li>
+            <li><a href="#hoc-boi-mua-dong">Học bơi mùa đông tại Hà Nội</a></li>
+            <li><a href="#huong-dan-dang-ky-hn">Hướng dẫn đăng ký học bơi</a></li>
+            <li><a href="#cau-hoi-thuong-gap-hn">Câu hỏi thường gặp</a></li>
+          </ol>
+        </nav>
+
+        <!-- Section 1: Tổng quan -->
+        <section id="tong-quan-day-boi-ha-noi">
+          <h2>Tổng Quan Dạy Bơi Tại Hà Nội — Thị Trường & Nhu Cầu</h2>
+
+          <p>Hà Nội — thủ đô của Việt Nam với hơn 8 triệu dân — là một trong những thị trường <strong>học bơi</strong> lớn nhất cả nước. Nhu cầu <strong>học bơi Hà Nội</strong> tăng vọt hàng năm, đặc biệt vào mùa hè khi nhiệt độ thường xuyên vượt 35°C và trẻ em được nghỉ học.</p>
+
+          <p>Tuy nhiên, tìm được trung tâm dạy bơi uy tín, chuyên nghiệp tại Hà Nội không hề dễ dàng. Nhiều phụ huynh và người lớn gặp khó khăn với những vấn đề phổ biến:</p>
+
+          <ul>
+            <li><strong>Bể bơi quá đông:</strong> Mùa hè, nhiều bể bơi công cộng quá tải, không đảm bảo an toàn và chất lượng nước</li>
+            <li><strong>HLV thiếu chuyên nghiệp:</strong> Nhiều "HLV tự phong" không có bằng cấp, dạy bơi sai kỹ thuật, thiếu an toàn</li>
+            <li><strong>Không cam kết kết quả:</strong> Học nhiều buổi nhưng vẫn chưa biết bơi, hoặc bơi sai kỹ thuật</li>
+            <li><strong>Giá cả không minh bạch:</strong> Chi phí ẩn, phụ thu, không rõ ràng về chương trình học</li>
+          </ul>
+
+          <p><strong>Swim For Life Việt Nam</strong> ra đời để giải quyết triệt để những vấn đề trên. Với hệ thống bể bơi đối tác chất lượng cao, đội ngũ HLV chuyên nghiệp, và cam kết "biết bơi sau 10-12 buổi", chúng tôi tự hào là trung tâm dạy bơi uy tín nhất tại Hà Nội.</p>
+
+          <img src="/images/classes/lop-hoc-boi-ha-noi.jpg" alt="Lớp học bơi tại Hà Nội do Swim For Life tổ chức với HLV chuyên nghiệp tại bể bơi đạt chuẩn" loading="lazy" />
+
+          <h3>Tại sao chọn Swim For Life tại Hà Nội?</h3>
+
+          <ul>
+            <li><strong>10+ bể bơi đối tác:</strong> Phủ khắp các quận trung tâm và khu đô thị lớn, bạn luôn tìm được bể bơi gần nhà</li>
+            <li><strong>50+ HLV chuyên nghiệp:</strong> 100% có bằng cấp chuyên ngành, được đào tạo tại trung tâm và cập nhật phương pháp thường xuyên</li>
+            <li><strong>Hoạt động quanh năm:</strong> Cả mùa đông lẫn mùa hè, với bể bơi trong nhà có sưởi ấm</li>
+            <li><strong>Đối tác chính thức Vinhomes:</strong> Tổ chức lớp bơi tại tất cả các dự án Vinhomes ở Hà Nội</li>
+            <li><strong>Học thử miễn phí:</strong> Trải nghiệm 1 buổi trước khi quyết định đăng ký</li>
+          </ul>
+        </section>
+
+        <!-- Section 2: Danh sách bể bơi -->
+        <section id="danh-sach-be-boi">
+          <h2>Danh Sách Bể Bơi Swim For Life Tại Hà Nội — Chọn Bể Gần Bạn</h2>
+
+          <p>Swim For Life hoạt động tại hệ thống bể bơi chất lượng cao trải dài khắp Hà Nội. Dưới đây là danh sách chi tiết các bể bơi đối tác theo khu vực:</p>
+
+          <h3>🏊 Khu vực Trung tâm (Hoàn Kiếm, Hai Bà Trưng, Đống Đa)</h3>
+
+          <h4>Bể bơi Tăng Bạt Hổ</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> 30 Tăng Bạt Hổ, Phạm Đình Hổ, Hai Bà Trưng, Hà Nội</li>
+            <li><strong>Loại:</strong> Bể bơi ngoài trời, 25m x 50m</li>
+            <li><strong>Hoạt động:</strong> Tháng 5 - Tháng 9 (mùa hè)</li>
+            <li><strong>Ưu điểm:</strong> Bể lớn, vị trí trung tâm, nhiều lane cho người học, giá vé bơi tự do hợp lý</li>
+            <li><strong>Phù hợp:</strong> Trẻ em từ 4 tuổi, người lớn, bơi nhóm</li>
+          </ul>
+
+          <h4>Bể bơi Đại học Bách Khoa Hà Nội</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội</li>
+            <li><strong>Loại:</strong> Bể bơi ngoài trời, 25m</li>
+            <li><strong>Hoạt động:</strong> Tháng 5 - Tháng 9</li>
+            <li><strong>Ưu điểm:</strong> Nước sạch, không gian thoáng, gần trung tâm, phù hợp cho người lớn</li>
+            <li><strong>Phù hợp:</strong> Người lớn học bơi, sinh viên, cán bộ</li>
+          </ul>
+
+          <h4>Bể bơi Kim Liên</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Phạm Ngọc Thạch, Đống Đa, Hà Nội</li>
+            <li><strong>Loại:</strong> Bể bơi ngoài trời</li>
+            <li><strong>Hoạt động:</strong> Mùa hè</li>
+            <li><strong>Ưu điểm:</strong> Vị trí đẹp, dễ tiếp cận, gần nhiều khu dân cư</li>
+            <li><strong>Phù hợp:</strong> Trẻ em, người lớn, gia đình</li>
+          </ul>
+
+          <img src="/images/classes/khoi-dong-tren-thanh-be.jpg" alt="Học viên khởi động trên thành bể trước buổi học bơi tại bể bơi Hà Nội" loading="lazy" />
+
+          <h3>🏊 Khu vực Thanh Xuân, Cầu Giấy, Nam Từ Liêm</h3>
+
+          <h4>Bể bơi Bảo Sơn</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Nguyễn Trãi, Thanh Xuân, Hà Nội</li>
+            <li><strong>Loại:</strong> Bể bơi trong nhà + ngoài trời</li>
+            <li><strong>Hoạt động:</strong> Quanh năm (bể trong nhà có sưởi)</li>
+            <li><strong>Ưu điểm:</strong> Cơ sở vật chất hiện đại, nước ấm mùa đông, bể trẻ em riêng biệt</li>
+            <li><strong>Phù hợp:</strong> Trẻ em nhỏ, người lớn sợ nước, học bơi mùa đông</li>
+          </ul>
+
+          <h4>Bể bơi Hapulico</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> Vũ Trọng Phụng, Thanh Xuân, Hà Nội</li>
+            <li><strong>Loại:</strong> Bể bơi trong nhà, 25m</li>
+            <li><strong>Hoạt động:</strong> Quanh năm</li>
+            <li><strong>Ưu điểm:</strong> Bể trong nhà, nước ấm, ít đông, riêng tư</li>
+            <li><strong>Phù hợp:</strong> Người lớn đi làm (học buổi tối), học bơi mùa đông</li>
+          </ul>
+
+          <h3>🏊 Khu vực Hoàng Mai, Long Biên, Gia Lâm</h3>
+
+          <h4>Bể bơi Times City</h4>
+          <ul>
+            <li><strong>Địa chỉ:</strong> 458 Minh Khai, Hai Bà Trưng (khu đô thị Times City)</li>
+            <li><strong>Loại:</strong> Bể bơi trong nhà, 25m, tiêu chuẩn 5 sao</li>
+            <li><strong>Hoạt động:</strong> Quanh năm</li>
+            <li><strong>Ưu điểm:</strong> Cơ sở vật chất sang trọng, nước sạch, nhiệt độ ổn định, ít đông ngoài giờ cao điểm</li>
+            <li><strong>Phù hợp:</strong> Cư dân Times City, người lớn, trẻ em cao cấp</li>
+          </ul>
+
+          <h3>🏊 Hệ thống bể bơi Vinhomes</h3>
+
+          <p>Là đối tác chính thức của Vinhomes, Swim For Life tổ chức lớp bơi tại tất cả các dự án:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Dự án Vinhomes</th>
+                <th>Quận/Huyện</th>
+                <th>Loại bể</th>
+                <th>Hoạt động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Vinhomes Times City</strong></td>
+                <td>Hai Bà Trưng</td>
+                <td>Trong nhà, 25m</td>
+                <td>Quanh năm</td>
+              </tr>
+              <tr>
+                <td><strong>Vinhomes Ocean Park</strong></td>
+                <td>Gia Lâm</td>
+                <td>Ngoài trời + trong nhà</td>
+                <td>Quanh năm</td>
+              </tr>
+              <tr>
+                <td><strong>Vinhomes Smart City</strong></td>
+                <td>Nam Từ Liêm</td>
+                <td>Ngoài trời + trong nhà</td>
+                <td>Quanh năm</td>
+              </tr>
+              <tr>
+                <td><strong>Vinhomes Riverside</strong></td>
+                <td>Long Biên</td>
+                <td>Ngoài trời</td>
+                <td>Mùa hè</td>
+              </tr>
+              <tr>
+                <td><strong>Vinhomes Green Bay</strong></td>
+                <td>Nam Từ Liêm</td>
+                <td>Ngoài trời + trong nhà</td>
+                <td>Quanh năm</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box tip">
+            <span style="font-size: 1.5rem;">📍</span>
+            <div>
+              <strong>Không tìm thấy bể bơi gần bạn?</strong> Hãy gọi hotline <strong>0979.121.097</strong>, nhân viên tư vấn sẽ tìm bể bơi phù hợp nhất với vị trí của bạn. Swim For Life liên tục mở rộng mạng lưới bể bơi đối tác tại Hà Nội.
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Chương trình trẻ em HN -->
+        <section id="chuong-trinh-tre-em-hn">
+          <h2>Chương Trình Dạy Bơi Trẻ Em Tại Hà Nội</h2>
+
+          <p><strong>Học bơi trẻ em</strong> là dịch vụ được phụ huynh Hà Nội tìm kiếm nhiều nhất, đặc biệt vào mùa hè. Swim For Life cung cấp chương trình toàn diện cho trẻ từ 3 tuổi trở lên:</p>
+
+          <h3>Chương trình theo nhóm tuổi tại Hà Nội</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Nhóm tuổi</th>
+                <th>Chương trình</th>
+                <th>Số buổi</th>
+                <th>Bể bơi phù hợp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3-4 tuổi</td>
+                <td>Làm quen nước, trò chơi dưới nước</td>
+                <td>12-15 buổi</td>
+                <td>Bảo Sơn, Vinhomes (bể nông)</td>
+              </tr>
+              <tr>
+                <td>4-6 tuổi</td>
+                <td>Học bơi Ếch cơ bản</td>
+                <td>10-12 buổi</td>
+                <td>Tất cả bể bơi</td>
+              </tr>
+              <tr>
+                <td>6-10 tuổi</td>
+                <td>Bơi Ếch + Sải + đứng nước</td>
+                <td>10-12 buổi</td>
+                <td>Tăng Bạt Hổ, Bách Khoa, Times City</td>
+              </tr>
+              <tr>
+                <td>10-15 tuổi</td>
+                <td>4 kiểu bơi + sức bền</td>
+                <td>10-12 buổi</td>
+                <td>Tăng Bạt Hổ, Bách Khoa</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Mỗi lớp được bố trí 1 HLV kèm tối đa 1-4 bé (tùy hình thức đăng ký). HLV chuyên dạy trẻ em, có kỹ năng tâm lý và kiên nhẫn đặc biệt. Để tìm hiểu chi tiết hơn về chương trình, phụ huynh xem thêm tại trang <a href="/khoa-hoc-boi/tre-em/">Học bơi trẻ em</a>.</p>
+
+          <h3>Lịch học mùa hè cho trẻ em Hà Nội</h3>
+          <p>Mùa hè (tháng 6-8) là thời điểm lý tưởng nhất để trẻ em Hà Nội học bơi. Swim For Life mở đăng ký sớm từ tháng 4, với ưu đãi Early Bird giảm đến 15% cho phụ huynh đăng ký trước. Lịch học linh hoạt buổi sáng (7h-11h), chiều (14h-17h) và tối (18h-20h).</p>
+
+          <img src="/images/classes/giao-vien-chinh-sua-ky-thuat.jpg" alt="Giáo viên Swim For Life Hà Nội chỉnh sửa kỹ thuật bơi cho học sinh trong bể bơi" loading="lazy" />
+
+          <h3>Chương trình hè đặc biệt — "Mùa Hè Biết Bơi"</h3>
+          <p>Hàng năm, Swim For Life Hà Nội tổ chức chương trình <strong>"Mùa Hè Biết Bơi"</strong> với nhiều ưu đãi hấp dẫn: giảm giá cho nhóm (đăng ký 2 bé giảm 10%, 3 bé giảm 15%), tặng kính bơi và mũ bơi, buổi học thử miễn phí. Chương trình diễn ra tại tất cả các bể bơi đối tác ở Hà Nội.</p>
+        </section>
+
+        <!-- Section 4: Chương trình người lớn HN -->
+        <section id="chuong-trinh-nguoi-lon-hn">
+          <h2>Chương Trình Dạy Bơi Người Lớn Tại Hà Nội</h2>
+
+          <p>Nhu cầu <strong>học bơi người lớn Hà Nội</strong> ngày càng tăng, đặc biệt ở nhóm nhân viên văn phòng 25-45 tuổi muốn rèn luyện sức khỏe hoặc vượt qua nỗi sợ nước. Swim For Life là đơn vị dẫn đầu trong phân khúc này với phương pháp dạy chuyên biệt:</p>
+
+          <h3>Khóa học bơi cơ bản cho người lớn</h3>
+          <ul>
+            <li><strong>Đối tượng:</strong> Người chưa biết bơi hoặc sợ nước</li>
+            <li><strong>Hình thức:</strong> 1 kèm 1 (khuyến khích) hoặc nhóm 2-3 người</li>
+            <li><strong>Thời lượng:</strong> 10-12 buổi, mỗi buổi 60 phút</li>
+            <li><strong>Kết quả:</strong> Bơi Ếch 25m liên tục + đứng nước 30 giây</li>
+            <li><strong>Lịch học:</strong> Linh hoạt từ 5h30 sáng đến 21h tối, cả tuần</li>
+          </ul>
+
+          <h3>Khóa học nâng cao cho người đã biết bơi</h3>
+          <ul>
+            <li><strong>Học thêm kiểu bơi:</strong> Sải (tự do), Ngửa, Bướm — mỗi kiểu 6-10 buổi</li>
+            <li><strong>Chỉnh sửa kỹ thuật:</strong> Sửa lỗi bơi sai, nâng cao hiệu quả — 4-6 buổi</li>
+            <li><strong>Bơi sức bền:</strong> Chương trình luyện tập thể lực qua bơi — theo tháng</li>
+          </ul>
+
+          <h3>Những bể bơi phù hợp nhất cho người lớn tại Hà Nội</h3>
+          <p>Đối với <strong>người lớn đi học bơi</strong> ở Hà Nội, chúng tôi đặc biệt khuyến nghị:</p>
+          <ul>
+            <li><strong>Bể bơi Hapulico:</strong> Trong nhà, ít đông, riêng tư — lý tưởng cho người ngại</li>
+            <li><strong>Bể bơi Times City:</strong> Tiêu chuẩn cao, buổi tối ít người</li>
+            <li><strong>Bể bơi Tăng Bạt Hổ:</strong> Lane rộng, phù hợp bơi sức bền</li>
+            <li><strong>Bể bơi Vinhomes:</strong> Nội khu, an ninh, tiện lợi cho cư dân</li>
+          </ul>
+
+          <p>Tìm hiểu chi tiết phương pháp dạy bơi cho người lớn tại trang <a href="/khoa-hoc-boi/nguoi-lon/">Học bơi cho người lớn</a>.</p>
+
+          <div class="info-box important">
+            <span style="font-size: 1.5rem;">💡</span>
+            <div>
+              <strong>Mẹo tiết kiệm:</strong> Tìm kiếm "<strong>học bơi giá rẻ ở Hà Nội</strong>"? Swim For Life thường xuyên có chương trình ưu đãi cho nhóm (2+ người), đăng ký sớm, và đặc biệt ưu đãi cho cư dân Vinhomes. Gọi hotline 0979.121.097 để nhận giá tốt nhất!
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Học bơi mùa đông -->
+        <section id="hoc-boi-mua-dong">
+          <h2>Học Bơi Mùa Đông Tại Hà Nội — Hoàn Toàn Khả Thi!</h2>
+
+          <p>Nhiều người nghĩ rằng mùa đông Hà Nội không thể học bơi. Thực tế, mùa đông lại là thời điểm rất tốt để <strong>học bơi ở Hà Nội</strong>, và đây là lý do:</p>
+
+          <h3>Ưu điểm của việc học bơi mùa đông</h3>
+          <ul>
+            <li><strong>Bể bơi vắng:</strong> Ít người hơn rất nhiều so với mùa hè, không gian thoáng, nước sạch hơn</li>
+            <li><strong>HLV rảnh:</strong> Lịch HLV linh hoạt hơn, dễ dàng chọn khung giờ đẹp</li>
+            <li><strong>Giá tốt hơn:</strong> Nhiều bể bơi và trung tâm có giá ưu đãi mùa đông</li>
+            <li><strong>Tăng cường sức khỏe:</strong> Bơi mùa đông giúp tăng cường miễn dịch, chống lại cảm lạnh</li>
+            <li><strong>Sẵn sàng cho mùa hè:</strong> Học xong mùa đông, mùa hè bạn thoải mái đi biển, đi bơi tự do</li>
+          </ul>
+
+          <h3>Bể bơi trong nhà có sưởi tại Hà Nội</h3>
+          <p>Swim For Life cung cấp dịch vụ dạy bơi mùa đông tại các bể bơi trong nhà có hệ thống sưởi ấm, nước duy trì 28-30°C:</p>
+          <ul>
+            <li><strong>Bể bơi Times City:</strong> Trong nhà, sưởi ấm, tiêu chuẩn 5 sao</li>
+            <li><strong>Bể bơi Hapulico:</strong> Trong nhà, nước ấm quanh năm</li>
+            <li><strong>Bể bơi Bảo Sơn:</strong> Bể trong nhà có sưởi</li>
+            <li><strong>Các bể bơi Vinhomes:</strong> Nhiều dự án có bể trong nhà</li>
+          </ul>
+        </section>
+
+        <!-- Section 6: Hướng dẫn đăng ký -->
+        <section id="huong-dan-dang-ky-hn">
+          <h2>Hướng Dẫn Đăng Ký Học Bơi Tại Hà Nội — 3 Bước Đơn Giản</h2>
+
+          <p>Quy trình đăng ký <strong>lớp học bơi Hà Nội</strong> tại Swim For Life rất đơn giản:</p>
+
+          <h3>Bước 1: Liên hệ tư vấn</h3>
+          <p>Gọi hotline <strong>0979.121.097</strong> hoặc nhắn Zalo. Nhân viên tư vấn sẽ hỏi thông tin cơ bản: bạn học hay con bạn học, độ tuổi, mức độ biết bơi, khu vực sinh sống, khung giờ mong muốn.</p>
+
+          <h3>Bước 2: Chọn bể bơi & HLV</h3>
+          <p>Dựa trên thông tin của bạn, nhân viên sẽ gợi ý bể bơi gần nhất và HLV phù hợp. Bạn có thể đặt lịch <strong>học thử miễn phí</strong> 1 buổi để trải nghiệm trước khi quyết định.</p>
+
+          <h3>Bước 3: Đăng ký & bắt đầu học</h3>
+          <p>Sau buổi học thử, nếu hài lòng, bạn đăng ký chính thức và bắt đầu hành trình biết bơi. Thanh toán linh hoạt: chuyển khoản, tiền mặt, hoặc trả dần theo buổi.</p>
+
+          <div class="info-box tip">
+            <span style="font-size: 1.5rem;">🎁</span>
+            <div>
+              <strong>Ưu đãi đặc biệt:</strong> Đăng ký ngay hôm nay để nhận buổi học thử MIỄN PHÍ + tư vấn chọn bể bơi phù hợp. Gọi <strong>0979.121.097</strong> hoặc Zalo để đặt lịch!
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7: FAQ -->
+        <section id="cau-hoi-thuong-gap-hn">
+          <h2>Câu Hỏi Thường Gặp Về Học Bơi Tại Hà Nội</h2>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Swim For Life dạy bơi ở những bể bơi nào tại Hà Nội?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Swim For Life hoạt động tại nhiều bể bơi chất lượng cao ở Hà Nội: Bể bơi Tăng Bạt Hổ, Bách Khoa, Times City, Kim Liên, Bảo Sơn, Hapulico, và toàn bộ hệ thống bể bơi Vinhomes (Times City, Ocean Park, Smart City, Riverside, Green Bay).</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Học bơi ở Hà Nội giá bao nhiêu?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Chi phí phụ thuộc vào hình thức học (1 kèm 1 hoặc nhóm), địa điểm bể bơi và đối tượng. Liên hệ hotline 0979.121.097 để được tư vấn chi tiết và nhận ưu đãi mới nhất. Swim For Life cam kết giá cạnh tranh nhất thị trường với chất lượng tốt nhất.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Học bơi ở Hà Nội mùa đông có được không?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Hoàn toàn được! Swim For Life hoạt động quanh năm tại Hà Nội. Mùa đông, học viên được bố trí tại các bể bơi trong nhà có sưởi nước (Times City, Hapulico, Bảo Sơn, Vinhomes) với nhiệt độ nước ấm áp 28-30°C.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Tôi ở Cầu Giấy, nên học bơi ở bể nào?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Nếu bạn ở Cầu Giấy, có thể học tại Bể bơi Bảo Sơn hoặc Vinhomes Green Bay, Vinhomes Smart City. Gọi hotline 0979.121.097, nhân viên tư vấn sẽ gợi ý bể bơi gần nhất cho bạn.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Swim For Life có chương trình cho trẻ em ở Hà Nội không?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Có! Chúng tôi có chương trình dạy bơi trẻ em từ 3 tuổi trở lên tại tất cả các bể bơi ở Hà Nội. Chương trình thiết kế riêng theo nhóm tuổi, HLV chuyên dạy trẻ em. Cam kết bé biết bơi sau 10-12 buổi.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Làm sao để đăng ký học bơi tại Hà Nội?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Rất đơn giản! Gọi hotline 0979.121.097 hoặc nhắn Zalo. Nhân viên tư vấn sẽ hỗ trợ chọn bể bơi, HLV, lịch học phù hợp và đặt lịch học thử miễn phí.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                Học bơi người lớn ở Hà Nội ở đâu tốt nhất?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Swim For Life là trung tâm dạy bơi cho người lớn uy tín nhất Hà Nội. Phương pháp 1 kèm 1, lịch linh hoạt sáng-trưa-tối. Bể bơi phổ biến cho người lớn: Tăng Bạt Hổ, Bách Khoa, Hapulico, Times City.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-banner" style="margin-top: var(--space-16);">
+          <h2>🏊 Đăng Ký Học Bơi Tại Hà Nội Ngay!</h2>
+          <p>Học thử MIỄN PHÍ — 10+ bể bơi chất lượng cao — Biết bơi sau 10-12 buổi!</p>
+          <div class="btn-group">
+            <a href="tel:0979121097" class="btn btn-accent btn-lg pulse">📞 Hotline: 0979.121.097</a>
+            <a href="https://zalo.me/0979121097" class="btn btn-white btn-lg">💬 Zalo Tư Vấn</a>
+          </div>
+        </div>
+
+        <!-- Internal Links -->
+        <div style="margin-top: var(--space-16); padding: var(--space-8); background: var(--color-bg-alt); border-radius: var(--radius-xl);">
+          <h3 style="margin-bottom: var(--space-6);">📚 Bài viết liên quan</h3>
+          <ul>
+            <li><a href="/khoa-hoc-boi/tre-em/"><strong>Học Bơi Trẻ Em</strong></a> — Lớp học bơi cho bé an toàn & chuyên nghiệp</li>
+            <li><a href="/khoa-hoc-boi/nguoi-lon/"><strong>Học Bơi Cho Người Lớn</strong></a> — Khóa học bơi 1 kèm 1, vượt qua nỗi sợ nước</li>
+            <li><a href="/dia-diem/tphcm/"><strong>Học Bơi TPHCM</strong></a> — Trung tâm dạy bơi tại Sài Gòn</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- Floating CTA Mobile -->
+  <div class="floating-cta">
+    <div class="floating-cta-inner">
+      <a href="tel:0979121097" class="btn btn-primary">📞 Gọi Ngay</a>
+      <a href="https://zalo.me/0979121097" class="btn btn-accent">💬 Zalo Tư Vấn</a>
+    </div>
+  </div>
+
+</PageLayout>

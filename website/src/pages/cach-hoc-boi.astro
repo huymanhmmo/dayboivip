@@ -1,0 +1,149 @@
+---
+const currentYear = new Date().getFullYear();
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const title = `Cách Học Bơi: Hướng Dẫn Toàn Diện Từ A-Z Cho Người Mới Bắt Đầu [${currentYear}]`;
+const description = 'Hướng dẫn cách học bơi hiệu quả và nhanh nhất cho người mới bắt đầu. Các bước chuẩn bị, kỹ năng làm quen nước, tập thở, tập nổi, kỹ thuật bơi ếch, bơi sải từ HLV.';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Tin tức', href: '/tin-tuc/' },
+  { label: 'Cách học bơi' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Nên bắt đầu học bơi từ đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bạn nên bắt đầu bằng việc chuẩn bị trang thiết bị phù hợp (đồ bơi, kính bơi, mũ bơi), sau đó tập các bài tập làm quen với nước ở khu vực nông như tập thở dưới nước (thổi bong bóng) và tập thả nổi cơ thể. Đây là những kỹ năng nền tảng bắt buộc trước khi tập động tác tay chân."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cách học bơi nhanh nhất là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cách nhanh nhất là học bơi kèm 1-1 với Huấn luyện viên chuyên nghiệp. HLV sẽ thiết kế giáo án phù hợp với thể lực của bạn, chỉnh sửa ngay những lỗi sai kỹ thuật giúp bạn tránh mất sức và rút ngắn thời gian biết bơi xuống còn 5-7 buổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bị sặc nước khi học bơi phải làm sao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sặc nước là điều rất bình thường đối với người mới tập bơi. Khi bị sặc, hãy bình tĩnh đứng dậy ở chỗ nông, ho mạnh để đẩy nước ra ngoài mũi/họng, hít thở sâu bằng miệng để lấy lại bình tĩnh. Để hạn chế sặc, hãy tập trung làm chủ kỹ thuật hít vào bằng miệng khi đầu trên nước và thở ra bằng mũi khi mặt dưới nước."
+      }
+    }
+  ]
+};
+
+const tocItems = [
+  { id: 'chuan-bi', text: '1. Chuẩn bị trước khi đi học bơi' },
+  { id: 'lam-quen', text: '2. Giai đoạn 1: Làm quen với môi trường nước' },
+  { id: 'tap-tho', text: '3. Giai đoạn 2: Học kỹ thuật thở dưới nước' },
+  { id: 'tap-noi', text: '4. Giai đoạn 3: Tập thả nổi và lướt nước' },
+  { id: 'kieu-boi', text: '5. Giai đoạn 4: Lựa chọn và học kiểu bơi đầu tiên' },
+  { id: 'loi-khuyen', text: '6. Lời khuyên vàng để học bơi nhanh, không mệt' }
+];
+---
+
+<BlogLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/cach-hoc-boi/"
+  breadcrumbs={breadcrumbs}
+  schema={faqSchema}
+  category="Kiến thức bơi"
+  readTime="12 phút đọc"
+  publishDate="20/05"
+  featuredImage="/images/classes/khoi-dong-lam-nong.jpg"
+  featuredImageAlt="Học viên và huấn luyện viên thực hiện khởi động giãn cơ làm nóng cơ thể bên thành bể bơi"
+  intro="Lộ trình học bơi bài bản từ HLV trưởng Swim For Life giúp bạn làm chủ kỹ năng bơi lội nhanh chóng, an toàn và đúng kỹ thuật."
+  tocItems={tocItems}
+>
+  <h2 id="chuan-bi">1. Chuẩn Bị Trước Khi Đi Học Bơi</h2>
+  <p>
+    Sự chuẩn bị kỹ lưỡng về trang thiết bị và tâm lý sẽ giúp buổi học bơi của bạn diễn ra thuận lợi và an toàn nhất.
+  </p>
+  <img src="/images/techniques/hoc-boi-sai-tay-tren-can.jpg" alt="Học sinh chuẩn bị khởi động và nghe phổ biến nội quy trước khi học bơi" width="800" height="500" loading="lazy" />
+  <span class="image-caption">Hình ảnh học viên chăm chú lắng nghe huấn luyện viên phổ biến nội quy an toàn trước khi bước vào lớp học.</span>
+  <p><strong>Trang bị cần thiết:</strong></p>
+  <ul>
+    <li><strong>Đồ bơi chất lượng:</strong> Chọn đồ bơi co giãn tốt, ôm sát cơ thể để giảm lực cản của nước. Đối với nữ nên chọn bikini 1 mảnh thể thao, nam chọn quần bơi dạng lửng.</li>
+    <li><strong>Kính bơi:</strong> Giúp bạn nhìn rõ dưới nước, bảo vệ mắt khỏi tác hại của hóa chất clo và vi khuẩn trong nước bể.</li>
+    <li><strong>Mũ bơi:</strong> Giữ tóc không bị xòa vào mặt gây cản trở tầm nhìn và bảo vệ tóc khỏi bị khô xơ do nước bể.</li>
+    <li><strong>Nút tai & Kẹp mũi (tùy chọn):</strong> Rất hữu ích cho người nhạy cảm dễ bị viêm tai hoặc sặc nước mũi trong những buổi đầu.</li>
+  </ul>
+
+  <h2 id="lam-quen">2. Giai Đoạn 1: Làm quen Với Môi Trường Nước</h2>
+  <p>
+    Đừng vội vàng tập động tác tay chân ngay khi xuống bể. Hãy dành buổi đầu tiên để cơ thể và não bộ làm quen với cảm giác áp lực nước.
+  </p>
+  <img src="/images/classes/hoc-sinh-tap-tren-thanh-be.jpg" alt="Khởi động và tập làm quen trên thành bể trước khi xuống nước học bơi" width="800" height="500" loading="lazy" />
+  <span class="image-caption">Huấn luyện viên Swim For Life hướng dẫn học viên tập động tác đạp chân trên thành bể bơi.</span>
+  <p><strong>Các bài tập làm quen nước:</strong></p>
+  <ul>
+    <li><strong>Đi bộ dưới nước:</strong> Đi bộ từ từ dọc theo khu vực bể nông sâu ngang ngực. Cảm nhận sức cản của nước lên cơ thể.</li>
+    <li><strong>Tạt nước lên mặt:</strong> Dùng tay tạt nhẹ nước lên mặt để giảm phản xạ sợ hãi tự nhiên của mắt và mũi.</li>
+    <li><strong>Bám thành bể đập chân:</strong> Bám hai tay vào thành bể, duỗi thẳng người trên mặt nước và đập chân nhẹ nhàng để cảm nhận lực nổi.</li>
+  </ul>
+
+  <h2 id="tap-tho">3. Giai Đoạn 2: Học Kỹ Thuật Thở Dưới Nước (Hít Miệng - Thở Mũi)</h2>
+  <p>
+    Thở sai là nguyên nhân lớn nhất khiến học viên bị sặc và nhanh kiệt sức. Quy tắc vàng của bơi lội là: <strong>Hít vào bằng miệng trên mặt nước và thở ra bằng mũi dưới nước.</strong>
+  </p>
+  <img src="/images/techniques/tap-tho-boi-ech-tren-can.jpg" alt="Tập mô phỏng động tác thở bơi ếch ở trên cạn" width="800" height="500" loading="lazy" />
+  <span class="image-caption">Tập luyện kỹ thuật thở nhịp nhàng trên cạn giúp học viên tránh bị sặc nước khi thực hành thực tế.</span>
+  <p><strong>Bài tập thổi bong bóng tại chỗ:</strong></p>
+  <ol>
+    <li>Đứng vững ở khu vực nước nông ngang ngực.</li>
+    <li>Hít một hơi sâu bằng miệng, sau đó từ từ ngồi xuống để nước ngập qua đầu.</li>
+    <li>Thở ra từ từ bằng mũi tạo thành dòng bong bóng sủi lên dưới nước.</li>
+    <li>Khi đã thở hết hơi, đứng thẳng dậy, ngẩng mặt lên và ngay lập tức dùng miệng hít vào nhanh hơi mới.</li>
+    <li>Lặp lại liên tục 20-30 lần cho đến khi thành thạo nhịp điệu.</li>
+  </ol>
+
+  <h2 id="tap-noi">4. Giai Đoạn 3: Tập Thả Nổi Và Lướt Nước Nền Tảng</h2>
+  <p>
+    Muốn bơi được, bạn phải nổi được. Khả năng nổi của cơ thể phụ thuộc vào lượng không khí được giữ trong phổi.
+  </p>
+  <img src="/images/techniques/dong-tac-chan-boi-sai-tren-can.jpg" alt="Tập khởi động giãn cơ trên cạn giúp cơ thể dẻo dai hỗ trợ nổi tốt hơn" width="800" height="500" loading="lazy" />
+  <span class="image-caption">Học viên tập duỗi thẳng khớp cổ chân và gối giúp tối ưu lực nổi và lực đạp nước.</span>
+  <p><strong>Kỹ thuật lướt nước (Glide):</strong></p>
+  <ul>
+    <li>Đứng tựa lưng vào thành bể, hai chân co lên đặt sát thành bể làm bàn đạp.</li>
+    <li>Hít sâu bằng miệng, úp mặt xuống nước, hai tay chắp thẳng hướng về phía trước tạo hình mũi tên.</li>
+    <li>Đạp mạnh hai chân vào thành bể, đẩy cơ thể lướt đi trên mặt nước như một chiếc tàu ngầm mini.</li>
+    <li>Giữ nguyên tư thế nằm thẳng, thả lỏng toàn thân lướt đi cho đến khi hết đà thì đứng dậy thở.</li>
+  </ul>
+
+  <h2 id="kieu-boi">5. Giai Đoạn 4: Lựa Chọn Và Học Kiểu Bơi Đầu Tiên</h2>
+  <p>
+    Thông thường, <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a> là kiểu bơi lý tưởng nhất để bắt đầu học. Kỹ thuật bơi ếch chậm rãi, mô phỏng động tác của chú ếch, giúp bạn dễ dàng phối hợp nhịp thở và quan sát đường bơi phía trước.
+  </p>
+  <p>
+    Sau khi đã bơi ếch thành thạo, bạn có thể học tiếp <a href="/ky-thuat-boi/hoc-boi-sai/">bơi sải (trườn sấp)</a> để tăng tốc độ và phát triển thể lực, rồi học các kiểu bơi nâng cao hơn như <a href="/ky-thuat-boi/hoc-boi-ngua/">bơi ngửa</a> và <a href="/ky-thuat-boi/hoc-boi-buom/">bơi bướm</a>.
+  </p>
+
+  <h2 id="loi-khuyen">6. Lời Khuyên Vàng Từ HLV Để Học Bơi Nhanh, Không Mệt</h2>
+  <ul>
+    <li><strong>Thả lỏng cơ thể:</strong> Càng gồng mình, cơ thể bạn càng nặng và dễ chìm. Hãy tin tưởng vào lực đẩy tự nhiên của nước.</li>
+    <li><strong>Không vội vã:</strong> Hãy thực hiện các động tác chậm rãi, chính xác trước khi nghĩ đến việc bơi nhanh. Bơi đúng kỹ thuật sẽ tự khắc giúp bạn bơi nhanh và đi xa.</li>
+    <li><strong>Duy trì tập luyện đều đặn:</strong> Nên đi tập bơi 2-3 buổi/tuần. Khoảng cách giữa các buổi tập quá xa sẽ khiến cơ thể nhanh quên cảm giác nước.</li>
+    <li><strong>Học cùng HLV chuyên nghiệp:</strong> Một HLV giỏi tại <a href="/gioi-thieu/">Swim For Life</a> không chỉ dạy bạn kỹ thuật bơi chuẩn mà còn là người truyền sự tự tin, giúp bạn vượt qua nỗi sợ nước nhanh chóng.</li>
+  </ul>
+
+  <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
+    <h2>📖 Bạn Đang Tìm Kiếm Khóa Học Bơi Uy Tín?</h2>
+    <p>Tham khảo các khóa dạy bơi 1 kèm 1 chất lượng cao tại Swim For Life Việt Nam.</p>
+    <div class="btn-group">
+      <a href="/khoa-hoc-boi/" class="btn btn-accent btn-lg">Xem Khóa Học</a>
+      <a href="/lien-he/" class="btn btn-white btn-lg">Đăng Ký Học Thử</a>
+    </div>
+  </div>
+</BlogLayout>
