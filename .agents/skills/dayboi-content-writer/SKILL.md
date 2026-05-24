@@ -31,7 +31,7 @@ Bài viết bắt buộc phải thiết kế xoay quanh 3 lớp từ khóa sau, 
 
 ## 4. SOP Hình Ảnh (Media Richness)
 - Bắt buộc chèn **tối thiểu 5 hình ảnh thật** do người dùng cung cấp hoặc có sẵn trong `/public/images/classes/`. KHÔNG dùng ảnh giả (placeholder).
-- Thẻ `alt` phải chứa từ khóa mô tả. Dưới mỗi ảnh phải có 1 dòng caption.
+- Thẻ `alt` phải chứa từ khóa mô tả. Dưới mỗi ảnh phải có 1 dòng `<figcaption>`. TUYỆT ĐỐI KHÔNG tự ý thêm chữ "Chú thích:" ở đầu câu (chỉ viết thẳng nội dung mô tả bức ảnh).
 - Ví dụ:
 ```html
 <figure class="post-image">
