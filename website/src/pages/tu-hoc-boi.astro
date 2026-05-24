@@ -1,15 +1,47 @@
 ---
-const currentYear = new Date().getFullYear();
 import BlogLayout from '../layouts/BlogLayout.astro';
+import { blogPosts } from '../data/blogPosts.js';
 
-const title = `Tự Học Bơi: Hướng Dẫn Tự Học Bơi An Toàn & Hiệu Quả [${currentYear}]`;
-const description = 'Hướng dẫn tự học bơi tại nhà và tại bể bơi an toàn cho người mới bắt đầu. Các bài tập mô phỏng trên cạn, các bước tập dưới nước nông không cần phao.';
+const post = blogPosts.find((p) => p.slug === 'tu-hoc-boi');
+
+if (!post) {
+  throw new Error('Post not found in blogPosts.js');
+}
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Tin tức', href: '/tin-tuc/' },
-  { label: 'Tự học bơi' },
+  { label: post.category, href: `/${post.categorySlug}/` },
+  { label: post.title },
 ];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "image": `https://dayboi.vip${post.image}`,
+  "author": {
+    "@type": "Person",
+    "name": "Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "url": "https://dayboi.vip/#founder"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-05-24",
+  "dateModified": "2026-05-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://dayboi.vip/${post.slug}/`
+  }
+};
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -17,127 +49,141 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Tôi có thể tự học bơi tại nhà được không?",
+      "name": "Có thể tự học bơi ở nhà được không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bạn hoàn toàn có thể tập các bài tập bổ trợ trên cạn tại nhà như tập xoay khớp vai, tập thở nhịp nhàng (hít miệng thở mũi), tập động tác chân bơi ếch trên giường/sàn nhà. Tuy nhiên, để thực hành dưới nước, bạn bắt buộc phải ra bể bơi để tập luyện."
+        "text": "Bạn hoàn toàn có thể tự học các kỹ năng nền tảng tại nhà như: Tập thở bằng chậu nước, tập quạt tay trước gương, tập đạp chân trên giường. Nhưng để thực sự biết bơi, bạn bắt buộc phải thực hành dưới hồ bơi có người giám sát."
       }
     },
     {
       "@type": "Question",
-      "name": "Tự học bơi ở bể sâu có nguy hiểm không?",
+      "name": "Tự học bơi mất bao lâu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cực kỳ nguy hiểm. Khi tự học bơi và chưa làm chủ được kỹ năng đứng nước hay tự nổi, tuyệt đối không được tập ở khu vực bể sâu quá đầu người. Hãy luôn tập ở khu vực bể nông sâu ngang ngực và tốt nhất là có bạn bè đi cùng để hỗ trợ."
+        "text": "Tự học bơi thường mất nhiều thời gian hơn so với học cùng HLV, kéo dài từ vài tuần đến vài tháng. Rào cản lớn nhất của việc tự học là không có người sửa lỗi sai tư thế."
       }
     },
     {
       "@type": "Question",
-      "name": "Cần trang bị phao gì khi tự học bơi?",
+      "name": "Kiểu bơi nào dễ tự học nhất?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bạn nên chuẩn bị 1 chiếc phao tim (phao cầm tay) để tập đạp chân sải/chân ếch và 1 chiếc phao lưng đeo sau người để hỗ trợ nổi thân khi tập phối hợp tay chân."
+        "text": "Bơi ếch là kiểu bơi dễ tự học nhất vì động tác tay chân đối xứng, dễ quan sát, đầu nhô lên mặt nước để thở tự nhiên thay vì phải vặn sườn xoay cổ lấy hơi như bơi sải."
       }
     }
   ]
 };
 
 const tocItems = [
-  { id: 'kha-thi', text: '1. Tự học bơi có khả thi không?' },
-  { id: 'tai-nha', text: '2. Các bài tập tự học bơi tại nhà (Trên cạn)' },
-  { id: 'tai-be', text: '3. Lộ trình tự học dưới nước tại bể nông' },
-  { id: 'an-toan-tuyet-doi', text: '4. Nguyên tắc an toàn cốt tử khi tự học bơi' },
-  { id: 'khi-nao-hlv', text: '5. Khi nào bạn nên dừng tự học và tìm HLV?' }
+  { id: 'loi-khuyen-tu-hoc-boi', text: '1. Lời khuyên xương máu: Có nên tự học bơi không?' },
+  { id: 'nguyen-tac-an-toan', text: '2. Nguyên tắc sống còn: An toàn bơi lội khi tự học' },
+  { id: 'tai-lieu-hoc-boi', text: '3. Chuẩn bị tài liệu học bơi và video dạy bơi chất lượng' },
+  { id: 'tap-tho-chau-nuoc', text: '4. Giai đoạn 1: Tự học tại nhà - Tập thở chậu nước' },
+  { id: 'mo-phong-dong-tac', text: '5. Giai đoạn 1: Mô phỏng động tác tay chân trên cạn' },
+  { id: 'tu-hoc-boi-co-ban', text: '6. Giai đoạn 2: Xuống hồ cạn - Tự học bơi cơ bản' },
+  { id: 'tap-luot-nuoc-khong-phao', text: '7. Kỹ thuật thả lỏng và tập lướt nước không phao' },
+  { id: 'tu-hoc-boi-ech', text: '8. Các bước tự học bơi ếch hoàn chỉnh' },
+  { id: 'ket-noi-co-the', text: '9. Kết nối cơ thể với nước: Bí quyết nổi bền bỉ' },
+  { id: 'sua-loi-tu-boi', text: '10. Sửa lỗi tự bơi: Tại sao cứ bơi là chìm chân?' },
+  { id: 'xu-ly-uong-nuoc', text: '11. Xử lý sự cố: Uống nước hồ bơi và ngạt thở' },
+  { id: 'moi-co-chuot-rut', text: '12. Xử lý sự cố: Mỏi cơ và nguy cơ chuột rút' },
+  { id: 'dung-phao-ho-tro', text: '13. Sử dụng áo phao bơi và phao bơi hỗ trợ đúng cách' },
+  { id: 'phan-tich-video', text: '14. Phân tích video bơi: Tự làm huấn luyện viên cho chính mình' },
+  { id: 'dich-vu-sua-loi', text: '15. Giải pháp tại Swim For Life nếu việc tự học rơi vào bế tắc' }
 ];
 ---
 
 <BlogLayout
-  title={title}
-  description={description}
-  canonical="https://dayboi.vip/tu-hoc-boi/"
+  title={`${post.title} | Swim For Life Việt Nam`}
+  description={post.excerpt}
+  canonical={`https://dayboi.vip/${post.slug}/`}
   breadcrumbs={breadcrumbs}
-  schema={faqSchema}
-  category="Kiến thức bơi"
-  readTime="10 phút đọc"
-  publishDate="20/05"
-  featuredImage="/images/classes/giao-vien-chinh-sua-ky-thuat.jpg"
-  featuredImageAlt="Huấn luyện viên Swim For Life đang căn chỉnh động tác bơi của học viên tại lớp học bơi"
-  intro="Tổng hợp phương pháp tự học bơi hiệu quả tại nhà và bể bơi, giúp bạn làm chủ cơ thể dưới nước một cách độc lập và an toàn."
+  schema={[articleSchema, faqSchema]}
+  category={post.category}
+  readTime={post.readTime}
+  publishDate={post.date}
+  featuredImage={post.image}
+  featuredImageAlt="Tự học bơi"
+  intro={post.excerpt}
   tocItems={tocItems}
 >
-  <h2 id="kha-thi">1. Tự Học Bơi Có Khả Thi Không?</h2>
-  <p>
-    Hoàn toàn khả thi! Rất nhiều người đã tự học bơi thành công nhờ kiên trì tập luyện đúng phương pháp. Tự học bơi giúp bạn chủ động về thời gian, tiết kiệm chi phí và tự do khám phá giới hạn của bản thân.
-  </p>
-  <p>
-    Tuy nhiên, tự học bơi đòi hỏi bạn phải có tính kỷ luật cao, khả năng tự quan sát điều chỉnh động tác và đặc biệt là phải tuân thủ nghiêm ngặt các nguyên tắc an toàn dưới nước vì không có HLV bên cạnh giám sát.
-  </p>
+  <h2 id="loi-khuyen-tu-hoc-boi">1. Lời khuyên xương máu: Có nên tự học bơi không?</h2>
+  <p>Khao khát <strong>tự học bơi</strong> là một điều đáng trân trọng, nó thể hiện tính tự lập và quyết tâm vượt qua giới hạn bản thân. Việc tự học hoàn toàn khả thi nếu bạn có phương pháp đúng, có khả năng <strong>cách tự tập bơi</strong> qua các tài liệu trực quan, và đặc biệt là không mắc hội chứng sợ nước quá nặng.</p>
+  <p>Tuy nhiên, mặt trái của việc <strong>học bơi tại nhà</strong> là bạn rất dễ hình thành các tật bơi sai form (lệch vai, vẹo cổ, đạp chân sai góc độ) do không có ai nắn chỉnh. Hơn nữa, tự tập bơi luôn tiềm ẩn rủi ro về mặt an toàn. Hãy đọc thật kỹ bài viết này trước khi bạn quyết định tự xách đồ bơi ra hồ.</p>
 
-  <h2 id="tai-nha">2. Các Bài Tập Tự Học Bơi Tại Nhà (Trên Cạn)</h2>
-  <p>
-    Trước khi xuống nước, hãy dành 1-2 tuần tập luyện các bài tập trên cạn tại nhà để cơ bắp quen với chuyển động bơi lội:
-  </p>
-  <img src="/images/techniques/tap-tho-boi-ech-tren-can.jpg" alt="Thực hiện bài tập thở bơi ếch trên cạn tại nhà" width="800" height="500" loading="lazy" />
-  <span class="image-caption">Bài tập thở trên cạn là nền tảng tối quan trọng giúp ổn định tâm lý và nhịp thở của cơ thể.</span>
-  
-  <h3>Bài tập thở khô:</h3>
-  <p>
-    Đứng trước gương, tập hít hơi sâu bằng miệng thật nhanh (khoảng 1 giây) → cúi đầu xuống thở ra từ từ bằng mũi (khoảng 3-4 giây). Tập liên tục 50 lần mỗi ngày để tạo phản xạ tự nhiên.
-  </p>
+  <figure class="post-image">
+    <img src="/images/techniques/tap-tho-boi-ech-tren-can.jpg" alt="Tự học bơi trên cạn" loading="lazy" />
+    <figcaption>Thực hành liên tục các động tác khô là bước đệm an toàn nhất cho người <strong>tự học bơi cơ bản</strong>.</figcaption>
+  </figure>
 
-  <h3>Bài tập chân bơi ếch trên giường:</h3>
-  <p>
-    Nằm sấp trên giường phẳng hoặc sàn nhà, hai chân duỗi thẳng. Thực hiện nhịp nhàng 4 bước:
-  </p>
-  <ol>
-    <li><strong>Co chân:</strong> Thu hai gót chân sát về phía mông, hai đầu gối mở rộng sang hai bên.</li>
-    <li><strong>Bẻ chân:</strong> Bẻ gập cổ chân hướng ngón chân ra ngoài.</li>
-    <li><strong>Đạp chân:</strong> Đạp mạnh chân sang hai bên hình vòng cung rộng.</li>
-    <li><strong>Khép chân:</strong> Khép chặt hai chân thẳng hàng và lướt nước (giữ 2 giây trước khi lặp lại).</li>
-  </ol>
-  <img src="/images/techniques/dong-tac-chan-boi-sai-tren-can.jpg" alt="Tập động tác chân sải bổ trợ trên cạn tại nhà" width="800" height="500" loading="lazy" />
-  <span class="image-caption">Học viên tập kỹ thuật duỗi mũi chân và lắc hông để chuẩn bị tốt lực đẩy khi bơi sải dưới nước.</span>
+  <h2 id="nguyen-tac-an-toan">2. Nguyên tắc sống còn: An toàn bơi lội khi tự học</h2>
+  <p>Khi tự học, bạn phải đặt <strong>an toàn bơi lội</strong> lên hàng đầu. Quy tắc số một: <strong>Đừng đi bơi một mình</strong>. Kể cả khi bạn chỉ vùng vẫy ở chỗ nước ngang bụng, vẫn luôn cần có một <strong>người giám sát</strong> (bạn bè, người thân) đứng trên bờ. Nếu bạn bị sặc nước hoặc chuột rút, họ sẽ là người hỗ trợ bạn ngay lập tức.</p>
+  <p>Luôn chọn <strong>hồ bơi cạn</strong> (độ sâu từ 1m - 1.2m) làm nơi rèn luyện. Việc chân luôn chạm tới đáy giúp duy trì cảm giác an tâm tuyệt đối.</p>
 
-  <h2 id="tai-be">3. Lộ Trình Tự Học Dưới Nước Tại Bể Nông</h2>
-  <p>Khi ra bể bơi, hãy tiến hành tập luyện theo trình tự sau, luôn ở khu vực nước nông ngang ngực:</p>
-  <ul>
-    <li><strong>Buổi 1-2: Tập thở dưới nước và tập nổi.</strong> Tập bài tập thổi bong bóng dưới nước 30-50 lần mỗi buổi. Tập thả nổi sấp và nổi ngửa bám thành bể.</li>
-    <li><strong>Buổi 3-4: Tập lướt nước.</strong> Thực hiện đạp tường bể lướt nước không phao. Cố gắng lướt đi càng xa càng tốt ở tư thế thả lỏng toàn thân.</li>
-    <li><strong>Buổi 5-6: Tập đập chân với phao tim.</strong> Hai tay ôm phao tim duỗi thẳng phía trước, úp mặt xuống nước và thực hiện đạp chân (chân ếch hoặc chân sải) đẩy người tiến về phía trước. Khi hết hơi thì ngẩng đầu lên hít thở rồi tiếp tục.</li>
-    <li><strong>Buổi 7-8: Tập phối hợp tay và thở.</strong> Đứng ở bể nông cúi người, tập quạt tay kết hợp ngẩng đầu hít thở nhịp nhàng.</li>
-    <li><strong>Buổi 9-10: Phối hợp toàn thân.</strong> Đeo phao lưng hỗ trợ, tập phối hợp tay - chân - thở hoàn chỉnh. Khi đã tự tin, hãy tháo dần phao lưng để bơi tự do.</li>
-  </ul>
+  <h2 id="tai-lieu-hoc-boi">3. Chuẩn bị tài liệu học bơi và video dạy bơi chất lượng</h2>
+  <p>Đừng học bơi theo trí nhớ mường tượng. Hãy trang bị các <strong>tài liệu học bơi</strong> chính thống hoặc xem thật kỹ các <strong>video dạy bơi</strong> quay rõ dưới nước (underwater footage). Chú ý quan sát kỹ các góc độ co gối, lật bàn chân, và góc quạt của bàn tay.</p>
 
-  <h2 id="an-toan-tuyet-doi">4. Nguyên Tắc An Toàn Cốt Tử Khi Tự Học Bơi</h2>
-  <p>Để tránh những rủi ro đáng tiếc, bạn PHẢI tuân thủ tuyệt đối các quy tắc sau:</p>
-  <div class="info-box important">
-    <span style="font-size: 24px; flex-shrink: 0;">⚡</span>
-    <div>
-      <strong>QUY TẮC AN TOÀN KHI TỰ HỌC BƠI:</strong><br/>
-      - 1. KHÔNG tập một mình: Luôn đi cùng bạn bè biết bơi hoặc tập ở bể bơi có nhân viên cứu hộ túc trực.<br/>
-      - 2. KHÔNG ra bể sâu: Chỉ tập ở khu vực nước nông sâu ngang bụng/ngực.<br/>
-      - 3. Khởi động kỹ: Dành 10-15 phút khởi động kỹ các khớp vai, gối, cổ chân trên cạn để tránh bị chuột rút dưới nước.<br/>
-      - 4. Không ăn no: Tránh ăn no trước khi bơi 2 tiếng để không bị đầy bụng, chuột rút cơ bụng.
-    </div>
-  </div>
+  <h2 id="tap-tho-chau-nuoc">4. Giai đoạn 1: Tự học tại nhà - Tập thở chậu nước</h2>
+  <p>Không cần đi đâu xa, bạn hãy vào phòng tắm, xả đầy một chậu nước sạch. <strong>Tập thở chậu nước</strong> bằng cách: Hít sâu bằng miệng -> Úp sát mặt vào chậu -> Thở từ từ ra bằng mũi tạo bọt khí liên tục -> Ngẩng lên hít vào tiếp. Đây là bài luyện công nội lực đầu tiên để bạn không bao giờ bị sặc mũi.</p>
 
-  <h2 id="khi-nao-hlv">5. Khi Nào Bạn Nên Dừng Tự Học Và Tìm HLV?</h2>
-  <p>Nếu gặp phải những dấu hiệu sau đây, bạn nên dừng việc tự học và đăng ký một khóa học có HLV hướng dẫn:</p>
-  <ul>
-    <li>Bạn tập nổi hơn 5 buổi nhưng cơ thể vẫn chìm nghỉm (thường do lỗi gồng cứng cơ vai/cổ).</li>
-    <li>Bạn thường xuyên bị sặc nước vào mũi, gây cảm giác sợ hãi không dám xuống nước lại.</li>
-    <li>Bạn bơi được nhưng cực kỳ tốn sức, bơi được 10-15m là thở không ra hơi (do phối hợp sai nhịp tay chân hoặc thở không đúng cách).</li>
-  </ul>
-  <p>
-    Việc có một HLV chuyên nghiệp tại <a href="/gioi-thieu/">Swim For Life Việt Nam</a> hướng dẫn sẽ giúp chỉnh sửa ngay lập tức các tư thế sai lệch, giúp bạn tiết kiệm năng lượng và biết bơi nhanh chóng, an toàn.
-  </p>
+  <h2 id="mo-phong-dong-tac">5. Giai đoạn 1: Mô phỏng động tác tay chân trên cạn</h2>
+  <p>Tiếp theo, hãy thực hiện <strong>mô phỏng động tác</strong> cơ thể khô. Nằm vắt ngang qua chiếc giường hoặc một chiếc ghế dài. Tập rướn người, tập quạt tay ếch, <strong>tập chân trên cạn</strong> đúng nhịp điệu. Đứng trước gương để kiểm tra xem hai tay có quạt đều nhau không, hai gót chân có đang chạm vào nhau không.</p>
+
+  <figure class="post-image">
+    <img src="/images/techniques/hoc-boi-sai-tay-tren-can.jpg" alt="Mô phỏng quạt tay bơi sải" loading="lazy" />
+    <figcaption>Sử dụng gương để <strong>mô phỏng động tác</strong> quạt tay giúp sửa lỗi sai ngay từ trên cạn.</figcaption>
+  </figure>
+
+  <h2 id="tu-hoc-boi-co-ban">6. Giai đoạn 2: Xuống hồ cạn - Tự học bơi cơ bản</h2>
+  <p>Ra đến hồ, bài học đầu tiên của <strong>tự học bơi cơ bản</strong> không phải là bơi, mà là làm quen áp lực. Đứng nước ngang ngực, nín thở và nhảy lên ngụp xuống. Hãy cảm nhận nước nâng đẩy lồng ngực bạn ra sao. Tập thổi bong bóng dưới đáy hồ y hệt như đã tập với chậu nước ở nhà.</p>
+
+  <h2 id="tap-luot-nuoc-khong-phao">7. Kỹ thuật thả lỏng và tập lướt nước không phao</h2>
+  <p>Bí quyết cốt lõi để biết bơi là <strong>kỹ thuật thả lỏng</strong>. Nếu bạn gồng cứng, bạn sẽ giống như một cục sắt chìm xuống. Nếu bạn thả lỏng mềm mại, bạn sẽ giống như một chiếc lá trôi. Đứng quay lưng vào thành hồ, đạp chân mạnh một cái rồi duỗi thẳng thân người, mặt úp xuống để <strong>tập lướt nước không phao</strong>. Cứ lướt đi cho đến khi hết đà thì đứng lại.</p>
+
+  <h2 id="tu-hoc-boi-ech">8. Các bước tự học bơi ếch hoàn chỉnh</h2>
+  <p>Nhiều người chọn <strong>tự học bơi ếch</strong> vì nó thân thiện nhất. Trình tự tự tập là:
+  - Tập chân ếch bám thành hồ.
+  - Tập tay ếch có kèm theo việc đi bộ dưới nước để kết hợp nhịp thở.
+  - Ghép hoàn thiện: Tay quạt nhô đầu hít hơi -> Tay vươn dài ngụp mặt xuống -> Chân co gối bẻ góc đạp mạnh ra sau -> Lướt trôi đi.
+  Hãy lặp lại khẩu quyết này hàng trăm lần trong đầu bạn.</p>
+
+  <h2 id="ket-noi-co-the">9. Kết nối cơ thể với nước: Bí quyết nổi bền bỉ</h2>
+  <p>Sự <strong>kết nối cơ thể với nước</strong> xảy ra khi bạn không còn xem nước là lực cản, mà xem nước là lực nâng đỡ. Khi bơi ếch, lúc trượt dài (lướt), hãy thư giãn cổ và vai, phó mặc khối lượng cơ thể cho dòng nước, đó là trạng thái nổi bền bỉ và thư thái nhất.</p>
+
+  <h2 id="sua-loi-tu-boi">10. Sửa lỗi tự bơi: Tại sao cứ bơi là chìm chân?</h2>
+  <p>Vấn đề <strong>sửa lỗi tự bơi</strong> khó nhất chính là việc <strong>chìm chân</strong>. Khi bạn ngóc đầu lên quá cao để tìm kiếm không khí, phần hông của bạn sẽ bị ép xệ xuống giống như một chiếc bập bênh bị mất cân bằng. Lực cản nước dồn vào đùi khiến bạn dậm chân tại chỗ. Cách sửa: Mắt hãy nhìn xéo xuống đáy hồ (góc 45 độ) thay vì ngửa cổ nhìn thẳng lên trời.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/lop-boi-tre-em-bai-ban.jpg" alt="Form bơi chuẩn mực" loading="lazy" />
+    <figcaption>Duy trì thân người nằm ngang gần song song với mặt nước sẽ khắc phục triệt để lỗi <strong>chìm chân</strong> khi tự tập.</figcaption>
+  </figure>
+
+  <h2 id="xu-ly-uong-nuoc">11. Xử lý sự cố: Uống nước hồ bơi và ngạt thở</h2>
+  <p>Tự tập chắc chắn sẽ bị sặc. Khi bị <strong>uống nước hồ bơi</strong> và <strong>ngạt thở</strong>, bản năng hoảng sợ sẽ làm bạn giãy giụa. Lời khuyên là lập tức thả lỏng chân cắm thẳng xuống đáy để đứng thẳng lên. Đứng lại ho sặc sụa, vỗ ngực, hít thở đều đặn trở lại. Tuyệt đối không hoảng loạn khua tay múa chân lung tung sẽ càng sặc thêm.</p>
+
+  <h2 id="moi-co-chuot-rut">12. Xử lý sự cố: Mỏi cơ và nguy cơ chuột rút</h2>
+  <p>Lực cản của nước nặng hơn không khí gần 800 lần. Việc dùng sức sai cách sẽ dẫn tới <strong>mỏi cơ</strong> rất nhanh. Đặc biệt nguy hiểm là <strong>chuột rút</strong> (căng cơ co thắt đột ngột). Nếu bị chuột rút ở chân, hãy nổi ngửa mặt lên để thở, dùng tay với xuống kéo ngược mũi bàn chân về phía cơ thể để làm giãn cơ bắp chân, đồng thời giơ tay ra hiệu kêu gọi sự trợ giúp.</p>
+
+  <h2 id="dung-phao-ho-tro">13. Sử dụng áo phao bơi và phao bơi hỗ trợ đúng cách</h2>
+  <p>Trong thời gian đầu, bạn có thể mặc <strong>áo phao bơi</strong> (jacket) hoặc sử dụng <strong>phao bơi hỗ trợ</strong> (như phao kẹp đùi pull buoy, phao ván kickboard). Tuy nhiên, hãy nhớ đây chỉ là "nạng gỗ" hỗ trợ bạn cảm nhận đúng quỹ đạo chuyển động. Khi đã thuộc động tác, bạn phải mạnh dạn bỏ phao ra, nếu không bạn sẽ mãi mãi bị phụ thuộc vào nó.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-sinh-trang-bi-phao.jpg" alt="Sử dụng phao hỗ trợ" loading="lazy" />
+    <figcaption>Biết cách sử dụng <strong>phao bơi hỗ trợ</strong> hợp lý giúp quá trình <strong>tự học bơi</strong> bớt đi rất nhiều sự căng thẳng.</figcaption>
+  </figure>
+
+  <h2 id="phan-tich-video">14. Phân tích video bơi: Tự làm huấn luyện viên cho chính mình</h2>
+  <p>Vì không có HLV, bạn hãy nhờ bạn bè quay lại video lúc bạn đang bơi. Việc <strong>phân tích video bơi</strong> của chính mình là cách học hiệu quả cực độ. Bạn sẽ giật mình nhận ra: "À, hóa ra mình không thẳng tay như mình nghĩ", hoặc "Chân mình đạp hoàn toàn sai góc". Đối chiếu video của bạn với các video mẫu chuẩn trên mạng để tự căn chỉnh.</p>
+
+  <h2 id="dich-vu-sua-loi">15. Giải pháp tại Swim For Life nếu việc tự học rơi vào bế tắc</h2>
+  <p>Nếu bạn đã nỗ lực hết mình nhưng sau 1 tháng tự tập vẫn không thể bơi trọn vẹn 10 mét, đừng quá nản lòng. Rất nhiều học viên của Swim For Life cũng từng rơi vào hoàn cảnh như vậy. Đôi khi, chỉ cần HLV "chỉnh" đúng một góc vai hay một nhịp thở nhỏ nhoi, nút thắt sẽ được tháo gỡ hoàn toàn trong vòng 1 buổi tập.</p>
 
   <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
-    <h2>🏊 Muốn Học Bơi Bài Bản & An Toàn Tuyệt Đối?</h2>
-    <p>Đăng ký khóa học bơi 1 kèm 1 cùng các Huấn luyện viên tâm lý tại Swim For Life.</p>
+    <h2>Đừng tốn thời gian với những lỗi sai cố hữu!</h2>
+    <p>Nếu việc tự học làm bạn mệt mỏi, hãy đến với khóa học bơi 1 kèm 1 tại Swim For Life. Chúng tôi sẽ thiết lập lại toàn bộ kỹ thuật chuẩn xác, giúp bạn biết bơi cực nhanh, an toàn và đúng form thể thao.</p>
     <div class="btn-group">
-      <a href="/lien-he/" class="btn btn-accent btn-lg">Đăng Ký Học Thử</a>
-      <a href="/khoa-hoc-boi/" class="btn btn-white btn-lg">Xem Khóa Học</a>
+      <a href="/khoa-hoc-boi/" class="btn btn-accent btn-lg">Xem Khóa Học</a>
+      <a href="tel:0979121097" class="btn btn-white btn-lg">📞 Đặt Lịch Tư Vấn: 0979.121.097</a>
     </div>
   </div>
 </BlogLayout>
