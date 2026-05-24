@@ -1,5 +1,5 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import BlogLayout from '../layouts/BlogLayout.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 const post = blogPosts.find((p) => p.slug === 'phong-chong-duoi-nuoc-tre-em');
@@ -42,67 +42,58 @@ const articleSchema = {
     "@id": `https://dayboi.vip/${post.slug}/`
   }
 };
+
+const tocItems = [
+  { id: 'tam-quan-trong', text: '1. Tầm quan trọng của việc phòng chống đuối nước ở trẻ em' },
+  { id: 'nguyen-nhan', text: '2. Nguyên nhân đuối nước ở trẻ em' },
+  { id: 'cach-phong-chong', text: '3. Cách phòng chống đuối nước cho trẻ' }
+];
 ---
 
-<PageLayout
+<BlogLayout
   title={`${post.title} | Swim For Life Việt Nam`}
   description={post.excerpt}
   canonical={`https://dayboi.vip/${post.slug}/`}
-  image={post.image}
-  type="article"
   breadcrumbs={breadcrumbs}
   schema={articleSchema}
+  category={post.category}
+  readTime={post.readTime}
+  publishDate={post.date}
+  featuredImage={post.image}
+  featuredImageAlt="Phòng chống đuối nước trẻ em"
+  intro={post.excerpt}
+  tocItems={tocItems}
 >
-  <div class="container article-container section-padding">
-    <div class="article-layout">
-      <!-- Main Content -->
-      <main class="article-main">
-        <header class="article-header">
-          <div class="article-meta">
-            <a href={`/tin-tuc/${post.categorySlug}/`} class="article-category">{post.category}</a>
-            <span class="article-date">{post.date}</span>
-            <span class="article-read-time">⏳ {post.readTime} đọc</span>
-          </div>
-          <h1 class="article-title">{post.title}</h1>
-          <p class="article-excerpt">{post.excerpt}</p>
-        </header>
+  <h2 id="tam-quan-trong">1. Tầm quan trọng của việc phòng chống đuối nước ở trẻ em</h2>
+  <p>Mùa hè đến cũng là lúc các hoạt động bơi lội, vui chơi dưới nước tăng cao. Tuy nhiên, đây cũng là thời điểm tiềm ẩn nhiều nguy cơ đuối nước, đặc biệt là đối với trẻ em. Việc trang bị kiến thức và kỹ năng phòng chống đuối nước là vô cùng cần thiết để bảo vệ an toàn cho trẻ.</p>
 
-        <div class="article-content tl-prose">
-          <h2>Tầm quan trọng của việc phòng chống đuối nước ở trẻ em</h2>
-          <p>Mùa hè đến cũng là lúc các hoạt động bơi lội, vui chơi dưới nước tăng cao. Tuy nhiên, đây cũng là thời điểm tiềm ẩn nhiều nguy cơ đuối nước, đặc biệt là đối với trẻ em. Việc trang bị kiến thức và kỹ năng phòng chống đuối nước là vô cùng cần thiết để bảo vệ an toàn cho trẻ.</p>
+  <h2 id="nguyen-nhan">2. Nguyên nhân đuối nước ở trẻ em</h2>
+  <ul>
+    <li>Thiếu sự giám sát của người lớn khi trẻ vui chơi gần ao, hồ, sông, suối, biển hoặc thậm chí là hồ bơi.</li>
+    <li>Trẻ chưa biết bơi hoặc bơi chưa thành thạo nhưng lại quá tự tin vào khả năng của mình.</li>
+    <li>Môi trường bơi lội không an toàn, thiếu biển báo nguy hiểm hoặc lực lượng cứu hộ.</li>
+    <li>Trẻ gặp sự cố bất ngờ như chuột rút, đuối sức khi đang bơi.</li>
+  </ul>
 
-          <h2>Nguyên nhân đuối nước ở trẻ em</h2>
-          <ul>
-            <li>Thiếu sự giám sát của người lớn khi trẻ vui chơi gần ao, hồ, sông, suối, biển hoặc thậm chí là hồ bơi.</li>
-            <li>Trẻ chưa biết bơi hoặc bơi chưa thành thạo nhưng lại quá tự tin vào khả năng của mình.</li>
-            <li>Môi trường bơi lội không an toàn, thiếu biển báo nguy hiểm hoặc lực lượng cứu hộ.</li>
-            <li>Trẻ gặp sự cố bất ngờ như chuột rút, đuối sức khi đang bơi.</li>
-          </ul>
+  <h2 id="cach-phong-chong">3. Cách phòng chống đuối nước cho trẻ</h2>
+  <h3>Luôn giám sát trẻ em</h3>
+  <p>Dù trẻ đã biết bơi hay chưa, sự giám sát của người lớn vẫn là yếu tố quan trọng nhất. Tuyệt đối không để trẻ một mình dưới nước hoặc gần khu vực có nước mà không có người lớn theo dõi sát sao.</p>
 
-          <h2>Cách phòng chống đuối nước cho trẻ</h2>
-          <h3>1. Luôn giám sát trẻ em</h3>
-          <p>Dù trẻ đã biết bơi hay chưa, sự giám sát của người lớn vẫn là yếu tố quan trọng nhất. Tuyệt đối không để trẻ một mình dưới nước hoặc gần khu vực có nước mà không có người lớn theo dõi sát sao.</p>
+  <h3>Trang bị kỹ năng bơi lội và sinh tồn</h3>
+  <p>Cho trẻ tham gia các lớp học bơi chuyên nghiệp từ sớm. Tại Swim For Life Việt Nam, chúng tôi có các <a href="/khoa-hoc-boi/tre-em/">khóa học bơi dành riêng cho trẻ em</a>, không chỉ dạy kỹ thuật bơi mà còn đặc biệt chú trọng vào các kỹ năng sinh tồn như đứng nước, xử lý tình huống khi bị đuối sức.</p>
 
-          <h3>2. Trang bị kỹ năng bơi lội và sinh tồn</h3>
-          <p>Cho trẻ tham gia các lớp học bơi chuyên nghiệp từ sớm. Tại Swim For Life Việt Nam, chúng tôi có các <a href="/khoa-hoc-boi/tre-em/">khóa học bơi dành riêng cho trẻ em</a>, không chỉ dạy kỹ thuật bơi mà còn đặc biệt chú trọng vào các kỹ năng sinh tồn như đứng nước, xử lý tình huống khi bị đuối sức.</p>
+  <h3>Mặc áo phao cho trẻ</h3>
+  <p>Khi tham gia các hoạt động vui chơi dưới nước hoặc trên tàu thuyền, luôn đảm bảo trẻ mặc áo phao đúng tiêu chuẩn và vừa vặn với cơ thể.</p>
 
-          <h3>3. Mặc áo phao cho trẻ</h3>
-          <p>Khi tham gia các hoạt động vui chơi dưới nước hoặc trên tàu thuyền, luôn đảm bảo trẻ mặc áo phao đúng tiêu chuẩn và vừa vặn với cơ thể.</p>
-
-          <h3>4. Lựa chọn địa điểm bơi lội an toàn</h3>
-          <p>Chỉ cho trẻ bơi ở những nơi có lực lượng cứu hộ, hồ bơi đạt tiêu chuẩn an toàn. Tránh bơi ở ao hồ, sông suối không có biển báo an toàn.</p>
-          
-          <div class="cta-box text-center" style="margin-top: 3rem; background: var(--color-bg-alt); padding: 2rem; border-radius: var(--radius-lg);">
-            <h3>Học Bơi Sinh Tồn Cùng Swim For Life</h3>
-            <p>Trang bị cho con kỹ năng bơi lội và sinh tồn dưới nước là món quà vô giá giúp con tự bảo vệ bản thân suốt đời.</p>
-            <a href="/khoa-hoc-boi/tre-em/" class="btn btn-primary" style="margin-top: 1rem;">Tìm hiểu khóa học bơi trẻ em</a>
-          </div>
-        </div>
-      </main>
-
-      <aside class="article-sidebar">
-        <!-- Sidebar content can go here -->
-      </aside>
+  <h3>Lựa chọn địa điểm bơi lội an toàn</h3>
+  <p>Chỉ cho trẻ bơi ở những nơi có lực lượng cứu hộ, hồ bơi đạt tiêu chuẩn an toàn. Tránh bơi ở ao hồ, sông suối không có biển báo an toàn.</p>
+  
+  <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
+    <h2>Học Bơi Sinh Tồn Cùng Swim For Life</h2>
+    <p>Trang bị cho con kỹ năng bơi lội và sinh tồn dưới nước là món quà vô giá giúp con tự bảo vệ bản thân suốt đời.</p>
+    <div class="btn-group">
+      <a href="/khoa-hoc-boi/tre-em/" class="btn btn-accent btn-lg">Tìm hiểu khóa học</a>
+      <a href="/lien-he/" class="btn btn-white btn-lg">Đăng Ký Học Thử</a>
     </div>
   </div>
-</PageLayout>
+</BlogLayout>

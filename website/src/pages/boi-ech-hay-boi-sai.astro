@@ -1,5 +1,5 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import BlogLayout from '../layouts/BlogLayout.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 const post = blogPosts.find((p) => p.slug === 'boi-ech-hay-boi-sai');
@@ -42,70 +42,62 @@ const articleSchema = {
     "@id": `https://dayboi.vip/${post.slug}/`
   }
 };
+
+const tocItems = [
+  { id: 'tong-quan', text: '1. Tổng quan về bơi ếch và bơi sải' },
+  { id: 'uu-diem-boi-ech', text: '2. Ưu điểm của bơi ếch' },
+  { id: 'uu-diem-boi-sai', text: '3. Ưu điểm của bơi sải' },
+  { id: 'loi-khuyen', text: '4. Nên học bơi ếch hay bơi sải trước?' }
+];
 ---
 
-<PageLayout
+<BlogLayout
   title={`${post.title} | Swim For Life Việt Nam`}
   description={post.excerpt}
   canonical={`https://dayboi.vip/${post.slug}/`}
-  image={post.image}
-  type="article"
   breadcrumbs={breadcrumbs}
   schema={articleSchema}
+  category={post.category}
+  readTime={post.readTime}
+  publishDate={post.date}
+  featuredImage={post.image}
+  featuredImageAlt="Bơi ếch hay bơi sải"
+  intro={post.excerpt}
+  tocItems={tocItems}
 >
-  <div class="container article-container section-padding">
-    <div class="article-layout">
-      <!-- Main Content -->
-      <main class="article-main">
-        <header class="article-header">
-          <div class="article-meta">
-            <a href={`/tin-tuc/${post.categorySlug}/`} class="article-category">{post.category}</a>
-            <span class="article-date">{post.date}</span>
-            <span class="article-read-time">⏳ {post.readTime} đọc</span>
-          </div>
-          <h1 class="article-title">{post.title}</h1>
-          <p class="article-excerpt">{post.excerpt}</p>
-        </header>
+  <h2 id="tong-quan">1. Tổng quan về bơi ếch và bơi sải</h2>
+  <p>Nhiều người mới học bơi thường băn khoăn không biết nên chọn học kiểu <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a> hay <a href="/ky-thuat-boi/hoc-boi-sai/">bơi sải</a> trước. Mỗi kiểu bơi đều có những ưu điểm, nhược điểm và kỹ thuật đặc trưng riêng. Hãy cùng phân tích để tìm ra câu trả lời phù hợp nhất cho bạn.</p>
 
-        <div class="article-content tl-prose">
-          <h2>Tổng quan về bơi ếch và bơi sải</h2>
-          <p>Nhiều người mới học bơi thường băn khoăn không biết nên chọn học kiểu <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a> hay <a href="/ky-thuat-boi/hoc-boi-sai/">bơi sải</a> trước. Mỗi kiểu bơi đều có những ưu điểm, nhược điểm và kỹ thuật đặc trưng riêng. Hãy cùng phân tích để tìm ra câu trả lời phù hợp nhất cho bạn.</p>
+  <h2 id="uu-diem-boi-ech">2. Ưu điểm của bơi ếch</h2>
+  <ul>
+    <li><strong>Dễ học cho người mới:</strong> Kỹ thuật bơi ếch đối xứng hai bên, dễ phối hợp tay chân, nhịp thở nhô đầu lên trên mặt nước giúp người học đỡ bị ngạt nước và sợ hãi.</li>
+    <li><strong>Giữ tầm nhìn tốt:</strong> Vì đầu ngẩng lên tự nhiên trong quá trình thở, bạn dễ dàng quan sát xung quanh, thích hợp cho bơi ở những nơi đông người hoặc bơi ngoài tự nhiên (sông, hồ, biển).</li>
+    <li><strong>Tiết kiệm sức:</strong> Bơi ếch có thể bơi chậm, có những nhịp nghỉ dài (lướt nước), giúp bơi được lâu mà không quá mệt mỏi.</li>
+  </ul>
 
-          <h2>Ưu điểm của bơi ếch</h2>
-          <ul>
-            <li><strong>Dễ học cho người mới:</strong> Kỹ thuật bơi ếch đối xứng hai bên, dễ phối hợp tay chân, nhịp thở nhô đầu lên trên mặt nước giúp người học đỡ bị ngạt nước và sợ hãi.</li>
-            <li><strong>Giữ tầm nhìn tốt:</strong> Vì đầu ngẩng lên tự nhiên trong quá trình thở, bạn dễ dàng quan sát xung quanh, thích hợp cho bơi ở những nơi đông người hoặc bơi ngoài tự nhiên (sông, hồ, biển).</li>
-            <li><strong>Tiết kiệm sức:</strong> Bơi ếch có thể bơi chậm, có những nhịp nghỉ dài (lướt nước), giúp bơi được lâu mà không quá mệt mỏi.</li>
-          </ul>
+  <h2 id="uu-diem-boi-sai">3. Ưu điểm của bơi sải</h2>
+  <ul>
+    <li><strong>Tốc độ nhanh nhất:</strong> Trong các kiểu bơi thể thao, bơi sải là kiểu bơi có tốc độ nhanh nhất nhờ lực cản nhỏ nhất.</li>
+    <li><strong>Tiêu thụ nhiều calo:</strong> Bơi sải đòi hỏi vận động liên tục với cường độ cao, giúp đốt cháy lượng calo lớn, rất tốt cho quá trình giảm cân.</li>
+    <li><strong>Tốt cho xương khớp:</strong> Bơi sải giúp kéo giãn cơ thể liên tục, giảm áp lực lên cột sống, rất tốt cho người gặp vấn đề về xương khớp.</li>
+  </ul>
 
-          <h2>Ưu điểm của bơi sải</h2>
-          <ul>
-            <li><strong>Tốc độ nhanh nhất:</strong> Trong các kiểu bơi thể thao, bơi sải là kiểu bơi có tốc độ nhanh nhất nhờ lực cản nhỏ nhất.</li>
-            <li><strong>Tiêu thụ nhiều calo:</strong> Bơi sải đòi hỏi vận động liên tục với cường độ cao, giúp đốt cháy lượng calo lớn, rất tốt cho quá trình giảm cân.</li>
-            <li><strong>Tốt cho xương khớp:</strong> Bơi sải giúp kéo giãn cơ thể liên tục, giảm áp lực lên cột sống, rất tốt cho người gặp vấn đề về xương khớp.</li>
-          </ul>
+  <h2 id="loi-khuyen">4. Nên học bơi ếch hay bơi sải trước?</h2>
+  <p>Tại Swim For Life Việt Nam, chúng tôi thường khuyên người mới bắt đầu nên <strong>học bơi ếch trước</strong>, vì những lý do sau:</p>
+  <ol>
+    <li>Bơi ếch giúp bạn nhanh chóng có cảm giác an toàn, quen thuộc với môi trường nước, giảm cảm giác sợ nước nhờ việc có thể quan sát xung quanh dễ dàng.</li>
+    <li>Kỹ thuật bơi ếch giúp xây dựng nhịp thở cơ bản dưới nước (thở ra bằng mũi dưới nước, hít vào bằng miệng khi ngẩng đầu lên) một cách dễ dàng và tự nhiên nhất.</li>
+    <li>Sau khi đã thành thạo bơi ếch và nhịp thở dưới nước, việc chuyển sang học bơi sải (đòi hỏi kỹ thuật xoay đầu lấy hơi phức tạp hơn) sẽ trở nên nhẹ nhàng hơn rất nhiều.</li>
+  </ol>
 
-          <h2>Nên học bơi ếch hay bơi sải trước?</h2>
-          <p>Tại Swim For Life Việt Nam, chúng tôi thường khuyên người mới bắt đầu nên <strong>học bơi ếch trước</strong>, vì những lý do sau:</p>
-          <ol>
-            <li>Bơi ếch giúp bạn nhanh chóng có cảm giác an toàn, quen thuộc với môi trường nước, giảm cảm giác sợ nước nhờ việc có thể quan sát xung quanh dễ dàng.</li>
-            <li>Kỹ thuật bơi ếch giúp xây dựng nhịp thở cơ bản dưới nước (thở ra bằng mũi dưới nước, hít vào bằng miệng khi ngẩng đầu lên) một cách dễ dàng và tự nhiên nhất.</li>
-            <li>Sau khi đã thành thạo bơi ếch và nhịp thở dưới nước, việc chuyển sang học bơi sải (đòi hỏi kỹ thuật xoay đầu lấy hơi phức tạp hơn) sẽ trở nên nhẹ nhàng hơn rất nhiều.</li>
-          </ol>
+  <p>Tất nhiên, nếu bạn đã không còn sợ nước và có nền tảng thể lực tốt, bạn hoàn toàn có thể chọn học bơi sải trước.</p>
 
-          <p>Tất nhiên, nếu bạn đã không còn sợ nước và có nền tảng thể lực tốt, bạn hoàn toàn có thể chọn học bơi sải trước.</p>
-
-          <div class="cta-box text-center" style="margin-top: 3rem; background: var(--color-bg-alt); padding: 2rem; border-radius: var(--radius-lg);">
-            <h3>Bắt đầu hành trình bơi lội của bạn</h3>
-            <p>Dù là bơi ếch hay bơi sải, Swim For Life đều có khóa học phù hợp với cam kết 100% biết bơi sau 1 khóa học.</p>
-            <a href="/khoa-hoc-boi/" class="btn btn-primary" style="margin-top: 1rem;">Xem các khóa học</a>
-          </div>
-        </div>
-      </main>
-
-      <aside class="article-sidebar">
-        <!-- Sidebar content can go here -->
-      </aside>
+  <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
+    <h2>Bắt đầu hành trình bơi lội của bạn</h2>
+    <p>Dù là bơi ếch hay bơi sải, Swim For Life đều có khóa học phù hợp với cam kết 100% biết bơi sau 1 khóa học.</p>
+    <div class="btn-group">
+      <a href="/khoa-hoc-boi/" class="btn btn-accent btn-lg">Xem Khóa Học</a>
+      <a href="/lien-he/" class="btn btn-white btn-lg">Đăng Ký Học Thử</a>
     </div>
   </div>
-</PageLayout>
+</BlogLayout>
