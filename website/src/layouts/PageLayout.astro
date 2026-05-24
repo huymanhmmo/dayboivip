@@ -9,14 +9,15 @@ export interface Props {
   canonical?: string;
   image?: string;
   type?: string;
+  noindex?: boolean;
   breadcrumbs?: Array<{ label: string; href?: string }>;
   schema?: object;
 }
 
-const { title, description, canonical, image, type, breadcrumbs, schema } = Astro.props;
+const { title, description, canonical, image, type, noindex, breadcrumbs, schema } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} image={image} type={type}>
+<BaseLayout title={title} description={description} canonical={canonical} image={image} type={type} noindex={noindex}>
   <Fragment slot="head">
     {breadcrumbs && (
       <script type="application/ld+json" set:html={JSON.stringify({

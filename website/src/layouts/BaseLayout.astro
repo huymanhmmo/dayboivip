@@ -14,13 +14,14 @@ const {
   title,
   description,
   canonical = Astro.url.href,
-  image = '/images/og-default.jpg',
+  image = '/images/logo/swim-for-life-logo.png',
   type = 'website',
   noindex = false,
 } = Astro.props;
 
 const siteName = 'Swim For Life Việt Nam';
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const currentYear = new Date().getFullYear().toString();
 ---
 
 <!DOCTYPE html>
@@ -38,10 +39,8 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   {noindex && <meta name="robots" content="noindex, nofollow" />}
 
   <!-- Dynamic Year Auto-Update Script -->
-  <script is:inline>
+  <script is:inline define:vars={{ currentYear }}>
     (function() {
-      const currentYear = new Date().getFullYear().toString();
-      
       // 1. Update title immediately to prevent flash
       document.title = document.title.replace(/\[\d{4}\]/g, `[${currentYear}]`);
       
@@ -120,7 +119,8 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
     "email": "dayboivip@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Hà Nội",
+      "streetAddress": "Vinhomes Ocean Park, Đa Tốn",
+      "addressLocality": "Gia Lâm, Hà Nội",
       "addressCountry": "VN"
     },
     "geo": {
