@@ -19,10 +19,12 @@ export async function getStaticPaths() {
     }
   });
 
-  return Array.from(categoriesMap.values()).map(cat => ({
-    params: { category: cat.slug },
-    props: { categoryName: cat.name, posts: cat.posts }
-  }));
+  return Array.from(categoriesMap.values())
+    .filter(cat => cat.slug !== 'huong-dan-hoc-boi')
+    .map(cat => ({
+      params: { category: cat.slug },
+      props: { categoryName: cat.name, posts: cat.posts }
+    }));
 }
 
 const { category } = Astro.params;

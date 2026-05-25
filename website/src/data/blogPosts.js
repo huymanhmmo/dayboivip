@@ -1,5 +1,17 @@
 export const blogPosts = [
   {
+    title: 'Hướng Dẫn Học Bơi Toàn Diện Cho Người Mới Bắt Đầu',
+    slug: 'huong-dan-hoc-boi',
+    excerpt: 'Cẩm nang hướng dẫn học bơi toàn diện từ con số 0. Lộ trình làm quen nước, các kỹ thuật bơi cơ bản, đứng nước sinh tồn và kinh nghiệm từ chuyên gia giúp bạn biết bơi an toàn.',
+    image: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
+    date: '25/05',
+    category: 'Hướng Dẫn Học Bơi',
+    categorySlug: 'huong-dan-hoc-boi',
+    tags: ['Học bơi', 'Kinh nghiệm học bơi', 'Bơi cơ bản'],
+    tagSlugs: ['hoc-boi-co-ban', 'kinh-nghiem-hoc-boi', 'boi-co-ban'],
+    readTime: '22 phút đọc',
+  },
+  {
     title: 'Chứng Chỉ Học Bơi: Tất Tần Tật Những Điều Cần Biết',
     slug: 'chung-chi-hoc-boi',
     excerpt: 'Tìm hiểu về các loại chứng chỉ học bơi tại Việt Nam, giá trị pháp lý, quy trình thi cấp chứng chỉ bơi cho học sinh và người lớn mới nhất.',
