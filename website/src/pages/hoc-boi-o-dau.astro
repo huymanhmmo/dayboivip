@@ -1,0 +1,513 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { blogPosts } from '../data/blogPosts.js';
+
+const post = blogPosts.find((p) => p.slug === 'hoc-boi-o-dau');
+
+if (!post) {
+  throw new Error('Post not found in blogPosts.js');
+}
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Tin tức', href: '/tin-tuc/' },
+  { label: post.category, href: `/${post.categorySlug}/` },
+  { label: post.title },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "image": `https://dayboi.vip${post.image}`,
+  "author": {
+    "@type": "Person",
+    "name": "Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "url": "https://dayboi.vip/#founder"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-05-25",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://dayboi.vip/${post.slug}/`
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Học bơi ở đâu tốt nhất tại Việt Nam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Học bơi tốt nhất tại các trung tâm chuyên nghiệp có HLV được cấp chứng chỉ, bể bơi đạt chuẩn vệ sinh, và cam kết đầu ra rõ ràng. Tại Hà Nội và TPHCM, Swim For Life là một trong những trung tâm được đánh giá cao nhất với tỷ lệ cam kết biết bơi 100% sau khóa học."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học phí học bơi bao nhiêu tiền một khóa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Học phí học bơi dao động từ 800.000đ - 5.000.000đ/khóa tùy hình thức. Lớp nhóm đông (6-10 người) khoảng 800.000 - 1.500.000đ. Lớp nhóm nhỏ (3-5 người) khoảng 1.500.000 - 2.500.000đ. Lớp 1 kèm 1 chất lượng cao từ 2.500.000 - 5.000.000đ/khóa 10-12 buổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nên học bơi 1 kèm 1 hay học nhóm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Học bơi 1 kèm 1 phù hợp với người sợ nước, trẻ nhỏ dưới 6 tuổi, hoặc ai muốn biết bơi nhanh nhất (5-7 buổi). Học nhóm phù hợp với trẻ từ 7 tuổi trở lên hoặc người lớn có tâm lý thoải mái với nước, muốn tiết kiệm chi phí và có bạn đồng hành."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi ở bể công cộng hay bể tư nhân tốt hơn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bể tư nhân thường có chất lượng nước tốt hơn, ít đông đúc, nhiệt độ ổn định và được bảo trì thường xuyên. Bể công cộng có lợi thế về giá rẻ nhưng thường đông vào giờ cao điểm, khó kiểm soát chất lượng nước. Nếu học bơi nghiêm túc, nên ưu tiên bể tư nhân hoặc bể trong khu đô thị."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi mất bao lâu thì biết bơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Với hình thức 1 kèm 1, trung bình 5-7 buổi (mỗi buổi 60-90 phút) là có thể bơi được 25m liên tục. Với lớp nhóm, thời gian kéo dài 10-15 buổi. Tuy nhiên, thời gian cụ thể phụ thuộc vào thể trạng, tâm lý sợ nước và tần suất luyện tập của từng người."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm sao nhận biết trung tâm dạy bơi kém chất lượng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Các dấu hiệu cảnh báo gồm: HLV không có chứng chỉ hoặc bằng cấp chuyên môn, không cho xem bể trước khi đăng ký, cam kết biết bơi nhưng không có chính sách hoàn tiền, bể bơi nước đục hoặc có mùi Clo nồng nặc, không có nhân viên cứu hộ trực, và lớp học quá đông (trên 10 người/HLV)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life có gì khác biệt so với các trung tâm dạy bơi khác?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life khác biệt ở 4 điểm: (1) HLV Nguyễn Huy Mạnh với hơn 12 năm kinh nghiệm trực tiếp giảng dạy, không giao cho HLV phụ, (2) Cam kết biết bơi 100% - hoàn tiền nếu không đạt, (3) Tỷ lệ 1 kèm 1 hoặc nhóm nhỏ tối đa 3 người, (4) Giáo án cá nhân hóa theo thể trạng và tâm lý từng học viên."
+      }
+    }
+  ]
+};
+
+const tocItems = [
+  { id: 'tong-quan', text: '1. Học bơi ở đâu tốt nhất? Tổng quan các hình thức học bơi' },
+  { id: 'tieu-chi-chon', text: '2. 8 tiêu chí chọn trung tâm dạy bơi uy tín' },
+  { id: 'so-sanh-1-kem-1-nhom', text: '3. Học bơi 1 kèm 1 vs học nhóm — nên chọn hình thức nào?' },
+  { id: 'hoc-boi-ha-noi', text: '4. Học bơi ở đâu tại Hà Nội? Top địa điểm được đánh giá cao' },
+  { id: 'hoc-boi-tphcm', text: '5. Học bơi ở đâu tại TPHCM / Sài Gòn?' },
+  { id: 'hoc-phi', text: '6. Học phí học bơi bao nhiêu tiền? Bảng giá tham khảo 2026' },
+  { id: 'red-flags', text: '7. Cách nhận biết trung tâm dạy bơi kém chất lượng' },
+  { id: 'be-cong-cong-vs-tu-nhan', text: '8. Học bơi ở bể công cộng vs bể tư nhân — ưu nhược điểm' },
+  { id: 'tai-sao-swim-for-life', text: '9. Tại sao nên chọn Swim For Life?' },
+  { id: 'quy-trinh-dang-ky', text: '10. Quy trình đăng ký học bơi tại Swim For Life' },
+  { id: 'sai-lam-thuong-gap', text: '11. Những sai lầm thường gặp khi chọn nơi học bơi' },
+  { id: 'faq', text: '12. Câu hỏi thường gặp (FAQ)' },
+];
+---
+
+<BlogLayout
+  title={`${post.title} | Swim For Life Việt Nam`}
+  description={post.excerpt}
+  canonical={`https://dayboi.vip/${post.slug}/`}
+  breadcrumbs={breadcrumbs}
+  schema={[articleSchema, faqSchema]}
+  category={post.category}
+  readTime={post.readTime}
+  publishDate={post.date}
+  featuredImage={post.image}
+  featuredImageAlt="Học bơi ở đâu tốt nhất tại Hà Nội và TPHCM"
+  intro={post.excerpt}
+  tocItems={tocItems}
+>
+  <!-- SECTION 1: Tổng quan -->
+  <h2 id="tong-quan">1. Học bơi ở đâu tốt nhất? Tổng quan các hình thức học bơi hiện nay</h2>
+  <p><strong>Học bơi ở đâu</strong> là câu hỏi mà hàng chục nghìn phụ huynh và người lớn tại Việt Nam đặt ra mỗi mùa hè. Câu trả lời ngắn gọn: bạn nên học bơi tại các <strong>trung tâm dạy bơi</strong> chuyên nghiệp có HLV được cấp chứng chỉ, bể bơi đạt chuẩn vệ sinh, và có chính sách <strong>cam kết biết bơi</strong> rõ ràng. Tránh xa những nơi "dạy bơi tự phát" tại ao hồ tự nhiên — đó là canh bạc với tính mạng.</p>
+
+  <p>Hiện nay tại Việt Nam, có 5 hình thức học bơi phổ biến mà bạn cần phân biệt trước khi đưa ra lựa chọn:</p>
+  <ul>
+    <li><strong>Trung tâm dạy bơi chuyên nghiệp:</strong> Có giáo án bài bản, HLV chuyên trách, bể bơi riêng hoặc thuê bể đạt chuẩn. Đây là lựa chọn tốt nhất nếu bạn muốn biết bơi nhanh, an toàn và đúng kỹ thuật.</li>
+    <li><strong>Bể bơi công cộng có HLV:</strong> Nhiều <strong>bể bơi gần nhà</strong> (bể phường, bể quận) có tuyển HLV dạy bơi. Ưu điểm là tiện lợi, giá rẻ, nhưng chất lượng HLV không đồng đều.</li>
+    <li><strong>CLB bơi lội tại các khu đô thị:</strong> Các bể bơi tại Vinhomes, The Manor, Times City... thường có đội ngũ HLV riêng. Chất lượng nước tốt, ít đông, nhưng chi phí cao hơn.</li>
+    <li><strong>Tự học bơi:</strong> Xem video YouTube, rủ bạn bè đi tập. Cách này tiết kiệm nhất nhưng rủi ro cao nhất — bạn dễ hình thành sai tư thế và gặp nguy hiểm khi không có người giám sát.</li>
+    <li><strong>Học bơi 1 kèm 1 tại nhà (bể riêng):</strong> HLV đến nhà hoặc bể bạn chỉ định để dạy riêng. Chi phí cao nhất nhưng hiệu quả và tiện lợi tối đa.</li>
+  </ul>
+
+  <p>Dù chọn hình thức nào, bạn cần đánh giá dựa trên 8 tiêu chí mà chúng tôi sẽ phân tích chi tiết ngay bên dưới. Nếu bạn đang tìm kiếm <a href="/cach-hoc-boi/">cách học bơi</a> bài bản từ A-Z, hãy tham khảo thêm hướng dẫn toàn diện của chúng tôi.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/lop-hoc-boi-ha-noi.jpg" alt="Lớp học bơi chuyên nghiệp tại Hà Nội với HLV Swim For Life" loading="lazy" />
+    <figcaption>Một lớp <strong>học bơi ở đâu</strong> tốt phải đảm bảo ba yếu tố: HLV chuyên nghiệp, bể sạch và giáo án bài bản.</figcaption>
+  </figure>
+
+  <!-- SECTION 2: 8 tiêu chí -->
+  <h2 id="tieu-chi-chon">2. 8 tiêu chí vàng để chọn trung tâm dạy bơi uy tín — không lo bị "hố"</h2>
+  <p>Đây là bộ tiêu chí mà HLV Nguyễn Huy Mạnh — Giám đốc đào tạo tại <a href="/gioi-thieu/">Swim For Life Việt Nam</a> — đúc kết sau hơn 12 năm trong nghề dạy bơi. Nếu một trung tâm đạt được ít nhất 6/8 tiêu chí dưới đây, bạn hoàn toàn có thể yên tâm đăng ký.</p>
+
+  <h3>Tiêu chí 1: HLV chuyên nghiệp — yếu tố quan trọng nhất</h3>
+  <p>Một <strong>HLV chuyên nghiệp</strong> phải sở hữu ít nhất một trong các chứng chỉ: Bằng cấp Đại học Thể dục Thể thao chuyên ngành bơi lội, chứng chỉ HLV bơi từ Liên đoàn Bơi lội Việt Nam, hoặc chứng chỉ cứu hộ bơi lội còn hiệu lực. Ngoài ra, kinh nghiệm thực tế (đã dạy bao nhiêu học viên, bao nhiêu năm) quan trọng hơn rất nhiều so với bằng cấp trên giấy.</p>
+  <p>Hãy hỏi trực tiếp: "Anh/chị đã dạy bơi bao nhiêu năm? Có chứng chỉ gì không?" Nếu HLV né tránh hoặc trả lời mơ hồ, đó là dấu hiệu đáng ngờ.</p>
+
+  <h3>Tiêu chí 2: Chất lượng nước bể bơi</h3>
+  <p><strong>Chất lượng nước</strong> ảnh hưởng trực tiếp đến sức khỏe. Bể đạt chuẩn phải có: độ pH từ 7.2 - 7.6, hàm lượng Clo tự do 0.5 - 1.0 ppm, nước trong xanh nhìn thấy rõ đáy bể, không có mùi hắc nồng (nếu nước nặng mùi Clo nghĩa là nước bẩn — Clo đang phản ứng mạnh với chất bẩn, không phải nước sạch). Nhiều bể bơi hiện đại sử dụng hệ thống lọc nước muối (salt chlorination) hoặc ozone thay vì rải Clo thủ công.</p>
+
+  <h3>Tiêu chí 3: Nhiệt độ bể bơi</h3>
+  <p><strong>Nhiệt độ bể</strong> lý tưởng cho học bơi là 28 - 31°C. Bể quá lạnh (dưới 26°C) khiến cơ bắp co cứng, dễ bị chuột rút, đặc biệt nguy hiểm cho trẻ em và người lớn tuổi. Bể quá nóng (trên 33°C) gây mệt mỏi nhanh, khó tập luyện hiệu quả. Bể trong nhà thường duy trì nhiệt độ ổn định hơn bể ngoài trời.</p>
+
+  <h3>Tiêu chí 4: Tỷ lệ HLV/học viên</h3>
+  <p>Tỷ lệ lý tưởng nhất là <strong>bơi 1 kèm 1</strong> (1 HLV : 1 học viên). Nếu học nhóm, tỷ lệ tối đa nên là 1:5. Lớp có hơn 8-10 học viên/HLV thì gần như là "bể bơi trông trẻ" — HLV không thể quan sát kỹ từng người, không thể sửa lỗi sai và đặc biệt nguy hiểm về mặt an toàn.</p>
+
+  <h3>Tiêu chí 5: Cam kết đầu ra</h3>
+  <p>Trung tâm <strong>uy tín</strong> sẽ có chính sách cam kết đầu ra rõ ràng: "Biết bơi 25m liên tục sau X buổi, hoặc học lại miễn phí / hoàn tiền". Nếu một nơi chỉ nói miệng mà không có văn bản cam kết, bạn cần cân nhắc kỹ.</p>
+
+  <h3>Tiêu chí 6: Cơ sở vật chất và an toàn</h3>
+  <p>Kiểm tra xem bể có phao cứu hộ, nhân viên cứu hộ trực thường xuyên, bảng nội quy an toàn, và khu vực thay đồ/tắm tráng sạch sẽ hay không. Một bể bơi không có nhân viên cứu hộ là bể bơi vi phạm quy định an toàn cơ bản.</p>
+
+  <h3>Tiêu chí 7: Đánh giá và review từ học viên cũ</h3>
+  <p>Hãy đọc <strong>review</strong> và <strong>đánh giá</strong> trên Google Maps, Facebook, và các diễn đàn. Ưu tiên những nơi có hình ảnh/video thực tế từ học viên, không chỉ là lời khen chung chung. Hỏi thêm trong các hội nhóm phụ huynh địa phương để có thông tin khách quan.</p>
+
+  <h3>Tiêu chí 8: Lịch học linh hoạt</h3>
+  <p><strong>Lịch học</strong> linh hoạt (sáng, chiều, tối, cuối tuần) giúp bạn duy trì tập luyện đều đặn. Trung tâm chỉ mở lịch cố định 1-2 khung giờ sẽ rất khó cho người đi làm hoặc học sinh. Ngoài ra, hãy kiểm tra chính sách bù buổi khi bạn nghỉ — đây là điểm nhiều nơi "cắt" mà học viên không để ý.</p>
+
+  <p><em>Tóm tắt: 8 tiêu chí gồm: HLV chuyên nghiệp, chất lượng nước, nhiệt độ bể, tỷ lệ HLV/học viên, cam kết đầu ra, an toàn, review thực tế, và lịch học linh hoạt. Hãy check từng mục trước khi rút ví.</em></p>
+
+  <!-- SECTION 3: So sánh 1 kèm 1 vs nhóm -->
+  <h2 id="so-sanh-1-kem-1-nhom">3. Học bơi 1 kèm 1 vs học nhóm — nên chọn hình thức nào phù hợp?</h2>
+  <p><strong>Nên học bơi ở đâu</strong> với hình thức nào phụ thuộc vào tâm lý, ngân sách và mục tiêu của bạn. Nếu bạn hoặc con bạn sợ nước, học 1 kèm 1 là lựa chọn duy nhất hợp lý. Nếu tâm lý thoải mái và muốn tiết kiệm, học nhóm nhỏ 3-5 người là phương án cân bằng nhất.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tiêu chí</th>
+        <th>Học bơi 1 kèm 1</th>
+        <th>Học bơi nhóm (3-5 người)</th>
+        <th>Học bơi nhóm đông (6-10 người)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tốc độ biết bơi</td>
+        <td>Nhanh nhất (5-7 buổi)</td>
+        <td>Trung bình (8-12 buổi)</td>
+        <td>Chậm (12-20 buổi)</td>
+      </tr>
+      <tr>
+        <td>Học phí/khóa</td>
+        <td>2.500.000 - 5.000.000đ</td>
+        <td>1.500.000 - 2.500.000đ</td>
+        <td>800.000 - 1.500.000đ</td>
+      </tr>
+      <tr>
+        <td>Mức độ quan tâm của HLV</td>
+        <td>100% tập trung cho bạn</td>
+        <td>Sửa lỗi tương đối kỹ</td>
+        <td>Chủ yếu giám sát chung</td>
+      </tr>
+      <tr>
+        <td>Phù hợp với</td>
+        <td>Người sợ nước, trẻ nhỏ, người lớn tuổi</td>
+        <td>Trẻ từ 7 tuổi, người lớn tự tin</td>
+        <td>Người đã biết bơi muốn cải thiện</td>
+      </tr>
+      <tr>
+        <td>Lịch học</td>
+        <td>Linh hoạt, thỏa thuận riêng</td>
+        <td>Cố định theo lịch nhóm</td>
+        <td>Cố định, ít linh hoạt</td>
+      </tr>
+      <tr>
+        <td>Khả năng sửa lỗi kỹ thuật</td>
+        <td>Rất cao — HLV chỉnh từng centimet</td>
+        <td>Khá — HLV quan sát được từng người</td>
+        <td>Thấp — chỉ sửa lỗi phổ biến</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Kinh nghiệm thực tế từ Swim For Life:</strong> HLV Nguyễn Huy Mạnh chia sẻ rằng trong số hơn 3.000 học viên đã dạy, 100% những người học 1 kèm 1 đều biết bơi 25m liên tục sau tối đa 7 buổi. Trong khi đó, với lớp nhóm 5 người, tỷ lệ này giảm xuống 85% sau 12 buổi — phần lớn do sự chênh lệch thể lực và tâm lý sợ nước giữa các học viên.</p>
+
+  <p>Nếu bạn muốn tìm hiểu chi tiết về <a href="/khoa-hoc-boi/">các khóa học bơi</a> tại Swim For Life, chúng tôi có đầy đủ thông tin về giá và lịch học.</p>
+
+  <!-- SECTION 4: Học bơi Hà Nội -->
+  <h2 id="hoc-boi-ha-noi">4. Học bơi ở đâu tại Hà Nội? Top địa điểm được đánh giá cao nhất 2026</h2>
+  <p><strong>Học bơi ở đâu Hà Nội</strong> là câu hỏi mà rất nhiều cư dân thủ đô tìm kiếm mỗi khi mùa hè đến. Hà Nội có hệ thống bể bơi đa dạng từ bể công cộng quận/huyện đến bể trong các khu đô thị cao cấp. Dựa trên kinh nghiệm hoạt động tại thị trường Hà Nội, chúng tôi đánh giá các khu vực có điều kiện học bơi tốt nhất.</p>
+
+  <h3>4.1. Các bể bơi chất lượng cao tại Hà Nội</h3>
+  <p>Các khu đô thị lớn tại Hà Nội như Vinhomes Times City, Vinhomes Ocean Park, Royal City, The Manor, và Ciputra đều sở hữu bể bơi trong nhà hoặc ngoài trời đạt tiêu chuẩn quốc tế. Ưu điểm lớn nhất của các bể này là <strong>chất lượng nước</strong> luôn được kiểm soát nghiêm ngặt, nhiệt độ ổn định (đặc biệt bể trong nhà), và ít đông đúc hơn bể công cộng.</p>
+
+  <p>Swim For Life hiện đang tổ chức các <a href="/dia-diem/ha-noi/">lớp học bơi tại Hà Nội</a> tại nhiều bể bơi trong các khu đô thị, đảm bảo sự tiện lợi cho học viên.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/lop-boi-vinhomes-times-city.jpg" alt="Lớp học bơi tại bể bơi Vinhomes Times City Hà Nội" loading="lazy" />
+    <figcaption>Bể bơi trong các khu đô thị như Vinhomes Times City là một trong những địa điểm <strong>học bơi ở đâu Hà Nội</strong> được đánh giá cao nhất về chất lượng nước và cơ sở vật chất.</figcaption>
+  </figure>
+
+  <h3>4.2. Kinh nghiệm chọn bể bơi tại Hà Nội theo khu vực</h3>
+  <ul>
+    <li><strong>Quận Hai Bà Trưng / Hoàng Mai:</strong> Vinhomes Times City là lựa chọn hàng đầu với bể bơi 4 mùa, nước ấm, hệ thống lọc hiện đại. Ngoài ra, bể bơi Công đoàn Lĩnh Nam cũng là một phương án giá mềm.</li>
+    <li><strong>Quận Thanh Xuân / Cầu Giấy:</strong> Royal City sở hữu bể bơi trong nhà lớn nhất Hà Nội. Bể bơi Mỹ Đình cũng phù hợp cho người tìm kiếm bể ngoài trời rộng rãi.</li>
+    <li><strong>Quận Long Biên / Gia Lâm:</strong> Vinhomes Riverside và Vinhomes Ocean Park đều có bể bơi đạt chuẩn, đặc biệt phù hợp cho gia đình có trẻ nhỏ.</li>
+    <li><strong>Quận Ba Đình / Tây Hồ:</strong> Ciputra, bể bơi Quân đội (Liễu Giai), hoặc bể bơi khách sạn Daewoo là những lựa chọn chất lượng cao.</li>
+  </ul>
+
+  <p><em>Lưu ý: Tại Hà Nội, bể bơi ngoài trời chỉ hoạt động từ tháng 5 đến tháng 9. Nếu muốn học bơi quanh năm, hãy chọn bể trong nhà có hệ thống sưởi nước.</em></p>
+
+  <!-- SECTION 5: Học bơi TPHCM -->
+  <h2 id="hoc-boi-tphcm">5. Học bơi ở đâu tại TPHCM / Sài Gòn? Địa điểm nào đáng tin cậy?</h2>
+  <p><strong>Học bơi ở đâu Sài Gòn</strong> là nhu cầu rất lớn quanh năm nhờ thời tiết nắng nóng. So với Hà Nội, TPHCM có lợi thế về khí hậu — nhiệt độ ổn định 30-35°C giúp bạn có thể bơi ngoài trời gần như suốt 12 tháng. Tuy nhiên, việc tìm được nơi <strong>học bơi ở đâu tốt nhất TPHCM</strong> không hề đơn giản khi thị trường có quá nhiều lựa chọn.</p>
+
+  <h3>5.1. Các khu vực có bể bơi tốt tại TPHCM</h3>
+  <ul>
+    <li><strong>Quận 1 / Quận 3:</strong> Bể bơi Lam Sơn (Quận 5 — gần Q.1), bể bơi Yết Kiêu, các bể bơi trong khách sạn 4-5 sao. Chi phí cao nhưng chất lượng đảm bảo.</li>
+    <li><strong>Quận 2 (TP. Thủ Đức):</strong> Khu Sala, Vinhomes Central Park, Masteri — bể bơi trong khu đô thị hiện đại, chất lượng nước và an ninh tốt.</li>
+    <li><strong>Quận 7:</strong> Khu Phú Mỹ Hưng, Sunrise City, SC VivoCity — đây là khu vực có mật độ bể bơi chất lượng cao nhất Sài Gòn.</li>
+    <li><strong>Quận 9 (TP. Thủ Đức):</strong> Vinhomes Grand Park, bể bơi Khu ĐHQG — phù hợp cho cư dân phía Đông.</li>
+    <li><strong>Quận Bình Thạnh / Gò Vấp:</strong> Bể bơi Phú Thọ (một trong những bể công cộng lớn nhất TPHCM), Cityland Park Hills, Vinhomes.</li>
+  </ul>
+
+  <p>Swim For Life hiện cũng đang mở rộng hoạt động tại TPHCM. Xem chi tiết <a href="/dia-diem/tphcm/">các địa điểm học bơi tại TPHCM</a> để tìm bể gần bạn nhất.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/lop-hoc-boi-tre-em-tphcm.jpg" alt="Lớp học bơi trẻ em chất lượng cao tại TPHCM" loading="lazy" />
+    <figcaption>Học viên nhí tại TPHCM trong buổi tập bơi ếch tại bể bơi khu đô thị — môi trường sạch sẽ, an toàn và được giám sát chặt chẽ.</figcaption>
+  </figure>
+
+  <!-- SECTION 6: Học phí -->
+  <h2 id="hoc-phi">6. Học phí học bơi bao nhiêu tiền? Bảng giá tham khảo chi tiết 2026</h2>
+  <p><strong>Học phí</strong> là yếu tố ảnh hưởng lớn đến quyết định <strong>nên học bơi ở đâu</strong> của hầu hết mọi người. Dưới đây là bảng giá tham khảo tổng hợp từ các trung tâm dạy bơi uy tín tại Hà Nội và TPHCM, cập nhật năm 2026.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Hình thức</th>
+        <th>Số buổi/khóa</th>
+        <th>Học phí (VNĐ)</th>
+        <th>Đã bao gồm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Bơi nhóm đông</strong> (6-10 người)</td>
+        <td>12-15 buổi</td>
+        <td>800.000 - 1.500.000</td>
+        <td>HLV chung, không vé bể</td>
+      </tr>
+      <tr>
+        <td><strong>Bơi nhóm</strong> nhỏ (3-5 người)</td>
+        <td>10-12 buổi</td>
+        <td>1.500.000 - 2.500.000</td>
+        <td>HLV chuyên, không vé bể</td>
+      </tr>
+      <tr>
+        <td><strong>Bơi 1 kèm 1</strong> (cơ bản)</td>
+        <td>8-10 buổi</td>
+        <td>2.500.000 - 3.500.000</td>
+        <td>HLV riêng, cam kết đầu ra</td>
+      </tr>
+      <tr>
+        <td><strong>Bơi 1 kèm 1</strong> (VIP)</td>
+        <td>10-12 buổi</td>
+        <td>3.500.000 - 5.000.000</td>
+        <td>HLV cao cấp, vé bể, quay video</td>
+      </tr>
+      <tr>
+        <td><strong>Khóa bơi trẻ em</strong> (1 kèm 1)</td>
+        <td>10-12 buổi</td>
+        <td>3.000.000 - 5.000.000</td>
+        <td>Giáo án riêng cho từng bé</td>
+      </tr>
+      <tr>
+        <td><strong>Khóa bơi người lớn</strong> (1 kèm 1)</td>
+        <td>8-10 buổi</td>
+        <td>2.500.000 - 4.500.000</td>
+        <td>Cam kết biết bơi, sửa kỹ thuật</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Lưu ý quan trọng:</strong> Giá trên chưa bao gồm vé vào cổng bể bơi (thường từ 50.000 - 150.000đ/lần tùy bể). Một số trung tâm <strong>giá rẻ</strong> bất thường (dưới 500.000đ/khóa) thường là tín hiệu cảnh báo: HLV có thể là sinh viên chưa tốt nghiệp, lớp đông 15-20 người, và không có bất kỳ cam kết đầu ra nào.</p>
+
+  <p>Xem chi tiết bảng giá cập nhật nhất tại <a href="/khoa-hoc-boi/nguoi-lon/">khóa học bơi người lớn</a> và <a href="/khoa-hoc-boi/tre-em/">khóa học bơi trẻ em</a> tại Swim For Life.</p>
+
+  <!-- SECTION 7: Red flags -->
+  <h2 id="red-flags">7. Cách nhận biết trung tâm dạy bơi kém chất lượng — những "red flags" cần tránh</h2>
+  <p>Trong quá trình hơn 12 năm dạy bơi và đào tạo HLV, HLV Nguyễn Huy Mạnh đã gặp không ít học viên chuyển đến Swim For Life sau khi "mất tiền oan" tại các nơi kém chất lượng. Dưới đây là 7 dấu hiệu cảnh báo (red flags) mà bạn phải nhận ra ngay:</p>
+
+  <ol>
+    <li><strong>HLV không có chứng chỉ:</strong> Khi hỏi "Anh có bằng cấp gì?", HLV trả lời "Anh bơi giỏi lắm, bơi từ nhỏ". Bơi giỏi và dạy bơi giỏi là hai năng lực hoàn toàn khác nhau.</li>
+    <li><strong>Không cho thăm bể trước:</strong> Trung tâm từ chối cho bạn xem bể bơi, xem lớp đang dạy, hoặc gặp HLV trước khi đóng tiền. Nơi uy tín luôn tự tin mời bạn đến trải nghiệm miễn phí.</li>
+    <li><strong>Cam kết miệng, không có văn bản:</strong> "Chắc chắn biết bơi thôi!" nhưng khi hỏi "Nếu không biết thì sao?", họ lảng tránh hoặc nói "Ai cũng biết hết mà".</li>
+    <li><strong>Lớp học quá đông:</strong> Hơn 8-10 học viên cho 1 HLV. Ở quy mô này, HLV chỉ đứng trên bờ hô khẩu lệnh chung, không thể sửa lỗi cá nhân từng người.</li>
+    <li><strong>Nước bể đục, có váng, mùi hắc:</strong> Đây là dấu hiệu bể không được vệ sinh đúng quy trình. Bạn có nguy cơ bị viêm da, viêm tai, viêm kết mạc.</li>
+    <li><strong>Không có nhân viên cứu hộ:</strong> Bất kỳ bể bơi nào hoạt động mà không có ít nhất 1 nhân viên cứu hộ trực là bể bơi vi phạm pháp luật.</li>
+    <li><strong>Ép đóng tiền trọn khóa trước:</strong> Không cho dùng thử 1 buổi, không có chính sách hoàn tiền. Nơi tự tin vào chất lượng luôn sẵn sàng cho bạn trải nghiệm trước.</li>
+  </ol>
+
+  <p><em>Case study: Chị Thanh Hà (36 tuổi, Cầu Giấy) đã đăng ký cho con trai 6 tuổi tại một lớp bơi "siêu rẻ" 400.000đ/khóa. Sau 15 buổi, cháu vẫn không tự bơi được quá 5m và bị lỗi cơ bản là nín thở thay vì thở ra bằng mũi dưới nước. Khi chuyển sang Swim For Life, HLV Mạnh phải mất thêm 3 buổi để "xóa" thói quen sai trước khi bắt đầu dạy lại từ đầu. Tổng chi phí cuối cùng đắt gấp 3 lần nếu chọn đúng ngay từ đầu.</em></p>
+
+  <figure class="post-image">
+    <img src="/images/classes/giang-vien-huong-dan-ky-thuat.jpg" alt="HLV hướng dẫn kỹ thuật bơi sát sao cho học viên" loading="lazy" />
+    <figcaption>HLV chuyên nghiệp luôn xuống nước cùng học viên để sửa từng chi tiết nhỏ nhất — đây là điều mà lớp đông không thể làm được.</figcaption>
+  </figure>
+
+  <!-- SECTION 8: Bể công cộng vs tư nhân -->
+  <h2 id="be-cong-cong-vs-tu-nhan">8. Học bơi ở bể công cộng vs bể tư nhân — đâu là lựa chọn thông minh?</h2>
+  <p>Đây là câu hỏi mà rất nhiều người cân nhắc khi quyết định <strong>học bơi ở đâu</strong>. Mỗi loại bể có ưu nhược điểm riêng, và sự lựa chọn phụ thuộc vào ưu tiên cá nhân của bạn: ngân sách, chất lượng, hay sự tiện lợi.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tiêu chí</th>
+        <th>Bể công cộng</th>
+        <th>Bể tư nhân (khu đô thị/khách sạn)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Giá vé vào cổng</td>
+        <td>30.000 - 80.000đ/lần</td>
+        <td>80.000 - 200.000đ/lần</td>
+      </tr>
+      <tr>
+        <td>Chất lượng nước</td>
+        <td>Trung bình — đông người, khó kiểm soát</td>
+        <td>Tốt — ít người, bảo trì thường xuyên</td>
+      </tr>
+      <tr>
+        <td>Mức độ đông đúc</td>
+        <td>Rất đông (giờ cao điểm 17h-20h)</td>
+        <td>Vắng — thường chỉ cư dân sử dụng</td>
+      </tr>
+      <tr>
+        <td>Nhiệt độ nước</td>
+        <td>Không kiểm soát (bể ngoài trời)</td>
+        <td>Ổn định 28-31°C (bể trong nhà)</td>
+      </tr>
+      <tr>
+        <td>An ninh / giám sát</td>
+        <td>Có cứu hộ nhưng tải nhiều</td>
+        <td>Có cứu hộ, camera, ít người hơn</td>
+      </tr>
+      <tr>
+        <td>Phù hợp để học bơi</td>
+        <td>Khó — đông đúc, ít không gian luyện tập</td>
+        <td>Tốt — rộng rãi, yên tĩnh, tập trung cao</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Lời khuyên từ kinh nghiệm:</strong> Nếu bạn đang trong giai đoạn HỌC bơi (chưa biết bơi), hãy ưu tiên bể tư nhân hoặc bể trong khu đô thị. Sự yên tĩnh và không gian rộng giúp bạn tập trung hơn rất nhiều so với bể công cộng đông nghìn nghịt. Sau khi đã biết bơi và muốn duy trì luyện tập hàng ngày, bể công cộng gần nhà là lựa chọn kinh tế hợp lý.</p>
+
+  <!-- SECTION 9: Tại sao Swim For Life -->
+  <h2 id="tai-sao-swim-for-life">9. Tại sao nên chọn Swim For Life? Sự khác biệt từ người thật — việc thật</h2>
+  <p>Trong hàng trăm <strong>trung tâm dạy bơi</strong> trên thị trường, <strong>Swim For Life</strong> tự tin khẳng định vị thế bằng những con số thực tế chứ không phải lời quảng cáo. Dưới đây là những gì làm nên sự khác biệt của chúng tôi:</p>
+
+  <h3>9.1. HLV Nguyễn Huy Mạnh — trực tiếp giảng dạy, không giao cho HLV phụ</h3>
+  <p>Đây là điều hiếm có ở các trung tâm lớn. Tại hầu hết các nơi, người sáng lập chỉ đứng tên thương hiệu, còn việc dạy do đội ngũ HLV phụ đảm nhận. Tại Swim For Life, HLV Nguyễn Huy Mạnh với hơn 12 năm kinh nghiệm, đã trực tiếp đào tạo hơn 3.000 học viên từ trẻ em 4 tuổi đến người lớn 65 tuổi — là người đứng lớp chính trong mọi khóa học.</p>
+
+  <h3>9.2. Cam kết biết bơi 100% — hoàn tiền nếu không đạt</h3>
+  <p>Không phải cam kết miệng. Swim For Life cam kết bằng văn bản: sau khóa học, nếu học viên không thể bơi được 25m liên tục, sẽ được học lại hoàn toàn miễn phí. Trong suốt thời gian hoạt động, tỷ lệ học viên cần học lại gần như bằng 0%.</p>
+
+  <h3>9.3. Giáo án cá nhân hóa — không ai giống ai</h3>
+  <p>Mỗi học viên đến với Swim For Life đều được đánh giá thể trạng, tâm lý sợ nước, và mục tiêu cá nhân trước khi bắt đầu. Từ đó, HLV xây dựng lộ trình riêng: người sợ nước sẽ có 2-3 buổi chuyên về làm quen nước và tập thở; người đã biết bơi cơ bản sẽ nhảy thẳng vào sửa kỹ thuật nâng cao.</p>
+
+  <h3>9.4. Case study thực tế</h3>
+  <p><strong>Anh Tuấn Minh (42 tuổi, Thanh Xuân):</strong> Sợ nước suốt 42 năm cuộc đời, từng bị đuối nước khi nhỏ và mang ám ảnh nặng nề. Sau khi được vợ thuyết phục, anh đăng ký khóa 1 kèm 1 tại Swim For Life. Buổi đầu tiên, anh không dám bước xuống bậc thang thứ hai của bể. HLV Mạnh dành trọn 3 buổi chỉ để anh đứng, ngồi, và ngụp mặt trong khu nước nông 1.2m. Đến buổi thứ 5, anh tự thở nước được. Buổi thứ 9, anh bơi ếch liên tục 50m. Anh nói: "Tôi ước mình biết đến chỗ này sớm hơn 20 năm."</p>
+  <p><strong>Bé Bống (5 tuổi, Times City):</strong> Khóc toàn bộ buổi đầu tiên, không chịu xuống nước. HLV Mạnh không ép, chỉ ngồi cạnh bể chơi đồ chơi nước cùng bé suốt 45 phút. Buổi thứ 2, bé chịu ngồi ở bậc thang. Buổi thứ 4, bé đã ngụp lặn cười khanh khách. Buổi thứ 10, bé bơi ếch 15m và tự nổi ngửa 30 giây — một kỹ năng sinh tồn vô giá.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg" alt="Tổ chức lớp học bơi bài bản và chuyên nghiệp tại Swim For Life" loading="lazy" />
+    <figcaption>Mỗi buổi học tại Swim For Life đều được tổ chức bài bản với giáo án cá nhân hóa — điều mà các lớp đông không thể thực hiện.</figcaption>
+  </figure>
+
+  <!-- SECTION 10: Quy trình đăng ký -->
+  <h2 id="quy-trinh-dang-ky">10. Quy trình đăng ký học bơi tại Swim For Life — đơn giản và minh bạch</h2>
+  <p>Nếu bạn đã quyết định chọn Swim For Life, quy trình đăng ký chỉ gồm 5 bước đơn giản:</p>
+
+  <ol>
+    <li><strong>Bước 1 — Liên hệ tư vấn miễn phí:</strong> Gọi hotline 0979.121.097 hoặc nhắn tin qua Zalo/Facebook. Tư vấn viên sẽ hỏi về độ tuổi, trình độ bơi hiện tại, và khu vực bạn sinh sống để giới thiệu bể bơi phù hợp nhất.</li>
+    <li><strong>Bước 2 — Chọn gói học:</strong> Dựa trên tư vấn, bạn chọn hình thức (1 kèm 1 hoặc nhóm nhỏ), số buổi, và khung giờ mong muốn. Xem chi tiết tại trang <a href="/khoa-hoc-boi/">khóa học bơi</a>.</li>
+    <li><strong>Bước 3 — Đóng học phí:</strong> Chuyển khoản hoặc thanh toán tại bể. Nhận biên lai và <strong>chứng chỉ bơi</strong> cam kết đầu ra bằng văn bản.</li>
+    <li><strong>Bước 4 — Buổi đánh giá đầu vào:</strong> Buổi đầu tiên, HLV sẽ đánh giá thể trạng, tâm lý và mức độ sợ nước để thiết kế giáo án cá nhân phù hợp.</li>
+    <li><strong>Bước 5 — Bắt đầu khóa học:</strong> Học theo lịch đã thống nhất. Sau mỗi buổi, HLV gửi báo cáo tiến độ (video + nhận xét) để học viên hoặc phụ huynh theo dõi.</li>
+  </ol>
+
+  <p>Bạn có thể <a href="/lien-he/">liên hệ Swim For Life</a> ngay hôm nay để được tư vấn miễn phí và đặt lịch học thử.</p>
+
+  <!-- SECTION 11: Sai lầm thường gặp -->
+  <h2 id="sai-lam-thuong-gap">11. Những sai lầm thường gặp khi chọn nơi học bơi — bạn đang mắc phải cái nào?</h2>
+  <p>Sau hàng nghìn buổi dạy, HLV Nguyễn Huy Mạnh tổng kết 6 sai lầm phổ biến nhất mà học viên mới thường mắc phải khi quyết định <strong>học bơi ở đâu</strong>:</p>
+
+  <h3>Sai lầm 1: Chọn nơi rẻ nhất</h3>
+  <p>"Của rẻ là của ôi" — câu nói này đặc biệt đúng trong lĩnh vực dạy bơi. Lớp bơi <strong>giá rẻ</strong> bất thường thường đi kèm: HLV nghiệp dư (sinh viên chưa ra trường), lớp đông 15-20 người, không cam kết đầu ra, và bể bơi chất lượng thấp. Kết quả là bạn không biết bơi, mất tiền, mất thời gian, và tệ hơn — hình thành những thói quen sai rất khó sửa.</p>
+
+  <h3>Sai lầm 2: Chỉ quan tâm đến bể bơi, bỏ qua HLV</h3>
+  <p>Nhiều người chọn nơi học chỉ vì bể bơi đẹp, sang trọng. Nhưng bể 5 sao mà HLV 1 sao thì vẫn thất bại. Yếu tố quan trọng nhất là chất lượng HLV — người sẽ trực tiếp mài giũa kỹ thuật và giữ an toàn cho bạn dưới nước.</p>
+
+  <h3>Sai lầm 3: Không hỏi về chính sách cam kết đầu ra</h3>
+  <p>Rất nhiều người đóng tiền xong mới phát hiện: trung tâm không cam kết gì cả. Hỏi rõ trước khi đóng tiền: "Nếu sau X buổi tôi không biết bơi thì được gì? Học lại miễn phí hay hoàn tiền?"</p>
+
+  <h3>Sai lầm 4: Chọn bể bơi quá xa nhà</h3>
+  <p>Khoảng cách là kẻ thù của sự kiên trì. Nếu bể bơi cách nhà 30 phút di chuyển, khả năng bạn bỏ giữa chừng tăng gấp 3 lần so với bể cách 10 phút. Hãy ưu tiên <strong>bể bơi gần nhà</strong> hoặc gần nơi làm việc.</p>
+
+  <h3>Sai lầm 5: Để con tự học bơi theo bạn bè</h3>
+  <p>Trẻ em "tự học" bơi bằng cách bắt chước bạn bè là nguyên nhân hàng đầu gây ra lỗi kỹ thuật nghiêm trọng và tai nạn đuối nước. Bơi lội không giống đá bóng — sai kỹ thuật dưới nước có thể dẫn đến nguy hiểm tính mạng.</p>
+
+  <h3>Sai lầm 6: Bỏ cuộc quá sớm</h3>
+  <p>Nhiều người lớn bỏ sau 2-3 buổi đầu tiên vì "cảm thấy không tiến bộ". Sự thật là 2-3 buổi đầu chủ yếu để cơ thể làm quen với nước và vượt qua nỗi sợ. Tiến bộ thực sự thường đến từ buổi thứ 4-5 trở đi. Kiên nhẫn là chìa khóa.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg" alt="HLV trực tiếp chỉnh sửa kỹ thuật cho học viên trong nước" loading="lazy" />
+    <figcaption>HLV Swim For Life luôn xuống nước cùng học viên — đảm bảo mỗi động tác đều được sửa chính xác ngay từ buổi đầu tiên.</figcaption>
+  </figure>
+
+  <!-- SECTION 12: FAQ -->
+  <h2 id="faq">12. Câu hỏi thường gặp về học bơi ở đâu (FAQ)</h2>
+
+  <h3>Học bơi ở đâu tốt nhất tại Việt Nam?</h3>
+  <p>Học bơi tốt nhất tại các trung tâm chuyên nghiệp có <strong>HLV chuyên nghiệp</strong> được cấp chứng chỉ, bể bơi đạt chuẩn vệ sinh, và cam kết đầu ra rõ ràng. Tại Hà Nội và TPHCM, Swim For Life là một trong những trung tâm được đánh giá cao nhất với tỷ lệ <strong>cam kết biết bơi</strong> 100% sau khóa học. Yếu tố quyết định không phải là bể bơi đẹp nhất, mà là chất lượng HLV và giáo án giảng dạy.</p>
+
+  <h3>Học phí học bơi bao nhiêu tiền một khóa?</h3>
+  <p><strong>Học phí</strong> dao động từ 800.000đ đến 5.000.000đ/khóa tùy hình thức. Lớp nhóm đông (6-10 người) khoảng 800.000 - 1.500.000đ. Lớp nhóm nhỏ (3-5 người) khoảng 1.500.000 - 2.500.000đ. Lớp <strong>bơi 1 kèm 1</strong> chất lượng cao từ 2.500.000 - 5.000.000đ/khóa 10-12 buổi. Chi phí này chưa bao gồm vé vào cổng bể bơi.</p>
+
+  <h3>Nên học bơi 1 kèm 1 hay học nhóm?</h3>
+  <p><strong>Bơi 1 kèm 1</strong> phù hợp với người sợ nước, trẻ nhỏ dưới 6 tuổi, hoặc ai muốn biết bơi nhanh nhất (5-7 buổi). <strong>Bơi nhóm</strong> phù hợp với trẻ từ 7 tuổi trở lên hoặc người lớn có tâm lý thoải mái với nước, muốn tiết kiệm chi phí và có bạn đồng hành tạo động lực.</p>
+
+  <h3>Học bơi ở bể công cộng hay bể tư nhân tốt hơn?</h3>
+  <p>Nếu đang trong giai đoạn HỌC bơi (chưa biết bơi), hãy ưu tiên bể tư nhân hoặc bể trong khu đô thị vì ít đông, <strong>chất lượng nước</strong> tốt hơn, và không gian yên tĩnh giúp tập trung. Bể công cộng phù hợp sau khi đã biết bơi và muốn luyện tập duy trì hàng ngày với chi phí tiết kiệm.</p>
+
+  <h3>Học bơi mất bao lâu thì biết bơi?</h3>
+  <p>Với hình thức 1 kèm 1 và HLV chuyên nghiệp, trung bình 5-7 buổi (mỗi buổi 60-90 phút) là có thể bơi được 25m liên tục. Với lớp nhóm, thời gian kéo dài 10-15 buổi. Thời gian cụ thể phụ thuộc vào thể trạng, mức độ <strong>an toàn</strong> tâm lý với nước, và tần suất luyện tập.</p>
+
+  <h3>Làm sao nhận biết trung tâm dạy bơi kém chất lượng?</h3>
+  <p>Các dấu hiệu cảnh báo bao gồm: HLV không có <strong>chứng chỉ bơi</strong> hoặc bằng cấp chuyên môn, không cho xem bể trước khi đăng ký, cam kết miệng nhưng không có chính sách hoàn tiền, bể bơi nước đục hoặc có mùi Clo nồng nặc, không có nhân viên cứu hộ trực, và lớp học quá đông (trên 10 người/HLV).</p>
+
+  <h3>Swim For Life có gì khác biệt so với các trung tâm dạy bơi khác?</h3>
+  <p><strong>Swim For Life</strong> khác biệt ở 4 điểm cốt lõi: (1) HLV Nguyễn Huy Mạnh với hơn 12 năm <strong>kinh nghiệm chọn</strong> phương pháp dạy phù hợp từng người, trực tiếp giảng dạy mỗi buổi, (2) Cam kết biết bơi 100% — hoàn tiền nếu không đạt, (3) Tỷ lệ 1 kèm 1 hoặc nhóm nhỏ tối đa 3 người, (4) Giáo án cá nhân hóa theo thể trạng và tâm lý từng học viên. Xem thêm thông tin tại trang <a href="/gioi-thieu/">giới thiệu Swim For Life</a>.</p>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
+    <h2>Đã biết học bơi ở đâu — Bắt đầu ngay hôm nay!</h2>
+    <p>Swim For Life cam kết biết bơi 100% sau khóa học. HLV Nguyễn Huy Mạnh trực tiếp giảng dạy với giáo án cá nhân hóa cho mọi lứa tuổi. Liên hệ ngay để được tư vấn và đặt lịch học thử miễn phí!</p>
+    <div class="btn-group">
+      <a href="/khoa-hoc-boi/" class="btn btn-accent btn-lg">Xem Khóa Học</a>
+      <a href="tel:0979121097" class="btn btn-white btn-lg">📞 Đăng Ký Ngay: 0979.121.097</a>
+    </div>
+  </div>
+</BlogLayout>
