@@ -556,16 +556,6 @@ const sortedLocationsEn = [...allProvincesEn].sort((a, b) => a.name.localeCompar
                   <span class="location-item-card__name">
                     {prov.name}
                   </span>
-                  {isFeatured && (
-                    <span class="location-item-card__badge">
-                      ⭐ Major Hub
-                    </span>
-                  )}
-                  {prov.isTW && !isFeatured && (
-                    <span class="location-item-card__badge-tw">
-                      Metro
-                    </span>
-                  )}
                 </div>
               </div>
             </a>

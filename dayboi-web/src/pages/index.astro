@@ -611,16 +611,6 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
                   <span class="location-item-card__name">
                     {prov.name}
                   </span>
-                  {isFeatured && (
-                    <span class="location-item-card__badge">
-                      ⭐ Đô thị lớn
-                    </span>
-                  )}
-                  {prov.isTW && !isFeatured && (
-                    <span class="location-item-card__badge-tw">
-                      TP lớn
-                    </span>
-                  )}
                 </div>
               </div>
             </a>

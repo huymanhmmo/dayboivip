@@ -211,27 +211,52 @@ const pools = [
       </div>
 
       <div class="hanoi-hero__visual reveal">
-        <div class="hanoi-hero__image-wrapper">
-          <img 
-            src="/images/classes/lop-hoc-boi-ha-noi.jpg" 
-            alt="Lớp dạy học bơi kèm riêng chuyên nghiệp tại Hà Nội - Swim For Life Việt Nam" 
-            class="hanoi-hero__img"
-            loading="eager"
-          />
-          <div class="hanoi-hero__glass-card">
-            <span class="glass-card__icon">🌟</span>
-            <div>
-              <strong>Chi Nhánh Hà Nội</strong>
-              <span>50+ Bể bơi hợp tác khắp 12 quận</span>
-            </div>
+        <div class="hanoi-hero__water-bubbles" aria-hidden="true">
+          <span class="water-bubble wb--1"></span>
+          <span class="water-bubble wb--2"></span>
+          <span class="water-bubble wb--3"></span>
+          <span class="water-bubble wb--4"></span>
+          <span class="water-bubble wb--5"></span>
+          <span class="water-bubble wb--6"></span>
+          <span class="water-bubble wb--7"></span>
+          <span class="water-bubble wb--8"></span>
+          <span class="water-bubble wb--9"></span>
+          <span class="water-bubble wb--10"></span>
+        </div>
+        <div class="hanoi-hero__collage">
+          <div class="hanoi-hero__photo hanoi-hero__photo--main">
+            <img 
+              src="/images/classes/lop-hoc-boi-ha-noi.jpg" 
+              alt="Lớp dạy học bơi kèm riêng chuyên nghiệp tại Hà Nội - Swim For Life Việt Nam" 
+              loading="eager"
+            />
           </div>
-          <div class="hanoi-hero__glass-card hanoi-hero__glass-card--bottom">
-            <span class="glass-card__icon">💯</span>
-            <div>
-              <strong>Cam Kết Đầu Ra</strong>
-              <span>Biết bơi vững kỹ năng sinh tồn</span>
-            </div>
+          <div class="hanoi-hero__photo hanoi-hero__photo--top">
+            <img 
+              src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" 
+              alt="Giáo viên chỉnh sửa kỹ thuật bơi cho học viên" 
+              loading="eager" 
+            />
           </div>
+          <div class="hanoi-hero__photo hanoi-hero__photo--bottom">
+            <img 
+              src="/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg" 
+              alt="Lớp học bơi Vinhomes Hà Nội" 
+              loading="eager" 
+            />
+          </div>
+        </div>
+        <div class="hanoi-hero__float-card hanoi-hero__float-card--top">
+          <span class="hanoi-hero__float-icon">🏆</span>
+          <div><strong>50+ Bể bơi</strong><span>khắp Hà Nội</span></div>
+        </div>
+        <div class="hanoi-hero__float-card hanoi-hero__float-card--bottom">
+          <span class="hanoi-hero__float-icon">🎯</span>
+          <div><strong>100%</strong><span>cam kết biết bơi</span></div>
+        </div>
+        <div class="hanoi-hero__float-card hanoi-hero__float-card--left">
+          <span class="hanoi-hero__float-icon">🌟</span>
+          <div><strong>Học thử</strong><span>miễn phí 1 buổi</span></div>
         </div>
       </div>
     </div>
@@ -839,74 +864,162 @@ const pools = [
     border-color: #fff;
   }
 
+  /* --- Visual Collage --- */
   .hanoi-hero__visual {
-    display: flex;
-    justify-content: center;
     position: relative;
-  }
-
-  .hanoi-hero__image-wrapper {
-    position: relative;
-    border-radius: var(--radius-xl);
-    overflow: visible;
-    max-width: 500px;
+    height: 560px;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    box-shadow: var(--shadow-xl);
-    border: 3px solid rgba(255, 255, 255, 0.1);
   }
 
-  .hanoi-hero__img {
+  .hanoi-hero__visual::before,
+  .hanoi-hero__visual::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hanoi-hero__visual::before {
+    width: 250px;
+    height: 250px;
+    bottom: -60px;
+    left: 5%;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.1) 0%, transparent 70%);
+    animation: waterBubble 6s ease-in-out infinite;
+  }
+
+  .hanoi-hero__visual::after {
+    width: 180px;
+    height: 180px;
+    top: -20px;
+    right: 0;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, transparent 70%);
+    animation: waterBubble 8s ease-in-out infinite 2s;
+  }
+
+  @keyframes waterBubble {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-20px) scale(1.15); opacity: 1; }
+  }
+
+  .hanoi-hero__collage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hanoi-hero__water-bubbles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hanoi-hero__collage .hanoi-hero__photo {
+    position: absolute;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+  }
+
+  .hanoi-hero__collage .hanoi-hero__photo:hover {
+    transform: scale(1.03);
+  }
+
+  .hanoi-hero__collage .hanoi-hero__photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: calc(var(--radius-xl) - 3px);
+    display: block;
   }
 
-  .hanoi-hero__glass-card {
+  .hanoi-hero__photo--main {
+    width: 75%;
+    height: 65%;
+    top: 10%;
+    left: 0;
+    z-index: 2;
+    border: 3px solid rgba(0, 180, 216, 0.3);
+  }
+
+  .hanoi-hero__photo--top {
+    width: 45%;
+    height: 40%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .hanoi-hero__photo--bottom {
+    width: 50%;
+    height: 42%;
+    bottom: 0;
+    right: 5%;
+    z-index: 3;
+    border: 3px solid rgba(255, 107, 53, 0.3);
+  }
+
+  /* --- Floating Stat Cards --- */
+  .hanoi-hero__float-card {
     position: absolute;
-    top: 15%;
-    left: -12%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-md);
-    padding: var(--space-3) var(--space-4);
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    box-shadow: var(--shadow-lg);
-    animation: floatCard 4s infinite ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    z-index: 10;
+    animation: floatStat 4s ease-in-out infinite;
   }
 
-  .hanoi-hero__glass-card--bottom {
-    top: auto;
-    bottom: 15%;
-    left: auto;
-    right: -12%;
-    animation-delay: 2s;
-  }
-
-  @keyframes floatCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .glass-card__icon {
+  .hanoi-hero__float-icon {
     font-size: 1.5rem;
     line-height: 1;
   }
 
-  .hanoi-hero__glass-card strong {
+  .hanoi-hero__float-card strong {
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
     display: block;
   }
 
-  .hanoi-hero__glass-card span {
-    color: rgba(255, 255, 255, 0.8);
+  .hanoi-hero__float-card span {
     font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
     white-space: nowrap;
+  }
+
+  .hanoi-hero__float-card--top {
+    top: 2%;
+    left: 30%;
+    animation-delay: 0s;
+  }
+
+  .hanoi-hero__float-card--bottom {
+    bottom: 5%;
+    left: -5%;
+    animation-delay: 1.5s;
+  }
+
+  .hanoi-hero__float-card--left {
+    bottom: 30%;
+    right: -5%;
+    animation-delay: 0.8s;
+  }
+
+  @keyframes floatStat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   /* ============================================
@@ -2069,7 +2182,18 @@ const pools = [
     }
 
     .hanoi-hero__visual {
-      display: none; /* Hide on mobile/tablet to look extremely clean, or display stacked */
+      height: 400px;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hanoi-hero__float-card--bottom {
+      left: 0;
+    }
+
+    .hanoi-hero__float-card--left {
+      right: 0;
     }
 
     .hanoi-stats-grid {
@@ -2118,6 +2242,14 @@ const pools = [
   }
 
   @media (max-width: 768px) {
+    .hanoi-hero__visual {
+      height: 320px;
+    }
+
+    .hanoi-hero__float-card {
+      display: none;
+    }
+
     .hanoi-stats-grid {
       grid-template-columns: repeat(2, 1fr);
     }

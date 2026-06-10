@@ -85,50 +85,91 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <!-- ============ HERO SECTION — PREMIUM ============ -->
+  <!-- ============ HERO SECTION — PREMIUM SPLIT SCREEN ============ -->
   <section class="about-hero">
     <div class="about-hero__bg">
-      <div class="about-hero__orb about-hero__orb--1"></div>
-      <div class="about-hero__orb about-hero__orb--2"></div>
-      <div class="about-hero__orb about-hero__orb--3"></div>
-      <div class="about-hero__particles" id="heroParticles"></div>
-    </div>
-    <div class="container about-hero__inner">
-      <div class="about-hero__badge anim-fade-in">
-        <span class="about-hero__badge-dot"></span>
-        Over 10 Years of Professional Swim Coaching
+      <div class="about-hero__bg-gradient"></div>
+      <div class="about-hero__bubbles" aria-hidden="true">
+        <span class="bubble bubble--1"></span>
+        <span class="bubble bubble--2"></span>
+        <span class="bubble bubble--3"></span>
+        <span class="bubble bubble--4"></span>
+        <span class="bubble bubble--5"></span>
+        <span class="bubble bubble--6"></span>
+        <span class="bubble bubble--7"></span>
+        <span class="bubble bubble--8"></span>
       </div>
-      <h1 class="about-hero__title anim-fade-in anim-delay-1">
-        About <span class="about-hero__highlight">Swim For Life</span> Vietnam
-      </h1>
-      <p class="about-hero__subtitle anim-fade-in anim-delay-2">
-        We don't just teach swimming — we equip over <strong>10,000 students</strong> across Vietnam with vital survival skills and a lifelong passion for aquatic sports.
-      </p>
+    </div>
+    <div class="container about-hero__grid">
+      <div class="about-hero__text">
+        <div class="about-hero__badge anim-fade-in">
+          <span class="about-hero__badge-dot"></span>
+          Over 10 Years of Professional Swim Coaching
+        </div>
+        <h1 class="about-hero__title anim-fade-in anim-delay-1">
+          About <span class="about-hero__highlight">Swim For Life</span> Vietnam
+        </h1>
+        <p class="about-hero__subtitle anim-fade-in anim-delay-2">
+          We don't just teach swimming — we equip over <strong>10,000 students</strong> across Vietnam with vital survival skills and a lifelong passion for aquatic sports.
+        </p>
 
-      <!-- Animated Stats -->
-      <div class="about-hero__stats anim-fade-in anim-delay-3">
-        <div class="about-hero__stat">
-          <span class="about-hero__stat-number" data-count="10000">0</span>
-          <span class="about-hero__stat-suffix">+</span>
-          <span class="about-hero__stat-label">Students</span>
+        <!-- Animated Stats -->
+        <div class="about-hero__stats anim-fade-in anim-delay-3">
+          <div class="about-hero__stat">
+            <span class="about-hero__stat-number" data-count="10000">0</span>
+            <span class="about-hero__stat-suffix">+</span>
+            <span class="about-hero__stat-label">Students</span>
+          </div>
+          <div class="about-hero__stat-divider"></div>
+          <div class="about-hero__stat">
+            <span class="about-hero__stat-number" data-count="10">0</span>
+            <span class="about-hero__stat-suffix">years+</span>
+            <span class="about-hero__stat-label">Experience</span>
+          </div>
+          <div class="about-hero__stat-divider"></div>
+          <div class="about-hero__stat">
+            <span class="about-hero__stat-number" data-count="50">0</span>
+            <span class="about-hero__stat-suffix">+</span>
+            <span class="about-hero__stat-label">Linked Pools</span>
+          </div>
         </div>
-        <div class="about-hero__stat-divider"></div>
-        <div class="about-hero__stat">
-          <span class="about-hero__stat-number" data-count="10">0</span>
-          <span class="about-hero__stat-suffix">years+</span>
-          <span class="about-hero__stat-label">Experience</span>
+      </div>
+      
+      <div class="about-hero__visual anim-fade-in anim-delay-2">
+        <div class="about-hero__water-bubbles" aria-hidden="true">
+          <span class="water-bubble wb--1"></span>
+          <span class="water-bubble wb--2"></span>
+          <span class="water-bubble wb--3"></span>
+          <span class="water-bubble wb--4"></span>
+          <span class="water-bubble wb--5"></span>
+          <span class="water-bubble wb--6"></span>
+          <span class="water-bubble wb--7"></span>
+          <span class="water-bubble wb--8"></span>
+          <span class="water-bubble wb--9"></span>
+          <span class="water-bubble wb--10"></span>
         </div>
-        <div class="about-hero__stat-divider"></div>
-        <div class="about-hero__stat">
-          <span class="about-hero__stat-number" data-count="50">0</span>
-          <span class="about-hero__stat-suffix">+</span>
-          <span class="about-hero__stat-label">Linked Pools</span>
+        <div class="about-hero__collage">
+          <div class="about-hero__photo about-hero__photo--main">
+            <img src="/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg" alt="Structured swim class for kids" loading="eager" fetchpriority="high" />
+          </div>
+          <div class="about-hero__photo about-hero__photo--top">
+            <img src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" alt="Coach correcting swimming technique" loading="eager" />
+          </div>
+          <div class="about-hero__photo about-hero__photo--bottom">
+            <img src="/images/events/giai-boi-kinh-ngu-ocean-city-2023.jpg" alt="Ocean City Swim Tournament" loading="eager" />
+          </div>
         </div>
-        <div class="about-hero__stat-divider"></div>
-        <div class="about-hero__stat">
-          <span class="about-hero__stat-number" data-count="2">0</span>
-          <span class="about-hero__stat-suffix">Cities</span>
-          <span class="about-hero__stat-label">Hanoi & HCMC</span>
+        <div class="about-hero__float-card about-hero__float-card--top">
+          <span class="about-hero__float-icon">🏆</span>
+          <div><strong>10+ Years</strong><span>experience</span></div>
+        </div>
+        <div class="about-hero__float-card about-hero__float-card--bottom">
+          <span class="about-hero__float-icon">🎯</span>
+          <div><strong>100%</strong><span>result guarantee</span></div>
+        </div>
+        <div class="about-hero__float-card about-hero__float-card--left">
+          <span class="about-hero__float-icon">📍</span>
+          <div><strong>2 Cities</strong><span>Hanoi & HCMC</span></div>
         </div>
       </div>
     </div>
@@ -136,7 +177,6 @@ const faqSchema = {
     <div class="about-hero__wave">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
         <path d="M0,80 C360,120 720,40 1080,80 C1260,100 1380,60 1440,80 L1440,120 L0,120 Z" fill="var(--color-bg)"/>
-        <path d="M0,90 C320,130 640,50 960,90 C1120,105 1300,70 1440,90 L1440,120 L0,120 Z" fill="var(--color-bg)" opacity="0.5"/>
       </svg>
     </div>
   </section>
@@ -890,17 +930,16 @@ const faqSchema = {
     margin: 0;
   }
 
-  /* --- HERO (PREMIUM DARK MODE) --- */
+  /* --- HERO (PREMIUM SPLIT SCREEN) --- */
   .about-hero {
     position: relative;
-    min-height: 65vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: linear-gradient(135deg, #001224 0%, #00253a 50%, #004370 100%);
-    padding-top: calc(var(--header-height) + var(--space-12));
+    background: linear-gradient(135deg, #0a1628 0%, #0c3547 40%, #0a2a3c 70%, #0d1b2a 100%);
+    padding-top: calc(var(--header-height) + var(--space-8));
     padding-bottom: var(--space-20);
-    text-align: center;
   }
 
   .about-hero__bg {
@@ -910,46 +949,29 @@ const faqSchema = {
     z-index: 1;
   }
 
-  .about-hero__orb {
+  .about-hero__bg-gradient {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(85px);
-    opacity: 0.35;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 20% 50%, rgba(0, 180, 216, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 80% 30%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 90%, rgba(0, 180, 216, 0.1) 0%, transparent 50%);
   }
 
-  .about-hero__orb--1 {
-    width: 450px; height: 450px;
-    background: radial-gradient(circle, rgba(0,210,255,0.4), transparent 70%);
-    top: -10%; left: -5%;
-    animation: orbFloat 12s ease-in-out infinite;
-  }
-
-  .about-hero__orb--2 {
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(0,119,182,0.5), transparent 70%);
-    bottom: -10%; right: -5%;
-    animation: orbFloat 15s ease-in-out infinite reverse;
-  }
-
-  .about-hero__orb--3 {
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, rgba(255,145,0,0.18), transparent 70%);
-    top: 25%; left: 50%;
-    transform: translateX(-50%);
-    animation: orbFloat 18s ease-in-out infinite 2s;
-  }
-
-  @keyframes orbFloat {
-    0%, 100% { transform: translate(0, 0); }
-    33% { transform: translate(30px, -20px); }
-    66% { transform: translate(-20px, 15px); }
-  }
-
-  .about-hero__inner {
+  .about-hero__grid {
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: var(--space-8);
+    align-items: center;
+    padding-top: var(--space-12);
+  }
+
+  /* --- Left Column: Text --- */
+  .about-hero__text {
+    max-width: 620px;
+    text-align: left;
   }
 
   .about-hero__badge {
@@ -957,124 +979,318 @@ const faqSchema = {
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-5);
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 180, 216, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 180, 216, 0.25);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    color: var(--color-primary-light);
     margin-bottom: var(--space-6);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
   }
 
   .about-hero__badge-dot {
-    width: 8px; height: 8px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--color-accent);
-    box-shadow: 0 0 10px var(--color-accent);
     animation: dotPulse 2s ease-in-out infinite;
+    flex-shrink: 0;
   }
 
   @keyframes dotPulse {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
+    50% { opacity: 0.5; transform: scale(0.7); }
   }
 
   .about-hero__title {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    font-weight: 900;
-    color: white;
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.12;
     margin-bottom: var(--space-6);
-    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   .about-hero__highlight {
-    background: linear-gradient(135deg, #ffb703 0%, #ff9100 100%);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 900;
   }
 
   .about-hero__subtitle {
-    font-size: var(--text-lg);
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 700px;
-    margin: 0 auto var(--space-12);
-    line-height: var(--leading-relaxed);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+    max-width: 520px;
+    text-align: left;
+    margin-inline: 0;
   }
 
-  /* Stats */
+  /* Stats Container in Text Column */
   .about-hero__stats {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: var(--space-10);
+    gap: var(--space-6);
     flex-wrap: wrap;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-2xl);
-    padding: var(--space-6) var(--space-10);
-    max-width: 800px;
-    margin: 0 auto;
+    padding: var(--space-4) var(--space-6);
+    margin-top: var(--space-8);
+    max-width: 550px;
   }
 
   .about-hero__stat {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     flex: 1;
-    min-width: 120px;
+    min-width: 100px;
   }
 
   .about-hero__stat-number {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 900;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
     color: white;
     line-height: 1;
+    display: inline-flex;
+    align-items: baseline;
   }
 
   .about-hero__stat-suffix {
     font-family: var(--font-heading);
-    font-size: var(--text-lg);
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-accent);
-    margin-top: -2px;
+    margin-left: 2px;
   }
 
   .about-hero__stat-label {
     font-size: var(--text-xs);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-top: var(--space-2);
+    margin-top: var(--space-1);
   }
 
   .about-hero__stat-divider {
     width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.15);
+    height: 35px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  /* --- Right Column: Visual Collage --- */
+  .about-hero__visual {
+    position: relative;
+    height: 560px;
+  }
+
+  .about-hero__visual::before,
+  .about-hero__visual::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-hero__visual::before {
+    width: 250px;
+    height: 250px;
+    bottom: -60px;
+    left: 5%;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.1) 0%, transparent 70%);
+    animation: waterBubble 6s ease-in-out infinite;
+  }
+
+  .about-hero__visual::after {
+    width: 180px;
+    height: 180px;
+    top: -20px;
+    right: 0;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, transparent 70%);
+    animation: waterBubble 8s ease-in-out infinite 2s;
+  }
+
+  @keyframes waterBubble {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-20px) scale(1.15); opacity: 1; }
+  }
+
+  .about-hero__collage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  /* Water Bubbles inside visual */
+  .about-hero__water-bubbles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .about-hero__collage .about-hero__photo {
+    position: absolute;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+  }
+
+  .about-hero__collage .about-hero__photo:hover {
+    transform: scale(1.03);
+  }
+
+  .about-hero__collage .about-hero__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-hero__photo--main {
+    width: 75%;
+    height: 65%;
+    top: 10%;
+    left: 0;
+    z-index: 2;
+    border: 3px solid rgba(0, 180, 216, 0.3);
+  }
+
+  .about-hero__photo--top {
+    width: 45%;
+    height: 40%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .about-hero__photo--bottom {
+    width: 50%;
+    height: 42%;
+    bottom: 0;
+    right: 5%;
+    z-index: 3;
+    border: 3px solid rgba(255, 107, 53, 0.3);
+  }
+
+  /* --- Floating Stat Cards --- */
+  .about-hero__float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    z-index: 10;
+    animation: floatStat 4s ease-in-out infinite;
+  }
+
+  .about-hero__float-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .about-hero__float-card strong {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    display: block;
+  }
+
+  .about-hero__float-card span {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .about-hero__float-card--top {
+    top: 2%;
+    left: 30%;
+    animation-delay: 0s;
+  }
+
+  .about-hero__float-card--bottom {
+    bottom: 5%;
+    left: -5%;
+    animation-delay: 1.5s;
+  }
+
+  .about-hero__float-card--left {
+    bottom: 30%;
+    right: -5%;
+    animation-delay: 0.8s;
+  }
+
+  @keyframes floatStat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   /* Wave */
   .about-hero__wave {
     position: absolute;
     bottom: -2px;
-    left: 0; right: 0;
-    z-index: 3;
+    left: 0;
+    right: 0;
+    z-index: 2;
     line-height: 0;
   }
 
   .about-hero__wave svg {
     width: 100%;
-    height: auto;
+    height: 80px;
+    display: block;
+  }
+
+  /* Bubbles */
+  .about-hero__bubbles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .about-hero__bubbles .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 180, 216, 0.08);
+    animation: bubbleFloat linear infinite;
+  }
+
+  .bubble--1 { width: 20px; height: 20px; left: 10%; animation-duration: 8s; animation-delay: 0s; bottom: -20px; }
+  .bubble--2 { width: 35px; height: 35px; left: 25%; animation-duration: 12s; animation-delay: 2s; bottom: -35px; }
+  .bubble--3 { width: 15px; height: 15px; left: 45%; animation-duration: 7s; animation-delay: 4s; bottom: -15px; }
+  .bubble--4 { width: 25px; height: 25px; left: 65%; animation-duration: 10s; animation-delay: 1s; bottom: -25px; }
+  .bubble--5 { width: 40px; height: 40px; left: 80%; animation-duration: 14s; animation-delay: 3s; bottom: -40px; }
+  .bubble--6 { width: 18px; height: 18px; left: 92%; animation-duration: 9s; animation-delay: 5s; bottom: -18px; }
+  .bubble--7 { width: 12px; height: 12px; left: 55%; animation-duration: 6s; animation-delay: 1.5s; bottom: -12px; }
+  .bubble--8 { width: 28px; height: 28px; left: 35%; animation-duration: 11s; animation-delay: 3.5s; bottom: -28px; }
+
+  @keyframes bubbleFloat {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.15; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
   }
 
   /* --- GRID LAYOUT & SIDEBAR --- */
@@ -2288,6 +2504,40 @@ const faqSchema = {
      RESPONSIVE
      ============================================= */
   @media (max-width: 992px) {
+    .about-hero__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      padding-top: var(--space-6);
+    }
+
+    .about-hero__text {
+      max-width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-hero__subtitle {
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .about-hero__visual {
+      height: 400px;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .about-hero__float-card--bottom {
+      left: 0;
+    }
+
+    .about-hero__float-card--left {
+      right: 0;
+    }
+
     .about-main-wrapper {
       padding-top: var(--space-6);
       padding-bottom: var(--space-12);
@@ -2359,6 +2609,14 @@ const faqSchema = {
       padding-bottom: var(--space-16);
     }
 
+    .about-hero__visual {
+      height: 320px;
+    }
+
+    .about-hero__float-card {
+      display: none;
+    }
+
     .about-hero__stats {
       gap: var(--space-4);
       padding: var(--space-4) var(--space-6);
@@ -2421,8 +2679,6 @@ const faqSchema = {
       grid-template-columns: 1fr;
     }
   }
-</style>
-
 </style>
 
 <script>
