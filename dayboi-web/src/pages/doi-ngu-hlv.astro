@@ -98,38 +98,45 @@ const teamSchema = {
   </section>
 
   <!-- Founder Spotlight Section -->
-  <section class="section" style="border-bottom: 1px solid var(--color-border);">
+  <section class="section" style="background: radial-gradient(circle at 100% 0%, rgba(255, 145, 0, 0.05) 0%, rgba(0, 67, 112, 0.02) 50%, var(--color-bg) 100%); border-bottom: 1px solid var(--color-border); padding-block: var(--space-12);">
     <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-12); align-items: center; margin-bottom: var(--space-8);">
-        <div>
+      <div class="grid grid-2" style="gap: var(--space-12); align-items: center;">
+        <div style="position: relative; border-radius: 20px; overflow: hidden; border: 2px solid var(--color-accent); box-shadow: 0 15px 35px rgba(255, 145, 0, 0.1), var(--shadow-lg);">
           <img 
             src="/images/coaches/giam-doc-nguyen-huy-manh-vtc9.png" 
             alt="Thầy Nguyễn Huy Mạnh - Giám đốc đào tạo Swim For Life trả lời phỏng vấn trên VTC9" 
-            style="border-radius: 16px; box-shadow: var(--shadow-lg); width: 100%; object-fit: cover;"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;"
             loading="eager"
           />
+          <span style="position: absolute; bottom: 16px; left: 16px; background: var(--color-accent); color: white; padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 10px rgba(255, 145, 0, 0.3);">
+            Sáng Lập / Giám Đốc Đào Tạo
+          </span>
         </div>
         <div>
-          <span style="font-size: var(--text-xs); text-transform: uppercase; color: var(--color-accent); font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-2);">Người Dẫn Dắt Chuyên Môn</span>
-          <h2 style="font-size: var(--text-3xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-4);">Thầy Nguyễn Huy Mạnh</h2>
-          <h4 style="font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4);">Giám Đốc Đào Tạo & Sáng Lập Swim For Life Việt Nam</h4>
+          <span style="font-size: var(--text-xs); text-transform: uppercase; color: var(--color-accent); font-weight: 700; letter-spacing: 0.15em; display: block; margin-bottom: var(--space-2);">Người Dẫn Dắt Chuyên Môn</span>
+          <h2 style="font-size: var(--text-4xl); font-weight: 800; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Thầy Nguyễn Huy Mạnh</h2>
+          <h4 style="font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4);">Sáng Lập Swim For Life Việt Nam</h4>
           
-          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
-            Thầy Nguyễn Huy Mạnh là gương mặt quen thuộc trong giới thể thao nước học đường tại Hà Nội và các khu đô thị lớn. Với xuất phát điểm từ khoa Giáo dục Thể chất Đại học Sư phạm Hà Nội, Thầy Mạnh luôn mang trăn trở làm sao để mỗi học sinh Việt Nam đều được học bơi một cách an toàn và bài bản nhất.
+          <div style="font-style: italic; color: var(--color-text-secondary); border-left: 3px solid var(--color-accent); padding-left: var(--space-4); margin-bottom: var(--space-4); background: rgba(255, 145, 0, 0.03); padding-block: var(--space-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: var(--text-sm);">
+            "Mỗi học sinh Việt Nam đều xứng đáng được học bơi một cách an toàn, hạnh phúc và bài bản nhất để tự bảo vệ bản thân và phát triển toàn diện."
+          </div>
+
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4); font-size: var(--text-sm);">
+            Thầy Nguyễn Huy Mạnh là gương mặt quen thuộc trong giới thể thao dưới nước học đường tại Hà Nội và các khu đô thị lớn. Với xuất phát điểm từ khoa Giáo dục Thể chất Đại học Sư phạm Hà Nội, Thầy Mạnh luôn mang trăn trở làm sao để mỗi học sinh Việt Nam đều được học bơi một cách an toàn và bài bản nhất.
           </p>
-          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-6);">
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-6); font-size: var(--text-sm);">
             Dưới sự chỉ đạo của thầy, Swim For Life đã phát triển hệ thống giáo án bơi lội chuẩn khoa học E-E-A-T, cam kết dạy học sinh theo phương pháp tâm lý tích cực, tuyệt đối không cưỡng ép quăng ném học viên xuống nước gây hoảng sợ.
           </p>
           
           <div style="display: flex; gap: var(--space-4);">
-            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
-              <strong>🎓 10+ Năm</strong><br/><span>Huấn luyện thực chiến</span>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 12px; font-size: var(--text-xs); border: 1px solid var(--color-border-light);">
+              <strong>🎓 10+ Năm</strong><br/><span style="color: var(--color-text-secondary);">Huấn luyện thực chiến</span>
             </div>
-            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
-              <strong>📺 Kênh VTC9</strong><br/><span>Khách mời chuyên gia</span>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 12px; font-size: var(--text-xs); border: 1px solid var(--color-border-light);">
+              <strong>📺 Kênh VTC9</strong><br/><span style="color: var(--color-text-secondary);">Khách mời chuyên gia</span>
             </div>
-            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
-              <strong>🏊 10,000+</strong><br/><span>Học viên biết bơi</span>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 12px; font-size: var(--text-xs); border: 1px solid var(--color-border-light);">
+              <strong>🏊 10,000+</strong><br/><span style="color: var(--color-text-secondary);">Học viên biết bơi</span>
             </div>
           </div>
         </div>
