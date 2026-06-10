@@ -1,0 +1,1456 @@
+---
+/**
+ * hoc-boi-ha-noi.astro — Trang Đăng Ký Lớp Học Bơi Hà Nội Premium
+ * SEO Target: học bơi Hà Nội, dạy bơi Hà Nội, trung tâm dạy bơi Hà Nội
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+
+const currentYear = new Date().getFullYear();
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Học bơi Hà Nội' },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Hà Nội: Trung Tâm Dạy Bơi Kèm Riêng Uy Tín Cam Kết 100% Biết Bơi",
+  "description": "Lớp học bơi Hà Nội chuyên nghiệp tại Swim For Life Việt Nam. Lớp dạy học bơi kèm riêng biệt 1 kèm 1 cho trẻ em & người lớn tại các quận Hà Nội. Học thử miễn phí.",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/brand/logo.png"
+    }
+  },
+  "datePublished": "2026-01-25",
+  "dateModified": "2026-06-10",
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-ha-noi.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/hoc-boi-ha-noi/"
+  }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Trung tâm dạy bơi Swim For Life Việt Nam - Chi nhánh Hà Nội",
+  "description": "Khóa học bơi chuyên nghiệp dạy kèm riêng tại khu vực Hà Nội. Cam kết biết bơi hoàn toàn.",
+  "telephone": "0979121097",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hà Nội",
+    "addressCountry": "VN"
+  },
+  "url": "https://dayboi.vip/hoc-boi-ha-noi/",
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-ha-noi.jpg",
+  "priceRange": "Liên hệ nhận báo giá"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Swim For Life dạy bơi ở những bể bơi nào tại Hà Nội?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chúng tôi dạy tại nhiều bể bơi đối tác chất lượng cao như: Tăng Bạt Hổ (Hai Bà Trưng), Bảo Sơn (Đống Đa), Hapulico (Thanh Xuân), Bách Khoa (Hai Bà Trưng), Times City và các bể bơi thuộc hệ sinh thái Vinhomes tại Ocean Park, Smart City, Royal City."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi ở Hà Nội giá bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Học phí dao động tùy thuộc vào hình thức học (1 kèm 1 riêng biệt hoặc nhóm nhỏ 2-3 học viên) và vé vào bể bơi. Vui lòng liên hệ Hotline 0979.121.097 hoặc nhắn tin Zalo để nhận báo giá chi tiết và xếp lịch học thử 1 buổi hoàn toàn miễn phí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học bơi mùa đông tại Hà Nội có được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được! Swim For Life hợp tác với chuỗi bể bơi nước ấm 4 mùa cao cấp như Hapulico, Bảo Sơn, Times City giúp duy trì các lớp học bơi ấm áp ngay cả giữa mùa đông miền Bắc."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
+
+const pools = [
+  { 
+    name: "Bể bơi Tăng Bạt Hổ", 
+    address: "30 Tăng Bạt Hổ, Hai Bà Trưng, Hà Nội", 
+    type: "Trong nhà & Ngoài trời nước ấm", 
+    pros: "Bể bơi tiêu chuẩn cao cấp, không gian rộng rãi thoáng đãng, hệ thống lọc nước tuần hoàn hiện đại liên tục, cực kỳ sạch sẽ.",
+    badge: "Bể bơi trọng điểm"
+  },
+  { 
+    name: "Bể bơi Hapulico", 
+    address: "83 Vũ Trọng Phụng, Thanh Xuân, Hà Nội", 
+    type: "Bể bơi nước mặn 4 mùa trong nhà", 
+    pros: "Hệ thống nước mặn điện phân muối đỉnh cao không dùng hóa chất Clo, nước ấm quanh năm, thiết kế cực kỳ hiện đại và sang trọng.",
+    badge: "Nước mặn cao cấp"
+  },
+  { 
+    name: "Bể bơi Khách sạn Bảo Sơn", 
+    address: "50 Nguyễn Chí Thanh, Đống Đa, Hà Nội", 
+    type: "Trong nhà nước ấm 4 mùa", 
+    pros: "Nước ấm nhiệt độ tiêu chuẩn ổn định, thiết kế kín gió hoàn toàn, dịch vụ chuyên nghiệp, lý tưởng cho trẻ nhỏ học bơi quanh năm.",
+    badge: "Kín gió, ấm áp"
+  },
+  { 
+    name: "Bể bơi Đại học Bách Khoa", 
+    address: "Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội", 
+    type: "Ngoài trời tiêu chuẩn lớn", 
+    pros: "Kích thước tiêu chuẩn thi đấu Olympic (50m), không gian thoáng mát nhiều cây xanh, chi phí vé vào hợp lý.",
+    badge: "Giá bình dân"
+  },
+  { 
+    name: "Bể bơi Vinhomes Times City", 
+    address: "458 Minh Khai, Hai Bà Trưng, Hà Nội", 
+    type: "Nội khu cao cấp trong nhà", 
+    pros: "Chỉ dành riêng cho cư dân và học viên đăng ký qua trung tâm. Bể cực rộng, nước trong sạch, phòng tắm tráng hiện đại.",
+    badge: "Cư dân & Học viên"
+  }
+];
+
+const coaches = [
+  {
+    name: "Thầy Nguyễn Huy Mạnh",
+    role: "Giám Đốc Đào Tạo Swim For Life",
+    desc: "Cựu vận động viên cấp cao, hơn 12 năm kinh nghiệm huấn luyện bơi lội chuyên nghiệp và cứu hộ cứu nạn. Đã trực tiếp đào tạo hơn 3000+ học viên.",
+    img: "/images/coaches/giam-doc-nguyen-huy-manh.jpg",
+    tags: ["HLV Trưởng", "Cứu Hộ Quốc Gia"]
+  },
+  {
+    name: "Thầy Đức Mạnh",
+    role: "Huấn Luyện Viên Cao Cấp",
+    desc: "Tốt nghiệp chuyên ngành Giáo dục Thể chất ĐH Sư phạm. Chuyên gia bơi trị liệu, sửa lỗi kỹ thuật bơi sai, hướng dẫn kỹ năng bơi sinh tồn cho trẻ nhỏ.",
+    img: "/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg",
+    tags: ["HLV Cao cấp", "Sửa lỗi kỹ thuật"]
+  },
+  {
+    name: "Cô Thanh Hằng",
+    role: "Huấn Luyện Viên Trẻ Em",
+    desc: "Nữ giáo viên giàu kinh nghiệm, cực kỳ tâm lý, kiên nhẫn. Chuyên phụ trách các bé sợ nước, các khóa bơi cơ bản giúp bé tự tin nhanh chóng.",
+    img: "/images/coaches/giao-vien-vui-ve-tam-ly.jpeg",
+    tags: ["HLV Nữ", "Chuyên bơi trẻ em"]
+  }
+];
+---
+
+<PageLayout
+  title={`Học Bơi Hà Nội: Khóa Học Bơi Uy Tín Nhất [${currentYear}]`}
+  description="Lớp học bơi Hà Nội tại Swim For Life Việt Nam. Lớp dạy học bơi kèm riêng biệt 1 kèm 1 cho trẻ em & người lớn tại các quận Hà Nội. Cam kết biết bơi 100%, HLV kèm riêng tận tâm."
+  canonical="https://dayboi.vip/hoc-boi-ha-noi/"
+  image="/images/classes/lop-hoc-boi-ha-noi.jpg"
+  type="article"
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+>
+
+  <!-- ============================================
+       HERO SECTION — Premium Full Width Split Screen
+       ============================================ -->
+  <section class="hanoi-hero">
+    <div class="hanoi-hero__bg">
+      <div class="hanoi-hero__bg-gradient"></div>
+      <div class="hanoi-hero__bubbles" aria-hidden="true">
+        <span class="bubble bubble--1"></span>
+        <span class="bubble bubble--2"></span>
+        <span class="bubble bubble--3"></span>
+        <span class="bubble bubble--4"></span>
+        <span class="bubble bubble--5"></span>
+      </div>
+    </div>
+    <div class="container hanoi-hero__grid">
+      <div class="hanoi-hero__text reveal">
+        <div class="hanoi-hero__badge">
+          <span class="hanoi-hero__badge-dot"></span>
+          Trung Tâm Dạy Học Bơi Uy Tín Số 1 Hà Nội
+        </div>
+        <h1 class="hanoi-hero__title">
+          Dạy Học Bơi <br/>
+          <span class="text-gradient">Hà Nội</span> — Kèm Riêng<br/>
+          <span class="text-accent">Cam Kết Biết Bơi 100%</span>
+        </h1>
+        <p class="hanoi-hero__desc">
+          Swim For Life Việt Nam mang đến các khóa học bơi chất lượng vượt trội tại Thủ đô Hà Nội. 
+          HLV kèm riêng tận tâm dưới nước, thiết lập giáo trình riêng cho từng học viên, giúp bạn tự tin bơi lội an toàn sau 10-12 buổi.
+        </p>
+        
+        <div class="hanoi-hero__value-props">
+          <div class="v-prop">
+            <span class="v-prop__icon">🏆</span>
+            <div class="v-prop__content">
+              <strong>Học thử 1 buổi miễn phí</strong>
+              <span>Trải nghiệm dịch vụ & đánh giá mức độ tự tin trước khi đăng ký</span>
+            </div>
+          </div>
+          <div class="v-prop">
+            <span class="v-prop__icon">🛡️</span>
+            <div class="v-prop__content">
+              <strong>Cam kết 100% biết bơi thành thạo</strong>
+              <span>Dạy tiếp miễn phí nếu học viên chưa biết bơi sau khóa học</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hanoi-hero__actions">
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
+            💬 Chat Nhận Lịch Học Thử
+          </a>
+          <a href="#pools-section" class="btn btn--hero-outline btn--lg">
+            🏊 Xem Bể Bơi Gần Bạn
+          </a>
+        </div>
+      </div>
+
+      <div class="hanoi-hero__visual reveal">
+        <div class="hanoi-hero__image-wrapper">
+          <img 
+            src="/images/classes/lop-hoc-boi-ha-noi.jpg" 
+            alt="Lớp dạy bơi kèm riêng chuyên nghiệp tại Hà Nội - Swim For Life Việt Nam" 
+            class="hanoi-hero__img"
+            loading="eager"
+          />
+          <div class="hanoi-hero__glass-card">
+            <span class="glass-card__icon">🌟</span>
+            <div>
+              <strong>Chi Nhánh Hà Nội</strong>
+              <span>50+ Bể bơi hợp tác khắp 12 quận</span>
+            </div>
+          </div>
+          <div class="hanoi-hero__glass-card hanoi-hero__glass-card--bottom">
+            <span class="glass-card__icon">💯</span>
+            <div>
+              <strong>Cam Kết 100%</strong>
+              <span>Học viên biết bơi và vững kỹ năng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       STATISTICS SECTION (FULL WIDTH)
+       ============================================ -->
+  <section class="section hanoi-stats-section">
+    <div class="container container--wide">
+      <div class="hanoi-stats-grid reveal">
+        <div class="stat-item">
+          <span class="stat-item__num">99.8%</span>
+          <span class="stat-item__label">Học viên biết bơi hoàn toàn</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">50+</span>
+          <span class="stat-item__label">Bể bơi chất lượng cao tại Hà Nội</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">12+</span>
+          <span class="stat-item__label">Năm kinh nghiệm đào tạo</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">3000+</span>
+          <span class="stat-item__label">Học viên tốt nghiệp hàng năm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       INTRO SECTION with Large Image (Full Width Alt)
+       ============================================ -->
+  <section class="section section--alt hanoi-intro-section">
+    <div class="container">
+      <div class="hanoi-intro-grid reveal">
+        <div class="hanoi-intro-text">
+          <span class="section__badge">Về Lớp Học</span>
+          <h2 class="section__title">Giải Pháp Học Bơi <span class="text-gradient">An Toàn & Hiệu Quả</span> Tại Thủ Đô</h2>
+          <p class="about-text">
+            Với mật độ dân cư đông đúc và nhiều sông hồ, kỹ năng bơi lội tại Hà Nội không chỉ là môn thể thao rèn luyện sức khỏe mà còn là <strong>kỹ năng sinh tồn bắt buộc</strong> cho trẻ em và người lớn. 
+          </p>
+          <p class="about-text">
+            <strong>Swim For Life Việt Nam</strong> cung cấp hình thức dạy bơi kèm riêng biệt (1 HLV kèm tối đa 2 học viên), giúp giáo viên bám sát học viên 100% thời gian dưới nước, khắc phục chứng sợ nước và sửa lỗi động tác chính xác từng milimet. Học viên được chủ động chọn bể bơi gần nhà và sắp xếp lịch học linh hoạt theo thời gian biểu của bản thân.
+          </p>
+          
+          <div class="hanoi-intro-features">
+            <div class="intro-feat">
+              <span class="intro-feat__icon">✅</span>
+              <span>HLV chuyên nghiệp tốt nghiệp ĐH Thể dục Thể thao, có chứng chỉ cứu hộ quốc gia.</span>
+            </div>
+            <div class="intro-feat">
+              <span class="intro-feat__icon">✅</span>
+              <span>Thời gian học linh hoạt, đăng ký học từ 6h00 đến 21h00 hàng ngày.</span>
+            </div>
+            <div class="intro-feat">
+              <span class="intro-feat__icon">✅</span>
+              <span>Được chọn giáo viên Nam hoặc Nữ tùy theo nhu cầu học viên.</span>
+            </div>
+          </div>
+        </div>
+        <div class="hanoi-intro-image-wrap">
+          <img 
+            src="/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg" 
+            alt="Lớp dạy bơi cho trẻ em và cư dân tại Vinhomes Hà Nội" 
+            class="hanoi-intro-img"
+            loading="lazy"
+          />
+          <div class="img-caption">Lớp học bơi cho bé năng động tại khu đô thị Vinhomes Hà Nội</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PARTNER POOLS GRID — Fully Extended Width
+       ============================================ -->
+  <section class="section hanoi-pools-section" id="pools-section">
+    <div class="container container--wide">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Hệ Thống Bể Bơi</span>
+        <h2 class="section__title">Danh Sách Bể Bơi Đối Tác <span class="text-gradient">Khắp Hà Nội</span></h2>
+        <p class="section__desc">Chúng tôi hợp tác với hơn 50 bể bơi lớn, khang trang và sạch sẽ trên toàn thành phố để mang lại sự tiện lợi tối đa cho bạn.</p>
+      </div>
+
+      <div class="hanoi-pools-grid reveal">
+        {pools.map((pool) => (
+          <div class="pool-card">
+            <div class="pool-card__header">
+              <span class="pool-card__icon">🏊</span>
+              <span class="pool-card__badge">{pool.badge}</span>
+            </div>
+            <div class="pool-card__body">
+              <h3 class="pool-card__title">{pool.name}</h3>
+              <p class="pool-card__detail"><strong>📍 Địa chỉ:</strong> {pool.address}</p>
+              <p class="pool-card__detail"><strong>🎨 Loại bể:</strong> {pool.type}</p>
+              <div class="pool-card__pros">
+                <strong>⭐ Điểm nổi bật:</strong>
+                <span>{pool.pros}</span>
+              </div>
+            </div>
+            <div class="pool-card__footer">
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="pool-card__btn">
+                Đăng ký học tại đây →
+              </a>
+            </div>
+          </div>
+        ))}
+
+        <!-- Custom Request Pool Card -->
+        <div class="pool-card pool-card--request">
+          <div class="pool-card__request-content">
+            <span class="request-icon">❓</span>
+            <h3 class="pool-card__title">Bạn muốn học bể bơi khác?</h3>
+            <p class="pool-card__request-desc">Nếu bạn đã có bể bơi ở chung cư hoặc muốn học tại bể bơi gần nhà mình, HLV Swim For Life sẽ di chuyển tới tận nơi để giảng dạy.</p>
+            <a href="tel:0979121097" class="btn btn--accent btn--sm">
+              📞 Gọi 0979.121.097
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COURSE PROGRAMS GRID
+       ============================================ -->
+  <section class="section section--alt hanoi-programs-section">
+    <div class="container container--wide">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Chương Trình Đào Tạo</span>
+        <h2 class="section__title">Các Khóa Học Bơi <span class="text-gradient">Phổ Biến Tại Hà Nội</span></h2>
+        <p class="section__desc">Lựa chọn chương trình học phù hợp với nhu cầu và lứa tuổi của bạn. Cam kết đầu ra biết bơi thành thạo.</p>
+      </div>
+
+      <div class="hanoi-programs-grid reveal">
+        <!-- Program 1 -->
+        <div class="program-card">
+          <div class="program-card__img-wrap">
+            <img src="/images/classes/lop-boi-tre-em-bai-ban.jpg" alt="Học bơi trẻ em Hà Nội" />
+            <span class="program-card__tag">Dành cho trẻ em</span>
+          </div>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Khóa Học Bơi Trẻ Em</h3>
+            <p class="program-card__desc">Giáo trình chuyên biệt thiết kế riêng cho trẻ em từ 5-15 tuổi. Tập trung rèn luyện phản xạ an toàn dưới nước, học kỹ thuật bơi Ếch, bơi Sải và kỹ năng tự cứu mình khi gặp sự cố đuối nước.</p>
+            <ul class="program-card__list">
+              <li>⏱️ Số buổi: 10 - 12 buổi (60 phút/buổi)</li>
+              <li>👨 HLV kèm sát sao dưới nước</li>
+              <li>🛡️ Học thử 1 buổi miễn phí</li>
+            </ul>
+          </div>
+          <div class="program-card__footer">
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Đăng Ký Khóa Trẻ Em</a>
+          </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="program-card">
+          <div class="program-card__img-wrap">
+            <img src="/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg" alt="Học bơi người lớn Hà Nội" />
+            <span class="program-card__tag program-card__tag--orange">Dành cho người lớn</span>
+          </div>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Khóa Học Bơi Người Lớn</h3>
+            <p class="program-card__desc">Khóa học dành cho người lớn (từ 16 tuổi trở lên). Hỗ trợ tối đa cho học viên cực kỳ sợ nước, nhát nước lâu năm hoặc có vấn đề về xương khớp cần bơi liệu pháp phục hồi sức khỏe.</p>
+            <ul class="program-card__list">
+              <li>⏱️ Lịch học linh hoạt do học viên sắp xếp</li>
+              <li>🏊 Học bơi Ếch cơ bản hoặc bơi Sải nâng cao</li>
+              <li>🛡️ Cam kết biết bơi hoàn toàn 100%</li>
+            </ul>
+          </div>
+          <div class="program-card__footer">
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Đăng Ký Khóa Người Lớn</a>
+          </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="program-card">
+          <div class="program-card__img-wrap">
+            <img src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" alt="Dạy bơi kèm riêng 1 kèm 1 Hà Nội" />
+            <span class="program-card__tag program-card__tag--green">1 Kèm 1 Đỉnh Cao</span>
+          </div>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Dạy Bơi Kèm Riêng 1 Kèm 1</h3>
+            <p class="program-card__desc">Mô hình dạy bơi an toàn và tiến bộ nhanh nhất. Giáo viên không rời mắt khỏi học viên, chỉ dẫn tỉ mỉ từng hơi thở, nhịp đập chân, giúp nâng cao hiệu quả học tập lên gấp 3 lần bình thường.</p>
+            <ul class="program-card__list">
+              <li>🎯 1 Giáo viên kèm 1 Học viên duy nhất</li>
+              <li>🛡️ An toàn tuyệt đối 100%</li>
+              <li>🎨 Tùy chọn giáo viên Nam/Nữ</li>
+            </ul>
+          </div>
+          <div class="program-card__footer">
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--full btn--pulse">Đăng Ký Lớp 1 Kèm 1</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COACH SPOTLIGHT SECTION
+       ============================================ -->
+  <section class="section hanoi-coaches-section">
+    <div class="container container--wide">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Đội Ngũ Giáo Viên</span>
+        <h2 class="section__title">Đội Ngũ HLV Học Bơi <span class="text-gradient">Tại Hà Nội</span></h2>
+        <p class="section__desc">Giáo viên tại Swim For Life đều có bằng cấp chuyên môn cao, được đào tạo bài bản về sư phạm bơi lội và cực kỳ tâm lý với trẻ nhỏ.</p>
+      </div>
+
+      <div class="hanoi-coaches-grid reveal">
+        {coaches.map((coach) => (
+          <div class="coach-card">
+            <div class="coach-card__img-wrap">
+              <img src={coach.img} alt={`Huấn luyện viên ${coach.name}`} class="coach-card__img" />
+              <div class="coach-card__tags">
+                {coach.tags.map((tag) => (
+                  <span class="coach-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div class="coach-card__content">
+              <h3 class="coach-card__name">{coach.name}</h3>
+              <span class="coach-card__role">{coach.role}</span>
+              <p class="coach-card__desc">{coach.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       REGISTRATION SECTION with Glassmorphism Box
+       ============================================ -->
+  <section class="section section--alt hanoi-register-section" id="register-section">
+    <div class="container container--boxed">
+      <div class="hanoi-register-box reveal">
+        <div class="hanoi-register-content">
+          <span class="hanoi-register-badge">Đăng Ký Học Thử</span>
+          <h2 class="hanoi-register-title">Bắt Đầu Hành Trình Học Bơi <span class="text-gradient">Hôm Nay</span></h2>
+          <p class="hanoi-register-desc">Để lại thông tin bên cạnh để nhận cuộc gọi tư vấn hoàn toàn miễn phí từ ban quản lý lớp học. Lớp học thử 1 buổi sẽ giúp bạn trải nghiệm trước khi có quyết định chính thức.</p>
+          
+          <div class="hanoi-steps">
+            <div class="hanoi-step">
+              <div class="hanoi-step__number">1</div>
+              <div class="hanoi-step__text"><strong>Đăng ký:</strong> Điền form liên hệ bên cạnh</div>
+            </div>
+            <div class="hanoi-step">
+              <div class="hanoi-step__number">2</div>
+              <div class="hanoi-step__text"><strong>Liên hệ:</strong> HLV trưởng gọi điện tư vấn bể bơi phù hợp</div>
+            </div>
+            <div class="hanoi-step">
+              <div class="hanoi-step__number">3</div>
+              <div class="hanoi-step__text"><strong>Bơi thử:</strong> Nhận buổi bơi thử 1 kèm 1 miễn phí</div>
+            </div>
+            <div class="hanoi-step">
+              <div class="hanoi-step__number">4</div>
+              <div class="hanoi-step__text"><strong>Cam kết:</strong> Bắt đầu khóa học chính thức & Nhận bảo hành</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hanoi-register-form-wrap">
+          <RegistrationForm id="hanoi-page-register" isFullForm={false} flat={true} defaultCourse="Khóa học bơi Hà Nội kèm riêng" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FAQ SECTION
+       ============================================ -->
+  <section class="section hanoi-faq-section">
+    <div class="container container--narrow">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Giải Đáp Thắc Mắc</span>
+        <h2 class="section__title">Câu Hỏi Thường Gặp Về <span class="text-gradient">Học Bơi Hà Nội</span></h2>
+      </div>
+
+      <div class="hanoi-faq-list reveal">
+        <div class="faq-card">
+          <h3 class="faq-card__q">❓ Tôi chưa biết gì về bơi lội, cực kỳ sợ nước thì học trong bao lâu biết bơi?</h3>
+          <p class="faq-card__a">Thông thường, đối với học viên nhát nước hoặc sợ nước sâu, HLV Swim For Life sẽ áp dụng giáo trình vượt qua nỗi sợ nước trước trong 1-2 buổi đầu. Trung bình học viên sẽ tự tin bơi được Ếch cơ bản sau 8-10 buổi. Trung tâm luôn cam kết dạy tiếp miễn phí cho tới khi bạn biết bơi hoàn toàn.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-card__q">❓ Trung tâm dạy bơi Hà Nội ở những quận nào?</h3>
+          <p class="faq-card__a">Swim For Life có đội ngũ HLV đông đảo phủ khắp 12 quận nội thành Hà Nội (Hai Bà Trưng, Đống Đa, Thanh Xuân, Cầu Giấy, Tây Hồ, Ba Đình, Hoàn Kiếm, Hoàng Mai, Long Biên, Hà Đông, Nam Từ Liêm, Bắc Từ Liêm). Bạn đăng ký ở quận nào, chúng tôi sẽ sắp xếp HLV và bể bơi thuận tiện nhất tại quận đó.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-card__q">❓ Học phí học bơi tại Hà Nội đã bao gồm vé vào bể bơi chưa?</h3>
+          <p class="faq-card__a">Học phí của trung tâm chỉ bao gồm công giảng dạy của huấn luyện viên và cam kết đầu ra (đã bao gồm vé vào cửa của HLV). Học viên sẽ tự mua vé vào bể bơi cho mình theo bảng giá của bể bơi đã chọn. Bạn có thể tự mua vé lượt hoặc mua vé tháng để tiết kiệm chi phí.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-card__q">❓ Trẻ em bao nhiêu tuổi có thể bắt đầu học bơi kèm riêng tại Hà Nội?</h3>
+          <p class="faq-card__a">Độ tuổi lý tưởng nhất để bé bắt đầu học kỹ thuật bơi kèm riêng biệt 1 kèm 1 là từ 5 tuổi trở lên. Ở độ tuổi này, các bé đã có thể tập trung nghe và thực hiện theo hướng dẫn của thầy cô, giúp quá trình học đạt hiệu quả cao và an toàn nhất.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  /* ============================================
+     HANOI HERO SECTION
+     ============================================ */
+  .hanoi-hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #091729 0%, #0d2c3e 40%, #0b1f32 70%, #08121f 100%);
+    padding-block: 100px 80px;
+  }
+
+  .hanoi-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hanoi-hero__bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 20% 50%, rgba(0, 180, 216, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 80% 30%, rgba(255, 107, 53, 0.08) 0%, transparent 60%);
+  }
+
+  .hanoi-hero__bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: floatUp 8s infinite ease-in-out;
+  }
+
+  .bubble--1 { width: 40px; height: 40px; left: 10%; bottom: -10%; animation-delay: 0s; animation-duration: 12s; }
+  .bubble--2 { width: 60px; height: 60px; left: 25%; bottom: -15%; animation-delay: 2s; animation-duration: 15s; }
+  .bubble--3 { width: 30px; height: 30px; left: 70%; bottom: -10%; animation-delay: 1s; animation-duration: 9s; }
+  .bubble--4 { width: 50px; height: 50px; left: 85%; bottom: -20%; animation-delay: 4s; animation-duration: 14s; }
+  .bubble--5 { width: 25px; height: 25px; left: 45%; bottom: -5%; animation-delay: 3s; animation-duration: 10s; }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: translateY(-100vh) scale(1.2) rotate(360deg); opacity: 0; }
+  }
+
+  .hanoi-hero__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--space-10);
+    align-items: center;
+  }
+
+  .hanoi-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(0, 180, 216, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 180, 216, 0.25);
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-6);
+  }
+
+  .hanoi-hero__badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+    animation: dotPulse 2s infinite ease-in-out;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  .hanoi-hero__title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: var(--space-4);
+  }
+
+  .hanoi-hero__desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .hanoi-hero__value-props {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .v-prop {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .v-prop__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .v-prop__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .v-prop__content strong {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .v-prop__content span {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85rem;
+  }
+
+  .hanoi-hero__actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .btn--hero-outline {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transition: all var(--transition-base);
+  }
+
+  .btn--hero-outline:hover {
+    background: #fff;
+    color: var(--color-text);
+    border-color: #fff;
+  }
+
+  .hanoi-hero__visual {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hanoi-hero__image-wrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: visible;
+    max-width: 500px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow-xl);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hanoi-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--radius-xl) - 3px);
+  }
+
+  .hanoi-hero__glass-card {
+    position: absolute;
+    top: 15%;
+    left: -12%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    box-shadow: var(--shadow-lg);
+    animation: floatCard 4s infinite ease-in-out;
+  }
+
+  .hanoi-hero__glass-card--bottom {
+    top: auto;
+    bottom: 15%;
+    left: auto;
+    right: -12%;
+    animation-delay: 2s;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .glass-card__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .hanoi-hero__glass-card strong {
+    color: #fff;
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  .hanoi-hero__glass-card span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  /* ============================================
+     STATISTICS SECTION (FULL WIDTH)
+     ============================================ */
+  .hanoi-stats-section {
+    background: var(--color-bg-card);
+    border-block: 1px solid var(--color-border-light);
+    padding-block: var(--space-8);
+  }
+
+  .hanoi-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    text-align: center;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-inline: var(--space-4);
+  }
+
+  .stat-item:not(:last-child) {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .stat-item__num {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-item__label {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  /* ============================================
+     INTRO SECTION
+     ============================================ */
+  .hanoi-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .hanoi-intro-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .intro-feat {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .intro-feat__icon {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .intro-feat span {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .hanoi-intro-image-wrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hanoi-intro-img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    padding: var(--space-5) var(--space-4) var(--space-3);
+    font-size: 0.85rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* ============================================
+     PARTNER POOLS SECTION
+     ============================================ */
+  .hanoi-pools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+  }
+
+  .pool-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pool-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl), 0 0 20px rgba(0, 180, 216, 0.1);
+  }
+
+  .pool-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .pool-card__icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .pool-card__badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    background: rgba(0, 180, 216, 0.08);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+  }
+
+  .pool-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+  }
+
+  .pool-card__detail {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+    line-height: 1.5;
+  }
+
+  .pool-card__pros {
+    border-top: 1px solid var(--color-border-light);
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .pool-card__pros strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 2px;
+  }
+
+  .pool-card__footer {
+    margin-top: var(--space-6);
+    border-top: 1px solid var(--color-border-light);
+    padding-top: var(--space-4);
+  }
+
+  .pool-card__btn {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+  }
+
+  .pool-card:hover .pool-card__btn {
+    color: var(--color-accent);
+  }
+
+  /* Custom Request Pool Card */
+  .pool-card--request {
+    background: var(--color-bg-alt);
+    border: 2px dashed var(--color-primary);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pool-card__request-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .request-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .pool-card__request-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 250px;
+  }
+
+  /* ============================================
+     COURSE PROGRAMS SECTION
+     ============================================ */
+  .hanoi-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+  }
+
+  .program-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .program-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .program-card__img-wrap {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .program-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+  }
+
+  .program-card:hover .program-card__img-wrap img {
+    transform: scale(1.05);
+  }
+
+  .program-card__tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+  }
+
+  .program-card__tag--orange { background: var(--color-accent); }
+  .program-card__tag--green { background: #0CA789; }
+
+  .program-card__body {
+    padding: var(--space-6);
+    flex-grow: 1;
+  }
+
+  .program-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+  }
+
+  .program-card__desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+
+  .program-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-size: 0.8rem;
+    color: var(--color-text);
+    font-weight: 600;
+    border-top: 1px solid var(--color-border-light);
+    padding-top: var(--space-4);
+  }
+
+  .program-card__list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .program-card__list li::before {
+    content: '🔹';
+    font-size: 0.8rem;
+  }
+
+  .program-card__footer {
+    padding: var(--space-6);
+    padding-top: 0;
+  }
+
+  .btn--full {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  /* ============================================
+     COACHES SECTION
+     ============================================ */
+  .hanoi-coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+  }
+
+  .coach-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-light);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-smooth);
+  }
+
+  .coach-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .coach-card__img-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-bottom: 4px solid var(--color-primary);
+  }
+
+  .coach-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+  }
+
+  .coach-card:hover .coach-card__img {
+    transform: scale(1.05);
+  }
+
+  .coach-card__tags {
+    position: absolute;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .coach-tag {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .coach-card__content {
+    padding: var(--space-6);
+  }
+
+  .coach-card__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .coach-card__role {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .coach-card__desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     REGISTRATION FORM CONTAINER
+     ============================================ */
+  .hanoi-register-box {
+    background: linear-gradient(135deg, #091729 0%, #0d2c3e 100%);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10) var(--space-8);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    align-items: center;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hanoi-register-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hanoi-register-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hanoi-register-badge {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.15);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    color: var(--color-accent-light);
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+
+  .hanoi-register-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: var(--space-4);
+  }
+
+  .hanoi-register-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .hanoi-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .hanoi-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .hanoi-step__number {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .hanoi-step__text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .hanoi-step__text strong {
+    color: #fff;
+  }
+
+  .hanoi-register-form-wrap {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ============================================
+     FAQ SECTION
+     ============================================ */
+  .hanoi-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+  }
+
+  .faq-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    transition: all var(--transition-base);
+  }
+
+  .faq-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq-card__q {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .faq-card__a {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* ============================================
+     RESPONSIVE BREAKPOINTS
+     ============================================ */
+  @media (max-width: 1024px) {
+    .hanoi-hero__grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: var(--space-8);
+    }
+
+    .hanoi-hero__badge {
+      justify-content: center;
+    }
+
+    .hanoi-hero__value-props {
+      align-items: center;
+      text-align: left;
+    }
+
+    .hanoi-hero__actions {
+      justify-content: center;
+    }
+
+    .hanoi-hero__visual {
+      display: none; /* Hide on mobile/tablet to look extremely clean, or display stacked */
+    }
+
+    .hanoi-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    .stat-item:nth-child(2) {
+      border-right: none;
+    }
+
+    .hanoi-intro-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .hanoi-pools-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hanoi-programs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hanoi-coaches-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hanoi-register-box {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hanoi-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+      border-right: none !important;
+    }
+
+    .hanoi-pools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hanoi-programs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hanoi-coaches-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-inline: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hanoi-hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hanoi-hero__actions .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hanoi-stats-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>
