@@ -96,6 +96,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
 
+  <slot name="head" />
 </head>
 <body>
   <slot name="header" />

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /_assets/
+
+Sitemap: https://dayboi.vip/sitemap-index.xml
+
+# Swim For Life Viet Nam - Trung tam day boi chuyen nghiep
+# https://dayboi.vip

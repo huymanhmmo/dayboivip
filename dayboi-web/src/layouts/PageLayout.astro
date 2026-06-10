@@ -26,6 +26,21 @@ const { title, description, canonical, image, type, noindex, breadcrumbs, schema
   schema={schema}
   lang="vi"
 >
+  <Fragment slot="head">
+    {breadcrumbs && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.label,
+          ...(item.href ? { "item": `https://dayboi.vip${item.href}` } : {}),
+        })),
+      })} />
+    )}
+  </Fragment>
+
   <Header slot="header" lang="vi" currentPath={Astro.url.pathname} />
 
   <!-- Breadcrumb -->
