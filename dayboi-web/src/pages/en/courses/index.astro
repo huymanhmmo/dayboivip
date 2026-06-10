@@ -1,0 +1,651 @@
+---
+const currentYear = new Date().getFullYear();
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CourseHero from '../../../components/course/CourseHero.astro';
+import CourseTrust from '../../../components/course/CourseTrust.astro';
+import CourseFAQ from '../../../components/course/CourseFAQ.astro';
+import FloatingCTA from '../../../components/course/FloatingCTA.astro';
+import RegistrationForm from '../../../components/RegistrationForm.astro';
+import { courses } from '../../../data/courses.js';
+import '../../../styles/course-landing.css';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Courses' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Swim For Life Swimming Courses",
+  "description": "Professional swimming lessons from basic to advanced level. Learn to swim in 10-12 sessions guaranteed. Private 1-on-1, small groups, and corporate lessons.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam Training Center",
+    "url": "https://dayboi.vip/en/"
+  },
+  "hasCourseInstance": [
+    {
+      "@type": "CourseInstance",
+      "name": "1-on-1 Private Lessons",
+      "courseMode": "onsite",
+      "courseWorkload": "PT10H"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Small Group Classes",
+      "courseMode": "onsite",
+      "courseWorkload": "PT12H"
+    },
+    {
+      "@type": "CourseInstance",
+      "name": "Corporate & Communities Programs",
+      "courseMode": "onsite"
+    }
+  ]
+};
+
+const faqData = [
+  {
+    question: "How long does a Swim For Life course last?",
+    answer: "A standard course at Swim For Life spans 10-12 sessions, each lasting 60-90 minutes. We guarantee students will confidently master at least 1 stroke. The recommended frequency is 3-4 lessons per week for maximum progress."
+  },
+  {
+    question: "What class options do you provide?",
+    answer: "We offer 3 primary options: 1-on-1 Private Lessons (dedicated coach, fully flexible), Small Groups of 3-5 students (budget-friendly and social), and Corporate/Community programs (large teams, specialized curriculum)."
+  },
+  {
+    question: "How much are the tuition fees at Swim For Life?",
+    answer: "Fees depend on the chosen class type, location, and the number of sessions. Swim For Life guarantees highly competitive and transparent rates. Contact us via hotline/Zalo at 0979.121.097 for a personalized quote."
+  },
+  {
+    question: "What strokes do you teach?",
+    answer: "We teach all 4 core strokes: Breaststroke (easiest for beginners), Freestyle (fastest), Backstroke (comfort and easy breathing), and Butterfly (advanced). We also specialize in survival treading."
+  },
+  {
+    question: "Do you offer a free trial class?",
+    answer: "Yes! Every student is entitled to one free trial session to experience our teaching approach, meet their coach, and have their skills evaluated before registering."
+  },
+  {
+    question: "What is your course preservation policy?",
+    answer: "Swim For Life supports pausing/freezing your course for up to 2.5 months. Students can flexibly adapt schedules to fit holidays, travel, or work schedules."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const combinedSchema = [schema, faqSchema];
+
+const hubHeroStats = [
+  { number: 5000, suffix: '+', label: 'Graduated students' },
+  { number: 10, suffix: '-12', label: 'Sessions to learn' },
+  { number: 98, suffix: '%', label: 'Success rate' }
+];
+
+const enCourses = courses.map(c => {
+  let enTitle = "";
+  let enSubtitle = "";
+  let enTarget = "";
+  let enDuration = "10-12 sessions";
+  let enClassSize = "";
+  
+  if (c.slug === 'tre-em') {
+    enTitle = "Kids Swimming Lessons";
+    enSubtitle = "Equip your child with the most vital survival skills today!";
+    enTarget = "Kids aged 3 - 15";
+    enClassSize = "1-on-1 or small group of 3-5 kids";
+  } else if (c.slug === 'nguoi-lon') {
+    enTitle = "Adult Swimming Lessons";
+    enSubtitle = "It is never too late to start! Master water confidence with ease.";
+    enTarget = "Adults aged 18 - 65";
+    enClassSize = "1-on-1 or level-matched small group";
+  } else if (c.slug === 'ca-nhan') {
+    enTitle = "1-on-1 Private Lessons";
+    enSubtitle = "1 Coach - 1 Student. Maximum efficiency, absolute safety, 100% flexible.";
+    enTarget = "All ages & levels";
+    enClassSize = "Strictly 1-on-1";
+  } else if (c.slug === 'nhom') {
+    enTitle = "Group Swimming Lessons";
+    enSubtitle = "Learn swimming with family, friends, or colleagues. Optimal cost, guaranteed results.";
+    enTarget = "Friends, families, colleagues";
+    enClassSize = "Small group of 3 - 5 students";
+  } else if (c.slug === 'nguoi-cao-tuoi') {
+    enTitle = "Seniors Swimming Class";
+    enSubtitle = "Improve joint flexibility, boost cardiovascular system, and stay fit safely.";
+    enTarget = "Seniors aged 50 - 75+";
+    enClassSize = "Strictly 1-on-1";
+  } else if (c.slug === 'nguoi-so-nuoc') {
+    enTitle = "Water Anxiety Special Class";
+    enSubtitle = "Conquer your fear of water under specialized expert guidance.";
+    enTarget = "Individuals with water anxiety (Aquaphobia)";
+    enClassSize = "Strictly 1-on-1 VIP";
+  } else if (c.slug === 'doanh-nghiep') {
+    enTitle = "Corporate Training Programs";
+    enSubtitle = "Healthy teambuilding, corporate wellness, and team integration.";
+    enTarget = "Companies & Organizations";
+    enClassSize = "Custom groups of 5 to 30+ employees";
+    enDuration = "Tailored length";
+  }
+  
+  return {
+    ...c,
+    shortTitle: enTitle,
+    subtitle: enSubtitle,
+    targetAudience: enTarget,
+    classSize: enClassSize,
+    duration: enDuration,
+    priceFrom: "Contact for a quote",
+    link: "/en/contact"
+  };
+});
+---
+
+<PageLayout
+  title={`Professional Swimming Courses: Basic to Advanced [${currentYear}] | Swim For Life`}
+  description="Structured swimming classes by Swim For Life Vietnam. Master swimming in 10-12 sessions guaranteed. Kids & adults classes, certified coaches. Book a free trial today!"
+  canonical="https://dayboi.vip/en/courses/"
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+  lang="en"
+>
+  <div class="course-landing">
+    <!-- Hero Section -->
+    <CourseHero 
+      title={`Swim For Life Swimming Courses [${currentYear}]`}
+      subtitle="Structured, scientific swimming lessons – master swimming in 10-12 sessions. Child-friendly, patient coaches, customized programs for all ages."
+      description="Structured, scientific swimming lessons – master swimming in 10-12 sessions. Child-friendly, patient coaches, customized programs for all ages."
+      image="/images/classes/giang-vien-huong-dan-ky-thuat.jpg"
+      stats={hubHeroStats}
+      slug="hub"
+    />
+
+    <!-- Course Grid Section -->
+    <section class="cl-section" id="khoa-hoc">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Class Catalog
+          </span>
+          <h2 class="cl-section-title__heading">
+            Swim Programs Tailored Just For You
+          </h2>
+          <p class="cl-section-title__sub">
+            From toddlers learning basic water safety to adults overcoming lifelong water anxiety, we have the perfect class.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-course-grid">
+          {enCourses.map((course) => (
+            <div class="cl-hub-card cl-animate">
+              <div class="cl-hub-card__image-wrapper">
+                <img src={course.heroImage} alt={course.shortTitle} class="cl-hub-card__image" loading="lazy" />
+                <span class="cl-hub-card__badge">{course.targetAudience}</span>
+              </div>
+              <div class="cl-hub-card__content">
+                <div class="cl-hub-card__icon-title">
+                  <span class="cl-hub-card__icon">{course.icon}</span>
+                  <h3 class="cl-hub-card__title">{course.shortTitle}</h3>
+                </div>
+                <p class="cl-hub-card__description">
+                  {course.subtitle}
+                </p>
+                <div class="cl-hub-card__specs">
+                  <div class="cl-hub-card__spec">
+                    <span class="cl-hub-card__spec-icon">⏱️</span>
+                    <span>{course.duration}</span>
+                  </div>
+                  <div class="cl-hub-card__spec">
+                    <span class="cl-hub-card__spec-icon">👥</span>
+                    <span>{course.classSize}</span>
+                  </div>
+                </div>
+                <div class="cl-hub-card__footer">
+                  <div class="cl-hub-card__price-wrapper">
+                    <span class="cl-hub-card__price-label">Tuition</span>
+                    <span class="cl-hub-card__price">{course.priceFrom}</span>
+                  </div>
+                  <a href={course.link} class="cl-hub-card__btn">
+                    Register Now →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare Section -->
+    <section class="cl-section cl-section--alt" id="so-sanh">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Optimal Selection
+          </span>
+          <h2 class="cl-section-title__heading">
+            Compare Class Formats
+          </h2>
+          <p class="cl-section-title__sub">
+            Detailed breakdown to help you pick the best-suited program for yourself or your kids.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-comparison-table-wrapper cl-animate">
+          <table class="cl-comparison-table">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th>1-on-1 Private VIP</th>
+                <th>Small Groups (3-5 kids)</th>
+                <th>Corporate & Teams</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Coach ratio</strong></td>
+                <td>1 student / 1 coach</td>
+                <td>3 - 5 students / 1 coach</td>
+                <td>Large groups (multiple coaches)</td>
+              </tr>
+              <tr>
+                <td><strong>Curriculum</strong></td>
+                <td>Personalized to pace & confidence</td>
+                <td>Standard syllabus, peer interaction</td>
+                <td>Custom designed to corporate goals</td>
+              </tr>
+              <tr>
+                <td><strong>Location</strong></td>
+                <td>Your preferred pool or home pool</td>
+                <td>Indoor four-season partner pools</td>
+                <td>Near office or local facilities</td>
+              </tr>
+              <tr>
+                <td><strong>Schedule</strong></td>
+                <td>100% flexible (change as needed)</td>
+                <td>Fixed slots chosen upon booking</td>
+                <td>Custom agreed shifts</td>
+              </tr>
+              <tr>
+                <td><strong>Guaranteed</strong></td>
+                <td>100% swim success (free extra prep)</td>
+                <td>Over 98% swim success rate</td>
+                <td>Guaranteed under service contract</td>
+              </tr>
+              <tr>
+                <td><strong>Avg. Duration</strong></td>
+                <td>7 - 10 sessions to swim</td>
+                <td>10 - 12 sessions to swim</td>
+                <td>10 - 12 sessions to swim</td>
+              </tr>
+              <tr>
+                <td><strong>Pricing</strong></td>
+                <td>Premium (Worth every cent)</td>
+                <td>Cost-effective, group discounts</td>
+                <td>High volume corporate discount</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Quality Guarantee Badges -->
+    <CourseTrust />
+
+    <!-- FAQ Accordion -->
+    <CourseFAQ 
+      faqs={faqData}
+    />
+
+    <!-- Form Section -->
+    <section class="cl-section cl-section--alt" id="dang-ky">
+      <div class="cl-section__container">
+        <div class="cl-section-title">
+          <span class="cl-section-title__badge">
+            Book Today
+          </span>
+          <h2 class="cl-section-title__heading">
+            Start Your Swimming Journey Today
+          </h2>
+          <p class="cl-section-title__sub">
+            Fill in the form below. Swim For Life will contact you to set up your FREE trial lesson immediately.
+          </p>
+          <span class="cl-section-title__decoration"></span>
+        </div>
+
+        <div class="cl-form-container">
+          <div class="cl-form-info">
+            <h3 class="cl-form-info__title">24/7 Support</h3>
+            <p class="cl-form-info__text">
+              Reach out directly via phone call or Zalo chat to get answers instantly:
+            </p>
+            <div class="cl-form-info__links">
+              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
+                <span class="cl-form-info__icon">📞</span>
+                <div>
+                  <span class="cl-form-info__label">Hotline</span>
+                  <span class="cl-form-info__value">0979.121.097</span>
+                </div>
+              </a>
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
+                <span class="cl-form-info__icon">💬</span>
+                <div>
+                  <span class="cl-form-info__label">Zalo Chat</span>
+                  <span class="cl-form-info__value">Mr. Manh (0979.121.097)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="cl-form-wrapper">
+            <RegistrationForm id="en-course-register-form" className="cl-astro-form" lang="en" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Mobile CTA -->
+    <FloatingCTA />
+  </div>
+</PageLayout>
+
+<style>
+  .cl-course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  
+  @media (min-width: 768px) {
+    .cl-course-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cl-course-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .cl-hub-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(10, 77, 140, 0.05);
+    border: 1px solid rgba(10, 77, 140, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cl-hub-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(10, 77, 140, 0.12);
+    border-color: var(--cl-primary-light);
+  }
+  
+  .cl-hub-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .cl-hub-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cl-hub-card:hover .cl-hub-card__image {
+    transform: scale(1.08);
+  }
+  
+  .cl-hub-card__badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(10, 77, 140, 0.9);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+  
+  .cl-hub-card__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .cl-hub-card__icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .cl-hub-card__icon {
+    font-size: 1.5rem;
+  }
+  
+  .cl-hub-card__title {
+    font-family: var(--cl-font);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cl-dark);
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .cl-hub-card__description {
+    font-size: 0.9rem;
+    color: var(--cl-text-light);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  
+  .cl-hub-card__specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px dashed rgba(10, 77, 140, 0.1);
+  }
+  
+  .cl-hub-card__spec {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--cl-text);
+  }
+  
+  .cl-hub-card__spec-icon {
+    color: var(--cl-primary-light);
+    font-size: 1rem;
+  }
+  
+  .cl-hub-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(10, 77, 140, 0.08);
+  }
+  
+  .cl-hub-card__price-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cl-hub-card__price-label {
+    font-size: 0.75rem;
+    color: var(--cl-text-light);
+  }
+  
+  .cl-hub-card__price {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--cl-primary);
+  }
+  
+  .cl-hub-card__btn {
+    padding: 8px 16px;
+    background: var(--cl-cta-gradient);
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .cl-hub-card__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+  }
+  
+  /* Comparison Table section styling */
+  .cl-comparison-table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--cl-shadow-md);
+    border: 1px solid rgba(10, 77, 140, 0.08);
+    margin-top: 32px;
+  }
+  
+  .cl-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 800px;
+  }
+  
+  .cl-comparison-table th, 
+  .cl-comparison-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(10, 77, 140, 0.08);
+    font-size: 0.95rem;
+  }
+  
+  .cl-comparison-table th {
+    background: rgba(10, 77, 140, 0.03);
+    color: var(--cl-primary);
+    font-weight: 700;
+    font-family: var(--cl-font);
+  }
+  
+  .cl-comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .cl-comparison-table tr:hover {
+    background: rgba(10, 77, 140, 0.01);
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations (.cl-animate)
+  const setupAnimations = () => {
+    const animElements = document.querySelectorAll('.course-landing .cl-animate');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cl-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animElements.forEach(el => observer.observe(el));
+  };
+
+  // Stats counter animation (data-counter)
+  const setupCounters = () => {
+    const counterElements = document.querySelectorAll('.course-landing [data-counter]');
+
+    const animateCounter = (el: HTMLElement) => {
+      const target = parseInt(el.getAttribute('data-target') || '0', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 2000;
+      const startTime = performance.now();
+
+      const updateCount = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = progress * (2 - progress);
+        const currentValue = Math.floor(easeProgress * target);
+        
+        el.textContent = currentValue.toLocaleString('en-US') + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = target.toLocaleString('en-US') + suffix;
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    };
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          if (!el.classList.contains('counted')) {
+            el.classList.add('counted');
+            animateCounter(el);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    counterElements.forEach(el => observer.observe(el));
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupAnimations();
+    setupCounters();
+  });
+
+  setupAnimations();
+  setupCounters();
+</script>

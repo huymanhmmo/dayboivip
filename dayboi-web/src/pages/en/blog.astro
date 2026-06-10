@@ -1,0 +1,374 @@
+---
+const currentYear = new Date().getFullYear();
+import PageLayout from '../../layouts/PageLayout.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+import SuccessModal from '../../components/SuccessModal.astro';
+
+const title = 'Swimming Blog | Tips, Techniques & Water Safety | Swim For Life';
+const description = 'Discover professional swimming tips, step-by-step guides, swimming styles, and water safety advice from Swim For Life Vietnam.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Blog' },
+];
+
+const blogPostsEn = [
+  {
+    title: `Complete Swimming Syllabus: Beginner to Advanced [${currentYear}]`,
+    slug: 'en/swim-journey',
+    excerpt: 'Explore our structured 12-session swimming syllabus for children & adults. From water adaptation, breathing, to mastering breaststroke, crawl, and treading.',
+    image: '/images/classes/giang-vien-huong-dan-ky-thuat.jpg',
+    date: '25/05',
+    category: 'Swimming Guides',
+    categorySlug: 'guides',
+    tags: ['Syllabus', 'Swimming Lessons'],
+    readTime: '18 min read',
+  },
+  {
+    title: 'How to Learn Swimming: A Complete Guide for Absolute Beginners',
+    slug: 'en/guides',
+    excerpt: 'A comprehensive guide to learning how to swim from scratch. Master water comfort, breathing mechanics, and floating with tips from certified coaches.',
+    image: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
+    date: '25/05',
+    category: 'Swimming Guides',
+    categorySlug: 'guides',
+    tags: ['Beginner', 'Buoyancy', 'Safety'],
+    readTime: '22 min read',
+  },
+  {
+    title: 'Should Beginners Learn Breaststroke or Freestyle First?',
+    slug: 'en/swimming-techniques',
+    excerpt: 'An in-depth comparison of Breaststroke and Front Crawl for new swimmers. Analyze body kinematics, breathing ease, and energy conservation.',
+    image: '/images/classes/hoc-vien-khoi-dong.jpg',
+    date: '23/05',
+    category: 'Techniques',
+    categorySlug: 'techniques',
+    tags: ['Breaststroke', 'Freestyle', 'Strokes'],
+    readTime: '8 min read',
+  },
+  {
+    title: 'Kids Swimming Lessons: A Comprehensive Guide for Parents',
+    slug: 'en/courses',
+    excerpt: 'Learn the golden age for kids to swim, how to select a patient coach, safety gear requirements, and our child-psychology teaching methodology.',
+    image: '/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg',
+    date: '25/05',
+    category: 'Kids Programs',
+    categorySlug: 'courses',
+    tags: ['Kids', 'Survival', 'Parenting'],
+    readTime: '25 min read',
+  },
+  {
+    title: 'Water Safety & Survival Skills: Prevention of Child Drowning',
+    slug: 'en/guides',
+    excerpt: 'Essential water survival guidelines every child must know. Master deep-water treading, cramp recovery, and safe entry procedures.',
+    image: '/images/classes/lop-boi-tre-em-bai-ban.jpg',
+    date: '24/05',
+    category: 'Water Safety',
+    categorySlug: 'guides',
+    tags: ['Water Safety', 'Survival', 'Kids'],
+    readTime: '25 min read',
+  }
+];
+
+const featuredPost = blogPostsEn[0];
+const remainingPosts = blogPostsEn.slice(1);
+
+// Categories List for sidebar
+const categoriesList = [
+  { name: 'Swimming Guides', slug: 'guides', count: 3 },
+  { name: 'Techniques', slug: 'swimming-techniques', count: 1 },
+  { name: 'Kids Programs', slug: 'courses', count: 1 },
+  { name: 'Water Safety', slug: 'guides', count: 1 }
+];
+
+// Tags list for tag cloud
+const tagsList = [
+  { name: 'Syllabus', slug: 'swim-journey', count: 1 },
+  { name: 'Beginner', slug: 'guides', count: 1 },
+  { name: 'Breaststroke', slug: 'swimming-techniques', count: 1 },
+  { name: 'Freestyle', slug: 'swimming-techniques', count: 1 },
+  { name: 'Kids', slug: 'courses', count: 2 },
+  { name: 'Survival', slug: 'guides', count: 2 },
+  { name: 'Water Safety', slug: 'guides', count: 1 }
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/blog/"
+  breadcrumbs={breadcrumbs}
+  lang="en"
+>
+
+<!-- Blog Header -->
+<section class="section" style="padding-top: var(--space-8); padding-bottom: var(--space-8); background: var(--color-bg-alt); border-bottom: 1px solid rgba(0, 119, 182, 0.05);">
+  <div class="container container-wide">
+    <div class="section-header" style="margin-bottom: 0;">
+      <span class="section-badge">📝 Blog</span>
+      <h1 class="section-title">Swimming Blog & Aquatics Knowledge</h1>
+      <p class="section-subtitle">
+        Professional insights, practical tips, and step-by-step guides on swimming techniques from the coaches at Swim For Life Vietnam.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog News Portal Layout -->
+<section class="section" style="padding-top: var(--space-12); padding-bottom: var(--space-20);">
+  <div class="container container-wide">
+    <div class="news-layout">
+      
+      <!-- Main Column (Left): Featured Post + Grid -->
+      <div class="news-main">
+        <!-- Category Filter Bar (Horizontal) -->
+        <div class="category-filter-nav">
+          <a href="/en/blog/" class="category-filter-link active">All</a>
+          <a href="/en/guides/" class="category-filter-link">Swimming Guides</a>
+          <a href="/en/courses/" class="category-filter-link">Kids Programs</a>
+          <a href="/en/swimming-techniques/" class="category-filter-link">Techniques</a>
+        </div>
+
+        {featuredPost && (
+          <article class="featured-news-card">
+            <a href={`/${featuredPost.slug}/`} class="featured-news-card-link">
+              <div class="featured-card-image-wrapper">
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  class="featured-card-image"
+                  loading="eager"
+                  width="640"
+                  height="360"
+                />
+              </div>
+              <div class="featured-card-content">
+                <div class="featured-card-meta">
+                  <span class="featured-card-category">{featuredPost.category}</span>
+                  <span class="featured-card-read-time">{featuredPost.readTime}</span>
+                </div>
+                
+                <h2 class="featured-card-title">{featuredPost.title}</h2>
+                <p class="featured-card-excerpt">{featuredPost.excerpt}</p>
+                
+                {featuredPost.tags && featuredPost.tags.length > 0 && (
+                  <div class="card-tags-list" style="margin-bottom: var(--space-4);">
+                    {featuredPost.tags.map((tag) => (
+                      <span class="card-tag-item">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                
+                <span class="featured-card-more">Read Article →</span>
+              </div>
+            </a>
+          </article>
+        )}
+
+        <div class="news-grid">
+          {remainingPosts.map((post) => (
+            <article class="news-card">
+              <a href={`/${post.slug}/`} class="news-card-link">
+                <div class="news-card-image-wrapper">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    class="news-card-image"
+                    loading="lazy"
+                    width="400"
+                    height="220"
+                  />
+                </div>
+                <div class="news-card-content">
+                  <div class="news-card-meta">
+                    <span class="news-card-category">{post.category}</span>
+                    <span class="news-card-read-time">{post.readTime}</span>
+                  </div>
+                  
+                  <h3 class="news-card-title">{post.title}</h3>
+                  <p class="news-card-excerpt">{post.excerpt}</p>
+                  
+                  {post.tags && post.tags.length > 0 && (
+                    <div class="card-tags-list">
+                      {post.tags.map((tag) => (
+                        <span class="card-tag-item">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  
+                  <span class="news-card-more">Read Article →</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Sidebar Column (Right): Sticky Widgets -->
+      <aside class="news-sidebar">
+        <!-- Widget: Categories -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">📁 Categories</h3>
+          <ul class="sidebar-categories-list">
+            {categoriesList.map(cat => (
+              <li>
+                <a href={`/en/${cat.slug}/`} class="category-item-link">
+                  <span class="category-name">{cat.name}</span>
+                  <span class="category-count">({cat.count})</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Widget: Tag Cloud -->
+        {tagsList && tagsList.length > 0 && (
+          <div class="sidebar-widget">
+            <h3 class="widget-title">🏷️ Tag Cloud</h3>
+            <div class="tag-cloud">
+              {tagsList.map(tag => (
+                <a href={`/en/${tag.slug}/`} class="tag-cloud-item">
+                  {tag.name} <span class="tag-count">({tag.count})</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Widget: Form Registration -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">🏊 Book a Free Trial</h3>
+          <p class="widget-subtitle">Receive 1 free 1-on-1 trial session with a professional coach at your nearest pool!</p>
+          <RegistrationForm id="blog-register-form" lang="en" />
+          <div class="widget-trust">
+            🔒 Secure info • 100% Learn-to-swim guarantee
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm" style="background: var(--color-bg-alt); border-top: 1px solid rgba(0, 119, 182, 0.05);">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Want to Learn Swimming Professionally?</h2>
+      <p>Sign up for a free trial with a Swim For Life coach today!</p>
+      <div class="btn-group">
+        <a href="/en/contact/" class="btn btn-accent btn-lg">Book Free Trial Session</a>
+        <a href="/en/courses/" class="btn btn-white btn-lg">View Our Courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<SuccessModal 
+  id="success-modal"
+  title="Registration Successful!"
+  text="Thank you for registering a free trial at Swim For Life. Our coordinator will contact you via Phone/Zalo within 15-30 minutes to confirm your session."
+  closeLabel="Close"
+/>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('blog-register-form');
+    const modal = document.getElementById('success-modal');
+    const closeBtn = document.getElementById('close-modal-btn');
+    
+    if (form && modal && closeBtn) {
+      let redirectTimeout;
+      let countdownInterval;
+
+      const cancelRedirect = () => {
+        clearTimeout(redirectTimeout);
+        clearInterval(countdownInterval);
+        const redirectHint = modal.querySelector('.modal-redirect-hint');
+        if (redirectHint) redirectHint.remove();
+      };
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get input values
+        const fullname = form.querySelector('[name="fullname"]').value;
+        const phone = form.querySelector('[name="phone"]').value;
+        const location = form.querySelector('[name="location"]').value;
+
+        // Submit to Google Form Response endpoint asynchronously
+        const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe1PwdhtzzkWJaTZ4O79rrCUi4cAwuvmPTqx8TTF8rRleCTqA/formResponse';
+        const formData = new URLSearchParams();
+        formData.append('entry.1075795830', fullname);
+        formData.append('entry.406600670', phone);
+        formData.append('entry.1411149651', `${location} | Language: EN`);
+
+        fetch(googleFormUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: formData.toString()
+        }).catch(err => console.error('Error submitting to Google Form:', err));
+
+        // Open Zalo in a new tab immediately (prevents browser popup blocker)
+        window.open('https://zalo.me/0979121097', '_blank');
+
+        modal.classList.add('active');
+        form.reset();
+
+        // Reset any existing timers
+        cancelRedirect();
+
+        // Create dynamic countdown element inside success modal
+        const card = modal.querySelector('.modal-card');
+        let redirectHint = modal.querySelector('.modal-redirect-hint');
+        if (!redirectHint && card) {
+          redirectHint = document.createElement('p');
+          redirectHint.className = 'modal-redirect-hint';
+          redirectHint.style.fontSize = '0.9rem';
+          redirectHint.style.color = 'var(--color-primary, #0077b6)';
+          redirectHint.style.marginTop = '12px';
+          redirectHint.style.fontWeight = '600';
+          redirectHint.style.textAlign = 'center';
+          card.insertBefore(redirectHint, closeBtn);
+        }
+
+        let secondsLeft = 4;
+        if (redirectHint) {
+          redirectHint.innerHTML = `Connected to Coach Zalo in a new tab. Closing in <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> seconds...`;
+        }
+
+        countdownInterval = setInterval(() => {
+          secondsLeft--;
+          if (redirectHint) {
+            redirectHint.innerHTML = `Connected to Coach Zalo in a new tab. Closing in <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> seconds...`;
+          }
+          if (secondsLeft <= 0) {
+            clearInterval(countdownInterval);
+          }
+        }, 1000);
+
+        redirectTimeout = setTimeout(() => {
+          modal.classList.remove('active');
+          cancelRedirect();
+        }, 4000);
+      });
+      
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        cancelRedirect();
+      });
+      
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          cancelRedirect();
+        }
+      });
+    }
+  });
+</script>
+
+</PageLayout>

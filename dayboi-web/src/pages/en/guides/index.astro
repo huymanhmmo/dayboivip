@@ -1,0 +1,181 @@
+---
+const currentYear = new Date().getFullYear();
+import PageLayout from '../../../layouts/PageLayout.astro';
+import RegistrationForm from '../../../components/RegistrationForm.astro';
+
+const title = 'Ultimate Swimming Learning Guide for Beginners | Swim For Life Vietnam';
+const description = 'A comprehensive step-by-step guide to learning how to swim. Master water comfort, breathing, floating, gliding, treading, and stroke mechanics safely.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Guides' },
+];
+
+const guideSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ultimate Swimming Learning Guide for Beginners",
+  "description": description,
+  "image": "https://dayboi.vip/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Huy Manh",
+    "jobTitle": "Training Director",
+    "url": "https://dayboi.vip/en/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/guides/"
+  breadcrumbs={breadcrumbs}
+  schema={guideSchema}
+  lang="en"
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12); border-bottom: 1px solid var(--color-border-light);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header text-center" style="margin-bottom: 0;">
+        <span class="section-badge">📘 Complete Guide</span>
+        <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.2;">Ultimate Swimming Guide for Beginners</h1>
+        <p class="section-subtitle" style="margin-inline: auto;">
+          Whether you are an adult overcoming water anxiety or a parent preparing your child, this step-by-step sports science guide covers everything you need to swim safely and effectively.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content & Sidebar Layout -->
+  <section class="section">
+    <div class="container" style="max-width: 1200px;">
+      <div style="display: grid; grid-template-columns: 2.5fr 1fr; gap: var(--space-10); align-items: start;">
+        
+        <!-- Main Content Column -->
+        <div class="rich-text-content" style="color: var(--color-text); line-height: 1.8; font-size: 1rem;">
+          
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">1. What is Learning to Swim? Basic Concepts</h2>
+          <p>
+            Learning to swim is a structured training process designed to equip individuals with the ability to control their bodies, navigate water currents safely, and perform self-rescue. It is not just about copying arm and leg movements; it is a neurological and biological adaptation to a high-pressure, low-gravity environment.
+          </p>
+          <p>
+            When in the water, your body experiences different forces. Water pressure is much higher than air pressure, which can make breathing feel tight for beginners. Archimedes' principle pushes you up, while gravity pulls heavier bone structures down. A proper guide helps you relax, letting buoyancy work for you instead of fighting it.
+          </p>
+          
+          <img 
+            src="/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg" 
+            alt="Coaches teaching swim lessons at Swim For Life" 
+            style="width: 100%; border-radius: 12px; margin-block: var(--space-6); box-shadow: var(--shadow-md);" 
+            loading="lazy"
+          />
+
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">2. Why You Need Structured Training</h2>
+          <p>
+            Many believe swimming is pure instinct and try self-learning or asking friends. However, unstructured practice brings risks. Without a certified coach, beginners frequently develop bad habits: raising their heads too high (which sinks the hips and strains the neck), holding their breath (leading to carbon dioxide build-up and fatigue), or kicking with wide, inefficient legs.
+          </p>
+          <p>
+            Relearning proper mechanics later takes double the time. Working with a scientific program and getting real-time technique corrections from a certified coach is the fastest, safest route to master swimming.
+          </p>
+
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">3. The 4-Phase Swim Journey</h2>
+          <p>
+            Our 12-session curriculum is broken down into 4 progressive phases:
+          </p>
+          <ul style="padding-left: var(--space-6); margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
+            <li><strong>Phase 1: Water Comfort & Safety (Sessions 1-2):</strong> Overcome water anxiety, master breath control (blowing bubbles), and open eyes underwater using goggles.</li>
+            <li><strong>Phase 2: Buoyancy & Gliding (Sessions 3-4):</strong> Learn front and back floating, streamline gliding off the wall, and standing up safely from a float.</li>
+            <li><strong>Phase 3: Propulsion Mechanics (Sessions 5-8):</strong> Develop efficient breaststroke kick patterns and arm pulls, coordinating them with breathing drills.</li>
+            <li><strong>Phase 4: Full Coordination & Treading (Sessions 9-12):</strong> Combine pull, kick, and breathe into a continuous swim. Master deep-water treading for survival.</li>
+          </ul>
+
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">4. The Foundation of Swimming: Breath Control</h2>
+          <p>
+            Breathing is the life support system of swimming. On land, you inhale and exhale through the nose. In the water, you must reverse this: <strong>inhale quickly through the mouth</strong> above water, and <strong>exhale slowly through the nose</strong> underwater.
+          </p>
+          <p>
+            Inhaling through the mouth is safer because the wider opening takes in a large volume of air in under a second. Inhaling through the nose near the surface leads to water entering the sinuses, causing choking and panic. Exhaling through the nose underwater creates positive pressure, keeping water out of your nose.
+          </p>
+
+          <img 
+            src="/images/classes/giang-vien-huong-dan-ky-thuat.jpg" 
+            alt="Teaching breathing techniques" 
+            style="width: 100%; border-radius: 12px; margin-block: var(--space-6); box-shadow: var(--shadow-md);" 
+            loading="lazy"
+          />
+
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">5. Mastering Buoyancy: Front & Back Float</h2>
+          <p>
+            Buoyancy is achieved by relaxing your muscles and trusting the water. When your lungs are filled with air, they act as natural life jackets.
+          </p>
+          <p>
+            To perform a front float, look straight down at the pool floor, extend your arms forward, and let your legs rise behind you. To stand up, pull your knees to your chest, press your arms down, and place your feet on the pool floor.
+          </p>
+          <p>
+            For a back float, lay your head back until water covers your ears, look straight up, raise your hips, and use shallow, quick breathing patterns (fast inhale, hold, fast exhale) to keep your lungs filled with air.
+          </p>
+
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">6. Survival Treading Skills</h2>
+          <p>
+            Staying afloat in one spot in deep water is a critical safety skill. Treading water combines gentle hand sculling with leg kicks:
+          </p>
+          <ul style="padding-left: var(--space-6); margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
+            <li><strong>Hand Sculling:</strong> Keep hands flat under the surface, scanning them left and right in a horizontal figure-8 shape to create a constant upward lift.</li>
+            <li><strong>Leg Kicks (Eggbeater):</strong> Move your legs in alternating circular patterns, pushing water down continuously (similar to riding a bicycle backwards).</li>
+            <li><strong>Buoyancy:</strong> Tilt your torso slightly forward, relax your shoulders, and breathe calmly using your mouth.</li>
+          </ul>
+
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-4); margin-top: var(--space-8);">7. Common Mistakes to Avoid</h2>
+          <ol style="padding-left: var(--space-6); margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
+            <li><strong>Lifting the head too high:</strong> This pushes the chest up and automatically sinks the lower body, creating severe drag.</li>
+            <li><strong>Holding your breath underwater:</strong> This accumulates carbon dioxide, triggering an urgent need to breathe, causing panic.</li>
+            <li><strong>Stiffening the body:</strong> Tense muscles sink faster. Keep your limbs relaxed and move with rhythm.</li>
+            <li><strong>Skipping dry land warm-ups:</strong> Cold water shocks un-warmed muscles. Spend 10 minutes stretching on land to prevent cramps.</li>
+          </ol>
+
+          <div style="background: var(--color-bg-alt); padding: var(--space-6); border-radius: 12px; border-left: 5px solid var(--color-accent); margin-top: var(--space-8); margin-bottom: var(--space-8);">
+            <h4 style="font-weight: 700; color: var(--color-accent); margin-bottom: var(--space-2); font-size: 1.1rem;">💡 Expert Advice from Coach Nguyen Huy Manh:</h4>
+            <p style="margin: 0; font-style: italic; font-size: 0.95rem;">
+              "Learning to swim is about building a connection with the water. Once you learn to relax, breathe correctly, and let the water support your weight, swimming becomes a natural and joyful movement. Take your time, practice consistently, and prioritize your safety above all."
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <aside style="display: flex; flex-direction: column; gap: var(--space-8);">
+          
+          <!-- Registration Widget -->
+          <div style="background: #ffffff; border: 1px solid var(--color-border); padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md);">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2);">Book Free Trial</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              Register today for a free 1-on-1 trial session near your home with our certified coaches.
+            </p>
+            <RegistrationForm id="en-guide-sidebar-form" lang="en" />
+          </div>
+
+          <!-- Quick Contact -->
+          <div style="background: var(--color-bg-alt); padding: var(--space-6); border-radius: 16px; border: 1px dashed var(--color-primary);">
+            <h4 style="font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3); font-size: 0.95rem;">Need Instant Help?</h4>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: 0.85rem;">
+              <div>📞 <strong>Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+              <div>💬 <strong>Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">Coach Manh</a></div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

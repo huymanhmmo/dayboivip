@@ -3,12 +3,14 @@ export interface Props {
   id?: string;
   title?: string;
   text?: string;
+  closeLabel?: string;
 }
 
 const { 
   id = 'success-modal',
   title = 'Đăng Ký Thành Công!',
-  text = 'Cảm ơn bạn đã đăng ký học thử tại Swim For Life Việt Nam. Đội ngũ HLV sẽ liên hệ lại với bạn qua Số điện thoại/Zalo trong vòng 15-30 phút để xác nhận lịch học.'
+  text = 'Cảm ơn bạn đã đăng ký học thử tại Swim For Life Việt Nam. Đội ngũ HLV sẽ liên hệ lại với bạn qua Số điện thoại/Zalo trong vòng 15-30 phút để xác nhận lịch học.',
+  closeLabel = 'Đóng'
 } = Astro.props;
 ---
 
@@ -17,6 +19,6 @@ const {
     <div class="modal-icon">✓</div>
     <h3 class="modal-title">{title}</h3>
     <p class="modal-text">{text}</p>
-    <button class="btn btn-primary" id="close-modal-btn" style="width: 100%; justify-content: center;">Đóng</button>
+    <button class="btn btn-primary" id="close-modal-btn" style="width: 100%; justify-content: center;">{closeLabel}</button>
   </div>
 </div>
