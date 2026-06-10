@@ -3,6 +3,7 @@ const currentYear = new Date().getFullYear();
 import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 import SuccessModal from '../components/SuccessModal.astro';
+import CoachesSection from '../components/CoachesSection.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 const title = 'Blog Dạy Bơi | Kiến Thức & Kinh Nghiệm Học Bơi';
@@ -220,6 +221,8 @@ const tagsList = Array.from(tagsMap.values());
     </div>
   </div>
 </section>
+
+<CoachesSection />
 
 <!-- CTA -->
 <section class="section-sm" style="background: var(--color-bg-alt); border-top: 1px solid rgba(0, 119, 182, 0.05);">

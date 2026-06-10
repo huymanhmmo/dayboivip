@@ -7,6 +7,7 @@ import CourseFAQ from '../../components/course/CourseFAQ.astro';
 import FloatingCTA from '../../components/course/FloatingCTA.astro';
 import RegistrationForm from '../../components/RegistrationForm.astro';
 import { courses } from '../../data/courses.js';
+import CoachesSection from '../../components/CoachesSection.astro';
 import '../../styles/course-landing.css';
 
 const breadcrumbs = [
@@ -293,6 +294,8 @@ const faqs = [
     <CourseFAQ 
       faqs={faqs}
     />
+
+    <CoachesSection />
 
     <!-- Form Section -->
     <section class="cl-section cl-section--alt" id="dang-ky">

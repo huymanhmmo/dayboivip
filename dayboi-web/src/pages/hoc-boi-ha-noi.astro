@@ -5,6 +5,7 @@
  */
 import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
+import CoachesSection from '../components/CoachesSection.astro';
 
 const currentYear = new Date().getFullYear();
 
@@ -139,43 +140,7 @@ const pools = [
   }
 ];
 
-const coaches = [
-  {
-    name: "Thầy Nguyễn Huy Mạnh",
-    role: "Giám Đốc Đào Tạo / Sáng Lập",
-    desc: "Giám đốc Trung tâm dạy bơi chuyên nghiệp Swim For Life Việt Nam. Tổng chỉ huy chương trình Dạy Bơi Miễn Phí cho trẻ em, cư dân nhí tại Vinhomes từ năm 2018 tới nay. Mỗi năm dạy bơi cho 2000-3000 lượt học viên. Quản lý và đào tạo 100+ nhân sự bơi lội chuyên nghiệp.",
-    img: "/images/team/thay-nguyen-huy-manh.png",
-    tags: ["Giám Đốc"]
-  },
-  {
-    name: "Thầy Vũ Văn Thịnh",
-    role: "Thạc sỹ - Cố vấn Chuyên môn",
-    desc: "Trưởng bộ môn Bơi lội - Trò chơi - Đại học TDTT Hà Nội. Trọng tài bơi lội Seagames 31. Thạc sỹ - Cố vấn Chuyên môn Swim For Life.",
-    img: "/images/team/thay-vu-van-thinh.jpg",
-    tags: ["Thạc Sỹ", "Trọng Tài Seagames"]
-  },
-  {
-    name: "Cô Lê Thị Giang",
-    role: "Thạc sỹ - Cố vấn Chuyên môn",
-    desc: "Trưởng bộ môn Bơi lội - Khoa GDTC - Đại học Sư phạm Hà Nội. Trọng tài bơi lội Seagames 31. Chuyên gia bơi sinh tồn trẻ em.",
-    img: "/images/team/co-le-thi-giang.jpg",
-    tags: ["Thạc Sỹ", "Trọng Tài Seagames"]
-  },
-  {
-    name: "Thầy Bùi Văn Cán",
-    role: "Kiện tướng - Trưởng BHL Miền Nam",
-    desc: "Kiện tướng bơi lội quốc gia. HLV trưởng đội tuyển Bơi trường liên cấp Newton, liên tục giành giải cao các cấp.",
-    img: "/images/team/thay-bui-van-can.jpg",
-    tags: ["Kiện Tướng", "Newton School"]
-  },
-  {
-    name: "Thầy Trần Trung Hiếu",
-    role: "Kiện tướng - Trưởng BHL Miền Bắc",
-    desc: "Kiện tướng bơi lội quốc gia. HLV trưởng đội tuyển Bơi trường THCS Đoàn Thị Điểm, đào tạo nhiều học sinh đạt giải cao.",
-    img: "/images/team/thay-tran-trung-hieu.jpg",
-    tags: ["Kiện Tướng", "Đoàn Thị Điểm"]
-  }
-];
+
 ---
 
 <PageLayout
@@ -605,61 +570,7 @@ const coaches = [
     </div>
   </section>
 
-  <!-- ============================================
-       COACH SPOTLIGHT SECTION
-       ============================================ -->
-  <section class="section hanoi-coaches-section">
-    <div class="container">
-      <div class="section__header text-center reveal">
-        <span class="section__badge">Đội Ngũ Giáo Viên</span>
-        <h2 class="section__title">HLV Lớp Học Bơi <span class="text-gradient">Tại Hà Nội</span></h2>
-        <p class="section__desc">Đội ngũ HLV tại các lớp học bơi Hà Nội đều tốt nghiệp chuyên ngành bơi lội ĐH TDTT, chuyên môn cao và tận tâm.</p>
-      </div>
-
-      <!-- Featured Lead Coach Spotlight (Thầy Nguyễn Huy Mạnh) -->
-      <div class="featured-coach reveal">
-        <div class="featured-coach__img-wrap">
-          <img src={coaches[0].img} alt={`Huấn luyện viên ${coaches[0].name}`} class="featured-coach__img" />
-          <div class="featured-coach__badge">Sáng Lập / Giám Đốc Đào Tạo</div>
-        </div>
-        <div class="featured-coach__content">
-          <div class="featured-coach__meta">
-            {coaches[0].tags.map((tag) => (
-              <span class="featured-coach__tag">★ {tag}</span>
-            ))}
-          </div>
-          <h3 class="featured-coach__name">{coaches[0].name}</h3>
-          <p class="featured-coach__role">{coaches[0].role}</p>
-          <p class="featured-coach__desc">{coaches[0].desc}</p>
-          <div class="featured-coach__quote">
-            "Sứ mệnh của tôi là mang đến phương pháp bơi lội an toàn, khoa học và truyền cảm hứng tự tin cho mỗi học viên tại Hà Nội."
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Other Coaches Grid -->
-      <div class="hanoi-coaches-grid reveal">
-        {coaches.slice(1).map((coach) => (
-          <div class="coach-card">
-            <div class="coach-card__img-wrap">
-              <img src={coach.img} alt={`Huấn luyện viên ${coach.name}`} class="coach-card__img" />
-              <div class="coach-card__tags">
-                {coach.tags.map((tag) => (
-                  <span class="coach-tag">{tag}</span>
-                ))}
-              </div>
-            </div>
-            <div class="coach-card__content">
-              <h3 class="coach-card__name">{coach.name}</h3>
-              <span class="coach-card__role">{coach.role}</span>
-              <p class="coach-card__desc">{coach.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <CoachesSection />
 
   <!-- ============================================
        REGISTRATION SECTION with Glassmorphism Box

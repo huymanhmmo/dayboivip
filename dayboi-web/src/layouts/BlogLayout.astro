@@ -3,6 +3,7 @@ import PageLayout from './PageLayout.astro';
 import AuthorBio from '../components/AuthorBio.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 import SuccessModal from '../components/SuccessModal.astro';
+import CoachesSection from '../components/CoachesSection.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 export interface Props {
@@ -219,6 +220,8 @@ const tagsList = Array.from(tagsMap.values());
           <div class="blog-rich-text">
             <slot />
           </div>
+
+          {lang === 'vi' && <CoachesSection />}
 
           <!-- Article Tags -->
           {resolvedTags && resolvedTags.length > 0 && (

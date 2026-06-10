@@ -1,5 +1,4 @@
----
-import PageLayout from '../layouts/PageLayout.astro';
+---import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 
 const title = 'Liên Hệ & Đăng Ký Học Bơi Thử Miễn Phí Tại Swim For Life Việt Nam';
@@ -25,6 +24,7 @@ const contactSchema = {
     }
   ]
 };
+import CoachesSection from '../components/CoachesSection.astro';
 ---
 
 <PageLayout
@@ -56,7 +56,9 @@ const contactSchema = {
           <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Đăng Ký Học Thử Miễn Phí</h2>
           <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Học viên được trải nghiệm 1 buổi học thử 1 kèm 1 hoàn toàn miễn phí cùng Huấn luyện viên trước khi quyết định đăng ký.</p>
           
-          <RegistrationForm id="contact-form" isFullForm={true} flat={true} />
+            <CoachesSection />
+
+<RegistrationForm id="contact-form" isFullForm={true} flat={true} />
         </div>
 
         <!-- Info Column -->

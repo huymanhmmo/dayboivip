@@ -1,0 +1,385 @@
+---
+const coaches = [
+  {
+    name: "Thầy Nguyễn Huy Mạnh",
+    role: "Giám Đốc Đào Tạo / Sáng Lập",
+    desc: "Giám đốc Trung tâm dạy bơi chuyên nghiệp Swim For Life Việt Nam. Tổng chỉ huy chương trình Dạy Bơi Miễn Phí cho trẻ em, cư dân nhí tại Vinhomes từ năm 2018 tới nay. Mỗi năm dạy bơi cho 2.000 - 3.000 lượt học viên. Quản lý và đào tạo 100+ nhân sự bơi lội chuyên nghiệp.",
+    img: "/images/team/thay-nguyen-huy-manh.png",
+    tags: ["Giám Đốc"]
+  },
+  {
+    name: "Thầy Vũ Văn Thịnh",
+    role: "Thạc sỹ - Cố vấn Chuyên môn",
+    desc: "Trưởng bộ môn Bơi lội - Trò chơi - Đại học TDTT Hà Nội. Trọng tài bơi lội Seagames 31. Thạc sỹ - Cố vấn Chuyên môn Swim For Life.",
+    img: "/images/team/thay-vu-van-thinh.jpg",
+    tags: ["Thạc Sỹ", "Trọng Tài Seagames"]
+  },
+  {
+    name: "Cô Lê Thị Giang",
+    role: "Thạc sỹ - Cố vấn Chuyên môn",
+    desc: "Trưởng bộ môn Bơi lội - Khoa GDTC - Đại học Sư phạm Hà Nội. Trọng tài bơi lội Seagames 31. Chuyên gia bơi sinh tồn trẻ em.",
+    img: "/images/team/co-le-thi-giang.jpg",
+    tags: ["Thạc Sỹ", "Trọng Tài Seagames"]
+  },
+  {
+    name: "Thầy Bùi Văn Cán",
+    role: "Kiện tướng - Trưởng BHL Miền Nam",
+    desc: "Kiện tướng bơi lội quốc gia. HLV trưởng đội tuyển Bơi trường liên cấp Newton, liên tục giành giải cao các cấp.",
+    img: "/images/team/thay-bui-van-can.jpg",
+    tags: ["Kiện Tướng", "Newton School"]
+  },
+  {
+    name: "Thầy Trần Trung Hiếu",
+    role: "Kiện tướng - Trưởng BHL Miền Bắc",
+    desc: "Kiện tướng bơi lội quốc gia. HLV trưởng đội tuyển Bơi trường THCS Đoàn Thị Điểm, đào tạo nhiều học sinh đạt giải cao.",
+    img: "/images/team/thay-tran-trung-hieu.jpg",
+    tags: ["Kiện Tướng", "Đoàn Thị Điểm"]
+  }
+];
+---
+
+<section class="section coaches-section">
+  <div class="container">
+    <div class="section__header text-center reveal">
+      <span class="section__badge">Đội Ngũ Giáo Viên</span>
+      <h2 class="section__title">Ban Giám Đốc Đào Tạo & <span class="text-gradient">HLV Tiêu Biểu</span></h2>
+      <p class="section__desc">Đội ngũ HLV tại Swim For Life đều tốt nghiệp chuyên ngành bơi lội ĐH TDTT, chuyên môn cao, tâm lý và tận tâm.</p>
+    </div>
+
+    <!-- Featured Lead Coach Spotlight (Thầy Nguyễn Huy Mạnh) -->
+    <div class="featured-coach reveal">
+      <div class="featured-coach__img-wrap">
+        <img src={coaches[0].img} alt={`Huấn luyện viên ${coaches[0].name}`} class="featured-coach__img" />
+        <div class="featured-coach__badge">Sáng Lập / Giám Đốc Đào Tạo</div>
+      </div>
+      <div class="featured-coach__content">
+        <div class="featured-coach__meta">
+          {coaches[0].tags.map((tag) => (
+            <span class="featured-coach__tag">★ {tag}</span>
+          ))}
+        </div>
+        <h3 class="featured-coach__name">{coaches[0].name}</h3>
+        <p class="featured-coach__role">{coaches[0].role}</p>
+        <p class="featured-coach__desc">{coaches[0].desc}</p>
+        <div class="featured-coach__quote">
+          "Sứ mệnh của tôi là mang đến phương pháp bơi lội an toàn, khoa học và truyền cảm hứng tự tin cho mỗi học viên."
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Coaches Grid -->
+    <div class="coaches-grid reveal">
+      {coaches.slice(1).map((coach) => (
+        <div class="coach-card">
+          <div class="coach-card__img-wrap">
+            <img src={coach.img} alt={`Huấn luyện viên ${coach.name}`} class="coach-card__img" />
+            <div class="coach-card__tags">
+              {coach.tags.map((tag) => (
+                <span class="coach-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div class="coach-card__content">
+            <h3 class="coach-card__name">{coach.name}</h3>
+            <span class="coach-card__role">{coach.role}</span>
+            <p class="coach-card__desc">{coach.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .coaches-section {
+    padding-block: var(--space-12);
+  }
+
+  /* Featured Coach Spotlight */
+  .featured-coach {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-8);
+    background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--color-accent);
+    padding: var(--space-6);
+    box-shadow: 0 12px 30px rgba(255, 145, 0, 0.06);
+    margin-bottom: var(--space-8);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-coach::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 145, 0, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .featured-coach__img-wrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    height: 320px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .featured-coach__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+  }
+
+  .featured-coach:hover .featured-coach__img {
+    transform: scale(1.03);
+  }
+
+  .featured-coach__badge {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(255, 145, 0, 0.3);
+  }
+
+  .featured-coach__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .featured-coach__meta {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .featured-coach__tag {
+    background: rgba(255, 145, 0, 0.1);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+  }
+
+  .featured-coach__name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .featured-coach__role {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+  }
+
+  .featured-coach__desc {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    font-size: 0.95rem;
+  }
+
+  .featured-coach__quote {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: 0.95rem;
+    background: rgba(255, 145, 0, 0.03);
+    padding-block: var(--space-2);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .coach-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-light);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-smooth);
+  }
+
+  .coach-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .coach-card__img-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-bottom: 4px solid var(--color-primary);
+  }
+
+  .coach-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+  }
+
+  .coach-card:hover .coach-card__img {
+    transform: scale(1.05);
+  }
+
+  .coach-card__tags {
+    position: absolute;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .coach-tag {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .coach-card__content {
+    padding: var(--space-6);
+  }
+
+  .coach-card__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .coach-card__role {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .coach-card__desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Grid Layout and Helpers */
+  .text-center {
+    text-align: center;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover, #e0531b) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section__header {
+    margin-bottom: var(--space-10);
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .section__badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(0, 119, 182, 0.08);
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-3);
+  }
+
+  .section__title {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .section__desc {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .coaches-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-coach {
+      grid-template-columns: 240px 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .featured-coach {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: var(--space-6);
+      padding: var(--space-5);
+    }
+
+    .featured-coach__img-wrap {
+      max-width: 260px;
+      margin: 0 auto;
+      height: 280px;
+    }
+
+    .featured-coach__meta {
+      justify-content: center;
+    }
+
+    .featured-coach__quote {
+      border-left: none;
+      border-top: 3px solid var(--color-accent);
+      padding-left: 0;
+      padding-top: var(--space-2);
+      border-radius: 0;
+    }
+
+    .coaches-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-inline: auto;
+    }
+  }
+</style>

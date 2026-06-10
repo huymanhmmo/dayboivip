@@ -2,6 +2,7 @@
 import PageLayout from './PageLayout.astro';
 import YouTubeVideo from '../components/YouTubeVideo.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
+import CoachesSection from '../components/CoachesSection.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 import '../styles/technique-landing.css';
@@ -785,6 +786,8 @@ const themeStyles = (() => {
         </div>
       </div>
     </section>
+
+    {!isEn && <CoachesSection />}
 
     <!-- Registration Form Block -->
     <section class="tl-section tl-section--alt" id="dang-ky">

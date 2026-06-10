@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
+import CoachesSection from '../components/CoachesSection.astro';
 import { locations } from '../data/locations.js';
 
 export function getStaticPaths() {
@@ -183,6 +184,8 @@ const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
 
     </div>
   </section>
+
+  <CoachesSection />
 
   <!-- Register Form Container -->
   <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
