@@ -1,7 +1,7 @@
 ---
 /**
  * hoc-boi-ha-noi.astro — Trang Đăng Ký Lớp Học Bơi Hà Nội Premium
- * SEO Target: học bơi Hà Nội, dạy bơi Hà Nội, trung tâm dạy bơi Hà Nội
+ * SEO Target: học bơi Hà Nội, dạy bơi Hà Nội, lớp học bơi Hà Nội, học bơi giá rẻ Hà Nội, học bơi người lớn Hà Nội
  */
 import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
@@ -16,8 +16,8 @@ const breadcrumbs = [
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Học Bơi Hà Nội: Trung Tâm Dạy Bơi Kèm Riêng Uy Tín Cam Kết 100% Biết Bơi",
-  "description": "Lớp học bơi Hà Nội chuyên nghiệp tại Swim For Life Việt Nam. Lớp dạy học bơi kèm riêng biệt 1 kèm 1 cho trẻ em & người lớn tại các quận Hà Nội. Học thử miễn phí.",
+  "headline": "Học Bơi Hà Nội: Lớp Học Bơi Kèm Riêng Uy Tín Số 1 Cam Kết Biết Bơi",
+  "description": "Đăng ký lớp học bơi Hà Nội tại Swim For Life. Dạy học bơi kèm riêng biệt 1 kèm 1 cho trẻ em & người lớn tại các quận Hà Nội. Học thử 1 buổi miễn phí, cam kết biết bơi 100%.",
   "author": {
     "@type": "Person",
     "name": "Thầy Nguyễn Huy Mạnh",
@@ -48,7 +48,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Trung tâm dạy bơi Swim For Life Việt Nam - Chi nhánh Hà Nội",
-  "description": "Khóa học bơi chuyên nghiệp dạy kèm riêng tại khu vực Hà Nội. Cam kết biết bơi hoàn toàn.",
+  "description": "Lớp dạy học bơi kèm riêng 1 kèm 1 chất lượng cao tại Hà Nội cho trẻ em & người lớn. Cam kết biết bơi hoàn toàn.",
   "telephone": "0979121097",
   "address": {
     "@type": "PostalAddress",
@@ -57,7 +57,7 @@ const localBusinessSchema = {
   },
   "url": "https://dayboi.vip/hoc-boi-ha-noi/",
   "image": "https://dayboi.vip/images/classes/lop-hoc-boi-ha-noi.jpg",
-  "priceRange": "Liên hệ nhận báo giá"
+  "priceRange": "1500000đ - 3000000đ"
 };
 
 const faqSchema = {
@@ -66,26 +66,34 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Swim For Life dạy bơi ở những bể bơi nào tại Hà Nội?",
+      "name": "Học phí học bơi ở Hà Nội là bao nhiêu? Có lớp học bơi giá rẻ ở Hà Nội không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chúng tôi dạy tại nhiều bể bơi đối tác chất lượng cao như: Tăng Bạt Hổ (Hai Bà Trưng), Bảo Sơn (Đống Đa), Hapulico (Thanh Xuân), Bách Khoa (Hai Bà Trưng), Times City và các bể bơi thuộc hệ sinh thái Vinhomes tại Ocean Park, Smart City, Royal City."
+        "text": "Học phí dao động tùy vào hình thức học. Với lớp bơi kèm riêng 1-1, học phí từ 2.500.000đ/khóa. Nếu học nhóm nhỏ 2-3 người (học bơi giá rẻ Hà Nội), học phí chỉ từ 1.500.000đ/học viên. Đây là mức giá cực kỳ tối ưu và bạn được tặng 1 buổi học thử hoàn toàn miễn phí."
       }
     },
     {
       "@type": "Question",
-      "name": "Học bơi ở Hà Nội giá bao nhiêu?",
+      "name": "Nên chọn trung tâm dạy bơi Hà Nội nào uy tín?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Học phí dao động tùy thuộc vào hình thức học (1 kèm 1 riêng biệt hoặc nhóm nhỏ 2-3 học viên) và vé vào bể bơi. Vui lòng liên hệ Hotline 0979.121.097 hoặc nhắn tin Zalo để nhận báo giá chi tiết và xếp lịch học thử 1 buổi hoàn toàn miễn phí."
+        "text": "Swim For Life Việt Nam tự hào là một trong những trung tâm học bơi tại Hà Nội uy tín số 1. Chúng tôi có đội ngũ 50+ HLV giàu kinh nghiệm, cam kết 100% biết bơi bằng văn bản, có hợp đồng bảo hành dạy tiếp miễn phí nếu chưa bơi tốt."
       }
     },
     {
       "@type": "Question",
-      "name": "Học bơi mùa đông tại Hà Nội có được không?",
+      "name": "Tôi có thể đăng ký lớp học bơi giáo viên nữ Hà Nội không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hoàn toàn được! Swim For Life hợp tác với chuỗi bể bơi nước ấm 4 mùa cao cấp như Hapulico, Bảo Sơn, Times City giúp duy trì các lớp học bơi ấm áp ngay cả giữa mùa đông miền Bắc."
+        "text": "Hoàn toàn được! Swim For Life có cả HLV nam và HLV nữ chuyên nghiệp sẵn sàng đáp ứng yêu cầu của học viên nữ hoặc các bé nhỏ cần sự chỉ dẫn dịu dàng, kiên nhẫn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life có các lớp học bơi Hà Đông và dạy bơi ở Cầu Giấy không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, chúng tôi hoạt động rộng khắp các quận Hà Nội. HLV sẽ di chuyển tới dạy tại các bể bơi gần nhà bạn tại Hà Đông (Vinhomes Smart City, Văn Phú...), Cầu Giấy (bể bơi Dịch Vọng b, Nghĩa Tân...), Hai Bà Trưng, Đống Đa, Thanh Xuân, Long Biên..."
       }
     }
   ]
@@ -98,35 +106,35 @@ const pools = [
     name: "Bể bơi Tăng Bạt Hổ", 
     address: "30 Tăng Bạt Hổ, Hai Bà Trưng, Hà Nội", 
     type: "Trong nhà & Ngoài trời nước ấm", 
-    pros: "Bể bơi tiêu chuẩn cao cấp, không gian rộng rãi thoáng đãng, hệ thống lọc nước tuần hoàn hiện đại liên tục, cực kỳ sạch sẽ.",
+    pros: "Bể bơi tiêu chuẩn cao cấp, không gian rộng rãi thoáng đãng, hệ thống lọc nước tuần hoàn hiện đại liên tục, thích hợp cho lớp học bơi tăng bạt hổ khu vực trung tâm.",
     badge: "Bể bơi trọng điểm"
   },
   { 
     name: "Bể bơi Hapulico", 
     address: "83 Vũ Trọng Phụng, Thanh Xuân, Hà Nội", 
     type: "Bể bơi nước mặn 4 mùa trong nhà", 
-    pros: "Hệ thống nước mặn điện phân muối đỉnh cao không dùng hóa chất Clo, nước ấm quanh năm, thiết kế cực kỳ hiện đại và sang trọng.",
+    pros: "Hệ thống nước mặn điện phân muối đỉnh cao không dùng hóa chất Clo, thích hợp cho học viên tìm chỗ học bơi ở quận Thanh Xuân bốn mùa chất lượng cao.",
     badge: "Nước mặn cao cấp"
   },
   { 
     name: "Bể bơi Khách sạn Bảo Sơn", 
     address: "50 Nguyễn Chí Thanh, Đống Đa, Hà Nội", 
     type: "Trong nhà nước ấm 4 mùa", 
-    pros: "Nước ấm nhiệt độ tiêu chuẩn ổn định, thiết kế kín gió hoàn toàn, dịch vụ chuyên nghiệp, lý tưởng cho trẻ nhỏ học bơi quanh năm.",
+    pros: "Nước ấm nhiệt độ tiêu chuẩn ổn định, thiết kế kín gió hoàn toàn, dịch vụ cao cấp, là địa điểm học bơi quận Đống Đa lý tưởng quanh năm.",
     badge: "Kín gió, ấm áp"
   },
   { 
     name: "Bể bơi Đại học Bách Khoa", 
     address: "Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội", 
     type: "Ngoài trời tiêu chuẩn lớn", 
-    pros: "Kích thước tiêu chuẩn thi đấu Olympic (50m), không gian thoáng mát nhiều cây xanh, chi phí vé vào hợp lý.",
+    pros: "Kích thước tiêu chuẩn thi đấu Olympic (50m), không gian thoáng mát nhiều cây xanh, thích hợp học bơi quận Hai Bà Trưng giá bình dân.",
     badge: "Giá bình dân"
   },
   { 
     name: "Bể bơi Vinhomes Times City", 
     address: "458 Minh Khai, Hai Bà Trưng, Hà Nội", 
     type: "Nội khu cao cấp trong nhà", 
-    pros: "Chỉ dành riêng cho cư dân và học viên đăng ký qua trung tâm. Bể cực rộng, nước trong sạch, phòng tắm tráng hiện đại.",
+    pros: "Bể cực rộng, nước trong sạch, phòng tắm tráng hiện đại, chỉ dành riêng cho cư dân và học viên đăng ký qua trung tâm dạy bơi Hà Nội.",
     badge: "Cư dân & Học viên"
   }
 ];
@@ -135,21 +143,21 @@ const coaches = [
   {
     name: "Thầy Nguyễn Huy Mạnh",
     role: "Giám Đốc Đào Tạo Swim For Life",
-    desc: "Cựu vận động viên cấp cao, hơn 12 năm kinh nghiệm huấn luyện bơi lội chuyên nghiệp và cứu hộ cứu nạn. Đã trực tiếp đào tạo hơn 3000+ học viên.",
+    desc: "Cựu vận động viên cấp cao, hơn 12 năm kinh nghiệm huấn luyện bơi lội chuyên nghiệp và cứu hộ cứu nạn. Đã trực tiếp đào tạo hơn 3000+ học viên học bơi tại Hà Nội.",
     img: "/images/coaches/giam-doc-nguyen-huy-manh.jpg",
     tags: ["HLV Trưởng", "Cứu Hộ Quốc Gia"]
   },
   {
     name: "Thầy Đức Mạnh",
     role: "Huấn Luyện Viên Cao Cấp",
-    desc: "Tốt nghiệp chuyên ngành Giáo dục Thể chất ĐH Sư phạm. Chuyên gia bơi trị liệu, sửa lỗi kỹ thuật bơi sai, hướng dẫn kỹ năng bơi sinh tồn cho trẻ nhỏ.",
+    desc: "Tốt nghiệp chuyên ngành Giáo dục Thể chất ĐH Sư phạm. Chuyên gia sửa lỗi kỹ thuật bơi sải ở Hà Nội, dạy bơi sinh tồn cho trẻ nhỏ và người lớn nhát nước.",
     img: "/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg",
     tags: ["HLV Cao cấp", "Sửa lỗi kỹ thuật"]
   },
   {
     name: "Cô Thanh Hằng",
     role: "Huấn Luyện Viên Trẻ Em",
-    desc: "Nữ giáo viên giàu kinh nghiệm, cực kỳ tâm lý, kiên nhẫn. Chuyên phụ trách các bé sợ nước, các khóa bơi cơ bản giúp bé tự tin nhanh chóng.",
+    desc: "Nữ giáo viên giàu kinh nghiệm, cực kỳ tâm lý, kiên nhẫn. Đáp ứng nhu cầu đăng ký lớp học bơi giáo viên nữ Hà Nội cho các bạn nữ hoặc trẻ nhỏ.",
     img: "/images/coaches/giao-vien-vui-ve-tam-ly.jpeg",
     tags: ["HLV Nữ", "Chuyên bơi trẻ em"]
   }
@@ -157,8 +165,8 @@ const coaches = [
 ---
 
 <PageLayout
-  title={`Học Bơi Hà Nội: Khóa Học Bơi Uy Tín Nhất [${currentYear}]`}
-  description="Lớp học bơi Hà Nội tại Swim For Life Việt Nam. Lớp dạy học bơi kèm riêng biệt 1 kèm 1 cho trẻ em & người lớn tại các quận Hà Nội. Cam kết biết bơi 100%, HLV kèm riêng tận tâm."
+  title={`Học Bơi Hà Nội: Lớp Học Bơi Kèm Riêng Uy Tín Số 1 [${currentYear}]`}
+  description="Đăng ký lớp học bơi Hà Nội tại Swim For Life. Dạy học bơi kèm riêng biệt 1 kèm 1 cho trẻ em & người lớn tại các quận Hà Nội. Học thử 1 buổi miễn phí, cam kết biết bơi 100%, có giáo viên nam/nữ."
   canonical="https://dayboi.vip/hoc-boi-ha-noi/"
   image="/images/classes/lop-hoc-boi-ha-noi.jpg"
   type="article"
@@ -184,41 +192,41 @@ const coaches = [
       <div class="hanoi-hero__text reveal">
         <div class="hanoi-hero__badge">
           <span class="hanoi-hero__badge-dot"></span>
-          Trung Tâm Dạy Học Bơi Uy Tín Số 1 Hà Nội
+          Trung Tâm Dạy Bơi Hà Nội Uy Tín Số 1
         </div>
         <h1 class="hanoi-hero__title">
           Dạy Học Bơi <br/>
-          <span class="text-gradient">Hà Nội</span> — Kèm Riêng<br/>
-          <span class="text-accent">Cam Kết Biết Bơi 100%</span>
+          <span class="text-gradient">Hà Nội</span> — Lớp Học Bơi<br/>
+          <span class="text-accent">Kèm Riêng 1 Kèm 1</span>
         </h1>
         <p class="hanoi-hero__desc">
-          Swim For Life Việt Nam mang đến các khóa học bơi chất lượng vượt trội tại Thủ đô Hà Nội. 
-          HLV kèm riêng tận tâm dưới nước, thiết lập giáo trình riêng cho từng học viên, giúp bạn tự tin bơi lội an toàn sau 10-12 buổi.
+          Swim For Life Việt Nam mang đến các khóa học bơi Hà Nội chất lượng vượt trội. 
+          Lớp dạy bơi tại Hà Nội kèm riêng tận tâm dưới nước, thiết lập giáo trình riêng cho từng học viên, giúp bạn tự tin bơi lội an toàn chỉ sau 10-12 buổi.
         </p>
         
         <div class="hanoi-hero__value-props">
           <div class="v-prop">
             <span class="v-prop__icon">🏆</span>
             <div class="v-prop__content">
-              <strong>Học thử 1 buổi miễn phí</strong>
-              <span>Trải nghiệm dịch vụ & đánh giá mức độ tự tin trước khi đăng ký</span>
+              <strong>Học thử 1 buổi hoàn toàn miễn phí</strong>
+              <span>Trải nghiệm trực tiếp dịch vụ trước khi đưa ra quyết định đăng ký học bơi tại Hà Nội</span>
             </div>
           </div>
           <div class="v-prop">
             <span class="v-prop__icon">🛡️</span>
             <div class="v-prop__content">
-              <strong>Cam kết 100% biết bơi thành thạo</strong>
-              <span>Dạy tiếp miễn phí nếu học viên chưa biết bơi sau khóa học</span>
+              <strong>Bảo hành & Cam kết biết bơi 100%</strong>
+              <span>Dạy tiếp hoàn toàn miễn phí nếu học viên đi học đầy đủ mà chưa biết bơi thành thạo</span>
             </div>
           </div>
         </div>
 
         <div class="hanoi-hero__actions">
           <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
-            💬 Chat Nhận Lịch Học Thử
+            💬 Đăng Ký Học Thử Miễn Phí
           </a>
           <a href="#pools-section" class="btn btn--hero-outline btn--lg">
-            🏊 Xem Bể Bơi Gần Bạn
+            🏊 Xem Địa Điểm Bể Bơi
           </a>
         </div>
       </div>
@@ -227,7 +235,7 @@ const coaches = [
         <div class="hanoi-hero__image-wrapper">
           <img 
             src="/images/classes/lop-hoc-boi-ha-noi.jpg" 
-            alt="Lớp dạy bơi kèm riêng chuyên nghiệp tại Hà Nội - Swim For Life Việt Nam" 
+            alt="Lớp dạy học bơi kèm riêng chuyên nghiệp tại Hà Nội - Swim For Life Việt Nam" 
             class="hanoi-hero__img"
             loading="eager"
           />
@@ -241,8 +249,8 @@ const coaches = [
           <div class="hanoi-hero__glass-card hanoi-hero__glass-card--bottom">
             <span class="glass-card__icon">💯</span>
             <div>
-              <strong>Cam Kết 100%</strong>
-              <span>Học viên biết bơi và vững kỹ năng</span>
+              <strong>Cam Kết Đầu Ra</strong>
+              <span>Biết bơi vững kỹ năng sinh tồn</span>
             </div>
           </div>
         </div>
@@ -251,10 +259,10 @@ const coaches = [
   </section>
 
   <!-- ============================================
-       STATISTICS SECTION (FULL WIDTH)
+       STATISTICS SECTION (STRETCHED TO SAME ALIGNMENT)
        ============================================ -->
   <section class="section hanoi-stats-section">
-    <div class="container container--wide">
+    <div class="container">
       <div class="hanoi-stats-grid reveal">
         <div class="stat-item">
           <span class="stat-item__num">99.8%</span>
@@ -262,7 +270,7 @@ const coaches = [
         </div>
         <div class="stat-item">
           <span class="stat-item__num">50+</span>
-          <span class="stat-item__label">Bể bơi chất lượng cao tại Hà Nội</span>
+          <span class="stat-item__label">Chỗ học bơi ở Hà Nội khang trang</span>
         </div>
         <div class="stat-item">
           <span class="stat-item__num">12+</span>
@@ -277,33 +285,33 @@ const coaches = [
   </section>
 
   <!-- ============================================
-       INTRO SECTION with Large Image (Full Width Alt)
+       INTRO SECTION (STRETCHED TO SAME ALIGNMENT)
        ============================================ -->
   <section class="section section--alt hanoi-intro-section">
     <div class="container">
       <div class="hanoi-intro-grid reveal">
         <div class="hanoi-intro-text">
           <span class="section__badge">Về Lớp Học</span>
-          <h2 class="section__title">Giải Pháp Học Bơi <span class="text-gradient">An Toàn & Hiệu Quả</span> Tại Thủ Đô</h2>
+          <h2 class="section__title">Dạy Bơi Hà Nội <span class="text-gradient">An Toàn & Hiệu Quả</span></h2>
           <p class="about-text">
-            Với mật độ dân cư đông đúc và nhiều sông hồ, kỹ năng bơi lội tại Hà Nội không chỉ là môn thể thao rèn luyện sức khỏe mà còn là <strong>kỹ năng sinh tồn bắt buộc</strong> cho trẻ em và người lớn. 
+            Với mật độ dân cư đông đúc và nhiều sông hồ, nhu cầu đăng ký <strong>lớp học bơi ở Hà Nội</strong> để rèn luyện sức khỏe, tăng trưởng chiều cao và trang bị kỹ năng sinh tồn là cực kỳ cấp thiết cho cả trẻ nhỏ và người lớn.
           </p>
           <p class="about-text">
-            <strong>Swim For Life Việt Nam</strong> cung cấp hình thức dạy bơi kèm riêng biệt (1 HLV kèm tối đa 2 học viên), giúp giáo viên bám sát học viên 100% thời gian dưới nước, khắc phục chứng sợ nước và sửa lỗi động tác chính xác từng milimet. Học viên được chủ động chọn bể bơi gần nhà và sắp xếp lịch học linh hoạt theo thời gian biểu của bản thân.
+            Tại các <strong>trung tâm dạy bơi Hà Nội</strong>, Swim For Life tự hào đi đầu trong việc áp dụng mô hình kèm riêng biệt (1 HLV kèm tối đa 2 học viên), giúp giáo viên bám sát học viên 100% thời gian dưới nước, khắc phục chứng sợ nước và sửa lỗi động tác chính xác. Học viên được chủ động chọn địa điểm học bơi ở Hà Nội gần nhà mình nhất.
           </p>
           
           <div class="hanoi-intro-features">
             <div class="intro-feat">
               <span class="intro-feat__icon">✅</span>
-              <span>HLV chuyên nghiệp tốt nghiệp ĐH Thể dục Thể thao, có chứng chỉ cứu hộ quốc gia.</span>
+              <span>Đội ngũ giáo viên dạy bơi tại Hà Nội chuyên nghiệp, tốt nghiệp chuyên ngành bơi lội ĐH TDTT.</span>
             </div>
             <div class="intro-feat">
               <span class="intro-feat__icon">✅</span>
-              <span>Thời gian học linh hoạt, đăng ký học từ 6h00 đến 21h00 hàng ngày.</span>
+              <span>Học viên chủ động sắp xếp thời gian biểu học linh hoạt từ 6h00 đến 21h00 hàng ngày.</span>
             </div>
             <div class="intro-feat">
               <span class="intro-feat__icon">✅</span>
-              <span>Được chọn giáo viên Nam hoặc Nữ tùy theo nhu cầu học viên.</span>
+              <span>Đầy đủ giáo viên Nam và Nữ, đáp ứng nhu cầu học bơi giáo viên nữ Hà Nội kín đáo.</span>
             </div>
           </div>
         </div>
@@ -321,14 +329,14 @@ const coaches = [
   </section>
 
   <!-- ============================================
-       PARTNER POOLS GRID — Fully Extended Width
+       PARTNER POOLS GRID — Fully Extended Width Stretched
        ============================================ -->
   <section class="section hanoi-pools-section" id="pools-section">
-    <div class="container container--wide">
+    <div class="container">
       <div class="section__header text-center reveal">
-        <span class="section__badge">Hệ Thống Bể Bơi</span>
-        <h2 class="section__title">Danh Sách Bể Bơi Đối Tác <span class="text-gradient">Khắp Hà Nội</span></h2>
-        <p class="section__desc">Chúng tôi hợp tác với hơn 50 bể bơi lớn, khang trang và sạch sẽ trên toàn thành phố để mang lại sự tiện lợi tối đa cho bạn.</p>
+        <span class="section__badge">Địa Điểm Thực Hành</span>
+        <h2 class="section__title">Địa Điểm Học Bơi Ở Hà Nội — <span class="text-gradient">Bể Thực Hành</span></h2>
+        <p class="section__desc">Chúng tôi hợp tác với hơn 50 bể bơi lớn, khang trang và sạch sẽ trên toàn thành phố để mang lại sự tiện lợi tối đa cho bạn khi đăng ký dạy bơi ở Hà Nội.</p>
       </div>
 
       <div class="hanoi-pools-grid reveal">
@@ -349,7 +357,7 @@ const coaches = [
             </div>
             <div class="pool-card__footer">
               <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="pool-card__btn">
-                Đăng ký học tại đây →
+                Đăng ký lớp học bơi tại đây →
               </a>
             </div>
           </div>
@@ -360,7 +368,7 @@ const coaches = [
           <div class="pool-card__request-content">
             <span class="request-icon">❓</span>
             <h3 class="pool-card__title">Bạn muốn học bể bơi khác?</h3>
-            <p class="pool-card__request-desc">Nếu bạn đã có bể bơi ở chung cư hoặc muốn học tại bể bơi gần nhà mình, HLV Swim For Life sẽ di chuyển tới tận nơi để giảng dạy.</p>
+            <p class="pool-card__request-desc">Chúng tôi nhận dạy bơi ở Hà Nội tại nhà hoặc các quận huyện khác như học bơi Hà Đông, học bơi Cầu Giấy, học bơi quận Long Biên, Tây Hồ, Thanh Xuân...</p>
             <a href="tel:0979121097" class="btn btn--accent btn--sm">
               📞 Gọi 0979.121.097
             </a>
@@ -374,11 +382,11 @@ const coaches = [
        COURSE PROGRAMS GRID
        ============================================ -->
   <section class="section section--alt hanoi-programs-section">
-    <div class="container container--wide">
+    <div class="container">
       <div class="section__header text-center reveal">
         <span class="section__badge">Chương Trình Đào Tạo</span>
-        <h2 class="section__title">Các Khóa Học Bơi <span class="text-gradient">Phổ Biến Tại Hà Nội</span></h2>
-        <p class="section__desc">Lựa chọn chương trình học phù hợp với nhu cầu và lứa tuổi của bạn. Cam kết đầu ra biết bơi thành thạo.</p>
+        <h2 class="section__title">Khóa Học Bơi Hà Nội <span class="text-gradient">Cho Mọi Lứa Tuổi</span></h2>
+        <p class="section__desc">Lựa chọn chương trình học phù hợp với nhu cầu và lứa tuổi của bạn. Cam kết đầu ra lớp học bơi Hà Nội chất lượng nhất.</p>
       </div>
 
       <div class="hanoi-programs-grid reveal">
@@ -389,8 +397,8 @@ const coaches = [
             <span class="program-card__tag">Dành cho trẻ em</span>
           </div>
           <div class="program-card__body">
-            <h3 class="program-card__title">Khóa Học Bơi Trẻ Em</h3>
-            <p class="program-card__desc">Giáo trình chuyên biệt thiết kế riêng cho trẻ em từ 5-15 tuổi. Tập trung rèn luyện phản xạ an toàn dưới nước, học kỹ thuật bơi Ếch, bơi Sải và kỹ năng tự cứu mình khi gặp sự cố đuối nước.</p>
+            <h3 class="program-card__title">Học Bơi Trẻ Em Hà Nội</h3>
+            <p class="program-card__desc">Lớp học bơi cho bé ở Hà Nội từ 5-15 tuổi. Giáo trình chuẩn giúp bé tự tin phản xạ, học bơi ếch, bơi sải cơ bản và các kỹ năng phòng chống đuối nước tự cứu mình.</p>
             <ul class="program-card__list">
               <li>⏱️ Số buổi: 10 - 12 buổi (60 phút/buổi)</li>
               <li>👨 HLV kèm sát sao dưới nước</li>
@@ -409,8 +417,8 @@ const coaches = [
             <span class="program-card__tag program-card__tag--orange">Dành cho người lớn</span>
           </div>
           <div class="program-card__body">
-            <h3 class="program-card__title">Khóa Học Bơi Người Lớn</h3>
-            <p class="program-card__desc">Khóa học dành cho người lớn (từ 16 tuổi trở lên). Hỗ trợ tối đa cho học viên cực kỳ sợ nước, nhát nước lâu năm hoặc có vấn đề về xương khớp cần bơi liệu pháp phục hồi sức khỏe.</p>
+            <h3 class="program-card__title">Học Bơi Người Lớn Hà Nội</h3>
+            <p class="program-card__desc">Lớp học bơi cho người lớn ở Hà Nội (từ 16 tuổi trở lên). Giáo án cá nhân hóa hỗ trợ học viên nhát nước lâu năm, học kỹ thuật bơi sải ở Hà Nội hoặc bơi ếch đường dài.</p>
             <ul class="program-card__list">
               <li>⏱️ Lịch học linh hoạt do học viên sắp xếp</li>
               <li>🏊 Học bơi Ếch cơ bản hoặc bơi Sải nâng cao</li>
@@ -430,7 +438,7 @@ const coaches = [
           </div>
           <div class="program-card__body">
             <h3 class="program-card__title">Dạy Bơi Kèm Riêng 1 Kèm 1</h3>
-            <p class="program-card__desc">Mô hình dạy bơi an toàn và tiến bộ nhanh nhất. Giáo viên không rời mắt khỏi học viên, chỉ dẫn tỉ mỉ từng hơi thở, nhịp đập chân, giúp nâng cao hiệu quả học tập lên gấp 3 lần bình thường.</p>
+            <p class="program-card__desc">Khóa học bơi tại Hà Nội kèm riêng an toàn nhất. Có lớp học bơi giáo viên nữ Hà Nội cho các học viên nữ hoặc trẻ nhỏ thích sự nhẹ nhàng, kiên nhẫn.</p>
             <ul class="program-card__list">
               <li>🎯 1 Giáo viên kèm 1 Học viên duy nhất</li>
               <li>🛡️ An toàn tuyệt đối 100%</li>
@@ -446,14 +454,87 @@ const coaches = [
   </section>
 
   <!-- ============================================
+       PRICING SECTION — targets học phí học bơi ở hà nội, giá học bơi ở hà nội, học bơi giá rẻ hà nội
+       ============================================ -->
+  <section class="section hanoi-pricing-section" id="pricing-section">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Học Phí Lớp Học Bơi</span>
+        <h2 class="section__title">Bảng Giá Học Phí <span class="text-gradient">Lớp Học Bơi Hà Nội</span></h2>
+        <p class="section__desc">Swim For Life cung cấp các khóa học bơi chất lượng cao với mức học phí hợp lý, cam kết đầu ra lớp học bơi Hà Nội tốt nhất.</p>
+      </div>
+
+      <div class="hanoi-pricing-grid reveal">
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Lớp Học Bơi Kèm Riêng 1-1</h3>
+            <div class="price">Từ 2.500.000đ <small>/ khóa</small></div>
+            <p>Dành cho trẻ em (từ 5 tuổi) và người lớn muốn biết bơi nhanh và an toàn nhất với giáo án kèm riêng biệt.</p>
+          </div>
+          <ul class="pricing-card__features">
+            <li>🎯 1 Giáo viên kèm 1 Học viên dưới nước</li>
+            <li>⏱️ Thời lượng: 10 - 12 buổi học (60 phút/buổi)</li>
+            <li>🕒 Lịch học chủ động, linh động theo mong muốn</li>
+            <li>👩 Tùy chọn HLV Nam hoặc HLV Nữ</li>
+            <li>🛡️ Cam kết 100% biết bơi thành thạo</li>
+          </ul>
+          <div class="pricing-card__footer">
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Nhận Báo Giá Chi Tiết</a>
+          </div>
+        </div>
+
+        <div class="pricing-card pricing-card--featured">
+          <span class="badge-popular">Đặc Biệt</span>
+          <div class="pricing-card__header">
+            <h3>Trải Nghiệm Bơi Thử 1-1</h3>
+            <div class="price">0đ <small>/ 1 buổi</small></div>
+            <p>Buổi học thử hoàn toàn miễn phí giúp học viên làm quen nước và đánh giá phương pháp của trung tâm.</p>
+          </div>
+          <ul class="pricing-card__features">
+            <li>🏊 Trực tiếp xuống nước cùng HLV chuyên nghiệp</li>
+            <li>🛡️ Hướng dẫn kỹ năng thở nước, đứng nước cơ bản</li>
+            <li>🎯 HLV đánh giá thể lực & mức độ tự tin trước khi bắt đầu</li>
+            <li>❌ Hoàn toàn miễn phí, không cam kết phải đăng ký học tiếp</li>
+          </ul>
+          <div class="pricing-card__footer">
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--full btn--pulse">Đăng Ký Học Thử Ngay</a>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Lớp Học Bơi Nhóm Nhỏ (2-3 Học Viên)</h3>
+            <div class="price">Từ 1.500.000đ <small>/ khóa</small></div>
+            <p>Giải pháp học bơi giá rẻ ở Hà Nội cho nhóm bạn bè hoặc các thành viên trong gia đình học cùng nhau.</p>
+          </div>
+          <ul class="pricing-card__features">
+            <li>👥 1 Giáo viên kèm nhóm 2 - 3 học viên</li>
+            <li>⏱️ Thời lượng: 10 - 12 buổi học</li>
+            <li>🕒 Lịch học thống nhất theo nhóm</li>
+            <li>🛡️ Vẫn đảm bảo chất lượng dạy sát sao</li>
+            <li>💯 Cam kết biết bơi sau khóa học</li>
+          </ul>
+          <div class="pricing-card__footer">
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Nhận Báo Giá Nhóm</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pricing-note reveal">
+        <p>⚠️ <strong>Lưu ý về chi phí học bơi ở Hà Nội:</strong> Học phí trên đã bao gồm vé vào cửa của giáo viên. Học viên tự mua vé vào cửa bể bơi cho mình (vé lượt hoặc vé tháng tại địa điểm bể bơi đã chọn).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        COACH SPOTLIGHT SECTION
        ============================================ -->
   <section class="section hanoi-coaches-section">
-    <div class="container container--wide">
+    <div class="container">
       <div class="section__header text-center reveal">
         <span class="section__badge">Đội Ngũ Giáo Viên</span>
-        <h2 class="section__title">Đội Ngũ HLV Học Bơi <span class="text-gradient">Tại Hà Nội</span></h2>
-        <p class="section__desc">Giáo viên tại Swim For Life đều có bằng cấp chuyên môn cao, được đào tạo bài bản về sư phạm bơi lội và cực kỳ tâm lý với trẻ nhỏ.</p>
+        <h2 class="section__title">HLV Lớp Học Bơi <span class="text-gradient">Tại Hà Nội</span></h2>
+        <p class="section__desc">Đội ngũ HLV tại các lớp học bơi Hà Nội đều tốt nghiệp chuyên ngành bơi lội ĐH TDTT, chuyên môn cao và tận tâm.</p>
       </div>
 
       <div class="hanoi-coaches-grid reveal">
@@ -482,11 +563,11 @@ const coaches = [
        REGISTRATION SECTION with Glassmorphism Box
        ============================================ -->
   <section class="section section--alt hanoi-register-section" id="register-section">
-    <div class="container container--boxed">
+    <div class="container">
       <div class="hanoi-register-box reveal">
         <div class="hanoi-register-content">
           <span class="hanoi-register-badge">Đăng Ký Học Thử</span>
-          <h2 class="hanoi-register-title">Bắt Đầu Hành Trình Học Bơi <span class="text-gradient">Hôm Nay</span></h2>
+          <h2 class="hanoi-register-title">Đăng Ký Khóa Học Bơi <span class="text-gradient">Tại Hà Nội [2026]</span></h2>
           <p class="hanoi-register-desc">Để lại thông tin bên cạnh để nhận cuộc gọi tư vấn hoàn toàn miễn phí từ ban quản lý lớp học. Lớp học thử 1 buổi sẽ giúp bạn trải nghiệm trước khi có quyết định chính thức.</p>
           
           <div class="hanoi-steps">
@@ -528,23 +609,23 @@ const coaches = [
 
       <div class="hanoi-faq-list reveal">
         <div class="faq-card">
-          <h3 class="faq-card__q">❓ Tôi chưa biết gì về bơi lội, cực kỳ sợ nước thì học trong bao lâu biết bơi?</h3>
-          <p class="faq-card__a">Thông thường, đối với học viên nhát nước hoặc sợ nước sâu, HLV Swim For Life sẽ áp dụng giáo trình vượt qua nỗi sợ nước trước trong 1-2 buổi đầu. Trung bình học viên sẽ tự tin bơi được Ếch cơ bản sau 8-10 buổi. Trung tâm luôn cam kết dạy tiếp miễn phí cho tới khi bạn biết bơi hoàn toàn.</p>
+          <h3 class="faq-card__q">❓ Học phí học bơi ở Hà Nội là bao nhiêu? Có lớp học bơi giá rẻ ở Hà Nội không?</h3>
+          <p class="faq-card__a">Học phí dao động tùy vào hình thức học. Với lớp bơi kèm riêng 1-1, học phí từ 2.500.000đ/khóa. Nếu học nhóm nhỏ 2-3 người (học bơi giá rẻ Hà Nội), học phí chỉ từ 1.500.000đ/học viên. Đây là mức giá cực kỳ tối ưu và bạn được tặng 1 buổi học thử hoàn toàn miễn phí.</p>
         </div>
 
         <div class="faq-card">
-          <h3 class="faq-card__q">❓ Trung tâm dạy bơi Hà Nội ở những quận nào?</h3>
-          <p class="faq-card__a">Swim For Life có đội ngũ HLV đông đảo phủ khắp 12 quận nội thành Hà Nội (Hai Bà Trưng, Đống Đa, Thanh Xuân, Cầu Giấy, Tây Hồ, Ba Đình, Hoàn Kiếm, Hoàng Mai, Long Biên, Hà Đông, Nam Từ Liêm, Bắc Từ Liêm). Bạn đăng ký ở quận nào, chúng tôi sẽ sắp xếp HLV và bể bơi thuận tiện nhất tại quận đó.</p>
+          <h3 class="faq-card__q">❓ Nên chọn trung tâm dạy bơi Hà Nội nào uy tín?</h3>
+          <p class="faq-card__a">Swim For Life Việt Nam tự hào là một trong những trung tâm học bơi tại Hà Nội uy tín số 1. Chúng tôi có đội ngũ 50+ HLV giàu kinh nghiệm, cam kết 100% biết bơi bằng văn bản, có hợp đồng bảo hành dạy tiếp miễn phí nếu chưa bơi tốt.</p>
         </div>
 
         <div class="faq-card">
-          <h3 class="faq-card__q">❓ Học phí học bơi tại Hà Nội đã bao gồm vé vào bể bơi chưa?</h3>
-          <p class="faq-card__a">Học phí của trung tâm chỉ bao gồm công giảng dạy của huấn luyện viên và cam kết đầu ra (đã bao gồm vé vào cửa của HLV). Học viên sẽ tự mua vé vào bể bơi cho mình theo bảng giá của bể bơi đã chọn. Bạn có thể tự mua vé lượt hoặc mua vé tháng để tiết kiệm chi phí.</p>
+          <h3 class="faq-card__q">❓ Tôi có thể đăng ký lớp học bơi giáo viên nữ Hà Nội không?</h3>
+          <p class="faq-card__a">Hoàn toàn được! Swim For Life có cả HLV nam và HLV nữ chuyên nghiệp sẵn sàng đáp ứng yêu cầu của học viên nữ hoặc các bé nhỏ cần sự chỉ dẫn dịu dàng, kiên nhẫn.</p>
         </div>
 
         <div class="faq-card">
-          <h3 class="faq-card__q">❓ Trẻ em bao nhiêu tuổi có thể bắt đầu học bơi kèm riêng tại Hà Nội?</h3>
-          <p class="faq-card__a">Độ tuổi lý tưởng nhất để bé bắt đầu học kỹ thuật bơi kèm riêng biệt 1 kèm 1 là từ 5 tuổi trở lên. Ở độ tuổi này, các bé đã có thể tập trung nghe và thực hiện theo hướng dẫn của thầy cô, giúp quá trình học đạt hiệu quả cao và an toàn nhất.</p>
+          <h3 class="faq-card__q">❓ Swim For Life có các lớp học bơi Hà Đông và dạy bơi ở Cầu Giấy không?</h3>
+          <p class="faq-card__a">Có, chúng tôi hoạt động rộng khắp các quận Hà Nội. HLV sẽ di chuyển tới dạy tại các bể bơi gần nhà bạn tại Hà Đông (Vinhomes Smart City, Văn Phú...), Cầu Giấy (bể bơi Dịch Vọng b, Nghĩa Tân...), Hai Bà Trưng, Đống Đa, Thanh Xuân, Long Biên...</p>
         </div>
       </div>
     </div>
@@ -1124,6 +1205,140 @@ const coaches = [
   }
 
   /* ============================================
+     PRICING SECTION
+     ============================================ */
+  .hanoi-pricing-section {
+    background: var(--color-bg);
+  }
+
+  .hanoi-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+    align-items: stretch;
+  }
+
+  .pricing-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    padding: var(--space-8) var(--space-6) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .pricing-card--featured {
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--shadow-lg), 0 0 25px rgba(255, 107, 53, 0.1);
+  }
+
+  .pricing-card--featured:hover {
+    box-shadow: var(--shadow-xl), 0 0 30px rgba(255, 107, 53, 0.15);
+    border-color: var(--color-accent-dark);
+  }
+
+  .badge-popular {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-card__header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+  }
+
+  .pricing-card__header .price {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing-card--featured .pricing-card__header .price {
+    color: var(--color-accent);
+  }
+
+  .pricing-card__header .price small {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .pricing-card__header p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .pricing-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    border-top: 1px solid var(--color-border-light);
+    padding-top: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .pricing-card__features li {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .pricing-card__features li::before {
+    content: '✓';
+    color: var(--color-success);
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+
+  .pricing-card--featured .pricing-card__features li::before {
+    color: var(--color-accent);
+  }
+
+  .pricing-note {
+    margin-top: var(--space-8);
+    background: var(--color-bg-alt);
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-primary);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  .pricing-note p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ============================================
      COACHES SECTION
      ============================================ */
   .hanoi-coaches-grid {
@@ -1403,6 +1618,10 @@ const coaches = [
       grid-template-columns: repeat(2, 1fr);
     }
 
+    .hanoi-pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .hanoi-coaches-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -1427,6 +1646,10 @@ const coaches = [
     }
 
     .hanoi-programs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hanoi-pricing-grid {
       grid-template-columns: 1fr;
     }
 
