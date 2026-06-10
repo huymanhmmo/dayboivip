@@ -11,18 +11,101 @@ const { lang = 'vi', currentPath = '/' } = Astro.props;
 
 const navItems = lang === 'vi' ? [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
-  { label: 'Khóa học', href: '/khoa-hoc-boi/' },
-  { label: 'Hướng dẫn', href: '/huong-dan-hoc-boi/' },
+  { 
+    label: 'Khóa học', 
+    href: '/khoa-hoc-boi/',
+    children: [
+      { label: 'Tất cả khóa học', href: '/khoa-hoc-boi/' },
+      { label: 'Lớp 1 Kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
+      { label: 'Lớp Nhóm Nhỏ', href: '/khoa-hoc-boi/nhom/' },
+      { label: 'Học Bơi Trẻ Em', href: '/khoa-hoc-boi/tre-em/' },
+      { label: 'Học Bơi Người Lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
+      { label: 'Cho Người Sợ Nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/' },
+      { label: 'Cho Người Cao Tuổi', href: '/khoa-hoc-boi/nguoi-cao-tuoi/' },
+      { label: 'Dạy Bơi Doanh Nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' }
+    ]
+  },
+  { 
+    label: 'Kỹ thuật bơi', 
+    href: '/ky-thuat-boi/',
+    children: [
+      { label: 'Tất cả kỹ thuật', href: '/ky-thuat-boi/' },
+      { label: 'Kỹ thuật bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/' },
+      { label: 'Kỹ thuật bơi sải', href: '/ky-thuat-boi/hoc-boi-sai/' },
+      { label: 'Kỹ thuật bơi ngửa', href: '/ky-thuat-boi/hoc-boi-ngua/' },
+      { label: 'Kỹ thuật bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/' },
+      { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
+    ]
+  },
+  { 
+    label: 'Địa điểm học', 
+    href: '/hoc-boi-o-dau/',
+    children: [
+      { label: 'Tất cả địa điểm', href: '/hoc-boi-o-dau/' },
+      { label: 'Học bơi Hà Nội', href: '/hoc-boi-ha-noi/' },
+      { label: 'Học bơi TP.HCM', href: '/hoc-boi-tphcm/' },
+      { label: 'Học bơi Đà Nẵng', href: '/hoc-boi-da-nang/' },
+      { label: 'Học bơi Hải Phòng', href: '/hoc-boi-hai-phong/' },
+      { label: 'Học bơi Cần Thơ', href: '/hoc-boi-can-tho/' },
+      { label: 'Bể bơi Tăng Bạt Hổ', href: '/hoc-boi-tang-bat-ho/' }
+    ]
+  },
+  { 
+    label: 'Về chúng tôi', 
+    href: '/gioi-thieu/',
+    children: [
+      { label: 'Giới thiệu trung tâm', href: '/gioi-thieu/' },
+      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' },
+      { label: 'Bảng giá học phí', href: '/bang-gia/' }
+    ]
+  },
   { label: 'Blog', href: '/blog/' },
-  { label: 'Liên hệ', href: '/lien-he' },
+  { label: 'Liên hệ', href: '/lien-he' }
 ] : [
   { label: 'Home', href: '/en/' },
-  { label: 'Techniques', href: '/en/swimming-techniques/' },
-  { label: 'Courses', href: '/en/courses/' },
-  { label: 'Guides', href: '/en/guides/' },
+  { 
+    label: 'Techniques', 
+    href: '/en/swimming-techniques/',
+    children: [
+      { label: 'All Techniques', href: '/en/swimming-techniques/' },
+      { label: 'Breaststroke', href: '/en/swimming-techniques/breaststroke/' },
+      { label: 'Front Crawl', href: '/en/swimming-techniques/front-crawl/' },
+      { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/' },
+      { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' },
+      { label: 'Treading Water', href: '/en/swimming-techniques/treading-water/' }
+    ]
+  },
+  { 
+    label: 'Courses', 
+    href: '/en/courses/',
+    children: [
+      { label: 'All Courses', href: '/en/courses/' },
+      { label: 'Kids Swimming', href: '/en/courses/kids/' },
+      { label: 'Adults Swimming', href: '/en/courses/adults/' },
+      { label: 'Intensive Courses', href: '/en/courses/intensive/' }
+    ]
+  },
+  { 
+    label: 'Guides', 
+    href: '/en/guides/',
+    children: [
+      { label: 'All Guides', href: '/en/guides/' },
+      { label: 'How to Swim', href: '/en/guides/how-to-swim/' },
+      { label: 'Self-taught Swimming', href: '/en/guides/self-taught-swimming/' },
+      { label: 'Survival Swimming', href: '/en/guides/survival-swimming/' }
+    ]
+  },
+  { 
+    label: 'About', 
+    href: '/en/about/',
+    children: [
+      { label: 'About Us', href: '/en/about/' },
+      { label: 'Coaches', href: '/en/coaches/' },
+      { label: 'Pricing', href: '/en/pricing/' }
+    ]
+  },
   { label: 'Blog', href: '/en/blog/' },
-  { label: 'Contact', href: '/en/contact' },
+  { label: 'Contact', href: '/en/contact' }
 ];
 
 const ctaLabel = lang === 'vi' ? 'Đăng Ký Học Thử' : 'Free Trial';
@@ -49,13 +132,28 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
     <nav class="header__nav hide-mobile" aria-label="Main navigation">
       <ul class="nav-list">
         {navItems.map((item) => (
-          <li>
+          <li class={item.children ? 'nav-item has-dropdown' : 'nav-item'}>
             <a
               href={item.href}
-              class:list={['nav-link', { 'nav-link--active': currentPath === item.href }]}
+              class:list={['nav-link', { 'nav-link--active': currentPath === item.href || (item.children && item.children.some(child => currentPath === child.href)) }]}
             >
               {item.label}
+              {item.children && <span class="dropdown-caret">▾</span>}
             </a>
+            {item.children && (
+              <ul class="dropdown-menu">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.href}
+                      class:list={['dropdown-link', { 'dropdown-link--active': currentPath === child.href }]}
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
@@ -96,7 +194,25 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
       <ul class="mobile-menu__list">
         {navItems.map((item) => (
           <li>
-            <a href={item.href} class="mobile-menu__link">{item.label}</a>
+            {item.children ? (
+              <details class="mobile-menu__details">
+                <summary class="mobile-menu__summary">
+                  {item.label}
+                  <span class="summary-caret">▾</span>
+                </summary>
+                <ul class="mobile-menu__submenu">
+                  {item.children.map((child) => (
+                    <li>
+                      <a href={child.href} class="mobile-menu__sublink">
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <a href={item.href} class="mobile-menu__link">{item.label}</a>
+            )}
           </li>
         ))}
         <li class="mobile-menu__cta">
@@ -150,20 +266,32 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
     }
   }
 
-  /* Navigation */
+  /* Navigation & Dropdown styling */
   .nav-list {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    position: relative;
+    list-style: none;
   }
 
   .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
     font-weight: 500;
     font-size: 0.95rem;
     color: var(--color-text-secondary);
     transition: all var(--transition-fast);
+    text-decoration: none;
   }
 
   .nav-link:hover {
@@ -175,6 +303,58 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
     color: var(--color-primary);
     background: var(--color-primary-50);
     font-weight: 600;
+  }
+
+  .dropdown-caret {
+    font-size: 0.75rem;
+    transition: transform var(--transition-fast);
+    opacity: 0.7;
+  }
+
+  .nav-item:hover .dropdown-caret {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid rgba(193, 199, 209, 0.15);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-2) 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-fast);
+    z-index: 100;
+  }
+
+  .nav-item:hover .dropdown-menu,
+  .nav-item:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(4px);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: var(--space-2.5) var(--space-5);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+
+  .dropdown-link:hover,
+  .dropdown-link--active {
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+    font-weight: 500;
   }
 
   /* Language Switcher */
@@ -255,6 +435,8 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-smooth);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
   .mobile-menu.is-open {
@@ -267,6 +449,9 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .mobile-menu__link {
@@ -276,9 +461,71 @@ const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
     font-weight: 500;
     color: var(--color-text);
     transition: all var(--transition-fast);
+    text-decoration: none;
   }
 
   .mobile-menu__link:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+  }
+
+  /* Mobile menu details/summary accordion */
+  .mobile-menu__details {
+    width: 100%;
+  }
+
+  .mobile-menu__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    font-weight: 500;
+    color: var(--color-text);
+    list-style: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+  }
+
+  .mobile-menu__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu__summary:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+  }
+
+  .summary-caret {
+    font-size: 0.8rem;
+    transition: transform var(--transition-fast);
+  }
+
+  .mobile-menu__details[open] .summary-caret {
+    transform: rotate(180deg);
+  }
+
+  .mobile-menu__submenu {
+    list-style: none;
+    padding-left: var(--space-6);
+    margin: var(--space-1) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    border-left: 2px solid rgba(0, 119, 182, 0.1);
+  }
+
+  .mobile-menu__sublink {
+    display: block;
+    padding: var(--space-2.5) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-menu__sublink:hover {
     background: var(--color-primary-50);
     color: var(--color-primary);
   }

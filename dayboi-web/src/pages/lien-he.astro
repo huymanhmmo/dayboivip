@@ -24,7 +24,6 @@ const contactSchema = {
     }
   ]
 };
-import CoachesSection from '../components/CoachesSection.astro';
 ---
 
 <PageLayout
@@ -55,8 +54,6 @@ import CoachesSection from '../components/CoachesSection.astro';
         <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-lg); background: #ffffff; border-radius: 16px;">
           <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Đăng Ký Học Thử Miễn Phí</h2>
           <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Học viên được trải nghiệm 1 buổi học thử 1 kèm 1 hoàn toàn miễn phí cùng Huấn luyện viên trước khi quyết định đăng ký.</p>
-          
-            <CoachesSection />
 
 <RegistrationForm id="contact-form" isFullForm={true} flat={true} />
         </div>

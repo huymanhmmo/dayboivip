@@ -2,7 +2,6 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import RegistrationForm from '../../components/RegistrationForm.astro';
 import SuccessModal from '../../components/SuccessModal.astro';
-import CoachesSection from '../../components/CoachesSection.astro';
 import { blogPosts } from '../../data/blogPosts.js';
 
 export async function getStaticPaths() {
@@ -264,8 +263,6 @@ const categories = [
     </div>
   </div>
 </section>
-
-<CoachesSection />
 
 <!-- CTA -->
 <section class="section-sm" style="background: var(--color-bg-alt); border-top: 1px solid rgba(0, 119, 182, 0.05);">

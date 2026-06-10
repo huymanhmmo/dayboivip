@@ -140,12 +140,14 @@ const { course, breadcrumbs, schema, lang = 'vi' } = Astro.props;
     />
 
     <!-- Instructor Showcase -->
-    <CourseInstructor 
-      instructor={course.instructor}
-      lang={lang}
-    />
-
-    {lang === 'vi' && <CoachesSection />}
+    {lang === 'en' ? (
+      <CourseInstructor 
+        instructor={course.instructor}
+        lang={lang}
+      />
+    ) : (
+      <CoachesSection />
+    )}
 
     <!-- Testimonials Section (Social Proof) -->
     <CourseTestimonial 
