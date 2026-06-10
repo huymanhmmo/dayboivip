@@ -454,6 +454,65 @@ const coaches = [
   </section>
 
   <!-- ============================================
+       SWIM TECHNIQUES PREVIEW
+       ============================================ -->
+  <section class="section techniques-section" id="techniques-preview">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Kỹ Thuật Bơi</span>
+        <h2 class="section__title">4 Kỹ Thuật Bơi <span class="text-gradient">Cơ Bản & Nâng Cao</span></h2>
+        <p class="section__desc">Hệ thống giáo trình đào tạo đầy đủ 4 kiểu bơi từ cơ bản đến nâng cao</p>
+      </div>
+      <div class="techniques-grid">
+        <a href="/ky-thuat-boi/hoc-boi-ech/" class="technique-card reveal">
+          <div class="technique-card__img-wrap">
+            <img src="/images/techniques/huong-dan-tap-tho-boi-ech.jpg" alt="Hướng dẫn tập thở bơi ếch - Kỹ thuật bơi ếch cơ bản" loading="lazy" />
+          </div>
+          <div class="technique-card__body">
+            <span class="technique-card__number">01</span>
+            <h3 class="technique-card__title">Bơi Ếch</h3>
+            <p class="technique-card__desc">Kiểu bơi phổ biến nhất, dễ học, phù hợp cho người mới bắt đầu.</p>
+            <span class="technique-card__link">Xem chi tiết →</span>
+          </div>
+        </a>
+        <a href="/ky-thuat-boi/hoc-boi-sai/" class="technique-card reveal">
+          <div class="technique-card__img-wrap">
+            <img src="/images/techniques/tap-dong-tac-tay-boi-sai-tren-can.jpg" alt="Tập động tác tay bơi sải trên cạn - Kỹ thuật bơi sải" loading="lazy" />
+          </div>
+          <div class="technique-card__body">
+            <span class="technique-card__number">02</span>
+            <h3 class="technique-card__title">Bơi Sải</h3>
+            <p class="technique-card__desc">Kiểu bơi nhanh nhất, còn gọi là bơi trườn sấp (Front Crawl).</p>
+            <span class="technique-card__link">Xem chi tiết →</span>
+          </div>
+        </a>
+        <a href="/ky-thuat-boi/hoc-boi-ngua/" class="technique-card reveal">
+          <div class="technique-card__img-wrap">
+            <img src="/images/safety/khoi-dong-tren-can.jpg" alt="Khởi động trên cạn trước khi tập bơi ngửa - Kỹ thuật bơi ngửa" loading="lazy" />
+          </div>
+          <div class="technique-card__body">
+            <span class="technique-card__number">03</span>
+            <h3 class="technique-card__title">Bơi Ngửa</h3>
+            <p class="technique-card__desc">Kiểu bơi thư giãn, thoải mái, giúp rèn luyện khả năng nổi.</p>
+            <span class="technique-card__link">Xem chi tiết →</span>
+          </div>
+        </a>
+        <a href="/ky-thuat-boi/hoc-boi-buom/" class="technique-card reveal">
+          <div class="technique-card__img-wrap">
+            <img src="/images/safety/khoi-dong-lam-nong-co-the.jpg" alt="Khởi động làm nóng cơ thể trước khi tập bơi bướm - Kỹ thuật bơi bướm" loading="lazy" />
+          </div>
+          <div class="technique-card__body">
+            <span class="technique-card__number">04</span>
+            <h3 class="technique-card__title">Bơi Bướm</h3>
+            <p class="technique-card__desc">Kiểu bơi nâng cao, đẹp mắt và đòi hỏi sức mạnh toàn thân.</p>
+            <span class="technique-card__link">Xem chi tiết →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        PRICING SECTION — targets học phí học bơi ở hà nội, giá học bơi ở hà nội, học bơi giá rẻ hà nội
        ============================================ -->
   <section class="section hanoi-pricing-section" id="bang-gia">
@@ -1211,6 +1270,92 @@ const coaches = [
   }
 
   /* ============================================
+     SWIM TECHNIQUES PREVIEW
+     ============================================ */
+  .techniques-section {
+    background: var(--color-bg);
+  }
+
+  .techniques-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+
+  .technique-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-border-light);
+    transition: all var(--transition-smooth);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .technique-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+  }
+
+  .technique-card__img-wrap {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .technique-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .technique-card:hover .technique-card__img-wrap img {
+    transform: scale(1.08);
+  }
+
+  .technique-card__body {
+    padding: var(--space-5);
+  }
+
+  .technique-card__number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0.25;
+    line-height: 1;
+  }
+
+  .technique-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: var(--space-2) 0;
+  }
+
+  .technique-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+  }
+
+  .technique-card__link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+  }
+
+  .technique-card:hover .technique-card__link {
+    color: var(--color-accent);
+  }
+
+  /* ============================================
      PRICING SECTION
      ============================================ */
   .hanoi-pricing-section {
@@ -1637,6 +1782,10 @@ const coaches = [
       grid-template-columns: repeat(2, 1fr);
     }
 
+    .techniques-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .hanoi-pricing-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -1665,6 +1814,10 @@ const coaches = [
     }
 
     .hanoi-programs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .techniques-grid {
       grid-template-columns: 1fr;
     }
 
