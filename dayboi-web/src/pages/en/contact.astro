@@ -1,0 +1,127 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+
+const title = 'Contact Us & Register for a Free Swim Trial | Swim For Life Vietnam';
+const description = 'Contact us to register for a free 1-on-1 trial swimming lesson. Hotline/Zalo: 0979.121.097. 24/7 customer support.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Contact' },
+];
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Swim For Life Vietnam",
+  "description": "Contact page to register for free trial swimming lessons and get support from Swim For Life Vietnam.",
+  "url": "https://dayboi.vip/en/contact/",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+84979121097",
+      "contactType": "customer service",
+      "availableLanguage": ["Vietnamese", "English"]
+    }
+  ]
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/contact/"
+  breadcrumbs={breadcrumbs}
+  schema={contactSchema}
+  lang="en"
+>
+
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">📞 Connect With Us</span>
+        <h1 class="section-title">Contact & Register</h1>
+        <p class="section-subtitle">
+          Leave your details below, and our team will get in touch within 15 minutes to arrange your FREE 1-on-1 trial swimming lesson.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-12); align-items: start;">
+        
+        <!-- Contact Form Column -->
+        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-lg); background: #ffffff; border-radius: 16px;">
+          <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Free Trial Registration</h2>
+          <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Experience one completely free 1-on-1 swimming lesson with our certified coach before deciding to enroll.</p>
+          
+          <RegistrationForm id="en-contact-form" isFullForm={true} flat={true} />
+        </div>
+
+        <!-- Info Column -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+          <div>
+            <h2 style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--space-4);">24/7 Consultation Support</h2>
+            <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">Feel free to call us directly or chat on Zalo/WhatsApp via the hotline below to get scheduled immediately:</p>
+            
+            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
+                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">📞</div>
+                <div>
+                  <strong style="font-size: var(--text-lg); display: block;">Consultation Hotline:</strong>
+                  <a href="tel:0979121097" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097</a>
+                </div>
+              </div>
+              
+              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
+                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">💬</div>
+                <div>
+                  <strong style="font-size: var(--text-lg); display: block;">Zalo Chat:</strong>
+                  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097 (Chat Now)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--color-bg-alt); padding: var(--space-5); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;">
+              <img
+                src="/images/logo/swim-for-life-logo.png"
+                alt="Logo Swim For Life Vietnam"
+                style="max-height: 45px; width: auto; object-fit: contain;"
+                loading="lazy"
+              />
+              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 600;">under</span>
+              <img
+                src="/images/logo/your-dreams-logo.png"
+                alt="Logo Your Dreams JSC"
+                style="max-height: 45px; width: auto; object-fit: contain;"
+                loading="lazy"
+              />
+            </div>
+            <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-3);">
+              <h3 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-1); margin-top: 0;">Entity Information</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: var(--text-sm);">
+                <strong>Swim For Life Vietnam Swim School</strong><br/>
+                Managed by: <strong>Your Dreams Joint Stock Company</strong><br/>
+                Tax Code: 0108879900<br/>
+                Email: dayboivip@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-2);">Working Hours</h3>
+            <p style="color: var(--color-text-secondary);">
+              We operate continuously from <strong>06:00 AM - 09:00 PM</strong> daily, including weekends (Saturday, Sunday) and public holidays.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

@@ -12,9 +12,10 @@ export interface Props {
   noindex?: boolean;
   breadcrumbs?: Array<{ label: string; href?: string }>;
   schema?: object;
+  lang?: 'vi' | 'en';
 }
 
-const { title, description, canonical, image, type, noindex, breadcrumbs, schema } = Astro.props;
+const { title, description, canonical, image, type, noindex, breadcrumbs, schema, lang = 'vi' } = Astro.props;
 ---
 
 <MainLayout 
@@ -24,7 +25,7 @@ const { title, description, canonical, image, type, noindex, breadcrumbs, schema
   ogImage={image} 
   noIndex={noindex}
   schema={schema}
-  lang="vi"
+  lang={lang}
 >
   <Fragment slot="head">
     {breadcrumbs && (
@@ -41,7 +42,7 @@ const { title, description, canonical, image, type, noindex, breadcrumbs, schema
     )}
   </Fragment>
 
-  <Header slot="header" lang="vi" currentPath={Astro.url.pathname} />
+  <Header slot="header" lang={lang} currentPath={Astro.url.pathname} />
 
   <!-- Breadcrumb -->
   {breadcrumbs && breadcrumbs.length > 0 && (
@@ -65,5 +66,5 @@ const { title, description, canonical, image, type, noindex, breadcrumbs, schema
 
   <slot />
 
-  <Footer slot="footer" lang="vi" />
+  <Footer slot="footer" lang={lang} />
 </MainLayout>

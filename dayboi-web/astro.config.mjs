@@ -5,6 +5,10 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dayboi.vip',
+  redirects: {
+    '/dia-diem/ha-noi': '/hoc-boi-ha-noi',
+    '/dia-diem/tphcm': '/hoc-boi-tphcm',
+  },
   integrations: [
     sitemap({
       changefreq: 'weekly',

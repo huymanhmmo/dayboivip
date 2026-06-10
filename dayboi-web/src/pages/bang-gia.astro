@@ -1,0 +1,256 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+
+const title = 'Bảng Giá Lớp Học Bơi Mới Nhất 2026 | Swim For Life Việt Nam';
+const description = 'Xem bảng giá khóa học bơi trẻ em, người lớn, dạy bơi 1 kèm 1 và bơi cấp tốc. Giá cả cạnh tranh, cam kết biết bơi 100%, liên hệ nhận báo giá chi tiết và khuyến mãi.';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Bảng giá học bơi' },
+];
+
+const priceSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bảng giá học bơi tại Swim For Life Việt Nam",
+  "description": "Bảng giá các khóa học bơi cho trẻ em và người lớn, dạy bơi 1 kèm 1 chuyên nghiệp tại Swim For Life Việt Nam.",
+  "url": "https://dayboi.vip/bang-gia/",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "VND",
+    "lowPrice": "0",
+    "highPrice": "0",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Khóa học bơi trẻ em",
+        "price": "Liên hệ nhận báo giá",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "name": "Khóa học bơi người lớn",
+        "price": "Liên hệ nhận báo giá",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "name": "Dạy bơi 1 kèm 1",
+        "price": "Liên hệ nhận báo giá",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "name": "Khóa bơi cấp tốc",
+        "price": "Liên hệ nhận báo giá",
+        "priceCurrency": "VND"
+      }
+    ]
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/bang-gia/"
+  breadcrumbs={breadcrumbs}
+  schema={priceSchema}
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">💎 Học Phí Hợp Lý</span>
+        <h1 class="section-title">Bảng Giá Các Khóa Học Bơi [2026]</h1>
+        <p class="section-subtitle">
+          Swim For Life Việt Nam cung cấp các khóa học bơi chất lượng cao với mức học phí tối ưu, cam kết biết bơi 100%. Hãy chọn gói học phù hợp và liên hệ để nhận báo giá chi tiết nhất theo khu vực của bạn.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-4" style="gap: var(--space-6); align-items: stretch; margin-bottom: var(--space-16);">
+        
+        <!-- Trẻ Em -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff; border-top: 5px solid var(--color-primary);">
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); font-weight: 700; display: block; margin-bottom: var(--space-2);">Lớp Nhóm Nhỏ</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Khóa Bơi Trẻ Em</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">Dành cho trẻ em từ 4-15 tuổi. Giáo trình sinh động, vui vẻ, an toàn, giúp trẻ tự tin và yêu thích bơi lội.</p>
+            
+            <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Liên hệ nhận báo giá</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Lớp học tối đa 5-8 học viên</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>HLV giàu kinh nghiệm sư phạm trẻ</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Trang bị đầy đủ phao bơi an toàn</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Thời lượng: 12 buổi học bài bản</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Cam kết 100% biết bơi sau khóa học</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Nhận Tư Vấn Zalo</a>
+        </div>
+
+        <!-- Người Lớn -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff; border-top: 5px solid var(--color-teal);">
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); font-weight: 700; display: block; margin-bottom: var(--space-2);">Lớp Chuyên Biệt</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Khóa Bơi Người Lớn</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">Dành cho học viên trên 16 tuổi. Phương pháp tâm lý kiên nhẫn, giúp vượt qua nỗi sợ nước nhanh chóng.</p>
+            
+            <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Liên hệ nhận báo giá</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Lớp nhóm nhỏ thân thiện, hòa đồng</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Lộ trình học phù hợp thể trạng người lớn</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Giờ học linh hoạt cho người đi làm</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Thời lượng: 12 buổi học chuẩn</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Cam kết bơi ếch/sải chuẩn kỹ thuật</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Nhận Tư Vấn Zalo</a>
+        </div>
+
+        <!-- 1 Kèm 1 VIP -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-xl); background: #ffffff; border: 2px solid var(--color-accent); border-top: 6px solid var(--color-accent); position: relative; transform: translateY(-4px);">
+          <div style="position: absolute; top: -14px; right: 20px; background: var(--color-accent); color: white; padding: 2px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Khuyên Dùng</div>
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: var(--space-2);">Lớp Cá Nhân Hóa VIP</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Dạy Bơi 1 Kèm 1</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">Học viên học cùng riêng 1 HLV. Giáo án thiết kế riêng biệt 100%, tiến bộ vượt trội gấp 3 lần bình thường.</p>
+            
+            <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Liên hệ nhận báo giá</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>1 HLV kèm duy nhất 1 học viên</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Học viên chủ động chọn bể bơi gần nhà</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Tự do chọn lịch học: Sáng - Trưa - Tối</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Được đổi HLV nếu cảm thấy không hợp</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Cam kết biết bơi nhanh & đúng kỹ thuật</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-accent pulse" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Đăng Ký Học Thử</a>
+        </div>
+
+        <!-- Cấp Tốc -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff; border-top: 5px solid var(--color-gold);">
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); font-weight: 700; display: block; margin-bottom: var(--space-2);">Học Nhanh Sinh Tồn</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Khóa Bơi Cấp Tốc</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">Khóa học đặc biệt kéo dài 7-10 buổi. Hướng dẫn các kỹ năng sinh tồn cốt lõi và kiểu bơi sinh tồn cơ bản.</p>
+            
+            <div style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Liên hệ nhận báo giá</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Tập trung học liên tục hàng ngày</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Dành cho người chuẩn bị đi du lịch, đi biển</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Ưu tiên dạy kỹ năng nổi ngửa, đứng nước</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Thời lượng: 7 - 10 buổi học tập trung</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Nắm chắc kỹ năng tự cứu mình</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Nhận Tư Vấn Zalo</a>
+        </div>
+
+      </div>
+
+      <!-- Price Policy Notice -->
+      <div style="background: var(--color-bg-alt); padding: var(--space-8); border-radius: 16px; margin-bottom: var(--space-16);">
+        <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">💡 Lưu Ý Về Chính Sách Học Phí:</h3>
+        <ul style="display: flex; flex-direction: column; gap: var(--space-3); color: var(--color-text); line-height: 1.6;">
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Chính sách học thử:</strong> Mỗi học viên đăng ký được tặng 01 buổi học thử miễn phí cùng HLV. Chỉ đóng học phí khi bạn thực sự hài lòng và tiếp tục học.</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Học phí chưa bao gồm vé bể bơi:</strong> Học phí trên chỉ bao gồm công giảng dạy của Huấn luyện viên, chưa bao gồm vé vào bể bơi của học viên và HLV (trừ các bể bơi tự do hoặc gói đặc biệt).</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Ưu đãi nhóm:</strong> Đăng ký từ 02 học viên trở lên sẽ được áp dụng chương trình giảm học phí hấp dẫn (giảm từ 10% - 20% học phí).</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Cam kết biết bơi:</strong> Bằng hợp đồng/cam kết rõ ràng. Nếu học viên đi học đầy đủ nhưng chưa biết bơi sau khóa học, trung tâm sẽ tiếp tục dạy miễn phí công HLV cho đến khi học viên bơi thành thạo.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing FAQs -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header text-center" style="margin-bottom: var(--space-8);">
+        <span class="section-badge">❓ Giải đáp</span>
+        <h2 class="section-title">Câu Hỏi Thường Gặp Về Học Phí</h2>
+      </div>
+
+      <div class="faq-list" style="display: flex; flex-direction: column; gap: var(--space-4);">
+        
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">1. Tại sao Swim For Life không công bố giá tiền cụ thể trên website?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            Học phí dạy bơi của trung tâm phụ thuộc rất nhiều vào: <strong>Địa điểm bể bơi</strong> bạn lựa chọn (mỗi quận, mỗi tỉnh/thành có giá vé bể bơi và mức sống khác nhau), <strong>độ tuổi học viên</strong> (trẻ em dưới 5 tuổi yêu cầu công kèm cặp sát sao hơn), và <strong>nhu cầu kèm cặp</strong> (1 kèm 1, 1 kèm 2 hoặc nhóm nhỏ). Để đảm bảo báo giá chính xác, hợp lý nhất và có lợi nhất cho học viên, chúng tôi sẽ báo giá chi tiết khi nhận được thông tin yêu cầu cụ thể.
+          </p>
+        </div>
+
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">2. Chi phí học bơi bao gồm những gì? Có phát sinh thêm không?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            Học phí đóng cho trung tâm là trọn gói công dạy của Huấn luyện viên trong suốt khóa học (10-12 buổi). Trung tâm cam kết <strong>không phát sinh bất kỳ khoản phụ thu nào khác</strong> từ phía trung tâm. Học viên chỉ cần tự chuẩn bị đồ bơi cá nhân và mua vé vào bể bơi mỗi buổi học.
+          </p>
+        </div>
+
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">3. Nếu bận nghỉ giữa chừng có được bảo lưu học phí không?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            Có! Swim For Life hỗ trợ bảo lưu khóa học và học phí cho học viên tối đa lên tới <strong>6 tháng</strong> trong trường hợp học viên có vấn đề sức khỏe, đi công tác hoặc đi du lịch. Bạn chỉ cần thông báo cho ban quản lý lớp trước ít nhất 24 giờ.
+          </p>
+        </div>
+
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">4. Trung tâm có hỗ trợ trả góp hoặc chia nhỏ đóng học phí không?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            Chúng tôi hỗ trợ chia học phí thành 2 đợt đóng đối với các khóa học VIP 1 kèm 1 để giảm bớt gánh nặng tài chính cho gia đình. Đợt 1 đóng 50% sau buổi học thử và đợt 2 đóng 50% còn lại vào buổi học thứ 5.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Form Container -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Nhận Báo Giá Chi Tiết Theo Khu Vực</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Vui lòng điền thông tin bên cạnh để nhận báo giá chính xác cho các bể bơi gần bạn nhất. Giáo viên của trung tâm sẽ liên hệ hỗ trợ bạn lập tức.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Thầy Nguyễn Huy Mạnh)</a></div>
+            <div><strong>✉️ Email:</strong> <span style="color: var(--color-text);">dayboivip@gmail.com</span></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="pricing-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

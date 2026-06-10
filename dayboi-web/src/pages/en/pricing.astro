@@ -1,0 +1,249 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+
+const title = 'Swimming Lessons Pricing Details | Swim For Life Vietnam';
+const description = 'Check out pricing options for kids swimming lessons, adult swimming lessons, 1-on-1 private lessons, and intensive fast-track classes. Contact for a quote.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Pricing' },
+];
+
+const priceSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Swimming Lesson Pricing at Swim For Life Vietnam",
+  "description": "Pricing options for swimming classes for children and adults at Swim For Life Vietnam.",
+  "url": "https://dayboi.vip/en/pricing/",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "VND",
+    "lowPrice": "0",
+    "highPrice": "0",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Kids Swimming Lessons",
+        "price": "Contact for a quote",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "name": "Adult Swimming Lessons",
+        "price": "Contact for a quote",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "name": "1-on-1 Private Lessons",
+        "price": "Contact for a quote",
+        "priceCurrency": "VND"
+      },
+      {
+        "@type": "Offer",
+        "name": "Intensive Fast-Track",
+        "price": "Contact for a quote",
+        "priceCurrency": "VND"
+      }
+    ]
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/pricing/"
+  breadcrumbs={breadcrumbs}
+  schema={priceSchema}
+  lang="en"
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">💎 Fair Fees</span>
+        <h1 class="section-title">Swimming Course Fees [2026]</h1>
+        <p class="section-subtitle">
+          Swim For Life Vietnam offers high-quality swim courses at optimal tuition rates, with a 100% learn-to-swim guarantee. Choose your ideal class and contact us for a detailed quote tailored to your local area.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-4" style="gap: var(--space-6); align-items: stretch; margin-bottom: var(--space-16);">
+        
+        <!-- Kids -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff; border-top: 5px solid var(--color-primary);">
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); font-weight: 700; display: block; margin-bottom: var(--space-2);">Small Group Class</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Kids Lessons</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">For children aged 4-15. Fun, interactive, and safe syllabus helping children stay active and confident.</p>
+            
+            <div style="font-size: var(--text-xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Contact for a quote</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Small group of 5-8 students</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Experienced child-friendly coaches</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Full high-quality safety gear provided</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Duration: 12 structured sessions</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>100% learn-to-swim guarantee</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Chat via Zalo</a>
+        </div>
+
+        <!-- Adults -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff; border-top: 5px solid var(--color-teal);">
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); font-weight: 700; display: block; margin-bottom: var(--space-2);">Specialized Class</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Adult Lessons</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">For ages 16+. Patient, step-by-step psychological approach to help you overcome water anxiety.</p>
+            
+            <div style="font-size: var(--text-xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Contact for a quote</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Friendly and welcoming group atmosphere</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Customized pace for adults</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Flexible hours for working professionals</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Duration: 12 structured sessions</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Master correct breathing & techniques</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Chat via Zalo</a>
+        </div>
+
+        <!-- 1-on-1 VIP -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-xl); background: #ffffff; border: 2px solid var(--color-accent); border-top: 6px solid var(--color-accent); position: relative; transform: translateY(-4px);">
+          <div style="position: absolute; top: -14px; right: 20px; background: var(--color-accent); color: white; padding: 2px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Recommended</div>
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: var(--space-2);">VIP Personal Class</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">1-on-1 Lessons</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">Learn privately with 1 designated coach. 100% personalized drills, progress 3x faster than group classes.</p>
+            
+            <div style="font-size: var(--text-xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Contact for a quote</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>1 Coach dedicated to 1 student</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Choose your preferred local pool</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Flexible schedules: Morning, Noon, Evening</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Change coaches if you feel incompatible</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Fastest path to correct stroke technique</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-accent pulse" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Book Free Trial</a>
+        </div>
+
+        <!-- Cấp Tốc -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff; border-top: 5px solid var(--color-gold);">
+          <div>
+            <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); font-weight: 700; display: block; margin-bottom: var(--space-2);">Survival Focus</span>
+            <h3 style="font-size: var(--text-xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Intensive Fast-Track</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">Special program compressed into 7-10 sessions. Master core water-survival skills and floating quickly.</p>
+            
+            <div style="font-size: var(--text-xl); font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-6);">Contact for a quote</div>
+            
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); line-height: 1.5; color: var(--color-text);">
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Learn continuously every day</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Perfect for upcoming beach holidays</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Focus on back floating & treading water</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Duration: 7-10 intensive sessions</span></li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-2);"><span>✅</span> <span>Ensure fundamental self-rescue safety</span></li>
+            </ul>
+          </div>
+          
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-size: var(--text-sm);">Chat via Zalo</a>
+        </div>
+
+      </div>
+
+      <!-- Price Policy Notice -->
+      <div style="background: var(--color-bg-alt); padding: var(--space-8); border-radius: 16px; margin-bottom: var(--space-16);">
+        <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">💡 Important Policy Notes:</h3>
+        <ul style="display: flex; flex-direction: column; gap: var(--space-3); color: var(--color-text); line-height: 1.6;">
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Free Trial:</strong> Every student is entitled to 01 free trial lesson. You only pay if you decide to proceed with the course.</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Pool entrance fees:</strong> Tuition covers the coach's instruction and does not include pool entrance tickets for the student and the coach (unless specified under a promo package).</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Group Discounts:</strong> Registration for 2 or more students receives an automatic discount of 10% - 20% on overall tuition.</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+            <span>•</span>
+            <span><strong>Result Guarantee:</strong> Covered by clear guidelines. If a student attends all sessions but cannot swim by the end, we continue tutoring for free until they succeed.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing FAQs -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header text-center" style="margin-bottom: var(--space-8);">
+        <span class="section-badge">❓ FAQ</span>
+        <h2 class="section-title">Pricing Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list" style="display: flex; flex-direction: column; gap: var(--space-4);">
+        
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">1. Why are specific prices not published on the website?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            Tuition rates vary depending on: <strong>your selected pool location</strong> (entrance tickets and local living costs differ by area), <strong>student age</strong> (children under 5 require closer supervision), and <strong>class type</strong> (1-on-1 vs small group). To offer the fairest rate, we quote directly once you specify details.
+          </p>
+        </div>
+
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">2. What does the tuition fee cover? Any hidden fees?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            The tuition fee covers the coach's complete training service for the 10-12 sessions. There are <strong>no extra hidden fees</strong> from the school. Students only pay for their own pool tickets.
+          </p>
+        </div>
+
+        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
+          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">3. Can I freeze my course if I go on holiday?</h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+            Yes! We support course freezing and preservation of tuition fees for up to <strong>6 months</strong> in case of health issues, business trips, or holidays. Simply notify us 24 hours in advance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Form Container -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Get a Custom Quote for Your Area</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Submit the form to receive pricing options for pools near you. Our support staff will contact you immediately.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Coach Manh)</a></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="en-pricing-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

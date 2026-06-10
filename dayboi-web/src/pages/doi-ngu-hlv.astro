@@ -1,0 +1,219 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+
+const title = 'Đội Ngũ Huấn Luyện Viên Dạy Bơi Chuyên Nghiệp | Swim For Life Việt Nam';
+const description = 'Gặp gỡ đội ngũ HLV dạy bơi xuất sắc của Swim For Life Việt Nam, dẫn dắt bởi Thầy Nguyễn Huy Mạnh. HLV giàu kinh nghiệm, tận tâm, cam kết biết bơi 100%.';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Đội ngũ HLV' },
+];
+
+const coaches = [
+  {
+    name: 'Thầy Nguyễn Huy Mạnh',
+    role: 'Giám Đốc Đào Tạo / Sáng Lập',
+    image: '/images/coaches/giam-doc-nguyen-huy-manh.jpg',
+    badge: 'Chuyên gia VTC9',
+    bio: 'Tốt nghiệp khoa Giáo dục Thể chất Đại học Sư phạm Hà Nội. Hơn 10 năm kinh nghiệm huấn luyện bơi lội chuyên nghiệp, phổ cập bơi cho hơn 10.000 học viên nhí và người lớn. Là người trực tiếp chỉ đạo chuyên môn tại trung tâm.',
+    specialty: 'Dạy bơi trẻ em nhát nước, sửa kỹ thuật bơi nâng cao, đào tạo HLV.'
+  },
+  {
+    name: 'Cô Nguyễn Thị Mai',
+    role: 'HLV Trưởng Lớp Bơi Trẻ Em',
+    image: '/images/coaches/giao-vien-vui-ve-tam-ly.jpeg',
+    badge: 'Tâm Lý - Vui Vẻ',
+    bio: 'Kiện tướng bơi lội quốc gia cũ, tốt nghiệp Đại học Thể dục Thể thao Bắc Ninh. Hơn 7 năm kinh nghiệm giảng dạy, đặc biệt thấu hiểu tâm lý trẻ nhỏ, giúp trẻ vượt qua nỗi sợ nước cực kỳ hiệu quả.',
+    specialty: 'Lớp bơi sinh tồn cho bé 3-5 tuổi, bơi ếch căn bản.'
+  },
+  {
+    name: 'Thầy Trần Văn Hải',
+    role: 'Huấn Luyện Viên Cao Cấp',
+    image: '/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg',
+    badge: 'Chuyên Môn Cao',
+    bio: 'Cựu vận động viên đội tuyển bơi lội thành phố, đạt chứng chỉ cứu hộ quốc tế. Phương pháp dạy khoa học, nghiêm túc nhưng vô cùng thân thiện, giúp học viên tiến bộ nhanh vượt trội.',
+    specialty: 'Bơi sải tốc độ, bơi ngửa, bơi bướm nâng cao.'
+  },
+  {
+    name: 'Cô Phạm Thanh Vy',
+    role: 'Huấn Luyện Viên VIP',
+    image: '/images/coaches/giao-vien-tan-tam-ho-tro.jpg',
+    badge: 'Tận Tình - Chu Đáo',
+    bio: 'Tốt nghiệp chuyên ngành Huấn luyện Thể thao nước. Có chứng chỉ nghiệp vụ sư phạm, chuyên phụ trách các lớp dạy bơi 1 kèm 1 VIP cho người lớn nhát nước và phụ nữ.',
+    specialty: 'Dạy bơi người lớn sợ nước, kỹ năng đứng nước vững vàng.'
+  }
+];
+
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Đội ngũ Huấn luyện viên Swim For Life Việt Nam",
+  "description": "Thông tin về ban giám đốc đào tạo và các huấn luyện viên dạy bơi tiêu biểu của trung tâm Swim For Life Việt Nam.",
+  "url": "https://dayboi.vip/doi-ngu-hlv/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": coaches.map((coach, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Person",
+        "name": coach.name,
+        "jobTitle": coach.role,
+        "image": `https://dayboi.vip${coach.image}`,
+        "description": coach.bio
+      }
+    }))
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/doi-ngu-hlv/"
+  breadcrumbs={breadcrumbs}
+  schema={teamSchema}
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🏊 HLV Chuyên Nghiệp</span>
+        <h1 class="section-title">Đội Ngũ Huấn Luyện Viên</h1>
+        <p class="section-subtitle">
+          Swim For Life quy tụ hơn 50 Huấn luyện viên bơi lội chuyên nghiệp trên toàn quốc. 100% HLV tốt nghiệp các trường đại học thể dục thể thao uy tín, đạt chứng chỉ cứu hộ và được đào tạo bài bản về kỹ năng sư phạm sư phạm.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Spotlight Section -->
+  <section class="section" style="border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-12); align-items: center; margin-bottom: var(--space-8);">
+        <div>
+          <img 
+            src="/images/coaches/giam-doc-nguyen-huy-manh-vtc9.png" 
+            alt="Thầy Nguyễn Huy Mạnh - Giám đốc đào tạo Swim For Life trả lời phỏng vấn trên VTC9" 
+            style="border-radius: 16px; box-shadow: var(--shadow-lg); width: 100%; object-fit: cover;"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <span style="font-size: var(--text-xs); text-transform: uppercase; color: var(--color-accent); font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-2);">Người Dẫn Dắt Chuyên Môn</span>
+          <h2 style="font-size: var(--text-3xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-4);">Thầy Nguyễn Huy Mạnh</h2>
+          <h4 style="font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4);">Giám Đốc Đào Tạo & Sáng Lập Swim For Life Việt Nam</h4>
+          
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
+            Thầy Nguyễn Huy Mạnh là gương mặt quen thuộc trong giới thể thao nước học đường tại Hà Nội và các khu đô thị lớn. Với xuất phát điểm từ khoa Giáo dục Thể chất Đại học Sư phạm Hà Nội, Thầy Mạnh luôn mang trăn trở làm sao để mỗi học sinh Việt Nam đều được học bơi một cách an toàn và bài bản nhất.
+          </p>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-6);">
+            Dưới sự chỉ đạo của thầy, Swim For Life đã phát triển hệ thống giáo án bơi lội chuẩn khoa học E-E-A-T, cam kết dạy học sinh theo phương pháp tâm lý tích cực, tuyệt đối không cưỡng ép quăng ném học viên xuống nước gây hoảng sợ.
+          </p>
+          
+          <div style="display: flex; gap: var(--space-4);">
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
+              <strong>🎓 10+ Năm</strong><br/><span>Huấn luyện thực chiến</span>
+            </div>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
+              <strong>📺 Kênh VTC9</strong><br/><span>Khách mời chuyên gia</span>
+            </div>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
+              <strong>🏊 10,000+</strong><br/><span>Học viên biết bơi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Grid Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center" style="margin-bottom: var(--space-10);">
+        <h2 class="section-title">Huấn Luyện Viên Tiêu Biểu</h2>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 600px;">Những giáo viên dạy bơi xuất sắc luôn nhận được phản hồi tích cực và sự yêu mến từ phụ huynh & học viên.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: var(--space-8); margin-bottom: var(--space-16);">
+        {coaches.slice(1).map((coach) => (
+          <div class="card" style="display: flex; flex-direction: column; overflow: hidden; border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff;">
+            <div style="position: relative; height: 280px; overflow: hidden;">
+              <img 
+                src={coach.image} 
+                alt={`HLV ${coach.name} - Swim For Life`} 
+                style="width: 100%; height: 100%; object-fit: cover;" 
+                loading="lazy" 
+              />
+              <span style="position: absolute; bottom: 12px; left: 12px; background: var(--color-primary); color: white; padding: 2px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                {coach.badge}
+              </span>
+            </div>
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+              <div>
+                <h3 style="font-size: var(--text-lg); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-1);">{coach.name}</h3>
+                <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; display: block; margin-bottom: var(--space-3);">{coach.role}</span>
+                <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">{coach.bio}</p>
+              </div>
+              <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-secondary);">
+                <strong>⭐ Sở trường:</strong> {coach.specialty}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Standards and Ethics Section -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-10); align-items: center;">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">Tiêu Chuẩn Tuyển Chọn HLV Tại Swim For Life</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
+            Chúng tôi hiểu rằng, học bơi liên quan trực tiếp đến an toàn tính mạng. Do đó, quy trình tuyển chọn và đào tạo giáo viên tại Swim For Life cực kỳ khắt khe:
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Bằng cấp chuyên môn:</strong> 100% HLV tốt nghiệp Thể dục Thể thao chuyên ngành bơi lội hoặc VĐV cấp quốc gia, cấp tỉnh.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Nghiệp vụ sư phạm:</strong> Giáo viên được đào tạo bài bản về phương pháp dạy học, tâm lý hỗ trợ học viên nhát nước, sợ nước.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Đạo đức nghề nghiệp:</strong> Cam kết kiên nhẫn, lịch sự, tôn trọng học viên. Tuyệt đối không quát mắng hay có hành vi thô bạo.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Kỹ năng cứu hộ cứu nạn:</strong> Bắt buộc có chứng chỉ cứu hộ bể bơi và sơ cấp cứu ban đầu (CPR) còn hiệu lực.</span></li>
+          </ul>
+        </div>
+        <div>
+          <img 
+            src="/images/classes/giao-vien-chinh-sua-ky-thuat.jpg" 
+            alt="Giáo viên đang tận tình sửa kỹ thuật cho học sinh nhí dưới nước" 
+            style="border-radius: 16px; box-shadow: var(--shadow-md); width: 100%; object-fit: cover; height: 350px;"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking and Contact Form Container -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Đăng Ký Học Thử Cùng HLV VIP</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Đăng ký học thử ngay hôm nay để nhận 1 buổi dạy thử miễn phí 1 kèm 1 cùng các huấn luyện viên giàu kinh nghiệm của trung tâm.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo HLV Trưởng:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Thầy Mạnh)</a></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="hlv-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

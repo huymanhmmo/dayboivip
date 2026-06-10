@@ -1,0 +1,209 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+
+const title = 'Lộ Trình Học Bơi Từ Cơ Bản Đến Nâng Cao | Swim For Life Việt Nam';
+const description = 'Lộ trình học bơi 12 buổi chuẩn sư phạm dành cho trẻ em & người lớn tại Swim For Life. Từ nhát nước, học làm quen nước đến thành thạo các kiểu bơi sải, bơi ếch, đứng nước.';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Lộ trình học bơi' },
+];
+
+const steps = [
+  {
+    phase: 'Giai Đoạn 1',
+    title: 'Làm Quen Nước & Kỹ Năng Nền Tảng (Buổi 1 - 3)',
+    desc: 'Học viên vượt qua nỗi sợ nước, làm quen môi trường bể bơi và nắm vững các kỹ năng sinh tồn cơ bản nhất.',
+    details: [
+      'Tập thở nước (hít bằng miệng trên cạn, thổi bong bóng bằng mũi dưới nước) để không bị sặc.',
+      'Tập thả nổi cơ thể (nổi sấp, nổi ngửa hình sao) giúp cơ thể tự nổi tự nhiên không cần phao.',
+      'Tập lướt nước (đạp thành bể lướt nước tư thế thuôn dòng) tạo đà di chuyển cơ bản.',
+      'Học kỹ năng mở mắt dưới nước và đứng lên an toàn khi đang nổi.'
+    ],
+    image: '/images/safety/khoi-dong-tren-can.jpg',
+    color: 'var(--color-primary)'
+  },
+  {
+    phase: 'Giai Đoạn 2',
+    title: 'Kỹ Thuật Chân - Tay Kiểu Bơi Phổ Thông (Buổi 4 - 6)',
+    desc: 'Bắt đầu học các động tác kỹ thuật đẩy nước của chân và tay, chuẩn bị phối hợp kiểu bơi chính (thường là bơi ếch).',
+    details: [
+      'Học kỹ thuật đạp chân bơi ếch (Co - Bẻ - Đạp - Khép) trên cạn và bám thành bể dưới nước.',
+      'Học kỹ thuật quạt tay bơi ếch phối hợp ngửa đầu lấy hơi trên cạn và dưới nước nông.',
+      'Tập đạp chân bơi ếch có sử dụng phao tim (phao cầm tay) đi quãng đường dài.',
+      'Phối hợp tay bơi ếch và nhô đầu lấy hơi kết hợp đạp chân phụ trợ.'
+    ],
+    image: '/images/techniques/thi-pham-dong-tac-tay-boi-ech.jpg',
+    color: 'var(--color-teal)'
+  },
+  {
+    phase: 'Giai Đoạn 3',
+    title: 'Phối Hợp Toàn Thân & Kỹ Năng Đứng Nước (Buổi 7 - 9)',
+    desc: 'Liên kết các động tác đơn lẻ thành chuỗi phối hợp hoàn chỉnh, bắt đầu tự bơi không phao và đứng nước tự cứu.',
+    details: [
+      'Phối hợp nhịp nhàng: 1 tay quạt (lấy hơi) - 1 chân đạp - Lướt nước thả nổi.',
+      'Thực hành bơi quãng ngắn 10m - 15m không phao dưới sự giám sát chặt chẽ của HLV.',
+      'Học kỹ thuật đứng nước (đạp chân ếch hoặc chân vịt, quạt tay xoa nước để giữ đầu nổi trên mặt nước).',
+      'Tập nhảy từ thành bể xuống nước sâu và tự nổi lên lập tức.'
+    ],
+    image: '/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg',
+    color: 'var(--color-accent)'
+  },
+  {
+    phase: 'Giai Đoạn 4',
+    title: 'Tăng Cự Ly & Kỹ Năng Thoát Hiểm (Buổi 10 - 12)',
+    desc: 'Rèn luyện sức bền để bơi quãng dài ổn định, hoàn thiện khả năng tự xử lý tình huống khẩn cấp ở khu vực nước sâu.',
+    details: [
+      'Tập luyện nâng cự ly bơi lên 25m - 50m liên tục không nghỉ với nhịp thở đều đặn.',
+      'Hoàn thiện kỹ năng đứng nước vững vàng từ 30 giây đến hơn 2 phút ở vùng bể sâu.',
+      'Học kỹ năng xử lý khi bị chuột rút, đuối sức, sặc nước ở chỗ sâu.',
+      'Kiểm tra cuối khóa: Tốt nghiệp biết bơi và nhận Giấy chứng nhận hoàn thành từ trung tâm.'
+    ],
+    image: '/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg',
+    color: 'var(--color-gold)'
+  }
+];
+
+const journeySchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Lộ trình học bơi 12 buổi của Swim For Life Việt Nam",
+  "description": "Giáo trình học bơi chuẩn sư phạm 4 giai đoạn giúp học viên từ nhát nước trở nên thành thạo kiểu bơi ếch/sải và kỹ năng đứng nước sinh tồn.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "sameAs": "https://dayboi.vip"
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/lo-trinh-hoc-boi/"
+  breadcrumbs={breadcrumbs}
+  schema={journeySchema}
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🗺️ Bản Đồ Học Tập</span>
+        <h1 class="section-title">Lộ Trình Học Bơi 12 Buổi Chuẩn Sư Phạm</h1>
+        <p class="section-subtitle">
+          Khám phá giáo trình đào tạo bơi lội bài bản được thiết kế bởi Thầy Nguyễn Huy Mạnh. Chúng tôi chia nhỏ tiến trình học thành 4 giai đoạn cụ thể, giúp học viên tiến bộ tự nhiên, an toàn và chắc chắn biết bơi sau 12 buổi học.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section class="section">
+    <div class="container" style="max-width: 1000px;">
+      
+      <div style="display: flex; flex-direction: column; gap: var(--space-12); position: relative;">
+        
+        <!-- Timeline vertical line for desktop -->
+        <div class="timeline-line" style="position: absolute; left: 50%; top: 50px; bottom: 50px; width: 4px; background: var(--color-border); transform: translateX(-50%); z-index: 1; display: none;"></div>
+
+        {steps.map((step, idx) => (
+          <div style={`display: flex; flex-direction: column; gap: var(--space-6); position: relative; z-index: 2; border: 1px solid var(--color-border); padding: var(--space-8); border-radius: 20px; background: #ffffff; border-left: 8px solid ${step.color}; box-shadow: var(--shadow-md);`}>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+              <span style={`background: ${step.color}; color: white; padding: 4px 16px; border-radius: 20px; font-size: var(--text-sm); font-weight: 700; text-transform: uppercase;`}>
+                {step.phase}
+              </span>
+              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 500;">
+                Thời gian: 3 buổi học
+              </span>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-8); align-items: start; margin-top: var(--space-2);">
+              <div>
+                <h3 style="font-size: var(--text-xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-3); line-height: 1.3;">
+                  {step.title}
+                </h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-6); line-height: 1.6; font-style: italic;">
+                  "{step.desc}"
+                </p>
+
+                <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Nội dung huấn luyện chi tiết:</h4>
+                <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text); line-height: 1.6;">
+                  {step.details.map((detail) => (
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+                      <span>🔹</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <img 
+                  src={step.image} 
+                  alt={step.title} 
+                  style="border-radius: 12px; width: 100%; height: 260px; object-fit: cover; box-shadow: var(--shadow-sm);"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why 12 Sessions Section -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-10); align-items: center;">
+        <div>
+          <img 
+            src="/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg" 
+            alt="Lớp học bơi Vinhomes Times City" 
+            style="border-radius: 16px; box-shadow: var(--shadow-md); width: 100%; object-fit: cover; height: 350px;"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">Tại Sao Nên Chọn Lộ Trình 12 Buổi?</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
+            Nhiều quảng cáo cam kết "biết bơi siêu tốc trong 3 buổi" hoặc "biết bơi sau 5 buổi". Tuy nhiên, theo kinh nghiệm huấn luyện sư phạm hơn 10 năm của Thầy Nguyễn Huy Mạnh:
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+            <li style="display: flex; gap: var(--space-2);"><span>⚠️</span> <span>Học bơi cấp tốc quá ngắn dễ khiến học viên học vẹt, bơi sai kỹ thuật, nhanh mệt và không đứng nước sâu được.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>⚠️</span> <span>Ép chín động tác cơ thể khi chưa quen nước dễ tạo phản xạ hoảng sợ, nhát nước tâm lý về sau cho trẻ nhỏ.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Khóa học 12 buổi</strong> là khoảng thời gian khoa học tối ưu để cơ bắp hình thành trí nhớ vận động ổn định (muscle memory).</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span>Đảm bảo học viên không chỉ biết bơi, mà còn nắm chắc kỹ năng sinh tồn, đứng nước giải cứu và bơi đúng kỹ thuật để rèn luyện sức khỏe bền vững.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Form Container -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Bắt Đầu Hành Trình Học Bơi Ngay</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Hãy để chúng tôi đồng hành cùng bạn và con trẻ trên hành trình làm quen nước và thành thạo bơi lội an toàn.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline hỗ trợ:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo hỗ trợ:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Thầy Nguyễn Huy Mạnh)</a></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="journey-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

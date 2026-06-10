@@ -1,0 +1,226 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+import { locations } from '../../data/locations.js';
+
+export function getStaticPaths() {
+  return locations.map((loc) => {
+    let enSlug = loc.slug.replace('hoc-boi-', 'swimming-lessons-');
+    if (loc.slug === 'hoc-boi-tphcm') enSlug = 'swimming-lessons-ho-chi-minh';
+    return {
+      params: { location: enSlug },
+      props: { loc, viSlug: loc.slug },
+    };
+  });
+}
+
+const { loc, viSlug } = Astro.props;
+const currentYear = new Date().getFullYear();
+
+const enNames = {
+  "Hà Nội": "Hanoi",
+  "TP. Hồ Chí Minh": "Ho Chi Minh City",
+  "Đà Nẵng": "Da Nang",
+  "Hải Phòng": "Hai Phong",
+  "Huế": "Hue",
+  "Cần Thơ": "Can Tho",
+  "Đồng Nai": "Dong Nai",
+  "Quảng Ninh": "Quang Ninh",
+  "Bắc Ninh": "Bac Ninh",
+  "Thái Nguyên": "Thai Nguyen",
+  "Phu Thọ": "Phu Tho",
+  "Ninh Bình": "Ninh Binh",
+  "Hưng Yên": "Hung Yen",
+  "Thanh Hóa": "Thanh Hoa",
+  "Nghệ An": "Nghe An",
+  "Hà Tĩnh": "Ha Tinh",
+  "Quảng Bình": "Quang Binh",
+  "Quảng Ngãi": "Quang Ngai",
+  "Bình Định": "Binh Dinh",
+  "Khánh Hòa": "Khanh Hoa",
+  "Đắk Lắk": "Dak Lak",
+  "Lâm Đồng": "Lam Dong",
+  "Tây Ninh": "Tay Ninh",
+  "Đồng Tháp": "Dong Thap",
+  "Vĩnh Long": "Vinh Long",
+  "An Giang": "An Giang",
+  "Cà Mau": "Ca Mau",
+  "Cao Bằng": "Cao Bang",
+  "Lai Châu": "Lai Chau",
+  "Điện Biên": "Dien Bien",
+  "Sơn La": "Son La",
+  "Lạng Sơn": "Lang Son",
+  "Lào Cai": "Lao Cai",
+  "Tuyên Quang": "Tuyen Quang"
+};
+
+const enName = enNames[loc.name] || loc.name;
+
+const title = `Swimming Lessons in ${enName}: Certified 1-on-1 Swim Classes [${currentYear}]`;
+const description = `Learn to swim in ${enName} with Swim For Life Vietnam. Professional 1-on-1 lessons for kids & adults at top local pools. 100% learn-to-swim guarantee.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: `Swimming Lessons ${enName}` },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": `Swimming Lessons in ${enName} | Swim For Life Vietnam`,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Coach Nguyen Huy Manh",
+    "jobTitle": "Training Director"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/brand/logo.png"
+    }
+  },
+  "image": `https://dayboi.vip${loc.image}`,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://dayboi.vip/en/swimming-lessons-${Astro.params.location}/`
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`https://dayboi.vip/en/swimming-lessons-${Astro.params.location}/`}
+  image={loc.image}
+  type="article"
+  breadcrumbs={breadcrumbs}
+  schema={articleSchema}
+  lang="en"
+>
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12); position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; opacity: 0.05; background: radial-gradient(circle, var(--color-primary) 10%, transparent 80%); pointer-events: none;"></div>
+    <div class="container">
+      <div class="section-header" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <span class="section-badge">📍 Location: {enName}</span>
+        <h1 class="section-title" style="font-size: var(--text-3xl); line-height: 1.2; font-weight: 800; margin-bottom: var(--space-4);">Swimming Lessons in {enName}: Certified Swim School</h1>
+        <p class="section-subtitle" style="margin: 0 auto var(--space-8); max-width: 700px;">
+          Private 1-on-1 swimming classes for children and adults in {enName} area. Certified coaches, flexible scheduling, and a 100% learn-to-swim guarantee.
+        </p>
+        <div class="hero-cta" style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+          <a href="tel:0979121097" class="btn btn-accent btn-lg pulse">📞 Call Support: 0979.121.097</a>
+          <a href="#pools-section" class="btn btn-primary btn-lg">🏊 Local Pools</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container" style="max-width: 1100px;">
+      <div class="grid grid-2" style="gap: var(--space-10); align-items: start; margin-bottom: var(--space-16);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">Learn to Swim Safely & Confidently in {enName}</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-4); font-size: var(--text-base);">
+            Learning to swim is one of the most valuable investments you can make for safety, physical development, and lifelong water confidence.
+          </p>
+          <p style="color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); font-size: var(--text-base);">
+            At Swim For Life Vietnam, we provide premium <strong>1-on-1 private swimming lessons</strong> tailored specifically to the needs of each student in the {enName} area. Our coaches are trained in pedagogical techniques and focus 100% on keeping the student safe, relaxed, and progressing at their own pace.
+          </p>
+          <div style="background: var(--color-bg-alt); padding: var(--space-5); border-radius: 12px; border-left: 4px solid var(--color-accent);">
+            <strong style="display: block; color: var(--color-accent); margin-bottom: 2px; font-size: var(--text-base);">💯 Our Result Guarantee:</strong>
+            <span style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.5;">If you attend all scheduled sessions but are unable to swim by the end, we will continue training you completely for free until you swim confidently.</span>
+          </div>
+        </div>
+        <div>
+          <img 
+            src={loc.image} 
+            alt={`Professional swim training class in ${enName} by Swim For Life Vietnam`} 
+            style="border-radius: 16px; box-shadow: var(--shadow-lg); width: 100%; object-fit: cover; height: 380px;"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      <!-- Pools Section -->
+      <div id="pools-section" style="scroll-margin-top: 100px; margin-bottom: var(--space-16);">
+        <h2 style="font-size: var(--text-2xl); color: var(--color-primary); text-align: center; margin-bottom: var(--space-2); font-weight: 700;">Swimming Pool Partners in {enName}</h2>
+        <p style="text-align: center; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto var(--space-8); font-size: var(--text-sm);">
+          Students can choose from our partner pools listed below or request a custom pool location nearby.
+        </p>
+
+        <div class="grid grid-3" style="gap: var(--space-6);">
+          {loc.pools.map((pool) => (
+            <div class="card" style="padding: var(--space-5); border-radius: 16px; box-shadow: var(--shadow-sm); background: #ffffff; border: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span style="font-size: 20px; margin-bottom: var(--space-2); display: block;">🏊</span>
+                <h3 style="font-size: var(--text-base); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2);">{pool.name}</h3>
+                <p style="font-size: var(--text-xs); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.4;"><strong>📍 Address:</strong> {pool.address}</p>
+                <p style="font-size: var(--text-xs); color: var(--color-text-secondary); margin-bottom: var(--space-4);"><strong>🎨 Type:</strong> {pool.type === 'Ngoài trời' ? 'Outdoor' : pool.type === 'Trong nhà' ? 'Indoor' : pool.type}</p>
+              </div>
+              <div style="border-top: 1px solid var(--color-border-light); padding-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-secondary); line-height: 1.4;">
+                <strong>⭐ Key Highlight:</strong> {pool.pros}
+              </div>
+            </div>
+          ))}
+          
+          <div class="card" style="padding: var(--space-5); border-radius: 16px; background: var(--color-bg-alt); border: 1px dashed var(--color-primary); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 200px;">
+            <span style="font-size: 24px; margin-bottom: var(--space-2);">❓</span>
+            <h3 style="font-size: var(--text-base); font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2);">Other pool near you?</h3>
+            <p style="font-size: var(--text-xs); color: var(--color-text-secondary); line-height: 1.5; max-width: 200px; margin-bottom: var(--space-4);">Our coach can travel to any pool of your choice in the area.</p>
+            <a href="tel:0979121097" style="font-size: var(--text-xs); font-weight: 700; color: var(--color-accent);">Contact Us Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div style="margin-bottom: var(--space-16);">
+        <h2 style="font-size: var(--text-2xl); color: var(--color-primary); text-align: center; margin-bottom: var(--space-8); font-weight: 700;">FAQs on Swim Lessons in {enName}</h2>
+        <div class="faq-list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4);">
+          
+          <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff; border: 1px solid var(--color-border);">
+            <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">❓ Where are the swimming lessons held in {enName}?</h4>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+              We conduct classes at high-quality partner pools in {enName} (such as {loc.pools.map(p => p.name).join(', ')}) or any pool location you request.
+            </p>
+          </div>
+
+          <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff; border: 1px solid var(--color-border);">
+            <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">❓ How much do swim lessons cost in {enName}?</h4>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
+              Tuition rates depend on the class structure (1-on-1 vs small group) and pool selection. Please contact us via Zalo or phone at 0979.121.097 to get a detailed quote and book a free trial session.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Register Form Container -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Book a Free Swim Trial in {enName}</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Submit the form, and our coordinator in {enName} will contact you shortly to schedule your trial lesson.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo/WhatsApp:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Coach Manh)</a></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="en-location-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

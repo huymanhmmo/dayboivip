@@ -1,0 +1,207 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+
+const title = 'Swimming Learning Path: Beginner to Advanced | Swim For Life Vietnam';
+const description = 'Explore our structured 12-session swimming syllabus for children & adults. From water adaptation, breathing, to mastering breaststroke, crawl, and treading.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swim Journey' },
+];
+
+const steps = [
+  {
+    phase: 'Phase 1',
+    title: 'Water Adaptation & Safety Basics (Sessions 1 - 3)',
+    desc: 'Students overcome fear of water, acclimatize to the pool environment, and master foundational water survival techniques.',
+    details: [
+      'Learn correct breathing (inhaling through the mouth above water, blowing bubbles through the nose underwater) to prevent choking.',
+      'Practice floating (starfish back float and front float) to let the body rise naturally without floatation devices.',
+      'Learn basic gliding (pushing off the wall in a streamlined posture) to generate movement.',
+      'Master opening eyes underwater and returning to a standing position safely from a float.'
+    ],
+    image: '/images/safety/khoi-dong-tren-can.jpg',
+    color: 'var(--color-primary)'
+  },
+  {
+    phase: 'Phase 2',
+    title: 'Stroke Mechanics: Kick & Pull (Sessions 4 - 6)',
+    desc: 'Start learning propulsive kick and arm movements, preparing for coordination of the primary stroke (usually breaststroke).',
+    details: [
+      'Learn breaststroke kicking technique (Bend - Flex - Kick - Glide) on land and on the wall underwater.',
+      'Learn breaststroke arm pulling and head lifting for breathing on land and in shallow water.',
+      'Practice kicking with a kickboard to cover longer distances.',
+      'Integrate arm pulls and head lifts for breathing with assistant kicking.'
+    ],
+    image: '/images/techniques/thi-pham-dong-tac-tay-boi-ech.jpg',
+    color: 'var(--color-teal)'
+  },
+  {
+    phase: 'Phase 3',
+    title: 'Full-Body Coordination & Water Treading (Sessions 7 - 9)',
+    desc: 'Integrate separate motions into a flowing coordination, starting independent swimming without gear and learning self-rescue treading.',
+    details: [
+      'Coordinate: 1 arm pull (breathe) - 1 kick - Glide and float.',
+      'Practice short-distance swims (10m - 15m) without gear under close coach supervision.',
+      'Learn treading water (utilizing breaststroke or scissor kicks, and hand-sculling to stay afloat).',
+      'Practice jumping into deep water from the deck and rising to float immediately.'
+    ],
+    image: '/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg',
+    color: 'var(--color-accent)'
+  },
+  {
+    phase: 'Phase 4',
+    title: 'Distance Building & Advanced Rescue (Sessions 10 - 12)',
+    desc: 'Build endurance for longer swims and master critical self-rescue/cramp handling in deep water.',
+    details: [
+      'Extend swimming distance to 25m - 50m continuously with a steady breathing rhythm.',
+      'Master treading water confidently for 30 seconds to over 2 minutes in deep pools.',
+      'Learn self-rescue for cramps, exhaustion, and choking in deep areas.',
+      'End-of-course test: Graduate, swim independently, and receive a certificate.'
+    ],
+    image: '/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg',
+    color: 'var(--color-gold)'
+  }
+];
+
+const journeySchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Swim For Life Vietnam 12-Session Learning Path",
+  "description": "4-phase scientific swimming curriculum helping students from water-shy to confident deep-water swimmers.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "sameAs": "https://dayboi.vip/en/"
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/swim-journey/"
+  breadcrumbs={breadcrumbs}
+  schema={journeySchema}
+  lang="en"
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🗺️ Learning Map</span>
+        <h1 class="section-title">12-Session Structured Swimming Journey</h1>
+        <p class="section-subtitle">
+          Discover our scientific swim syllabus designed by Head Coach Nguyen Huy Manh. We break down the progress into 4 clear phases, ensuring a natural, safe, and guaranteed learning curve.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section class="section">
+    <div class="container" style="max-width: 1000px;">
+      
+      <div style="display: flex; flex-direction: column; gap: var(--space-12); position: relative;">
+        
+        {steps.map((step) => (
+          <div style={`display: flex; flex-direction: column; gap: var(--space-6); position: relative; z-index: 2; border: 1px solid var(--color-border); padding: var(--space-8); border-radius: 20px; background: #ffffff; border-left: 8px solid ${step.color}; box-shadow: var(--shadow-md);`}>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+              <span style={`background: ${step.color}; color: white; padding: 4px 16px; border-radius: 20px; font-size: var(--text-sm); font-weight: 700; text-transform: uppercase;`}>
+                {step.phase}
+              </span>
+              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 500;">
+                Duration: 3 sessions
+              </span>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-8); align-items: start; margin-top: var(--space-2);">
+              <div>
+                <h3 style="font-size: var(--text-xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-3); line-height: 1.3;">
+                  {step.title}
+                </h3>
+                <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-6); line-height: 1.6; font-style: italic;">
+                  "{step.desc}"
+                </p>
+
+                <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Detailed training focus:</h4>
+                <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text); line-height: 1.6;">
+                  {step.details.map((detail) => (
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
+                      <span>🔹</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <img 
+                  src={step.image} 
+                  alt={step.title} 
+                  style="border-radius: 12px; width: 100%; height: 260px; object-fit: cover; box-shadow: var(--shadow-sm);"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why 12 Sessions Section -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-10); align-items: center;">
+        <div>
+          <img 
+            src="/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg" 
+            alt="Swim class Vinhomes Times City" 
+            style="border-radius: 16px; box-shadow: var(--shadow-md); width: 100%; object-fit: cover; height: 350px;"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">Why 12 Sessions?</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
+            Many commercial centers promise "learn to swim in 3 or 5 sessions". However, according to Coach Nguyen Huy Manh:
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+            <li style="display: flex; gap: var(--space-2);"><span>⚠️</span> <span>Super-fast courses often lead to incorrect technique, rapid fatigue, and a lack of deep-water treading ability.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>⚠️</span> <span>Forcing child movements too quickly before water comfort is built creates long-term psychological fear.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>A 12-session pathway</strong> is the scientifically proven duration for muscle memory to consolidate properly.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span>Ensures students learn clean, energy-efficient strokes and acquire treading and self-rescue safety that lasts a lifetime.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Form Container -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Start Your Swimming Journey Today</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Let us accompany you and your children on the journey to swim safely, confidently, and correctly.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline Support:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Coach Manh)</a></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="en-journey-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

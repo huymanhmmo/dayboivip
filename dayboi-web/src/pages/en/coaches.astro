@@ -1,0 +1,216 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import RegistrationForm from '../../components/RegistrationForm.astro';
+
+const title = 'Meet Our Professional Swim Coaches | Swim For Life Vietnam';
+const description = 'Meet the outstanding coaching team of Swim For Life Vietnam, led by Head Coach Nguyen Huy Manh. Patient, certified, and fully committed to your success.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Coaches' },
+];
+
+const coaches = [
+  {
+    name: 'Coach Nguyen Huy Manh',
+    role: 'Training Director / Founder',
+    image: '/images/coaches/giam-doc-nguyen-huy-manh.jpg',
+    badge: 'VTC9 Expert Guest',
+    bio: 'Graduated from Hanoi National University of Education (Physical Education). Over 10 years of professional swim coaching, successfully teaching over 10,000 children and adults. Directs all training syllabus and standards at the center.',
+    specialty: 'Acclimatizing water-anxious kids, advanced stroke correction, coach training.'
+  },
+  {
+    name: 'Coach Nguyen Thi Mai',
+    role: 'Head of Kids Swimming Programs',
+    image: '/images/coaches/giao-vien-vui-ve-tam-ly.jpeg',
+    badge: 'Patient & Fun',
+    bio: 'Former national swimming athlete, graduated from Bac Ninh Sports University. Over 7 years teaching kids, highly skilled in child psychology to help children conquer water fears gently.',
+    specialty: 'Water survival for toddlers (3-5 years), fundamental breaststroke.'
+  },
+  {
+    name: 'Coach Tran Van Hai',
+    role: 'Senior Swimming Coach',
+    image: '/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg',
+    badge: 'Expert Level',
+    bio: 'Former city swim team athlete, certified international lifeguard. Employs a scientific, structured, yet highly engaging teaching approach helping students progress rapidly.',
+    specialty: 'Speed crawl, backstroke, advanced butterfly.'
+  },
+  {
+    name: 'Coach Pham Thanh Vy',
+    role: 'VIP Program Specialist',
+    image: '/images/coaches/giao-vien-tan-tam-ho-tro.jpg',
+    badge: 'Dedicated & Kind',
+    bio: 'Graduated in Sports Coaching (Aquatics). Holds certified pedagogical qualifications, specializing in 1-on-1 private lessons for water-anxious adults and female learners.',
+    specialty: 'Adult water anxiety, solid deep-water treading.'
+  }
+];
+
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Coaching Team at Swim For Life Vietnam",
+  "description": "Information on training directors and senior swimming instructors at Swim For Life Vietnam.",
+  "url": "https://dayboi.vip/en/coaches/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": coaches.map((coach, index) => ({
+      "@type": "Person",
+      "name": coach.name,
+      "jobTitle": coach.role,
+      "image": `https://dayboi.vip${coach.image}`,
+      "description": coach.bio
+    }))
+  }
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/coaches/"
+  breadcrumbs={breadcrumbs}
+  schema={teamSchema}
+  lang="en"
+>
+
+  <!-- Title Banner -->
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🏊 Professional Coaches</span>
+        <h1 class="section-title">Our Coaching Team</h1>
+        <p class="section-subtitle">
+          Swim For Life brings together over 50 professional swimming instructors nationwide. 100% of our coaches hold degrees from sports universities, possess active lifeguarding credentials, and are trained in modern pedagogy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Spotlight Section -->
+  <section class="section" style="border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-12); align-items: center; margin-bottom: var(--space-8);">
+        <div>
+          <img 
+            src="/images/coaches/giam-doc-nguyen-huy-manh-vtc9.png" 
+            alt="Coach Nguyen Huy Manh on VTC9 television channel" 
+            style="border-radius: 16px; box-shadow: var(--shadow-lg); width: 100%; object-fit: cover;"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <span style="font-size: var(--text-xs); text-transform: uppercase; color: var(--color-accent); font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-2);">Director / Lead Coach</span>
+          <h2 style="font-size: var(--text-3xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-4);">Coach Nguyen Huy Manh</h2>
+          <h4 style="font-size: var(--text-lg); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-4);">Training Director & Founder of Swim For Life Vietnam</h4>
+          
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
+            Coach Nguyen Huy Manh is a prominent figure in youth aquatics education in Hanoi and major urban developments. With a background from Hanoi National University of Education, Coach Manh is dedicated to standardizing swim training for every child in Vietnam.
+          </p>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-6);">
+            Under his leadership, Swim For Life has developed a scientific curriculum based on E-E-A-T guidelines, emphasizing positive reinforcement and absolute child safety, never forcing or throwing students into water.
+          </p>
+          
+          <div style="display: flex; gap: var(--space-4);">
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
+              <strong>🎓 10+ Years</strong><br/><span>Huấn luyện thực chiến</span>
+            </div>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
+              <strong>📺 TV Expert</strong><br/><span>VTC9 TV Guest</span>
+            </div>
+            <div style="background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); border-radius: 8px; font-size: var(--text-sm);">
+              <strong>🏊 10,000+</strong><br/><span>Students taught</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Grid Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center" style="margin-bottom: var(--space-10);">
+        <h2 class="section-title">Featured Instructors</h2>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 600px;">Our dedicated teachers who receive glowing reviews and love from parents & students alike.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: var(--space-8); margin-bottom: var(--space-16);">
+        {coaches.slice(1).map((coach) => (
+          <div class="card" style="display: flex; flex-direction: column; overflow: hidden; border-radius: 16px; box-shadow: var(--shadow-md); background: #ffffff;">
+            <div style="position: relative; height: 280px; overflow: hidden;">
+              <img 
+                src={coach.image} 
+                alt={`HLV ${coach.name}`} 
+                style="width: 100%; height: 100%; object-fit: cover;" 
+                loading="lazy" 
+              />
+              <span style="position: absolute; bottom: 12px; left: 12px; background: var(--color-primary); color: white; padding: 2px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                {coach.badge}
+              </span>
+            </div>
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+              <div>
+                <h3 style="font-size: var(--text-lg); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-1);">{coach.name}</h3>
+                <span style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; text-transform: uppercase; display: block; margin-bottom: var(--space-3);">{coach.role}</span>
+                <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">{coach.bio}</p>
+              </div>
+              <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-secondary);">
+                <strong>⭐ Specialty:</strong> {coach.specialty}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Standards and Ethics Section -->
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-10); align-items: center;">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700;">Coaching Selection Standards</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-4);">
+            Swimming is directly linked to safety and life protection. Consequently, we maintain rigorous benchmarks for choosing our instructors:
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Aquatic Degree:</strong> 100% of coaches are Sports University aquatics graduates or former provincial/national competitive athletes.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Pedagogical Skills:</strong> Rigorously trained in psychology to handle water fear, anxiety, and learning blocks safely.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>Ethics & Patience:</strong> Strict standard of patience and respectful behavior. No shouting or harsh treatment is permitted.</span></li>
+            <li style="display: flex; gap: var(--space-2);"><span>✔️</span> <span><strong>First Aid & CPR:</strong> Required active lifeguarding and first aid (CPR) credentials.</span></li>
+          </ul>
+        </div>
+        <div>
+          <img 
+            src="/images/classes/giao-vien-chinh-sua-ky-thuat.jpg" 
+            alt="Dedicated teacher correcting techniques under the water" 
+            style="border-radius: 16px; box-shadow: var(--shadow-md); width: 100%; object-fit: cover; height: 350px;"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking and Contact Form Container -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
+        <div>
+          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Register for a VIP Lesson</h2>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+            Sign up today to receive a free 1-on-1 trial session with our experienced swimming instructors.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
+            <div><strong>💬 Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Coach Manh)</a></div>
+          </div>
+        </div>
+        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
+          <RegistrationForm id="en-hlv-page-form" isFullForm={false} flat={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

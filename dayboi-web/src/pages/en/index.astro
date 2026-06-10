@@ -1,0 +1,354 @@
+---
+/**
+ * en/index.astro — Swim For Life Vietnam English Homepage
+ */
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/common/Header.astro';
+import Footer from '../../components/common/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Swim For Life Vietnam",
+  "alternateName": "Swim For Life Training Center",
+  "description": "Top professional swim training center in Vietnam. Offering lessons for all ages with experienced coaches and certified methodology.",
+  "url": "https://dayboi.vip/en/",
+  "telephone": "+84979121097",
+  "email": "dayboivip@gmail.com",
+  "image": "https://dayboi.vip/images/brand/logo.png",
+  "priceRange": "Contact for a quote",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "VN",
+    "addressLocality": "Hanoi"
+  }
+};
+
+const regions = [
+  {
+    name: "North Vietnam",
+    color: "aqua",
+    provinces: [
+      { name: "Hanoi", slug: "swimming-lessons-ha-noi", isTW: true },
+      { name: "Hai Phong", slug: "swimming-lessons-hai-phong", isTW: true },
+      { name: "Quang Ninh", slug: "swimming-lessons-quang-ninh" },
+      { name: "Bac Ninh", slug: "swimming-lessons-bac-ninh" },
+      { name: "Thai Nguyen", slug: "swimming-lessons-thai-nguyen" },
+      { name: "Phu Tho", slug: "swimming-lessons-phu-tho" },
+      { name: "Ninh Binh", slug: "swimming-lessons-ninh-binh" },
+      { name: "Hung Yen", slug: "swimming-lessons-hung-yen" },
+      { name: "Thanh Hoa", slug: "swimming-lessons-thanh-hoa" },
+      { name: "Lao Cai", slug: "swimming-lessons-lao-cai" },
+      { name: "Tuyen Quang", slug: "swimming-lessons-tuyen-quang" },
+      { name: "Lang Son", slug: "swimming-lessons-lang-son" },
+      { name: "Son La", slug: "swimming-lessons-son-la" },
+      { name: "Dien Bien", slug: "swimming-lessons-dien-bien" },
+      { name: "Lai Chau", slug: "swimming-lessons-lai-chau" },
+      { name: "Cao Bang", slug: "swimming-lessons-cao-bang" }
+    ]
+  },
+  {
+    name: "Central Vietnam",
+    color: "teal",
+    provinces: [
+      { name: "Da Nang", slug: "swimming-lessons-da-nang", isTW: true },
+      { name: "Hue", slug: "swimming-lessons-hue", isTW: true },
+      { name: "Khanh Hoa", slug: "swimming-lessons-khanh-hoa" },
+      { name: "Nghe An", slug: "swimming-lessons-nghe-an" },
+      { name: "Binh Dinh", slug: "swimming-lessons-binh-dinh" },
+      { name: "Quang Ngai", slug: "swimming-lessons-quang-ngai" },
+      { name: "Quang Binh", slug: "swimming-lessons-quang-binh" },
+      { name: "Ha Tinh", slug: "swimming-lessons-ha-tinh" }
+    ]
+  },
+  {
+    name: "Highlands & South East",
+    color: "gold",
+    provinces: [
+      { name: "Ho Chi Minh City", slug: "swimming-lessons-ho-chi-minh", isTW: true },
+      { name: "Dong Nai", slug: "swimming-lessons-dong-nai", isTW: true },
+      { name: "Lam Dong", slug: "swimming-lessons-lam-dong" },
+      { name: "Dak Lak", slug: "swimming-lessons-dak-lak" }
+    ]
+  },
+  {
+    name: "Mekong Delta",
+    color: "coral",
+    provinces: [
+      { name: "Can Tho", slug: "swimming-lessons-can-tho", isTW: true },
+      { name: "An Giang", slug: "swimming-lessons-an-giang" },
+      { name: "Dong Thap", slug: "swimming-lessons-dong-thap" },
+      { name: "Vinh Long", slug: "swimming-lessons-vinh-long" },
+      { name: "Tay Ninh", slug: "swimming-lessons-tay-ninh" },
+      { name: "Ca Mau", slug: "swimming-lessons-ca-mau" }
+    ]
+  }
+];
+---
+
+<MainLayout
+  title="Professional Swimming Lessons Center Vietnam"
+  description="Swim For Life Vietnam — Leading professional swimming school. Private lessons for kids & adults with certified coaches, scientific methodology, and guaranteed results."
+  lang="en"
+  alternateUrl="/"
+  schema={schema}
+>
+  <Header slot="header" lang="en" currentPath="/en/" />
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero" id="hero-section">
+    <div class="hero__bg">
+      <div class="hero__bg-gradient"></div>
+      <div class="hero__bubbles" aria-hidden="true">
+        <span class="bubble bubble--1"></span>
+        <span class="bubble bubble--2"></span>
+        <span class="bubble bubble--3"></span>
+        <span class="bubble bubble--4"></span>
+        <span class="bubble bubble--5"></span>
+        <span class="bubble bubble--6"></span>
+        <span class="bubble bubble--7"></span>
+        <span class="bubble bubble--8"></span>
+      </div>
+    </div>
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <div class="hero__badge reveal">
+          <span class="hero__badge-dot"></span>
+          #1 Professional Swim Training Center in Vietnam
+        </div>
+        <h1 class="hero__title reveal">
+          Swim<br/>
+          <span class="hero__title-highlight">Safely</span> — Happily<br/>
+          & <span class="hero__title-accent">Effectively</span>
+        </h1>
+        <p class="hero__subtitle reveal">
+          Swim For Life Vietnam — Professional swimming lessons for all ages with certified coaches, scientific curriculum, and 100% safety commitment.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
+            💬 Free Consultation
+          </a>
+          <a href="tel:0979121097" class="btn btn--hero-outline btn--lg">
+            📞 0979.121.097
+          </a>
+        </div>
+        <div class="hero__trust reveal">
+          <div class="hero__trust-avatars">
+            <img src="/images/coaches/giam-doc-nguyen-huy-manh.jpg" alt="Coach Swim For Life" class="hero__trust-avatar" />
+            <img src="/images/coaches/giao-vien-vui-ve-tam-ly.jpeg" alt="Coach Swim For Life" class="hero__trust-avatar" />
+            <img src="/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg" alt="Coach Swim For Life" class="hero__trust-avatar" />
+          </div>
+          <div class="hero__trust-text">
+            <strong>5,000+ students</strong> learned to swim with us
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual reveal">
+        <div class="hero__collage">
+          <div class="hero__photo hero__photo--main">
+            <img src="/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg" alt="Professional swim lessons for kids at Swim For Life" loading="eager" />
+          </div>
+          <div class="hero__photo hero__photo--top">
+            <img src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" alt="Coach correcting swimming technique" loading="eager" />
+          </div>
+          <div class="hero__photo hero__photo--bottom">
+            <img src="/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg" alt="Structured swim class for kids" loading="eager" />
+          </div>
+        </div>
+        <div class="hero__float-card hero__float-card--top">
+          <span class="hero__float-icon">🏆</span>
+          <div><strong>10+ Years</strong><span>experience</span></div>
+        </div>
+        <div class="hero__float-card hero__float-card--bottom">
+          <span class="hero__float-icon">🎯</span>
+          <div><strong>100%</strong><span>result guarantee</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHY CHOOSE US
+       ============================================ -->
+  <section class="section why-us" id="why-choose-us">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Why Choose Us</span>
+        <h2 class="section__title">Swim For Life Vietnam — <span class="text-gradient">Teaching from the Heart</span></h2>
+        <p class="section__desc">We don't just teach swimming; we inspire confidence and build water safety skills for life.</p>
+      </div>
+      <div class="why-us__grid">
+        <div class="feature-card reveal">
+          <div class="feature-card__icon feature-card__icon--aqua">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Absolute Safety</h3>
+          <p class="feature-card__desc">Coaches accompany students closely in the water, utilize high-quality safety gear, and maintain strict security protocols.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon feature-card__icon--coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="feature-card__title">Certified Coaches</h3>
+          <p class="feature-card__desc">Our instructors are university-trained, nationally certified, highly experienced, patient, and friendly.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon feature-card__icon--teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Scientific Method</h3>
+          <p class="feature-card__desc">Structured training plans customized to each student's pace, combining land practice and in-water drills.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon feature-card__icon--gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Guaranteed Results</h3>
+          <p class="feature-card__desc">100% of students learn to swim properly. We offer certificates of completion upon graduation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COURSES SECTION
+       ============================================ -->
+  <section class="section courses-section" id="courses-section">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Our Courses</span>
+        <h2 class="section__title">Find the <span class="text-gradient">Perfect Class for You</span></h2>
+        <p class="section__desc">Diverse programs for all ages and levels — from beginners to advanced swimmers.</p>
+      </div>
+      <div class="courses-grid">
+        <!-- Kids -->
+        <div class="course-card reveal">
+          <div class="course-card__img-wrap">
+            <img src="/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg" alt="Kids swimming lessons" class="course-card__img" loading="lazy" />
+            <span class="course-card__badge course-card__badge--hot">Popular</span>
+          </div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Kids Swimming Lessons</h3>
+            <p class="course-card__desc">For children aged 4-15. Fun, interactive, and safe lessons teaching survival skills and core swimming styles.</p>
+            <div class="course-card__footer">
+              <span class="course-card__price">Contact for a quote</span>
+              <a href="/en/contact" class="btn btn--primary btn--sm">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adults -->
+        <div class="course-card reveal">
+          <div class="course-card__img-wrap">
+            <img src="/images/safety/hoc-vien-duoc-huong-dan-trong-nuoc.jpg" alt="Adults swimming lessons" class="course-card__img" loading="lazy" />
+          </div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Adult Swimming Lessons</h3>
+            <p class="course-card__desc">For ages 16+. Patient, understanding coaches who help you conquer water anxiety and build correct breathing/stamina.</p>
+            <div class="course-card__footer">
+              <span class="course-card__price">Contact for a quote</span>
+              <a href="/en/contact" class="btn btn--primary btn--sm">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1-on-1 VIP -->
+        <div class="course-card reveal">
+          <div class="course-card__img-wrap">
+            <img src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" alt="1-on-1 private swim lessons" class="course-card__img" loading="lazy" />
+            <span class="course-card__badge course-card__badge--vip">VIP</span>
+          </div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">1-on-1 Private Lessons</h3>
+            <p class="course-card__desc">Personalized curriculum with 100% coach focus. Progress 3x faster with flexible scheduling and pool selection.</p>
+            <div class="course-card__footer">
+              <span class="course-card__price">Contact for a quote</span>
+              <a href="/en/contact" class="btn btn--accent btn--sm">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intensive -->
+        <div class="course-card reveal">
+          <div class="course-card__img-wrap">
+            <img src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" alt="Intensive swimming course" class="course-card__img" loading="lazy" />
+          </div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Intensive Fast-Track</h3>
+            <p class="course-card__desc">Fast-track program in 7-10 days. Perfect for busy individuals who want to master basic survival and breaststroke quickly.</p>
+            <div class="course-card__footer">
+              <span class="course-card__price">Contact for a quote</span>
+              <a href="/en/contact" class="btn btn--primary btn--sm">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LOCATIONS SECTION
+       ============================================ -->
+  <section class="section locations-section" id="locations-section">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="section__badge">Locations</span>
+        <h2 class="section__title">National Swim School <span class="text-gradient">Network</span></h2>
+        <p class="section__desc">Swim For Life is present across 34 key provinces and cities in Vietnam, providing accessible, secure, and professional training.</p>
+      </div>
+      
+      <div class="locations-grid">
+        {regions.map((region) => (
+          <div class={`region-card region-card--${region.color} reveal`}>
+            <div class="region-card__header">
+              <h3 class="region-card__title">
+                <span class="region-card__bullet"></span>
+                {region.name}
+              </h3>
+              <span class="region-card__count">{region.provinces.length} locations</span>
+            </div>
+            <div class="region-card__body">
+              <ul class="region-card__list">
+                {region.provinces.map((prov) => (
+                  <li class="region-card__item">
+                    <a href={`/en/${prov.slug}/`} class="region-card__link">
+                      <span class="region-card__icon">📍</span>
+                      <span class="region-card__name">
+                        {prov.name}
+                        {prov.isTW && <span class="badge-tw">City</span>}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA BOTTOM
+       ============================================ -->
+  <section class="section cta-section" id="cta-bottom">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2 class="cta-box__title">Ready to Learn Swimming?</h2>
+        <p class="cta-box__desc">Contact us today to receive a free consultation for the perfect swim course for you and your family.</p>
+        <div class="cta-box__actions">
+          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
+            💬 Chat via Zalo
+          </a>
+          <a href="tel:0979121097" class="btn btn--outline-white btn--lg">
+            📞 Call 0979.121.097
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" lang="en" />
+</MainLayout>
