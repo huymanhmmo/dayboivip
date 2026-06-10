@@ -12,6 +12,12 @@ const MAX_URLS_PER_RUN = 100; // Limit to stay safely within the default 200/day
 async function main() {
   console.log('[Google Indexing] Bắt đầu quy trình kiểm tra index...');
 
+  // 0. Bỏ qua trong môi trường CI/CD (Netlify, Vercel, Cloudflare, etc.)
+  if (process.env.CI === 'true' || process.env.NETLIFY === 'true' || process.env.VERCEL === 'true' || process.env.CF_PAGES === '1') {
+    console.log('[Google Indexing] Phát hiện môi trường CI/CD. Bỏ qua quy trình lập chỉ mục để tránh hao phí Quota.');
+    process.exit(0);
+  }
+
   // 1. Kiểm tra sự tồn tại của file key credentials
   if (!fs.existsSync(KEY_FILE)) {
     console.warn(`\x1b[33m[Google Indexing] KHÔNG tìm thấy file cấu hình key tại: ${KEY_FILE}\x1b[0m`);
