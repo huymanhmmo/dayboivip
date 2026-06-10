@@ -187,12 +187,10 @@ const {
 </div>
 
 <style>
-  /* Premium Design styling for Form Container */
   .cl-form-card {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(0, 119, 182, 0.15);
     border-radius: 16px;
     padding: 32px;
     box-shadow: 0 10px 30px rgba(0, 77, 140, 0.06), 
@@ -261,15 +259,28 @@ const {
   }
 
   .cl-input-field,
-  .cl-select-field,
-  .cl-textarea-field {
+  .cl-select-field {
     width: 100%;
     padding: 13px 16px 13px 44px;
     font-size: 0.95rem;
-    color: var(--color-dark, #023047);
-    background-color: rgba(240, 248, 255, 0.4);
-    border: 1.5px solid rgba(0, 119, 182, 0.15);
-    border-radius: 12px;
+    color: var(--color-text, #1b1b1e);
+    background-color: var(--color-bg-alt, #f6f2f7);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-full);
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+  }
+
+  .cl-textarea-field {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    font-size: 0.95rem;
+    color: var(--color-text, #1b1b1e);
+    background-color: var(--color-bg-alt, #f6f2f7);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-lg);
     outline: none;
     font-family: inherit;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -307,20 +318,20 @@ const {
   .cl-input-field:hover,
   .cl-select-field:hover,
   .cl-textarea-field:hover {
-    border-color: rgba(0, 119, 182, 0.35);
-    background-color: rgba(240, 248, 255, 0.6);
+    border-color: rgba(0, 67, 112, 0.2);
+    background-color: var(--color-bg-alt);
   }
 
   .cl-input-wrapper:focus-within .cl-input-icon {
-    color: var(--color-primary, #0077B6);
+    color: var(--color-primary, #004370);
   }
 
   .cl-input-field:focus,
   .cl-select-field:focus,
   .cl-textarea-field:focus {
     background-color: #ffffff;
-    border-color: var(--color-primary, #0077B6);
-    box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.12);
+    border-color: var(--color-primary, #004370);
+    box-shadow: 0 0 0 4px rgba(0, 67, 112, 0.12);
   }
 
   .cl-form-hint {
@@ -340,15 +351,15 @@ const {
     gap: 8px;
     width: 100%;
     padding: 15px 24px;
-    background: linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%);
+    background: var(--gradient-coral, linear-gradient(135deg, #FF9100, #ffb778));
     color: #ffffff;
     border: none;
-    border-radius: 12px;
+    border-radius: var(--radius-full);
     font-weight: 700;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.28);
+    box-shadow: 0 4px 15px rgba(255, 145, 0, 0.25);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
     margin-top: 6px;

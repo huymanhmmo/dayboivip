@@ -69,43 +69,50 @@ button {
    2. DESIGN TOKENS — CSS Custom Properties
    ============================================================ */
 :root {
-  /* --- Colors: Vibrant Aqua & Coral --- */
-  --color-primary:        hsl(187, 100%, 42%);   /* #00B4D8 — Vivid Aqua */
-  --color-primary-light:  hsl(187, 100%, 90%);   /* Light Aqua tint */
-  --color-primary-dark:   hsl(187, 100%, 32%);   /* Dark Aqua */
-  --color-primary-50:     hsl(187, 100%, 96%);   /* Barely tinted bg */
+  /* --- Colors: The Fluid Authority (Material Design inspired) --- */
+  --color-primary:        #004370;   /* Deep Sea — Foundational Trust */
+  --color-primary-container: #005b96;
+  --color-primary-light:  #d0e4ff;   /* primary_fixed */
+  --color-primary-dark:   #001d35;   /* on_primary_fixed */
+  --color-primary-50:     #fbf8fc;   /* surface */
   
-  --color-accent:         hsl(14, 100%, 57%);    /* #FF6B35 — Warm Coral */
-  --color-accent-light:   hsl(14, 100%, 88%);    /* Light Coral tint */
-  --color-accent-dark:    hsl(14, 100%, 45%);    /* Dark Coral */
+  --color-secondary:      #00677d;   /* Pool Blue — Active brand element */
+  --color-secondary-container: #50d9fe;
   
-  --color-teal:           hsl(170, 90%, 33%);    /* #0CA789 — Teal gradient end */
-  --color-gold:           hsl(45, 100%, 50%);    /* #FFB703 — Gold accent */
+  --color-tertiary:       #633500;   /* Dark Rust Orange */
+  --color-tertiary-container: #854900;
   
-  --color-bg:             hsl(200, 30%, 98%);    /* #F5F9FB — Cloud White */
-  --color-bg-alt:         hsl(190, 40%, 95%);    /* #E8F5F5 — Soft Aqua Mist */
-  --color-bg-card:        hsl(0, 0%, 100%);      /* #FFFFFF — Card bg */
+  --color-accent:         #FF9100;   /* The Spark — Vibrant Orange for CTAs */
+  --color-accent-light:   #ffdcc1;   /* tertiary_fixed */
+  --color-accent-dark:    #6c3a00;   /* on_tertiary_fixed_variant */
   
-  --color-text:           hsl(210, 50%, 15%);    /* #132238 — Deep Navy */
-  --color-text-secondary: hsl(210, 20%, 45%);    /* #5C6B7A — Soft Slate */
-  --color-text-light:     hsl(210, 15%, 65%);    /* Light grey text */
-  --color-text-inverse:   hsl(0, 0%, 100%);      /* White text */
+  --color-teal:           #00677d;   /* Secondary color */
+  --color-gold:           #ffb778;   /* tertiary_fixed_dim */
   
-  --color-border:         hsl(210, 20%, 90%);    /* Subtle border */
-  --color-border-light:   hsl(210, 20%, 95%);    /* Very subtle border */
+  --color-bg:             #fbf8fc;   /* surface */
+  --color-bg-alt:         #f6f2f7;   /* surface_container_low */
+  --color-bg-card:        #ffffff;   /* surface_container_lowest */
   
-  --color-success:        hsl(145, 65%, 42%);    /* Green */
-  --color-warning:        hsl(40, 95%, 55%);     /* Amber */
-  --color-error:          hsl(0, 80%, 55%);      /* Red */
+  --color-text:           #1b1b1e;   /* on_surface */
+  --color-text-secondary: #414750;   /* on_surface_variant */
+  --color-text-light:     #717781;   /* outline */
+  --color-text-inverse:   #ffffff;   /* on_primary */
+  
+  --color-border:         rgba(193, 199, 209, 0.15); /* outline_variant @ 15% opacity (Ghost border fallback) */
+  --color-border-light:   rgba(193, 199, 209, 0.08); /* extra subtle */
+  
+  --color-success:        #14563b;   /* custom dark green */
+  --color-warning:        #854900;   /* custom amber */
+  --color-error:          #ba1a1a;   /* error */
   
   /* --- Gradients --- */
-  --gradient-primary:     linear-gradient(135deg, var(--color-primary), var(--color-teal));
-  --gradient-hero:        linear-gradient(160deg, hsl(200, 60%, 92%), hsl(187, 80%, 88%), hsl(190, 40%, 95%));
-  --gradient-coral:       linear-gradient(135deg, var(--color-accent), hsl(25, 100%, 60%));
-  --gradient-overlay:     linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(19,34,56,0.7) 100%);
+  --gradient-primary:     linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  --gradient-hero:        linear-gradient(160deg, #d0e4ff, #b3ebff, #f6f2f7);
+  --gradient-coral:       linear-gradient(135deg, var(--color-accent), #ffb778);
+  --gradient-overlay:     linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,29,53,0.7) 100%);
   
   /* --- Typography --- */
-  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
   
   --text-xs:   0.75rem;
@@ -136,20 +143,18 @@ button {
   
   /* --- Border Radius --- */
   --radius-sm:   0.375rem;
-  --radius-md:   0.625rem;
+  --radius-md:   0.75rem;
   --radius-lg:   1rem;
   --radius-xl:   1.5rem;
   --radius-2xl:  2rem;
   --radius-full: 9999px;
   
   /* --- Shadows --- */
-  --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md:    0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg:    0 10px 30px rgba(0, 0, 0, 0.1);
-  --shadow-xl:    0 20px 40px rgba(0, 0, 0, 0.12);
-  --shadow-aqua:  0 10px 30px rgba(0, 180, 216, 0.15);
-  --shadow-coral: 0 10px 30px rgba(255, 107, 53, 0.15);
-  --shadow-glow:  0 0 20px rgba(0, 180, 216, 0.3);
+  --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md:    0 8px 24px rgba(0, 29, 53, 0.04);
+  --shadow-lg:    0 16px 48px rgba(0, 29, 53, 0.06);
+  --shadow-xl:    0 24px 64px rgba(0, 29, 53, 0.08);
+  --shadow-glow:  0 0 20px rgba(0, 103, 125, 0.15);
   
   /* --- Transitions --- */
   --transition-fast:   150ms ease;
@@ -400,14 +405,12 @@ strong {
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border-light);
   transition: all var(--transition-smooth);
 }
 
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-aqua);
-  border-color: var(--color-primary-light);
 }
 
 .card--glass {
@@ -798,7 +801,6 @@ strong {
   padding-top: var(--space-4);
   padding-bottom: var(--space-10);
   background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
-  border-bottom: 1px solid rgba(0, 119, 182, 0.05);
 }
 
 .blog-header-grid {
@@ -872,7 +874,6 @@ strong {
   padding: var(--space-4);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 119, 182, 0.05);
   margin-top: var(--space-2);
   width: fit-content;
 }
@@ -1005,7 +1006,6 @@ strong {
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .widget-title {
@@ -1418,7 +1418,6 @@ strong {
 /* Premium Author Info Box */
 .author-card-premium {
   background: var(--color-bg);
-  border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
   padding: var(--space-5) var(--space-6);
   display: flex;
@@ -1662,11 +1661,7 @@ strong {
 }
 
 .sidebar-categories-list li {
-  border-bottom: 1px solid var(--color-gray-100);
-}
-
-.sidebar-categories-list li:last-child {
-  border-bottom: none;
+  margin-bottom: var(--space-1);
 }
 
 .category-item-link {
@@ -1880,7 +1875,6 @@ strong {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  border: 1px solid rgba(0, 119, 182, 0.06);
   transition: all var(--transition-base);
 }
 .featured-news-card:hover {
@@ -2009,7 +2003,6 @@ strong {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  border: 1px solid rgba(0, 119, 182, 0.06);
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
@@ -2108,7 +2101,6 @@ strong {
   background-color: var(--color-bg-alt); /* Light blue/tinted bg */
   padding-top: var(--space-16);
   padding-bottom: var(--space-16);
-  border-top: 1px solid rgba(0, 119, 182, 0.08);
 }
 .related-section-title {
   font-size: var(--text-2xl);
@@ -2151,7 +2143,6 @@ strong {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
-  border: 1px solid rgba(0, 119, 182, 0.04);
   display: flex;
   flex-direction: column;
   height: 100%;

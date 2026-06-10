@@ -13,40 +13,39 @@
 
 .course-landing {
   /* ---- Fonts ---- */
-  --cl-font:           'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
+  --cl-font:           'Plus Jakarta Sans', var(--font-body);
 
   /* ---- Brand Palette ---- */
-  --cl-primary:        #0A4D8C;
-  --cl-primary-light:  #0077B6;
-  --cl-cyan:           #00BCD4;
-  --cl-cyan-light:     #4DD0E1;
-  --cl-teal:           #009688;
-  --cl-cta:            #FF6B6B;
-  --cl-cta-hover:      #FF5252;
-  --cl-cta-gradient:   linear-gradient(135deg, #FF6B6B, #FF8E53);
-  --cl-gold:           #FFD93D;
-  --cl-green:          #4CAF50;
+  --cl-primary:        var(--color-primary, #004370);
+  --cl-primary-light:  var(--color-secondary, #00677d);
+  --cl-cyan:           var(--color-secondary, #00677d);
+  --cl-cyan-light:     var(--color-secondary-container, #50d9fe);
+  --cl-teal:           var(--color-secondary, #00677d);
+  --cl-cta:            var(--color-accent, #FF9100);
+  --cl-cta-hover:      var(--color-tertiary-container, #854900);
+  --cl-cta-gradient:   var(--gradient-coral, linear-gradient(135deg, #FF9100, #ffb778));
+  --cl-gold:           var(--color-gold, #ffb778);
+  --cl-green:          var(--color-success, #14563b);
 
   /* ---- Hero ---- */
-  --cl-hero-gradient:  linear-gradient(135deg, #0A4D8C 0%, #00838F 50%, #00BCD4 100%);
+  --cl-hero-gradient:  linear-gradient(135deg, var(--color-primary, #004370) 0%, var(--color-primary-container, #005b96) 50%, var(--color-secondary, #00677d) 100%);
 
   /* ---- Neutrals ---- */
-  --cl-dark:           #1A1A2E;
-  --cl-text:           #2D3436;
-  --cl-text-light:     #636E72;
-  --cl-bg:             #FFFFFF;
-  --cl-bg-alt:         #F0F9FF;
-  --cl-bg-dark:        #0A1628;
+  --cl-dark:           var(--color-text, #1b1b1e);
+  --cl-text:           var(--color-text-secondary, #414750);
+  --cl-text-light:     var(--color-text-light, #717781);
+  --cl-bg:             var(--color-bg-card, #ffffff);
+  --cl-bg-alt:         var(--color-bg-alt, #f6f2f7);
+  --cl-bg-dark:        var(--color-primary-dark, #001d35);
 
   /* ---- Glass ---- */
-  --cl-glass:          rgba(255, 255, 255, 0.12);
-  --cl-glass-border:   rgba(255, 255, 255, 0.2);
+  --cl-glass:          rgba(255, 255, 255, 0.08);
+  --cl-glass-border:   rgba(193, 199, 209, 0.15);
 
   /* ---- Shadows ---- */
-  --cl-shadow-sm:  0 2px 8px rgba(10, 77, 140, 0.08);
-  --cl-shadow-md:  0 8px 32px rgba(10, 77, 140, 0.12);
-  --cl-shadow-lg:  0 16px 48px rgba(10, 77, 140, 0.16);
+  --cl-shadow-sm:  var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04));
+  --cl-shadow-md:  var(--shadow-md, 0 8px 24px rgba(0,29,53,0.04));
+  --cl-shadow-lg:  var(--shadow-lg, 0 16px 48px rgba(0,29,53,0.06));
 
   /* ---- Radii ---- */
   --cl-radius:      16px;
@@ -434,7 +433,6 @@
   border-radius: var(--cl-radius);
   padding: 32px;
   box-shadow: var(--cl-shadow-sm);
-  border: 1px solid rgba(10, 77, 140, 0.06);
   transition: all 0.4s var(--cl-ease);
   position: relative;
   overflow: hidden;
@@ -637,7 +635,6 @@
   border-radius: var(--cl-radius);
   padding: 24px;
   box-shadow: var(--cl-shadow-sm);
-  border: 1px solid rgba(10, 77, 140, 0.06);
   transition: all 0.3s var(--cl-ease);
 }
 
@@ -712,7 +709,6 @@
   border-radius: var(--cl-radius-lg);
   padding: 36px 28px;
   box-shadow: var(--cl-shadow-sm);
-  border: 2px solid transparent;
   text-align: center;
   position: relative;
   transition: all 0.4s var(--cl-ease);
@@ -725,15 +721,15 @@
 
 /* Popular / featured card */
 .course-landing .cl-pricing__card--featured {
-  border-color: var(--cl-cyan);
+  background: linear-gradient(180deg, rgba(0, 103, 125, 0.06) 0%, var(--cl-bg) 100%);
   transform: scale(1.05);
-  box-shadow: var(--cl-shadow-md), 0 0 40px rgba(0, 188, 212, 0.12);
+  box-shadow: var(--cl-shadow-md), 0 8px 32px rgba(0, 103, 125, 0.08);
   z-index: 2;
 }
 
 .course-landing .cl-pricing__card--featured:hover {
   transform: scale(1.05) translateY(-6px);
-  box-shadow: var(--cl-shadow-lg), 0 0 50px rgba(0, 188, 212, 0.18);
+  box-shadow: var(--cl-shadow-lg), 0 16px 48px rgba(0, 103, 125, 0.15);
 }
 
 /* Badge */
@@ -795,15 +791,10 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 10px 0;
+  padding: 8px 0;
   font-size: 0.95rem;
   color: var(--cl-text);
-  border-bottom: 1px solid rgba(10, 77, 140, 0.06);
   line-height: 1.5;
-}
-
-.course-landing .cl-pricing__features li:last-child {
-  border-bottom: none;
 }
 
 .course-landing .cl-pricing__features li::before {
@@ -1253,7 +1244,6 @@
   border-radius: var(--cl-radius-lg);
   overflow: hidden;
   box-shadow: var(--cl-shadow-sm);
-  border: 1px solid rgba(10, 77, 140, 0.06);
   transition: all 0.4s var(--cl-ease);
 }
 
