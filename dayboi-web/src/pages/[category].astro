@@ -1,0 +1,378 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+import SuccessModal from '../components/SuccessModal.astro';
+import { blogPosts } from '../data/blogPosts.js';
+
+export async function getStaticPaths() {
+  const categoriesMap = new Map();
+  blogPosts.forEach(post => {
+    if (post.category && post.categorySlug) {
+      if (!categoriesMap.has(post.categorySlug)) {
+        categoriesMap.set(post.categorySlug, {
+          name: post.category,
+          slug: post.categorySlug,
+          posts: []
+        });
+      }
+      categoriesMap.get(post.categorySlug).posts.push(post);
+    }
+  });
+
+  return Array.from(categoriesMap.values())
+    .filter(cat => cat.slug !== 'huong-dan-hoc-boi')
+    .map(cat => ({
+      params: { category: cat.slug },
+      props: { categoryName: cat.name, posts: cat.posts }
+    }));
+}
+
+const { category } = Astro.params;
+const { categoryName, posts } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+const title = `Danh mục: ${categoryName} | Blog Dạy Bơi`;
+const description = `Các bài viết hữu ích thuộc chủ đề ${categoryName} từ Trung tâm dạy bơi Swim For Life Việt Nam.`;
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Tin tức', href: '/tin-tuc/' },
+  { label: categoryName },
+];
+
+const formattedBlogPosts = posts.map(post => {
+  if (post.slug === 'cach-hoc-boi' || post.slug === 'tu-hoc-boi') {
+    return {
+      ...post,
+      title: `${post.title} [${currentYear}]`
+    };
+  }
+  return post;
+});
+
+const featuredPost = formattedBlogPosts[0];
+const remainingPosts = formattedBlogPosts.slice(1);
+
+// Compute Category counts dynamically
+const categoriesMap = new Map();
+blogPosts.forEach(post => {
+  if (post.category && post.categorySlug) {
+    if (!categoriesMap.has(post.categorySlug)) {
+      categoriesMap.set(post.categorySlug, {
+        name: post.category,
+        slug: post.categorySlug,
+        count: 0
+      });
+    }
+    categoriesMap.get(post.categorySlug).count += 1;
+  }
+});
+const categoriesList = Array.from(categoriesMap.values());
+
+// Compute Tag counts dynamically
+const tagsMap = new Map();
+blogPosts.forEach(post => {
+  if (post.tags && post.tagSlugs) {
+    post.tags.forEach((tag, idx) => {
+      const slug = post.tagSlugs[idx];
+      if (slug) {
+        if (!tagsMap.has(slug)) {
+          tagsMap.set(slug, {
+            name: tag,
+            slug: slug,
+            count: 0
+          });
+        }
+        tagsMap.get(slug).count += 1;
+      }
+    });
+  }
+});
+const tagsList = Array.from(tagsMap.values());
+
+const categories = [
+  { name: 'Tất cả', slug: '' },
+  { name: 'Hướng Dẫn Học Bơi', slug: 'huong-dan-hoc-boi' },
+  { name: 'Bơi Lội Trẻ Em', slug: 'boi-loi-tre-em' },
+  { name: 'Kỹ Thuật Bơi Lội', slug: 'ky-thuat-boi-loi' },
+  { name: 'Kinh Nghiệm & Thiết Bị', slug: 'kinh-nghiem-thiet-bi' },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`https://dayboi.vip/${category}/`}
+  breadcrumbs={breadcrumbs}
+>
+
+<!-- Blog Header -->
+<section class="section" style="padding-top: var(--space-8); padding-bottom: var(--space-8); background: var(--color-bg-alt); border-bottom: 1px solid rgba(0, 119, 182, 0.05);">
+  <div class="container container-wide">
+    <div class="section-header" style="margin-bottom: 0;">
+      <span class="section-badge">📁 Danh mục</span>
+      <h1 class="section-title">{categoryName}</h1>
+      <p class="section-subtitle">
+        Xem tất cả các bài viết thuộc danh mục "{categoryName}" được chia sẻ bởi đội ngũ Huấn luyện viên tại Swim For Life.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog News Portal Layout -->
+<section class="section" style="padding-top: var(--space-12); padding-bottom: var(--space-20);">
+  <div class="container container-wide">
+    <div class="news-layout">
+      
+      <!-- Main Column (Left): Featured Post + Grid -->
+      <div class="news-main">
+        <!-- Category Filter Bar (Horizontal) -->
+        <div class="category-filter-nav">
+          {categories.map(cat => (
+            <a 
+              href={cat.slug ? `/${cat.slug}/` : '/tin-tuc/'} 
+              class={`category-filter-link ${cat.slug === category ? 'active' : ''}`}
+            >
+              {cat.name}
+            </a>
+          ))}
+        </div>
+
+        {featuredPost && (
+          <article class="featured-news-card">
+            <a href={`/${featuredPost.slug}/`} class="featured-news-card-link">
+              <div class="featured-card-image-wrapper">
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  class="featured-card-image"
+                  loading="eager"
+                  width="640"
+                  height="360"
+                />
+              </div>
+              <div class="featured-card-content">
+                <div class="featured-card-meta">
+                  <span class="featured-card-category">{featuredPost.category}</span>
+                  <span class="featured-card-read-time">{featuredPost.readTime} đọc</span>
+                </div>
+                
+                <h2 class="featured-card-title">{featuredPost.title}</h2>
+                <p class="featured-card-excerpt">{featuredPost.excerpt}</p>
+                
+                {featuredPost.tags && featuredPost.tags.length > 0 && (
+                  <div class="card-tags-list" style="margin-bottom: var(--space-4);">
+                    {featuredPost.tags.map((tag) => (
+                      <span class="card-tag-item">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                
+                <span class="featured-card-more">Đọc bài viết →</span>
+              </div>
+            </a>
+          </article>
+        )}
+
+        <div class="news-grid">
+          {remainingPosts.map((post) => (
+            <article class="news-card">
+              <a href={`/${post.slug}/`} class="news-card-link">
+                <div class="news-card-image-wrapper">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    class="news-card-image"
+                    loading="lazy"
+                    width="400"
+                    height="220"
+                  />
+                </div>
+                <div class="news-card-content">
+                  <div class="news-card-meta">
+                    <span class="news-card-category">{post.category}</span>
+                    <span class="news-card-read-time">{post.readTime} đọc</span>
+                  </div>
+                  
+                  <h3 class="news-card-title">{post.title}</h3>
+                  <p class="news-card-excerpt">{post.excerpt}</p>
+                  
+                  {post.tags && post.tags.length > 0 && (
+                    <div class="card-tags-list">
+                      {post.tags.map((tag) => (
+                        <span class="card-tag-item">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  
+                  <span class="news-card-more">Đọc bài viết →</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Sidebar Column (Right): Sticky Widgets -->
+      <aside class="news-sidebar">
+        <!-- Widget: Categories -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">📁 Danh Mục</h3>
+          <ul class="sidebar-categories-list">
+            {categoriesList.map(cat => (
+              <li>
+                <a href={`/${cat.slug}/`} class={`category-item-link ${cat.slug === category ? 'active' : ''}`} style={cat.slug === category ? 'color: var(--color-primary) !important; font-weight: 700;' : ''}>
+                  <span class="category-name">{cat.name}</span>
+                  <span class="category-count">({cat.count})</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Widget: Tag Cloud -->
+        {tagsList && tagsList.length > 0 && (
+          <div class="sidebar-widget">
+            <h3 class="widget-title">🏷️ Đám Mây Thẻ</h3>
+            <div class="tag-cloud">
+              {tagsList.map(tagItem => (
+                <a href={`/the/${tagItem.slug}/`} class="tag-cloud-item">
+                  {tagItem.name} <span class="tag-count">({tagItem.count})</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Widget: Form Registration -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">🏊 Đăng Ký Học Thử</h3>
+          <p class="widget-subtitle">Nhận ngay 1 buổi học thử 1 kèm 1 miễn phí cùng HLV chuyên nghiệp tại bể bơi gần nhà bạn nhất!</p>
+          <RegistrationForm id="blog-register-form" />
+          <div class="widget-trust">
+            🔒 Bảo mật thông tin • Cam kết biết bơi 100%
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm" style="background: var(--color-bg-alt); border-top: 1px solid rgba(0, 119, 182, 0.05);">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Bạn Muốn Học Bơi Chuyên Nghiệp?</h2>
+      <p>Đăng ký học thử miễn phí với HLV Swim For Life ngay hôm nay!</p>
+      <div class="btn-group">
+        <a href="/lien-he/" class="btn btn-accent btn-lg">Đăng Ký Học Thử Miễn Phí</a>
+        <a href="/khoa-hoc-boi/" class="btn btn-white btn-lg">Xem Khóa Học</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<SuccessModal />
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('blog-register-form');
+    const modal = document.getElementById('success-modal');
+    const closeBtn = document.getElementById('close-modal-btn');
+    
+    if (form && modal && closeBtn) {
+      let redirectTimeout;
+      let countdownInterval;
+
+      const cancelRedirect = () => {
+        clearTimeout(redirectTimeout);
+        clearInterval(countdownInterval);
+        const redirectHint = modal.querySelector('.modal-redirect-hint');
+        if (redirectHint) redirectHint.remove();
+      };
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get input values
+        const fullname = form.querySelector('[name="fullname"]').value;
+        const phone = form.querySelector('[name="phone"]').value;
+        const location = form.querySelector('[name="location"]').value;
+
+        // Submit to Google Form Response endpoint asynchronously
+        const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe1PwdhtzzkWJaTZ4O79rrCUi4cAwuvmPTqx8TTF8rRleCTqA/formResponse';
+        const formData = new URLSearchParams();
+        formData.append('entry.1075795830', fullname);
+        formData.append('entry.406600670', phone);
+        formData.append('entry.1411149651', location);
+
+        fetch(googleFormUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: formData.toString()
+        }).catch(err => console.error('Error submitting to Google Form:', err));
+
+        // Open Zalo in a new tab immediately (prevents browser popup blocker)
+        window.open('https://zalo.me/0979121097', '_blank');
+
+        modal.classList.add('active');
+        form.reset();
+
+        // Reset any existing timers
+        cancelRedirect();
+
+        // Create dynamic countdown element inside success modal
+        const card = modal.querySelector('.modal-card');
+        let redirectHint = modal.querySelector('.modal-redirect-hint');
+        if (!redirectHint && card) {
+          redirectHint = document.createElement('p');
+          redirectHint.className = 'modal-redirect-hint';
+          redirectHint.style.fontSize = '0.9rem';
+          redirectHint.style.color = 'var(--color-primary, #0077b6)';
+          redirectHint.style.marginTop = '12px';
+          redirectHint.style.fontWeight = '600';
+          redirectHint.style.textAlign = 'center';
+          card.insertBefore(redirectHint, closeBtn);
+        }
+
+        let secondsLeft = 4;
+        if (redirectHint) {
+          redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+        }
+
+        countdownInterval = setInterval(() => {
+          secondsLeft--;
+          if (redirectHint) {
+            redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+          }
+          if (secondsLeft <= 0) {
+            clearInterval(countdownInterval);
+          }
+        }, 1000);
+
+        redirectTimeout = setTimeout(() => {
+          modal.classList.remove('active');
+          cancelRedirect();
+        }, 4000);
+      });
+      
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        cancelRedirect();
+      });
+      
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          cancelRedirect();
+        }
+      });
+    }
+  });
+</script>
+
+</PageLayout>

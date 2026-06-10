@@ -1,0 +1,20 @@
+---
+export interface Props {
+  stats: Array<{ number: number; suffix: string; label: string }>;
+}
+
+const { stats } = Astro.props;
+---
+
+<section class="cl-stats">
+  <div class="cl-stats__inner">
+    {stats.map(stat => (
+      <div class="cl-stats__item cl-animate">
+        <div class="cl-stats__number" data-counter data-target={stat.number} data-suffix={stat.suffix}>
+          {stat.number.toLocaleString('vi-VN')}{stat.suffix}
+        </div>
+        <div class="cl-stats__label">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+</section>

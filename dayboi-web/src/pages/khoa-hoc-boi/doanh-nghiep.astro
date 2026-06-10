@@ -1,0 +1,52 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { doanhNghiep } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Doanh nghiệp & Vinhomes' },
+];
+
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(doanhNghiep, 'https://dayboi.vip/khoa-hoc-boi/doanh-nghiep/');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quy mô tối thiểu để đăng ký khóa học bơi doanh nghiệp là bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life nhận đào tạo cho các đoàn thể, doanh nghiệp từ 10 học viên trở lên. Chúng tôi sẽ thiết kế giáo án riêng, bố trí số lượng HLV phù hợp để đảm bảo chất lượng giảng dạy và an toàn tốt nhất cho đoàn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lớp học bơi miễn phí Vinhomes dành cho đối tượng nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đây là chương trình hợp tác đặc biệt giữa Ban quản lý Vinhomes và Swim For Life Việt Nam, dành riêng cho cư dân nhí (từ 4-15 tuổi) đang sinh sống tại các khu đô thị của Vinhomes như Times City, Royal City, Ocean Park, Smart City, Grand Park..."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trung tâm có hỗ trợ tổ chức giải bơi nội bộ không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Swim For Life có dịch vụ trọn gói tổ chức giải bơi lội phong trào cho doanh nghiệp, trường học và khu dân cư bao gồm: lập điều lệ giải, trọng tài chuyên nghiệp, cứu hộ, thiết bị bấm giờ, âm thanh, ánh sáng và trao giải thưởng."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [courseSchema, faqSchema];
+---
+
+<CourseLayout
+  course={doanhNghiep}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

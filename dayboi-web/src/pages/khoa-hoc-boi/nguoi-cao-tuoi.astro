@@ -1,0 +1,52 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { nguoiCaoTuoi } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Người cao tuổi' },
+];
+
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nguoiCaoTuoi, 'https://dayboi.vip/khoa-hoc-boi/nguoi-cao-tuoi/');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Người cao tuổi xương khớp yếu có học bơi được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được và rất nên học. Trong môi trường nước, nhờ lực nâng Archimedes, 90% trọng lượng cơ thể được nâng đỡ, giảm áp lực tối đa lên các khớp gối, cột sống và hông. Bơi lội là môn thể thao an toàn nhất cho người lớn tuổi gặp các vấn đề về thoái hóa khớp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Giáo trình dạy bơi cho người lớn tuổi khác gì lớp bình thường?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lớp học bơi người cao tuổi tại Swim For Life được thiết kế với nhịp độ rất chậm, chú trọng khởi động kỹ, tập các động tác thả lỏng cơ thể. Chúng tôi ưu tiên các bài tập thở giúp tăng dung tích phổi và kỹ thuật bơi ếch/bơi ngửa nhẹ nhàng, không đòi hỏi sức bền quá lớn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nước bể bơi có đủ ấm cho người già không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Swim For Life luôn lựa chọn các bể bơi bốn mùa có hệ thống gia nhiệt tự động, duy trì nhiệt độ nước ổn định từ 28 - 30 độ C. Nước ấm giúp điều hòa huyết áp, giãn nở mạch máu và giữ ấm cơ thể cho người lớn tuổi suốt buổi học."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [courseSchema, faqSchema];
+---
+
+<CourseLayout
+  course={nguoiCaoTuoi}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

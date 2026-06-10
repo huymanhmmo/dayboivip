@@ -1,0 +1,41 @@
+---
+---
+
+<div class="cl-floating-cta" id="mobile-floating-cta">
+  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-btn cl-btn-zalo">
+    <span>💬 Zalo</span>
+  </a>
+  <a href="#dang-ky" class="cl-btn cl-btn-primary">
+    <span>🚀 Đăng Ký Lớp</span>
+  </a>
+</div>
+
+<script>
+  const floatingCta = document.getElementById('mobile-floating-cta') as HTMLDivElement | null;
+  
+  if (floatingCta) {
+    let lastScrollY = window.scrollY;
+    
+    window.addEventListener('scroll', () => {
+      // Show floating CTA only after scrolling down 300px
+      if (window.scrollY > 300) {
+        // Optional: hide on scroll down, show on scroll up (common design pattern)
+        // For simplicity, just show it when scrolled past hero, and hide if near bottom or top
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const currentScroll = window.scrollY;
+        
+        // Hide if we are at the very bottom where the registration form is visible
+        if (currentScroll + windowHeight >= documentHeight - 150) {
+          floatingCta.classList.remove('cl-floating-cta--visible');
+        } else {
+          floatingCta.classList.add('cl-floating-cta--visible');
+        }
+      } else {
+        floatingCta.classList.remove('cl-floating-cta--visible');
+      }
+      
+      lastScrollY = window.scrollY;
+    });
+  }
+</script>

@@ -1,0 +1,22 @@
+---
+const currentYear = new Date().getFullYear();
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { treEm } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Học bơi trẻ em' },
+];
+
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(treEm, 'https://dayboi.vip/khoa-hoc-boi/tre-em/');
+
+const combinedSchema = [courseSchema];
+---
+
+<CourseLayout
+  course={treEm}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

@@ -1,0 +1,52 @@
+---
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { nguoiSoNuoc } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Người sợ nước' },
+];
+
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nguoiSoNuoc, 'https://dayboi.vip/khoa-hoc-boi/nguoi-so-nuoc/');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi bị nhát nước từ nhỏ, từng suýt đuối nước có học được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được. Hơn 80% học viên người lớn tại Swim For Life đều có tâm lý sợ nước hoặc từng có ký ức không vui liên quan đến nước. HLV của chúng tôi được đào tạo bài bản về tâm lý sư phạm, sẽ đồng hành giúp bạn vượt qua nỗi sợ từng bước một, bắt đầu từ chỗ nước cực nông."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khóa học có bắt buộc phải úp mặt xuống nước ngay không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tuyệt đối không. Trong 1-2 buổi đầu, bạn sẽ không phải úp mặt xuống nước nếu chưa sẵn sàng. HLV sẽ hướng dẫn bạn các bài tập làm quen nước, tập đứng vững và cách kiểm soát nhịp thở trên mặt nước trước để xây dựng sự tự tin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Người sợ nước thì mất bao lâu để biết bơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thông thường, học viên sợ nước sẽ mất khoảng 3 buổi đầu để vượt qua rào cản tâm lý. Từ buổi thứ 4 trở đi, tiến độ sẽ nhanh tương đương người bình thường. Cam kết bạn sẽ biết bơi cơ bản và tự nổi đứng nước sau khóa học 10-12 buổi."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [courseSchema, faqSchema];
+---
+
+<CourseLayout
+  course={nguoiSoNuoc}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

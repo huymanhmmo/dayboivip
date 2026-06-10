@@ -1,0 +1,161 @@
+---
+export interface Props {
+  videoId: string;
+  poster: string;
+  alt: string;
+  width?: string | number;
+  height?: string | number;
+  className?: string;
+  style?: string;
+}
+
+const { videoId, poster, alt, width = "800", height = "500", className = "", style = "" } = Astro.props;
+---
+
+<div 
+  class={`youtube-video-container ${className}`} 
+  data-video-id={videoId}
+  style={style}
+>
+  <img 
+    src={poster} 
+    alt={alt} 
+    width={width} 
+    height={height} 
+    loading="lazy" 
+    class="youtube-video-thumbnail" 
+  />
+  <button class="youtube-play-btn" aria-label="Phát video">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+  .youtube-video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-2xl, 24px);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl, 0 12px 40px rgba(0, 119, 182, 0.16));
+    cursor: pointer;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-base, 250ms ease), box-shadow var(--transition-base, 250ms ease);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .youtube-video-container:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2xl, 0 20px 60px rgba(0, 119, 182, 0.2));
+  }
+
+  .youtube-video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition-slow, 400ms ease), filter var(--transition-base, 250ms ease);
+    display: block;
+  }
+
+  .youtube-video-container:hover .youtube-video-thumbnail {
+    filter: brightness(0.85);
+  }
+
+  .youtube-play-btn {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    background: var(--gradient-accent, linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%));
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+    transition: transform var(--transition-spring, 500ms cubic-bezier(0.34, 1.56, 0.64, 1)), background var(--transition-base, 250ms ease), box-shadow var(--transition-base, 250ms ease);
+    z-index: 10;
+  }
+
+  .youtube-play-btn svg {
+    width: 28px;
+    height: 28px;
+    margin-left: 4px; /* Căn chỉnh biểu tượng Play trực quan ở giữa */
+  }
+
+  .youtube-video-container:hover .youtube-play-btn {
+    transform: scale(1.15);
+    box-shadow: 0 15px 30px rgba(255, 107, 53, 0.6);
+  }
+
+  /* Vòng hào quang mờ bao quanh nút */
+  .youtube-play-btn::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: opacity var(--transition-base, 250ms ease), transform var(--transition-base, 250ms ease);
+    pointer-events: none;
+  }
+
+  .youtube-video-container:hover .youtube-play-btn::after {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  /* Khi phát, đảm bảo iframe bao phủ toàn bộ container */
+  .youtube-video-container :global(.youtube-iframe) {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+
+<script>
+  function initYoutubeVideos() {
+    const containers = document.querySelectorAll('.youtube-video-container');
+    containers.forEach(container => {
+      if (container.classList.contains('youtube-initialized')) return;
+      container.classList.add('youtube-initialized');
+
+      container.addEventListener('click', () => {
+        const videoId = container.getAttribute('data-video-id');
+        if (!videoId) return;
+
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+        iframe.setAttribute('title', 'YouTube video player');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.className = 'youtube-iframe';
+
+        container.innerHTML = '';
+        container.appendChild(iframe);
+        container.classList.add('playing');
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initYoutubeVideos);
+  } else {
+    initYoutubeVideos();
+  }
+
+  document.addEventListener('astro:page-load', initYoutubeVideos);
+</script>

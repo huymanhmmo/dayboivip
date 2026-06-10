@@ -1,0 +1,193 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  stats: Array<{ number: number; suffix: string; label: string }>;
+  slug: string;
+}
+
+const { title, subtitle, description, image, stats, slug } = Astro.props;
+---
+
+<header class="cl-hero">
+  <!-- Floating bubble particles -->
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+  <div class="cl-bubble"></div>
+
+  <div class="cl-hero__inner">
+    <div class="cl-hero__grid">
+      <div class="cl-hero__content cl-animate">
+        <span class="cl-hero__badge">
+          <span class="cl-hero__badge-dot"></span>
+          Đăng Ký Học Thử Miễn Phí
+        </span>
+        <h1 class="cl-hero__title" set:html={title.replace(":", ": <span class='cl-text-highlight'>") + (title.includes(":") ? "</span>" : "")}></h1>
+        <p class="cl-hero__subtitle">{description}</p>
+
+        <!-- Stats badges row -->
+        <div class="cl-hero__stats">
+          {stats.map(stat => (
+            <div class="cl-hero__stat">
+              <span class="cl-hero__stat-number" data-counter data-target={stat.number} data-suffix={stat.suffix}>
+                {stat.number.toLocaleString('vi-VN')}{stat.suffix}
+              </span>
+              <span class="cl-hero__stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA buttons row -->
+        <div class="cl-hero__cta">
+          <a href="#dang-ky" class="cl-btn cl-btn-primary cl-btn-lg cl-btn-pulse">
+            <span>🚀 Đăng Ký Ngay</span>
+          </a>
+          <a href="tel:0979121097" class="cl-btn cl-btn-outline cl-btn-lg">
+            <span>📞 Gọi: 0979.121.097</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cl-hero__image-container cl-animate cl-animate--delay-2">
+        <div class="cl-hero__image-wrapper">
+          <img src={image} alt={title} class="cl-hero__image" loading="eager" width="560" height="420" />
+          <div class="cl-hero__floating-badge">
+            <div class="cl-hero__floating-badge-icon">⭐</div>
+            <div>
+              <p class="cl-hero__floating-badge-title">Cam Kết 100%</p>
+              <p class="cl-hero__floating-badge-desc">Biết Bơi Sau Khóa Học</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Layout grid inside hero */
+  .cl-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .cl-hero__content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cl-hero__badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--cl-gold);
+    border-radius: 50%;
+    display: inline-block;
+    animation: cl-pulse 1.5s infinite;
+  }
+
+  .cl-text-highlight {
+    color: var(--cl-gold);
+  }
+
+  /* Image styling */
+  .cl-hero__image-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cl-hero__image-wrapper {
+    position: relative;
+    border-radius: var(--cl-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--cl-shadow-lg);
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    aspect-ratio: 4/3;
+  }
+
+  .cl-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--cl-ease);
+  }
+
+  .cl-hero__image-wrapper:hover .cl-hero__image {
+    transform: scale(1.05);
+  }
+
+  /* Floating badge on image */
+  .cl-hero__floating-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--cl-radius);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: cl-float 4s infinite ease-in-out;
+  }
+
+  .cl-hero__floating-badge-icon {
+    font-size: 1.5rem;
+  }
+
+  .cl-hero__floating-badge-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--cl-gold);
+  }
+
+  .cl-hero__floating-badge-desc {
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  @media (min-width: 1024px) {
+    .cl-hero__grid {
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      text-align: left;
+    }
+
+    .cl-hero__content {
+      margin: 0;
+      text-align: left;
+    }
+
+    .cl-hero__stats {
+      justify-content: flex-start;
+    }
+
+    .cl-hero__cta {
+      justify-content: flex-start;
+    }
+
+    .cl-hero__image-container {
+      max-width: 100%;
+    }
+  }
+</style>

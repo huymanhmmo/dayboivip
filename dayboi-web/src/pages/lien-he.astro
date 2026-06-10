@@ -1,0 +1,126 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+
+const title = 'Liên Hệ & Đăng Ký Học Bơi Thử Miễn Phí Tại Swim For Life Việt Nam';
+const description = 'Liên hệ đăng ký khóa học bơi thử miễn phí. Hotline/Zalo: 0979.121.097. Hỗ trợ tư vấn 24/7.';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Liên hệ' },
+];
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Liên hệ Swim For Life Việt Nam",
+  "description": "Trang liên hệ đăng ký học bơi thử miễn phí và thông tin hotline hỗ trợ khách hàng của Swim For Life Việt Nam.",
+  "url": "https://dayboi.vip/lien-he/",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+84979121097",
+      "contactType": "customer service",
+      "availableLanguage": "Vietnamese"
+    }
+  ]
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/lien-he/"
+  breadcrumbs={breadcrumbs}
+  schema={contactSchema}
+>
+
+  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">📞 Kết nối ngay</span>
+        <h1 class="section-title">Liên Hệ & Đăng Ký Học Bơi</h1>
+        <p class="section-subtitle">
+          Hãy để lại thông tin của bạn, bộ phận tư vấn của Swim For Life sẽ liên hệ ngay trong vòng 15 phút để sắp xếp lịch học thử MIỄN PHÍ.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="gap: var(--space-12); align-items: start;">
+        
+        <!-- Contact Form Column -->
+        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-lg); background: #ffffff; border-radius: 16px;">
+          <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Đăng Ký Học Thử Miễn Phí</h2>
+          <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Học viên được trải nghiệm 1 buổi học thử 1 kèm 1 hoàn toàn miễn phí cùng Huấn luyện viên trước khi quyết định đăng ký.</p>
+          
+          <RegistrationForm id="contact-form" isFullForm={true} flat={true} />
+        </div>
+
+        <!-- Info Column -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+          <div>
+            <h2 style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--space-4);">Thông Tin Liên Hệ Tư Vấn 24/7</h2>
+            <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">Quý phụ huynh và học viên có thể gọi điện trực tiếp hoặc nhắn tin Zalo qua đường dây nóng dưới đây để được hỗ trợ sắp xếp lớp nhanh nhất:</p>
+            
+            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
+                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">📞</div>
+                <div>
+                  <strong style="font-size: var(--text-lg); display: block;">Hotline Tư Vấn:</strong>
+                  <a href="tel:0979121097" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097</a>
+                </div>
+              </div>
+              
+              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
+                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">💬</div>
+                <div>
+                  <strong style="font-size: var(--text-lg); display: block;">Zalo Chat:</strong>
+                  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097 (Click chat ngay)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--color-bg-alt); padding: var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--color-gray-200); display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;">
+              <img
+                src="/images/logo/swim-for-life-logo.png"
+                alt="Logo Swim For Life Việt Nam"
+                style="max-height: 45px; width: auto; object-fit: contain;"
+                loading="lazy"
+              />
+              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 600; text-transform: lowercase;">trực thuộc</span>
+              <img
+                src="/images/logo/your-dreams-logo.png"
+                alt="Logo Công ty Cổ phần Your Dreams"
+                style="max-height: 45px; width: auto; object-fit: contain;"
+                loading="lazy"
+              />
+            </div>
+            <div style="border-top: 1px solid var(--color-gray-200); padding-top: var(--space-3);">
+              <h3 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-1); margin-top: 0;">Thông Tin Pháp Nhân</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: var(--text-sm);">
+                <strong>Trung tâm dạy bơi Swim For Life Việt Nam</strong><br/>
+                Đơn vị chủ quản: <strong>Công ty Cổ phần Your Dreams</strong><br/>
+                Mã số thuế: 0108879900<br/>
+                Email: dayboivip@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-2);">Thời Gian Làm Việc</h3>
+            <p style="color: var(--color-text-secondary);">
+              Chúng tôi làm việc liên tục từ <strong>06:00 - 21:00</strong> tất cả các ngày trong tuần (kể cả Thứ 7, Chủ Nhật và ngày lễ).
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

@@ -1,0 +1,118 @@
+---
+export interface Props {
+  curriculum: {
+    title: string;
+    stages: Array<{
+      phase: string;
+      title: string;
+      sessions: string;
+      items: string[];
+    }>;
+  };
+}
+
+const { curriculum } = Astro.props;
+---
+
+<section class="cl-section">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Lộ Trình Học
+      </span>
+      <h2 class="cl-section-title__heading">
+        {curriculum.title}
+      </h2>
+      <p class="cl-section-title__sub">
+        Lộ trình giảng dạy được chia thành từng giai đoạn khoa học, bám sát khả năng tiếp thu thực tế của học viên.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-curriculum__timeline-wrapper">
+      <div class="cl-timeline">
+        {curriculum.stages.map((stage, index) => {
+          // Add classes based on stage index to create visual progression
+          let statusClass = "";
+          if (index === 0) {
+            statusClass = "cl-timeline__step--completed";
+          } else if (index === 1) {
+            statusClass = "cl-timeline__step--current";
+          }
+          
+          return (
+            <div class={`cl-timeline__step ${statusClass} cl-animate`}>
+              <div class="cl-timeline__dot"></div>
+              <div class="cl-timeline__content">
+                <span class="cl-timeline__number">{index + 1}</span>
+                <span class="cl-timeline__sessions-badge">{stage.sessions}</span>
+                <h3 class="cl-timeline__title">{stage.phase}: {stage.title}</h3>
+                <ul class="cl-timeline__list">
+                  {stage.items.map(item => (
+                    <li class="cl-timeline__item">
+                      <span class="cl-timeline__item-check">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cl-curriculum__timeline-wrapper {
+    max-width: 900px;
+    margin: 40px auto 0;
+  }
+
+  .cl-timeline__sessions-badge {
+    float: right;
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(10, 77, 140, 0.1));
+    color: var(--cl-primary);
+    padding: 4px 12px;
+    border-radius: var(--cl-radius-sm);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: -4px;
+  }
+
+  .cl-timeline__list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+  }
+
+  .cl-timeline__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--cl-text);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .cl-timeline__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .cl-timeline__item-check {
+    color: var(--cl-cyan);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .cl-timeline__sessions-badge {
+      float: none;
+      display: inline-block;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+</style>

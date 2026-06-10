@@ -1,0 +1,543 @@
+---
+import { generateHowToSchema } from '../../utils/howToSchema.js';
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
+  { label: 'Học bơi sải' },
+];
+
+const faqData = [
+  {
+    question: 'Bơi sải có khó hơn bơi ếch không?',
+    answer: 'Bơi sải đòi hỏi sự phối hợp phức tạp hơn bơi ếch, đặc biệt là kỹ thuật thở nghiêng đầu. Tuy nhiên, nếu bạn đã biết bơi ếch, việc học bơi sải sẽ dễ dàng hơn nhiều vì bạn đã có cảm giác nước và biết cách phối hợp hô hấp. Tại Swim For Life, học viên thường học bơi sải thành thạo sau 8-12 buổi.',
+  },
+  {
+    question: 'Bơi sải nhanh hơn bơi ếch bao nhiêu?',
+    answer: 'Bơi sải là kiểu bơi nhanh nhất trong 4 kiểu bơi. Tốc độ bơi sải trung bình nhanh hơn bơi ếch khoảng 20-30%. Vận động viên chuyên nghiệp bơi sải 100m với tốc độ khoảng 1:50 phút, trong khi bơi ếch khoảng 2:20 phút.',
+  },
+  {
+    question: 'Thở bên nào khi bơi sải? Thở một bên hay hai bên?',
+    answer: 'Người mới học nên tập thở một bên trước (bên thuận). Khi thành thạo, nên tập thở luân phiên hai bên (bilateral breathing) – thở sau mỗi 3 nhịp tay. Thở hai bên giúp cân bằng kỹ thuật, tránh bơi lệch và phát triển sức bền tốt hơn.',
+  },
+  {
+    question: 'Tại sao bơi sải chân tôi hay chìm?',
+    answer: 'Chân chìm thường do: (1) Ngẩng đầu quá cao khi thở hoặc khi bơi – mắt nên nhìn xuống đáy bể; (2) Đạp chân từ đầu gối thay vì từ hông; (3) Chưa siết cơ core để giữ thân ngang. Khắc phục bằng cách tập đạp chân đều đặn từ hông và giữ đầu ở vị trí trung tính.',
+  },
+  {
+    question: 'Bơi sải đốt bao nhiêu calo?',
+    answer: 'Bơi sải đốt khoảng 500-700 calo/giờ tùy cường độ và cân nặng, nhiều hơn bơi ếch khoảng 20-30%. Đây là kiểu bơi đốt calo hiệu quả nhất, rất tốt cho giảm cân và tăng cường sức bền.',
+  },
+  {
+    question: 'Trẻ em nên học bơi sải từ mấy tuổi?',
+    answer: 'Trẻ từ 6-7 tuổi có thể bắt đầu học bơi sải sau khi đã biết bơi ếch cơ bản. Ở độ tuổi này, trẻ đủ sức mạnh và sự phối hợp để thực hiện kỹ thuật thở nghiêng. Tại Swim For Life, HLV sẽ đánh giá trình độ và thể lực của trẻ trước khi chuyển sang học bơi sải.',
+  },
+  {
+    question: 'Học bơi sải 1 kèm 1 tại Swim For Life giá bao nhiêu?',
+    answer: 'Chi phí khóa học bơi sải 1 kèm 1 tại Swim For Life từ 2-4 triệu đồng tùy gói học. Được học thử miễn phí buổi đầu, bảo lưu 2.5 tháng, cam kết biết bơi. Liên hệ hotline 0979.121.097 để được tư vấn.',
+  },
+  {
+    question: 'Bơi sải có tốt cho cột sống không?',
+    answer: 'Bơi sải rất tốt cho cột sống vì giúp kéo giãn tự nhiên, tăng cường cơ lưng và cơ core mà không tạo áp lực nén lên đĩa đệm. Tuy nhiên, nếu bạn bị đau lưng hoặc thoái hóa cột sống, nên tham khảo ý kiến bác sĩ và học với HLV chuyên nghiệp để đảm bảo kỹ thuật đúng.',
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Sải: Kỹ Thuật Bơi Sải (Bơi Trườn Sấp) Từ Cơ Bản Đến Nâng Cao",
+  "description": "Hướng dẫn chi tiết kỹ thuật bơi sải từ A-Z: tư thế thân, chân đập từ hông, tay 3 pha Tỳ-Kéo-Đẩy, kỹ thuật thở nghiêng. Bài tập cho người mới.",
+  "image": "https://dayboi.vip/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc - HLV Bơi lội",
+    "worksFor": { "@type": "Organization", "name": "Swim For Life Việt Nam" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": { "@type": "ImageObject", "url": "https://dayboi.vip/images/logo/logo.png" }
+  },
+  "datePublished": "2026-01-20",
+  "dateModified": "2026-05-21",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dayboi.vip/ky-thuat-boi/hoc-boi-sai/" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const metadata = {
+  title: `Học Bơi Sải (Bơi Trườn Sấp): Kỹ Thuật Chi Tiết Từ A-Z [${currentYear}]`,
+  description: "Hướng dẫn cách học bơi sải (bơi trườn sấp) chi tiết từ A-Z: tư thế thân người, chân đập từ hông, tay 3 pha Tỳ-Kéo-Đẩy, kỹ thuật thở nghiêng. Cam kết biết bơi sau 10-12 buổi.",
+  canonical: "https://dayboi.vip/ky-thuat-boi/hoc-boi-sai/",
+  image: "/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema
+};
+
+const technique = {
+  slug: 'hoc-boi-sai',
+  name: 'Bơi Sải',
+  badge: '🏊 Kiểu bơi nhanh nhất',
+  description: 'Bơi sải (freestyle/front crawl) là kiểu bơi nhanh nhất và hiệu quả nhất. Tìm hiểu kỹ thuật bơi sải chuẩn quốc tế từ HLV chuyên nghiệp tại Swim For Life Việt Nam.',
+  difficulty: 'Trung bình' as const,
+  speed: 'Rất nhanh' as const,
+  calories: '500 - 700 kcal/h',
+  muscles: 'Cơ lưng rộng, cơ vai, cơ ngực, cơ core, cơ tay ba đầu',
+  videoId: 'tj-xl5CJw6U',
+  videoPoster: '/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg',
+  videoAlt: 'HLV Swim For Life hướng dẫn kỹ thuật tay bơi sải trên cạn cho học viên'
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "Đang cập nhật bước 1",
+    "text": "Tham khảo chi tiết kỹ thuật bên dưới.",
+    "url": "https://dayboi.vip/ky-thuat-boi/hoc-boi-sai/",
+    "position": 1
+  }
+];
+
+const howToSchema = generateHowToSchema(technique, howToSteps, 'https://dayboi.vip/ky-thuat-boi/hoc-boi-sai/');
+
+metadata.howToSchema = howToSchema;
+
+const toc = [
+  { id: 'gioi-thieu-sai', label: '1. Tổng quan bơi sải' },
+  { id: 'loi-ich-sai', label: '2. Lợi ích vượt trội' },
+  { id: 'tu-the-than', label: '3. Tư thế thân người' },
+  { id: 'ky-thuat-chan-sai', label: '4. Kỹ thuật chân' },
+  { id: 'ky-thuat-tay-sai', label: '5. Kỹ thuật tay' },
+  { id: 'ky-thuat-tho-sai', label: '6. Kỹ thuật thở nghiêng' },
+  { id: 'phoi-hop-sai', label: '7. Phối hợp chu kỳ' },
+  { id: 'bai-tap-tren-can-sai', label: '8. Bài tập trên cạn' },
+  { id: 'bai-tap-duoi-nuoc-sai', label: '9. Bài tập dưới nước' },
+  { id: 'loi-thuong-gap', label: '10. Lỗi thường gặp' },
+  { id: 'khoa-hoc-sai', label: '11. Khóa học bơi sải' },
+  { id: 'faq', label: '12. Câu hỏi thường gặp' }
+];
+
+const errors = [
+  {
+    title: 'Ngẩng đầu lên khi thở (thay vì xoay)',
+    problem: 'Hông và chân chìm, tạo lực cản rất lớn, bơi chậm và mệt nhanh.',
+    solution: 'Chỉ xoay đầu sang bên, giữ một mắt trong nước. Tập trước trên cạn và với ván bơi.'
+  },
+  {
+    title: 'Đập chân từ đầu gối (gập gối quá nhiều)',
+    problem: 'Chân tạo lực cản thay vì lực đẩy, giống "phanh" nước.',
+    solution: 'Đập từ hông, giữ chân thẳng tự nhiên (gối chỉ gập nhẹ). Tập trên cạn nằm sấp.'
+  },
+  {
+    title: 'Tay vào nước quá rộng hoặc vượt qua đường trung tâm',
+    problem: 'Bơi lệch, lắc lư, tốn sức.',
+    solution: 'Tay vào nước thẳng trước vai (không rộng hơn vai, không chéo qua đầu). Tập Catch-up drill.'
+  },
+  {
+    title: 'Nín thở dưới nước',
+    problem: 'Hụt hơi, mệt nhanh, cảm giác ngạt.',
+    solution: 'Thở ra liên tục bằng mũi khi mặt ở dưới nước. Tập thở bọt (bubble) tại chỗ trước.'
+  },
+  {
+    title: 'Không xoay thân (bơi phẳng)',
+    problem: 'Tay vào nước nông, không tận dụng được cơ lưng lớn, tốn sức vai.',
+    solution: 'Tập xoay thân 30-45 độ mỗi bên theo nhịp tay. Tập side kick drill.'
+  },
+  {
+    title: 'Recovery tay quá thấp (tay chạm nước)',
+    problem: 'Tay kéo nước ngược chiều, tạo lực cản.',
+    solution: 'Nhấc khuỷu tay cao, bàn tay thả lỏng. Tập "Zipper drill" – kéo ngón tay dọc thân từ hông lên nách.'
+  }
+];
+
+const relatedKeywords = ['bơi sải', 'trườn sấp', 'tự học bơi'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+>
+  <!-- 1. Giới thiệu -->
+  <section id="gioi-thieu-sai">
+    <h2>Bơi Sải Là Gì? Tổng Quan Về Bơi Trườn Sấp (Freestyle)</h2>
+
+    <p><strong>Bơi sải</strong>, còn gọi là <strong>bơi trườn sấp</strong> (tên tiếng Anh: Front Crawl hay Freestyle), là kiểu bơi nhanh nhất trong bốn kiểu bơi thi đấu. Trong các cuộc thi bơi lội quốc tế, bơi sải là nội dung "tự do" (freestyle) vì vận động viên luôn chọn kiểu bơi này do tốc độ vượt trội.</p>
+
+    <p>Bơi sải đặc trưng bởi tư thế nằm sấp (úp mặt xuống nước), hai tay luân phiên quạt nước từ trước ra sau (giống cánh quạt), hai chân đập liên tục từ hông, và thở bằng cách nghiêng đầu sang một bên. Đây là kiểu bơi đòi hỏi sự phối hợp tay-chân-thở phức tạp hơn <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a>, nhưng lại nhanh hơn và hiệu quả hơn khi đã thành thạo.</p>
+
+    <p>Tại <strong>Trung tâm dạy bơi Swim For Life Việt Nam</strong>, bơi sải thường được giảng dạy sau khi học viên đã nắm vững kỹ thuật <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a>. Theo kinh nghiệm của thầy <strong>Nguyễn Huy Mạnh</strong> – Giám đốc Swim For Life, tốt nghiệp ĐH Sư phạm Hà Nội: <em>"Hướng dẫn <strong>cách học bơi sải</strong> nhanh nhất là ôn tập kỹ năng thở nước và cảm giác nổi, sau đó chuyển sang ráp nối quạt tay và nghiêng đầu lấy hơi. Người đã biết bơi ếch sẽ học bơi sải rất nhanh, thường chỉ cần 8-10 buổi."</em></p>
+
+    <p>Bơi sải không chỉ là kiểu bơi thi đấu phổ biến nhất mà còn là kiểu bơi thực dụng nhất trong cuộc sống. Khi cần bơi đường dài, bơi trong vùng nước mở (biển, sông, hồ), hoặc cần di chuyển nhanh trong nước, bơi sải luôn là lựa chọn tối ưu nhờ tốc độ cao và tiết kiệm năng lượng.</p>
+  </section>
+
+  <!-- 2. Lợi ích -->
+  <section id="loi-ich-sai">
+    <h2>Lợi Ích Vượt Trội Của Bơi Sải</h2>
+
+    <p>Bơi sải mang lại nhiều lợi ích sức khỏe đặc biệt mà các kiểu bơi khác khó sánh bằng:</p>
+
+    <h3>Tốc độ và hiệu quả cao nhất</h3>
+    <p>Bơi sải nhanh hơn <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a> khoảng 20-30%, nhanh hơn <a href="/ky-thuat-boi/hoc-boi-ngua/">bơi ngửa</a> khoảng 15%, chỉ thua <a href="/ky-thuat-boi/hoc-boi-buom/">bơi bướm</a> ở cự ly ngắn. Với cự ly dài (trên 200m), bơi sải luôn là kiểu bơi nhanh nhất nhờ hiệu quả năng lượng tốt.</p>
+
+    <h3>Đốt calo tối ưu, giảm cân nhanh</h3>
+    <p>Bơi sải đốt khoảng 500-700 calo/giờ, nhiều hơn hầu hết các hoạt động thể thao trên cạn. Cường độ liên tục và sự tham gia của gần như toàn bộ các nhóm cơ lớn khiến bơi sải trở thành bài tập giảm cân lý tưởng.</p>
+
+    <h3>Phát triển cơ thân trên toàn diện</h3>
+    <p>Bơi sải đặc biệt phát triển các nhóm cơ: cơ lưng rộng (latissimus dorsi), cơ vai (deltoid), cơ ngực (pectorals), cơ tay ba đầu (triceps), cơ core. Đây là kiểu bơi tốt nhất để xây dựng thân hình chữ V cho nam giới.</p>
+
+    <h3>Tăng cường sức bền tim phổi</h3>
+    <p>Nhịp thở có kiểm soát trong bơi sải (thở nghiêng mỗi 2-3 nhịp tay) là bài tập hô hấp tuyệt vời, giúp tăng dung tích phổi và cải thiện hệ tim mạch vượt trội.</p>
+
+    <h3>Cải thiện tư thế và sức khỏe cột sống</h3>
+    <p>Tư thế nằm ngang và kéo giãn tự nhiên trong nước giúp giảm áp lực lên cột sống, tăng cường cơ lưng, cải thiện tư thế cho người ngồi văn phòng nhiều giờ.</p>
+  </section>
+
+  <!-- 3. Tư thế thân -->
+  <section id="tu-the-than">
+    <h2>Tư Thế Thân Người Trong Bơi Sải</h2>
+
+    <p>Tư thế thân người (body position) là nền tảng của kỹ thuật bơi sải. Tư thế đúng giúp giảm lực cản tối đa và tăng hiệu quả mỗi nhịp bơi.</p>
+
+    <h3>Nguyên tắc "Streamline" – Dạng thủy động lực học</h3>
+    <ul>
+      <li><strong>Thân nằm ngang:</strong> Toàn bộ cơ thể từ đầu đến chân tạo thành một đường thẳng, song song với mặt nước. Hông và chân không bị chìm.</li>
+      <li><strong>Đầu ở vị trí trung tính:</strong> Mắt nhìn xuống đáy bể (không nhìn về phía trước). Mực nước ở khoảng giữa trán – chỏm đầu. Đầu là "bánh lái" của cơ thể: đầu ngẩng lên → chân chìm xuống.</li>
+      <li><strong>Xoay thân (body rotation):</strong> Khi bơi sải, thân không nằm phẳng mà xoay nhẹ sang hai bên theo nhịp tay (khoảng 30-45 độ mỗi bên). Xoay thân giúp tay vào nước sâu hơn, tạo lực kéo mạnh hơn và giúp thở dễ dàng hơn.</li>
+      <li><strong>Siết cơ core:</strong> Cơ bụng và cơ lưng dưới luôn hoạt động nhẹ để giữ thân thẳng, ngăn hông lắc lư.</li>
+    </ul>
+
+    <div class="info-box tip">
+      <span style="font-size: 1.5rem;">✅</span>
+      <div>
+        <strong>Mẹo từ HLV Swim For Life:</strong> Hình dung bạn đang bơi qua một cái "đường hầm" hẹp – cơ thể phải thu gọn, thon dài nhất có thể. Mỗi khi bạn ngẩng đầu, mở rộng chân hoặc quạt tay ra ngoài đường thân, bạn đang "va vào tường hầm" – tạo lực cản không cần thiết.
+      </div>
+    </div>
+
+    <h3>3.1. Vật lý thủy động lực học trong bơi sải: Làm thế nào để triệt tiêu lực cản của nước?</h3>
+    <p>Khi di chuyển trong nước, cơ thể bạn phải chịu lực cản lớn hơn khoảng 800 lần so với trong không khí. Lực cản này được chia thành ba loại chính: lực cản ma sát bề mặt, lực cản hình dáng (thiết diện cản) và lực cản tạo sóng. Trong đó, lực cản hình dáng chiếm tỉ lệ lớn nhất và tỉ lệ thuận với bình phương tốc độ di chuyển.</p>
+    <p>Để triệt tiêu lực cản hình dáng, học viên tại <strong>Swim For Life Việt Nam</strong> được huấn luyện kỹ thuật giữ hông nổi sát mặt nước. Khi hông bị chìm xuống dù chỉ 10 độ, góc đón dòng nước của cơ thể tăng lên, làm tăng gấp đôi diện tích cản gió trực diện dưới nước, khiến bạn lập tức bị phanh lại. Cách khắc phục là siết nhẹ cơ core, ấn xương ức chìm nhẹ xuống dưới nước để phần hông và đùi tự động bập nổi lên bề mặt.</p>
+
+    <h3>3.2. Vai trò của cơ core (cơ trung tâm) trong việc ổn định trục cơ thể</h3>
+    <p>Cơ trung tâm (core) bao gồm cơ bụng, cơ lưng dưới và cơ vùng chậu đóng vai trò liên kết cơ học giữa lực kéo của tay thân trên và lực đập của chân thân dưới. Trong <strong>kỹ thuật bơi sải</strong>, nếu cơ trung tâm bị thả lỏng lỏng lẻo, cơ thể bạn sẽ bị uốn éo hình chữ S hoặc lắc lư sang hai bên khi quạt tay. Hiện tượng này gọi là hiện tượng "vẩy đuôi rắn", làm triệt tiêu hoàn toàn động năng tiến lên.</p>
+    <p>Việc siết cơ core đúng cách giống như việc làm cứng một thanh gỗ lớn nối liền vai và hông. Thanh gỗ này xoay quanh một trục dọc tịnh tiến khi bạn xoay vai góc 35-45 độ sang hai bên. Sự ổn định cơ học này giúp lực đẩy từ mỗi cú đạp chân truyền thẳng lên thân trước, kéo dài quãng đường lướt nước tối đa.</p>
+  </section>
+
+  <!-- 4. Kỹ thuật chân -->
+  <section id="ky-thuat-chan-sai">
+    <h2>Kỹ Thuật Chân Bơi Sải: Đập Chân Từ Hông (Flutter Kick)</h2>
+
+    <p>Chân trong bơi sải có vai trò giữ thăng bằng, nâng chân lên gần mặt nước và hỗ trợ lực đẩy (chiếm khoảng 10-15% lực đẩy tổng). Kỹ thuật đập chân bơi sải gọi là <strong>Flutter Kick</strong>:</p>
+
+    <h3>Nguyên tắc đập chân đúng</h3>
+    <ul>
+      <li><strong>Đập từ hông, không phải từ đầu gối:</strong> Đây là nguyên tắc quan trọng nhất. Toàn bộ chuyển động bắt đầu từ hông, truyền qua đùi → đầu gối (gập nhẹ tự nhiên) → cổ chân → bàn chân. Nếu đập từ đầu gối (giống đạp xe), chân sẽ tạo lực cản lớn.</li>
+      <li><strong>Biên độ nhỏ, tần suất cao:</strong> Khoảng cách giữa hai bàn chân khi đập khoảng 30-40cm (bằng 1 bàn chân). Đập nhanh, đều đặn, liên tục.</li>
+      <li><strong>Bàn chân duỗi tự nhiên:</strong> Mũi chân hơi duỗi (pointed toes), bàn chân mềm mại như "chân vịt". Không gập cổ chân cứng.</li>
+      <li><strong>Ngón chân chạm nhau nhẹ:</strong> Hai ngón cái gần chạm nhau khi chân đập qua lại – đảm bảo biên độ nhỏ và đập trong đường thân.</li>
+    </ul>
+
+    <figure class="post-image">
+      <img src="/images/techniques/dong-tac-chan-boi-sai-tren-can.jpg" alt="Hướng dẫn kỹ thuật đập chân bơi sải đúng cách - đập từ hông" loading="lazy" width="800" height="533" />
+      <figcaption>Động tác <strong>đập chân từ hông</strong> chuẩn xác giúp tạo ra lực đẩy ổn định và giữ hông luôn nổi cao sát mặt nước.</figcaption>
+    </figure>
+
+    <h3>Nhịp đập chân phổ biến</h3>
+    <ul>
+      <li><strong>6-beat kick:</strong> 6 nhịp chân cho mỗi 1 chu kỳ tay (2 nhịp tay). Đây là nhịp phổ biến nhất cho cự ly ngắn và trung bình.</li>
+      <li><strong>2-beat kick:</strong> 2 nhịp chân cho mỗi 1 chu kỳ tay. Phù hợp cho bơi đường dài, tiết kiệm năng lượng.</li>
+      <li><strong>4-beat kick:</strong> Nhịp trung gian, ít phổ biến hơn.</li>
+    </ul>
+
+    <h3>4.1. Phân tích lực đẩy sinh học từ cú đập chân Flutter Kick</h3>
+    <p>Cú đập chân Flutter Kick tạo ra lực đẩy bằng cách đẩy nước ra phía sau thông qua chuyển động quất roi của mu bàn chân. Chuyển động này bắt nguồn từ cơ thắt lưng chậu (iliopsoas) và cơ đùi trước (quadriceps) kéo đùi đi xuống. Sau đó đầu gối hơi gập nhẹ để truyền quán tính lực xuống cổ chân. Cổ chân lỏng lẻo sẽ uốn cong đàn hồi đẩy khối nước trượt dài về phía sau.</p>
+    <p>Khi chân quay lại chuyển động đi lên, cơ đùi sau (hamstrings) và cơ mông (gluteus maximus) sẽ kích hoạt để kéo thẳng chân về mặt nước. Chuyển động đi lên này phải thẳng chân hoàn toàn để chuẩn bị cho cú quất roi tiếp theo. Nhiều học viên tự học bơi thường mắc lỗi gập sâu gối cả khi kéo chân lên và đập xuống, biến đôi chân thành chiếc gầu xúc nước hãm phanh cơ thể đứng khựng lại dưới đáy hồ.</p>
+
+    <h3>4.2. So sánh tần suất đập chân: 2-beat, 4-beat và 6-beat kick</h3>
+    <p>Lựa chọn nhịp đập chân quyết định trực tiếp tới khả năng phân phối sức lực trên đường bơi. Dưới đây là bảng so sánh chi tiết tính chất của 3 tần suất đập chân phổ biến:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tần suất đập chân</th>
+          <th>Cơ chế chuyển động</th>
+          <th>Mức tiêu hao năng lượng</th>
+          <th>Ứng dụng tối ưu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2-beat kick</strong></td>
+          <td>1 cú đập chân cho mỗi nhịp quạt tay (2 đập mỗi chu kỳ). Đập đúng thời điểm tay đối diện vào nước.</td>
+          <td>Cực thấp, tiết kiệm oxy cho phổi tối đa.</td>
+          <td><strong>Bơi sải đường trường</strong> cự ly trên 1500m, bơi ngoài nước mở, phần thi bơi trong giải Triathlon thể thao.</td>
+        </tr>
+        <tr>
+          <td><strong>4-beat kick</strong></td>
+          <td>Nhịp trung gian luân phiên (1 đập mạnh tỳ nước, 1 đập nhẹ giữ thăng bằng cho mỗi tay).</td>
+          <td>Trung bình, cần khả năng điều phối thần kinh tốt.</td>
+          <td>Bơi cự ly trung bình từ 400m đến 800m.</td>
+        </tr>
+        <tr>
+          <td><strong>6-beat kick</strong></td>
+          <td>3 cú đập chân cho mỗi nhịp quạt tay (6 đập mỗi chu kỳ). Nhịp đập liên tục dồn dập.</td>
+          <td>Rất cao, cơ đùi đốt cháy lượng lớn oxy và glycogen tuần hoàn.</td>
+          <td>Bơi nước rút cự ly ngắn 50m - 100m, bơi tăng tốc vượt chướng ngại vật nhanh chóng.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. Kỹ thuật tay -->
+  <section id="ky-thuat-tay-sai">
+    <h2>Kỹ Thuật Tay Bơi Sải: 3 Pha Tỳ - Kéo - Đẩy</h2>
+
+    <p>Động tác tay chiếm <strong>80-90% lực đẩy</strong> trong bơi sải, là yếu tố quan trọng nhất quyết định tốc độ bơi. Mỗi nhịp tay gồm hai phần: pha dưới nước (tạo lực đẩy) và pha trên nước (recovery).</p>
+
+    <h3>Pha dưới nước – Tạo lực đẩy chính</h3>
+
+    <h4>1. Tỳ nước (Catch)</h4>
+    <ul>
+      <li>Tay vào nước ở vị trí phía trước vai, ngón giữa vào nước trước, bàn tay nghiêng 30-45 độ.</li>
+      <li>Duỗi tay về phía trước dưới mặt nước (glide), cảm nhận áp lực nước trên lòng bàn tay.</li>
+      <li>Khuỷu tay giữ cao (high elbow catch) – khuỷu tay ở trên, bàn tay và cẳng tay hướng xuống, tạo "mái chèo" lớn nhất.</li>
+    </ul>
+
+    <h4>2. Kéo nước (Pull)</h4>
+    <ul>
+      <li>Kéo tay về phía sau dọc theo đường trung tâm cơ thể, khuỷu tay gập khoảng 90 độ.</li>
+      <li>Bàn tay đi sát thân người, từ vị trí trước vai xuống ngang ngực.</li>
+      <li>Duy trì "high elbow" – khuỷu tay luôn cao hơn bàn tay trong suốt pha kéo.</li>
+      <li>Cảm giác: bạn đang "bám vào nước và kéo cơ thể vượt qua điểm bám đó".</li>
+    </ul>
+
+    <h4>3. Đẩy nước (Push)</h4>
+    <ul>
+      <li>Từ vị trí ngang hông, đẩy mạnh tay về phía sau, duỗi thẳng khuỷu tay.</li>
+      <li>Bàn tay đẩy nước ra sau, kết thúc ở gần đùi.</li>
+      <li>Đây là giai đoạn tạo lực đẩy mạnh nhất – cần đẩy dứt khoát, mạnh mẽ.</li>
+      <li>Kết thúc pha đẩy: ngón út thoát nước trước khi tay nhấc lên.</li>
+    </ul>
+
+    <h3>Pha trên nước – Recovery</h3>
+    <ul>
+      <li>After khi đẩy xong, nhấc khuỷu tay lên cao trước (high elbow recovery), bàn tay thả lỏng.</li>
+      <li>Khuỷu tay dẫn đường, bàn tay và cẳng tay thả lỏng sát mặt nước.</li>
+      <li>Đưa tay về phía trước, ngón giữa vào nước trước, ở vị trí trước vai.</li>
+      <li>Không quăng tay ra ngoài quá rộng – giữ tay trong đường thân để giảm lực cản.</li>
+    </ul>
+
+    <figure class="post-image">
+      <img src="/images/techniques/hoc-boi-sai-tay-tren-can.jpg" alt="Học viên tập kỹ thuật tay bơi sải trên cạn tại Swim For Life" loading="lazy" width="800" height="533" />
+      <figcaption>Luyện tập động tác <strong>quạt tay</strong> trên cạn giúp cố định quỹ đạo chuyển động cùi chỏ cao trước khi thực hành dưới nước sâu.</figcaption>
+    </figure>
+
+    <h3>5.1. Cơ học chuyển động tay: Chi tiết 5 pha dưới nước và trên cạn</h3>
+    <p>Để đạt được hiệu suất cơ học tối ưu, cú quạt tay của bạn phải được chia nhỏ thành 5 pha vận động liên tục nối tiếp nhau:</p>
+    <ol>
+      <li><strong>Pha vào nước (Entry):</strong> Bàn tay luồn vào nước theo góc 45 độ tại điểm nằm giữa trục mắt và đường vai trước mặt. Ngón tay khép hờ, thả lỏng để tránh tạo bọt khí quanh lòng bàn tay.</li>
+      <li><strong>Pha vươn dài (Extension):</strong> Vươn tay thẳng về phía trước dưới mặt nước sâu từ 10 - 15cm. Đồng thời xoay hông cùng bên xuống dưới. Pha này tạo tư thế trượt nước tối ưu và kéo giãn cơ lưng rộng để chuẩn bị tỳ nước.</li>
+      <li><strong>Pha tỳ nước (Catch/High Elbow):</strong> Gập cổ tay và cùi chỏ hướng xuống dưới đáy bể. Giữ cùi chỏ cao sát mặt nước để cẳng tay và bàn tay tạo thành một mặt phẳng tỳ nước vuông góc với hướng di chuyển.</li>
+      <li><strong>Pha kéo - đẩy nước (Pull - Push):</strong> Sử dụng cơ ngực lớn và cơ lưng rộng kéo mạnh cơ thể vượt qua điểm tỳ nước. Khi tay đi qua vai, tăng tốc độ đẩy nước dứt khoát ra sau đùi bằng cơ tam đầu cánh tay (triceps).</li>
+      <li><strong>Pha vung tay trên không (Recovery):</strong> Thả lỏng hoàn toàn cổ tay và cẳng tay. Nhấc cao cùi chỏ vung tay vẽ một hình elip dẹt sát mặt nước đưa về phía trước. Vai xoay mở hướng lên trên để giảm áp lực xoắn lên khớp vai chóp xoay.</li>
+    </ol>
+
+    <figure class="post-image">
+      <img src="/images/techniques/huong-dan-tay-boi-sai-tren-can.jpg" alt="Hướng dẫn kỹ thuật vung tay trên bờ cho học viên" loading="lazy" />
+      <figcaption>Động tác vung tay trên bờ cần thả lỏng tối đa các nhóm cơ vai gáy để tránh đau cơ mỏi mệt khi ráp nối bơi dài mét dưới hồ.</figcaption>
+    </figure>
+
+    <h3>5.2. Kỹ thuật High Elbow Catch (Cùi chỏ cao) - Vũ khí bí mật của kình ngư</h3>
+    <p>Điểm khác biệt lớn nhất giữa một người bơi sải phong trào và một kình ngư bơi sải chuyên nghiệp nằm ở kỹ thuật High Elbow Catch (tỳ nước cùi chỏ cao). Khi bắt đầu kéo nước dưới nước sâu, nếu cùi chỏ bị chìm thấp xuống trước bàn tay (lỗi dropped elbow), mặt phẳng tỳ nước của bạn sẽ nằm chéo hướng lên trên, tạo lực đẩy cơ thể nảy lên cạn thay vì đẩy tiến về trước. Lỗi này làm thất thoát tới 60% năng lượng cơ bắp.</p>
+    <p>Để thực hiện High Elbow Catch, bạn cần hình dung mình đang bơi qua một chiếc thùng phuy khổng lồ nằm ngang dưới nước. Khi đưa tay qua miệng thùng, bạn phải gập cùi chỏ hướng sang bên sườn để ôm trọn lấy mặt cong của thùng, hướng lòng bàn tay và cẳng tay thẳng đứng ra phía sau. Động tác này cô lập nhóm cơ xô lớn làm điểm tựa đẩy cả khối cơ thể trượt dài mạnh mẽ trên nước.</p>
+  </section>
+
+  <!-- 6. Kỹ thuật thở -->
+  <section id="ky-thuat-tho-sai">
+    <h2>Kỹ Thuật Thở Nghiêng Trong Bơi Sải</h2>
+
+    <p>Thở nghiêng (side breathing) là kỹ thuật khó nhất khi học bơi sải, cũng là điểm khác biệt lớn nhất so với <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a>. Thành thạo kỹ thuật thở sẽ quyết định bạn có bơi sải bền bỉ và thoải mái hay không.</p>
+
+    <h3>Nguyên tắc thở đúng</h3>
+    <ul>
+      <li><strong>Thở ra liên tục dưới nước:</strong> Khi mặt ở dưới nước, thở ra từ từ bằng mũi (hoặc mũi + miệng). Thở ra hết khí cũ trước khi quay đầu hít.</li>
+      <li><strong>Xoay đầu theo xoay thân:</strong> Không ngẩng đầu lên, mà <strong>xoay đầu sang bên</strong> theo xoay thân. Một mắt ở dưới nước, một mắt ở trên – miệng vừa đủ nhô khỏi mặt nước để hít.</li>
+      <li><strong>Hít nhanh bằng miệng:</strong> Khi miệng nhô lên, hít nhanh và ngắn bằng miệng. Không cần hít quá sâu vì thời gian thở rất ngắn (khoảng 0.5-1 giây).</li>
+      <li><strong>Tận dụng "bọt nước trũng" (bow wave):</strong> Khi đầu di chuyển qua nước, phía trước tạo sóng đẩy nước lên, phía bên má tạo "vùng trũng" – miệng bạn thực chất nằm trong vùng trũng này, thấp hơn mực nước bình thường.</li>
+    </ul>
+
+    <h3>Thở một bên vs hai bên</h3>
+    <ul>
+      <li><strong>Thở một bên (mỗi 2 nhịp tay):</strong> Phù hợp cho người mới học và bơi tốc độ cao. Thở bên thuận (bên tay phải hoặc trái quen hơn).</li>
+      <li><strong>Thở hai bên luân phiên (mỗi 3 nhịp tay):</strong> Kỹ thuật nâng cao, giúp cân bằng kỹ thuật, tránh bơi lệch. Khuyến nghị tập dần khi đã thành thạo thở một bên.</li>
+    </ul>
+
+    <div class="info-box warning">
+      <span style="font-size: 1.5rem;">⚠️</span>
+      <div>
+        <strong>Lỗi phổ biến nhất khi thở bơi sải:</strong> Ngẩng đầu lên thay vì xoay đầu sang bên. Ngẩng đầu khiến hông và chân chìm xuống, tạo lực cản rất lớn. Hãy nhớ: đầu chỉ <strong>xoay sang bên</strong>, một nửa mặt vẫn ở trong nước. Nếu bạn thấy trần nhà/bầu trời, bạn đã ngẩng đầu quá cao.
+      </div>
+    </div>
+
+    <h3>6.1. Nguyên lý vật lý Bow Wave (Sóng trũng má) khi xoay nghiêng đầu thở</h3>
+    <p>Khi cơ thể chuyển động tịnh tiến về phía trước dưới làn nước, phần chỏm đầu rẽ nước sẽ tạo ra một con sóng hình cánh cung trước trán gọi là Bow Wave. Theo định luật động lực học chất lưu, ngay phía sau con sóng này (dọc theo má và cằm của bạn) sẽ xuất hiện một vùng áp suất thấp trũng xuống, thấp hơn mực nước tĩnh của bể bơi từ 5 - 7cm.</p>
+    <p>Người bơi sải thông thái sẽ không bao giờ ngẩng hẳn cằm lên cạn để lấy hơi. Họ chỉ cần giữ đầu phẳng song song trục cột sống, nghiêng nhẹ đầu góc 20 độ theo chuyển động xoay vai của cơ thể. Lúc này, miệng của họ sẽ nằm lọt thỏm trong vùng trũng Bow Wave má bên sườn, tự do lấy oxy mà không sợ nước tràn vào miệng. Việc cố ngẩng đầu lên cao sẽ phá vỡ cấu trúc Bow Wave, làm nước đổ tràn thẳng vào mũi gây sặc nước cay rát cực kỳ nguy hiểm.</p>
+
+    <h3>6.2. Kỹ thuật Bilateral Breathing (Thở luân phiên hai bên) và cách khắc phục sặc nước</h3>
+    <p>Học viên mới bơi sải thường có xu hướng chỉ thở một bên thuận (unilateral breathing). Tuy nhiên, thói quen này về lâu dài sẽ tạo ra sự mất cân đối lực quạt tay sải, làm xoắn vẹo cột sống cổ sang một bên và khiến đường bơi của bạn bị lệch hướng về bên không thuận dưới lòng bể lớn.</p>
+    <p>Kỹ thuật Bilateral Breathing (thở luân phiên 3 nhịp tay một lần thở) buộc bạn phải nghiêng đầu thở luân phiên sang cả bên trái và bên phải. Kỹ thuật này giúp phân phối đều mệt mỏi lên cơ bắp hai vai, rèn luyện sự cân bằng bán cầu não vận động và giúp bạn dễ dàng quan sát đối thủ hay định vị bờ bể nông khi bơi ngoài nước mở động rộng lớn. Để tránh bị sặc khi thở hai bên, hãy tuân thủ nguyên tắc: <strong>thở sạch khí CO2 dưới nước sâu bằng mũi</strong> trước khi xoay đầu hít hơi nhanh bằng miệng trên cạn.</p>
+  </section>
+
+  <!-- 7. Phối hợp -->
+  <section id="phoi-hop-sai">
+    <h2>Phối Hợp Tay - Chân - Thở Hoàn Chỉnh</h2>
+
+    <p>Phối hợp nhịp nhàng giữa tay, chân và thở là chìa khóa để bơi sải hiệu quả. Dưới đây là mô tả chi tiết một chu kỳ bơi sải chuẩn (với nhịp thở bên phải):</p>
+
+    <h3>Chu kỳ bơi sải mẫu</h3>
+    <ol>
+      <li><strong>Tay phải vào nước:</strong> Tay phải duỗi vào nước trước vai, bắt đầu Tỳ nước. Tay trái đang ở pha Đẩy nước. Chân đập liên tục. Mặt úp, thở ra.</li>
+      <li><strong>Tay phải Kéo - Tay trái Recovery:</strong> Tay phải kéo nước dưới thân. Tay trái nhấc lên, đưa về phía trước trên mặt nước. Thân xoay nhẹ sang trái.</li>
+      <li><strong>Tay phải Đẩy - Tay trái vào nước:</strong> Tay phải đẩy mạnh ra sau. Tay trái vào nước. Thân xoay sang phải. <strong>Xoay đầu sang phải, hít vào bằng miệng</strong> (thở).</li>
+      <li><strong>Tay trái Kéo - Tay phải Recovery:</strong> Tay trái kéo nước. Tay phải nhấc lên recovery. Mặt quay lại úp xuống, thở ra bằng mũi.</li>
+      <li><strong>Lặp lại chu kỳ.</strong></li>
+    </ol>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Giai đoạn</th>
+          <th>Tay phải</th>
+          <th>Tay trái</th>
+          <th>Chân</th>
+          <th>Hô hấp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nhịp 1</td>
+          <td>Tỳ nước → Kéo</td>
+          <td>Đẩy → Recovery</td>
+          <td>Đập liên tục</td>
+          <td>Thở ra (mũi)</td>
+        </tr>
+        <tr>
+          <td>Nhịp 2</td>
+          <td>Đẩy → Recovery</td>
+          <td>Tỳ nước → Kéo</td>
+          <td>Đập liên tục</td>
+          <td>Hít vào (miệng, xoay phải)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box important">
+      <span style="font-size: 1.5rem;">🔄</span>
+      <div>
+        <strong>Nhịp chân phổ biến:</strong> Với nhịp 6-beat kick, cứ mỗi 1 nhịp tay (1 tay quạt 1 vòng) tương ứng với 3 nhịp đập chân. Vậy 1 chu kỳ hoàn chỉnh (2 nhịp tay) = 6 nhịp đập chân.
+      </div>
+    </div>
+
+    <h3>7.1. Chu kỳ phối hợp Tay - Chân - Hông - Đầu</h3>
+    <p>Chìa khóa vàng để bơi sải thanh thoát và bền bỉ nằm ở sự đồng bộ hóa cơ học chuyển động giữa các bộ phận trên cơ thể theo trục xoay hông. Trục hông hoạt động giống như một chiếc động cơ chính xoay liên tục góc 35 độ:</p>
+    <ul>
+      <li>Khi tay phải thực hiện pha Entry (vào nước và vươn dài), hông phải chủ động lật nghiêng xuống dưới nước. Cùng lúc đó, chân trái đập mạnh một cú dứt khoát từ hông xuống dưới bể cạn để tạo phản lực cân bằng.</li>
+      <li>Khi tay phải kết thúc pha kéo nước chuyển sang pha đẩy mạnh (Push) ra sau đùi, vai phải xoay mở hướng lên trên cạn. Cùng lúc này đầu bắt đầu xoay nhẹ theo trục cơ thể để nhấc miệng lên lấy hơi.</li>
+      <li>Sự phối hợp đối nghịch chéo (tay phải vươn - chân trái đập mạnh) giúp triệt tiêu lực xoắn vặn thân, giữ cho cột sống của bạn thẳng hàng tắp xuyên suốt chu kỳ di chuyển, mang lại khả năng <strong>lướt nước</strong> mượt mà nhất.</li>
+    </ul>
+
+    <h3>7.2. Case study thực chứng của HLV Nguyễn Huy Mạnh tại Swim For Life</h3>
+    <p>Tại trung tâm <strong>Swim For Life Việt Nam</strong>, HLV Nguyễn Huy Mạnh đã áp dụng giáo trình đồng bộ chuyển động này để huấn luyện thành công cho anh Trần Văn Hải (42 tuổi, Hà Nội). Anh Hải vốn có tiền sử sợ nước sâu và gồng cứng cơ vai gáy nghiêm trọng. Ở 3 buổi đầu tự tập bơi sải phong trào, anh thường chỉ bơi được 15m là mệt run rẩy, chân chìm nghỉm.</p>
+    <p>Sau khi được HLV Nguyễn Huy Mạnh chấn chỉnh nắn lại tư thế: cô lập tập chân flutter kick từ hông bám ván, ráp tay sải phối hợp xoay hông lật vai góc 35 độ để thở má má sát nước Bow Wave. Kết quả kinh ngạc, anh Hải đã tự tin thực hiện cú bơi sải dài 100m liên tục không nghỉ chỉ sau buổi học thứ 8, cơ vai hoàn toàn thả lỏng, nhịp thở ổn định thư thái.</p>
+
+    <figure class="post-image">
+      <img src="/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg" alt="HLV chỉnh sửa tư thế nằm thẳng của học viên dưới nước" loading="lazy" />
+      <figcaption>Chỉnh sửa góc xoay thân người trực tiếp dưới lòng hồ bể bơi giúp học viên nhanh chóng cảm nhận được lực nâng tự nhiên của nước.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 8. Bài tập trên cạn -->
+  <section id="bai-tap-tren-can-sai">
+    <h2>Bài Tập Bơi Sải Trên Cạn</h2>
+
+    <p>Luyện tập trên cạn giúp bạn ghi nhớ kỹ thuật và xây dựng sức mạnh cần thiết trước khi xuống nước:</p>
+
+    <h3>Bài tập 1: Tập quay tay (Arm rotation)</h3>
+    <p>Đứng cúi người về phía trước, một tay bám ghế, tay kia thực hiện vòng quay hoàn chỉnh: vào nước (phía trước) → Tỳ → Kéo → Đẩy (phía sau) → Recovery (nhấc khuỷu) → vào nước. Mỗi tay 3 set × 20 vòng.</p>
+
+    <h3>Bài tập 2: Tập thở nghiêng trên cạn</h3>
+    <p>Đứng cúi, mặt úp xuống. Xoay đầu sang một bên (giữ 1 mắt nhìn xuống sàn, 1 mắt nhìn ngang), hít vào bằng miệng. Xoay mặt úp lại, thở ra bằng mũi. Lặp lại 20-30 lần mỗi bên.</p>
+
+    <h3>Bài tập 3: Tập đập chân nằm sấp</h3>
+    <p>Nằm sấp trên giường/ghế (chân thò ra ngoài), đập chân lên xuống liên tục. Đập từ hông, đầu gối chỉ gập nhẹ, mũi chân duỗi. Tập 3 set × 30 giây.</p>
+
+    <h3>Bài tập 4: Plank và Side plank</h3>
+    <p>Plank 30-60 giây + Side plank mỗi bên 20-30 giây. Bài tập core giúp giữ thân ngang khi bơi sải, ngăn hông lắc lư.</p>
+
+    <figure class="post-image">
+      <img src="/images/techniques/hoc-boi-sai-chan-tren-can.jpg" alt="Bài tập chân bơi sải trên cạn - đập chân từ hông đúng kỹ thuật" loading="lazy" width="800" height="533" />
+      <figcaption>Tư thế nằm sấp trên cạn <strong>đập chân từ hông</strong> giúp kích hoạt và làm săn chắc cơ đùi trước cơ mông hiệu quả.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 9. Bài tập dưới nước -->
+  <section id="bai-tap-duoi-nuoc-sai">
+    <h2>Bài Tập Bơi Sải Dưới Nước</h2>
+
+    <p>Tại <strong>Swim For Life</strong>, HLV sẽ hướng dẫn bạn theo lộ trình từ đơn giản đến phức tạp:</p>
+
+    <h3>Bài tập 1: Đập chân bám thành bể</h3>
+    <p>Two tay bám thành bể, thân nằm ngang, mặt úp. Đập chân liên tục từ hông, biên độ nhỏ, tần suất cao. Tập phối hợp: đập chân + xoay đầu sang bên để thở. Tập 5-10 phút.</p>
+
+    <h3>Bài tập 2: Đập chân kẹp ván</h3>
+    <p>Cầm ván bơi (kickboard) phía trước, chỉ dùng chân đập flutter kick. Khi cần thở, xoay đầu sang bên (không ngẩng đầu lên). Bơi từ đầu bể đến cuối bể, lặp lại 5-10 lượt.</p>
+
+    <h3>Bài tập 3: Tập một tay (Single arm drill)</h3>
+    <p>Một tay duỗi phía trước (hoặc áp sát thân), tay còn lại thực hiện toàn bộ chu kỳ quạt. Thở sang bên tay đang quạt. Bài tập này giúp tập trung vào kỹ thuật từng tay. Bơi 25m mỗi tay × 4 lượt.</p>
+
+    <h3>Bài tập 4: Catch-up drill (Bài tập chờ)</h3>
+    <p>Two tay luân phiên quạt nhưng chờ tay này về phía trước chạm tay kia rồi mới quạt tiếp. Bài tập giúp kéo dài nhịp, cải thiện glide và phối hợp. Bơi 50m × 4 lượt.</p>
+
+    <h3>Bài tập 5: Bơi sải nguyên chu kỳ</h3>
+    <p>Bơi sải hoàn chỉnh với tốc độ chậm, tập trung kỹ thuật. Bắt đầu 25m, tăng dần lên 50m, 100m, 200m liên tục không dừng.</p>
+  </section>
+
+  <!-- 11. Khóa học bơi sải -->
+  <section id="khoa-hoc-sai">
+    <h2>Khóa Học Bơi Sải Tại Swim For Life Việt Nam</h2>
+
+    <p>Bạn muốn học bơi sải chuẩn kỹ thuật, an toàn và tiến bộ nhanh nhất? <strong>Trung tâm dạy bơi Swim For Life</strong> – trực thuộc Công ty Cổ phần Your Dreams – cung cấp các khóa học bơi sải chất lượng cao tại Hà Nội và TP.HCM.</p>
+
+    <h3>Ưu điểm khóa học bơi sải tại Swim For Life</h3>
+    <ul>
+      <li><strong>HLV chuyên nghiệp, giàu kinh nghiệm:</strong> Tốt nghiệp ĐH Sư phạm, chuyên ngành TDTT, nhiều năm kinh nghiệm giảng dạy.</li>
+      <li><strong>Phương pháp 1 kèm 1:</strong> Cá nhân hóa giáo trình theo trình độ và mục tiêu của mỗi học viên.</li>
+      <li><strong>Cam kết biết bơi sau 10-12 buổi:</strong> Áp dụng cho cả bơi sải (nếu học viên đã biết bơi ếch).</li>
+      <li><strong>Học thử miễn phí + Bảo lưu 2.5 tháng:</strong> An tâm trải nghiệm trước khi đăng ký.</li>
+      <li><strong>Đối tác Vinhomes:</strong> Bể bơi sạch sẽ, hiện đại, đạt chuẩn.</li>
+    </ul>
+
+    <h3>Lộ trình học bơi sải tại Swim For Life</h3>
+    <ol>
+      <li><strong>Buổi 1-3:</strong> Ôn lại nền tảng (nổi, thở, <a href="/ky-thuat-boi/ky-nang-dung-nuoc/">đứng nước</a>), tập đập chân flutter kick.</li>
+      <li><strong>Buổi 4-6:</strong> Kỹ thuật tay 3 pha (Tỳ-Kéo-Đẩy), tập thở nghiêng.</li>
+      <li><strong>Buổi 7-9:</strong> Phối hợp tay-chân-thở, bơi nguyên chu kỳ.</li>
+      <li><strong>Buổi 10-12:</strong> Hoàn thiện kỹ thuật, tăng tốc độ và quãng đường.</li>
+    </ol>
+  </section>
+</TechniqueLayout>

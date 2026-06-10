@@ -1,0 +1,85 @@
+---
+const currentYear = new Date().getFullYear();
+import CourseLayout from '../../layouts/CourseLayout.astro';
+import { nguoiLon } from '../../data/courses.js';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Khóa học bơi', href: '/khoa-hoc-boi/' },
+  { label: 'Học bơi người lớn' },
+];
+
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nguoiLon, 'https://dayboi.vip/khoa-hoc-boi/nguoi-lon/');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Người lớn học bơi bao lâu thì biết bơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tại Swim For Life, người lớn thường biết bơi sau 10-12 buổi học (mỗi buổi 60 phút). Với phương pháp dạy 1 kèm 1, học viên tiến bộ rất nhanh. Người có nền tảng thể lực tốt có thể biết bơi sớm hơn, khoảng 7-8 buổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi 40 tuổi, sợ nước, có học bơi được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được! Swim For Life chuyên dạy bơi cho người lớn sợ nước ở mọi độ tuổi (từ 18 đến 60+). Chúng tôi có phương pháp tâm lý đặc biệt giúp bạn vượt qua nỗi sợ một cách dần dần, không ép buộc. HLV sẽ đồng hành sát sao, tạo cảm giác an toàn tuyệt đối."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lịch học bơi cho người lớn có linh hoạt không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rất linh hoạt! Swim For Life bố trí lịch học theo yêu cầu của học viên, kể cả buổi sáng sớm (5h30-7h), buổi trưa, buổi tối (19h-21h) và cả cuối tuần. Bạn có thể thay đổi lịch học khi cần, miễn báo trước 24 giờ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chi phí học bơi cho người lớn là bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chi phí phụ thuộc vào hình thức học (1 kèm 1 hoặc nhóm) và địa điểm bể bơi. Liên hệ hotline: 0979.121.097 để nhận báo giá chi tiết và ưu đãi đang áp dụng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Người lớn nên học kiểu bơi nào trước?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Người lớn thường được khuyên bắt đầu với bơi Ếch hoặc bơi Sải (tự do). Bơi Ếch dễ tiếp cận, phù hợp cho người mới bắt đầu. Bơi Sải giúp di chuyển nhanh hơn và tốt cho sức khỏe. HLV sẽ tư vấn kiểu bơi phù hợp nhất với thể trạng và mục tiêu của bạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Swim For Life có lớp bơi buổi tối cho người đi làm không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có! Swim For Life có lớp bơi buổi tối từ 19h-21h tại nhiều bể bơi ở Hà Nội và TPHCM, rất phù hợp cho người đi làm văn phòng. Bạn cũng có thể học vào sáng sớm (5h30-7h) trước giờ đi làm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi đã biết bơi Ếch, muốn học thêm kiểu bơi khác có được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn được! Swim For Life có chương trình nâng cao dành cho người đã biết bơi, muốn học thêm các kiểu bơi Sải, Ngửa, Bướm hoặc cải thiện kỹ thuật. HLV sẽ đánh giá trình độ hiện tại và thiết kế lộ trình phù hợp."
+      }
+    }
+  ]
+};
+
+const combinedSchema = [courseSchema, faqSchema];
+---
+
+<CourseLayout
+  course={nguoiLon}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+/>

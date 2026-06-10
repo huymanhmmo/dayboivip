@@ -1,0 +1,526 @@
+---
+import { generateHowToSchema } from '../../utils/howToSchema.js';
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
+  { label: 'Học bơi ếch' },
+];
+
+const faqData = [
+  {
+    question: 'Học bơi ếch mất bao lâu để biết bơi?',
+    answer: 'Với phương pháp giảng dạy 1 kèm 1 tại Swim For Life, học viên thường biết bơi ếch cơ bản sau 7-10 buổi học. Sau 10-12 buổi, bạn có thể bơi thành thạo và tự tin xuống nước. Tốc độ học phụ thuộc vào thể lực, sự tự tin dưới nước và tần suất luyện tập của mỗi người.',
+  },
+  {
+    question: 'Bơi ếch có khó không? Người mới bắt đầu nên học bơi ếch trước hay bơi sải?',
+    answer: 'Bơi ếch là kiểu bơi cơ bản nhất, rất phù hợp cho người mới bắt đầu. So với bơi sải, bơi ếch dễ hơn vì động tác đối xứng hai bên, dễ phối hợp tay-chân-thở. Tại Swim For Life, chúng tôi khuyên người mới nên học bơi ếch trước, sau đó chuyển sang bơi sải.',
+  },
+  {
+    question: 'Trẻ em mấy tuổi có thể bắt đầu học bơi ếch?',
+    answer: 'Trẻ em từ 5-6 tuổi đã có thể bắt đầu học bơi ếch. Ở độ tuổi này, trẻ đã đủ sức khỏe và khả năng tiếp thu kỹ thuật. Tại Swim For Life, HLV được đào tạo chuyên sâu về tâm lý trẻ em, giúp bé tự tin và yêu thích môn bơi ngay từ buổi đầu.',
+  },
+  {
+    question: 'Động tác chân bơi ếch quan trọng như thế nào?',
+    answer: 'Động tác chân chiếm khoảng 70% lực đẩy trong bơi ếch, là yếu tố quan trọng nhất quyết định tốc độ và hiệu quả bơi. Kỹ thuật chân bơi ếch gồm 4 giai đoạn: CO - BẺ - ĐẠP - KHÉP. Thực hiện đúng kỹ thuật chân giúp bạn tiết kiệm sức và bơi nhanh hơn.',
+  },
+  {
+    question: 'Tại sao tôi bơi ếch mà không tiến được?',
+    answer: 'Nguyên nhân phổ biến nhất khi bơi ếch không tiến là: (1) Đạp chân sai kỹ thuật - đạp thẳng ra sau thay vì đạp vòng ra ngoài rồi khép lại; (2) Không có giai đoạn lướt nước sau mỗi chu kỳ; (3) Co chân quá nhiều tạo lực cản; (4) Phối hợp tay-chân chưa đúng nhịp.',
+  },
+  {
+    question: 'Bơi ếch có giảm cân không? Bơi ếch đốt bao nhiêu calo?',
+    answer: 'Bơi ếch là bài tập aerobic tuyệt vời giúp giảm cân hiệu quả. Trung bình, bơi ếch đốt khoảng 400-600 calo/giờ tùy cường độ và cân nặng. Bơi ếch tác động đến nhiều nhóm cơ: chân, hông, lưng, vai, giúp săn chắc cơ thể mà không gây áp lực lên khớp.',
+  },
+  {
+    question: 'Học bơi ếch 1 kèm 1 tại Swim For Life có gì đặc biệt?',
+    answer: 'Khóa học 1 kèm 1 tại Swim For Life có nhiều ưu điểm: HLV tốt nghiệp ĐH Sư phạm, giáo trình chuẩn, cam kết biết bơi sau 10-12 buổi, được học thử miễn phí buổi đầu, bảo lưu 2.5 tháng, hỗ trợ chọn bể bơi thuận tiện nhất cho học viên tại Hà Nội và TP.HCM.',
+  },
+  {
+    question: 'Chi phí học bơi ếch tại Swim For Life là bao nhiêu?',
+    answer: 'Chi phí khóa học bơi ếch tại Swim For Life rất hợp lý, từ 2-4 triệu đồng tùy gói học. Bạn có thể chọn học 1 kèm 1 hoặc học nhóm 2-4 người. Liên hệ hotline 0979.121.097 để được tư vấn chi tiết và nhận ưu đãi mới nhất.',
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Học Bơi Ếch: Hướng Dẫn Kỹ Thuật Bơi Ếch Chi Tiết Nhất",
+  "description": "Hướng dẫn chi tiết kỹ thuật bơi ếch từ A-Z: động tác chân CO-BẺ-ĐẠP-KHÉP, kỹ thuật tay, cách thở, phối hợp chu kỳ. Bài tập trên cạn & dưới nước cho người mới.",
+  "image": "https://dayboi.vip/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc - HLV Bơi lội",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Việt Nam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-05-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/ky-thuat-boi/hoc-boi-ech/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const metadata = {
+  title: `Học Bơi Ếch: Hướng Dẫn Kỹ Thuật Bơi Ếch Chi Tiết Từ A-Z [${currentYear}]`,
+  description: "Hướng dẫn cách học bơi ếch chi tiết từ A-Z: động tác chân CO-BẺ-ĐẠP-KHÉP, kỹ thuật tay, cách thở, phối hợp chu kỳ bơi ếch. Bài tập trên cạn & dưới nước. Cam kết biết bơi sau 10-12 buổi.",
+  canonical: "https://dayboi.vip/ky-thuat-boi/hoc-boi-ech/",
+  image: "/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema
+};
+
+const technique = {
+  slug: 'hoc-boi-ech',
+  name: 'Bơi Ếch',
+  badge: '🐸 Kỹ thuật bơi cơ bản nhất',
+  description: 'Bơi ếch là kiểu bơi cơ bản và phổ biến nhất, phù hợp cho mọi lứa tuổi. Tìm hiểu kỹ thuật bơi ếch chuẩn từ A-Z với hướng dẫn chi tiết từ HLV chuyên nghiệp tại Swim For Life Việt Nam.',
+  difficulty: 'Cơ bản' as const,
+  speed: 'Chậm' as const,
+  calories: '400 - 600 kcal/h',
+  muscles: 'Cơ đùi, cơ mông, vai, ngực',
+  videoId: 'c4GBGpEv3JQ',
+  videoPoster: '/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg',
+  videoAlt: 'Hướng dẫn kỹ thuật động tác tay bơi ếch chuẩn tại bể bơi Swim For Life'
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "Đang cập nhật bước 1",
+    "text": "Tham khảo chi tiết kỹ thuật bên dưới.",
+    "url": "https://dayboi.vip/ky-thuat-boi/hoc-boi-ech/",
+    "position": 1
+  }
+];
+
+const howToSchema = generateHowToSchema(technique, howToSteps, 'https://dayboi.vip/ky-thuat-boi/hoc-boi-ech/');
+
+metadata.howToSchema = howToSchema;
+
+const toc = [
+  { id: 'gioi-thieu', label: '1. Tổng quan bơi ếch' },
+  { id: 'loi-ich', label: '2. Lợi ích sức khỏe' },
+  { id: 'ky-thuat-chan', label: '3. Kỹ thuật chân' },
+  { id: 'ky-thuat-tay', label: '4. Kỹ thuật tay' },
+  { id: 'ky-thuat-tho', label: '5. Kỹ thuật thở' },
+  { id: 'phoi-hop', label: '6. Phối hợp chu kỳ' },
+  { id: 'bai-tap-tren-can', label: '7. Bài tập trên cạn' },
+  { id: 'bai-tap-duoi-nuoc', label: '8. Bài tập dưới nước' },
+  { id: 'loi-thuong-gap', label: '9. Lỗi thường gặp' },
+  { id: 'khoa-hoc', label: '10. Khóa học bơi ếch' },
+  { id: 'faq', label: '11. Câu hỏi thường gặp' }
+];
+
+const errors = [
+  {
+    title: 'Đạp chân thẳng ra sau (giống đạp xe đạp)',
+    problem: 'Đạp chân theo đường thẳng, không mở ra hai bên, khiến lực đẩy rất yếu hoặc gần như bằng 0.',
+    solution: 'Tập lại trên cạn, chú ý đạp theo hình vòng cung: ra ngoài → ra sau → khép vào. Hình dung bạn đang đạp "vòng tròn" chứ không phải "đường thẳng".'
+  },
+  {
+    title: 'Không bẻ bàn chân khi đạp',
+    problem: 'Mũi chân vẫn duỗi thẳng (pointed toes) khi đạp, khiến bàn chân "xẻ nước" thay vì "đẩy nước".',
+    solution: 'Tập bẻ bàn chân ra ngoài trên cạn nhiều lần. Khi đạp, hình dung bạn đang dùng lòng bàn chân để "ủi" nước ra sau.'
+  },
+  {
+    title: 'Mở đầu gối quá rộng khi co chân',
+    problem: 'Đầu gối mở rộng hơn vai tạo lực cản lớn, làm giảm tốc độ và tốn sức.',
+    solution: 'Giữ hai đầu gối trong phạm vi bằng vai hoặc hẹp hơn vai một chút. Tập trung co gót chân về mông thay vì mở gối ra ngoài.'
+  },
+  {
+    title: 'Tay và chân hoạt động đồng thời',
+    problem: 'Quạt tay và đạp chân cùng lúc, khiến lực triệt tiêu nhau, bơi rất chậm.',
+    solution: 'Nhớ quy tắc "tay trước, chân sau". Bắt đầu bằng quạt tay, thu tay xong rồi mới đạp chân. Tập chậm, đếm nhịp rõ ràng.'
+  },
+  {
+    title: 'Không có giai đoạn lướt',
+    problem: 'Bơi liên tục không nghỉ giữa các chu kỳ, quạt tay ngay sau khi đạp chân, rất tốn sức.',
+    solution: 'Sau mỗi cú đạp chân, giữ tư thế duỗi thẳng (streamline) ít nhất 1-2 giây. Tận dụng quán tính để lướt, tiết kiệm năng lượng.'
+  },
+  {
+    title: 'Ngẩng đầu quá cao khi thở',
+    problem: 'Nâng đầu và thân trên quá cao khỏi mặt nước, khiến hông và chân chìm xuống, tăng lực cản.',
+    solution: 'Chỉ cần ngẩng đầu vừa đủ để miệng nhô khỏi mặt nước. Để lực quạt tay tự nhiên nâng thân trên lên, không cần gồng cổ.'
+  },
+  {
+    title: 'Quạt tay quá rộng',
+    problem: 'Hai tay quạt vượt quá đường ngang vai, tạo lực cản lớn và không hiệu quả.',
+    solution: 'Giới hạn biên độ quạt tay trong phạm vi vai. Hình dung bạn đang "vẽ hình trái tim" nhỏ gọn trước ngực.'
+  },
+  {
+    title: 'Nín thở dưới nước',
+    problem: 'Không thở ra khi mặt úp xuống nước, đến khi ngẩng đầu phải vừa thở ra vừa hít vào, gây hụt hơi.',
+    solution: 'Luôn thở ra từ từ bằng mũi khi mặt ở dưới nước. Khi ngẩng đầu lên, chỉ cần hít vào nhanh bằng miệng.'
+  },
+  {
+    title: 'Thân người không nằm ngang',
+    problem: 'Bơi ở tư thế nghiêng hoặc phần dưới cơ thể chìm quá sâu, tạo lực cản và tốn sức.',
+    solution: 'Siết cơ core (cơ bụng, cơ lưng dưới) để giữ thân nằm ngang. Mắt nhìn xuống đáy bể (không nhìn về phía trước) khi ở tư thế lướt.'
+  },
+  {
+    title: 'Co chân quá nhanh',
+    problem: 'Co chân nhanh và mạnh tạo lực cản, làm chậm tốc độ giữa mỗi chu kỳ.',
+    solution: 'Co chân chậm, nhẹ nhàng, không vội. Chỉ đạp chân mới cần nhanh và mạnh. Nhớ: "Co chậm – Đạp mạnh".'
+  }
+];
+
+const relatedKeywords = ['bơi ếch', 'bơi cơ bản', 'tự học bơi'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+>
+  <!-- 1. Giới thiệu -->
+  <section id="gioi-thieu">
+    <h2>Bơi Ếch Là Gì? Giới Thiệu Tổng Quan Về Kiểu Bơi Cơ Bản Nhất</h2>
+
+    <p><strong>Bơi ếch</strong> (tên tiếng Anh: Breaststroke) là một trong bốn kiểu bơi chính trong thi đấu bơi lội, bên cạnh <a href="/ky-thuat-boi/hoc-boi-sai/">bơi sải</a>, <a href="/ky-thuat-boi/hoc-boi-ngua/">bơi ngửa</a> và <a href="/ky-thuat-boi/hoc-boi-buom/">bơi bướm</a>. Đây là kiểu bơi lâu đời nhất và phổ biến nhất trên thế giới, được đặt tên theo đặc trưng động tác giống loài ếch khi bơi dưới nước.</p>
+
+    <p>Trong hệ thống giảng dạy tại <strong>Trung tâm dạy bơi Swim For Life Việt Nam</strong>, bơi ếch luôn là kiểu bơi đầu tiên được dạy cho học viên mới. Lý do là vì <strong>cách học bơi ếch</strong> có động tác đối xứng hai bên, dễ phối hợp, người mới học dễ dàng nắm bắt và thực hành dưới sự kèm cặp của huấn luyện viên. Đặc biệt, bơi ếch cho phép người bơi ngẩng đầu lên thở tự nhiên theo nhịp, giảm bớt nỗi sợ ngạt nước – vốn là rào cản lớn nhất của người mới học bơi.</p>
+
+    <p>Theo thầy <strong>Nguyễn Huy Mạnh</strong> – Giám đốc kiêm HLV trưởng của Swim For Life, tốt nghiệp Đại học Sư phạm Hà Nội: <em>"Bơi ếch là nền tảng để phát triển tất cả các kỹ thuật bơi khác. Khi bạn thành thạo bơi ếch, việc học bơi sải, bơi ngửa hay thậm chí bơi bướm sẽ dễ dàng hơn rất nhiều vì bạn đã có cảm giác nước, biết cách phối hợp hô hấp và vận động trong nước."</em></p>
+
+    <p>Bơi ếch là lựa chọn lý tưởng cho mọi đối tượng: trẻ em từ 5 tuổi, thanh thiếu niên, người trưởng thành và thậm chí cả người cao tuổi. Với đặc tính vận động nhẹ nhàng, ít gây chấn thương, bơi ếch không chỉ giúp rèn luyện sức khỏe toàn diện mà còn là kỹ năng sinh tồn quan trọng, giúp phòng chống đuối nước – vấn đề nhức nhối tại Việt Nam hiện nay.</p>
+
+    <div class="info-box important">
+      <span style="font-size: 1.5rem;">💡</span>
+      <div>
+        <strong>Bạn biết không?</strong> Theo thống kê của Tổ chức Y tế Thế giới (WHO), Việt Nam nằm trong nhóm các quốc gia có tỷ lệ đuối nước cao nhất khu vực Đông Nam Á. Học bơi – đặc biệt là bơi ếch – kết hợp với <a href="/ky-thuat-boi/ky-nang-dung-nuoc/">kỹ năng đứng nước</a> là giải pháp phòng chống đuối nước hiệu quả nhất.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Lợi ích -->
+  <section id="loi-ich">
+    <h2>Lợi Ích Của Bơi Ếch Đối Với Sức Khỏe</h2>
+
+    <p>Bơi ếch không chỉ là kỹ năng sinh tồn mà còn mang lại vô vàn lợi ích cho sức khỏe thể chất và tinh thần. Dưới đây là những lợi ích nổi bật khi bạn luyện tập bơi ếch thường xuyên:</p>
+
+    <h3>Lợi ích thể chất</h3>
+    <ul>
+      <li><strong>Tăng cường sức khỏe tim mạch:</strong> Bơi ếch là bài tập aerobic tuyệt vời, giúp tăng cường khả năng bơm máu của tim, hạ huyết áp và giảm cholesterol xấu trong máu. Chỉ cần bơi 30 phút mỗi ngày, sức khỏe tim mạch của bạn sẽ được cải thiện đáng kể.</li>
+      <li><strong>Phát triển cơ bắp toàn diện:</strong> Bơi ếch tác động đến nhiều nhóm cơ quan trọng: cơ đùi trong và ngoài, cơ mông, cơ bắp chân (khi đạp chân), cơ ngực, cơ vai, cơ tay (khi quạt tay), cơ lưng và cơ core (khi giữ tư thế).</li>
+      <li><strong>Giảm cân hiệu quả:</strong> Bơi ếch với cường độ trung bình đốt khoảng 400-600 calo/giờ, tương đương với chạy bộ nhưng không gây áp lực lên khớp gối và cột sống.</li>
+      <li><strong>Tăng dung tích phổi:</strong> Kỹ thuật thở trong bơi ếch – hít sâu bằng miệng và thở ra từ từ bằng mũi – giúp tăng dung tích phổi, cải thiện hệ hô hấp.</li>
+      <li><strong>Cải thiện sự linh hoạt:</strong> Động tác chân bơi ếch đòi hỏi sự linh hoạt của khớp háng, khớp gối và khớp cổ chân, giúp tăng phạm vi chuyển động của các khớp.</li>
+      <li><strong>An toàn cho khớp:</strong> Nhờ lực nâng của nước (lực đẩy Archimedes), bơi ếch gần như không tạo áp lực lên khớp, phù hợp với người bị đau khớp, thoái hóa cột sống hoặc đang phục hồi chấn thương.</li>
+    </ul>
+
+    <h3>Lợi ích tinh thần</h3>
+    <ul>
+      <li><strong>Giảm stress và lo âu:</strong> Tiếng nước, nhịp thở đều đặn và cảm giác nhẹ nhàng trong nước tạo ra hiệu ứng thiền định, giúp giảm cortisol – hormone gây stress.</li>
+      <li><strong>Cải thiện giấc ngủ:</strong> Vận động trong nước giúp cơ thể tiêu hao năng lượng hợp lý, tạo cảm giác thư giãn sâu, từ đó cải thiện chất lượng giấc ngủ.</li>
+      <li><strong>Tăng sự tự tin:</strong> Biết bơi giúp bạn tự tin hơn trong mọi hoạt động liên quan đến nước: đi biển, du lịch, dã ngoại, các hoạt động thể thao dưới nước.</li>
+      <li><strong>Kỹ năng sinh tồn:</strong> Đây là lợi ích quan trọng nhất – biết bơi ếch kết hợp <a href="/ky-thuat-boi/ky-nang-dung-nuoc/">đứng nước</a> giúp bạn tự cứu mình trong tình huống nguy hiểm dưới nước.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Kỹ thuật chân -->
+  <section id="ky-thuat-chan">
+    <h2>Kỹ Thuật Chân Bơi Ếch: CO - BẺ - ĐẠP - KHÉP</h2>
+
+    <p>Động tác chân là yếu tố quan trọng nhất trong bơi ếch, chiếm đến <strong>70% lực đẩy tiến</strong>. Kỹ thuật chân bơi ếch chuẩn gồm 4 giai đoạn liên hoàn, tạo thành một chu kỳ khép kín:</p>
+
+    <h3>Giai đoạn 1: CO chân (Thu chân)</h3>
+    <p>Từ tư thế duỗi thẳng chân (tư thế lướt), bạn bắt đầu co gập đầu gối, kéo gót chân về phía mông. Lưu ý quan trọng:</p>
+    <ul>
+      <li>Co chân từ từ, nhẹ nhàng – đây là giai đoạn thụ động, không cần dùng lực.</li>
+      <li>Hai đầu gối mở rộng bằng vai hoặc hơi hẹp hơn vai – <strong>không</strong> mở quá rộng vì sẽ tạo lực cản lớn.</li>
+      <li>Gót chân hướng về phía mông, bàn chân nằm trong đường khuôn của cơ thể.</li>
+      <li>Giữ hông gần mặt nước, không nâng mông lên quá cao.</li>
+    </ul>
+
+    <h3>Giai đoạn 2: BẺ bàn chân (Gập cổ chân)</h3>
+    <p>Đây là giai đoạn then chốt mà nhiều người mới học hay bỏ qua. Khi chân đã co về gần mông:</p>
+    <ul>
+      <li><strong>Bẻ bàn chân ra ngoài</strong> (xoay ngón chân hướng ra hai bên), tạo bề mặt tiếp xúc nước lớn nhất.</li>
+      <li>Mũi bàn chân hướng ra ngoài, lòng bàn chân hướng về phía sau – giống hình dạng chữ "V" ngược.</li>
+      <li>Giai đoạn này chuẩn bị cho pha đạp – bàn chân bẻ đúng sẽ tạo lực đẩy mạnh nhất.</li>
+    </ul>
+
+    <div class="info-box tip">
+      <span style="font-size: 1.5rem;">✅</span>
+      <div>
+        <strong>Mẹo từ HLV Swim For Life:</strong> Nếu bạn khó bẻ bàn chân, hãy tập trên cạn trước: ngồi trên ghế, co chân lên và tập xoay bàn chân ra ngoài. Lặp lại 20-30 lần mỗi ngày để tăng sự linh hoạt của cổ chân.
+      </div>
+    </div>
+
+    <h3>Giai đoạn 3: ĐẠP chân (Đạp nước)</h3>
+    <p>Đây là giai đoạn tạo lực chính, quyết định tốc độ bơi ếch:</p>
+    <ul>
+      <li>Từ tư thế co chân và bẻ bàn chân, <strong>đạp mạnh hai chân ra sau và sang hai bên</strong> theo đường cong tròn.</li>
+      <li>Quỹ đạo đạp: từ trong ra ngoài, từ trên xuống dưới, tạo thành hình vòng cung.</li>
+      <li>Dùng lòng bàn chân và mặt trong cẳng chân để đẩy nước – tạo lực đẩy tiến mạnh nhất.</li>
+      <li>Đạp nhanh, mạnh và dứt khoát – khác hẳn với giai đoạn co chân (chậm, nhẹ nhàng).</li>
+      <li><strong>Không đạp thẳng ra sau</strong> (giống đạp xe đạp) – đây là lỗi phổ biến nhất.</li>
+    </ul>
+
+    <h3>Giai đoạn 4: KHÉP chân (Ép chân)</h3>
+    <p>After khi đạp xong, hai chân tiếp tục chuyển động để hoàn thành chu kỳ:</p>
+    <ul>
+      <li>Hai chân duỗi thẳng và <strong>khép chặt vào nhau</strong>, mũi chân duỗi thẳng (pointed toes).</li>
+      <li>Động tác khép tạo thêm một lực đẩy bổ sung nhờ hiệu ứng "kẹp nước".</li>
+      <li>Sau khi khép xong, giữ tư thế duỗi thẳng – đây là giai đoạn <strong>LƯỚT</strong>, để cơ thể trượt trên mặt nước.</li>
+      <li>Giai đoạn lướt rất quan trọng: tiết kiệm sức và tận dụng tối đa quán tính từ cú đạp.</li>
+    </ul>
+
+    <img src="/images/techniques/tap-tho-boi-ech-tren-can.jpg" alt="Học viên tập kỹ thuật chân bơi ếch trên cạn tại lớp học bơi Swim For Life" loading="lazy" width="800" height="533" />
+
+    <blockquote>
+      <p><strong>Quy tắc vàng của chân bơi ếch:</strong> "CO chậm – BẺ chuẩn – ĐẠP mạnh – KHÉP nhanh – LƯỚT dài". Nhớ rằng giai đoạn co chân là thụ động (chậm, nhẹ nhàng), còn giai đoạn đạp chân là chủ động (nhanh, mạnh, dứt khoát).</p>
+    </blockquote>
+  </section>
+
+  <!-- 4. Kỹ thuật tay -->
+  <section id="ky-thuat-tay">
+    <h2>Kỹ Thuật Tay Bơi Ếch: Tì Nước - Quạt Nước - Thu Tay</h2>
+
+    <p>Mặc dù động tác tay chỉ đóng góp khoảng 30% lực đẩy trong bơi ếch, nhưng tay có vai trò quan trọng trong việc nâng đầu lên thở và duy trì nhịp bơi ổn định. Kỹ thuật tay bơi ếch gồm 3 giai đoạn:</p>
+
+    <h3>Giai đoạn 1: Tì nước (Catch)</h3>
+    <p>Bắt đầu từ tư thế hai tay duỗi thẳng phía trước, lòng bàn tay úp xuống, ngón tay khép chặt:</p>
+    <ul>
+      <li>Hai bàn tay xoay nhẹ hướng ra ngoài, tạo góc khoảng 30-45 độ so với mặt nước.</li>
+      <li>Cảm nhận áp lực nước tác động lên lòng bàn tay – đây gọi là "bắt nước" (catch).</li>
+      <li>Khuỷu tay vẫn giữ thẳng hoặc hơi gập nhẹ, không hạ khuỷu xuống.</li>
+    </ul>
+
+    <h3>Giai đoạn 2: Quạt nước (Pull/Sweep)</h3>
+    <p>Đây là giai đoạn tạo lực chính của tay và cũng là thời điểm ngẩng đầu lên thở:</p>
+    <ul>
+      <li>Hai tay <strong>quạt mạnh ra hai bên</strong> rồi <strong>vòng về phía dưới</strong>, tạo hình trái tim hoặc hình lỗ khóa.</li>
+      <li>Khuỷu tay gập tự nhiên, giữ cao hơn bàn tay – tạo lực đẩy tối ưu.</li>
+      <li>Không quạt tay quá rộng (không vượt qua đường vai) – quạt quá rộng tạo lực cản.</li>
+      <li>Đồng thời với quạt tay: <strong>ngẩng đầu lên, hít vào bằng miệng</strong>.</li>
+      <li>Lực quạt tay giúp nâng phần thân trên lên khỏi mặt nước một cách tự nhiên.</li>
+    </ul>
+
+    <h3>Giai đoạn 3: Thu tay (Recovery)</h3>
+    <p>Sau khi quạt xong, thu tay nhanh về vị trí ban đầu:</p>
+    <ul>
+      <li>Hai bàn tay khép lại trước ngực, khuỷu tay ép sát vào thân người.</li>
+      <li>Đẩy hai tay duỗi thẳng về phía trước, trở lại tư thế ban đầu.</li>
+      <li>Thu tay nhanh gọn để giảm lực cản – đây là giai đoạn "recovery", không tạo lực đẩy.</li>
+      <li>Khi thu tay, đồng thời úp mặt xuống nước và thở ra từ từ bằng mũi.</li>
+    </ul>
+
+    <img src="/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg" alt="HLV Swim For Life hướng dẫn chi tiết kỹ thuật tay bơi ếch cho học viên" loading="lazy" width="800" height="533" />
+  </section>
+
+  <!-- 5. Kỹ thuật thở -->
+  <section id="ky-thuat-tho">
+    <h2>Kỹ Thuật Thở Trong Bơi Ếch</h2>
+
+    <p>Thở đúng cách là yếu tố quyết định bạn có thể bơi ếch bền bỉ hay nhanh chóng hết sức. Kỹ thuật thở trong bơi ếch tuân theo nguyên tắc đơn giản: <strong>"Hít bằng miệng khi ngẩng đầu lên – Thở bằng mũi khi úp mặt xuống nước"</strong>.</p>
+
+    <h3>Cách hít vào</h3>
+    <ul>
+      <li>Thời điểm hít: Khi hai tay quạt nước, phần thân trên được nâng lên tự nhiên, miệng nhô khỏi mặt nước.</li>
+      <li>Hít nhanh, sâu bằng <strong>miệng</strong> (không hít bằng mũi vì dễ bị sặc nước).</li>
+      <li>Không ngẩng đầu quá cao – chỉ cần miệng nhô lên vừa đủ để hít. Ngẩng đầu quá cao sẽ khiến hông chìm xuống, tạo lực cản lớn.</li>
+    </ul>
+
+    <h3>Cách thở ra</h3>
+    <ul>
+      <li>After khi hít vào, úp mặt xuống nước và thở ra từ từ, đều đặn bằng <strong>mũi</strong> (hoặc kết hợp mũi và miệng).</li>
+      <li>Thở ra trong suốt giai đoạn lướt và co chân – đảm bảo thở hết khí cũ trước khi ngẩng đầu hít khí mới.</li>
+      <li>Không nín thở quá lâu – nín thở gây tích tụ CO2, khiến bạn nhanh mệt và hụt hơi.</li>
+    </ul>
+
+    <h3>Nhịp thở chuẩn</h3>
+    <p>Mỗi chu kỳ bơi ếch tương ứng với <strong>1 lần hít vào và 1 lần thở ra</strong>. Cụ thể:</p>
+    <ol>
+      <li>Quạt tay → Ngẩng đầu → <strong>HÍT vào bằng miệng</strong></li>
+      <li>Thu tay + Úp mặt → <strong>BẮT ĐẦU THỞ RA bằng mũi</strong></li>
+      <li>Đạp chân + Lướt → <strong>TIẾP TỤC THỞ RA hết khí cũ</strong></li>
+    </ol>
+
+    <img src="/images/techniques/huong-dan-tap-tho-boi-ech.jpg" alt="Hướng dẫn kỹ thuật thở đúng cách khi bơi ếch tại lớp học Swim For Life" loading="lazy" width="800" height="533" />
+
+    <div class="info-box warning">
+      <span style="font-size: 1.5rem;">⚠️</span>
+      <div>
+        <strong>Lỗi thở phổ biến nhất:</strong> Nhiều người mới học nín thở khi úp mặt xuống nước, đến khi ngẩng đầu lên phải vừa thở ra vừa hít vào trong thời gian rất ngắn. Điều này khiến bạn hụt hơi, mệt nhanh và dễ sặc nước. Hãy nhớ: <strong>thở ra từ từ dưới nước</strong>, khi ngẩng đầu lên chỉ cần <strong>hít vào</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Phối hợp chu kỳ -->
+  <section id="phoi-hop">
+    <h2>Phối Hợp Chu Kỳ Bơi Ếch Hoàn Chỉnh</h2>
+
+    <p>Phối hợp nhịp nhàng giữa tay, chân và thở là chìa khóa để bơi ếch hiệu quả, tiết kiệm sức. Một chu kỳ bơi ếch chuẩn gồm các bước sau theo thứ tự:</p>
+
+    <h3>Bước 1: Tư thế lướt (Glide)</h3>
+    <p>Bắt đầu ở tư thế streamline: hai tay duỗi thẳng phía trước, hai chân duỗi thẳng phía sau, thân người nằm ngang trên mặt nước, mặt úp xuống, thở ra từ từ bằng mũi. Đây là tư thế ít lực cản nhất – hãy tận dụng tối đa giai đoạn lướt.</p>
+
+    <h3>Bước 2: Quạt tay + Hít vào</h3>
+    <p>Hai tay bắt đầu quạt ra hai bên rồi vòng xuống dưới. Đồng thời, ngẩng đầu lên, hít nhanh và sâu bằng miệng. Chân vẫn giữ thẳng, chưa co.</p>
+
+    <h3>Bước 3: Co chân + Thu tay + Úp mặt</h3>
+    <p>Two tay thu về trước ngực rồi đẩy duỗi thẳng về phía trước. Đồng thời, úp mặt xuống nước và bắt đầu thở ra. Hai chân co lên (gót chân kéo về phía mông), bẻ bàn chân ra ngoài, chuẩn bị đạp.</p>
+
+    <h3>Bước 4: Đạp chân + Duỗi tay + Lướt</h3>
+    <p>Khi tay vừa duỗi thẳng xong, hai chân đạp mạnh ra sau và sang hai bên, rồi khép lại. Cơ thể trở lại tư thế streamline, bắt đầu giai đoạn lướt. Tiếp tục thở ra từ từ.</p>
+
+    <div class="info-box important">
+      <span style="font-size: 1.5rem;">🔄</span>
+      <div>
+        <strong>Quy tắc phối hợp quan trọng nhất:</strong> "Tay xong rồi chân mới đạp". Trong bơi ếch, tay và chân KHÔNG hoạt động cùng lúc. Trình tự là: Tay quạt trước → Thu tay + Co chân → Tay duỗi xong → Chân mới đạp. Nếu tay và chân hoạt động đồng thời, các lực sẽ triệt tiêu nhau, khiến bạn bơi rất chậm và tốn sức.
+      </div>
+    </div>
+
+    <p>Tóm tắt chu kỳ bằng công thức dễ nhớ: <strong>LƯỚT → QUẠT TAY + HÍT → CO CHÂN + THU TAY → ĐẠP CHÂN + DUỖI TAY → LƯỚT</strong>. Lặp lại chu kỳ này liên tục với nhịp điệu ổn định.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Giai đoạn</th>
+          <th>Tay</th>
+          <th>Chân</th>
+          <th>Hô hấp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lướt</td>
+          <td>Duỗi thẳng phía trước</td>
+          <td>Duỗi thẳng, khép</td>
+          <td>Thở ra bằng mũi</td>
+        </tr>
+        <tr>
+          <td>Quạt tay</td>
+          <td>Quạt ra hai bên, vòng xuống</td>
+          <td>Vẫn duỗi thẳng</td>
+          <td>Hít vào bằng miệng</td>
+        </tr>
+        <tr>
+          <td>Thu tay + Co chân</td>
+          <td>Khép về ngực, đẩy ra trước</td>
+          <td>Co chân, bẻ bàn chân</td>
+          <td>Bắt đầu thở ra</td>
+        </tr>
+        <tr>
+          <td>Đạp chân</td>
+          <td>Duỗi thẳng phía trước</td>
+          <td>Đạp mạnh, khép chân</td>
+          <td>Tiếp tục thở ra</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. Bài tập trên cạn -->
+  <section id="bai-tap-tren-can">
+    <h2>Bài Tập Bơi Ếch Trên Cạn</h2>
+
+    <p>Trước khi xuống nước, việc luyện tập các động tác bơi ếch trên cạn giúp bạn ghi nhớ kỹ thuật, tăng sự linh hoạt và tự tin hơn khi thực hành dưới nước. Dưới đây là các bài tập trên cạn hiệu quả nhất:</p>
+
+    <h3>Bài tập 1: Tập chân bơi ếch trên ghế/giường</h3>
+    <p>Nằm sấp trên giường hoặc ghế dài, hai chân duỗi thẳng. Thực hiện chu kỳ chân: CO (gập gối, kéo gót về mông) → BẺ (xoay bàn chân ra ngoài) → ĐẠP (đạp mạnh hai chân theo hình vòng cung) → KHÉP (duỗi thẳng và khép hai chân). Thực hiện 3-5 set, mỗi set 15-20 lần.</p>
+
+    <h3>Bài tập 2: Tập tay bơi ếch đứng trước gương</h3>
+    <p>Đứng thẳng, cúi người về phía trước khoảng 45 độ, hai tay duỗi thẳng phía trước. Thực hiện: Tì nước → Quạt ra hai bên → Thu tay về ngực → Đẩy tay duỗi thẳng ra trước. Kết hợp hít vào khi quạt tay, thở ra khi thu tay. Thực hiện 3-5 set, mỗi set 15-20 lần.</p>
+
+    <h3>Bài tập 3: Tập phối hợp tay-chân-thở</h3>
+    <p>Nằm sấp trên giường (hoặc trên bàn, chân thò ra ngoài), kết hợp cả tay, chân và thở theo đúng nhịp chu kỳ bơi ếch. Bắt đầu chậm rồi tăng dần tốc độ khi đã quen. Thực hiện 3 set, mỗi set 10-15 chu kỳ.</p>
+
+    <h3>Bài tập 4: Tập cổ chân linh hoạt</h3>
+    <p>Ngồi trên ghế, nâng một chân lên, xoay bàn chân ra ngoài (tư thế bẻ bàn chân bơi ếch), giữ 3-5 giây rồi thả. Đổi chân. Lặp lại 20-30 lần mỗi bên. Bài tập này đặc biệt quan trọng vì cổ chân linh hoạt là chìa khóa để đạp chân hiệu quả.</p>
+
+    <h3>Bài tập 5: Squat + Duck walk (tập sức mạnh chân)</h3>
+    <p>Thực hiện 20 lần squat, sau đó đi bộ vịt (ngồi xổm và bước đi) 10-15 bước. Bài tập này tăng sức mạnh cho cơ đùi trong, cơ mông – nhóm cơ chính khi đạp chân bơi ếch.</p>
+  </section>
+
+  <!-- 8. Bài tập dưới nước -->
+  <section id="bai-tap-duoi-nuoc">
+    <h2>Bài Tập Bơi Ếch Dưới Nước</h2>
+
+    <p>After khi tập trên cạn thuần thục, bạn chuyển sang thực hành dưới nước theo trình tự từ đơn giản đến phức tạp. Tại <strong>Swim For Life</strong>, HLV sẽ hướng dẫn bạn theo lộ trình bài bản sau:</p>
+
+    <h3>Bài tập 1: Tập chân bám thành bể</h3>
+    <p>Two tay bám thành bể, thân người nằm ngang, mặt úp xuống nước. Tập riêng động tác chân: CO → BẺ → ĐẠP → KHÉP. Tập 5-10 phút cho đến khi cảm giác đạp chân tạo lực đẩy rõ ràng.</p>
+
+    <h3>Bài tập 2: Tập chân kẹp ván</h3>
+    <p>Cầm ván tập bơi (kickboard) phía trước, duỗi thẳng tay. Chỉ dùng chân đạp ếch để tiến. Khi cần thở, ngẩng nhẹ đầu lên. Bơi từ đầu bể đến cuối bể, lặp lại 5-10 lượt.</p>
+
+    <h3>Bài tập 3: Tập tay với phao chân</h3>
+    <p>Kẹp phao tròn (pull buoy) giữa hai chân để chân không cử động. Chỉ dùng tay quạt ếch để tiến, kết hợp thở. Bài tập này giúp tập trung vào kỹ thuật tay và nhịp thở.</p>
+
+    <h3>Bài tập 4: Bơi ếch nguyên chu kỳ chậm</h3>
+    <p>Bơi ếch hoàn chỉnh với tốc độ rất chậm, tập trung vào kỹ thuật từng động tác và nhịp phối hợp. Đếm: "Lướt... quạt-hít... co-thu... đạp-khép... lướt..." Mỗi chu kỳ giữ giai đoạn lướt nhất 2-3 giây.</p>
+
+    <h3>Bài tập 5: Bơi ếch tăng dần quãng đường</h3>
+    <p>Bắt đầu bơi 25m (1 chiều bể), nghỉ 30 giây, rồi bơi tiếp. Tăng dần lên 50m, 100m, 200m. Mục tiêu ban đầu: bơi được 200m liên tục không dừng.</p>
+
+    <img src="/images/techniques/chinh-sua-ky-thuat-boi-ech.jpg" alt="HLV Swim For Life chỉnh sửa kỹ thuật bơi ếch cho học viên trong bể bơi" loading="lazy" width="800" height="533" />
+  </section>
+
+  <!-- 10. Khóa học bơi ếch -->
+  <section id="khoa-hoc">
+    <h2>Khóa Học Bơi Ếch Tại Swim For Life Việt Nam</h2>
+
+    <p>Nếu bạn muốn học bơi ếch bài bản, đúng kỹ thuật và an toàn tuyệt đối, <strong>Trung tâm dạy bơi Swim For Life</strong> – trực thuộc Công ty Cổ phần Your Dreams – là lựa chọn hàng đầu tại Hà Nội và TP.HCM.</p>
+
+    <h3>Tại sao chọn Swim For Life?</h3>
+    <ul>
+      <li><strong>HLV chuyên nghiệp, tâm lý:</strong> Tất cả HLV đều tốt nghiệp chuyên ngành Thể dục Thể thao tại các trường Đại học uy tín, được đào tạo chuyên sâu về phương pháp sư phạm và tâm lý học viên.</li>
+      <li><strong>Phương pháp 1 kèm 1:</strong> Mỗi HLV chỉ phụ trách 1 học viên, đảm bảo sự tập trung tối đa, chỉnh sửa kỹ thuật kịp thời và tiến bộ nhanh nhất.</li>
+      <li><strong>Cam kết biết bơi:</strong> Cam kết 100% biết bơi ếch sau 10-12 buổi học. Nếu chưa biết bơi, được học miễn phí đến khi biết.</li>
+      <li><strong>Học thử miễn phí:</strong> Buổi đầu tiên hoàn toàn miễn phí, giúp bạn trải nghiệm phương pháp giảng dạy trước khi quyết định đăng ký.</li>
+      <li><strong>Bảo lưu 2.5 tháng:</strong> Linh hoạt bảo lưu khóa học lên đến 2.5 tháng nếu bạn bận việc đột xuất.</li>
+      <li><strong>Đối tác Vinhomes:</strong> Là đối tác chính thức của hệ thống bể bơi Vinhomes, đảm bảo cơ sở vật chất đạt chuẩn quốc tế.</li>
+      <li><strong>Hệ thống bể bơi rộng khắp:</strong> Hoạt động tại hàng chục bể bơi tại Hà Nội và TP.HCM, thuận tiện cho học viên lựa chọn địa điểm gần nhất.</li>
+    </ul>
+
+    <h3>Lộ trình học bơi ếch tại Swim For Life</h3>
+    <ol>
+      <li><strong>Buổi 1-2:</strong> Làm quen nước, tập thở dưới nước, tập nổi, tập đứng nước cơ bản.</li>
+      <li><strong>Buổi 3-4:</strong> Tập kỹ thuật chân bơi ếch (CO-BẺ-ĐẠP-KHÉP) với sự hỗ trợ của HLV.</li>
+      <li><strong>Buổi 5-6:</strong> Tập kỹ thuật tay bơi ếch, kết hợp thở.</li>
+      <li><strong>Buổi 7-8:</strong> Phối hợp tay-chân-thở, bơi ếch nguyên chu kỳ.</li>
+      <li><strong>Buổi 9-10:</strong> Hoàn thiện kỹ thuật, tăng quãng đường, bơi bền.</li>
+      <li><strong>Buổi 11-12:</strong> Ôn tập tổng hợp, kiểm tra kỹ thuật, tập <a href="/ky-thuat-boi/ky-nang-dung-nuoc/">đứng nước</a> nâng cao.</li>
+    </ol>
+
+    <h3>Liên hệ đăng ký học bơi ếch</h3>
+    <ul>
+      <li>📞 <strong>Hotline / Zalo:</strong> <a href="tel:0979121097">0979.121.097</a></li>
+      <li>💬 <strong>Zalo chat:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer">0979.121.097 (Click để chat)</a></li>
+    </ul>
+  </section>
+</TechniqueLayout>

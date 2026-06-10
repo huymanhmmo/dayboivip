@@ -1,0 +1,230 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { blogPosts } from '../data/blogPosts.js';
+
+const post = blogPosts.find((p) => p.slug === 'cach-hoc-boi-nhanh-nhat');
+
+if (!post) {
+  throw new Error('Post not found in blogPosts.js');
+}
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Tin tức', href: '/tin-tuc/' },
+  { label: post.category, href: `/${post.categorySlug}/` },
+  { label: post.title },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "image": `https://dayboi.vip${post.image}`,
+  "author": {
+    "@type": "Person",
+    "name": "Nguyễn Huy Mạnh",
+    "jobTitle": "Giám đốc đào tạo",
+    "url": "https://dayboi.vip/#founder"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/swim-for-life-logo.png"
+    }
+  },
+  "datePublished": "2026-05-24",
+  "dateModified": "2026-05-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://dayboi.vip/${post.slug}/`
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Học bơi mất bao lâu thì biết bơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thông thường, một người chưa biết bơi sẽ cần từ 5 đến 7 buổi học (mỗi buổi 60 phút) để nắm vững kỹ thuật bơi ếch cơ bản, biết cách thở nước và có thể tự bơi được 15-20 mét. Quá trình này có thể nhanh hơn nếu bạn không sợ nước và tập trung cao độ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Làm thế nào để học bơi nhanh nhất?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cách học bơi nhanh nhất là đăng ký một khóa học 1 kèm 1 với HLV chuyên nghiệp, tập luyện liên tục 3-4 buổi/tuần, tập thở dưới chậu nước tại nhà, và quan trọng nhất là phải thả lỏng toàn bộ cơ thể khi xuống hồ bơi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có thể học bơi trong 1 tuần được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoàn toàn có thể. Nếu bạn đăng ký khóa học bơi cấp tốc và tập luyện liên tục 5-6 ngày trong một tuần, não bộ và cơ bắp sẽ liên tục ghi nhớ cảm giác nước, giúp bạn hình thành phản xạ bơi lội cực kỳ nhanh chóng."
+      }
+    }
+  ]
+};
+
+const tocItems = [
+  { id: 'hoc-boi-mat-bao-lau', text: '1. Câu trả lời trực tiếp: Học bơi mất bao lâu để biết bơi?' },
+  { id: 'vuot-qua-so-nuoc', text: '2. Bí quyết 1: Vượt qua chứng sợ nước - Rào cản lớn nhất' },
+  { id: 'tap-tho-nuoc-tai-nha', text: '3. Bí quyết 2: Tập các kỹ thuật thở nước và nín thở ngay tại nhà' },
+  { id: 'cam-giac-noi-sap', text: '4. Bí quyết 3: Mẹo học bơi nhanh bằng cách làm chủ cảm giác nổi sấp' },
+  { id: 'tap-dap-chan-tren-can', text: '5. Bí quyết 4: Tập đạp chân trên cạn trước khi xuống nước' },
+  { id: 'khoa-hoc-boi-cap-toc', text: '6. Bí quyết 5: Tìm một khoá học bơi cấp tốc với HLV chuyên nghiệp' },
+  { id: 'trang-bi-dung-chuan', text: '7. Bí quyết 6: Trang bị kính bơi chống sương mù và đồ bơi giữ nhiệt' },
+  { id: 'hoc-boi-trong-1-tuan', text: '8. Bí quyết 7: Tại sao học bơi trong 1 tuần lại hiệu quả hơn học rải rác?' },
+  { id: 'khoi-dong-truoc-khi-boi', text: '9. Khởi động trước khi bơi: Quy tắc sinh tồn để tránh chuột rút' },
+  { id: 'tai-sao-chon-boi-ech', text: '10. Tại sao bơi ếch cơ bản là lựa chọn lý tưởng để học bơi cấp tốc?' },
+  { id: 'loi-sai-thuong-gap', text: '11. Các lỗi sai thường gặp khiến tiến trình học bơi bị chậm lại' },
+  { id: 'bai-tap-lan-xuong-day', text: '12. Bài tập lặn xuống đáy để tìm lại cảm giác nước' },
+  { id: 'tha-long-co-the', text: '13. Tầm quan trọng của việc thả lỏng cơ thể trong môi trường nước' },
+  { id: 'boi-tu-cuu', text: '14. Bơi tự cứu và đứng nước sinh tồn: Mục tiêu sau 5-7 buổi' },
+  { id: 'lo-trinh-swim-for-life', text: '15. Lộ trình khóa học bơi cấp tốc tại Swim For Life Việt Nam' }
+];
+---
+
+<BlogLayout
+  title={`${post.title} | Swim For Life Việt Nam`}
+  description={post.excerpt}
+  canonical={`https://dayboi.vip/${post.slug}/`}
+  breadcrumbs={breadcrumbs}
+  schema={[articleSchema, faqSchema]}
+  category={post.category}
+  readTime={post.readTime}
+  publishDate={post.date}
+  featuredImage={post.image}
+  featuredImageAlt="Cách học bơi nhanh nhất"
+  intro={post.excerpt}
+  tocItems={tocItems}
+>
+  <h2 id="hoc-boi-mat-bao-lau">1. Câu trả lời trực tiếp: Học bơi mất bao lâu để biết bơi?</h2>
+  <p>Nếu bạn đang tự hỏi <strong>học bơi mất bao lâu</strong> để có thể tự nổi và bơi được, thì tin vui là nó ngắn hơn bạn nghĩ rất nhiều. Trái với quan niệm phải mất nhiều tháng trời, một người bình thường chỉ cần <strong>5 đến 7 buổi học</strong> (khoảng 1 tuần) dưới sự hướng dẫn đúng phương pháp của một huấn luyện viên chuyên nghiệp là đã có thể thành thạo các kỹ năng bơi lội sinh tồn cơ bản. Tất nhiên, quá trình này đòi hỏi bạn phải áp dụng đúng những <strong>bí quyết học bơi</strong> mà chúng tôi sắp chia sẻ dưới đây.</p>
+  
+  <p>Tuy nhiên, "biết bơi" ở đây được định nghĩa là khả năng tự cứu mình, biết thở nước và bơi được đoạn ngắn 15-20 mét một cách thoải mái. Để bơi đẹp, bơi nhanh và bơi đường dài không mệt mỏi, bạn chắc chắn sẽ cần thêm thời gian để mài giũa kỹ thuật. Còn nếu mục tiêu của bạn chỉ là <strong>cách học bơi nhanh nhất</strong> để đi biển hoặc hồ bơi cùng gia đình trong mùa hè này, thì 7 bí quyết sau đây chính là chìa khóa vàng dành cho bạn.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-sinh-tap-tren-thanh-be.jpg" alt="Học viên tập luyện trên thành hồ" loading="lazy" />
+    <figcaption>Tuân thủ đúng giáo trình và các bài tập mô phỏng trên cạn là <strong>cách học bơi nhanh nhất</strong> mà không tốn quá nhiều sức lực dưới nước.</figcaption>
+  </figure>
+
+  <h2 id="vuot-qua-so-nuoc">2. Bí quyết 1: Vượt qua chứng sợ nước - Rào cản lớn nhất của cách học bơi nhanh nhất</h2>
+  <p>Nguyên nhân số một khiến người trưởng thành học bơi mãi không được không phải là do họ chậm hiểu kỹ thuật, mà là do tâm lý sợ hãi. Nỗi sợ bị sặc, sợ chìm khiến cơ thể bạn căng cứng như một khúc gỗ. Theo nguyên lý vật lý, một cơ thể căng cứng sẽ chìm nhanh hơn rất nhiều so với một cơ thể thả lỏng.</p>
+  
+  <p>Bí quyết để <strong>vượt qua chứng sợ nước</strong> là hãy biến mặt nước thành không gian quen thuộc. Trong 2 buổi đầu tiên, đừng vội vã học đập tay đạp chân. Hãy cứ đứng ở vùng nước nông ngang ngực, nhún nhảy, té nước lên mặt, hoặc chơi trò nhặt đồ vật dưới đáy hồ. Khi não bộ nhận ra rằng "À, môi trường này an toàn", các bó cơ sẽ tự động <strong>thả lỏng cơ thể</strong>, giúp bạn nổi lên một cách nhẹ nhàng. Đây là một <strong>mẹo học bơi nhanh</strong> cực kỳ quan trọng mà các lớp học bơi đông người thường bỏ qua do áp lực thời gian.</p>
+
+  <h2 id="tap-tho-nuoc-tai-nha">3. Bí quyết 2: Tập các kỹ thuật thở nước và nín thở ngay tại nhà</h2>
+  <p>Bạn hoàn toàn có thể rút ngắn thời gian học bơi ngay từ trong nhà tắm của mình. Thở nước (hít vào bằng miệng khi ở trên không, và thở ra bằng mũi/miệng khi chìm dưới nước) là nền tảng của mọi kiểu bơi. Rất nhiều người quen với việc nín thở khi chìm, điều này khiến lượng CO2 tích tụ trong phổi gây ra cảm giác tức ngực và hoảng loạn.</p>
+
+  <p>Hãy chuẩn bị một chậu nước sạch, úp mặt vào nước và thổi bong bóng qua mũi liên tục (kéo dài khoảng 3-5 giây), sau đó ngoi lên và há miệng hít một hơi thật sâu. Lặp đi lặp lại <strong>kỹ thuật nín thở</strong> và thở nước này hàng chục lần mỗi ngày. Khi thao tác <strong>chu kỳ thở</strong> này biến thành phản xạ vô điều kiện, bạn đã hoàn thành được 50% quãng đường của quá trình học bơi.</p>
+
+  <h2 id="cam-giac-noi-sap">4. Bí quyết 3: Mẹo học bơi nhanh bằng cách làm chủ cảm giác nổi sấp</h2>
+  <p>Khi mới học bơi, thay vì quẫy đạp điên cuồng, hãy học cách làm một "khúc gỗ trôi sông". Bài tập <strong>nổi sấp</strong> (phi tiêu) là bài kiểm tra tuyệt vời nhất cho việc thả lỏng. Đứng sát thành hồ, hít một hơi thật sâu, úp mặt xuống nước, giang rộng tay chân và để cho nước tự động đẩy cơ thể bạn nổi lên. Không cử động, không cố gắng bơi đi đâu cả.</p>
+
+  <p>Việc thực hiện thành công bài tập này sẽ mang lại <strong>cảm giác nước</strong> tuyệt vời. Bạn sẽ nhận ra rằng cơ thể con người với hai lá phổi đầy không khí vốn dĩ là một chiếc phao sinh học khổng lồ. Chỉ khi bạn tin tưởng vào độ nổi của nước, bạn mới có thể thực hiện các động tác tay chân một cách nhịp nhàng mà không sợ chìm.</p>
+
+  <h2 id="tap-dap-chan-tren-can">5. Bí quyết 4: Tập đạp chân trên cạn trước khi xuống nước</h2>
+  <p>Môi trường nước tạo ra lực cản và lực đẩy khiến các động tác trở nên chậm chạp và khó định vị. Nếu bạn cố gắng học một động tác hoàn toàn mới (như chân ếch) trực tiếp dưới nước sâu, bạn sẽ mất rất nhiều thời gian. Bí quyết <strong>cách học bơi nhanh nhất</strong> là <strong>tập đạp chân</strong> trên cạn thật nhuần nhuyễn.</p>
+
+  <figure class="post-image">
+    <img src="/images/techniques/tap-tho-boi-ech-tren-can.jpg" alt="Tập kỹ thuật bơi trên cạn" loading="lazy" />
+    <figcaption>Các bài <strong>tập trên cạn</strong> giúp bộ não ghi nhớ quỹ đạo chuyển động của cơ bắp trước khi phải đối phó với áp lực của môi trường nước.</figcaption>
+  </figure>
+
+  <p>Hãy nằm trên thảm hoặc ngồi trên thành hồ, mô phỏng lại các bước: Co gối, bẻ gập bàn chân chữ V, đạp vòng cung ra ngoài và khép chặt hai chân lại. Lặp lại 500 lần trên cạn cho đến khi não bộ ghi nhớ "bản đồ cơ bắp" (muscle memory) của động tác. Khi xuống nước, cơ thể bạn sẽ tự động kích hoạt phản xạ này thay vì hoang mang không biết đạp chân về hướng nào.</p>
+
+  <h2 id="khoa-hoc-boi-cap-toc">6. Bí quyết 5: Đừng tự học bơi, hãy tìm một khoá học bơi cấp tốc với HLV chuyên nghiệp</h2>
+  <p>Tự học bơi qua video YouTube có thể khả thi, nhưng nó không bao giờ là con đường nhanh nhất. Bạn sẽ không tự nhìn thấy những lỗi sai của chính mình như: lệch trục cơ thể, vẹo cổ, hay bàn chân đạp sai góc. Hơn nữa, tâm lý khi có một người thầy đứng cạnh bao giờ cũng mang lại cảm giác an toàn tuyệt đối, giúp bạn mạnh dạn thực hiện các động tác khó.</p>
+
+  <p>Đăng ký một <strong>khoá học bơi cấp tốc</strong> 1 kèm 1 (hoặc tối đa 1 kèm 2) với <strong>hướng dẫn từ HLV</strong> kinh nghiệm là khoản đầu tư vô giá. Một huấn luyện viên giỏi sẽ nhìn ra ngay điểm nghẽn tâm lý của bạn nằm ở đâu, sửa sai ngay ở giây đầu tiên, giúp rút ngắn hàng tháng trời tự mài mò sai lệch.</p>
+
+  <h2 id="trang-bi-dung-chuan">7. Bí quyết 6: Trang bị đúng chuẩn: Kính bơi chống sương mù và đồ bơi giữ nhiệt</h2>
+  <p>Rất nhiều người học bơi chậm chỉ vì một lý do vô cùng ngớ ngẩn: không mở được mắt dưới nước. Việc cay mắt do nước Clo hoặc sợ vi khuẩn khiến người học nhắm nghiền mắt lại. Bơi mù mờ sẽ tạo ra cảm giác bất an cực độ. Hãy trang bị ngay một chiếc <strong>kính bơi chống sương mù</strong> chất lượng cao. Khi bạn có thể nhìn rõ đáy hồ và mọi vật xung quanh dưới nước y như trên cạn, 50% sự sợ hãi sẽ bốc hơi ngay lập tức.</p>
+
+  <p>Thứ hai, trang bị <strong>đồ bơi giữ nhiệt</strong> (wetsuit hoặc áo bơi chống lạnh) cũng rất quan trọng. Khi cơ thể bị nhiễm lạnh, cơ bắp sẽ co rúm lại để giữ ấm, khiến bạn không thể thả lỏng. Trong mùa <strong>bơi lội mùa hè</strong>, hồ bơi thường rất đông và nhiệt độ nước có thể không ổn định. Một bộ đồ bơi tốt giúp bạn tập trung 100% vào kỹ thuật thay vì phải gồng mình chịu rét.</p>
+
+  <h2 id="hoc-boi-trong-1-tuan">8. Bí quyết 7: Lịch tập luyện dày đặc: Tại sao học bơi trong 1 tuần lại hiệu quả hơn học rải rác?</h2>
+  <p>Việc học bơi cũng giống như học đạp xe, nó phụ thuộc vào "trí nhớ cơ bắp". Nếu bạn chỉ học 1 buổi/tuần, não bộ sẽ quên sạch cảm giác nước của buổi trước đó. Mỗi buổi đi bơi lại giống như một buổi bắt đầu lại từ đầu.</p>
+
+  <p>Để <strong>học bơi trong 1 tuần</strong> thành công, hãy xếp lịch học liên tục: 3-4 buổi/tuần hoặc thậm chí học liên tục 5-7 ngày liền kề. Cường độ này ép hệ thần kinh và cơ bắp phải liên tục làm quen với áp lực nước. Đây chính là bí mật đằng sau các lớp huấn luyện bơi sinh tồn ngắn ngày mà các trung tâm chuyên nghiệp thường áp dụng.</p>
+
+  <h2 id="khoi-dong-truoc-khi-boi">9. Khởi động trước khi bơi: Quy tắc sinh tồn để tránh chuột rút</h2>
+  <p>Dù có nóng vội học nhanh đến đâu, bạn cũng không bao giờ được bỏ qua bước <strong>khởi động trước khi bơi</strong>. Đuối nước do chuột rút là tai nạn vô cùng đáng tiếc, ngay cả với những kình ngư chuyên nghiệp. Hãy dành ít nhất 10-15 phút xoay kỹ các khớp cổ tay, cổ chân, ép dẻo cơ vai và cơ đùi trước khi bước xuống hồ.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-vien-khoi-dong.jpg" alt="Học viên khởi động trước khi bơi" loading="lazy" />
+    <figcaption>Tuân thủ nghiêm ngặt 15 phút khởi động để làm nóng cơ bắp, phòng ngừa chuột rút trong suốt quá trình tập bơi dưới hồ.</figcaption>
+  </figure>
+
+  <h2 id="tai-sao-chon-boi-ech">10. Tại sao bơi ếch cơ bản là lựa chọn lý tưởng để học bơi cấp tốc?</h2>
+  <p>Như đã phân tích ở các bài viết trước, <strong>học bơi ếch cơ bản</strong> luôn là kiểu bơi "nhập môn" dễ dãi nhất. Lý do là vì trục cơ thể trong bơi ếch rất cân bằng, kỹ thuật ngẩng đầu lên phía trước để lấy hơi thuận với bản năng hô hấp tự nhiên của con người. Nếu bạn chọn bơi sải (đòi hỏi kỹ thuật xoay đầu thở 2 bên phức tạp) làm kiểu bơi bắt đầu, thời gian học có thể kéo dài gấp đôi, gấp ba.</p>
+
+  <h2 id="loi-sai-thuong-gap">11. Các lỗi sai thường gặp khiến tiến trình học bơi bị chậm lại</h2>
+  <p>Trong quá trình quan sát hàng ngàn học viên, chúng tôi nhận thấy có 3 <strong>lỗi sai thường gặp</strong> khiến cách học bơi nhanh nhất bị phá sản:</p>
+  <ul>
+    <li><strong>Gồng cổ quá mức:</strong> Việc cố gắng ngóc đầu lên thật cao khỏi mặt nước khiến cơ cổ căng cứng, hệ quả là phần hông và chân bị chìm sâu xuống, gia tăng <strong>lực cản nước</strong> lên gấp nhiều lần.</li>
+    <li><strong>Đạp chân không bẻ gập:</strong> Ở kỹ thuật bơi ếch, nếu bạn không bẻ gập bàn chân tạo hình chữ V, bạn sẽ không đạp trúng khối nước. Kết quả là đạp rất mệt nhưng người không lướt đi.</li>
+    <li><strong>Quên thở ra dưới nước:</strong> Mải chú ý động tác mà nín thở liên tục. Khi ngóc đầu lên, thay vì hít vào ngay, học viên lại tốn thời gian khạc nước và thở ra, dẫn đến ngạt hơi.</li>
+  </ul>
+
+  <h2 id="bai-tap-lan-xuong-day">12. Bài tập lặn xuống đáy để tìm lại cảm giác nước</h2>
+  <p>Đôi khi, người học bị rơi vào trạng thái bế tắc (plateau) - tập mãi không tiến bộ. Hãy tạm gác các bài tập tay chân lại và thực hiện <strong>bài tập lặn xuống đáy</strong>. Hít sâu, lặn cắm đầu xuống khu vực nước sâu ngang ngực, chạm tay xuống đáy hồ và nhắm mắt lại. Cảm nhận lực đẩy của Acsimet đang nâng toàn bộ cơ thể bạn lên một cách dịu dàng. Bài tập tĩnh lặng này giúp làm mới lại hệ thần kinh, tái lập sự kết nối giữa cơ thể và dòng nước.</p>
+
+  <figure class="post-image">
+    <img src="/images/classes/hoc-sinh-trang-bi-phao.jpg" alt="Trang bị phao hỗ trợ lặn" loading="lazy" />
+    <figcaption>Sử dụng các dụng cụ hỗ trợ lặn hoặc phao chìm để giúp học viên thích nghi với môi trường dưới nước, giảm thiểu cảm giác hoảng loạn ban đầu.</figcaption>
+  </figure>
+
+  <h2 id="tha-long-co-the">13. Tầm quan trọng của việc thả lỏng cơ thể trong môi trường nước</h2>
+  <p>Hãy nhớ kỹ câu thần chú này: "Càng dùng sức, càng chìm". Bạn không thể chiến thắng nước bằng sức mạnh cơ bắp thô bạo. Sự mềm mại, dẻo dai và thả lỏng tuyệt đối mới là chìa khóa. Trong lúc bơi (ví dụ như lúc lướt nước trong bơi ếch), hãy để cơ thể trôi tự do, giãn dài các đốt sống, thư giãn hoàn toàn vai và cổ. Chỉ gồng cơ trong tích tắc ở pha đạp chân hoặc quạt tay tạo lực đẩy.</p>
+
+  <h2 id="boi-tu-cuu">14. Bơi tự cứu và đứng nước sinh tồn: Mục tiêu tối thượng sau 5-7 buổi</h2>
+  <p>Sau khóa học 5-7 buổi, mục tiêu của bạn không phải là trở thành Michael Phelps thi đấu Olympic. Mục tiêu thực tế nhất là <strong>bơi tự cứu</strong> và <strong>đứng nước sinh tồn</strong>. Bạn cần bơi được <strong>bơi đường ngắn</strong> (15-25m) từ giữa hồ vào bờ an toàn. Bạn cần biết cách đạp chân luân phiên để giữ đầu nổi trên mặt nước (đứng nước) để kêu cứu hoặc chờ người tới hỗ trợ nếu không may rơi xuống vùng nước sâu.</p>
+
+  <h2 id="lo-trinh-swim-for-life">15. Lộ trình khóa học bơi cấp tốc tại Swim For Life Việt Nam</h2>
+  <p>Tại Swim For Life, chúng tôi cam kết kết quả "Biết bơi 100%" nhờ lộ trình <strong>khoá học bơi cấp tốc</strong> độc quyền được tinh chỉnh qua nhiều năm:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tiến độ</th>
+        <th>Nội dung trọng tâm (Giáo án)</th>
+        <th>Mục tiêu đầu ra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Buổi 1-2</strong></td>
+        <td>Xóa mù nước. Học thở nước, lặn ngụp, nổi sấp/nổi ngửa. Tập chân ếch trên cạn.</td>
+        <td>Hết sợ nước. Nổi lướt nước 5m không phao. Nhịp thở tự động.</td>
+      </tr>
+      <tr>
+        <td><strong>Buổi 3-4</strong></td>
+        <td>Thực hành đạp chân ếch dưới nước có phao. Ghép tay ếch. Phối hợp nhịp nhàng Tay-Thở-Chân.</td>
+        <td>Bơi ếch được 10-15m cơ bản, không cần phao.</td>
+      </tr>
+      <tr>
+        <td><strong>Buổi 5-7</strong></td>
+        <td>Chỉnh sửa form bơi chuẩn. Sửa lỗi sai. Dạy kỹ năng đứng nước sinh tồn và bơi đường dài.</td>
+        <td>Tự tin bơi ếch liên tục 25m-50m. Biết đứng nước. Tốt nghiệp khóa học.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="cta-banner" style="margin: var(--space-8) 0; border-radius: var(--radius-xl);">
+    <h2>Đừng chần chừ, hãy làm chủ đường đua xanh ngay hè này!</h2>
+    <p>Áp dụng đúng phương pháp, bạn hoàn toàn có thể chinh phục làn nước trong thời gian ngắn nhất. Swim For Life tự hào mang đến khóa học bơi 1 kèm 1 cấp tốc, chất lượng cao dành cho mọi lứa tuổi.</p>
+    <div class="btn-group">
+      <a href="/khoa-hoc-boi/" class="btn btn-accent btn-lg">Tham Khảo Lớp Học</a>
+      <a href="tel:0979121097" class="btn btn-white btn-lg">📞 Đặt Lịch Tập Thử Miễn Phí</a>
+    </div>
+  </div>
+</BlogLayout>

@@ -1,0 +1,102 @@
+---
+export interface Props {
+  testimonials: Array<{
+    name: string;
+    detail: string;
+    rating: number;
+    text: string;
+  }>;
+}
+
+const { testimonials } = Astro.props;
+---
+
+<section class="cl-section cl-section--alt">
+  <div class="cl-section__container">
+    <div class="cl-section-title">
+      <span class="cl-section-title__badge">
+        Đánh Giá Từ Học Viên
+      </span>
+      <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
+        Học Viên Nói Gì Về Chúng Tôi?
+      </h2>
+      <p class="cl-section-title__sub">
+        Hàng ngàn học viên ở mọi lứa tuổi đã vượt qua sợ hãi và bơi thành thạo nhờ Swim For Life.
+      </p>
+      <span class="cl-section-title__decoration"></span>
+    </div>
+
+    <div class="cl-testimonials">
+      <div class="cl-testimonials__track" id="testimonial-track">
+        {testimonials.map((t, index) => {
+          // Get first letter of name for avatar
+          const initial = t.name.charAt(0);
+          return (
+            <div class="cl-testimonials__card cl-animate">
+              <div class="cl-testimonials__stars">
+                {"★".repeat(t.rating)}
+                {"☆".repeat(5 - t.rating)}
+              </div>
+              <p class="cl-testimonials__text">
+                "{t.text}"
+              </p>
+              <div class="cl-testimonials__author">
+                <div class="cl-testimonials__avatar">{initial}</div>
+                <div>
+                  <h4 class="cl-testimonials__name">{t.name}</h4>
+                  <p class="cl-testimonials__detail">{t.detail}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      
+      <!-- Navigation dots -->
+      <div class="cl-testimonials__dots" id="testimonial-dots">
+        {testimonials.map((_, index) => (
+          <button 
+            class={`cl-testimonials__dot ${index === 0 ? 'cl-testimonials__dot--active' : ''}`}
+            data-index={index}
+            aria-label={`Go to slide ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple JS to link dots with horizontal scrolling in testimonial carousel
+  const track = document.getElementById('testimonial-track') as HTMLDivElement | null;
+  const dots = document.querySelectorAll('#testimonial-dots .cl-testimonials__dot') as NodeListOf<HTMLButtonElement>;
+
+  if (track && dots.length > 0) {
+    const updateActiveDot = () => {
+      const scrollPosition = track.scrollLeft;
+      const cardWidth = track.firstElementChild ? (track.firstElementChild as HTMLElement).offsetWidth + 24 : 344;
+      const activeIndex = Math.round(scrollPosition / cardWidth);
+      
+      dots.forEach((dot, index) => {
+        if (index === activeIndex) {
+          dot.classList.add('cl-testimonials__dot--active');
+        } else {
+          dot.classList.remove('cl-testimonials__dot--active');
+        }
+      });
+    };
+
+    track.addEventListener('scroll', updateActiveDot);
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index') || '0', 10);
+        const cardWidth = track.firstElementChild ? (track.firstElementChild as HTMLElement).offsetWidth + 24 : 344;
+        track.scrollTo({
+          left: index * cardWidth,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+</script>

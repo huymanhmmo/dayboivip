@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title?: string;
+  text?: string;
+  urgency?: string;
+}
+
+const { 
+  title = "Sẵn Sàng Trang Bị Kỹ Năng Bơi Lội Ngay Hôm Nay?",
+  text = "Đăng ký ngay lớp học bơi tại Swim For Life Việt Nam để nhận 1 buổi học thử MIỄN PHÍ và cam kết biết bơi sau khóa học.",
+  urgency = "🔥 Khuyến mãi đặc biệt: Giảm 10% học phí khi đăng ký nhóm từ 2 người trở lên."
+} = Astro.props;
+---
+
+<section class="cl-cta-banner cl-animate">
+  <div class="cl-cta-banner__inner">
+    <h2 class="cl-cta-banner__title">{title}</h2>
+    <p class="cl-cta-banner__text">{text}</p>
+    {urgency && <p class="cl-cta-banner__urgency">{urgency}</p>}
+    
+    <div class="cl-cta-banner__actions">
+      <a href="#dang-ky" class="cl-btn cl-btn-secondary cl-btn-lg cl-btn-pulse">
+        <span>🚀 Đăng Ký Học Thử</span>
+      </a>
+      <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-btn cl-btn-outline cl-btn-lg">
+        <span>💬 Trò chuyện Zalo</span>
+      </a>
+    </div>
+  </div>
+</section>
