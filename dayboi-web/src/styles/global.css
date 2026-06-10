@@ -172,6 +172,9 @@ button {
   --container-xl:  1600px;
   --container-2xl: 1800px;
   --container-pad: clamp(1.5rem, 8vw, 8rem);
+  
+  /* --- Header Height --- */
+  --header-height: 80px;
 }
 
 /* ============================================================
