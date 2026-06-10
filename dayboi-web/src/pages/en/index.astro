@@ -84,6 +84,9 @@ const regions = [
     ]
   }
 ];
+
+const allProvincesEn = regions.flatMap(r => r.provinces);
+const sortedLocationsEn = [...allProvincesEn].sort((a, b) => a.name.localeCompare(b.name, 'en'));
 ---
 
 <MainLayout
@@ -540,32 +543,34 @@ const regions = [
       </div>
       
       <div class="locations-grid">
-        {regions.map((region) => (
-          <div class={`region-card region-card--${region.color} reveal`}>
-            <div class="region-card__header">
-              <h3 class="region-card__title">
-                <span class="region-card__bullet"></span>
-                {region.name}
-              </h3>
-              <span class="region-card__count">{region.provinces.length} locations</span>
-            </div>
-            <div class="region-card__body">
-              <ul class="region-card__list">
-                {region.provinces.map((prov) => (
-                  <li class="region-card__item">
-                    <a href={`/en/${prov.slug}/`} class="region-card__link">
-                      <span class="region-card__icon">📍</span>
-                      <span class="region-card__name">
-                        {prov.name}
-                        {prov.isTW && <span class="badge-tw">City</span>}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+        {sortedLocationsEn.map((prov) => {
+          const isFeatured = prov.slug === 'swimming-lessons-ha-noi' || prov.slug === 'swimming-lessons-ho-chi-minh';
+          return (
+            <a 
+              href={`/en/${prov.slug}/`} 
+              class={`location-item-card ${isFeatured ? 'location-item-card--featured' : ''} reveal`}
+            >
+              <div class="location-item-card__content">
+                <span class="location-item-card__icon">📍</span>
+                <div class="location-item-card__text-wrapper">
+                  <span class="location-item-card__name">
+                    {prov.name}
+                  </span>
+                  {isFeatured && (
+                    <span class="location-item-card__badge">
+                      ⭐ Major Hub
+                    </span>
+                  )}
+                  {prov.isTW && !isFeatured && (
+                    <span class="location-item-card__badge-tw">
+                      Metro
+                    </span>
+                  )}
+                </div>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </div>
   </section>
@@ -1460,150 +1465,125 @@ const regions = [
 
   .locations-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: dense;
+    gap: var(--space-4);
     margin-top: var(--space-8);
   }
 
-  .region-card {
+  .location-item-card {
     background: var(--color-bg-card);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-border-light);
-    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--color-border-light);
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     transition: all var(--transition-smooth);
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
   }
 
-  .region-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
+  .location-item-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(0, 180, 216, 0.1);
   }
 
-  .region-card__header {
-    padding: var(--space-5) var(--space-6);
-    border-bottom: 1px solid var(--color-border-light);
+  .location-item-card__content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: var(--space-3);
+    width: 100%;
   }
 
-  .region-card--aqua:hover { border-color: var(--color-primary); }
-  .region-card--teal:hover { border-color: #0CA789; }
-  .region-card--gold:hover { border-color: #E6A800; }
-  .region-card--coral:hover { border-color: var(--color-accent); }
-
-  .region-card--aqua .region-card__header { background: rgba(0, 180, 216, 0.04); }
-  .region-card--teal .region-card__header { background: rgba(12, 167, 137, 0.04); }
-  .region-card--gold .region-card__header { background: rgba(255, 183, 3, 0.04); }
-  .region-card--coral .region-card__header { background: rgba(255, 107, 53, 0.04); }
-
-  .region-card__title {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--color-text);
+  .location-item-card__icon {
+    font-size: 1.25rem;
+    color: var(--color-primary);
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    justify-content: center;
+    transition: transform var(--transition-fast);
   }
 
-  .region-card__bullet {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  .location-item-card:hover .location-item-card__icon {
+    transform: scale(1.15);
   }
 
-  .region-card--aqua .region-card__bullet { background: var(--color-primary); }
-  .region-card--teal .region-card__bullet { background: #0CA789; }
-  .region-card--gold .region-card__bullet { background: #E6A800; }
-  .region-card--coral .region-card__bullet { background: var(--color-accent); }
-
-  .region-card__count {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    background: rgba(0, 0, 0, 0.05);
-    padding: 2px 8px;
-    border-radius: var(--radius-full);
-  }
-
-  .region-card__body {
-    padding: var(--space-4) var(--space-5) var(--space-5);
-    flex: 1;
-  }
-
-  .region-card__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .location-item-card__text-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2px;
   }
 
-  .region-card__item {
-    border-radius: var(--radius-md);
-    transition: background-color var(--transition-fast);
+  .location-item-card__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: color var(--transition-fast);
   }
 
-  .region-card__item:hover {
-    background-color: var(--color-bg-alt);
-  }
-
-  .region-card__link {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-3);
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all var(--transition-fast);
-  }
-
-  .region-card__link:hover {
+  .location-item-card:hover .location-item-card__name {
     color: var(--color-primary);
-    transform: translateX(4px);
   }
 
-  .region-card--aqua .region-card__link:hover { color: var(--color-primary); }
-  .region-card--teal .region-card__link:hover { color: #0CA789; }
-  .region-card--gold .region-card__link:hover { color: #E6A800; }
-  .region-card--coral .region-card__link:hover { color: var(--color-accent); }
-
-  .region-card__icon {
-    font-size: 0.9rem;
-    opacity: 0.5;
-    transition: opacity var(--transition-fast);
+  /* Featured Styling (Hanoi & TPHCM) */
+  .location-item-card--featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.08) 0%, rgba(255, 107, 53, 0.05) 100%);
+    border-color: rgba(0, 180, 216, 0.25);
+    position: relative;
+    overflow: hidden;
   }
 
-  .region-card__link:hover .region-card__icon {
-    opacity: 1;
+  .location-item-card--featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
   }
 
-  .region-card__name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
+  .location-item-card--featured:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 12px 30px rgba(0, 180, 216, 0.15);
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.12) 0%, rgba(255, 107, 53, 0.08) 100%);
   }
 
-  .badge-tw {
-    font-size: 0.65rem;
+  .location-item-card--featured .location-item-card__name {
+    font-size: 1.05rem;
     font-weight: 700;
-    padding: 1px 6px;
+    color: var(--color-primary);
+  }
+
+  .location-item-card--featured .location-item-card__icon {
+    font-size: 1.5rem;
+  }
+
+  .location-item-card__badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    background: rgba(255, 107, 53, 0.1);
+    padding: 2px 8px;
     border-radius: var(--radius-sm);
+    width: fit-content;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-top: 2px;
   }
 
-  .region-card--aqua .badge-tw { background: rgba(0, 180, 216, 0.1); color: var(--color-primary); }
-  .region-card--teal .badge-tw { background: rgba(12, 167, 137, 0.1); color: #0CA789; }
-  .region-card--gold .badge-tw { background: rgba(255, 183, 3, 0.1); color: #E6A800; }
-  .region-card--coral .badge-tw { background: rgba(255, 107, 53, 0.1); color: var(--color-accent); }
+  .location-item-card__badge-tw {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #0CA789;
+    background: rgba(12, 167, 137, 0.08);
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
+    width: fit-content;
+    margin-top: 2px;
+  }
 
   /* ============================================
      CTA BOTTOM
@@ -1682,7 +1662,7 @@ const regions = [
     .why-us__grid { grid-template-columns: repeat(2, 1fr); }
     .courses-grid { grid-template-columns: repeat(2, 1fr); }
     .techniques-grid { grid-template-columns: repeat(2, 1fr); }
-    .locations-grid { grid-template-columns: repeat(2, 1fr); }
+    .locations-grid { grid-template-columns: repeat(3, 1fr); }
     .about-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     .cert-grid { grid-template-columns: 1fr; gap: var(--space-6); }
     .gallery-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1694,6 +1674,7 @@ const regions = [
     .hero__visual { height: 320px; }
     .hero__float-card { display: none; }
     .courses-grid { grid-template-columns: 1fr; }
+    .locations-grid { grid-template-columns: repeat(2, 1fr); }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .about-images { grid-template-columns: 1fr; }
     .cert-image { transform: rotate(0); }
