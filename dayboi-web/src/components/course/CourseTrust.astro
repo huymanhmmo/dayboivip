@@ -1,17 +1,22 @@
 ---
+export interface Props {
+  lang?: 'vi' | 'en';
+}
+
+const { lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section cl-section--alt">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Cam Kết Chất Lượng
+        {lang === 'vi' ? 'Cam Kết Chất Lượng' : 'Trust & Guarantee'}
       </span>
       <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
-        Tại Sao Bạn Hoàn Toàn An Tâm?
+        {lang === 'vi' ? 'Tại Sao Bạn Hoàn Toàn An Tâm?' : 'Why Choose Swim For Life?'}
       </h2>
       <p class="cl-section-title__sub">
-        Swim For Life Việt Nam đặt chất lượng và sự an toàn của học viên lên trên hết.
+        {lang === 'vi' ? 'Swim For Life Việt Nam đặt chất lượng và sự an toàn của học viên lên trên hết.' : 'Swim For Life prioritizes the quality of coaching and student safety above all else.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
@@ -20,27 +25,27 @@
     <div class="cl-trust cl-animate">
       <div class="cl-trust__item">
         <span class="cl-trust__icon">🛡️</span>
-        <span>Học thử miễn phí 1 buổi</span>
+        <span>{lang === 'vi' ? 'Học thử miễn phí 1 buổi' : 'Free 1-on-1 trial class'}</span>
       </div>
       <div class="cl-trust__item">
         <span class="cl-trust__icon">🏊</span>
-        <span>HLV có chứng chỉ quốc gia</span>
+        <span>{lang === 'vi' ? 'HLV có chứng chỉ quốc gia' : 'Nationally certified coaches'}</span>
       </div>
       <div class="cl-trust__item">
         <span class="cl-trust__icon">🩺</span>
-        <span>Đảm bảo an toàn 100%</span>
+        <span>{lang === 'vi' ? 'Đảm bảo an toàn 100%' : '100% water safety guarantee'}</span>
       </div>
       <div class="cl-trust__item">
         <span class="cl-trust__icon">🏆</span>
-        <span>Cam kết biết bơi sau khóa</span>
+        <span>{lang === 'vi' ? 'Cam kết biết bơi sau khóa' : 'Learn-to-swim guarantee'}</span>
       </div>
       <div class="cl-trust__item">
         <span class="cl-trust__icon">📜</span>
-        <span>Cấp chứng nhận hoàn thành</span>
+        <span>{lang === 'vi' ? 'Cấp chứng nhận hoàn thành' : 'Course completion certificate'}</span>
       </div>
       <div class="cl-trust__item">
         <span class="cl-trust__icon">💰</span>
-        <span>Hoàn tiền nếu không hài lòng</span>
+        <span>{lang === 'vi' ? 'Hoàn tiền nếu không hài lòng' : 'Satisfaction refund policy'}</span>
       </div>
     </div>
 
@@ -48,18 +53,26 @@
     <div class="cl-trust-details cl-animate">
       <div class="cl-trust-details__grid">
         <div class="cl-trust-card">
-          <div class="cl-trust-card__badge">UY TÍN HÀNG ĐẦU</div>
-          <h3 class="cl-trust-card__title">Pháp lý & Chứng nhận đầy đủ</h3>
+          <div class="cl-trust-card__badge">{lang === 'vi' ? 'UY TÍN HÀNG ĐẦU' : 'LEADING TRUST'}</div>
+          <h3 class="cl-trust-card__title">{lang === 'vi' ? 'Pháp lý & Chứng nhận đầy đủ' : 'Legitimacy & Certification'}</h3>
           <p class="cl-trust-card__text">
-            Swim For Life thuộc <strong>Công ty Cổ phần Your Dreams</strong> (MST: 0108879900). Hệ thống giáo trình dạy bơi được mua bản quyền và tinh chỉnh phù hợp với thể trạng người Việt.
+            {lang === 'vi' ? (
+              <>Swim For Life thuộc <strong>Công ty Cổ phần Your Dreams</strong> (MST: 0108879900). Hệ thống giáo trình dạy bơi được mua bản quyền và tinh chỉnh phù hợp với thể trạng người Việt.</>
+            ) : (
+              <>Swim For Life belongs to <strong>Your Dreams Joint Stock Company</strong> (Tax ID: 0108879900). Our curriculum is internationally-licensed and tailored specifically for local students.</>
+            )}
           </p>
         </div>
 
         <div class="cl-trust-card">
-          <div class="cl-trust-card__badge cl-trust-card__badge--gold">AN TOÀN Y TẾ</div>
-          <h3 class="cl-trust-card__title">Đảm bảo sức khỏe tuyệt đối</h3>
+          <div class="cl-trust-card__badge cl-trust-card__badge--gold">{lang === 'vi' ? 'AN TOÀN Y TẾ' : 'HEALTH & SAFETY'}</div>
+          <h3 class="cl-trust-card__title">{lang === 'vi' ? 'Đảm bảo sức khỏe tuyệt đối' : 'Absolute Health & Comfort'}</h3>
           <p class="cl-trust-card__text">
-            Tất cả bể bơi trong hệ thống giảng dạy đều là bể bốn mùa chất lượng cao, công nghệ lọc nước bằng Ozone không Clo gây kích ứng da, nhiệt độ nước duy trì ở 28-30°C cực kỳ an toàn cho hệ hô hấp.
+            {lang === 'vi' ? (
+              <>Tất cả bể bơi trong hệ thống giảng dạy đều là bể bốn mùa chất lượng cao, công nghệ lọc nước bằng Ozone không Clo gây kích ứng da, nhiệt độ nước duy trì ở 28-30°C cực kỳ an toàn cho hệ hô hấp.</>
+            ) : (
+              <>All partner pools in our network are premium indoor four-season facilities with advanced non-chlorine ozone filtration and water temperatures maintained at 28-30°C.</>
+            )}
           </p>
         </div>
       </div>

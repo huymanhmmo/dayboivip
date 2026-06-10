@@ -22,8 +22,8 @@ export interface Props {
     name: string;
     badge: string;
     description: string;
-    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao' | 'Sinh tồn';
-    speed: 'Chậm' | 'Trung bình' | 'Nhanh' | 'Rất nhanh';
+    difficulty: any;
+    speed: any;
     calories: string;
     muscles: string;
     videoId: string;
@@ -41,9 +41,11 @@ export interface Props {
     answer: string;
   }>;
   relatedKeywords: string[];
+  lang?: 'vi' | 'en';
 }
 
-const { metadata, technique, toc, errors, faqs, relatedKeywords } = Astro.props;
+const { metadata, technique, toc, errors, faqs, relatedKeywords, lang = 'vi' } = Astro.props;
+const isEn = lang === 'en';
 
 // Lọc bài viết liên quan dựa trên từ khóa
 const relatedPosts = blogPosts.filter(post => {
@@ -60,7 +62,13 @@ const relatedPosts = blogPosts.filter(post => {
 const displayPosts = relatedPosts.length > 0 ? relatedPosts : blogPosts.slice(0, 3);
 
 // Dữ liệu cho các kỹ thuật bơi lội khác để liên kết chéo
-const allTechniques = [
+const allTechniques = isEn ? [
+  { slug: 'breaststroke', name: 'Breaststroke', icon: '🐸', desc: 'The most basic stroke, easy to learn, top survival foundation.', link: '/en/swimming-techniques/breaststroke/' },
+  { slug: 'front-crawl', name: 'Freestyle', icon: '🏊', desc: 'The fastest swimming stroke, built for stamina and physical strength.', link: '/en/swimming-techniques/front-crawl/' },
+  { slug: 'backstroke', name: 'Backstroke', icon: '🤽', desc: 'The most relaxing stroke, easy to breathe, stretches the spine.', link: '/en/swimming-techniques/backstroke/' },
+  { slug: 'butterfly', name: 'Butterfly', icon: '🦋', desc: 'The most powerful, beautiful stroke with dolphin body waves.', link: '/en/swimming-techniques/butterfly/' },
+  { slug: 'treading-water', name: 'Treading Water', icon: '🛟', desc: 'The core survival skill to stay afloat at a single spot without fatigue.', link: '/en/swimming-techniques/treading-water/' }
+] : [
   { slug: 'hoc-boi-ech', name: 'Học Bơi Ếch', icon: '🐸', desc: 'Kiểu bơi cơ bản nhất, dễ học, nền tảng sinh tồn hàng đầu.', link: '/ky-thuat-boi/hoc-boi-ech/' },
   { slug: 'hoc-boi-sai', name: 'Học Bơi Sải', icon: '🏊', desc: 'Kiểu bơi nhanh nhất, tăng sức bền và phát triển thể lực toàn diện.', link: '/ky-thuat-boi/hoc-boi-sai/' },
   { slug: 'hoc-boi-ngua', name: 'Học Bơi Ngửa', icon: '🤽', desc: 'Kiểu bơi thư giãn nhất, dễ thở, giúp kéo giãn cột sống tự nhiên.', link: '/ky-thuat-boi/hoc-boi-ngua/' },
@@ -68,14 +76,14 @@ const allTechniques = [
   { slug: 'ky-nang-dung-nuoc', name: 'Kỹ Năng Đứng Nước', icon: '🛟', desc: 'Kỹ năng sinh tồn cốt lõi giúp tự nổi tại chỗ không mất sức.', link: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
 ];
 
-const otherTechniques = allTechniques.filter(t => t.slug !== technique.slug);
+const otherTechniques = allTechniques.filter(t => t.slug !== technique.slug && t.slug !== (technique.slug === 'breaststroke' ? 'hoc-boi-ech' : technique.slug === 'front-crawl' ? 'hoc-boi-sai' : technique.slug === 'backstroke' ? 'hoc-boi-ngua' : technique.slug === 'butterfly' ? 'hoc-boi-buom' : 'ky-nang-dung-nuoc'));
 
 // Helpers cho hiển thị Specs Dashboard V2
-const difficultyLevels = ['Sinh tồn', 'Cơ bản', 'Trung bình', 'Nâng cao'];
+const difficultyLevels = isEn ? ['Survival', 'Beginner', 'Intermediate', 'Advanced'] : ['Sinh tồn', 'Cơ bản', 'Trung bình', 'Nâng cao'];
 const diffIndex = difficultyLevels.indexOf(technique.difficulty);
 const diffOffset = 213.6 - (Math.max(0, diffIndex) / 3) * 213.6;
 
-const speedLevels = ['Chậm', 'Trung bình', 'Nhanh', 'Rất nhanh'];
+const speedLevels = isEn ? ['Slow', 'Moderate', 'Fast', 'Very fast'] : ['Chậm', 'Trung bình', 'Nhanh', 'Rất nhanh'];
 const speedIndex = speedLevels.indexOf(technique.speed);
 const speedOffset = 213.6 - (Math.max(0, speedIndex) / 3) * 213.6;
 
@@ -85,7 +93,38 @@ const calOffset = 213.6 - (Math.min(1000, calVal) / 1000) * 213.6;
 const musclesList = technique.muscles.split(',').map(m => m.trim());
 
 // Dữ liệu cho Swimmer Anatomy Widget
-const anatomyData = {
+const anatomyData = isEn ? {
+  'breaststroke': {
+    head: { title: 'Head & Breathe', subtitle: 'Rhythmic breathing', desc: 'Keep head aligned with the spine. When lifting to breathe, raise your chin just enough to clear the water, eyes looking down at a 45-degree angle to prevent neck strain and keep balance.', icon: '🗣️' },
+    arms: { title: 'Arm Action', subtitle: 'Heart-shaped sweep', desc: 'Catch water at shoulder-width, sweep diagonally down and backward to draw a heart shape. Squeeze elbows to the ribs in front of the chest, then immediately extend hands forward to minimize drag.', icon: '👐' },
+    core: { title: 'Body Position', subtitle: 'Flat gliding posture', desc: 'Keep the body straight, flat, and parallel to the water surface. Avoid arching the lower back or bending hips excessively to prevent drag.', icon: '🧍' },
+    legs: { title: 'Leg Action', subtitle: 'Powerful whip kick', desc: 'Recover legs gently by pulling heels toward the buttocks, flexing ankles outward at 90 degrees. Whip backward in a circular sweep and squeeze feet together to glide.', icon: '🦵' }
+  },
+  'front-crawl': {
+    head: { title: 'Head & Breathe', subtitle: 'Side rotation', desc: 'Keep head down in the water, looking straight at the bottom or slightly forward. Rotate head to the side just enough to keep one eye underwater and one eye above to huff air quickly.', icon: '🗣️' },
+    arms: { title: 'Arm Action', subtitle: 'Alternating pulls', desc: 'Pull water in a continuous cycle: catch at shoulder-width, pull diagonally under the belly, push firmly past the thigh. Recover overwater with high elbows and relaxed shoulders.', icon: '👐' },
+    core: { title: 'Body Position', subtitle: 'Straight axis roll', desc: 'Keep the body in a straight line. As your arms pull, automatically rotate hips and shoulders 30-45 degrees side-to-side to lengthen stroke and reduce drag.', icon: '🧍' },
+    legs: { title: 'Leg Action', subtitle: 'Continuous flutter kick', desc: 'Kick alternately from the hips (do not bend knees excessively) with relaxed ankles, letting your feet whip the water like a fish tail. Keep amplitude around 30-40cm.', icon: '🦵' }
+  },
+  'backstroke': {
+    head: { title: 'Head & Breathe', subtitle: 'Relaxed face-up', desc: 'Keep face pointing straight up, ears fully submerged. Keep the head steady without shaking, chin slightly tucked toward the chest to keep the lower body high.', icon: '🗣️' },
+    arms: { title: 'Arm Action', subtitle: 'Alternating S-pull', desc: 'Swing arms alternately in a 360-degree circle. Thumb leaves the water first, pinky enters first. Under the water, pull in an S-shape curve to push water efficiently backward.', icon: '👐' },
+    core: { title: 'Body Position', subtitle: 'Chest up & high hips', desc: 'Keep body flat on the back, pushing hips up close to the surface to avoid sinking. Avoid flexing the abdomen into a sitting posture.', icon: '🧍' },
+    legs: { title: 'Leg Action', subtitle: 'Alternating kick', desc: 'Kick alternately from the hips upward. Keep ankles loose, using the top of your feet to push water up, creating a fine white foam at the surface.', icon: '🦵' }
+  },
+  'butterfly': {
+    head: { title: 'Head & Breathe', subtitle: 'Early chin lift', desc: 'Lift head early to breathe when arms begin the backward push. Avoid lifting too high which sinks hips. Your head must enter the water before your arms.', icon: '🗣️' },
+    arms: { title: 'Arm Action', subtitle: 'Keyhole pull pattern', desc: 'Both arms work simultaneously. The underwater pull creates a keyhole-like path (sweep close to chest, push hard past thighs). Recover arms wide and low over the water.', icon: '👐' },
+    core: { title: 'Body Position', subtitle: 'Continuous body wave', desc: 'Perform a fluid dolphin wave starting from the chest, moving through the hips to the feet. Hips bob up and down continuously to generate propulsive force.', icon: '🧍' },
+    legs: { title: 'Leg Action', subtitle: 'Double dolphin kick', desc: 'Keep legs together and kick simultaneously. Each stroke cycle has 2 kicks: Kick 1 when arms enter to lift hips; Kick 2 when arms push back to create forward thrust.', icon: '🦵' }
+  },
+  'treading-water': {
+    head: { title: 'Head & Breathe', subtitle: 'Vertical & steady', desc: 'Keep head upright and stable above the surface. Breathe deeply through your mouth, exhaling slowly through your nose to keep lungs filled with air for natural buoyancy.', icon: '🗣️' },
+    arms: { title: 'Arm Action', subtitle: 'Horizontal sculling', desc: 'Extend arms outward under the surface, palms down, continuously drawing horizontal figure-8 patterns (sculling) to create stable lift.', icon: '👐' },
+    core: { title: 'Body Position', subtitle: 'Relaxed vertical posture', desc: 'Maintain an upright or slightly backward-leaning posture in the water. Relax all non-active muscle groups to conserve survival energy.', icon: '🧍' },
+    legs: { title: 'Leg Action', subtitle: 'Alternating eggbeater', desc: 'Perform alternating whip kicks (eggbeater kick) or simultaneous breaststroke kicks downward to create continuous upward thrust.', icon: '🦵' }
+  }
+} : {
   'hoc-boi-ech': {
     head: { title: 'Tư thế Đầu & Thở', subtitle: 'Hít thở nhịp nhàng', desc: 'Đầu giữ thẳng trục với cột sống khi lướt nước. Khi nhô lên lấy hơi, chỉ nâng cằm vừa đủ khỏi mặt nước, mắt nhìn chéo xuống dưới góc 45 độ để tránh đau cổ và giữ thăng bằng.', icon: '🗣️' },
     arms: { title: 'Động tác Tay', subtitle: 'Quạt nước hình trái tim', desc: 'Tỳ nước rộng bằng vai, quạt chéo xuống dưới và hướng ra sau vẽ hình trái tim. Khép cùi chỏ sát sườn trước ngực rồi duỗi thẳng tay ngay lập tức để giảm lực cản.', icon: '👐' },
@@ -118,12 +157,13 @@ const anatomyData = {
   }
 };
 
-const currentAnatomy = anatomyData[technique.slug] || anatomyData['hoc-boi-sai'];
+const currentAnatomy = anatomyData[technique.slug] || (isEn ? anatomyData['front-crawl'] : anatomyData['hoc-boi-sai']);
 
 // Cấu hình tọa độ điểm hotspot tương ứng với từng hình ảnh giải phẫu học kiểu bơi (tính chính xác theo tỷ lệ % từ viewBox 600x300 của SVG)
 const hotspotCoords = (() => {
   switch (technique.slug) {
     case 'hoc-boi-ech':
+    case 'breaststroke':
       return {
         head: { top: '33.3%', left: '69.2%' },
         arms: { top: '56.7%', left: '66.7%' },
@@ -131,6 +171,7 @@ const hotspotCoords = (() => {
         legs: { top: '65%', left: '50.8%' }
       };
     case 'hoc-boi-sai':
+    case 'front-crawl':
       return {
         head: { top: '40%', left: '68.3%' },
         arms: { top: '28.3%', left: '66.7%' },
@@ -138,6 +179,7 @@ const hotspotCoords = (() => {
         legs: { top: '55%', left: '28.7%' }
       };
     case 'hoc-boi-ngua':
+    case 'backstroke':
       return {
         head: { top: '44%', left: '68.3%' },
         arms: { top: '25%', left: '56.7%' },
@@ -145,6 +187,7 @@ const hotspotCoords = (() => {
         legs: { top: '47.3%', left: '28.7%' }
       };
     case 'hoc-boi-buom':
+    case 'butterfly':
       return {
         head: { top: '43.3%', left: '68.3%' },
         arms: { top: '30%', left: '69.2%' },
@@ -152,6 +195,7 @@ const hotspotCoords = (() => {
         legs: { top: '51.7%', left: '28.7%' }
       };
     case 'ky-nang-dung-nuoc':
+    case 'treading-water':
       return {
         head: { top: '26.7%', left: '50%' },
         arms: { top: '48.3%', left: '56.7%' },
@@ -172,6 +216,7 @@ const hotspotCoords = (() => {
 const themeStyles = (() => {
   switch (technique.slug) {
     case 'hoc-boi-ech':
+    case 'breaststroke':
       return `
         --theme-primary: #009688;
         --theme-secondary: #00bcd4;
@@ -180,6 +225,7 @@ const themeStyles = (() => {
         --theme-accent: #ff6b6b;
       `;
     case 'hoc-boi-sai':
+    case 'front-crawl':
       return `
         --theme-primary: #0a4d8c;
         --theme-secondary: #00bcd4;
@@ -188,6 +234,7 @@ const themeStyles = (() => {
         --theme-accent: #ff6b6b;
       `;
     case 'hoc-boi-ngua':
+    case 'backstroke':
       return `
         --theme-primary: #0288d1;
         --theme-secondary: #3f51b5;
@@ -196,6 +243,7 @@ const themeStyles = (() => {
         --theme-accent: #ff6b6b;
       `;
     case 'hoc-boi-buom':
+    case 'butterfly':
       return `
         --theme-primary: #6a1b9a;
         --theme-secondary: #ff6e40;
@@ -204,6 +252,7 @@ const themeStyles = (() => {
         --theme-accent: #ffd54f;
       `;
     case 'ky-nang-dung-nuoc':
+    case 'treading-water':
       return `
         --theme-primary: #f57c00;
         --theme-secondary: #0077b6;
@@ -264,15 +313,19 @@ const themeStyles = (() => {
           <div class="tl-hero__text-side">
             <span class="tl-hero__badge">{technique.badge}</span>
             <h1 class="tl-hero__title">
-              {technique.name}: Hướng Dẫn Kỹ Thuật <span class="highlight">Chi Tiết Nhất</span>
+              {isEn ? (
+                <Fragment>{technique.name}: Detailed <span class="highlight">Technique Guide</span></Fragment>
+              ) : (
+                <Fragment>{technique.name}: Hướng Dẫn Kỹ Thuật <span class="highlight">Chi Tiết Nhất</span></Fragment>
+              )}
             </h1>
             <p class="tl-hero__description">
               {technique.description}
             </p>
             
             <div class="tl-hero__ctas">
-              <a href="#dang-ky" class="tl-btn tl-btn--accent tl-btn--pulse">📞 Học Thử Miễn Phí</a>
-              <a href={`#${toc[0]?.id || 'gioi-thieu'}`} class="tl-btn tl-btn--outline">📖 Xem Kỹ Thuật</a>
+              <a href="#dang-ky" class="tl-btn tl-btn--accent tl-btn--pulse">{isEn ? '📞 Free Trial Lesson' : '📞 Học Thử Miễn Phí'}</a>
+              <a href={`#${toc[0]?.id || 'gioi-thieu'}`} class="tl-btn tl-btn--outline">{isEn ? '📖 Read Guide' : '📖 Xem Kỹ Thuật'}</a>
             </div>
           </div>
 
@@ -302,7 +355,7 @@ const themeStyles = (() => {
               </div>
             </div>
             <div class="tl-gauge-info">
-              <span class="tl-gauge-label">Độ khó</span>
+              <span class="tl-gauge-label">{isEn ? 'Difficulty' : 'Độ khó'}</span>
               <span class="tl-gauge-val">{technique.difficulty}</span>
             </div>
           </div>
@@ -318,7 +371,7 @@ const themeStyles = (() => {
               </div>
             </div>
             <div class="tl-gauge-info">
-              <span class="tl-gauge-label">Tốc độ</span>
+              <span class="tl-gauge-label">{isEn ? 'Speed' : 'Tốc độ'}</span>
               <span class="tl-gauge-val">{technique.speed}</span>
             </div>
           </div>
@@ -334,7 +387,7 @@ const themeStyles = (() => {
               </div>
             </div>
             <div class="tl-gauge-info">
-              <span class="tl-gauge-label">Calo tiêu thụ</span>
+              <span class="tl-gauge-label">{isEn ? 'Calories' : 'Calo tiêu thụ'}</span>
               <span class="tl-gauge-val">{technique.calories}</span>
             </div>
           </div>
@@ -342,7 +395,7 @@ const themeStyles = (() => {
           <div class="tl-gauge-card tl-gauge-card--muscles">
             <div class="tl-muscles-hub">
               <span class="tl-muscles-hub__icon">💪</span>
-              <span class="tl-gauge-label">Cơ tác động chính</span>
+              <span class="tl-gauge-label">{isEn ? 'Target Muscles' : 'Cơ tác động chính'}</span>
             </div>
             <div class="tl-muscles-tags">
               {musclesList.map(muscle => (
@@ -356,7 +409,7 @@ const themeStyles = (() => {
 
     <!-- Table of Contents sticky bar / vertical navigation -->
     <div class="tl-toc-wrapper">
-      <nav class="tl-toc-nav" aria-label="Mục lục nhanh">
+      <nav class="tl-toc-nav" aria-label={isEn ? "Quick Navigation" : "Mục lục nhanh"}>
         {toc.map((item, idx) => {
           const numMatch = item.label.match(/^(\d+\.?)\s*(.*)/);
           const num = numMatch ? numMatch[1] : `${idx + 1}.`;
@@ -375,10 +428,10 @@ const themeStyles = (() => {
     <section class="tl-anatomy-section" id="giai-phau-ky-thuat">
       <div class="tl-section__container">
         <div class="tl-section-title">
-          <span class="tl-section-title__badge">Khoa học bơi lội</span>
-          <h2 class="tl-section-title__heading">Phân Tích Động Học Thể Thao</h2>
+          <span class="tl-section-title__badge">{isEn ? 'Swimming Science' : 'Khoa học bơi lội'}</span>
+          <h2 class="tl-section-title__heading">{isEn ? 'Biomechanics Analysis' : 'Phân Tích Động Học Thể Thao'}</h2>
           <p class="tl-section-title__sub">
-            Click hoặc di chuột qua các điểm nút phát sáng trên cơ thể người bơi để xem chi tiết kỹ thuật cốt lõi.
+            {isEn ? 'Click or hover over the glowing hotspots on the swimmer\'s body to view core technique details.' : 'Click hoặc di chuột qua các điểm nút phát sáng trên cơ thể người bơi để xem chi tiết kỹ thuật cốt lõi.'}
           </p>
           <span class="tl-section-title__decoration"></span>
         </div>
@@ -591,25 +644,25 @@ const themeStyles = (() => {
 
               <!-- Hotspots over the container -->
               <div class="tl-anatomy__hotspots-container">
-                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--head active" style={`top: ${hotspotCoords.head.top}; left: ${hotspotCoords.head.left};`} data-part="head" aria-label="Kỹ thuật Đầu và Thở">
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--head active" style={`top: ${hotspotCoords.head.top}; left: ${hotspotCoords.head.left};`} data-part="head" aria-label={isEn ? "Head & Breathe Technique" : "Kỹ thuật Đầu và Thở"}>
                   <div class="tl-anatomy__hotspot-ring"></div>
                   <div class="tl-anatomy__hotspot-core"></div>
-                  <span class="tl-anatomy__hotspot-label">Đầu & Thở</span>
+                  <span class="tl-anatomy__hotspot-label">{isEn ? "Head & Breathe" : "Đầu & Thở"}</span>
                 </button>
-                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--arms" style={`top: ${hotspotCoords.arms.top}; left: ${hotspotCoords.arms.left};`} data-part="arms" aria-label="Kỹ thuật Tay">
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--arms" style={`top: ${hotspotCoords.arms.top}; left: ${hotspotCoords.arms.left};`} data-part="arms" aria-label={isEn ? "Arm Action Technique" : "Kỹ thuật Tay"}>
                   <div class="tl-anatomy__hotspot-ring"></div>
                   <div class="tl-anatomy__hotspot-core"></div>
-                  <span class="tl-anatomy__hotspot-label">Động tác Tay</span>
+                  <span class="tl-anatomy__hotspot-label">{isEn ? "Arm Action" : "Động tác Tay"}</span>
                 </button>
-                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--core" style={`top: ${hotspotCoords.core.top}; left: ${hotspotCoords.core.left};`} data-part="core" aria-label="Tư thế Thân người">
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--core" style={`top: ${hotspotCoords.core.top}; left: ${hotspotCoords.core.left};`} data-part="core" aria-label={isEn ? "Body Position" : "Tư thế Thân người"}>
                   <div class="tl-anatomy__hotspot-ring"></div>
                   <div class="tl-anatomy__hotspot-core"></div>
-                  <span class="tl-anatomy__hotspot-label">Thân người</span>
+                  <span class="tl-anatomy__hotspot-label">{isEn ? "Body Position" : "Thân người"}</span>
                 </button>
-                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--legs" style={`top: ${hotspotCoords.legs.top}; left: ${hotspotCoords.legs.left};`} data-part="legs" aria-label="Kỹ thuật Chân">
+                <button class="tl-anatomy__hotspot tl-anatomy__hotspot--legs" style={`top: ${hotspotCoords.legs.top}; left: ${hotspotCoords.legs.left};`} data-part="legs" aria-label={isEn ? "Leg Action Technique" : "Kỹ thuật Chân"}>
                   <div class="tl-anatomy__hotspot-ring"></div>
                   <div class="tl-anatomy__hotspot-core"></div>
-                  <span class="tl-anatomy__hotspot-label">Động tác Chân</span>
+                  <span class="tl-anatomy__hotspot-label">{isEn ? "Leg Action" : "Động tác Chân"}</span>
                 </button>
               </div>
             </div>
@@ -630,10 +683,10 @@ const themeStyles = (() => {
 
             <!-- Mobile/Desktop selectors -->
             <div class="tl-anatomy__selector-grid">
-              <button class="tl-anatomy__select-btn active" data-part="head">Đầu & Thở</button>
-              <button class="tl-anatomy__select-btn" data-part="arms">Tay</button>
-              <button class="tl-anatomy__select-btn" data-part="core">Thân</button>
-              <button class="tl-anatomy__select-btn" data-part="legs">Chân</button>
+              <button class="tl-anatomy__select-btn active" data-part="head">{isEn ? "Head & Breathe" : "Đầu & Thở"}</button>
+              <button class="tl-anatomy__select-btn" data-part="arms">{isEn ? "Arms" : "Tay"}</button>
+              <button class="tl-anatomy__select-btn" data-part="core">{isEn ? "Body" : "Thân"}</button>
+              <button class="tl-anatomy__select-btn" data-part="legs">{isEn ? "Legs" : "Chân"}</button>
             </div>
           </div>
         </div>
@@ -654,10 +707,10 @@ const themeStyles = (() => {
       <section class="tl-section tl-section--alt" id="loi-thuong-gap">
         <div class="tl-section__container">
           <div class="tl-section-title">
-            <span class="tl-section-title__badge">Khắc phục lỗi</span>
-            <h2 class="tl-section-title__heading">Những Lỗi Thường Gặp & Cách Sửa</h2>
+            <span class="tl-section-title__badge">{isEn ? 'Troubleshooting' : 'Khắc phục lỗi'}</span>
+            <h2 class="tl-section-title__heading">{isEn ? 'Common Mistakes & Corrections' : 'Những Lỗi Thường Gặp & Cách Sửa'}</h2>
             <p class="tl-section-title__sub">
-              Tránh những sai lầm phổ biến dưới đây để bơi đúng kỹ thuật, tiết kiệm sức lực và nâng cao hiệu quả luyện tập.
+              {isEn ? 'Avoid these common mistakes to swim correctly, conserve energy, and improve your efficiency.' : 'Tránh những sai lầm phổ biến dưới đây để bơi đúng kỹ thuật, tiết kiệm sức lực và nâng cao hiệu quả luyện tập.'}
             </p>
             <span class="tl-section-title__decoration"></span>
           </div>
@@ -666,15 +719,15 @@ const themeStyles = (() => {
             <table class="tl-errors-table">
               <thead>
                 <tr>
-                  <th>Lỗi thường gặp & Sai tư thế ❌</th>
-                  <th>Cách khắc phục chuẩn kỹ thuật ✅</th>
+                  <th>{isEn ? 'Common Mistake & Wrong Posture ❌' : 'Lỗi thường gặp & Sai tư thế ❌'}</th>
+                  <th>{isEn ? 'Correct Technique & Fix ✅' : 'Cách khắc phục chuẩn kỹ thuật ✅'}</th>
                 </tr>
               </thead>
               {errors.map((err, idx) => (
                 <tbody class="tl-error-group">
                   <tr class="tl-error-row-title">
                     <td colspan="2">
-                      <strong class="tl-error-cell__title">⚠️ Lỗi {idx + 1}: {err.title}</strong>
+                      <strong class="tl-error-cell__title">⚠️ {isEn ? `Mistake ${idx + 1}:` : `Lỗi ${idx + 1}:`} {err.title}</strong>
                     </td>
                   </tr>
                   <tr class="tl-error-row-content">
@@ -686,7 +739,7 @@ const themeStyles = (() => {
                     </td>
                     <td>
                       <div class="tl-error-cell__solution">
-                        <span class="tl-success-indicator">✅ Sửa đúng:</span>
+                        <span class="tl-success-indicator">{isEn ? 'Correct Fix:' : 'Sửa đúng:'}</span>
                         <p class="tl-error-cell__solution-desc">{err.solution}</p>
                       </div>
                     </td>
@@ -703,17 +756,17 @@ const themeStyles = (() => {
     <section class="tl-section">
       <div class="tl-section__container">
         <div class="tl-section-title">
-          <span class="tl-section-title__badge">Góc chia sẻ</span>
-          <h2 class="tl-section-title__heading">Bài Viết Hướng Dẫn Bơi Lập Liên Quan</h2>
+          <span class="tl-section-title__badge">{isEn ? 'Expert Insights' : 'Góc chia sẻ'}</span>
+          <h2 class="tl-section-title__heading">{isEn ? 'Related Swimming Guides & Tips' : 'Bài Viết Hướng Dẫn Bơi Lập Liên Quan'}</h2>
           <p class="tl-section-title__sub">
-            Cập nhật kiến thức bơi lội bổ ích từ kinh nghiệm giảng dạy thực tế của các Huấn luyện viên trưởng.
+            {isEn ? 'Get useful swimming tips and advice directly from our professional coaches.' : 'Cập nhật kiến thức bơi lội bổ ích từ kinh nghiệm giảng dạy thực tế của các Huấn luyện viên trưởng.'}
           </p>
           <span class="tl-section-title__decoration"></span>
         </div>
 
         <div class="tl-blogs-grid">
           {displayPosts.map(post => (
-            <a href={`/${post.slug}/`} class="tl-blog-card">
+            <a href={isEn ? `/en/blog/` : `/${post.slug}/`} class="tl-blog-card">
               <div class="tl-blog-card__image-wrapper">
                 <img src={post.image} alt={post.title} class="tl-blog-card__image" loading="lazy" />
                 <span class="tl-blog-card__category">{post.category}</span>
@@ -725,7 +778,7 @@ const themeStyles = (() => {
                 </div>
                 <h3 class="tl-blog-card__title">{post.title}</h3>
                 <p class="tl-blog-card__excerpt">{post.excerpt}</p>
-                <span class="tl-blog-card__link">Đọc bài viết →</span>
+                <span class="tl-blog-card__link">{isEn ? 'Read Article →' : 'Đọc bài viết →'}</span>
               </div>
             </a>
           ))}
@@ -737,32 +790,32 @@ const themeStyles = (() => {
     <section class="tl-section tl-section--alt" id="dang-ky">
       <div class="tl-section__container">
         <div class="tl-section-title">
-          <span class="tl-section-title__badge">Đăng ký học bơi</span>
-          <h2 class="tl-section-title__heading">Luyện Tập Cùng Huấn Luyện Viên Chuyên Nghiệp</h2>
+          <span class="tl-section-title__badge">{isEn ? 'Book a Lesson' : 'Đăng ký học bơi'}</span>
+          <h2 class="tl-section-title__heading">{isEn ? 'Train with Professional Coaches' : 'Luyện Tập Cùng Huấn Luyện Viên Chuyên Nghiệp'}</h2>
           <p class="tl-section-title__sub">
-            Đăng ký học thử 1 buổi MIỄN PHÍ cùng HLV 1 kèm 1 tại Swim For Life Việt Nam để chỉnh sửa lỗi kỹ thuật bơi chuẩn nhất.
+            {isEn ? 'Sign up for a FREE trial lesson with a 1-on-1 private coach at Swim For Life Vietnam today.' : 'Đăng ký học thử 1 buổi MIỄN PHÍ cùng HLV 1 kèm 1 tại Swim For Life Việt Nam để chỉnh sửa lỗi kỹ thuật bơi chuẩn nhất.'}
           </p>
           <span class="tl-section-title__decoration"></span>
         </div>
 
         <div class="tl-form-container">
           <div class="tl-form-info">
-            <h3 class="tl-form-info__title">Swim For Life Việt Nam</h3>
+            <h3 class="tl-form-info__title">{isEn ? 'Swim For Life Vietnam' : 'Swim For Life Việt Nam'}</h3>
             <p class="tl-form-info__text">
-              Chúng tôi cam kết 100% học viên biết bơi sau khóa học 10-12 buổi. HLV kèm riêng tận tâm dưới nước, giáo án cá nhân hóa theo thể trạng từng học viên.
+              {isEn ? 'We guarantee 100% results after a 10-12 session course. Dedicated 1-on-1 private coach in the water, personalized lesson plan tailored to individual fitness.' : 'Chúng tôi cam kết 100% học viên biết bơi sau khóa học 10-12 buổi. HLV kèm riêng tận tâm dưới nước, giáo án cá nhân hóa theo thể trạng từng học viên.'}
             </p>
             <div class="tl-form-info__links">
               <a href="tel:0979121097" class="tl-form-info__link">
                 <span class="tl-form-info__icon">📞</span>
                 <div>
-                  <span class="tl-form-info__label">Hotline / Zalo tư vấn</span>
+                  <span class="tl-form-info__label">{isEn ? 'Consultation Hotline / Zalo' : 'Hotline / Zalo tư vấn'}</span>
                   <span class="tl-form-info__value">0979.121.097</span>
                 </div>
               </a>
               <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-form-info__link">
                 <span class="tl-form-info__icon">💬</span>
                 <div>
-                  <span class="tl-form-info__label">Trò chuyện qua Zalo</span>
+                  <span class="tl-form-info__label">{isEn ? 'Chat via Zalo' : 'Trò chuyện qua Zalo'}</span>
                   <span class="tl-form-info__value">Mr.Mạnh (0979.121.097)</span>
                 </div>
               </a>
@@ -770,7 +823,7 @@ const themeStyles = (() => {
           </div>
           
           <div class="tl-form-wrapper">
-            <RegistrationForm id="technique-register-form" className="tl-astro-form" />
+            <RegistrationForm id="technique-register-form" className="tl-astro-form" lang={lang} />
           </div>
         </div>
       </div>
@@ -836,8 +889,8 @@ const themeStyles = (() => {
     <!-- Floating CTA Mobile -->
     <div class="tl-floating-cta">
       <div class="tl-floating-cta-inner">
-        <a href="tel:0979121097" class="tl-btn tl-btn--accent">📞 Gọi Hotline</a>
-        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-btn tl-btn--outline" style="color: #0077B6; border-color: #0077B6;">💬 Chat Zalo</a>
+        <a href="tel:0979121097" class="tl-btn tl-btn--accent">{isEn ? '📞 Call Hotline' : '📞 Gọi Hotline'}</a>
+        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-btn tl-btn--outline" style="color: #0077B6; border-color: #0077B6;">{isEn ? '💬 Zalo Chat' : '💬 Chat Zalo'}</a>
       </div>
     </div>
   </div>

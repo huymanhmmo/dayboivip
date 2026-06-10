@@ -1,0 +1,291 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Techniques', href: '/en/swimming-techniques/' },
+  { label: 'Backstroke' },
+];
+
+const faqData = [
+  {
+    question: 'Is backstroke easier to learn than breaststroke?',
+    answer: 'Backstroke allows you to keep your face out of the water, making breathing very easy and reducing water anxiety. However, it requires a good sense of balance and the ability to swim without seeing what is ahead. For many, it is easier than freestyle but slightly more challenging than breaststroke.',
+  },
+  {
+    question: 'Why do my legs sink when swimming backstroke?',
+    answer: 'Sinking legs in backstroke are usually caused by: (1) Lifting your head to look at your feet (which forces the hips down); (2) Bending your knees too much when kicking (like riding a bicycle); (3) Not pushing your hips up. Keep your ears submerged, look straight up, and push your hips toward the surface.',
+  },
+  {
+    question: 'How do I avoid getting water up my nose?',
+    answer: 'Even though your face is out of the water, splashing occurs during the arm pull. Keep a steady exhale through your nose as your hand recovers past your face. Beginners can also use a nose clip until they get used to the rhythm.',
+  },
+  {
+    question: 'Is backstroke good for back pain and spine therapy?',
+    answer: 'Yes, backstroke is highly recommended by physical therapists for spine decompression and relieving back pain. The horizontal supine position eliminates gravitational load on your vertebrae, stretching the spine naturally and strengthening your core and upper back.',
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Backstroke Technique: Step-by-Step Guide to Swimming on Your Back",
+  "description": "Master the backstroke swimming technique. Learn the back float, alternating flutter kicks, S-curve arm pulls, breathing rhythm, and spine alignment tips.",
+  "image": "https://dayboi.vip/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Huy Manh",
+    "jobTitle": "Director & Head Swim Coach",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Vietnam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-01-25",
+  "dateModified": "2026-06-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/backstroke/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "The Supine Float",
+    "text": "Lie on your back, submerge ears, look straight up at the ceiling or sky. Keep your chin tucked slightly, pushing hips up to the surface.",
+    "url": "https://dayboi.vip/en/swimming-techniques/backstroke/",
+    "position": 1
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Alternating Flutter Kick",
+    "text": "Kick alternately from the hips. Keep ankles loose, toes pointed, and knees submerged, pushing water upward to create white foam.",
+    "url": "https://dayboi.vip/en/swimming-techniques/backstroke/",
+    "position": 2
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Arm Entry & Catch",
+    "text": "Swing arm in a vertical circle. Enter the water pinky-finger first, directly in line with your shoulder, and catch the water.",
+    "url": "https://dayboi.vip/en/swimming-techniques/backstroke/",
+    "position": 3
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Underwater Pull & Push",
+    "text": "Bend elbow to 90 degrees under water. Pull in an S-shaped curve, then push hard toward your thigh, exiting thumb-first.",
+    "url": "https://dayboi.vip/en/swimming-techniques/backstroke/",
+    "position": 4
+  }
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Swim Backstroke with Perfect Balance",
+  "description": "Learn the step-by-step sequence to swim backstroke without sinking your hips.",
+  "image": "https://dayboi.vip/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg",
+  "totalTime": "PT45M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Goggles or Nose Clip" },
+    { "@type": "HowToSupply", "name": "Swimwear" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Swimming pool" }
+  ],
+  "step": howToSteps,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/backstroke/"
+  }
+};
+
+const metadata = {
+  title: `Backstroke Technique: Step-by-Step Guide [${currentYear}]`,
+  description: "Learn how to swim backstroke with correct form. Detailed guide on back float, alternating kicks from hips, pinky-first arm entry, S-pull, and chest rotation.",
+  canonical: "https://dayboi.vip/en/swimming-techniques/backstroke/",
+  image: "/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema,
+  howToSchema: howToSchema
+};
+
+const technique = {
+  slug: 'backstroke',
+  name: 'Backstroke',
+  badge: '🤽 Spine-Friendly Stroke',
+  description: 'Backstroke is the only stroke swum face-up. It offers natural, unrestricted breathing and excellent decompression for the spine. Master it with Swim For Life.',
+  difficulty: 'Intermediate' as const,
+  speed: 'Medium' as const,
+  calories: '400 - 550 kcal/h',
+  muscles: 'Posterior Deltoids, Lats, Core, Glutes, Hamstrings',
+  videoId: 'K0swxw49SMc',
+  videoPoster: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
+  videoAlt: 'Backstroke technique coaching at Swim For Life'
+};
+
+const toc = [
+  { id: 'overview', label: '1. Backstroke Overview' },
+  { id: 'benefits', label: '2. Health & Spine Benefits' },
+  { id: 'supine-float', label: '3. Supine Float Foundation' },
+  { id: 'back-kick', label: '4. Leg Kick Technique' },
+  { id: 'arm-pull', label: '5. Arm Pull Technique' },
+  { id: 'breathing', label: '6. Breathing & Navigation' },
+  { id: 'coordination', label: '7. Full Stroke Coordination' },
+  { id: 'common-errors', label: '8. Common Mistakes' },
+  { id: 'course', label: '9. Backstroke Courses' },
+  { id: 'faq', label: '10. FAQ' }
+];
+
+const errors = [
+  {
+    title: 'Looking at your toes (Bending neck)',
+    problem: 'Tucking your chin too hard and looking down at your feet sinks the hips and legs instantly.',
+    solution: 'Relax your neck, submerge your ears, and look straight up at the sky or ceiling. Keep a neutral spine.'
+  },
+  {
+    title: 'Bicycle kick (Bending knees out of water)',
+    problem: 'Bending knees too much drops the thighs and creates high drag, looking like you are riding a bicycle.',
+    solution: 'Kick from your hip joints. Keep knees relatively straight and under the water, letting ankles flick the surface.'
+  },
+  {
+    title: 'Flat swimming (No body roll)',
+    problem: 'Keeping shoulders flat on the water, which restricts arm extension and causes shoulder pain.',
+    solution: 'Rotate your chest and shoulders 30-45 degrees to each side with the arm stroke. Keep your head completely still.'
+  },
+  {
+    title: 'Straight arm underwater pull',
+    problem: 'Pulling with a straight arm under water, which sweeps water down rather than pushing it backward.',
+    solution: 'Bend your elbow to about 90 degrees under water. Pull in a horizontal S-shape along your side.'
+  }
+];
+
+const relatedKeywords = ['backstroke', 'float on back', 'backstroke kick', 'spine rehabilitation'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+  lang="en"
+>
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2>What is Backstroke? Swimming with Freedom</h2>
+
+    <p><strong>Backstroke</strong> is a unique competitive swimming style because it is swum face-up. This orientation allows the face to remain completely clear of the water, making it the only stroke where you can breathe freely at any time without rotating or lifting your head.</p>
+
+    <p>Backstroke shares the same alternating arm cycles and flutter kick mechanics as <a href="/en/swimming-techniques/front-crawl/">Freestyle</a>, but rotated 180 degrees. Because you cannot see where you are going, it requires a strong sense of balance and trust in your body positioning.</p>
+
+    <p>At <strong>Swim For Life Vietnam</strong>, we recommend backstroke to students who want a relaxing stroke or require spine alignment. According to HLV <strong>Nguyen Huy Manh</strong>: <em>"Backstroke is a game-changer for people who fear putting their faces in the water. Once they learn to relax their neck and push their hips up, they feel incredibly safe and relaxed."</em></p>
+  </section>
+
+  <!-- 2. Benefits -->
+  <section id="benefits">
+    <h2>Health Benefits of Backstroke</h2>
+
+    <p>Backstroke is renowned for its therapeutic and conditioning properties:</p>
+    <ul>
+      <li><strong>Spine Decompression:</strong> The horizontal lying position on your back removes gravitational compression on your spine, helping to alleviate lower back pain and correct posture (such as rounded shoulders or computer neck).</li>
+      <li><strong>Shoulder Flexibility:</strong> The 360-degree vertical arm circles improve shoulder range of motion and strengthen the posterior deltoids and lats.</li>
+      <li><strong>Low-Stress Breathing:</strong> Excellent for individuals with asthma or respiratory concerns, as breathing is unrestricted by water subversion.</li>
+      <li><strong>Core Toning:</strong> Keeping the hips high requires constant, gentle contraction of the abdominal and lower back muscles.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Supine Float -->
+  <section id="supine-float">
+    <h2>The Supine Float: Finding Your Balance</h2>
+
+    <p>The back float is the absolute foundation of backstroke. You must master this balance before adding arms or kicks:</p>
+    <ol>
+      <li><strong>Submerge Your Ears:</strong> Rest your head back as if it were on a pillow. Let the water cover your ears. This aligns your neck with your spine.</li>
+      <li><strong>Look Straight Up:</strong> Focus on a single point directly above you. Do not look down at your feet, as this will drop your hips.</li>
+      <li><strong>Push Hips Up:</strong> Gently arch your lower back and push your belly button toward the surface.</li>
+      <li><strong>Expand Your Chest:</strong> Keep your lungs filled with air; your chest acts as your primary floatation device.</li>
+    </ol>
+  </section>
+
+  <!-- 4. Leg Kick -->
+  <section id="back-kick">
+    <h2>The Backstroke Flutter Kick</h2>
+
+    <p>The kick provides balance and elevates the lower body. It is an upward whip kick:</p>
+    <ul>
+      <li><strong>Power from Hips:</strong> Initiate the movement from your hips, keeping your legs long and knees underwater.</li>
+      <li><strong>The Upward Flick:</strong> The active, power-producing phase is kicking upward. Use the top of your foot to push water up.</li>
+      <li><strong>Floppy Ankles:</strong> Keep ankles relaxed so feet can whip. Your toes should break the surface gently, creating a white foam.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Arm Pull -->
+  <section id="arm-pull">
+    <h2>The Arm Stroke: Pinky-In, Thumb-Out</h2>
+
+    <p>Your arms rotate alternately in a continuous 360-degree circle:</p>
+    <h3>1. Entry & Catch</h3>
+    <p>Sweep your arm straight up and back. Enter the water pinky-finger first, directly behind your shoulder. This positions your palm facing outward, catching the water.</p>
+
+    <h3>2. The S-Pull</h3>
+    <p>Under the water, bend your elbow to 90 degrees. Sweep your hand in an S-curve along your side, pushing the water backward toward your feet.</p>
+
+    <h3>3. Exiting the Water</h3>
+    <p>Finish the push with your arm straight against your thigh. The thumb should exit the water first as your arm rises back into the air for the recovery phase.</p>
+  </section>
+
+  <!-- 6. Breathing & Navigation -->
+  <section id="breathing">
+    <h2>Breathing and Navigation</h2>
+
+    <h3>Breathing Rhythm:</h3>
+    <p>Develop a steady pattern: inhale as one arm recovers through the air, and exhale as the other arm pulls under the water. Never hold your breath.</p>
+
+    <h3>Navigation Tips:</h3>
+    <ul>
+      <li><strong>Use Ceiling Lines:</strong> In indoor pools, use lights or ceiling structures as visual guide rails to stay straight.</li>
+      <li><strong>Lixt Eyes, Not Head:</strong> Look to the side using only your eyes to check the lane ropes. Do not turn your head.</li>
+      <li><strong>Count Strokes:</strong> In standard pools, flags are hung 5 meters before the wall. Count how many arm strokes you need from the flags to reach the wall, so you can stop safely.</li>
+    </ul>
+  </section>
+
+  <!-- 9. Courses -->
+  <section id="course">
+    <h2>Join Our Backstroke Programs at Swim For Life</h2>
+
+    <p>If you want to improve your posture, overcome water anxiety, or learn backstroke correctly, Swim For Life offers premium 1-on-1 private coaching in high-quality four-season pools.</p>
+
+    <h3>Why Choose Swim For Life?</h3>
+    <ul>
+      <li><strong>Expert Coaches:</strong> Patient instructors who specialize in spine-friendly swimming and senior/adult lessons.</li>
+      <li><strong>Guaranteed Results:</strong> Master the back float and swim backstroke confidently in 10-12 sessions.</li>
+      <li><strong>Tailored Pace:</strong> Classes progress based on your physical comfort and stamina.</li>
+    </ul>
+  </section>
+</TechniqueLayout>

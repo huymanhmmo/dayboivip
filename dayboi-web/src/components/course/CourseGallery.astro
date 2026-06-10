@@ -1,28 +1,29 @@
 ---
 export interface Props {
   slug: string;
+  lang?: 'vi' | 'en';
 }
 
-const { slug } = Astro.props;
+const { slug, lang = 'vi' } = Astro.props;
 
 // Define default pools and training photos
 const commonPhotos = [
-  { src: "/images/classes/lop-hoc-boi-ha-noi.jpg", caption: "Không khí lớp học sôi nổi tại bể bơi bốn mùa" },
-  { src: "/images/classes/giao-vien-chinh-sua-ky-thuat.jpg", caption: "Huấn luyện viên chỉnh sửa chi tiết tư thế bơi" },
-  { src: "/images/classes/giao-vien-ho-tro-tan-tam.jpg", caption: "Kèm cặp sát sao, đảm bảo an toàn tuyệt đối" },
-  { src: "/images/classes/hoc-vien-khoi-dong.jpg", caption: "Lớp khởi động bài bản trên cạn trước khi xuống nước" },
-  { src: "/images/classes/dam-bao-an-toan.jpg", caption: "Giám sát chặt chẽ mọi học viên trong làn bơi" },
-  { src: "/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg", caption: "Lớp học được tổ chức quy củ và chuyên nghiệp" }
+  { src: "/images/classes/lop-hoc-boi-ha-noi.jpg", caption: lang === 'vi' ? "Không khí lớp học sôi nổi tại bể bơi bốn mùa" : "Vibrant atmosphere at our indoor four-season partner pool" },
+  { src: "/images/classes/giao-vien-chinh-sua-ky-thuat.jpg", caption: lang === 'vi' ? "Huấn luyện viên chỉnh sửa chi tiết tư thế bơi" : "Coach correcting swimming posture in detail" },
+  { src: "/images/classes/giao-vien-ho-tro-tan-tam.jpg", caption: lang === 'vi' ? "Kèm cặp sát sao, đảm bảo an toàn tuyệt đối" : "Close supervision ensuring absolute water safety" },
+  { src: "/images/classes/hoc-vien-khoi-dong.jpg", caption: lang === 'vi' ? "Lớp khởi động bài bản trên cạn trước khi xuống nước" : "Structured dryland warm-up before entering the water" },
+  { src: "/images/classes/dam-bao-an-toan.jpg", caption: lang === 'vi' ? "Giám sát chặt chẽ mọi học viên trong làn bơi" : "Close supervision of all students in the swim lane" },
+  { src: "/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg", caption: lang === 'vi' ? "Lớp học được tổ chức quy củ và chuyên nghiệp" : "Well-organized and professional swimming class" }
 ];
 
 // Special photos for kids
 const kidsPhotos = [
-  { src: "/images/classes/lop-boi-tre-em-bai-ban.jpg", caption: "Các bé tập trung học động tác chân trên thành bể" },
-  { src: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg", caption: "Lớp học vui vẻ, kết hợp trò chơi dưới nước" },
-  { src: "/images/classes/lop-boi-vinhomes-times-city.jpg", caption: "Buổi thực hành hào hứng của học viên nhí" },
-  { src: "/images/classes/hoc-sinh-tap-tren-thanh-be.jpg", caption: "Tập đập chân nước chuẩn kỹ thuật dưới sự hướng dẫn" },
-  { src: "/images/classes/hoc-sinh-trang-bi-phao.jpg", caption: "Trang bị đầy đủ phao bơi an toàn cho bé" },
-  { src: "/images/classes/giao-vien-vui-ve-tam-ly.jpeg", caption: "Huấn luyện viên vô cùng tâm lý và yêu trẻ" }
+  { src: "/images/classes/lop-boi-tre-em-bai-ban.jpg", caption: lang === 'vi' ? "Các bé tập trung học động tác chân trên thành bể" : "Kids practicing leg kick movements on the pool deck" },
+  { src: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg", caption: lang === 'vi' ? "Lớp học vui vẻ, kết hợp trò chơi dưới nước" : "Fun class blending aquatic games with swimming skills" },
+  { src: "/images/classes/lop-boi-vinhomes-times-city.jpg", caption: lang === 'vi' ? "Buổi thực hành hào hứng của học viên nhí" : "Exciting practice session for our young students" },
+  { src: "/images/classes/hoc-sinh-tap-tren-thanh-be.jpg", caption: lang === 'vi' ? "Tập đập chân nước chuẩn kỹ thuật dưới sự hướng dẫn" : "Practicing proper leg kick technique under direct supervision" },
+  { src: "/images/classes/hoc-sinh-trang-bi-phao.jpg", caption: lang === 'vi' ? "Trang bị đầy đủ phao bơi an toàn cho bé" : "Kids fully equipped with safety floatation aids" },
+  { src: "/images/classes/giao-vien-vui-ve-tam-ly.jpeg", caption: lang === 'vi' ? "Huấn luyện viên vô cùng tâm lý và yêu trẻ" : "Patient and child-friendly certified swim coach" }
 ];
 
 // Select photos based on course slug
@@ -33,13 +34,13 @@ const photos = slug === "tre-em" ? kidsPhotos : commonPhotos;
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Hình Ảnh Thực Tế
+        {lang === 'vi' ? 'Hình Ảnh Thực Tế' : 'Real Class Photos'}
       </span>
       <h2 class="cl-section-title__heading">
-        Khoảnh Khắc Lớp Học Bơi
+        {lang === 'vi' ? 'Khoảnh Khắc Lớp Học Bơi' : 'Moments from Swim Classes'}
       </h2>
       <p class="cl-section-title__sub">
-        Hình ảnh ghi lại từ các buổi thực hành thực tế của huấn luyện viên và học viên tại Swim For Life.
+        {lang === 'vi' ? 'Hình ảnh ghi lại từ các buổi thực hành thực tế của huấn luyện viên và học viên tại Swim For Life.' : 'Real photographs captured during practice sessions of our coaches and students at Swim For Life.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>

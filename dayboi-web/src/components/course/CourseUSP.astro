@@ -1,22 +1,23 @@
 ---
 export interface Props {
   benefits: Array<{ icon: string; title: string; description: string }>;
+  lang?: 'vi' | 'en';
 }
 
-const { benefits } = Astro.props;
+const { benefits, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section cl-section--alt">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Lợi Ích Khóa Học
+        {lang === 'vi' ? 'Lợi Ích Khóa Học' : 'Course Benefits'}
       </span>
       <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
-        Cam Kết Giá Trị Nhận Được
+        {lang === 'vi' ? 'Cam Kết Giá Trị Nhận Được' : 'Guaranteed Value & Outcome'}
       </h2>
       <p class="cl-section-title__sub">
-        Chúng tôi tập trung vào chất lượng giảng dạy và trải nghiệm an toàn của học viên để mang lại giá trị bền vững.
+        {lang === 'vi' ? 'Chúng tôi tập trung vào chất lượng giảng dạy và trải nghiệm an toàn của học viên để mang lại giá trị bền vững.' : 'We focus on coaching quality and student safety to deliver long-term value.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>

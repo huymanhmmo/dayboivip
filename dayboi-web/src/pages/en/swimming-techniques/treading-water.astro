@@ -1,0 +1,393 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Techniques', href: '/en/swimming-techniques/' },
+  { label: 'Treading Water' },
+];
+
+const faqData = [
+  {
+    question: 'Can someone who is afraid of water learn to tread water?',
+    answer: 'Absolutely. Treading water is a key skill that builds immense confidence in swimmers with aquaphobia. Knowing that you can float vertically in deep water without needing to hold onto the wall removes a lot of anxiety. The learning process begins in a shallow pool with floating aids, and transitions to deep water only under the close 1-on-1 supervision of a certified coach.'
+  },
+  {
+    question: 'Which treading water technique is the least exhausting?',
+    answer: 'The eggbeater kick is widely considered the most efficient and least tiring treading water technique. It is the standard method used by water polo players and lifeguards. While it takes slightly more practice to coordinate compared to a breaststroke kick, it provides continuous lift with minimal energy expenditure.'
+  },
+  {
+    question: 'How long does it take to learn how to tread water?',
+    answer: 'If you already know the basics of swimming (such as breaststroke or freestyle), learning to tread water comfortably typically takes only 2 to 4 sessions. For absolute beginners, treading water is integrated into our comprehensive 10-12 session course and introduced in the final phases.'
+  },
+  {
+    question: 'Why do I sink when trying to tread water?',
+    answer: 'The most common reasons are: (1) Muscle tension - tensing your neck and shoulders makes your body denser and causes you to sink; (2) Kicking vertically - pushing your legs straight down and pulling them back up creates downward drag; (3) Breathing issues - exhaling completely reduces your lungs\' natural buoyancy.'
+  },
+  {
+    question: 'At what age can children learn to tread water?',
+    answer: 'Children aged 5-6 and above, who can understand and follow instructions, are fully capable of learning survival treading skills. In Swim For Life\'s kids classes, we teach treading water through interactive games to keep it engaging and safe.'
+  },
+  {
+    question: 'Is it necessary to wear a life jacket or float when practicing in deep water?',
+    answer: 'During the initial transition from shallow to deep water, students must use floating aids (like a kickboard, pull buoy, or noodle) under 1-on-1 coach supervision. This prevents panic and allows them to lock in their muscle memory before swimming independently.'
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": `Treading Water Technique: The Ultimate Step-by-Step Survival Guide [${currentYear}]`,
+  "description": "Master the treading water technique with our professional guide. Learn the eggbeater kick, breaststroke kick treading, horizontal hand sculling, and breathing control.",
+  "image": "https://dayboi.vip/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Huy Manh",
+    "jobTitle": "Director & Head Swim Coach",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Vietnam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-02-05",
+  "dateModified": "2026-06-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/treading-water/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "Warm-up and breathing regulation",
+    "text": "Warm up on land for 5-10 minutes, focusing on the ankles, knees, and wrists. Enter the shallow end to practice rhythmic breathing (inhaling through the mouth, exhaling through the nose) to stabilize your heart rate.",
+    "url": "https://dayboi.vip/en/swimming-techniques/treading-water/",
+    "position": 1
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Horizontal sculling (hand movement)",
+    "text": "In chest-deep water, bend your arms slightly and place your hands 15-20cm below the surface. Sweep hands outward and inward in a horizontal figure-8 pattern, changing the pitch of your palms to generate continuous upward lift.",
+    "url": "https://dayboi.vip/en/swimming-techniques/treading-water/",
+    "position": 2
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Isolate the leg kick",
+    "text": "Use a kickboard or hold the pool gutter to practice your leg movement. You can use the breaststroke kick (co, flex, whip, squeeze) or the eggbeater kick (alternating circular movements of the legs).",
+    "url": "https://dayboi.vip/en/swimming-techniques/treading-water/",
+    "position": 3
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Combine arm and leg movements in deep water",
+    "text": "Move to the deep end under professional supervision. Coordinate the horizontal hand sculling with your chosen kick pattern. Keep your body vertical, relax your neck and shoulders, and look straight ahead.",
+    "url": "https://dayboi.vip/en/swimming-techniques/treading-water/",
+    "position": 4
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Apply rhythmic breathing and relaxation",
+    "text": "Inhale quickly through the mouth above water, hold it for 1-2 seconds to let your lungs act as a natural float, then exhale slowly through the nose underwater. Relax all non-active muscles to conserve energy.",
+    "url": "https://dayboi.vip/en/swimming-techniques/treading-water/",
+    "position": 5
+  }
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Tread Water Efficiently",
+  "description": "Learn the step-by-step biomechanical sequence to tread water in deep water without getting exhausted.",
+  "image": "https://dayboi.vip/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg",
+  "totalTime": "PT30M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Goggles" },
+    { "@type": "HowToSupply", "name": "Swim cap" },
+    { "@type": "HowToSupply", "name": "Swimwear" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Deep swimming pool" },
+    { "@type": "HowToTool", "name": "Pool noodle or kickboard" }
+  ],
+  "step": howToSteps,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/treading-water/"
+  }
+};
+
+const metadata = {
+  title: `Treading Water Technique: Complete Step-by-Step Survival Guide [${currentYear}]`,
+  description: "Learn how to tread water efficiently: master horizontal hand sculling, breaststroke kick treading, and the eggbeater kick. Complete survival guide with tips from certified coaches.",
+  canonical: "https://dayboi.vip/en/swimming-techniques/treading-water/",
+  image: "/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema,
+  howToSchema: howToSchema
+};
+
+const technique = {
+  slug: 'treading-water',
+  name: 'Treading Water',
+  badge: '🛟 Core Survival Skill',
+  description: 'Treading water is the single most important water survival skill, allowing you to stay afloat vertically in deep water with minimal effort. Master this skill with our certified coaches.',
+  difficulty: 'Survival' as const,
+  speed: 'Slow' as const,
+  calories: '300 - 450 kcal/h',
+  muscles: 'Thighs, calves, core, arm muscles',
+  videoId: 'c4GBGpEv3JQ',
+  videoPoster: '/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg',
+  videoAlt: 'Certified swim coach guiding a student on treading water technique in deep pool'
+};
+
+const toc = [
+  { id: 'importance', label: '1. Importance of Treading Water' },
+  { id: 'physics', label: '2. The Physics of Floating' },
+  { id: 'breaststroke-tread', label: '3. Treading with Breaststroke Kick' },
+  { id: 'eggbeater-tread', label: '4. Treading with Eggbeater Kick' },
+  { id: 'sculling-hand', label: '5. Sculling Hand Technique' },
+  { id: 'breath-control', label: '6. Breath Control & Buoyancy' },
+  { id: 'progression', label: '7. Step-by-Step Training Guide' },
+  { id: 'common-errors', label: '8. Common Mistakes to Avoid' },
+  { id: 'faq', label: '9. FAQ' }
+];
+
+const errors = [
+  {
+    title: 'Tensing the whole body',
+    problem: 'Tensing muscles increases body density and wastes oxygen, causing you to sink rapidly.',
+    solution: 'Relax completely. Use only enough force to move from the knees down and elbows down.'
+  },
+  {
+    title: 'Pushing water straight down (vertical hand slapping)',
+    problem: 'Creates an unstable bobbing motion, splashing water into your face and making breathing difficult.',
+    solution: 'Perform horizontal figure-8 sculling (∞) with palms always tilted slightly downward.'
+  },
+  {
+    title: 'Stretching legs out vertically',
+    problem: 'Reduces the surface area pushing the water, eliminating upward lift.',
+    solution: 'Maintain a slightly crouched "sitting" posture in the water, with thighs spread out to rotate your legs.'
+  },
+  {
+    title: 'Holding your breath (or hyperventilating)',
+    problem: 'Holding your breath causes early muscle fatigue; hyperventilating triggers panic in deep water.',
+    solution: 'Maintain a steady cycle: quick inhale through the mouth above water, brief hold, and slow nose exhale underwater.'
+  },
+  {
+    title: 'Pulling knees too close to the chest',
+    problem: 'Drops your center of gravity, pulling your head underwater and causing you to lose balance.',
+    solution: 'Keep thighs spread out at roughly 90-110 degrees relative to your torso. Focus on rotating calves and ankles.'
+  }
+];
+
+const relatedKeywords = ['treading water', 'survival swimming', 'float in deep water'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+  lang="en"
+>
+  <!-- 1. Importance -->
+  <section id="importance">
+    <h2>The Importance of Treading Water in Survival</h2>
+    <p>
+      <strong>Treading water</strong> is a fundamental aquatic survival skill. It allows a swimmer to remain upright and keep their head above water in a fixed position without holding onto any support. In deep-water emergencies, this skill can make the difference between life and death. It enables you to conserve energy while waiting for rescue or regaining composure. If you fall into deep water, trying to swim forward constantly without a rest point will exhaust you in a matter of minutes. In such cases, being able to tread water is your ultimate natural life jacket.
+    </p>
+
+    <h3>Why is treading water mandatory before entering deep pools?</h3>
+    <p>
+      When swimming in deep pools, lakes, rivers, or open oceans, you face many unpredictable variables. If you only know how to move forward using breaststroke or freestyle but do not know <strong>how to tread water without getting tired</strong>, you are in a highly vulnerable position. If you experience cramps, water in your goggles, a sudden wave, or simple exhaustion, you must be able to pause and stay afloat.
+    </p>
+    <p>
+      Without treading skills, the natural human instinct is to slap the water vertically and kick frantically to keep the head up. This panic response drains oxygen, causes rapid lactic acid build-up, and leads to exhaustion and sinking within 30 to 60 seconds. Knowing <strong>how to tread water</strong> keeps your airway clear, stabilizes your heart rate, and keeps you calm.
+    </p>
+
+    <h3>Real-world Insight from Swim For Life Coaches</h3>
+    <p>
+      At Swim For Life Vietnam, we emphasize that treading water is a life-saving tool first, and a sports skill second. Our Training Director, <strong>Nguyen Huy Manh</strong>, recalls coaching an adult student who was terrified of deep water due to a near-drowning childhood experience:
+    </p>
+    <p>
+      <em>"For the first few sessions, the student refused to step past the 1.2-meter line. Instead of pushing him to swim laps, we focused entirely on shallow-water vertical floating and hand sculling drills. Once he realized he could control his buoyancy and keep his chin above water using just his hands and breathing, his anxiety dissolved. By the fourth session, he confidently floated in the 2.1-meter deep end for three minutes straight."</em>
+    </p>
+
+    <div class="info-box important">
+      <span style="font-size: 1.5rem;">🛟</span>
+      <div>
+        <strong>Survival Fact:</strong> Studies show that over 80% of accidental drownings in deep water occur not because the victims cannot swim, but because they panic and exhaust themselves when they cannot find a place to hold. Treading water is your primary defense against exhaustion.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Physics -->
+  <section id="physics">
+    <h2>The Physics of Floating: Archimedes & Bernoulli</h2>
+    <p>
+      Efficient treading water relies on two key physical concepts: **Archimedes' Principle** (static buoyancy from air-filled lungs) and **Dynamic Lift** (hydrodynamic forces from horizontal sculling movements of the hands and legs). When you master these, staying afloat becomes a relaxed, low-energy movement rather than a physical struggle.
+    </p>
+
+    <h3>Archimedes' Principle and Your Internal Float</h3>
+    <p>
+      Archimedes' Principle states that a body immersed in a fluid is buoyed up by a force equal to the weight of the fluid displaced by the body. The human body's density is very close to that of water (roughly 0.98 to 1.02 g/cm³). This means we only need a tiny amount of extra lift to stay afloat. Muscle and bone are denser and sink, while fat is less dense and floats.
+    </p>
+    <p>
+      Your lungs are the most effective way to change your body's overall density. When filled with air, they act as a built-in life jacket. In our classes, we teach the **"70% lung volume rule."** Always keep your lungs partially filled (between 60% and 80% capacity). When breathing, exhale a small amount quickly and inhale immediately. Do not empty your lungs fully, as this causes you to sink instantly.
+    </p>
+
+    <h3>Hydrodynamic Lift and Bernoulli's Principle</h3>
+    <p>
+      To keep your head comfortably above the surface, you need dynamic lift. This is created by moving your hands and feet horizontally at a slight angle (the angle of attack). As your hands slice through the water, it creates a pressure difference (similar to an airplane wing or a boat oar), generating upward thrust.
+    </p>
+    <p>
+      Slapping your hands vertically downward only raises you for a split second, and the subsequent recovery pulls you back down. Proper treading water uses continuous horizontal hand sweeps (figure-8 sculling) and circular leg movements (eggbeater kick). These horizontal movements generate continuous upward lift without drag.
+    </p>
+  </section>
+
+  <!-- 3. Breaststroke Tread -->
+  <section id="breaststroke-tread">
+    <h2>Treading Water with a Breaststroke Kick</h2>
+    <p>
+      For beginners, **treading water with a breaststroke kick** is the easiest method to learn. It adapts the symmetrical leg kick from breaststroke into a vertical motion. Since most new swimmers learn breaststroke first, they already have the muscle memory and feel for the water.
+    </p>
+
+    <h3>The 4 Phases of the Vertical Breaststroke Kick:</h3>
+    <ol>
+      <li>
+        <strong>The Recovery (Draw):</strong> From a vertical posture, gently draw your heels toward your glutes by bending your knees. Keep knees hip-width apart; pushing them too wide generates drag. Keep this phase slow and relaxed.
+      </li>
+      <li>
+        <strong>The Flex (Ankle Setup):</strong> Flex your ankles outward so your toes point to the sides. The soles of your feet should face down toward the bottom of the pool.
+      </li>
+      <li>
+        <strong>The Whip (Propulsion):</strong> Kick your legs outward and downward in a circular, upside-down V path. Push the water down with the soles of your feet and inner shins.
+      </li>
+      <li>
+        <strong>The Squeeze:</strong> Snap your legs together to complete the kick. Pause for a brief fraction of a second (glide) to let the lift support you, then repeat.
+      </li>
+    </ol>
+
+    <div class="info-box tip">
+      <span style="font-size: 1.5rem;">💡</span>
+      <div>
+        <strong>Key Difference:</strong> Unlike horizontal breaststroke where you kick straight back to move forward, vertical treading requires you to kick downward at a 60 to 90-degree angle to create upward lift.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Eggbeater Tread -->
+  <section id="eggbeater-tread">
+    <h2>Treading Water with the Eggbeater Kick (Intermediate)</h2>
+    <p>
+      The **eggbeater kick** is the gold standard for treading water. It provides continuous, smooth lift by rotating your legs in alternating, opposite circular paths. This is the technique used by water polo players, synchronized swimmers, and professional lifeguards worldwide. Because the lift is continuous, your head remains perfectly level and your hands are completely free.
+    </p>
+
+    <h3>How the Eggbeater Kick Works:</h3>
+    <ul>
+      <li>
+        <strong>Posture:</strong> Sit vertically in the water as if resting on a wide armchair. Open your thighs to a 90-degree angle, with knees bent.
+      </li>
+      <li>
+        <strong>Left Leg:</strong> Rotate your calf and foot in a clockwise circle. Push water downward and inward with the inside of your foot and shin.
+      </li>
+      <li>
+        <strong>Right Leg:</strong> Rotate your calf and foot in a counter-clockwise circle.
+      </li>
+      <li>
+        <strong>Alternating Rhythm:</strong> While one leg recovers, the other pushes water. This constant alternation ensures there is no dead spot in your buoyancy, keeping you perfectly stable.
+      </li>
+    </ul>
+  </section>
+
+  <!-- 5. Sculling Hand -->
+  <section id="sculling-hand">
+    <h2>Sculling Hand Technique: The Figure-8 Motion</h2>
+    <p>
+      Hand sculling provides balance and additional lift. By moving your forearms and hands horizontally in a continuous figure-8 pattern (∞) under the surface, you create a steady pressure difference that supports your upper body.
+    </p>
+
+    <h3>Step-by-Step Sculling:</h3>
+    <ol>
+      <li>
+        <strong>Hand Position:</strong> Submerge your hands 15-20cm below the surface at chest level. Keep elbows bent slightly (100-120 degrees) and tucked near your sides.
+      </li>
+      <li>
+        <strong>Outward Sweep:</strong> Move your hands outward past shoulder width. Tilt your thumbs down and pinkies up (45-degree angle) to push water outward and downward.
+      </li>
+      <li>
+        <strong>Inward Sweep:</strong> Change the pitch of your hands. Tilt your pinkies down and thumbs up, sweeping your hands back toward the center.
+      </li>
+      <li>
+        <strong>Keep Fingers Closed:</strong> Keep your fingers naturally closed. Do not splay them (which lets water slide through) or tense them.
+      </li>
+    </ol>
+  </section>
+
+  <!-- 6. Breath Control -->
+  <section id="breath-control">
+    <h2>Breath Control and Deep-Water Buoyancy</h2>
+    <p>
+      Mastering your breathing is crucial to prevent fatigue. Rhythmic breathing lowers your heart rate, relaxes your muscles, and turns treading water into a sustainable, relaxed movement.
+    </p>
+    <ul>
+      <li><strong>Inhale Quick:</strong> When your chin clears the surface, take a quick, deep breath through your mouth.</li>
+      <li><strong>Hold Brief:</strong> Keep the air in your chest for 1-2 seconds to maximize static buoyancy.</li>
+      <li><strong>Exhale Slow:</strong> Submerge your face slightly (or keep it clear) and blow bubbles slowly through your nose for 3-4 seconds.</li>
+    </ul>
+    
+    <div class="info-box important">
+      <span style="font-size: 1.5rem;">💡</span>
+      <div>
+        <strong>Pro Technique: The Back Float.</strong> If your legs or arms grow tired during long treading sessions, tilt your head back until your ears are submerged, look straight up, push your chest and hips up, and relax. You will float horizontally without any physical effort, allowing you to rest.
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Progression -->
+  <section id="progression">
+    <h2>Step-by-Step Training Guide</h2>
+    <p>
+      Never practice treading water alone in the deep end. Always follow this safe, step-by-step progression:
+    </p>
+
+    <h3>Stage 1: Shallow Water Basics (Chest-Deep)</h3>
+    <p>Practice in chest-deep water where you can stand up at any time. Focus on horizontal hand sculling and practicing the eggbeater motion while sitting on the pool steps.</p>
+
+    <h3>Stage 2: Deep Water Gutter Practice</h3>
+    <p>Move to the deep end. Hold the pool gutter with one hand to stay safe. Practice the kick and sculling with your free hand. Get used to the feeling of deep water.</p>
+
+    <h3>Stage 3: Supported Treading (With Floats)</h3>
+    <p>Hold a pool noodle or kickboard to your chest. This supports your upper body, allowing you to focus 100% on coordinating your leg kicks and breathing without worrying about sinking.</p>
+
+    <h3>Stage 4: Independent Treading</h3>
+    <p>Remove all floats. Tread water independently for 10-30 seconds with a coach standing right next to you. Gradually increase your time as your confidence builds.</p>
+  </section>
+</TechniqueLayout>

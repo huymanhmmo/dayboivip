@@ -6,9 +6,10 @@ export interface Props {
   image: string;
   stats: Array<{ number: number; suffix: string; label: string }>;
   slug: string;
+  lang?: 'vi' | 'en';
 }
 
-const { title, subtitle, description, image, stats, slug } = Astro.props;
+const { title, subtitle, description, image, stats, slug, lang = 'vi' } = Astro.props;
 ---
 
 <header class="cl-hero">
@@ -29,7 +30,7 @@ const { title, subtitle, description, image, stats, slug } = Astro.props;
       <div class="cl-hero__content cl-animate">
         <span class="cl-hero__badge">
           <span class="cl-hero__badge-dot"></span>
-          Đăng Ký Học Thử Miễn Phí
+          {lang === 'vi' ? 'Đăng Ký Học Thử Miễn Phí' : 'Book Free Trial Session'}
         </span>
         <h1 class="cl-hero__title" set:html={title.replace(":", ": <span class='cl-text-highlight'>") + (title.includes(":") ? "</span>" : "")}></h1>
         <p class="cl-hero__subtitle">{description}</p>
@@ -39,7 +40,7 @@ const { title, subtitle, description, image, stats, slug } = Astro.props;
           {stats.map(stat => (
             <div class="cl-hero__stat">
               <span class="cl-hero__stat-number" data-counter data-target={stat.number} data-suffix={stat.suffix}>
-                {stat.number.toLocaleString('vi-VN')}{stat.suffix}
+                {stat.number.toLocaleString(lang === 'vi' ? 'vi-VN' : 'en-US')}{stat.suffix}
               </span>
               <span class="cl-hero__stat-label">{stat.label}</span>
             </div>
@@ -49,10 +50,10 @@ const { title, subtitle, description, image, stats, slug } = Astro.props;
         <!-- CTA buttons row -->
         <div class="cl-hero__cta">
           <a href="#dang-ky" class="cl-btn cl-btn-primary cl-btn-lg cl-btn-pulse">
-            <span>🚀 Đăng Ký Ngay</span>
+            <span>{lang === 'vi' ? '🚀 Đăng Ký Ngay' : '🚀 Register Now'}</span>
           </a>
           <a href="tel:0979121097" class="cl-btn cl-btn-outline cl-btn-lg">
-            <span>📞 Gọi: 0979.121.097</span>
+            <span>{lang === 'vi' ? '📞 Gọi: 0979.121.097' : '📞 Call: 0979.121.097'}</span>
           </a>
         </div>
       </div>
@@ -63,8 +64,8 @@ const { title, subtitle, description, image, stats, slug } = Astro.props;
           <div class="cl-hero__floating-badge">
             <div class="cl-hero__floating-badge-icon">⭐</div>
             <div>
-              <p class="cl-hero__floating-badge-title">Cam Kết 100%</p>
-              <p class="cl-hero__floating-badge-desc">Biết Bơi Sau Khóa Học</p>
+              <p class="cl-hero__floating-badge-title">{lang === 'vi' ? 'Cam Kết 100%' : '100% Guaranteed'}</p>
+              <p class="cl-hero__floating-badge-desc">{lang === 'vi' ? 'Biết Bơi Sau Khóa Học' : 'Swim After Course'}</p>
             </div>
           </div>
         </div>

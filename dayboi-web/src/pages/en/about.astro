@@ -1,0 +1,2082 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import YouTubeVideo from '../../components/YouTubeVideo.astro';
+
+const title = 'About Swim For Life Vietnam: Leading Professional Swimming School';
+const description = 'Learn about Swim For Life Vietnam - Our history, mission of popularizing swimming, team of professional coaches, and quality commitments.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'About Us' }
+];
+
+const faqData = [
+  {
+    question: 'When did Swim For Life start operating?',
+    answer: 'Swim For Life was established and has been operating for more than 10 years, starting from a group of coaches passionate about swimming with the mission of popularizing swimming skills for Vietnamese people, especially children. Over a decade of development, we have become one of the leading prestigious swimming schools in Vietnam.'
+  },
+  {
+    question: 'How many coaches does Swim For Life have?',
+    answer: 'Swim For Life currently has a team of dozens of professional coaches operating in Hanoi and Ho Chi Minh City. All coaches graduated from Pedagogical Universities or Universities of Sports and Physical Education, holding professional swimming coach certificates, first-aid certificates, and pedagogical psychology training.'
+  },
+  {
+    question: 'Is Swim For Life an official partner of Vinhomes?',
+    answer: 'Yes! Swim For Life is an official partner of Vinhomes in the free swimming lesson program for residents. We are present at many Vinhomes urban areas such as Times City, Ocean Park, Smart City, Grand Park and have successfully organized the Ocean City Swimmer Championship.'
+  },
+  {
+    question: 'What is Swim For Life\'s teaching philosophy?',
+    answer: 'Swim For Life pursues a "student-centric" philosophy. We believe that everyone is capable of learning how to swim; the key is method and patience. Our coaches do not just teach techniques but also help students overcome their fear of water, build confidence, and foster a love for aquatic activities.'
+  },
+  {
+    question: 'Does Swim For Life issue course completion certificates?',
+    answer: 'Yes! After completing the course and reaching skill standards, students will be issued a Certificate of Swimming Course Completion, verifying that their swimming skills meet safety standards. This certificate is valid for water-related sports and activities.'
+  },
+  {
+    question: 'How to contact Swim For Life?',
+    answer: 'You can contact Swim For Life via Hotline: 0979.121.097, email dayboivip@gmail.com, or register online on our website. We operate from 6:00 to 21:00 daily, including Saturdays and Sundays.'
+  }
+];
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": title,
+  "description": description,
+  "url": "https://dayboi.vip/en/about/",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": "https://dayboi.vip/en/#organization",
+    "name": "Swim For Life Vietnam Swimming Center",
+    "founder": {
+      "@type": "Person",
+      "name": "Nguyen Huy Manh",
+      "jobTitle": "Director",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Hanoi National University of Education"
+      }
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical="https://dayboi.vip/en/about/"
+  breadcrumbs={breadcrumbs}
+  schema={aboutSchema}
+  lang="en"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- ============ HERO SECTION — PREMIUM ============ -->
+  <section class="about-hero">
+    <div class="about-hero__bg">
+      <div class="about-hero__orb about-hero__orb--1"></div>
+      <div class="about-hero__orb about-hero__orb--2"></div>
+      <div class="about-hero__orb about-hero__orb--3"></div>
+      <div class="about-hero__particles" id="heroParticles"></div>
+    </div>
+    <div class="container about-hero__inner">
+      <div class="about-hero__badge anim-fade-in">
+        <span class="about-hero__badge-dot"></span>
+        Over 10 Years of Professional Swim Coaching
+      </div>
+      <h1 class="about-hero__title anim-fade-in anim-delay-1">
+        About <span class="about-hero__highlight">Swim For Life</span> Vietnam
+      </h1>
+      <p class="about-hero__subtitle anim-fade-in anim-delay-2">
+        We don't just teach swimming — we equip over <strong>10,000 students</strong> across Vietnam with vital survival skills and a lifelong passion for aquatic sports.
+      </p>
+
+      <!-- Animated Stats -->
+      <div class="about-hero__stats anim-fade-in anim-delay-3">
+        <div class="about-hero__stat">
+          <span class="about-hero__stat-number" data-count="10000">0</span>
+          <span class="about-hero__stat-suffix">+</span>
+          <span class="about-hero__stat-label">Students</span>
+        </div>
+        <div class="about-hero__stat-divider"></div>
+        <div class="about-hero__stat">
+          <span class="about-hero__stat-number" data-count="10">0</span>
+          <span class="about-hero__stat-suffix">years+</span>
+          <span class="about-hero__stat-label">Experience</span>
+        </div>
+        <div class="about-hero__stat-divider"></div>
+        <div class="about-hero__stat">
+          <span class="about-hero__stat-number" data-count="50">0</span>
+          <span class="about-hero__stat-suffix">+</span>
+          <span class="about-hero__stat-label">Linked Pools</span>
+        </div>
+        <div class="about-hero__stat-divider"></div>
+        <div class="about-hero__stat">
+          <span class="about-hero__stat-number" data-count="2">0</span>
+          <span class="about-hero__stat-suffix">Cities</span>
+          <span class="about-hero__stat-label">Hanoi & HCMC</span>
+        </div>
+      </div>
+    </div>
+    <!-- Wave -->
+    <div class="about-hero__wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C360,120 720,40 1080,80 C1260,100 1380,60 1440,80 L1440,120 L0,120 Z" fill="var(--color-bg)"/>
+        <path d="M0,90 C320,130 640,50 960,90 C1120,105 1300,70 1440,90 L1440,120 L0,120 Z" fill="var(--color-bg)" opacity="0.5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ MỤC LỤC + LỊCH SỬ ============ -->
+  <section class="about-section">
+    <div class="container">
+      <!-- TOC -->
+      <nav class="about-toc reveal">
+        <div class="about-toc__header">
+          <span class="about-toc__icon">📑</span>
+          <h2 class="about-toc__title">Table of Contents</h2>
+        </div>
+        <ol class="about-toc__list">
+          <li><a href="#lich-su-hinh-thanh">The History of Swim For Life</a></li>
+          <li><a href="#su-menh-tam-nhin">Mission & Vision</a></li>
+          <li><a href="#giam-doc">Director Nguyen Huy Manh</a></li>
+          <li><a href="#doi-ngu-hlv">Our Coaching Team</a></li>
+          <li><a href="#thanh-tuu">Key Achievements</a></li>
+          <li><a href="#chung-chi-giay-phep">Certificates & Licensing</a></li>
+          <li><a href="#cam-ket-chat-luong">Quality Commitments</a></li>
+          <li><a href="#faq-gioi-thieu">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <!-- HISTORY SECTION -->
+      <div class="about-content" id="lich-su-hinh-thanh">
+        <div class="about-section-header reveal">
+          <span class="about-section-badge">🏛️ History</span>
+          <h2 class="about-section-title">The Story and Development of Swim For Life Vietnam</h2>
+        </div>
+
+        <div class="about-history reveal">
+          <div class="about-history__text">
+            <p>
+              <strong>Swim For Life Vietnam Swimming Center</strong> was born from a burning passion for swimming and deep concern over the high rate of child drowning in Vietnam. According to World Health Organization (WHO) statistics, Vietnam has one of the highest child drowning rates in Southeast Asia, with thousands of tragic cases occurring annually. Driven by the desire to make a difference, Coach <strong>Nguyen Huy Manh</strong> — the founder of Swim For Life — set out to build a professional swimming school with the mission of popularizing swimming skills for Vietnamese people.
+            </p>
+
+            <p>
+              Starting as a small group of dedicated coaches, Swim For Life gradually grew, expanding from a dozen initial students to thousands of graduates each year. Through more than <strong>10 years</strong> of continuous development, Swim For Life has established itself as one of the leading prestigious swimming schools in Vietnam, operating in two major cities: <a href="/en/contact/">Hanoi and Ho Chi Minh City</a>.
+            </p>
+
+            <p>
+              Swim For Life operates officially under <strong>Your Dreams Joint Stock Company</strong> (Tax code: 0108879900), an enterprise legally established under Vietnamese law. With a solid legal foundation, professional management, and structured training programs, Swim For Life has steadily become a trusted brand chosen by thousands of families nationwide.
+            </p>
+          </div>
+
+          <!-- Company Structure Card -->
+          <div class="about-company-card reveal">
+            <div class="about-company-card__item">
+              <img src="/images/logo/swim-for-life-logo.png" alt="Swim For Life Vietnam Logo" loading="lazy" />
+              <span>Swim For Life<br/>Swim Center</span>
+            </div>
+            <div class="about-company-card__arrow">
+              <span>Subsidiary of</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="about-company-card__item">
+              <img src="/images/logo/your-dreams-logo.png" alt="Your Dreams Joint Stock Company Logo" loading="lazy" />
+              <span>Your Dreams<br/>Joint Stock Co.</span>
+            </div>
+          </div>
+
+          <div class="about-history__text reveal">
+            <p>
+              One of the key milestones in Swim For Life's journey is becoming an <strong>official partner of Vinhomes</strong> — Vietnam's leading real estate group. This partnership not only validates the reputation of Swim For Life but also opens up opportunities for thousands of Vinhomes residents to access high-quality, completely free swimming programs. From Vinhomes Times City and Ocean Park to Smart City, Swim For Life has successfully operated in major urban areas, bringing safe swimming skills to residents.
+            </p>
+          </div>
+
+          <blockquote class="about-quote reveal">
+            <div class="about-quote__mark">"</div>
+            <p class="about-quote__text">
+              We started with a simple dream: that every child in Vietnam knows how to swim and has the skills to survive in water. And after more than 10 years, that dream is gradually becoming a reality.
+            </p>
+            <footer class="about-quote__author">
+              <img src="/images/team/thay-nguyen-huy-manh.jpg" alt="Coach Nguyen Huy Manh" loading="lazy" />
+              <div>
+                <strong>Coach Nguyen Huy Manh</strong>
+                <span>Director of Swim For Life Vietnam</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SỨ MỆNH & TẦM NHÌN ============ -->
+  <section class="about-section about-section--alt" id="su-menh-tam-nhin">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">🎯 Sứ Mệnh</span>
+        <h2 class="about-section-title">Our Mission & Vision</h2>
+      </div>
+
+      <div class="about-mission-grid reveal">
+        <!-- Mission Card -->
+        <div class="about-mission-card about-mission-card--mission">
+          <div class="about-mission-card__icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <h3>Mission</h3>
+          <p>
+            Our mission is to <strong>popularize swimming skills and prevent water drowning</strong> for all ages, especially children in Vietnam. We believe that swimming is not just a sport, but a <strong>vital survival skill</strong> that everyone must be equipped with from an early age.
+          </p>
+          <ul class="about-mission-list">
+            <li>
+              <span class="about-mission-list__icon">🏊</span>
+              <div><strong>Water Survival Skills:</strong> Learn to swim, tread water, and rescue oneself in emergency situations.</div>
+            </li>
+            <li>
+              <span class="about-mission-list__icon">💪</span>
+              <div><strong>Health & Fitness:</strong> Develop muscle strength, enhance cardiovascular systems, and improve overall respiratory health.</div>
+            </li>
+            <li>
+              <span class="about-mission-list__icon">⭐</span>
+              <div><strong>Confidence Building:</strong> Help <a href="/en/courses/">children</a> overcome their fear of water and build mental resilience.</div>
+            </li>
+            <li>
+              <span class="about-mission-list__icon">❤️</span>
+              <div><strong>Healthy Habits:</strong> Cultivate an active lifestyle and improve overall quality of life.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="about-mission-card about-mission-card--vision">
+          <div class="about-mission-card__icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M4 24s7-14 20-14 20 14 20 14-7 14-20 14S4 24 4 24z" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="7" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <h3>Vision</h3>
+          <p>
+            Swim For Life aims to become the <strong>leading swimming training provider in Vietnam</strong>, expanding our network nationwide. We want every family to realize the importance of swimming skills, and every child to learn swimming properly, safely, and systematically.
+          </p>
+          <p>
+            In the long term, Swim For Life is committed to building a comprehensive aquatic ecosystem, including training amateur athletes, organizing community swimming tournaments, and cooperating with social organizations to combat drowning on a national scale.
+          </p>
+          <div class="about-mission-stat-highlight">
+            <span class="about-mission-stat-highlight__number">88%</span>
+            <span class="about-mission-stat-highlight__text">reduction in drowning risk when children learn water safety early <em>(Source: UNICEF)</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GIÁM ĐỐC ============ -->
+  <section class="about-section" id="giam-doc">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">👤 Founder</span>
+        <h2 class="about-section-title">Director Nguyen Huy Manh - The Founder of Swim For Life</h2>
+      </div>
+
+      <div class="about-founder reveal">
+        <div class="about-founder__media">
+          <YouTubeVideo
+            videoId="b4B7GfHEsuk"
+            poster="/images/team/thay-nguyen-huy-manh-2.png"
+            alt="Coach Nguyen Huy Manh - Founder and Director of Swim For Life Vietnam, graduated from Hanoi National University of Education"
+            width={400}
+            height={500}
+          />
+          <p class="about-founder__caption">
+            Coach Nguyen Huy Manh — Founder of Swim For Life
+          </p>
+        </div>
+
+        <div class="about-founder__content">
+          <div class="about-founder__intro">
+            <p>
+              <strong>Coach Nguyen Huy Manh</strong> is the founder and Managing Director of Swim For Life Vietnam. Graduating from <strong>Hanoi National University of Education</strong> — the leading pedagogical institution in Vietnam — Coach Manh possesses a solid educational foundation and a scientific, highly effective teaching approach.
+            </p>
+            <p>
+              With over <strong>12 years of experience</strong> in swim coaching, Coach Manh has directly trained and supervised thousands of students of all ages. He is well-known for his patience, dedication, and placing student safety and progress above all else.
+            </p>
+          </div>
+
+          <!-- Founder Tags -->
+          <div class="about-founder__tags">
+            <span class="about-founder__tag">🎓 Hanoi Nat. Univ. of Education</span>
+            <span class="about-founder__tag">🏊 12+ Years Experience</span>
+            <span class="about-founder__tag">👨‍🏫 10,000+ Students</span>
+            <span class="about-founder__tag">🤝 Vinhomes Partner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-founder-details reveal">
+        <p>
+          Coach Manh's journey with swimming began with a childhood love for aquatic sports. After graduating from University, he realized that many families did not fully recognize the importance of teaching water safety to their children. Many children, especially in rural areas, had no access to structured swimming lessons, leading to tragic water accidents.
+        </p>
+
+        <p>
+          Driven by the desire to change this, Coach Manh gathered like-minded colleagues to found Swim For Life with the motto: <strong>"Every student is a unique individual who deserves personal care and the most suitable teaching method."</strong> This philosophy serves as the guiding light for all Swim For Life operations, from designing course curriculums to selecting and training coaches.
+        </p>
+
+        <!-- Teaching Philosophy Cards -->
+        <h4>Teaching Philosophy of Coach Nguyen Huy Manh</h4>
+        <p>
+          Unlike many centers that focus solely on technique, Coach Manh built Swim For Life on a foundation of comprehensive education. According to him, an effective swimming lesson must harmoniously combine three factors: <strong>swimming technique, pedagogical psychology, and survival skills</strong>.
+        </p>
+
+        <div class="about-philosophy-grid">
+          <div class="about-philosophy-card reveal">
+            <div class="about-philosophy-card__number">01</div>
+            <h5>Swimming Technique</h5>
+            <p>Coaches must teach correct techniques from the start, never rushing progress at the expense of important details. Each movement must be precise and rhythmic before moving to the next level.</p>
+          </div>
+          <div class="about-philosophy-card reveal">
+            <div class="about-philosophy-card__number">02</div>
+            <h5>Pedagogical Psychology</h5>
+            <p>Recognizing that fear of water is the biggest obstacle, we specialize in mental coaching. Each instructor is a supportive friend who knows how to encourage students.</p>
+          </div>
+          <div class="about-philosophy-card reveal">
+            <div class="about-philosophy-card__number">03</div>
+            <h5>Survival Skills</h5>
+            <p>Besides the 4 core strokes (<a href="/en/swimming-techniques/">breaststroke</a>, <a href="/en/swimming-techniques/">freestyle</a>, <a href="/en/swimming-techniques/">backstroke</a>, <a href="/en/swimming-techniques/">butterfly</a>), we emphasize treading water — the most vital skill to stay alive in deep water.</p>
+          </div>
+        </div>
+
+        <p>
+          Under the leadership of Coach Manh, Swim For Life has made a strong impact on swimming education in Vietnam. Training over 10,000 successful students, establishing strategic partnerships with Vinhomes, and organizing the Ocean City Swimmer Championship are all testaments to the vision and dedication of the founder.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ĐỘI NGŨ HLV ============ -->
+  <section class="about-section about-section--alt" id="doi-ngu-hlv">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">👨‍🏫 Team</span>
+        <h2 class="about-section-title">Our Team of Professional Swimming Coaches</h2>
+      </div>
+
+      <div class="about-team-hero reveal">
+        <img
+          src="/images/classes/giao-vien-ho-tro-tan-tam.jpg"
+          alt="Dedicated swim coaching team from Swim For Life supporting students in the pool"
+          width="800"
+          height="450"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="about-team-intro reveal">
+        <p>
+          Our coaches are Swim For Life's most valuable asset. We understand that teaching quality depends entirely on the capability and dedication of the instructors. Therefore, Swim For Life applies an extremely strict selection and training process to ensure each coach meets the highest standards.
+        </p>
+      </div>
+
+      <!-- Standards Grid -->
+      <h3 class="reveal" style="margin-bottom: var(--space-8); text-align: center; color: var(--color-dark);">Coach Selection Standards at Swim For Life</h3>
+      <p class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto var(--space-10); color: var(--color-text-secondary);">
+        Every applicant wishing to join Swim For Life as a coach must meet all of the following requirements. Our multi-stage evaluation process ensures only the most qualified and passionate candidates join our team:
+      </p>
+
+      <div class="about-standards-grid">
+        <div class="about-standard-card reveal">
+          <div class="about-standard-card__icon">🎓</div>
+          <h4>Professional Qualification</h4>
+          <p>Graduated from Pedagogical or Sports Universities. Certified by authorized sports agencies.</p>
+        </div>
+        <div class="about-standard-card reveal">
+          <div class="about-standard-card__icon">🏥</div>
+          <h4>First Aid Certification</h4>
+          <p>Certified in First Aid and CPR, ensuring quick response in emergency situations. Mandatory for 100% of coaches.</p>
+        </div>
+        <div class="about-standard-card reveal">
+          <div class="about-standard-card__icon">🧠</div>
+          <h4>Pedagogical Psychology</h4>
+          <p>Trained in educational psychology to connect with children, adults, and those with aquaphobia.</p>
+        </div>
+        <div class="about-standard-card reveal">
+          <div class="about-standard-card__icon">🏊</div>
+          <h4>Practical Skills</h4>
+          <p>Master all 4 strokes, water treading, and life-saving rescue techniques.</p>
+        </div>
+        <div class="about-standard-card reveal">
+          <div class="about-standard-card__icon">❤️</div>
+          <h4>Ethical Standards</h4>
+          <p>Dedicated, patient, honest, and highly responsible. Puts student safety above all else.</p>
+        </div>
+      </div>
+
+      <div class="about-training-section reveal">
+        <h3>Internal Training Program</h3>
+        <p>
+          In addition to initial standards, Swim For Life builds a continuous internal training program. Every month, coaches participate in professional workshops, update teaching methods, share real-world experiences, and conduct peer reviews. This ensures our teaching quality remains high and keeps improving.
+        </p>
+        <p>
+          The internal training curriculum includes: advanced swimming techniques, modern pedagogy, emergency response handling, communication with parents and students, and nutrition and physical recovery advice. Swim For Life also regularly invites external experts to share insights with the team.
+        </p>
+      </div>
+
+      <div class="about-callout about-callout--tip reveal">
+        <span class="about-callout__icon">🌟</span>
+        <div>
+          <strong>The Swim For Life Coach Difference:</strong> Not only technically skilled, our coaches are experts in pedagogical psychology, helping students — especially children and water-anxious individuals — overcome mental barriers naturally and effectively. This is why parents trust us with their kids' <a href="/en/contact/">1-on-1 private lessons</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THÀNH TỰU ============ -->
+  <section class="about-section" id="thanh-tuu">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">🏆 Achievements</span>
+        <h2 class="about-section-title">Key Achievements of Swim For Life</h2>
+      </div>
+
+      <p class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto var(--space-12); color: var(--color-text-secondary); font-size: var(--text-lg);">
+        With over a decade of activity, Swim For Life is proud of our milestones, establishing ourselves as a leader in swim training in Vietnam.
+      </p>
+
+      <div class="about-achievements">
+        <div class="about-achievement reveal">
+          <div class="about-achievement__icon-wrap">
+            <span>👥</span>
+          </div>
+          <div class="about-achievement__content">
+            <h3>Over 10,000 Students Graduated Successfully</h3>
+            <p>
+              Over <strong>10,000 students</strong> — from 4-year-olds to seniors over 60 — have completed our courses and acquired safe swimming skills. Every graduate is a unique story, from children overcoming their initial fear of water to adults who can now confidently swim hundreds of meters continuously.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-achievement reveal">
+          <div class="about-achievement__icon-wrap about-achievement__icon-wrap--accent">
+            <span>🤝</span>
+          </div>
+          <div class="about-achievement__content">
+            <h3>Official Partner of Vinhomes</h3>
+            <p>
+              Swim For Life is trusted by Vinhomes to be their official partner for residential swimming programs. We currently operate at Vinhomes Times City, Ocean Park, Smart City, Grand Park, and many other premium projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-achievement about-achievement--full reveal">
+          <div class="about-achievement__image-wrapper">
+            <img
+              src="/images/events/giai-boi-kinh-ngu-ocean-city-2023.jpg"
+              alt="Ocean City Swimmer Championship 2023 organized by Swim For Life"
+              width="800"
+              height="450"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-achievement__content">
+            <h3>Organizing the Ocean City Swimmer Championship</h3>
+            <p>
+              The Ocean City Swimmer Championship is a community tournament organized by Swim For Life, attracting hundreds of young and adult swimmers. It serves not only as a healthy sports playground but also as a great motivator for students to showcase skills and connect.
+            </p>
+            <p>
+              The tournament is organized annually, expanding in scale. Content is diverse, divided by age group and level, ensuring everyone has a chance to participate. The radiant smiles and happy tears at the finish line are our greatest rewards.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-achievement reveal">
+          <div class="about-achievement__icon-wrap about-achievement__icon-wrap--success">
+            <span>🏊</span>
+          </div>
+          <div class="about-achievement__content">
+            <h3>Network of Over 50 Partner Pools</h3>
+            <p>
+              We have built a network of over <strong>50 high-quality partner pools</strong> in Hanoi and HCMC. All linked pools meet strict cleanliness, safety, and comfort standards, making it easy for students to choose a location close to home.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHỨNG CHỈ & GIẤY PHÉP ============ -->
+  <section class="about-section about-section--alt" id="chung-chi-giay-phep">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">📜 Legal</span>
+        <h2 class="about-section-title">Certificates & Operating Licenses</h2>
+      </div>
+
+      <div class="about-cert-showcase reveal">
+        <div class="about-cert-showcase__image">
+          <img
+            src="/images/certificate/giay-chung-nhan-khoa-hoc-boi.jpg"
+            alt="Sample Course Completion Certificate from Swim For Life Vietnam"
+            width="800"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-cert-showcase__info">
+          <p>
+            Swim For Life operates legally under **Your Dreams Joint Stock Company**, tax code **0108879900**, fully licensed according to Vietnamese regulations. We commit to transparency in all business and training operations.
+          </p>
+
+          <!-- Legal Entity Card -->
+          <div class="about-legal-card">
+            <div class="about-legal-card__logos">
+              <img src="/images/logo/swim-for-life-logo.png" alt="Swim For Life Vietnam Logo" loading="lazy" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="/images/logo/your-dreams-logo.png" alt="Your Dreams Joint Stock Company Logo" loading="lazy" />
+            </div>
+            <div class="about-legal-card__text">
+              <strong>Official Legal Entity</strong>
+              <p>Swim For Life is officially run by <strong>Your Dreams Joint Stock Company</strong> (Tax Code: 0108879900) — licensed by the Department of Planning and Investment for swimming sports education.</p>
+            </div>
+          </div>
+
+          <h3>Course Completion Certificate</h3>
+          <p>
+            Upon completing the course and meeting standards, each student is awarded a <strong>Certificate of Swimming Course Completion</strong>. The certificate details the student's name, mastered strokes, and safety levels, certified by the Swim For Life Board of Directors.
+          </p>
+
+          <h3>Coaches Professional Credentials</h3>
+          <p>
+            100% of Swim For Life coaches hold valid professional credentials, including university degrees, swimming coach licenses, and first-aid/CPR certifications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAM KẾT CHẤT LƯỢNG ============ -->
+  <section class="about-section" id="cam-ket-chat-luong">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">✨ Commitments</span>
+        <h2 class="about-section-title">Swim For Life Quality Commitments</h2>
+      </div>
+
+      <p class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto var(--space-12); color: var(--color-text-secondary);">
+        At Swim For Life, training quality is our non-negotiable core value. We provide clear, concrete commitments for complete peace of mind.
+      </p>
+
+      <div class="about-commitments-grid">
+        <div class="about-commitment-card about-commitment-card--featured reveal">
+          <div class="about-commitment-card__badge">Commitment #1</div>
+          <div class="about-commitment-card__emoji">✅</div>
+          <h3>Learn to Swim in 10-12 Lessons</h3>
+          <p>
+            With our scientific methods, we guarantee students will know how to swim within 10-12 lessons. "Knowing how to swim" means treading water, survival treading, and swimming at least 25m continuously. Not achieved? <strong>Learn again for free!</strong>
+          </p>
+        </div>
+
+        <div class="about-commitment-card reveal">
+          <div class="about-commitment-card__emoji">🆓</div>
+          <h3>Free Trial Class</h3>
+          <p>
+            One <strong>completely free trial session</strong> to experience our coaching style, meet your instructor, and inspect the pool. No strings attached. <a href="/en/contact/">Register now</a>.
+          </p>
+        </div>
+
+        <div class="about-commitment-card reveal">
+          <div class="about-commitment-card__emoji">📋</div>
+          <h3>Freeze Course for 2.5 Months</h3>
+          <p>
+            Pause and freeze your course up to <strong>2.5 months</strong> without losing any benefits. We support flexible extensions for illness, travel, or busy schedules.
+          </p>
+        </div>
+
+        <div class="about-commitment-card reveal">
+          <div class="about-commitment-card__emoji">👨‍🏫</div>
+          <h3>Dedicated Coach</h3>
+          <p>
+            Coaches are punctual, enthusiastic, patient, and respectful. Not satisfied with your current coach? Request a change <strong>at no extra cost</strong>.
+          </p>
+        </div>
+
+        <div class="about-commitment-card reveal">
+          <div class="about-commitment-card__emoji">🔒</div>
+          <h3>Absolute Safety</h3>
+          <p>
+            Coaches stay close to students in the water; professional safety gear is used; pool hygiene is verified. With <a href="/en/contact/">1-on-1 private lessons</a>, supervision is 100%.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-callout about-callout--important reveal">
+        <span class="about-callout__icon">🎯</span>
+        <div>
+          <strong>Swim For Life Golden Guarantee:</strong> Learn to swim in 10-12 lessons or learn again for free! We don't just teach you strokes — we make you confident, safe, and in love with the water. <a href="/en/contact/">Register now</a> to begin!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="about-section about-section--alt" id="faq-gioi-thieu">
+    <div class="container">
+      <div class="about-section-header reveal">
+        <span class="about-section-badge">❓ FAQ</span>
+        <h2 class="about-section-title">Frequently Asked Questions About Swim For Life</h2>
+      </div>
+
+      <p class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto var(--space-10); color: var(--color-text-secondary);">
+        Here are the most frequently asked questions. For other inquiries, please contact our hotline/Zalo at <a href="tel:0979121097">0979.121.097</a>.
+      </p>
+
+      <div class="about-faq-list reveal">
+        {faqData.map((item) => (
+          <div class="about-faq-item">
+            <button class="about-faq-question" type="button" aria-expanded="false">
+              <span>{item.question}</span>
+              <span class="about-faq-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="about-faq-answer">
+              <p>{item.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-cta reveal">
+        <div class="about-cta__bg">
+          <div class="about-cta__orb about-cta__orb--1"></div>
+          <div class="about-cta__orb about-cta__orb--2"></div>
+        </div>
+        <div class="about-cta__content">
+          <h2>🎉 Ready to Start Your Swimming Journey?</h2>
+          <p>
+            Sign up for a free trial class today and experience the professional coaching at Swim For Life Vietnam!
+          </p>
+          <div class="about-cta__buttons">
+            <a href="/en/contact/" class="btn btn-accent btn-lg pulse">
+              🎯 Book a Free Trial Session
+            </a>
+            <a href="tel:0979121097" class="btn btn-white btn-lg">
+              📞 Hotline: 0979.121.097
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  /* =============================================
+     ABOUT PAGE — PREMIUM SCOPED STYLES
+     ============================================= */
+
+  /* --- HERO --- */
+  .about-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--gradient-hero);
+    padding-top: calc(var(--header-height) + var(--space-8));
+    padding-bottom: var(--space-24);
+    text-align: center;
+  }
+
+  .about-hero__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .about-hero__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+  }
+
+  .about-hero__orb--1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,180,216,0.5), transparent 70%);
+    top: -10%; left: -5%;
+    animation: orbFloat 8s ease-in-out infinite;
+  }
+
+  .about-hero__orb--2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,119,182,0.4), transparent 70%);
+    bottom: -10%; right: -5%;
+    animation: orbFloat 10s ease-in-out infinite reverse;
+  }
+
+  .about-hero__orb--3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,107,53,0.2), transparent 70%);
+    top: 30%; left: 50%;
+    transform: translateX(-50%);
+    animation: orbFloat 12s ease-in-out infinite 2s;
+  }
+
+  @keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -20px); }
+    66% { transform: translate(-20px, 15px); }
+  }
+
+  .about-hero__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .about-hero__badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--color-success);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .about-hero__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: var(--space-6);
+    line-height: 1.15;
+  }
+
+  .about-hero__highlight {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .about-hero__subtitle {
+    font-size: var(--text-xl);
+    color: rgba(255,255,255,0.85);
+    max-width: 700px;
+    margin: 0 auto var(--space-12);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Stats */
+  .about-hero__stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .about-hero__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .about-hero__stat-number {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+  }
+
+  .about-hero__stat-suffix {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-accent-light);
+    margin-top: -4px;
+  }
+
+  .about-hero__stat-label {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+
+  .about-hero__stat-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* Wave */
+  .about-hero__wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    z-index: 3;
+    line-height: 0;
+  }
+
+  .about-hero__wave svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- ANIMATIONS --- */
+  .anim-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .anim-delay-1 { animation-delay: 0.2s; }
+  .anim-delay-2 { animation-delay: 0.4s; }
+  .anim-delay-3 { animation-delay: 0.6s; }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* --- SECTIONS --- */
+  .about-section {
+    padding: var(--space-20) 0;
+  }
+
+  .about-section--alt {
+    background: var(--color-bg-alt);
+  }
+
+  .about-section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .about-section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: linear-gradient(135deg, rgba(0,119,182,0.08), rgba(0,180,216,0.08));
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .about-section-title {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--color-dark);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: var(--leading-tight);
+  }
+
+  /* --- TOC --- */
+  .about-toc {
+    max-width: 600px;
+    margin: 0 auto var(--space-16);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,119,182,0.06);
+  }
+
+  .about-toc__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .about-toc__icon {
+    font-size: var(--text-xl);
+  }
+
+  .about-toc__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0;
+  }
+
+  .about-toc__list {
+    list-style: none;
+    counter-reset: toc;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .about-toc__list li {
+    counter-increment: toc;
+  }
+
+  .about-toc__list li a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .about-toc__list li a::before {
+    content: counter(toc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, rgba(0,119,182,0.08), rgba(0,180,216,0.08));
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .about-toc__list li a:hover {
+    background: rgba(0,119,182,0.04);
+    color: var(--color-primary);
+  }
+
+  /* --- CONTENT --- */
+  .about-content {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .about-history__text {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .about-history__text p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text);
+  }
+
+  /* Company Card */
+  .about-company-card {
+    max-width: 550px;
+    margin: var(--space-8) auto;
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,119,182,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    transition: all var(--transition-base);
+  }
+
+  .about-company-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .about-company-card__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .about-company-card__item img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .about-company-card__item span {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .about-company-card__arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-primary);
+  }
+
+  .about-company-card__arrow span {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* Quote */
+  .about-quote {
+    max-width: 700px;
+    margin: var(--space-10) auto;
+    padding: var(--space-8) var(--space-10);
+    background: linear-gradient(135deg, rgba(0,119,182,0.04), rgba(0,180,216,0.04));
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+    position: relative;
+  }
+
+  .about-quote__mark {
+    position: absolute;
+    top: -10px;
+    left: var(--space-6);
+    font-size: 5rem;
+    font-family: Georgia, serif;
+    color: var(--color-primary);
+    opacity: 0.15;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .about-quote__text {
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-dark);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  .about-quote__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .about-quote__author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary);
+  }
+
+  .about-quote__author strong {
+    display: block;
+    font-size: var(--text-base);
+    color: var(--color-dark);
+  }
+
+  .about-quote__author span {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  /* --- MISSION / VISION --- */
+  .about-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .about-mission-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,119,182,0.06);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-mission-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .about-mission-card--mission::before {
+    background: var(--gradient-primary);
+  }
+
+  .about-mission-card--vision::before {
+    background: var(--gradient-accent);
+  }
+
+  .about-mission-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .about-mission-card__icon {
+    margin-bottom: var(--space-5);
+    color: var(--color-primary);
+  }
+
+  .about-mission-card h3 {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-dark);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-mission-card p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-mission-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .about-mission-list li {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .about-mission-list__icon {
+    font-size: var(--text-xl);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .about-mission-list li div {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-mission-stat-highlight {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(255,138,92,0.06));
+    border: 1px solid rgba(255,107,53,0.15);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-4);
+  }
+
+  .about-mission-stat-highlight__number {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    color: var(--color-accent);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .about-mission-stat-highlight__text {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .about-mission-stat-highlight__text em {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+
+  /* --- FOUNDER --- */
+  .about-founder {
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto var(--space-10);
+  }
+
+  .about-founder__media {
+    flex-shrink: 0;
+    width: 340px;
+    text-align: center;
+  }
+
+  .about-founder__caption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .about-founder__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .about-founder__intro p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-founder__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .about-founder__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    background: linear-gradient(135deg, rgba(0,119,182,0.06), rgba(0,180,216,0.06));
+    color: var(--color-primary-dark);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(0,119,182,0.1);
+  }
+
+  .about-founder-details {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .about-founder-details p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-founder-details h4 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    color: var(--color-dark);
+  }
+
+  /* Philosophy Cards */
+  .about-philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .about-philosophy-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,119,182,0.06);
+    transition: all var(--transition-base);
+    position: relative;
+  }
+
+  .about-philosophy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-philosophy-card__number {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    color: rgba(0,119,182,0.08);
+    line-height: 1;
+    margin-bottom: var(--space-3);
+  }
+
+  .about-philosophy-card h5 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-philosophy-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  /* --- TEAM --- */
+  .about-team-hero {
+    max-width: 800px;
+    margin: 0 auto var(--space-10);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .about-team-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-team-intro {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--space-10);
+    text-align: center;
+  }
+
+  .about-team-intro p {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-standards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    max-width: 900px;
+    margin: 0 auto var(--space-12);
+  }
+
+  .about-standard-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,119,182,0.06);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .about-standard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .about-standard-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-standard-card h4 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-standard-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  .about-training-section {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--space-10);
+  }
+
+  .about-training-section h3 {
+    margin-bottom: var(--space-4);
+    color: var(--color-dark);
+  }
+
+  .about-training-section p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* --- CALLOUT --- */
+  .about-callout {
+    max-width: var(--max-width-content);
+    margin: var(--space-8) auto;
+    padding: var(--space-6) var(--space-8);
+    border-radius: var(--radius-lg);
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+
+  .about-callout--tip {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+  }
+
+  .about-callout--important {
+    background: rgba(0, 119, 182, 0.05);
+    border: 1px solid rgba(0, 119, 182, 0.12);
+  }
+
+  .about-callout__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .about-callout div {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* --- ACHIEVEMENTS --- */
+  .about-achievements {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .about-achievement {
+    display: flex;
+    gap: var(--space-8);
+    align-items: flex-start;
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,119,182,0.06);
+    transition: all var(--transition-base);
+  }
+
+  .about-achievement:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .about-achievement__icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(0,119,182,0.08), rgba(0,180,216,0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .about-achievement__icon-wrap--accent {
+    background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(255,138,92,0.08));
+  }
+
+  .about-achievement__icon-wrap--success {
+    background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(52,211,153,0.08));
+  }
+
+  .about-achievement__content h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-achievement__content p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-achievement--full {
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .about-achievement--full .about-achievement__content {
+    padding: var(--space-8) var(--space-10);
+  }
+
+  .about-achievement__image-wrapper {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .about-achievement__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .about-achievement--full:hover .about-achievement__image-wrapper img {
+    transform: scale(1.03);
+  }
+
+  /* --- CERTIFICATES --- */
+  .about-cert-showcase {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-10);
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .about-cert-showcase__image {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(0,119,182,0.08);
+  }
+
+  .about-cert-showcase__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-cert-showcase__info p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-cert-showcase__info h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Legal Card */
+  .about-legal-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    border: 1px solid rgba(0,119,182,0.1);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .about-legal-card__logos {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+  }
+
+  .about-legal-card__logos img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .about-legal-card__logos svg {
+    color: var(--color-text-muted);
+  }
+
+  .about-legal-card__text {
+    flex: 1;
+  }
+
+  .about-legal-card__text strong {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-dark);
+    margin-bottom: 2px;
+  }
+
+  .about-legal-card__text p {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    margin: 0 !important;
+    line-height: 1.4;
+  }
+
+  /* --- COMMITMENTS --- */
+  .about-commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .about-commitment-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,119,182,0.06);
+    transition: all var(--transition-base);
+  }
+
+  .about-commitment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .about-commitment-card__emoji {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-commitment-card h3 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-commitment-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  .about-commitment-card--featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--color-surface) 60%, rgba(16,185,129,0.03));
+    border: 1px solid rgba(16,185,129,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-commitment-card--featured::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, transparent 50%, var(--color-success) 50%);
+    opacity: 0.1;
+  }
+
+  .about-commitment-card__badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    padding: var(--space-1) var(--space-3);
+    background: rgba(16,185,129,0.1);
+    color: var(--color-success-dark);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* --- FAQ --- */
+  .about-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .about-faq-item {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,119,182,0.06);
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .about-faq-item:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,119,182,0.12);
+  }
+
+  .about-faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-5) var(--space-6);
+    background: none;
+    border: none;
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-dark);
+    text-align: left;
+    cursor: pointer;
+    gap: var(--space-4);
+  }
+
+  .about-faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0,119,182,0.05);
+    color: var(--color-primary);
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+  }
+
+  .about-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .about-faq-answer p {
+    padding: 0 var(--space-6) var(--space-5);
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm);
+  }
+
+  /* Active FAQ states */
+  .about-faq-item.active {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 20px rgba(0,119,182,0.08);
+  }
+
+  .about-faq-item.active .about-faq-icon {
+    transform: rotate(180deg);
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .about-faq-item.active .about-faq-answer {
+    max-height: 200px;
+  }
+
+  /* --- CTA BANNER --- */
+  .about-cta {
+    position: relative;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-16) var(--space-8);
+    text-align: center;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .about-cta__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .about-cta__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+  }
+
+  .about-cta__orb--1 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,107,53,0.4), transparent 70%);
+    top: -20%; left: -10%;
+  }
+
+  .about-cta__orb--2 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,180,216,0.4), transparent 70%);
+    bottom: -20%; right: -10%;
+  }
+
+  .about-cta__content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .about-cta__content h2 {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: white;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-cta__content p {
+    font-size: var(--text-lg);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: var(--space-8);
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .about-cta__buttons .btn-white {
+    background: white;
+    color: var(--color-primary-dark);
+  }
+
+  .about-cta__buttons .btn-white:hover {
+    background: var(--color-bg-alt);
+    transform: translateY(-2px);
+  }
+
+  /* --- REVEAL CLASSES (JS triggered) --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* =============================================
+     RESPONSIVE
+     ============================================= */
+  @media (max-width: 992px) {
+    .about-mission-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .about-cert-showcase {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .about-commitments-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-commitment-card--featured {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      min-height: auto;
+      padding-top: calc(var(--header-height) + var(--space-6));
+      padding-bottom: var(--space-16);
+    }
+
+    .about-hero__stats {
+      gap: var(--space-4);
+    }
+
+    .about-hero__stat-divider {
+      display: none;
+    }
+
+    .about-hero__stat {
+      min-width: 80px;
+    }
+
+    .about-section {
+      padding: var(--space-12) 0;
+    }
+
+    .about-founder {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-founder__media {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .about-philosophy-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-achievement {
+      flex-direction: column;
+    }
+
+    .about-commitments-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+      padding: var(--space-10) var(--space-6);
+    }
+
+    .about-cta__content h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .about-quote {
+      padding: var(--space-6) var(--space-6);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-hero__stats {
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .about-cta__buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-cta__buttons .btn {
+      width: 100%;
+    }
+
+    .about-standards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // ======== SCROLL REVEAL ========
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  }
+
+  // ======== COUNTER ANIMATION ========
+  function initCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count);
+          animateCounter(el, target);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => observer.observe(el));
+  }
+
+  function animateCounter(el: Element, target: number) {
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+      const current = Math.round(eased * target);
+
+      if (target >= 10000) {
+        el.textContent = current.toLocaleString('en-US');
+      } else {
+        el.textContent = current.toString();
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // ======== FAQ ACCORDION ========
+  function initFAQ() {
+    const items = document.querySelectorAll('.about-faq-item');
+    items.forEach(item => {
+      const btn = item.querySelector('.about-faq-question');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        // Close all
+        items.forEach(i => i.classList.remove('active'));
+        // Toggle current
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  // ======== INIT ========
+  function initAboutPage() {
+    initReveal();
+    initCounters();
+    initFAQ();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutPage);
+  } else {
+    initAboutPage();
+  }
+
+  document.addEventListener('astro:page-load', initAboutPage);
+</script>

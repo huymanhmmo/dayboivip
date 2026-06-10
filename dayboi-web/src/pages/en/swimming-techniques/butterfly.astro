@@ -1,0 +1,332 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Techniques', href: '/en/swimming-techniques/' },
+  { label: 'Butterfly' },
+];
+
+const faqData = [
+  {
+    question: 'Is butterfly the hardest swimming stroke to learn?',
+    answer: 'Yes, butterfly is widely considered the most difficult and physically demanding swimming stroke. It requires exceptional core strength, shoulder flexibility, and precise timing. However, when taught step-by-step with private coaching, most swimmers can master the basic rhythm in 10-12 sessions.',
+  },
+  {
+    question: 'Can beginners learn butterfly directly?',
+    answer: 'We strongly advise against learning butterfly as your first stroke. Swimmers should have a solid foundation in breaststroke and freestyle first. Knowing how to breathe, float, and coordinate other strokes makes learning the dolphin kick and arm recovery much safer and faster.',
+  },
+  {
+    question: 'How do I avoid shoulder pain when swimming butterfly?',
+    answer: 'Shoulder strain occurs when you try to lift your arms out of the water using pure shoulder muscle. Instead, rely on the double dolphin kick. The second kick (when hands push back) creates an upward thrust that naturally raises your shoulders, making arm recovery effortless.',
+  },
+  {
+    question: 'What is the difference between flutter kick and dolphin kick?',
+    answer: 'A flutter kick (freestyle) is an alternating up-and-down movement of the legs. A dolphin kick (butterfly) requires both legs to be held together and whipped down simultaneously in a continuous body wave that starts from your chest and moves down to your toes.',
+  },
+  {
+    question: 'How many calories does butterfly burn?',
+    answer: 'Butterfly is the king of fat-burning swimming strokes, burning between 700 - 900 calories per hour. Because it engages the entire core and lower back continuously, it is highly effective for core strengthening and calorie expenditure.',
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Butterfly Stroke Technique: Complete Step-by-Step Guide",
+  "description": "Learn how to swim the butterfly stroke with perfect biomechanics. Complete guide on the dolphin body wave, double dolphin kick, keyhole arm pull, and breathing rhythm.",
+  "image": "https://dayboi.vip/images/classes/giao-vien-chinh-sua-ky-thuat.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Huy Manh",
+    "jobTitle": "Director & Head Swim Coach",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Vietnam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-02-01",
+  "dateModified": "2026-06-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/butterfly/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "The Dolphin Wave Setup",
+    "text": "Initiate a fluid body wave starting from your head and chest. Press your chest down into the water, allowing your hips to rise.",
+    "url": "https://dayboi.vip/en/swimming-techniques/butterfly/",
+    "position": 1
+  },
+  {
+    "@type": "HowToStep",
+    "name": "First Dolphin Kick",
+    "text": "Perform a powerful downward sweep of both legs together as your hands enter the water. This lifts the hips and sets up the glide.",
+    "url": "https://dayboi.vip/en/swimming-techniques/butterfly/",
+    "position": 2
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Keyhole Arm Pull",
+    "text": "Sweep both hands outward, then pull them inward under the chest in a keyhole-shaped path. Transition into a hard push past the thighs.",
+    "url": "https://dayboi.vip/en/swimming-techniques/butterfly/",
+    "position": 3
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Second Dolphin Kick & Breath",
+    "text": "Whip your legs down a second time precisely as hands finish the push. Use the lift to raise your chin and inhale quickly.",
+    "url": "https://dayboi.vip/en/swimming-techniques/butterfly/",
+    "position": 4
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Symmetrical Arm Recovery",
+    "text": "Vung both arms forward over the water simultaneously. Keep wrists relaxed and head low, entering face first before hands.",
+    "url": "https://dayboi.vip/en/swimming-techniques/butterfly/",
+    "position": 5
+  }
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Swim Butterfly Efficiently",
+  "description": "Learn the step-by-step biomechanical sequence to coordinate the double dolphin kick and keyhole arm pull.",
+  "image": "https://dayboi.vip/images/classes/giao-vien-chinh-sua-ky-thuat.jpg",
+  "totalTime": "PT45M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Goggles" },
+    { "@type": "HowToSupply", "name": "Swimwear" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Swimming pool" }
+  ],
+  "step": howToSteps,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/butterfly/"
+  }
+};
+
+const metadata = {
+  title: `Butterfly Stroke Technique: Complete Step-by-Step Guide [${currentYear}]`,
+  description: "Learn how to swim the butterfly stroke. Detailed guide on dolphin kick, keyhole arm sweep, body wave, and double-kick coordination.",
+  canonical: "https://dayboi.vip/en/swimming-techniques/butterfly/",
+  image: "/images/classes/giao-vien-chinh-sua-ky-thuat.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema,
+  howToSchema: howToSchema
+};
+
+const technique = {
+  slug: 'butterfly',
+  name: 'Butterfly',
+  badge: '🦋 Most Athletic & Powerful Stroke',
+  description: 'Butterfly is the most visually stunning yet physically demanding stroke, utilizing a continuous dolphin body wave and symmetrical arm recovery. Learn it with Swim For Life.',
+  difficulty: 'Advanced' as const,
+  speed: 'Very fast' as const,
+  calories: '700 - 800 kcal/h',
+  muscles: 'Core, Lats, Shoulders, Chest, Biceps, Glutes',
+  videoId: 'wnxSNuvYBJI',
+  videoPoster: '/images/classes/giao-vien-chinh-sua-ky-thuat.jpg',
+  videoAlt: 'HLV Swim For Life chỉnh sửa kỹ thuật uốn sóng thân cho học viên học bơi bướm'
+};
+
+const toc = [
+  { id: 'overview', label: '1. Butterfly Overview' },
+  { id: 'benefits', label: '2. Health Benefits' },
+  { id: 'dolphin-wave', label: '3. Dolphin Kick & Body Wave' },
+  { id: 'keyhole-pull', label: '4. Arm Pull Technique' },
+  { id: 'breathing', label: '5. Breathing Rhythm' },
+  { id: 'coordination', label: '6. Full Stroke Coordination' },
+  { id: 'dryland-drills', label: '7. Dryland Exercises' },
+  { id: 'water-drills', label: '8. Pool Drills' },
+  { id: 'common-errors', label: '9. Common Mistakes' },
+  { id: 'course', label: '10. Butterfly Courses' },
+  { id: 'faq', label: '11. FAQ' }
+];
+
+const errors = [
+  {
+    title: 'Bending knees too much (Kicking like breaststroke)',
+    problem: 'Drawing knees forward creates enormous frontal drag, sinking the hips and halting forward momentum.',
+    solution: 'Focus on initiating the dolphin wave from the chest and hips. Keep knees long and relaxed; let ankles flick the water.'
+  },
+  {
+    title: 'Late breathing (Breathing during recovery)',
+    problem: 'Trying to breathe when arms are recovering over the water drops the chest, stops momentum, and leads to swallowing water.',
+    solution: 'Lift your chin to breathe early—during the inward sweep and push phase. Head must submerge before arms enter.'
+  },
+  {
+    title: 'Stiff shoulders during arm recovery',
+    problem: 'Tensing shoulders and arms during recovery creates high fatigue and strains the rotator cuff.',
+    solution: 'Relax wrists and shoulders. Use the momentum of the push phase to swing arms wide and low over the water.'
+  },
+  {
+    title: 'Missing the second dolphin kick',
+    problem: 'Kicking only once per cycle causes the hips to sink during the push phase, making arm recovery extremely heavy.',
+    solution: 'Perform the second downward kick exactly as hands finish pushing past the hips. This lifts the upper body naturally.'
+  }
+];
+
+const relatedKeywords = ['butterfly stroke', 'dolphin kick', 'butterfly arms', 'advanced swimming'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+  lang="en"
+>
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2>What is the Butterfly Stroke? The Dolphin Wave</h2>
+
+    <p>The <strong>Butterfly Stroke</strong> is the second fastest competitive swimming style, celebrated for its spectacular dolphin-like body waves and powerful, symmetrical arm recoveries. It is the most advanced and physically demanding stroke, requiring core strength, spinal flexibility, and precise coordination.</p>
+
+    <p>Biomedically, butterfly relies on a continuous kinetic chain wave that travels from the head, down the spine, and is released through the feet. It was developed in the 1930s as a variation of breaststroke and became an official Olympic event in 1952.</p>
+
+    <p>At <strong>Swim For Life Vietnam</strong>, we teach butterfly as an advanced course. HLV <strong>Nguyen Huy Manh</strong> notes: <em>"Butterfly is a rhythm stroke. If your timing is right, the water lifts you up. We teach students to connect the dolphin wave with the arm sweeps, making the movement feel fluid and graceful rather than exhausting."</em></p>
+  </section>
+
+  <!-- 2. Benefits -->
+  <section id="benefits">
+    <h2>Health Benefits of Butterfly</h2>
+
+    <p>Butterfly is the ultimate total-body conditioning stroke:</p>
+    <ul>
+      <li><strong>Maximum Calorie Burn:</strong> Burning up to 800 kcal/hour, it leads all strokes in metabolic expenditure and fat reduction.</li>
+      <li><strong>Core Powerhouse:</strong> The continuous dolphin kick activates the rectus abdominis, obliques, and lower back muscles, building a strong core.</li>
+      <li><strong>Shoulder & Chest Development:</strong> The symmetrical recovery expands chest flexibility and builds strength in the upper back and shoulder girdle.</li>
+      <li><strong>Spinal Mobility:</strong> The wave motion promotes flexibility and articulation in the thoracic and lumbar spine.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Dolphin Wave -->
+  <section id="dolphin-wave">
+    <h2>The Dolphin Kick and Body Wave</h2>
+
+    <p>The **Dolphin Kick** is the engine of the butterfly stroke. Keep legs together and move them as a single flipper:</p>
+    <ul>
+      <li><strong>Wave Origin:</strong> The wave does not start at the knees; it begins at the chest. Press your chest down into the water, which naturally pushes your hips up.</li>
+      <li><strong>The Downward Whip:</strong> Whip your legs down by flexing your hips. Keep ankles relaxed to snap the water.</li>
+      <li><strong>Double Kick Rhythm:</strong> You must kick twice per arm cycle:
+        <ul>
+          <li><strong>Kick 1 (Entry):</strong> Kicking as hands enter the water to raise the hips.</li>
+          <li><strong>Kick 2 (Exit):</strong> Kicking as hands push past the thighs to lift the chin for breathing.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 4. Keyhole Pull -->
+  <section id="keyhole-pull">
+    <h2>The Arm Stroke: The Keyhole Pattern</h2>
+
+    <p>Both arms move simultaneously under the water in a keyhole-like path:</p>
+    <ol>
+      <li><strong>Entry:</strong> Hands enter thumb-first, shoulder-width apart, fingers slightly angled outward.</li>
+      <li><strong>Sweep & Catch:</strong> Sweep hands outward, then pull them inward under your chest (drawing the top of a keyhole). Keep elbows high.</li>
+      <li><strong>Push:</strong> Push hands forcefully backward past the hips. Accelerate through this phase to generate maximum speed.</li>
+      <li><strong>Recovery:</strong> Sweep arms wide and low over the surface. Thumbs point down, shoulders and wrists relaxed.</li>
+    </ol>
+  </section>
+
+  <!-- 5. Breathing -->
+  <section id="breathing">
+    <h2>Breathing Timing in Butterfly</h2>
+
+    <p>Breathing requires perfect synchronization: **Head rises before hands, head drops before hands.**</p>
+    <ol>
+      <li>Start lifting your chin forward as hands sweep inward under the chest.</li>
+      <li>Inhale quickly through your mouth as the second kick lifts your shoulders. Keep your chin low, scanning the surface.</li>
+      <li>Submerge your face before hands enter the water in front. Exhale slowly under water.</li>
+    </ol>
+  </section>
+
+  <!-- 6. Coordination -->
+  <section id="coordination">
+    <h2>Stroke Coordination Chart</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Arm Action</th>
+          <th>Leg Action</th>
+          <th>Breathing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Entry</td>
+          <td>Hands enter shoulder-width</td>
+          <td><strong>Kick 1 (Down)</strong></td>
+          <td>Face submerged, start exhale</td>
+        </tr>
+        <tr>
+          <td>2. Catch & Pull</td>
+          <td>Sweep inward under chest</td>
+          <td>Legs rise up straight</td>
+          <td>Exhaling under water</td>
+        </tr>
+        <tr>
+          <td>3. Push</td>
+          <td>Push hard past thighs</td>
+          <td><strong>Kick 2 (Down)</strong></td>
+          <td>Lift chin to inhale quickly</td>
+          </tr>
+        <tr>
+          <td>4. Recovery</td>
+          <td>Sweep arms wide over water</td>
+          <td>Legs rise up straight</td>
+          <td>Face enters before hands touch</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 10. Courses -->
+  <section id="course">
+    <h2>Master Butterfly at Swim For Life</h2>
+
+    <p>Ready to master the most athletic swimming stroke? Our 1-on-1 private lessons at Swim For Life help you build the strength, timing, and flexibility needed to swim butterfly with grace.</p>
+
+    <h3>What We Offer:</h3>
+    <ul>
+      <li><strong>Customized Wave Drills:</strong> Structured lessons focusing on spinal articulation and chest pressing.</li>
+      <li><strong>Rotator Cuff Protection:</strong> Learn to recover your arms without straining your shoulder joints.</li>
+      <li><strong>Flexible Scheduling:</strong> Arrange sessions at premium pools across Hanoi and HCMC.</li>
+    </ul>
+  </section>
+</TechniqueLayout>

@@ -12,22 +12,24 @@ export interface Props {
       cta: string;
     }>;
   };
+  lang?: 'vi' | 'en';
 }
 
-const { pricing } = Astro.props;
+const { pricing, lang = 'vi' } = Astro.props;
+const isQuote = (price: string) => price === "Liên hệ báo giá" || price === "Contact for a quote";
 ---
 
 <section class="cl-section" id="bang-gia">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Bảng Giá Khóa Học
+        {lang === 'vi' ? 'Bảng Giá Khóa Học' : 'Course Pricing'}
       </span>
       <h2 class="cl-section-title__heading">
-        Học Phí Ưu Đãi & Gói Lớp Học
+        {lang === 'vi' ? 'Học Phí Ưu Đãi & Gói Lớp Học' : 'Tuition Fees & Packages'}
       </h2>
       <p class="cl-section-title__sub">
-        Cam kết hiệu quả tối đa cho từng học viên với mức chi phí hợp lý nhất. Chọn gói học phù hợp với nhu cầu của bạn.
+        {lang === 'vi' ? 'Cam kết hiệu quả tối đa cho từng học viên với mức chi phí hợp lý nhất. Chọn gói học phù hợp với nhu cầu của bạn.' : 'Guaranteed progress for every student with competitive rates. Select the package that fits your needs.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
@@ -40,8 +42,8 @@ const { pricing } = Astro.props;
           )}
           <h3 class="cl-pricing__name">{tier.name}</h3>
           
-          <div class="cl-pricing__price" style={tier.price === "Liên hệ báo giá" ? "font-size: 1.8rem; line-height: 1.2;" : ""}>
-            {tier.price}{tier.price !== "Liên hệ báo giá" && <sup>đ</sup>}
+          <div class="cl-pricing__price" style={isQuote(tier.price) ? "font-size: 1.8rem; line-height: 1.2;" : ""}>
+            {tier.price}{!isQuote(tier.price) && <sup>đ</sup>}
           </div>
           <p class="cl-pricing__period">/{tier.period}</p>
           
@@ -52,7 +54,7 @@ const { pricing } = Astro.props;
           </ul>
           
           <a href="#dang-ky" class={`cl-btn ${tier.highlight ? 'cl-btn-primary' : 'cl-btn-secondary'} cl-btn-lg`} style="width: 100%;">
-            {tier.cta || "Đăng Ký Ngay"}
+            {tier.cta || (lang === 'vi' ? 'Đăng Ký Ngay' : 'Register Now')}
           </a>
         </div>
       ))}
@@ -60,7 +62,7 @@ const { pricing } = Astro.props;
 
     {pricing.note && (
       <p class="cl-pricing__note cl-animate">
-        * <strong>Lưu ý:</strong> {pricing.note}
+        * <strong>{lang === 'vi' ? 'Lưu ý:' : 'Note:'}</strong> {pricing.note}
       </p>
     )}
   </div>

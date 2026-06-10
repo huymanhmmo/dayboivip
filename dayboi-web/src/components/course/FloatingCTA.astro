@@ -1,4 +1,9 @@
 ---
+export interface Props {
+  lang?: 'vi' | 'en';
+}
+
+const { lang = 'vi' } = Astro.props;
 ---
 
 <div class="cl-floating-cta" id="mobile-floating-cta">
@@ -6,7 +11,7 @@
     <span>💬 Zalo</span>
   </a>
   <a href="#dang-ky" class="cl-btn cl-btn-primary">
-    <span>🚀 Đăng Ký Lớp</span>
+    <span>{lang === 'vi' ? '🚀 Đăng Ký Lớp' : '🚀 Register Now'}</span>
   </a>
 </div>
 

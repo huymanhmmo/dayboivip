@@ -80,19 +80,21 @@ export interface Props {
   };
   breadcrumbs: Array<{ label: string; href?: string }>;
   schema?: any;
+  lang?: 'vi' | 'en';
 }
 
-const { course, breadcrumbs, schema } = Astro.props;
+const { course, breadcrumbs, schema, lang = 'vi' } = Astro.props;
 ---
 
 <PageLayout
   title={course.title}
   description={course.description}
-  canonical={`https://dayboi.vip/khoa-hoc-boi/${course.slug}/`}
+  canonical={lang === 'vi' ? `https://dayboi.vip/khoa-hoc-boi/${course.slug}/` : `https://dayboi.vip/en/courses/${course.slug}/`}
   image={course.heroImage}
   type="article"
   breadcrumbs={breadcrumbs}
   schema={schema}
+  lang={lang}
 >
   <div class="course-landing">
     <!-- Hero Section (Attention) -->
@@ -103,27 +105,32 @@ const { course, breadcrumbs, schema } = Astro.props;
       image={course.heroImage}
       stats={course.stats}
       slug={course.slug}
+      lang={lang}
     />
 
     <!-- Quick Info Grid (Interest) -->
     <CourseOverview 
       overview={course.overview}
       slug={course.slug}
+      lang={lang}
     />
 
     <!-- Problem Section (Interest) -->
     <CourseProblem 
       problems={course.problems}
+      lang={lang}
     />
 
     <!-- Benefits / Unique Value Proposition (Desire) -->
     <CourseUSP 
       benefits={course.benefits}
+      lang={lang}
     />
 
     <!-- Curriculum Section (Desire) -->
     <CourseCurriculum 
       curriculum={course.curriculum}
+      lang={lang}
     />
 
     <!-- Animated Statistics Banner (Action / Social Proof) -->
@@ -134,29 +141,34 @@ const { course, breadcrumbs, schema } = Astro.props;
     <!-- Instructor Showcase -->
     <CourseInstructor 
       instructor={course.instructor}
+      lang={lang}
     />
 
     <!-- Testimonials Section (Social Proof) -->
     <CourseTestimonial 
       testimonials={course.testimonials}
+      lang={lang}
     />
 
     <!-- Class Gallery Section -->
     <CourseGallery 
       slug={course.slug}
+      lang={lang}
     />
 
     <!-- Pricing Tables (Action) -->
     <CoursePricing 
       pricing={course.pricing}
+      lang={lang}
     />
 
     <!-- Trust & Quality Guarantee Badges -->
-    <CourseTrust />
+    <CourseTrust lang={lang} />
 
     <!-- FAQ Accordion -->
     <CourseFAQ 
       faqs={course.faqs}
+      lang={lang}
     />
 
     <!-- Form Section -->
@@ -164,35 +176,35 @@ const { course, breadcrumbs, schema } = Astro.props;
       <div class="cl-section__container">
         <div class="cl-section-title">
           <span class="cl-section-title__badge">
-            Đăng Ký Ngay
+            {lang === 'vi' ? 'Đăng Ký Ngay' : 'Book Today'}
           </span>
           <h2 class="cl-section-title__heading">
-            Bắt Đầu Hành Trình Học Bơi Hôm Nay
+            {lang === 'vi' ? 'Bắt Đầu Hành Trình Học Bơi Hôm Nay' : 'Start Your Swimming Journey Today'}
           </h2>
           <p class="cl-section-title__sub">
-            Để lại thông tin dưới đây, Swim For Life sẽ liên hệ tư vấn lộ trình và xếp lịch học thử MIỄN PHÍ sớm nhất cho bạn/bé.
+            {lang === 'vi' ? 'Để lại thông tin dưới đây, Swim For Life sẽ liên hệ tư vấn lộ trình và xếp lịch học thử MIỄN PHÍ sớm nhất cho bạn/bé.' : 'Fill in the form below. Swim For Life will contact you to set up your FREE trial lesson immediately.'}
           </p>
           <span class="cl-section-title__decoration"></span>
         </div>
 
         <div class="cl-form-container">
           <div class="cl-form-info">
-            <h3 class="cl-form-info__title">Hỗ Trợ Nhanh 24/7</h3>
+            <h3 class="cl-form-info__title">{lang === 'vi' ? 'Hỗ Trợ Nhanh 24/7' : '24/7 Support'}</h3>
             <p class="cl-form-info__text">
-              Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:
+              {lang === 'vi' ? 'Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:' : 'Reach out directly via phone call or Zalo chat to get answers instantly:'}
             </p>
             <div class="cl-form-info__links">
               <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
                 <span class="cl-form-info__icon">📞</span>
                 <div>
-                  <span class="cl-form-info__label">Hotline tư vấn</span>
+                  <span class="cl-form-info__label">{lang === 'vi' ? 'Hotline tư vấn' : 'Hotline'}</span>
                   <span class="cl-form-info__value">0979.121.097</span>
                 </div>
               </a>
               <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
                 <span class="cl-form-info__icon">💬</span>
                 <div>
-                  <span class="cl-form-info__label">Trò chuyện Zalo</span>
+                  <span class="cl-form-info__label">{lang === 'vi' ? 'Trò chuyện Zalo' : 'Zalo Chat'}</span>
                   <span class="cl-form-info__value">Mr.Mạnh (0979.121.097)</span>
                 </div>
               </a>
@@ -200,14 +212,14 @@ const { course, breadcrumbs, schema } = Astro.props;
           </div>
           
           <div class="cl-form-wrapper">
-            <RegistrationForm id="course-register-form" className="cl-astro-form" />
+            <RegistrationForm id="course-register-form" className="cl-astro-form" lang={lang} />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Floating Mobile CTA -->
-    <FloatingCTA />
+    <FloatingCTA lang={lang} />
   </div>
 </PageLayout>
 

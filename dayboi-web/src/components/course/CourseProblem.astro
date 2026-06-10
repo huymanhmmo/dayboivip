@@ -5,16 +5,17 @@ export interface Props {
     subtitle: string;
     items: Array<{ icon: string; title: string; description: string }>;
   };
+  lang?: 'vi' | 'en';
 }
 
-const { problems } = Astro.props;
+const { problems, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Rào Cản & Thách Thức
+        {lang === 'vi' ? 'Rào Cản & Thách Thức' : 'Challenges & Concerns'}
       </span>
       <h2 class="cl-section-title__heading">
         {problems.title}

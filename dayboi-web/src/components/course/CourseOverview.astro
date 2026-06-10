@@ -2,22 +2,23 @@
 export interface Props {
   overview: Array<{ icon: string; label: string; value: string }>;
   slug: string;
+  lang?: 'vi' | 'en';
 }
 
-const { overview, slug } = Astro.props;
+const { overview, slug, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section cl-section--alt">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Thông Tin Nhanh
+        {lang === 'vi' ? 'Thông Tin Nhanh' : 'Quick Info'}
       </span>
       <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
-        Thông Tin Chi Tiết Khóa Học
+        {lang === 'vi' ? 'Thông Tin Chi Tiết Khóa Học' : 'Course Overview Details'}
       </h2>
       <p class="cl-section-title__sub">
-        Mọi chi tiết về thời gian, hình thức và lịch học đều được thiết kế tối ưu nhất cho học viên.
+        {lang === 'vi' ? 'Mọi chi tiết về thời gian, hình thức và lịch học đều được thiết kế tối ưu nhất cho học viên.' : 'All details regarding schedule, class format, and duration are optimized for students.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>

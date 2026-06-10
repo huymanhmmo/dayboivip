@@ -7,22 +7,23 @@ export interface Props {
     certifications: string[];
     quote: string;
   };
+  lang?: 'vi' | 'en';
 }
 
-const { instructor } = Astro.props;
+const { instructor, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Đội Ngũ Huấn Luyện Viên
+        {lang === 'vi' ? 'Đội Ngũ Huấn Luyện Viên' : 'Coaching Team'}
       </span>
       <h2 class="cl-section-title__heading">
-        Giám Đốc Đào Tạo & Ban Huấn Luyện
+        {lang === 'vi' ? 'Giám Đốc Đào Tạo & Ban Huấn Luyện' : 'Training Director & Coaching Staff'}
       </h2>
       <p class="cl-section-title__sub">
-        Được dẫn dắt bởi chuyên gia nhiều năm kinh nghiệm, đội ngũ HLV tận tâm và có chứng chỉ cứu hộ quốc gia.
+        {lang === 'vi' ? 'Được dẫn dắt bởi chuyên gia nhiều năm kinh nghiệm, đội ngũ HLV tận tâm và có chứng chỉ cứu hộ quốc gia.' : 'Led by seasoned aquatic experts, our team of dedicated coaches are certified in life-saving rescue techniques.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
@@ -38,15 +39,15 @@ const { instructor } = Astro.props;
           height="320"
         />
         <div class="cl-instructor__body">
-          <span class="cl-instructor__badge">Người Sáng Lập</span>
+          <span class="cl-instructor__badge">{lang === 'vi' ? 'Người Sáng Lập' : 'Founder'}</span>
           <h3 class="cl-instructor__name">{instructor.name}</h3>
           <p class="cl-instructor__title">{instructor.title}</p>
           
           <div class="cl-instructor__experience">
-            <strong>Kinh nghiệm:</strong> {instructor.experience}
+            <strong>{lang === 'vi' ? 'Kinh nghiệm:' : 'Experience:'}</strong> {instructor.experience}
           </div>
           
-          <div class="cl-instructor__certs-title">Bằng cấp & Chứng chỉ:</div>
+          <div class="cl-instructor__certs-title">{lang === 'vi' ? 'Bằng cấp & Chứng chỉ:' : 'Certifications & Qualifications:'}</div>
           <ul class="cl-instructor__certs">
             {instructor.certifications.map(cert => (
               <li>{cert}</li>

@@ -1,0 +1,23 @@
+---
+const currentYear = new Date().getFullYear();
+import CourseLayout from '../../../layouts/CourseLayout.astro';
+import { intensive } from '../../../data/coursesEn.js';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Courses', href: '/en/courses/' },
+  { label: 'Private 1-on-1 VIP Lessons' },
+];
+
+import { generateCourseSchema } from '../../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(intensive, 'https://dayboi.vip/en/courses/intensive/');
+
+const combinedSchema = [courseSchema];
+---
+
+<CourseLayout
+  course={intensive}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+  lang="en"
+/>

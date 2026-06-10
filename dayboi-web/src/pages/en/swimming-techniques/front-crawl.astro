@@ -1,0 +1,388 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Techniques', href: '/en/swimming-techniques/' },
+  { label: 'Freestyle (Front Crawl)' },
+];
+
+const faqData = [
+  {
+    question: 'Is freestyle harder to learn than breaststroke?',
+    answer: 'Yes, freestyle is generally more challenging due to the side-breathing technique and alternating arm and leg movements. However, if you already know how to blow bubbles and float, our coaches can help you master freestyle within 8-12 sessions.',
+  },
+  {
+    question: 'How much faster is freestyle compared to breaststroke?',
+    answer: 'Freestyle is the fastest of all four swimming strokes. On average, freestyle is 20-30% faster than breaststroke. Competitive swimmers swim 100m freestyle in about 50-60 seconds, whereas breaststroke takes around 65-75 seconds.',
+  },
+  {
+    question: 'Should I breathe to one side or both sides?',
+    answer: 'Beginners should start by breathing to their dominant side. Once comfortable, we highly recommend bilateral breathing (breathing every 3 strokes, alternating sides). This keeps your stroke symmetrical, prevents shoulder strain, and helps you swim in a straight line.',
+  },
+  {
+    question: 'Why do my legs sink when swimming freestyle?',
+    answer: 'Sinking legs are usually caused by: (1) Lifting your head too high to breathe (which pushes the hips down); (2) Kicking from the knees instead of the hips; (3) Not engaging your core. Keep your eyes looking down and kick from your hips to keep your body horizontal.',
+  },
+  {
+    question: 'How many calories does freestyle burn?',
+    answer: 'Freestyle burns about 500-700 calories per hour depending on weight and intensity. It is the best swimming stroke for cardiovascular fitness and fat burning.',
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Freestyle Swimming Technique: Complete Guide from Beginner to Advanced",
+  "description": "Learn the correct freestyle (front crawl) swimming technique. Detailed breakdown of flutter kicks, catch-pull-push arm strokes, side breathing, and body roll.",
+  "image": "https://dayboi.vip/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Huy Manh",
+    "jobTitle": "Director & Head Swim Coach",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Vietnam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-01-20",
+  "dateModified": "2026-06-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/front-crawl/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "Streamline Body Position",
+    "text": "Lie flat on your stomach, eyes looking at the bottom of the pool. Keep your neck relaxed and hips close to the surface.",
+    "url": "https://dayboi.vip/en/swimming-techniques/front-crawl/",
+    "position": 1
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Continuous Flutter Kick",
+    "text": "Kick continuously from the hips with relaxed ankles. Avoid excessive bending of the knees; feet should whip the water like a fish tail.",
+    "url": "https://dayboi.vip/en/swimming-techniques/front-crawl/",
+    "position": 2
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Arm Catch & Pull",
+    "text": "Enter the water with fingertips first. Reach forward, bend your elbow to lock in a high elbow catch, and pull backward under the chest.",
+    "url": "https://dayboi.vip/en/swimming-techniques/front-crawl/",
+    "position": 3
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Push & Side Breathe",
+    "text": "Push water backward past your thigh. As your hand pushes back, rotate your body and turn your face to the side to inhale, keeping one eye submerged.",
+    "url": "https://dayboi.vip/en/swimming-techniques/front-crawl/",
+    "position": 4
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Arm Recovery & Roll",
+    "text": "Recover your arm forward over the water with a high elbow. Put your face back in the water and start exhaling slowly through your nose.",
+    "url": "https://dayboi.vip/en/swimming-techniques/front-crawl/",
+    "position": 5
+  }
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Swim Freestyle with Correct Form",
+  "description": "A comprehensive step-by-step biomechanical sequence to master freestyle swimming.",
+  "image": "https://dayboi.vip/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg",
+  "totalTime": "PT45M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Goggles" },
+    { "@type": "HowToSupply", "name": "Swimwear" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Swimming pool" },
+    { "@type": "HowToTool", "name": "Kickboard" }
+  ],
+  "step": howToSteps,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/front-crawl/"
+  }
+};
+
+const metadata = {
+  title: `Freestyle (Front Crawl) Technique: Complete Guide [${currentYear}]`,
+  description: "Learn how to swim freestyle (front crawl) efficiently. Step-by-step guide on flutter kick, catch-pull-push arm stroke, side breathing, and body rotation.",
+  canonical: "https://dayboi.vip/en/swimming-techniques/front-crawl/",
+  image: "/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema,
+  howToSchema: howToSchema
+};
+
+const technique = {
+  slug: 'front-crawl',
+  name: 'Freestyle (Front Crawl)',
+  badge: '🏊 The Fastest Swimming Stroke',
+  description: 'Freestyle (front crawl) is the fastest and most efficient stroke. Characterized by alternating arm pulls, continuous flutter kicks, and body roll. Master it with Swim For Life.',
+  difficulty: 'Intermediate' as const,
+  speed: 'Very fast' as const,
+  calories: '500 - 700 kcal/h',
+  muscles: 'Lats, Shoulders, Chest, Core, Triceps, Quads',
+  videoId: 'tj-xl5CJw6U',
+  videoPoster: '/images/techniques/dong-tac-tay-boi-sai-tren-can.jpg',
+  videoAlt: 'Freestyle arm pull technique demonstration at Swim For Life'
+};
+
+const toc = [
+  { id: 'overview', label: '1. Freestyle Overview' },
+  { id: 'benefits', label: '2. Health Benefits' },
+  { id: 'body-position', label: '3. Body Position & Rotation' },
+  { id: 'flutter-kick', label: '4. Flutter Kick Technique' },
+  { id: 'arm-stroke', label: '5. Arm Stroke Technique' },
+  { id: 'side-breathing', label: '6. Side Breathing' },
+  { id: 'coordination', label: '7. Full Stroke Coordination' },
+  { id: 'dryland-drills', label: '8. Dryland Exercises' },
+  { id: 'water-drills', label: '9. Pool Drills' },
+  { id: 'common-errors', label: '10. Common Mistakes' },
+  { id: 'course', label: '11. Freestyle Courses' },
+  { id: 'faq', label: '12. FAQ' }
+];
+
+const errors = [
+  {
+    title: 'Lifting head to breathe (instead of rotating)',
+    problem: 'Lifting the head forward causes the hips and legs to drop instantly, creating massive drag.',
+    solution: 'Rotate your head to the side, keeping one eye and half of your face submerged. Imagine resting your cheek on a pillow.'
+  },
+  {
+    title: 'Kicking from the knees',
+    problem: 'Bending knees too much behaves like a brake, slowing you down and causing high fatigue.',
+    solution: 'Kick from your hips, keeping knees straight but relaxed. Let your ankles do the whipping motion.'
+  },
+  {
+    title: 'Crossing the center line',
+    problem: 'Allowing hands to cross over the center line of your head when entering the water, causing body snaking.',
+    solution: 'Enter hands directly in front of your shoulders. Think of reaching forward on two parallel tracks.'
+  },
+  {
+    title: 'Holding breath underwater',
+    problem: 'Holding breath under water makes breathing when you turn your head rushed, leading to oxygen depletion.',
+    solution: 'Exhale continuously through your nose when your face is down. Only inhale when your mouth is turned up.'
+  },
+  {
+    title: 'Flat swimming (No body rotation)',
+    problem: 'Swimming flat on your stomach without shoulder and hip rotation, stressing the shoulders.',
+    solution: 'Rotate your hips and shoulders 30-45 degrees to each side with every arm stroke. This lengthens your reach and power.'
+  },
+  {
+    title: 'Dropped elbow during catch',
+    problem: 'Pulling with a dropped elbow, slipping through the water without generating forward thrust.',
+    solution: 'Initiate the catch by bending at the elbow while keeping it high. Form a large paddle with your hand and forearm.'
+  }
+];
+
+const relatedKeywords = ['freestyle', 'front crawl', 'freestyle kick', 'learn freestyle'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+  lang="en"
+>
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2>What is Freestyle? The King of Swimming Strokes</h2>
+
+    <p><strong>Freestyle</strong>, officially known as the <strong>Front Crawl</strong>, is the fastest and most efficient of the four primary swimming styles. In swimming competitions, "freestyle" actually designates a category where swimmers can choose any stroke, but they invariably choose front crawl due to its unrivaled speed.</p>
+
+    <p>Freestyle features a streamlined face-down posture, alternating hand sweeps, continuous flutter kicks, and a side-breathing pattern. It requires a higher degree of coordination and breath control than <a href="/en/swimming-techniques/breaststroke/">Breaststroke</a>, but offers superior speed and cardiovascular conditioning.</p>
+
+    <p>At <strong>Swim For Life Vietnam</strong>, we usually teach freestyle after the student has acquired the basics of <a href="/en/swimming-techniques/breaststroke/">Breaststroke</a>. According to HLV <strong>Nguyen Huy Manh</strong>: <em>"Freestyle is all about reducing resistance. Once you learn to rotate your body smoothly and keep your head low, you will slide through the water with minimal effort. Our private coaching gets students swimming freestyle smoothly in 8-12 lessons."</em></p>
+  </section>
+
+  <!-- 2. Benefits -->
+  <section id="benefits">
+    <h2>Health Benefits of Freestyle Swimming</h2>
+
+    <p>Freestyle swimming is a premier cardiorespiratory workout with outstanding benefits:</p>
+    <ul>
+      <li><strong>Maximum Calorie Burn:</strong> Burning 500-700 calories per hour, freestyle is highly effective for weight management and metabolic conditioning.</li>
+      <li><strong>V-Shape Muscle Development:</strong> It primarily targets the latissimus dorsi (back), deltoids (shoulders), chest, triceps, and core muscles, sculpting a lean, toned physique.</li>
+      <li><strong>Spine Decompression:</strong> The elongated horizontal posture and smooth rotation help stretch and decompress the spine, relieving back pain for office professionals.</li>
+      <li><strong>Cardiovascular Fitness:</strong> Controlled rhythmic breathing builds superior lung capacity and aerobic endurance.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Body Position -->
+  <section id="body-position">
+    <h2>Body Position and Rotation (Body Roll)</h2>
+
+    <p>Good body alignment is the secret to an effortless freestyle stroke. It centers on three key concepts:</p>
+
+    <h3>1. Streamlined Posture</h3>
+    <p>Keep your body as flat and horizontal as possible. Look straight down at the pool bottom. The waterline should cut across the middle of your head. If you lift your gaze forward, your hips will immediately sink, causing massive drag.</p>
+
+    <h3>2. Hip and Shoulder Rotation (Body Roll)</h3>
+    <p>Do not swim flat on your stomach. As each arm reaches forward, rotate your shoulders and hips 30-45 degrees to that side. This rotation allows you to reach further, engage your powerful back muscles, and breathe without straining your neck.</p>
+
+    <h3>3. Core Engagement</h3>
+    <p>Keep your abdomen tight. Your core acts as the rigid axle connecting your upper-body pulling force to your lower-body kicking stability. A loose core causes your hips to wiggle side-to-side, acting like a brake.</p>
+
+    <div class="info-box tip">
+      <span style="font-size: 1.5rem;">✅</span>
+      <div>
+        <strong>Coach Tip:</strong> Imagine a straight metal rod running from the top of your head to your heels. Your body must rotate around this central axis side-to-side, never bending it.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Flutter Kick -->
+  <section id="flutter-kick">
+    <h2>The Flutter Kick: Power from the Hips</h2>
+
+    <p>The flutter kick maintains body position, raises your hips, and provides consistent balance. It must be executed correctly to avoid wasting energy:</p>
+    <ul>
+      <li><strong>Kick from the Hips:</strong> Initiate the kick from your hip joints and thighs, not by bending your knees. A knee-driven kick creates drag and tires you out quickly.</li>
+      <li><strong>Relaxed Ankles (Floppy Feet):</strong> Keep your ankles completely loose and toes pointed. Your feet should act like flexible flippers, whipping the water.</li>
+      <li><strong>Small Amplitude:</strong> Keep your kicks narrow. The distance between your heels should only be about 30-40 cm. Large kicks create frontal resistance.</li>
+    </ul>
+
+    <img src="/images/techniques/dong-tac-chan-boi-sai-tren-can.jpg" alt="Instruction on correct flutter kick technique at Swim For Life" loading="lazy" width="800" height="533" />
+  </section>
+
+  <!-- 5. Arm Stroke -->
+  <section id="arm-stroke">
+    <h2>The Arm Stroke: Catch, Pull, Push, and Recover</h2>
+
+    <p>Alternating arm pulls provide 90% of your propulsion. Each arm cycle has four phases:</p>
+
+    <h3>1. Entry & Extension</h3>
+    <p>Enter the water fingertips first, in line with your shoulder. Extend your arm forward beneath the surface (10-15cm deep) as your body rotates to that side.</p>
+
+    <h3>2. High Elbow Catch</h3>
+    <p>Initiate the catch by bending at the wrist and elbow, keeping the elbow high. This turns your hand and forearm into a vertical paddle facing backward.</p>
+
+    <h3>3. Pull & Push</h3>
+    <p>Pull your hand backward under the chest along the center line. As it passes your chest, transition into a powerful push backward past your hip. Accelerate the hand through this phase.</p>
+
+    <h3>4. Recovery</h3>
+    <p>Lift your elbow out of the water first. Vung your hand forward close to the water surface, keeping the shoulder and wrist relaxed, preparing for the next entry.</p>
+
+    <img src="/images/techniques/hoc-boi-sai-tay-tren-can.jpg" alt="Students practicing freestyle arm recovery dryland drills" loading="lazy" width="800" height="533" />
+  </section>
+
+  <!-- 6. Side Breathing -->
+  <section id="side-breathing">
+    <h2>Side Breathing: The Bow Wave Principle</h2>
+
+    <p>Breathing in freestyle requires rotation, not lifting. We utilize the physics of the **Bow Wave**:</p>
+    <p>As you swim forward, your head pushes water away, creating a wave in front of your forehead and a pocket of air (a trough) along your cheek. To breathe, simply rotate your head slightly along with your body roll. Keep one goggle lens underwater and open your mouth in the air pocket to inhale quickly. Turn your face back down immediately and exhale slowly through your nose.</p>
+
+    <div class="info-box warning">
+      <span style="font-size: 1.5rem;">⚠️</span>
+      <div>
+        <strong>Common Mistake:</strong> Looking up at the ceiling when breathing. This breaks your streamline, drops your legs, and causes you to swallow water. Focus on keeping one eye in the water.
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Coordination -->
+  <section id="coordination">
+    <h2>Putting It All Together: 6-Beat Kick Rhythm</h2>
+
+    <p>In standard freestyle, we use the **6-Beat Kick**: 6 kicks (3 per side) for every 2 arm strokes (1 full cycle). This provides excellent balance and speed.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Right Arm</th>
+          <th>Left Arm</th>
+          <th>Kicks</th>
+          <th>Breathing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phase 1</td>
+          <td>Entry & Glide</td>
+          <td>Push & Recover</td>
+          <td>3 kicks (L-R-L)</td>
+          <td>Exhaling under water</td>
+        </tr>
+        <tr>
+          <td>Phase 2</td>
+          <td>Catch & Pull</td>
+          <td>Entry & Glide</td>
+          <td>3 kicks (R-L-R)</td>
+          <td>Rotate to Left to inhale</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. Dryland Drills -->
+  <section id="dryland-drills">
+    <h2>Dryland Exercises for Freestyle</h2>
+    <ul>
+      <li><strong>Arm Rotation Practice:</strong> Stand, bend forward 45 degrees, and rotate one arm at a time, focusing on high elbow catches and recoveries.</li>
+      <li><strong>Plank with Shoulder Taps:</strong> Build core strength and shoulder stability needed for continuous pulling.</li>
+      <li><strong>Flutter Kick on Bench:</strong> Lie face down on a bench and practice kicking from the hips with floppy ankles.</li>
+    </ul>
+  </section>
+
+  <!-- 9. Pool Drills -->
+  <section id="water-drills">
+    <h2>Pool Drills for Skill Progression</h2>
+    <ol>
+      <li><strong>Side Kick Drill:</strong> Kick on your side with one arm extended forward and face down. Turn head to breathe. Helps practice side breathing and body alignment.</li>
+      <li><strong>Single Arm Drill:</strong> Keep one arm at your side or extended on a kickboard while quating with the other. Focuses on proper catch and pull mechanics.</li>
+      <li><strong>Catch-Up Drill:</strong> Keep both hands extended forward. One arm performs a full cycle, returns to the front and taps the other hand before the other arm starts. Builds excellent glide timing.</li>
+    </ol>
+  </section>
+
+  <!-- 11. Courses -->
+  <section id="course">
+    <h2>Professional Freestyle Courses at Swim For Life</h2>
+
+    <p>Swim For Life offers high-quality freestyle coaching tailored to your needs. If you want to swim faster, increase your stamina, or correct your posture, our coaches are here to help.</p>
+
+    <h3>Why Choose Our Private Classes?</h3>
+    <ul>
+      <li><strong>1-on-1 Personalized Coaching:</strong> HLV with professional certifications from physical education universities.</li>
+      <li><strong>Time & Location Flexibility:</strong> Schedule sessions around your busy work life at premium pools near you.</li>
+      <li><strong>Scientific Progress Tracking:</strong> Tailored underwater video analysis to fine-tune your biomechanics.</li>
+    </ul>
+  </section>
+</TechniqueLayout>

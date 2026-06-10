@@ -4,22 +4,23 @@ export interface Props {
     question: string;
     answer: string;
   }>;
+  lang?: 'vi' | 'en';
 }
 
-const { faqs } = Astro.props;
+const { faqs, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section" id="faq">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Hỏi Đáp Lớp Bơi
+        {lang === 'vi' ? 'Hỏi Đáp Lớp Bơi' : 'FAQ'}
       </span>
       <h2 class="cl-section-title__heading">
-        Giải Đáp Thắc Mắc Thường Gặp
+        {lang === 'vi' ? 'Giải Đáp Thắc Mắc Thường Gặp' : 'Frequently Asked Questions'}
       </h2>
       <p class="cl-section-title__sub">
-        Những thắc mắc phổ biến của học viên và phụ huynh khi đăng ký học bơi tại trung tâm.
+        {lang === 'vi' ? 'Những thắc mắc phổ biến của học viên và phụ huynh khi đăng ký học bơi tại trung tâm.' : 'Find answers to the most common questions about our swimming classes.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>

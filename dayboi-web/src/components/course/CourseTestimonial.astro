@@ -6,22 +6,23 @@ export interface Props {
     rating: number;
     text: string;
   }>;
+  lang?: 'vi' | 'en';
 }
 
-const { testimonials } = Astro.props;
+const { testimonials, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section cl-section--alt">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Đánh Giá Từ Học Viên
+        {lang === 'vi' ? 'Đánh Giá Từ Học Viên' : 'Student Reviews'}
       </span>
       <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
-        Học Viên Nói Gì Về Chúng Tôi?
+        {lang === 'vi' ? 'Học Viên Nói Gì Về Chúng Tôi?' : 'What Our Students Say'}
       </h2>
       <p class="cl-section-title__sub">
-        Hàng ngàn học viên ở mọi lứa tuổi đã vượt qua sợ hãi và bơi thành thạo nhờ Swim For Life.
+        {lang === 'vi' ? 'Hàng ngàn học viên ở mọi lứa tuổi đã vượt qua sợ hãi và bơi thành thạo nhờ Swim For Life.' : 'Thousands of students of all ages have conquered their fear of water and learned to swim with Swim For Life.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>

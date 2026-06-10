@@ -18,6 +18,7 @@ export interface Props {
   featuredImageAlt: string;
   intro: string;
   tocItems: Array<{ id: string; text: string }>;
+  lang?: 'vi' | 'en';
 }
 
 const {
@@ -32,7 +33,8 @@ const {
   featuredImage,
   featuredImageAlt,
   intro,
-  tocItems
+  tocItems,
+  lang = 'vi'
 } = Astro.props;
 
 const currentYear = new Date().getFullYear();
@@ -45,22 +47,51 @@ const currentSlug = Astro.url.pathname.split('/').filter(Boolean).pop() || '';
 
 // Dynamically resolve category, tags, dates and read times from central blogPosts data if possible
 const matchedPost = blogPosts.find(post => post.slug === currentSlug);
-const resolvedCategory = matchedPost ? matchedPost.category : (category || 'Kiến thức bơi');
-const resolvedCategorySlug = matchedPost ? matchedPost.categorySlug : 'huong-dan-hoc-boi';
+const resolvedCategory = matchedPost ? (lang === 'en' ? 'Swimming Guides' : matchedPost.category) : (category || (lang === 'en' ? 'Swimming Guides' : 'Kiến thức bơi'));
+const resolvedCategorySlug = matchedPost ? matchedPost.categorySlug : (lang === 'en' ? 'en/guides' : 'huong-dan-hoc-boi');
 const resolvedTags = matchedPost ? matchedPost.tags : [];
 const resolvedTagSlugs = matchedPost ? matchedPost.tagSlugs : [];
-const resolvedReadTime = matchedPost ? matchedPost.readTime : (readTime || '10 phút');
-const resolvedPublishDate = matchedPost ? matchedPost.date : (publishDate || '20/05');
+const resolvedReadTime = matchedPost ? (lang === 'en' ? matchedPost.readTime.replace('phút đọc', 'min read') : matchedPost.readTime) : (readTime || (lang === 'en' ? '10 min read' : '10 phút'));
+const resolvedPublishDate = matchedPost ? matchedPost.date : (publishDate || (lang === 'en' ? '05/25' : '20/05'));
 
 // Get related posts (prioritize same category, max 8 posts)
-const relatedPosts = blogPosts
-  .filter(post => post.slug !== currentSlug)
-  .sort((a, b) => {
-    const aSame = a.categorySlug === resolvedCategorySlug ? 1 : 0;
-    const bSame = b.categorySlug === resolvedCategorySlug ? 1 : 0;
-    return bSame - aSame; // Sort descending
-  })
-  .slice(0, 8);
+const englishRecentPosts = [
+  {
+    title: 'Ultimate Swimming Guide for Beginners',
+    slug: 'en/guides',
+    image: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
+    date: '05/25'
+  },
+  {
+    title: 'How to Swim: Step-by-Step Guide for Beginners',
+    slug: 'en/guides/how-to-swim',
+    image: '/images/classes/giang-vien-huong-dan-ky-thuat.jpg',
+    date: '05/25'
+  },
+  {
+    title: 'Self-Taught Swimming: Safe & Effective Method',
+    slug: 'en/guides/self-taught-swimming',
+    image: '/images/classes/lop-hoc-boi-tre-em-tphcm.jpg',
+    date: '05/25'
+  },
+  {
+    title: 'Children Survival Swimming: Crucial Skills to Prevent Drowning',
+    slug: 'en/guides/survival-swimming',
+    image: '/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg',
+    date: '05/25'
+  }
+];
+
+const relatedPosts = lang === 'en'
+  ? englishRecentPosts.filter(p => !Astro.url.pathname.includes(p.slug))
+  : blogPosts
+      .filter(post => post.slug !== currentSlug)
+      .sort((a, b) => {
+        const aSame = a.categorySlug === resolvedCategorySlug ? 1 : 0;
+        const bSame = b.categorySlug === resolvedCategorySlug ? 1 : 0;
+        return bSame - aSame; // Sort descending
+      })
+      .slice(0, 8);
 
 // Compute Category counts dynamically
 const categoriesMap = new Map();
@@ -108,6 +139,7 @@ const tagsList = Array.from(tagsMap.values());
   type="article"
   breadcrumbs={breadcrumbs}
   schema={schema}
+  lang={lang}
 >
   <!-- Premium Header (Side-by-Side) -->
   <section class="blog-header-section">
@@ -120,7 +152,7 @@ const tagsList = Array.from(tagsMap.values());
             <span class="blog-header-dot">•</span>
             <span class="blog-header-read-time">{resolvedReadTime}</span>
             <span class="blog-header-dot">•</span>
-            <span class="blog-header-date">Cập nhật: {resolvedPublishDate}/<span class="current-year">{currentYear}</span></span>
+            <span class="blog-header-date">{lang === 'en' ? 'Updated: ' : 'Cập nhật: '}{resolvedPublishDate}/<span class="current-year">{currentYear}</span></span>
           </div>
           
           <h1 class="blog-header-title">{cleanHeadline}</h1>
@@ -128,14 +160,14 @@ const tagsList = Array.from(tagsMap.values());
           
           <div class="author-card-premium">
             <div class="author-avatar-wrapper">
-              <img src="/images/team/thay-nguyen-huy-manh.jpg" alt="Thầy Nguyễn Huy Mạnh" width="50" height="50" loading="eager" />
+              <img src="/images/team/thay-nguyen-huy-manh.jpg" alt={lang === 'en' ? 'Coach Nguyen Huy Manh' : 'Thầy Nguyễn Huy Mạnh'} width="50" height="50" loading="eager" />
             </div>
             <div class="author-details">
-              <strong>Thầy Nguyễn Huy Mạnh</strong>
+              <strong>{lang === 'en' ? 'Coach Nguyen Huy Manh' : 'Thầy Nguyễn Huy Mạnh'}</strong>
               <div class="author-meta-info">
-                <span>🏆 HLV Trưởng Swim For Life</span>
+                <span>{lang === 'en' ? '🏆 Head Coach of Swim For Life' : '🏆 HLV Trưởng Swim For Life'}</span>
                 <span>•</span>
-                <span>📅 Cập nhật: {resolvedPublishDate}/<span class="current-year">{currentYear}</span></span>
+                <span>{lang === 'en' ? 'Updated: ' : 'Cập nhật: '}{resolvedPublishDate}/<span class="current-year">{currentYear}</span></span>
               </div>
             </div>
           </div>
@@ -160,8 +192,8 @@ const tagsList = Array.from(tagsMap.values());
         {tocItems && tocItems.length > 0 && (
           <aside class="blog-sidebar-left">
             <div class="sidebar-widget toc-sidebar-widget">
-              <h3 class="widget-title">📑 Mục Lục</h3>
-              <nav class="toc-list" aria-label="Mục lục bài viết (bản máy tính)">
+              <h3 class="widget-title">📑 {lang === 'en' ? 'Table of Contents' : 'Mục Lục'}</h3>
+              <nav class="toc-list" aria-label={lang === 'en' ? 'Article table of contents (desktop)' : 'Mục lục bài viết (bản máy tính)'}>
                 {tocItems.map(item => (
                   <a href={`#${item.id}`}>{item.text}</a>
                 ))}
@@ -175,8 +207,8 @@ const tagsList = Array.from(tagsMap.values());
           <!-- TOC for Mobile & Tablet -->
           {tocItems && tocItems.length > 0 && (
             <div class="mobile-toc">
-              <h2 style="font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-3); border: none; padding: 0;">📑 Mục Lục Bài Viết</h2>
-              <nav class="toc-list" aria-label="Mục lục bài viết (di động)">
+              <h2 style="font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-3); border: none; padding: 0;">📑 {lang === 'en' ? 'Table of Contents' : 'Mục Lục Bài Viết'}</h2>
+              <nav class="toc-list" aria-label={lang === 'en' ? 'Article table of contents (mobile)' : 'Mục lục bài viết (di động)'}>
                 {tocItems.map(item => (
                   <a href={`#${item.id}`}>{item.text}</a>
                 ))}
@@ -191,7 +223,7 @@ const tagsList = Array.from(tagsMap.values());
           <!-- Article Tags -->
           {resolvedTags && resolvedTags.length > 0 && (
             <div class="blog-post-tags-row">
-              <span class="tags-label">🏷️ Thẻ bài viết:</span>
+              <span class="tags-label">🏷️ {lang === 'en' ? 'Tags:' : 'Thẻ bài viết:'}</span>
               <div class="post-tags-list">
                 {resolvedTags.map((tag, index) => (
                   <a href={`/the/${resolvedTagSlugs[index]}/`} class="post-tag-pill">
@@ -203,32 +235,56 @@ const tagsList = Array.from(tagsMap.values());
           )}
 
           <!-- Footer Bio -->
-          <AuthorBio />
+          <AuthorBio 
+            name={lang === 'en' ? 'Coach Nguyen Huy Manh' : 'Thầy Nguyễn Huy Mạnh'}
+            role={lang === 'en' ? 'Founder & Head Coach of Swim For Life Vietnam' : 'Giám Đốc & HLV Trưởng Swim For Life Việt Nam'}
+            bio={lang === 'en' ? 'Coach Nguyen Huy Manh graduated from the Physical Education Department of Hanoi National University of Education. With over 10 years of swimming coaching experience from basic to advanced levels, he has successfully taught swimming to more than 10,000 students. He is particularly renowned for his clear teaching methods, strong psychological support for students with water phobia, and helping them overcome their fear of swimming.' : undefined}
+          />
         </div>
 
         <!-- Right Column: Sticky Sidebar (Registration Form + Widgets) -->
         <aside class="blog-sidebar-right">
           <!-- Widget: Categories -->
           <div class="sidebar-widget">
-            <h3 class="widget-title">📁 Danh Mục</h3>
-            <ul class="sidebar-categories-list">
-              {categoriesList.map(cat => (
+            <h3 class="widget-title">📁 {lang === 'en' ? 'Navigation' : 'Danh Mục'}</h3>
+            {lang === 'en' ? (
+              <ul class="sidebar-categories-list">
                 <li>
-                  <a href={`/${cat.slug}/`} class="category-item-link">
-                    <span class="category-name">{cat.name}</span>
-                    <span class="category-count">({cat.count})</span>
+                  <a href="/en/courses/" class="category-item-link">
+                    <span class="category-name">Swimming Courses</span>
                   </a>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  <a href="/en/swimming-techniques/" class="category-item-link">
+                    <span class="category-name">Swimming Techniques</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/en/guides/" class="category-item-link">
+                    <span class="category-name">Swimming Guides</span>
+                  </a>
+                </li>
+              </ul>
+            ) : (
+              <ul class="sidebar-categories-list">
+                {categoriesList.map(cat => (
+                  <li>
+                    <a href={`/${cat.slug}/`} class="category-item-link">
+                      <span class="category-name">{cat.name}</span>
+                      <span class="category-count">({cat.count})</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <!-- Widget: Recent Posts -->
           <div class="sidebar-widget">
-            <h3 class="widget-title">📰 Bài Viết Mới</h3>
+            <h3 class="widget-title">📰 {lang === 'en' ? 'Recent Articles' : 'Bài Viết Mới'}</h3>
             <div class="recent-posts-list">
-              {blogPosts.slice(0, 10).map(post => (
-                <a href={`/${post.slug}/`} class="recent-post-item">
+              {(lang === 'en' ? englishRecentPosts : blogPosts.slice(0, 10)).map(post => (
+                <a href={post.slug.startsWith('http') || post.slug.startsWith('/') ? post.slug : `/${post.slug}/`} class="recent-post-item">
                   <img src={post.image} alt={post.title} class="recent-post-thumb" loading="lazy" width="70" height="70" />
                   <div class="recent-post-info">
                     <h4 class="recent-post-title">{post.title}</h4>
@@ -241,11 +297,11 @@ const tagsList = Array.from(tagsMap.values());
 
           <!-- Widget 2: Form Registration -->
           <div class="sidebar-widget">
-            <h3 class="widget-title">🏊 Đăng Ký Học Thử</h3>
-            <p class="widget-subtitle">Nhận ngay 1 buổi học thử 1 kèm 1 miễn phí cùng HLV chuyên nghiệp tại bể bơi gần nhà bạn nhất!</p>
-            <RegistrationForm id="blog-register-form" />
+            <h3 class="widget-title">{lang === 'en' ? '🏊 Book Free Trial' : '🏊 Đăng Ký Học Thử'}</h3>
+            <p class="widget-subtitle">{lang === 'en' ? 'Register today for a free 1-on-1 trial session near your home with our certified coaches.' : 'Nhận ngay 1 buổi học thử 1 kèm 1 miễn phí cùng HLV chuyên nghiệp tại bể bơi gần nhà bạn nhất!'}</p>
+            <RegistrationForm id="blog-register-form" lang={lang} />
             <div class="widget-trust">
-              🔒 Bảo mật thông tin • Cam kết biết bơi 100%
+              {lang === 'en' ? '🔒 Info secured • 100% swim guarantee' : '🔒 Bảo mật thông tin • Cam kết biết bơi 100%'}
             </div>
           </div>
         </aside>
@@ -258,19 +314,19 @@ const tagsList = Array.from(tagsMap.values());
   {relatedPosts && relatedPosts.length > 0 && (
     <section class="related-posts-section">
       <div class="container container-wide">
-        <h2 class="related-section-title">🔍 Có Thể Bạn Quan Tâm</h2>
+        <h2 class="related-section-title">{lang === 'en' ? '🔍 You May Also Like' : '🔍 Có Thể Bạn Quan Tâm'}</h2>
         <div class="related-posts-grid">
           {relatedPosts.map(post => (
             <article class="related-post-card">
-              <a href={`/${post.slug}/`} class="related-card-link">
+              <a href={post.slug.startsWith('http') || post.slug.startsWith('/') ? post.slug : `/${post.slug}/`} class="related-card-link">
                 <div class="related-card-image-wrapper">
                   <img src={post.image} alt={post.title} class="related-card-image" loading="lazy" width="360" height="200" />
                 </div>
                 <div class="related-card-content">
-                  <span class="related-card-category">{post.category}</span>
+                  <span class="related-card-category">{lang === 'en' ? 'Swimming Guides' : post.category}</span>
                   <h3 class="related-card-title">{post.title}</h3>
                   <p class="related-card-excerpt">{post.excerpt}</p>
-                  <span class="related-card-more">Đọc bài viết →</span>
+                  <span class="related-card-more">{lang === 'en' ? 'Read post →' : 'Đọc bài viết →'}</span>
                 </div>
               </a>
             </article>
@@ -346,15 +402,25 @@ const tagsList = Array.from(tagsMap.values());
             card.insertBefore(redirectHint, closeBtn);
           }
 
+          const formLang = form.getAttribute('data-lang') || 'vi';
+
           let secondsLeft = 4;
           if (redirectHint) {
-            redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+            if (formLang === 'en') {
+              redirectHint.innerHTML = `Connected Zalo Coach in a new tab. Closing in <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> seconds...`;
+            } else {
+              redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+            }
           }
 
           countdownInterval = setInterval(() => {
             secondsLeft--;
             if (redirectHint) {
-              redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+              if (formLang === 'en') {
+                redirectHint.innerHTML = `Connected Zalo Coach in a new tab. Closing in <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> seconds...`;
+              } else {
+                redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+              }
             }
             if (secondsLeft <= 0) {
               clearInterval(countdownInterval);

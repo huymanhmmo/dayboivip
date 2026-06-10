@@ -1,0 +1,407 @@
+---
+const currentYear = new Date().getFullYear();
+import TechniqueLayout from '../../../layouts/TechniqueLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Techniques', href: '/en/swimming-techniques/' },
+  { label: 'Breaststroke' },
+];
+
+const faqData = [
+  {
+    question: 'How long does it take to learn breaststroke?',
+    answer: 'With our 1-on-1 private coaching at Swim For Life, most beginners can learn the basic breaststroke movement within 7-10 sessions. Achieving a smooth, efficient glide and swimming longer distances comfortably typically takes 10-12 sessions of structured practice.',
+  },
+  {
+    question: 'Is breaststroke easier than freestyle (front crawl)?',
+    answer: 'Yes, breaststroke is generally considered the easiest stroke for beginners. The movements are symmetrical, the head lifts forward naturally to breathe (reducing water anxiety), and there is a distinct gliding phase that allows you to rest between strokes.',
+  },
+  {
+    question: 'At what age can children start learning breaststroke?',
+    answer: 'Children can start learning breaststroke from 5-6 years of age. By this time, they have developed the physical coordination required for the symmetrical kick-and-pull movement. Our coaches use game-based teaching methods to keep kids engaged and safe.',
+  },
+  {
+    question: 'Why am I not moving forward when kicking?',
+    answer: 'The most common reasons are: (1) Outward whip kick issue - pushing legs straight back (like riding a bicycle) instead of drawing a circle and squeezing; (2) Slipping ankles - not flexing ankles outward at 90 degrees to push water; (3) Missing the glide phase.',
+  },
+  {
+    question: 'How many calories does breaststroke burn?',
+    answer: 'Breaststroke is an excellent aerobic workout that burns about 400-600 calories per hour depending on weight and intensity. It tones the thighs, glutes, shoulders, and chest without placing high-impact stress on your joints.',
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Breaststroke Technique: The Ultimate Step-by-Step Guide",
+  "description": "Master the breaststroke swimming technique with our professional guide. Detailed explanation of the kick (whip-squeeze), arm pull, breathing coordination, and common mistakes.",
+  "image": "https://dayboi.vip/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyen Huy Manh",
+    "jobTitle": "Director & Head Swim Coach",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Swim For Life Vietnam"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/logo/logo.png"
+    }
+  },
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-06-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/breaststroke/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    }
+  }))
+};
+
+const howToSteps = [
+  {
+    "@type": "HowToStep",
+    "name": "The Glide Phase",
+    "text": "Start in a streamlined horizontal position. Arms fully extended forward, legs together, face down in the water, exhaling slowly.",
+    "url": "https://dayboi.vip/en/swimming-techniques/breaststroke/",
+    "position": 1
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Arm Pull & Breath",
+    "text": "Sweep hands outward and downward in a heart-shaped path. As hands pull back under the chin, lift your mouth above water to inhale quickly.",
+    "url": "https://dayboi.vip/en/swimming-techniques/breaststroke/",
+    "position": 2
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Leg Recovery & Recovery Phase",
+    "text": "Squeeze elbows close to the chest and push hands forward. Simultaneously draw heels toward the buttocks, flexing ankles outward at 90 degrees.",
+    "url": "https://dayboi.vip/en/swimming-techniques/breaststroke/",
+    "position": 3
+  },
+  {
+    "@type": "HowToStep",
+    "name": "The Whip Kick & Glide",
+    "text": "Whip legs backward in a wide circular sweep and squeeze them tightly together. Hold this streamlined shape to glide forward using momentum.",
+    "url": "https://dayboi.vip/en/swimming-techniques/breaststroke/",
+    "position": 4
+  }
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Swim Breaststroke Symmetrically",
+  "description": "Learn the step-by-step biomechanical sequence to swim breaststroke efficiently with minimal energy consumption.",
+  "image": "https://dayboi.vip/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg",
+  "totalTime": "PT45M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Goggles" },
+    { "@type": "HowToSupply", "name": "Swim cap" },
+    { "@type": "HowToSupply", "name": "Swimwear" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Swimming pool (depth 1.2 - 1.6m)" },
+    { "@type": "HowToTool", "name": "Kickboard" }
+  ],
+  "step": howToSteps,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dayboi.vip/en/swimming-techniques/breaststroke/"
+  }
+};
+
+const metadata = {
+  title: `Breaststroke Technique: Complete Step-by-Step Guide [${currentYear}]`,
+  description: "Learn how to swim breaststroke with correct form: whip kick (draw-whip-squeeze), arm pull, breathing coordination, and glide phase. Complete sports science breakdown.",
+  canonical: "https://dayboi.vip/en/swimming-techniques/breaststroke/",
+  image: "/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg",
+  breadcrumbs: breadcrumbs,
+  articleSchema: articleSchema,
+  faqSchema: faqSchema,
+  howToSchema: howToSchema
+};
+
+const technique = {
+  slug: 'breaststroke',
+  name: 'Breaststroke',
+  badge: '🐸 Perfect Beginner Stroke',
+  description: 'Breaststroke is the oldest and most popular swimming stroke, characterized by symmetrical movements and a relaxing gliding phase. Learn how to swim it perfectly with our coaches.',
+  difficulty: 'Beginner' as const,
+  speed: 'Slow' as const,
+  calories: '400 - 600 kcal/h',
+  muscles: 'Thighs, Glutes, Shoulders, Back, Chest',
+  videoId: 'c4GBGpEv3JQ',
+  videoPoster: '/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg',
+  videoAlt: 'Breaststroke arm pull technique demonstration at Swim For Life'
+};
+
+const toc = [
+  { id: 'overview', label: '1. Breaststroke Overview' },
+  { id: 'benefits', label: '2. Health Benefits' },
+  { id: 'whip-kick', label: '3. Leg Kick Technique' },
+  { id: 'arm-pull', label: '4. Arm Pull Technique' },
+  { id: 'breathing', label: '5. Breathing Cycle' },
+  { id: 'coordination', label: '6. Full Stroke Coordination' },
+  { id: 'dryland-drills', label: '7. Dryland Exercises' },
+  { id: 'water-drills', label: '8. Pool Drills' },
+  { id: 'common-errors', label: '9. Common Mistakes' },
+  { id: 'course', label: '10. Breaststroke Courses' },
+  { id: 'faq', label: '11. FAQ' }
+];
+
+const errors = [
+  {
+    title: 'Bicycle Kicking (Kicking straight back)',
+    problem: 'Pushing legs straight back without wrapping or flexing ankles outward, resulting in zero forward thrust.',
+    solution: 'Practice on land. Focus on drawing a circular arc: draw heels in → flex toes out → whip back → squeeze legs together.'
+  },
+  {
+    title: 'Pointed toes during whip kick',
+    problem: 'Keeping toes pointed while kicking, slicing the water rather than pushing it backward.',
+    solution: 'Flex your ankles outward at 90 degrees during the draw phase. Think of using the soles of your feet to push the water.'
+  },
+  {
+    title: 'Wide knee recovery',
+    problem: 'Opening knees wider than shoulders when pulling heels in, generating massive frontal drag.',
+    solution: 'Keep knees closer than shoulder-width. Focus on drawing heels backward toward the buttocks, not pushing knees outward.'
+  },
+  {
+    title: 'Simultaneous pull and kick',
+    problem: 'Pulling arms and kicking legs at the same time, which cancels out forward momentum.',
+    solution: 'Follow the "arms pull, then legs kick" rule. Complete the arm pull and head recovery before you whip the legs.'
+  },
+  {
+    title: 'Missing the glide phase',
+    problem: 'Immediately pulling arms after kicking without holding a streamlined shape, wasting energy.',
+    solution: 'After squeezing your legs together, hold a tight streamline position for 1-2 seconds. Let momentum carry you forward.'
+  },
+  {
+    title: 'Lifting head too high to breathe',
+    problem: 'Lifting the entire head and chest out of the water, which drops the hips and creates drag.',
+    solution: 'Only lift your chin enough to clear the water. Let the downward sweep of the arms naturally elevate your mouth.'
+  },
+  {
+    title: 'Wide arm pulls',
+    problem: 'Sweeping arms past the shoulder line, which strains the shoulders and increases drag.',
+    solution: 'Keep your arm pulls narrow. Imagine drawing a small heart shape right in front of your chest.'
+  },
+  {
+    title: 'Holding breath underwater',
+    problem: 'Nining breath under water and trying to exhale and inhale quickly when head is raised, leading to hyperventilation.',
+    solution: 'Slowly blow bubbles (exhale through your nose) the entire time your face is underwater. Only inhale when head is up.'
+  }
+];
+
+const relatedKeywords = ['breaststroke', 'learn to swim', 'breaststroke kick'];
+---
+
+<TechniqueLayout
+  metadata={metadata}
+  technique={technique}
+  toc={toc}
+  errors={errors}
+  faqs={faqData}
+  relatedKeywords={relatedKeywords}
+  lang="en"
+>
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2>What is Breaststroke? A Biomechanical Masterpiece</h2>
+
+    <p><strong>Breaststroke</strong> is one of the four competitive swimming strokes, alongside <a href="/en/swimming-techniques/front-crawl/">Freestyle (Front Crawl)</a>, <a href="/en/swimming-techniques/backstroke/">Backstroke</a>, and <a href="/en/swimming-techniques/butterfly/">Butterfly</a>. Known for its distinct frog-like movements, it is the oldest competitive stroke and is widely taught as the first major swimming milestone.</p>
+
+    <p>At **Swim For Life Vietnam**, we always teach breaststroke as the foundational stroke for beginners. Its symmetrical movement pattern makes it easier for the nervous system to coordinate. More importantly, it allows swimmers to look forward and breathe naturally on every stroke cycle, significantly reducing water anxiety.</p>
+
+    <p>According to coach <strong>Nguyen Huy Manh</strong>, Director of Swim For Life: <em>"Breaststroke serves as the gateway to water confidence. When a student masters the glide and breathing rhythm of breaststroke, their water comfort skyrockets, making it simple to pick up freestyle, backstroke, or survival skills."</em></p>
+
+    <p>Breaststroke is highly functional. It is a fantastic full-body workout that engages the core, legs, and back, and acts as a vital survival skill. When paired with <a href="/en/swimming-techniques/treading-water/">treading water</a>, it forms the bedrock of personal water safety.</p>
+
+    <div class="info-box important">
+      <span style="font-size: 1.5rem;">💡</span>
+      <div>
+        <strong>Did you know?</strong> In survival scenarios, breaststroke is the preferred stroke. Its head-forward positioning allows you to scan the environment, and its energy-efficient glide helps you stay afloat for hours.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Benefits -->
+  <section id="benefits">
+    <h2>Health and Fitness Benefits of Breaststroke</h2>
+
+    <p>Regular breaststroke training provides remarkable physical and mental benefits:</p>
+
+    <h3>Physical Health</h3>
+    <ul>
+      <li><strong>Low-Impact Joint Therapy:</strong> Due to water buoyancy, breaststroke places virtually zero impact on your weight-bearing joints, making it highly recommended for recovery and senior fitness.</li>
+      <li><strong>Full-Body Muscle Toning:</strong> Unlike other strokes that rely heavily on the upper body, breaststroke gets 70% of its power from the legs. It targets the inner thighs, glutes, core, chest, and upper back.</li>
+      <li><strong>Aerobic Efficiency:</strong> Swimming at a steady pace burns 400-600 calories per hour, improving cardiovascular endurance and lung capacity.</li>
+    </ul>
+
+    <h3>Mental Well-being</h3>
+    <ul>
+      <li><strong>Stress Relief:</strong> The rhythmic breathing and sound of water create a calming, meditative effect, lowering cortisol levels.</li>
+      <li><strong>Buoyancy Control:</strong> Learning to hold the glide phase teaches the body natural floatation, boosting overall comfort and safety in deep water.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Whip Kick -->
+  <section id="whip-kick">
+    <h2>The Leg Kick: Draw, Whip, and Squeeze</h2>
+
+    <p>The breaststroke kick (whip kick) is the primary propulsion source, driving the swimmer forward. It consists of four distinct phases:</p>
+
+    <h3>1. The Draw (Leg Recovery)</h3>
+    <p>Start with legs straight. Gently draw your heels toward your buttocks by bending at the knees. Keep knees hip-width apart; do not splay them wide as this creates huge drag.</p>
+
+    <h3>2. The Flex (Catch Setup)</h3>
+    <p>Once heels are close to the glutes, flex your ankles outward at 90 degrees. Your toes must point outward, exposing the soles of your feet to push the water backward.</p>
+
+    <div class="info-box tip">
+      <span style="font-size: 1.5rem;">✅</span>
+      <div>
+        <strong>Coach Tip:</strong> Ankle flexibility is key. If you struggle to flex your feet, practice sitting on a chair and rotating your ankles outward. This dryland exercise builds the flexibility needed for a powerful kick.
+      </div>
+    </div>
+
+    <h3>3. The Whip (Propulsion)</h3>
+    <p>Accelerate your feet backward and outward in a circular path. Use the soles of your feet and inner shins to push the water away, driving yourself forward.</p>
+
+    <h3>4. The Squeeze & Glide</h3>
+    <p>Snap your legs together until they are fully extended and touching. This "squeezing" motion traps water between your legs, generating an extra burst of speed. Hold this shape to glide.</p>
+
+    <img src="/images/techniques/tap-tho-boi-ech-tren-can.jpg" alt="Students practicing breaststroke kick on land at Swim For Life" loading="lazy" width="800" height="533" />
+  </section>
+
+  <!-- 4. Arm Pull -->
+  <section id="arm-pull">
+    <h2>The Arm Pull: Sweep, Squeeze, and Extend</h2>
+
+    <p>The arm pull provides about 30% of breaststroke propulsion and helps lift the mouth out of the water to breathe. It follows a tight, heart-shaped path:</p>
+
+    <h3>1. Outward Sweep (Catch)</h3>
+    <p>Start with arms extended forward, palms facing down. Rotate hands outward at a 45-degree angle and sweep them apart slightly wider than shoulder-width, catching the water.</p>
+
+    <h3>2. Inward Sweep (Pull)</h3>
+    <p>Bend elbows and pull hands downward and inward toward the chest. Keep elbows high and hands moving fast to create lift. Do not sweep hands past your shoulders.</p>
+
+    <h3>3. Recovery (Extend)</h3>
+    <p>Squeeze your elbows close to your ribs and bring hands together under your chin. Immediately shoot hands forward back into a streamlined position to minimize drag.</p>
+
+    <img src="/images/techniques/huong-dan-dong-tac-tay-boi-ech.jpg" alt="Coach guiding breaststroke arm pull technique to a student" loading="lazy" width="800" height="533" />
+  </section>
+
+  <!-- 5. Breathing -->
+  <section id="breathing">
+    <h2>Breathing Technique and Rhythm</h2>
+
+    <p>Breathing must be synchronized with the arm pull. The rule is simple: **Inhale through the mouth when head rises, exhale through the nose underwater.**</p>
+
+    <h3>The Breathing Cycle:</h3>
+    <ol>
+      <li>As arms sweep inward, the lift raises your chin above water. Open your mouth and take a quick, deep breath.</li>
+      <li>As hands shoot forward and face enters the water, begin blowing bubbles (exhaling through your nose).</li>
+      <li>Continue exhaling slowly throughout the glide phase. Ensure lungs are empty before the next breath.</li>
+    </ol>
+  </section>
+
+  <!-- 6. Coordination -->
+  <section id="coordination">
+    <h2>Full Stroke Coordination: Pull, Breathe, Kick, Glide</h2>
+
+    <p>Timing is everything in breaststroke. The movements of arms and legs must alternate. The formula is: **Pull & Breathe -> Recover & Kick -> Squeeze & Glide.**</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Arm Action</th>
+          <th>Leg Action</th>
+          <th>Breathing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Pull & Breathe</td>
+          <td>Outward and inward sweep</td>
+          <td>Straight and relaxed</td>
+          <td>Lifting head to inhale</td>
+        </tr>
+        <tr>
+          <td>2. Recover & Kick Setup</td>
+          <td>Hands shoot forward</td>
+          <td>Heels draw in, ankles flex</td>
+          <td>Face enters, start exhale</td>
+        </tr>
+        <tr>
+          <td>3. The Kick</td>
+          <td>Fully extended forward</td>
+          <td>Whip backward & squeeze</td>
+          <td>Exhaling under water</td>
+        </tr>
+        <tr>
+          <td>4. The Glide</td>
+          <td>Fully extended forward</td>
+          <td>Extended together</td>
+          <td>Slow exhale, glide 1-2s</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. Dryland Drills -->
+  <section id="dryland-drills">
+    <h2>Dryland Exercises for Breaststroke</h2>
+
+    <p>Before jumping in the pool, build muscle memory with these exercises:</p>
+    <ul>
+      <li><strong>Heel-to-Glute Whip Kick:</strong> Lie face down on a bench, draw heels toward glutes, flex ankles, and kick. Focus on keeping knees narrow.</li>
+      <li><strong>Heart-Shape Arm Sweep:</strong> Stand tall, lean forward 45 degrees, and practice the arm sweep. Ensure elbows stay high and hands recover quickly.</li>
+      <li><strong>Core Plank:</strong> Hold a 60-second plank to strengthen the muscles that keep your hips high in the water.</li>
+    </ul>
+  </section>
+
+  <!-- 8. Pool Drills -->
+  <section id="water-drills">
+    <h2>Pool Drills for Skill Building</h2>
+
+    <p>Practice these drills in shallow water to lock in your form:</p>
+    <ol>
+      <li><strong>Wall Kick Drill:</strong> Hold the pool gutter, extend your body, and practice the whip kick. Focus on pushing water with your soles.</li>
+      <li><strong>Kickboard Glide:</strong> Hold a kickboard and practice kicking. Inhale by lifting your head, then submerge your face to exhale.</li>
+      <li><strong>Pull Buoy Arm Drill:</strong> Place a pull buoy between your thighs to immobilize your legs. Focus purely on arm pulls and breathing rhythm.</li>
+    </ol>
+  </section>
+
+  <!-- 10. Courses -->
+  <section id="course">
+    <h2>Professional Breaststroke Lessons at Swim For Life</h2>
+
+    <p>Whether you are a beginner looking to overcome water anxiety or want to refine your form, Swim For Life offers premium 1-on-1 private coaching across Hanoi and Ho Chi Minh City.</p>
+
+    <h3>Why Train with Us?</h3>
+    <ul>
+      <li><strong>1-on-1 Private Coach:</strong> Sourcing coaches from physical education universities. 100% attention in the water.</li>
+      <li><strong>Guaranteed Results:</strong> We guarantee you will swim breaststroke confidently within 10-12 sessions.</li>
+      <li><strong>Flexible Locations:</strong> Learn at a high-end four-season pool near your home or workplace.</li>
+    </ul>
+  </section>
+</TechniqueLayout>

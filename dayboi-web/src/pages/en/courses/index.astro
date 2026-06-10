@@ -138,6 +138,15 @@ const enCourses = courses.map(c => {
     enDuration = "Tailored length";
   }
   
+  let link = "/en/contact";
+  if (c.slug === 'tre-em') {
+    link = "/en/courses/kids/";
+  } else if (c.slug === 'nguoi-lon') {
+    link = "/en/courses/adults/";
+  } else if (c.slug === 'ca-nhan') {
+    link = "/en/courses/intensive/";
+  }
+  
   return {
     ...c,
     shortTitle: enTitle,
@@ -146,7 +155,7 @@ const enCourses = courses.map(c => {
     classSize: enClassSize,
     duration: enDuration,
     priceFrom: "Contact for a quote",
-    link: "/en/contact"
+    link: link
   };
 });
 ---

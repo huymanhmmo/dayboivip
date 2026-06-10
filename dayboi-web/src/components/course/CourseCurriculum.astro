@@ -9,22 +9,23 @@ export interface Props {
       items: string[];
     }>;
   };
+  lang?: 'vi' | 'en';
 }
 
-const { curriculum } = Astro.props;
+const { curriculum, lang = 'vi' } = Astro.props;
 ---
 
 <section class="cl-section">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Lộ Trình Học
+        {lang === 'vi' ? 'Lộ Trình Học' : 'Syllabus / Learning Path'}
       </span>
       <h2 class="cl-section-title__heading">
         {curriculum.title}
       </h2>
       <p class="cl-section-title__sub">
-        Lộ trình giảng dạy được chia thành từng giai đoạn khoa học, bám sát khả năng tiếp thu thực tế của học viên.
+        {lang === 'vi' ? 'Lộ trình giảng dạy được chia thành từng giai đoạn khoa học, bám sát khả năng tiếp thu thực tế của học viên.' : 'Our training is divided into structured phases based on the actual progress and pace of the student.'}
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
