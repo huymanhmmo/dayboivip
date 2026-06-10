@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Thầy Nguyễn Huy Mạnh",
+    "title": "Giám đốc đào tạo Swim For Life",
+    "experience": [
+      "Giám đốc Trung tâm dạy bơi chuyên nghiệp Swim For Life Việt Nam",
+      "Tổng chỉ huy chương trình Dạy Bơi Miễn Phí cho trẻ em, cư dân nhí tại Vinhomes từ năm 2017 tới nay",
+      "Mỗi năm dạy bơi cho 2000-3000 lượt học viên",
+      "Quản lý và đào tạo 100+ nhân sự"
+    ],
+    "imageUrl": "https://w.ladicdn.com/s700x700/5d3a8cb1dc09063fd190ad78/thay-nguyen-huy-manh-giam-doc-trung-tam-day-boi-chuyen-nghiep-swim-for-life-viet-nam-20240218074844-ocyi0.png",
+    "localImageName": "thay-nguyen-huy-manh.png",
+    "localImagePath": "/images/team/thay-nguyen-huy-manh.png"
+  },
+  {
+    "name": "Thầy Vũ Văn Thịnh",
+    "title": "Trưởng bộ môn Bơi lội - Trò chơi - Đại học TDTT Hà Nội",
+    "experience": [
+      "Trưởng bộ môn Bơi lội - Trò chơi - Trường Đại học Thể dục Thể thao Hà Nội",
+      "Thạc sỹ - Cố vấn Chuyên môn Swim For Life",
+      "Trọng tài bơi lội Seagames 31",
+      "Kinh nghiệm đào tạo 10.000+ học viên"
+    ],
+    "imageUrl": "https://w.ladicdn.com/s700x700/5d3a8cb1dc09063fd190ad78/thay-vu-van-thinh-phu-trach-chuyen-mon-trung-tam-day-boi-chuyen-nghiep-swim-for-life-viet-nam-20240321095257-dhq2l.jpg",
+    "localImageName": "thay-vu-van-thinh.jpg",
+    "localImagePath": "/images/team/thay-vu-van-thinh.jpg"
+  },
+  {
+    "name": "Cô Lê Thị Giang",
+    "title": "Trưởng bộ môn Bơi lội - Khoa GDTC - Đại học Sư phạm Hà Nội",
+    "experience": [
+      "Trưởng bộ môn Bơi lội - Khoa Giáo dục Thể chất - Trường Đại học Sư phạm Hà Nội",
+      "Thạc sỹ - Cố vấn Chuyên môn Swim For Life",
+      "Trọng tài bơi lội Seagames 31",
+      "Kinh nghiệm đào tạo 10.000+ học viên"
+    ],
+    "imageUrl": "https://w.ladicdn.com/s700x700/5d3a8cb1dc09063fd190ad78/co-giang-20240321095406-rsatp.jpg",
+    "localImageName": "co-le-thi-giang.jpg",
+    "localImagePath": "/images/team/co-le-thi-giang.jpg"
+  },
+  {
+    "name": "Thầy Bùi Văn Cán",
+    "title": "Kiện tướng - Trưởng Ban huấn luyện Miền Bắc",
+    "experience": [
+      "Kiện tướng - Trưởng BHL Miền Bắc Swim For Life",
+      "HLV trưởng đội tuyển Bơi trường liên cấp Newton",
+      "Đội tuyển liên tục giành các giải cao các nội dung cá nhân và tập thể tại Hà Nội và toàn quốc",
+      "Top 1 giáo viên được phụ huynh & học sinh yêu thích"
+    ],
+    "imageUrl": "https://w.ladicdn.com/s700x700/5d3a8cb1dc09063fd190ad78/bui-can-20240321095345-vnxsl.jpg",
+    "localImageName": "thay-bui-van-can.jpg",
+    "localImagePath": "/images/team/thay-bui-van-can.jpg"
+  },
+  {
+    "name": "Thầy Trần Trung Hiếu",
+    "title": "Kiện tướng - Trưởng Ban huấn luyện Miền Bắc",
+    "experience": [
+      "Kiện tướng - Trưởng BHL Miền Bắc Swim For Life",
+      "HLV trưởng đội tuyển Bơi trường THCS Đoàn Thị Điểm",
+      "Đội tuyển liên tục giành các giải cao các nội dung cá nhân và tập thể tại Hà Nội và toàn quốc"
+    ],
+    "imageUrl": "https://w.ladicdn.com/s700x700/5d3a8cb1dc09063fd190ad78/thay-tran-trung-hieu-20240321095257-m2qlx.jpg",
+    "localImageName": "thay-tran-trung-hieu.jpg",
+    "localImagePath": "/images/team/thay-tran-trung-hieu.jpg"
+  }
+]
