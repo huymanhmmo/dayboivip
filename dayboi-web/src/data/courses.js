@@ -436,7 +436,7 @@ export const nguoiLon = {
 };
 
 export const caNhan = {
-  slug: "ca-nhan",
+  slug: "1-kem-1",
   title: "Khóa Học Bơi 1 Kèm 1: Dạy Bơi Cá Nhân Chuyên Nghiệp VIP",
   shortTitle: "Học Bơi 1 Kèm 1",
   subtitle: "1 HLV - 1 Học Viên. Hiệu quả tối đa, an toàn tuyệt đối, linh hoạt 100%.",
