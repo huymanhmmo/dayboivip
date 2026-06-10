@@ -89,6 +89,22 @@ const tagsList = [
   { name: 'Survival', slug: 'guides', count: 2 },
   { name: 'Water Safety', slug: 'guides', count: 1 }
 ];
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": title,
+  "description": description,
+  "url": "https://dayboi.vip/en/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Vietnam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/brand/logo.png"
+    }
+  }
+};
 ---
 
 <PageLayout
@@ -97,6 +113,9 @@ const tagsList = [
   canonical="https://dayboi.vip/en/blog/"
   breadcrumbs={breadcrumbs}
   lang="en"
+  schema={blogSchema}
+  alternateUrl="/tin-tuc/"
+  alternateLang="vi"
 >
 
 <!-- Blog Header -->

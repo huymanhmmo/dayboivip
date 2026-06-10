@@ -176,7 +176,7 @@ button {
   --container-lg:  1024px;
   --container-xl:  1600px;
   --container-2xl: 1800px;
-  --container-pad: clamp(1.5rem, 8vw, 8rem);
+  --container-pad: clamp(1rem, 5vw, 8rem);
   
   /* --- Header Height --- */
   --header-height: 80px;
@@ -248,19 +248,23 @@ strong {
   padding-inline: var(--container-pad);
 }
 
-.container--narrow {
+.container--narrow,
+.container-narrow {
   max-width: var(--container-md);
 }
 
-.container--wide {
+.container--wide,
+.container-wide {
   max-width: var(--container-2xl);
 }
 
-.container--boxed {
+.container--boxed,
+.container-boxed {
   max-width: var(--container-xl);
 }
 
-.container--full {
+.container--full,
+.container-full {
   max-width: 100%;
   padding-inline: var(--container-pad);
 }
@@ -707,6 +711,16 @@ strong {
 }
 
 @media (max-width: 768px) {
+  h1, .h1 {
+    font-size: var(--text-3xl);
+  }
+  h2, .h2 {
+    font-size: var(--text-2xl);
+  }
+  h3, .h3 {
+    font-size: var(--text-xl);
+  }
+  
   .section {
     padding-block: var(--space-12);
   }
@@ -727,6 +741,15 @@ strong {
 }
 
 @media (max-width: 480px) {
+  h1, .h1 {
+    font-size: var(--text-2xl);
+  }
+  h2, .h2 {
+    font-size: var(--text-xl);
+  }
+  h3, .h3 {
+    font-size: var(--text-lg);
+  }
   .btn--lg {
     padding: var(--space-3) var(--space-6);
     font-size: var(--text-base);
@@ -944,18 +967,25 @@ strong {
 .blog-layout-3cols {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-8);
+  gap: var(--space-6);
   align-items: start;
 }
 
 @media (min-width: 1024px) {
+  .blog-layout-3cols {
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
   .blog-layout-3cols {
     grid-template-columns: 260px 1fr 320px;
     gap: var(--space-8);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .blog-layout-3cols {
     grid-template-columns: 280px 1fr 340px;
     gap: var(--space-10);
@@ -964,7 +994,7 @@ strong {
 
 /* Sidebar Left & Right Sticky styling */
 .blog-sidebar-left {
-  display: none; /* Hidden on mobile/tablet */
+  display: none; /* Hidden on mobile/tablet/laptop < 1280px */
 }
 
 .blog-sidebar-right {
@@ -975,19 +1005,21 @@ strong {
 }
 
 @media (min-width: 1024px) {
+  .blog-sidebar-right {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    height: fit-content;
+    padding-left: var(--space-2);
+  }
+}
+
+@media (min-width: 1280px) {
   .blog-sidebar-left {
     display: block;
     position: sticky;
     top: calc(var(--header-height) + 24px);
     height: fit-content;
     padding-right: var(--space-2);
-  }
-  
-  .blog-sidebar-right {
-    position: sticky;
-    top: calc(var(--header-height) + 24px);
-    height: fit-content;
-    padding-left: var(--space-2);
   }
 }
 
@@ -1293,6 +1325,9 @@ strong {
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--color-text);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .blog-rich-text h2 {
@@ -1303,6 +1338,8 @@ strong {
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-2);
   border-bottom: 2px solid rgba(0, 119, 182, 0.06);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .blog-rich-text h3 {
@@ -1311,6 +1348,8 @@ strong {
   color: var(--color-dark);
   margin-top: var(--space-8);
   margin-bottom: var(--space-3);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .blog-rich-text p {
@@ -1324,6 +1363,19 @@ strong {
   max-height: 500px;
   object-fit: cover;
   width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-rich-text iframe,
+.blog-rich-text video {
+  max-width: 100%;
+  width: 100% !important;
+  aspect-ratio: 16/9;
+  height: auto !important;
+  border-radius: var(--radius-lg);
+  margin: var(--space-6) auto;
   display: block;
 }
 
@@ -1388,11 +1440,13 @@ strong {
 }
 
 .blog-rich-text table {
+  display: block;
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: var(--space-8) 0;
   border-collapse: collapse;
   border-radius: var(--radius-lg);
-  overflow: hidden;
   box-shadow: var(--shadow-sm);
   font-size: var(--text-sm);
 }

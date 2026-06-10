@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Google Indexing Credentials
+google-indexing-key.json
+dayboivip-*.json
+
+

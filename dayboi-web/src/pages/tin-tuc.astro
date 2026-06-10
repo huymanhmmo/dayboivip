@@ -62,6 +62,22 @@ blogPosts.forEach(post => {
   }
 });
 const tagsList = Array.from(tagsMap.values());
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": title,
+  "description": description,
+  "url": "https://dayboi.vip/tin-tuc/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swim For Life Việt Nam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dayboi.vip/images/brand/logo.png"
+    }
+  }
+};
 ---
 
 <PageLayout
@@ -69,6 +85,9 @@ const tagsList = Array.from(tagsMap.values());
   description={description}
   canonical="https://dayboi.vip/tin-tuc/"
   breadcrumbs={breadcrumbs}
+  schema={blogSchema}
+  alternateUrl="/en/blog/"
+  alternateLang="en"
 >
 
 <!-- Blog Header -->

@@ -8,6 +8,7 @@ export default defineConfig({
   redirects: {
     '/dia-diem/ha-noi': '/hoc-boi-ha-noi',
     '/dia-diem/tphcm': '/hoc-boi-tphcm',
+    '/blog': '/tin-tuc',
   },
   integrations: [
     sitemap({

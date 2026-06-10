@@ -85,20 +85,63 @@ const articleSchema = {
   "image": `https://dayboi.vip${loc.image}`,
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://dayboi.vip/en/swimming-lessons-${Astro.params.location}/`
+    "@id": `https://dayboi.vip/en/${Astro.params.location}/`
   }
 };
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": `Swim For Life Vietnam Swimming Center - ${enName}`,
+  "description": `Professional private 1-on-1 swimming lessons for children and adults in ${enName} and nearby areas.`,
+  "telephone": "+84979121097",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": enName,
+    "addressCountry": "VN"
+  },
+  "url": `https://dayboi.vip/en/${Astro.params.location}/`,
+  "image": `https://dayboi.vip${loc.image}`,
+  "priceRange": "Contact for a quote"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": `Where are the swimming lessons held in ${enName}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `We conduct classes at high-quality partner pools in ${enName} (such as ${loc.pools.map(p => p.name).join(', ')}) or any pool location you request.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `How much do swim lessons cost in ${enName}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Tuition rates depend on the class structure (1-on-1 vs small group) and pool selection. Please contact us via Zalo or phone at 0979.121.097 to get a detailed quote and book a free trial session.`
+      }
+    }
+  ]
+};
+
+const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
 ---
 
 <PageLayout
   title={title}
   description={description}
-  canonical={`https://dayboi.vip/en/swimming-lessons-${Astro.params.location}/`}
+  canonical={`https://dayboi.vip/en/${Astro.params.location}/`}
   image={loc.image}
   type="article"
   breadcrumbs={breadcrumbs}
-  schema={articleSchema}
+  schema={combinedSchema}
   lang="en"
+  alternateUrl={`/${viSlug}/`}
+  alternateLang="vi"
 >
 
   <!-- Hero Section -->

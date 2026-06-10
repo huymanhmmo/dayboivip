@@ -13,9 +13,23 @@ export interface Props {
   breadcrumbs?: Array<{ label: string; href?: string }>;
   schema?: object;
   lang?: 'vi' | 'en';
+  alternateUrl?: string;
+  alternateLang?: 'vi' | 'en';
 }
 
-const { title, description, canonical, image, type, noindex, breadcrumbs, schema, lang = 'vi' } = Astro.props;
+const { 
+  title, 
+  description, 
+  canonical, 
+  image, 
+  type, 
+  noindex, 
+  breadcrumbs, 
+  schema, 
+  lang = 'vi',
+  alternateUrl,
+  alternateLang
+} = Astro.props;
 ---
 
 <MainLayout 
@@ -26,6 +40,8 @@ const { title, description, canonical, image, type, noindex, breadcrumbs, schema
   noIndex={noindex}
   schema={schema}
   lang={lang}
+  alternateUrl={alternateUrl}
+  alternateLang={alternateLang}
 >
   <Fragment slot="head">
     {breadcrumbs && (

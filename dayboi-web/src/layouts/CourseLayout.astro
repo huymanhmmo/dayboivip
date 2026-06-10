@@ -82,9 +82,11 @@ export interface Props {
   breadcrumbs: Array<{ label: string; href?: string }>;
   schema?: any;
   lang?: 'vi' | 'en';
+  alternateUrl?: string;
+  alternateLang?: 'vi' | 'en';
 }
 
-const { course, breadcrumbs, schema, lang = 'vi' } = Astro.props;
+const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } = Astro.props;
 ---
 
 <PageLayout
@@ -96,6 +98,8 @@ const { course, breadcrumbs, schema, lang = 'vi' } = Astro.props;
   breadcrumbs={breadcrumbs}
   schema={schema}
   lang={lang}
+  alternateUrl={alternateUrl}
+  alternateLang={alternateLang}
 >
   <div class="course-landing">
     <!-- Hero Section (Attention) -->
