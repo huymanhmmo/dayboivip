@@ -1324,71 +1324,139 @@
   overflow: hidden;
 }
 
-/* --- FAQ Accordion --- */
-.tl-faq {
-  max-width: 800px;
+/* --- FAQ Accordion & Layout --- */
+.tl-faq-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 60px;
+  max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+}
+
+.tl-faq-info {
+  position: sticky;
+  top: 100px;
+}
+
+.tl-faq-info .tl-section-title__heading {
+  text-align: left;
+  margin-top: 12px;
+}
+
+.tl-faq-info .tl-section-title__sub {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.tl-faq-cta {
+  margin-top: 30px;
+  padding: 24px;
+  background: var(--color-bg-alt, #f4f7fa);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(0, 119, 182, 0.05);
+}
+
+@media (max-width: 991px) {
+  .tl-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .tl-faq-info {
+    position: static;
+    text-align: center;
+  }
+  .tl-faq-info .tl-section-title__heading,
+  .tl-faq-info .tl-section-title__sub {
+    text-align: center;
+  }
+}
+
+.tl-faq {
+  width: 100%;
 }
 
 .tl-faq__item {
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-3);
-  background: var(--color-bg);
-  transition: all var(--transition-base);
-  padding: 0 var(--space-4);
-}
-
-.tl-faq__item.active {
-  background: var(--color-bg-alt);
-}
-
-.tl-faq__question {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: var(--space-5) 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: left;
-  font-family: var(--font-heading);
-  font-size: var(--text-base);
-  font-weight: 700;
-  color: var(--color-dark);
-  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid rgba(10, 77, 140, 0.06);
+  border-radius: var(--radius-lg, 16px);
+  margin-bottom: 16px;
+  padding: 0 24px;
+  box-shadow: var(--shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.01));
   transition: all 0.3s ease;
 }
 
+.tl-faq__item:hover {
+  border-color: var(--theme-primary, var(--color-primary));
+  box-shadow: 0 10px 25px -10px rgba(0, 77, 115, 0.08);
+}
+
+.tl-faq__item.active {
+  border-color: var(--theme-primary, var(--color-primary));
+  background: rgba(240, 248, 255, 0.3);
+  box-shadow: 0 10px 25px -10px rgba(0, 77, 115, 0.12);
+}
+
+.tl-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: left;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
 .tl-faq__question:hover {
-  color: var(--color-primary);
+  color: var(--theme-primary, var(--color-primary));
 }
 
 .tl-faq__icon {
-  font-size: var(--text-lg);
-  color: var(--color-primary);
-  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-primary, var(--color-primary));
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: all 0.4s var(--transition-base, ease);
 }
 
 .tl-faq__answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
 
 .tl-faq__answer-inner {
-  padding-bottom: var(--space-5);
-  font-size: var(--text-sm);
+  padding: 0 0 24px;
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
-  line-height: var(--leading-normal);
-}
-
-.tl-faq__item.active .tl-faq__answer {
-  max-height: 1000px; /* high value for expansion */
-  transition: max-height 0.6s cubic-bezier(1, 0, 1, 0);
+  line-height: 1.75;
 }
 
 .tl-faq__item.active .tl-faq__icon {
+  background: linear-gradient(135deg, var(--theme-primary, var(--color-primary)), var(--theme-secondary, var(--color-secondary)));
+  color: #ffffff;
   transform: rotate(45deg);
+}
+
+.tl-faq__item.active .tl-faq__answer {
+  max-height: 800px;
 }
 
 /* --- Related Blogs Section --- */

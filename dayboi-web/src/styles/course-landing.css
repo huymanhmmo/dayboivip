@@ -950,17 +950,82 @@
    12. FAQ ACCORDION  (.cl-faq)
    ========================================================================== */
 
-.course-landing .cl-faq {
-  max-width: 800px;
+.course-landing .cl-faq-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 60px;
+  max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+}
+
+.course-landing .cl-faq-info {
+  position: sticky;
+  top: 100px;
+}
+
+.course-landing .cl-faq-info .cl-section-title__heading {
+  text-align: left;
+  margin-top: 12px;
+}
+
+.course-landing .cl-faq-info .cl-section-title__sub {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.course-landing .cl-faq-cta {
+  margin-top: 30px;
+  padding: 24px;
+  background: var(--cl-bg-alt, #f4f7fa);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 119, 182, 0.05);
+}
+
+.course-landing .cl-faq-cta p {
+  font-size: 0.9rem;
+  color: var(--cl-text-light);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 991px) {
+  .course-landing .cl-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .course-landing .cl-faq-info {
+    position: static;
+    text-align: center;
+  }
+  .course-landing .cl-faq-info .cl-section-title__heading,
+  .course-landing .cl-faq-info .cl-section-title__sub {
+    text-align: center;
+  }
+}
+
+.course-landing .cl-faq {
+  width: 100%;
 }
 
 .course-landing .cl-faq__item {
-  border-bottom: 1px solid rgba(10, 77, 140, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(10, 77, 140, 0.06);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 0 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s ease;
 }
 
-.course-landing .cl-faq__item:last-child {
-  border-bottom: none;
+.course-landing .cl-faq__item:hover {
+  border-color: var(--cl-primary);
+  box-shadow: 0 10px 25px -10px rgba(0, 77, 115, 0.08);
+}
+
+.course-landing .cl-faq__item.active {
+  border-color: var(--cl-primary);
+  background: rgba(240, 248, 255, 0.3);
+  box-shadow: 0 10px 25px -10px rgba(0, 77, 115, 0.12);
 }
 
 .course-landing .cl-faq__question {
@@ -969,13 +1034,13 @@
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-  padding: 20px 0;
+  padding: 24px 0;
   background: none;
   border: none;
   cursor: pointer;
   font-family: var(--cl-font);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--cl-dark);
   text-align: left;
   line-height: 1.4;
@@ -989,8 +1054,8 @@
 /* Arrow icon */
 .course-landing .cl-faq__icon {
   flex-shrink: 0;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--cl-bg-alt);
   display: flex;
@@ -1018,7 +1083,7 @@
 }
 
 .course-landing .cl-faq__answer-inner {
-  padding: 0 0 20px;
+  padding: 0 0 24px;
   font-size: 0.95rem;
   color: var(--cl-text-light);
   line-height: 1.75;

@@ -613,32 +613,65 @@ const pools = [
   <!-- ============================================
        FAQ SECTION
        ============================================ -->
-  <section class="section hanoi-faq-section">
-    <div class="container container--narrow">
-      <div class="section__header text-center reveal">
-        <span class="section__badge">Giải Đáp Thắc Mắc</span>
-        <h2 class="section__title">Câu Hỏi Thường Gặp Về <span class="text-gradient">Học Bơi Hà Nội</span></h2>
-      </div>
-
-      <div class="hanoi-faq-list reveal">
-        <div class="faq-card">
-          <h3 class="faq-card__q">❓ Học phí học bơi ở Hà Nội là bao nhiêu? Có lớp học bơi giá rẻ ở Hà Nội không?</h3>
-          <p class="faq-card__a">Học phí học bơi tại Hà Nội dao động tùy thuộc vào địa điểm bể bơi bạn lựa chọn, hình thức học (kèm riêng 1-1 hay nhóm nhỏ) và độ tuổi của học viên. Quý khách vui lòng liên hệ trực tiếp hotline/Zalo để được tư vấn và nhận báo giá chính xác, tối ưu nhất cùng ưu đãi học thử miễn phí.</p>
+  <section class="section hanoi-faq-section" id="faq">
+    <div class="container">
+      <div class="hanoi-faq-layout">
+        <div class="hanoi-faq-info reveal">
+          <span class="section__badge">Giải Đáp Thắc Mắc</span>
+          <h2 class="section__title">Câu Hỏi Thường Gặp Về <span class="text-gradient">Học Bơi Hà Nội</span></h2>
+          <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6;">
+            Tổng hợp và giải đáp các băn khoăn phổ biến nhất của học viên và phụ huynh khi đăng ký khóa học bơi tại khu vực Hà Nội.
+          </p>
+          <span class="divider" style="margin-inline: 0; margin-bottom: 24px;"></span>
+          <div class="hanoi-faq-cta hide-mobile">
+            <p style="font-weight: 600; color: var(--color-primary); margin-bottom: 8px;">Bạn cần tư vấn chi tiết hơn?</p>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Liên hệ HLV Trưởng để nhận tư vấn lộ trình và sắp xếp buổi học thử miễn phí tại bể bơi gần nhà.</p>
+            <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
+              <span>📞</span> Hotline: 0979.121.097
+            </a>
+          </div>
         </div>
 
-        <div class="faq-card">
-          <h3 class="faq-card__q">❓ Nên chọn trung tâm dạy bơi Hà Nội nào uy tín?</h3>
-          <p class="faq-card__a">Swim For Life Việt Nam tự hào là một trong những trung tâm học bơi tại Hà Nội uy tín số 1. Chúng tôi có đội ngũ 50+ HLV giàu kinh nghiệm, cam kết 100% biết bơi bằng văn bản, có hợp đồng bảo hành dạy tiếp miễn phí nếu chưa bơi tốt.</p>
-        </div>
+        <div class="hanoi-faq-list reveal">
+          <details class="faq-card" open>
+            <summary class="faq-card__q">
+              <span>Học phí học bơi ở Hà Nội là bao nhiêu? Có lớp học bơi giá rẻ ở Hà Nội không?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a">Học phí học bơi tại Hà Nội dao động tùy thuộc vào địa điểm bể bơi bạn lựa chọn, hình thức học (kèm riêng 1-1 hay nhóm nhỏ) và độ tuổi của học viên. Quý khách vui lòng liên hệ trực tiếp hotline/Zalo để được tư vấn và nhận báo giá chính xác, tối ưu nhất cùng ưu đãi học thử miễn phí.</p>
+            </div>
+          </details>
 
-        <div class="faq-card">
-          <h3 class="faq-card__q">❓ Tôi có thể đăng ký lớp học bơi giáo viên nữ Hà Nội không?</h3>
-          <p class="faq-card__a">Hoàn toàn được! Swim For Life có cả HLV nam và HLV nữ chuyên nghiệp sẵn sàng đáp ứng yêu cầu của học viên nữ hoặc các bé nhỏ cần sự chỉ dẫn dịu dàng, kiên nhẫn.</p>
-        </div>
+          <details class="faq-card">
+            <summary class="faq-card__q">
+              <span>Nên chọn trung tâm dạy bơi Hà Nội nào uy tín?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a">Swim For Life Việt Nam tự hào là một trong những trung tâm học bơi tại Hà Nội uy tín số 1. Chúng tôi có đội ngũ 50+ HLV giàu kinh nghiệm, cam kết 100% biết bơi bằng văn bản, có hợp đồng bảo hành dạy tiếp miễn phí nếu chưa bơi tốt.</p>
+            </div>
+          </details>
 
-        <div class="faq-card">
-          <h3 class="faq-card__q">❓ Swim For Life có các lớp học bơi Hà Đông và dạy bơi ở Cầu Giấy không?</h3>
-          <p class="faq-card__a">Có, chúng tôi hoạt động rộng khắp các quận Hà Nội. HLV sẽ di chuyển tới dạy tại các bể bơi gần nhà bạn tại Hà Đông (Vinhomes Smart City, Văn Phú...), Cầu Giấy (bể bơi Dịch Vọng b, Nghĩa Tân...), Hai Bà Trưng, Đống Đa, Thanh Xuân, Long Biên...</p>
+          <details class="faq-card">
+            <summary class="faq-card__q">
+              <span>Tôi có thể đăng ký lớp học bơi giáo viên nữ Hà Nội không?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a">Hoàn toàn được! Swim For Life có cả HLV nam và HLV nữ chuyên nghiệp sẵn sàng đáp ứng yêu cầu của học viên nữ hoặc các bé nhỏ cần sự chỉ dẫn dịu dàng, kiên nhẫn.</p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-card__q">
+              <span>Swim For Life có các lớp học bơi Hà Đông và dạy bơi ở Cầu Giấy không?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a">Có, chúng tôi hoạt động rộng khắp các quận Hà Nội. HLV sẽ di chuyển tới dạy tại các bể bơi gần nhà bạn tại Hà Đông (Vinhomes Smart City, Văn Phú...), Cầu Giấy (bể bơi Dịch Vọng b, Nghĩa Tân...), Hai Bà Trưng, Đống Đa, Thanh Xuân, Long Biên...</p>
+            </div>
+          </details>
         </div>
       </div>
     </div>
@@ -1764,19 +1797,63 @@ const pools = [
   /* ============================================
      FAQ SECTION
      ============================================ */
+  .hanoi-faq-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .hanoi-faq-info {
+    position: sticky;
+    top: 100px;
+  }
+
+  .hanoi-faq-info .section__title {
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: var(--space-4);
+  }
+
+  .hanoi-faq-cta {
+    margin-top: 30px;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 119, 182, 0.05);
+    box-shadow: var(--shadow-sm);
+  }
+
   .hanoi-faq-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    margin-top: var(--space-8);
+  }
+
+  @media (max-width: 991px) {
+    .hanoi-faq-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hanoi-faq-info {
+      position: static;
+      text-align: center;
+    }
+    .hanoi-faq-info .section__title {
+      text-align: center;
+    }
   }
 
   .faq-card {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: var(--space-5);
     transition: all var(--transition-base);
+    padding: 0;
+    overflow: hidden;
   }
 
   .faq-card:hover {
@@ -1785,16 +1862,106 @@ const pools = [
   }
 
   .faq-card__q {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 700;
+    color: var(--color-dark, #1b1b1e);
+    padding: var(--space-5) var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    gap: var(--space-4);
+    margin-bottom: 0;
+    transition: color 0.3s ease;
+  }
+
+  .faq-card__q:hover {
     color: var(--color-primary);
-    margin-bottom: var(--space-2);
+  }
+
+  .faq-card__q::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-card__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+
+  .faq-card__icon::before,
+  .faq-card__icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-card__icon::before {
+    width: 2px;
+    height: 12px;
+    top: 10px;
+    left: 15px;
+  }
+
+  .faq-card__icon::after {
+    width: 12px;
+    height: 2px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .faq-card__answer-wrap {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 var(--space-6);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  details.faq-card[open] {
+    border-color: var(--color-primary);
+    background: rgba(240, 248, 255, 0.3);
+  }
+
+  details.faq-card[open] .faq-card__q {
+    color: var(--color-primary);
+  }
+
+  details.faq-card[open] .faq-card__icon {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-teal));
+  }
+
+  details.faq-card[open] .faq-card__icon::before {
+    transform: rotate(90deg);
+    background-color: #ffffff;
+  }
+
+  details.faq-card[open] .faq-card__icon::after {
+    transform: rotate(90deg);
+    background-color: #ffffff;
+    opacity: 0;
+  }
+
+  details.faq-card[open] .faq-card__answer-wrap {
+    max-height: 500px;
+    padding-bottom: var(--space-5);
+    opacity: 1;
   }
 
   .faq-card__a {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1.75;
     margin-bottom: 0;
   }
 

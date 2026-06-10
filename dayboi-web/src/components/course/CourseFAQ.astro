@@ -12,20 +12,28 @@ const { faqs, lang = 'vi' } = Astro.props;
 
 <section class="cl-section" id="faq">
   <div class="cl-section__container">
-    <div class="cl-section-title">
-      <span class="cl-section-title__badge">
-        {lang === 'vi' ? 'Hỏi Đáp Lớp Bơi' : 'FAQ'}
-      </span>
-      <h2 class="cl-section-title__heading">
-        {lang === 'vi' ? 'Giải Đáp Thắc Mắc Thường Gặp' : 'Frequently Asked Questions'}
-      </h2>
-      <p class="cl-section-title__sub">
-        {lang === 'vi' ? 'Những thắc mắc phổ biến của học viên và phụ huynh khi đăng ký học bơi tại trung tâm.' : 'Find answers to the most common questions about our swimming classes.'}
-      </p>
-      <span class="cl-section-title__decoration"></span>
-    </div>
+    <div class="cl-faq-layout">
+      <div class="cl-faq-info">
+        <span class="cl-section-title__badge">
+          {lang === 'vi' ? 'Hỏi Đáp Lớp Bơi' : 'FAQ'}
+        </span>
+        <h2 class="cl-section-title__heading">
+          {lang === 'vi' ? 'Giải Đáp Thắc Mắc Thường Gặp' : 'Frequently Asked Questions'}
+        </h2>
+        <p class="cl-section-title__sub">
+          {lang === 'vi' ? 'Những thắc mắc phổ biến của học viên và phụ huynh khi đăng ký học bơi tại trung tâm.' : 'Find answers to the most common questions about our swimming classes.'}
+        </p>
+        <span class="cl-section-title__decoration" style="margin-inline: 0;"></span>
+        <div class="cl-faq-cta hide-mobile">
+          <p style="font-weight: 600; color: var(--cl-dark); margin-bottom: 8px;">{lang === 'vi' ? 'Vẫn còn thắc mắc khác?' : 'Still have questions?'}</p>
+          <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">{lang === 'vi' ? 'Đừng ngần ngại liên hệ trực tiếp với HLV Trưởng của chúng tôi để được tư vấn nhanh nhất.' : 'Feel free to contact our Lead Coach directly for support.'}</p>
+          <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
+            <span>📞</span> {lang === 'vi' ? 'Hotline: 0979.121.097' : 'Call: 0979.121.097'}
+          </a>
+        </div>
+      </div>
 
-    <div class="cl-faq">
+      <div class="cl-faq">
       {faqs.map((faq, index) => (
         <div class="cl-faq__item cl-animate">
           <button class="cl-faq__question" aria-expanded="false" data-index={index}>
@@ -39,6 +47,7 @@ const { faqs, lang = 'vi' } = Astro.props;
           </div>
         </div>
       ))}
+      </div>
     </div>
   </div>
 </section>

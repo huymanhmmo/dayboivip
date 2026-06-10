@@ -171,14 +171,36 @@ const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
 
       <!-- FAQ Section -->
       <div style="margin-bottom: var(--space-16);">
-        <h2 style="font-size: var(--text-2xl); color: var(--color-primary); text-align: center; margin-bottom: var(--space-8); font-weight: 700;">Hỏi Đáp Về Khóa Học Bơi Tại {loc.name}</h2>
-        <div class="faq-list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4);">
-          {loc.faqs.map((faq) => (
-            <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff; border: 1px solid var(--color-border);">
-              <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">❓ {faq.q}</h4>
-              <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">{faq.a}</p>
+        <div class="loc-faq-layout">
+          <div class="loc-faq-info">
+            <span class="section__badge" style="display: inline-block; background: var(--color-primary-50); color: var(--color-primary-dark); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-4);">Giải Đáp</span>
+            <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-4); font-weight: 700; line-height: 1.25;">Hỏi Đáp Về Khóa Học Bơi Tại {loc.name}</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6;">
+              Những câu hỏi thường gặp nhất của học viên và phụ huynh khi đăng ký các lớp dạy học bơi ở {loc.name}.
+            </p>
+            <div style="width: 60px; height: 4px; background: var(--gradient-primary); border-radius: var(--radius-full); margin-bottom: 24px;"></div>
+            <div class="loc-faq-cta hide-mobile" style="margin-top: 30px; padding: 24px; background: var(--color-bg-alt); border-radius: var(--radius-lg); border: 1px solid rgba(0, 119, 182, 0.05);">
+              <p style="font-weight: 600; color: var(--color-primary); margin-bottom: 8px;">Bạn cần hỗ trợ trực tiếp?</p>
+              <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Liên hệ HLV Trưởng để được giải đáp mọi thắc mắc và đặt lịch bơi thử miễn phí.</p>
+              <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none; background: var(--gradient-coral); color: white; padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 600;">
+                <span>📞</span> Hotline: 0979.121.097
+              </a>
             </div>
-          ))}
+          </div>
+
+          <div class="faq-list" style="display: flex; flex-direction: column; gap: var(--space-4); width: 100%;">
+            {loc.faqs.map((faq, index) => (
+              <details class="faq-card" open={index === 0} style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition-base); padding: 0;">
+                <summary class="faq-card__q" style="font-size: 1.05rem; font-weight: 700; color: var(--color-dark); padding: var(--space-5) var(--space-6); display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; user-select: none; gap: var(--space-4); margin-bottom: 0;">
+                  <span>{faq.q}</span>
+                  <span class="faq-card__icon"></span>
+                </summary>
+                <div class="faq-card__answer-wrap">
+                  <p class="faq-card__a" style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 0;">{faq.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -209,3 +231,112 @@ const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
   </section>
 
 </PageLayout>
+
+<style>
+  /* Local FAQ 2-column styles for Location pages */
+  .loc-faq-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .loc-faq-info {
+    position: sticky;
+    top: 100px;
+  }
+
+  @media (max-width: 991px) {
+    .loc-faq-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .loc-faq-info {
+      position: static;
+      text-align: center;
+    }
+  }
+
+  /* Zero JS accordion summary */
+  .faq-card__q::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-card__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+
+  .faq-card__icon::before,
+  .faq-card__icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease;
+  }
+
+  /* Vertical line */
+  .faq-card__icon::before {
+    width: 2px;
+    height: 12px;
+    top: 10px;
+    left: 15px;
+  }
+
+  /* Horizontal line */
+  .faq-card__icon::after {
+    width: 12px;
+    height: 2px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .faq-card__answer-wrap {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 var(--space-6);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  /* Style for open state */
+  details.faq-card[open] {
+    border-color: var(--color-primary) !important;
+    background: rgba(240, 248, 255, 0.3) !important;
+  }
+
+  details.faq-card[open] .faq-card__q {
+    color: var(--color-primary) !important;
+  }
+
+  details.faq-card[open] .faq-card__icon {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-teal));
+  }
+
+  details.faq-card[open] .faq-card__icon::before {
+    transform: rotate(90deg);
+    background-color: #ffffff;
+  }
+
+  details.faq-card[open] .faq-card__icon::after {
+    transform: rotate(90deg);
+    background-color: #ffffff;
+    opacity: 0;
+  }
+
+  details.faq-card[open] .faq-card__answer-wrap {
+    max-height: 500px;
+    padding-bottom: var(--space-5);
+    opacity: 1;
+  }
+</style>

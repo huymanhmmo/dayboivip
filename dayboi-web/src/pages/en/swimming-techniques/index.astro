@@ -467,29 +467,39 @@ const hotspotCoords = {
     <!-- FAQ Accordion Section -->
     <section class="tl-section" id="faq">
       <div class="tl-section__container">
-        <div class="tl-section-title">
-          <span class="tl-section-title__badge">Common Questions</span>
-          <h2 class="tl-section-title__heading">Frequently Asked Questions</h2>
-          <p class="tl-section-title__sub">
-            Clear responses to technical queries, learning duration, and training optimization.
-          </p>
-          <span class="tl-section-title__decoration"></span>
-        </div>
+        <div class="tl-faq-layout">
+          <div class="tl-faq-info">
+            <span class="tl-section-title__badge">Common Questions</span>
+            <h2 class="tl-section-title__heading">Frequently Asked Questions</h2>
+            <p class="tl-section-title__sub">
+              Clear responses to technical queries, learning duration, and training optimization.
+            </p>
+            <span class="tl-section-title__decoration" style="margin-inline: 0;"></span>
+            
+            <div class="tl-faq-cta hide-mobile">
+              <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 8px;">Still have questions?</p>
+              <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Feel free to contact our Lead Coach directly for support.</p>
+              <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
+                <span>📞</span> Call: 0979.121.097
+              </a>
+            </div>
+          </div>
 
-        <div class="tl-faq">
-          {faqData.map((faq, index) => (
-            <div class="tl-faq__item">
-              <button class="tl-faq__question" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
-                <span>{faq.question}</span>
-                <span class="tl-faq__icon">+</span>
-              </button>
-              <div class="tl-faq__answer" id={`faq-answer-${index}`}>
-                <div class="tl-faq__answer-inner">
-                  <p>{faq.answer}</p>
+          <div class="tl-faq">
+            {faqData.map((faq, index) => (
+              <div class="tl-faq__item">
+                <button class="tl-faq__question" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
+                  <span>{faq.question}</span>
+                  <span class="tl-faq__icon">+</span>
+                </button>
+                <div class="tl-faq__answer" id={`faq-answer-${index}`}>
+                  <div class="tl-faq__answer-inner">
+                    <p>{faq.answer}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

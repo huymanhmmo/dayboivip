@@ -646,29 +646,38 @@ const faqSchema = {
   <!-- ============ FAQ ============ -->
   <section class="about-section about-section--alt" id="faq-gioi-thieu">
     <div class="container">
-      <div class="about-section-header reveal">
-        <span class="about-section-badge">❓ FAQ</span>
-        <h2 class="about-section-title">Frequently Asked Questions About Swim For Life</h2>
-      </div>
-
-      <p class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto var(--space-10); color: var(--color-text-secondary);">
-        Here are the most frequently asked questions. For other inquiries, please contact our hotline/Zalo at <a href="tel:0979121097">0979.121.097</a>.
-      </p>
-
-      <div class="about-faq-list reveal">
-        {faqData.map((item) => (
-          <div class="about-faq-item">
-            <button class="about-faq-question" type="button" aria-expanded="false">
-              <span>{item.question}</span>
-              <span class="about-faq-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="about-faq-answer">
-              <p>{item.answer}</p>
-            </div>
+      <div class="about-faq-layout">
+        <div class="about-faq-info reveal">
+          <span class="about-section-badge">❓ FAQ</span>
+          <h2 class="about-section-title">Frequently Asked Questions</h2>
+          <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6;">
+            Here are the most frequently asked questions from students and parents. For other inquiries, please contact our hotline/Zalo directly.
+          </p>
+          <span class="divider" style="margin-inline: 0; margin-bottom: 24px;"></span>
+          <div class="about-faq-cta hide-mobile">
+            <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 8px;">Need direct consultation?</p>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-light);">Contact our Lead Coach directly to get support and schedule your free trial class.</p>
+            <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
+              <span>📞</span> Call: 0979.121.097
+            </a>
           </div>
-        ))}
+        </div>
+
+        <div class="about-faq-list reveal">
+          {faqData.map((item) => (
+            <div class="about-faq-item">
+              <button class="about-faq-question" type="button" aria-expanded="false">
+                <span>{item.question}</span>
+                <span class="about-faq-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+              <div class="about-faq-answer">
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -1732,16 +1741,58 @@ const faqSchema = {
   }
 
   /* --- FAQ --- */
-  .about-faq-list {
-    max-width: 800px;
+  .about-faq-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 60px;
+    max-width: 1200px;
     margin: 0 auto;
+    align-items: start;
+  }
+
+  .about-faq-info {
+    position: sticky;
+    top: 100px;
+  }
+
+  .about-faq-info .about-section-title {
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-faq-cta {
+    margin-top: 30px;
+    padding: 24px;
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 119, 182, 0.05);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .about-faq-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
   }
 
+  @media (max-width: 991px) {
+    .about-faq-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .about-faq-info {
+      position: static;
+      text-align: center;
+    }
+    .about-faq-info .about-section-title {
+      text-align: center;
+    }
+  }
+
   .about-faq-item {
-    background: var(--color-surface);
+    background: var(--color-bg-card);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0,119,182,0.06);
@@ -1750,8 +1801,8 @@ const faqSchema = {
   }
 
   .about-faq-item:hover {
+    border-color: var(--color-primary);
     box-shadow: var(--shadow-md);
-    border-color: rgba(0,119,182,0.12);
   }
 
   .about-faq-question {
@@ -1800,6 +1851,7 @@ const faqSchema = {
   /* Active FAQ states */
   .about-faq-item.active {
     border-color: var(--color-primary);
+    background: rgba(240, 248, 255, 0.3);
     box-shadow: 0 8px 20px rgba(0,119,182,0.08);
   }
 
@@ -1810,7 +1862,7 @@ const faqSchema = {
   }
 
   .about-faq-item.active .about-faq-answer {
-    max-height: 200px;
+    max-height: 400px;
   }
 
   /* --- CTA BANNER --- */

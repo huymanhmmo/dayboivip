@@ -190,43 +190,76 @@ import CoachesSection from '../components/CoachesSection.astro';
   </section>
 
   <!-- Pricing FAQs -->
-  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);">
-    <div class="container" style="max-width: 800px;">
-      <div class="section-header text-center" style="margin-bottom: var(--space-8);">
-        <span class="section-badge">❓ Giải đáp</span>
-        <h2 class="section-title">Câu Hỏi Thường Gặp Về Học Phí</h2>
-      </div>
-
-      <div class="faq-list" style="display: flex; flex-direction: column; gap: var(--space-4);">
-        
-        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
-          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">1. Tại sao Swim For Life không công bố giá tiền cụ thể trên website?</h4>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Học phí dạy bơi của trung tâm phụ thuộc rất nhiều vào: <strong>Địa điểm bể bơi</strong> bạn lựa chọn (mỗi quận, mỗi tỉnh/thành có giá vé bể bơi và mức sống khác nhau), <strong>độ tuổi học viên</strong> (trẻ em dưới 5 tuổi yêu cầu công kèm cặp sát sao hơn), và <strong>nhu cầu kèm cặp</strong> (1 kèm 1, 1 kèm 2 hoặc nhóm nhỏ). Để đảm bảo báo giá chính xác, hợp lý nhất và có lợi nhất cho học viên, chúng tôi sẽ báo giá chi tiết khi nhận được thông tin yêu cầu cụ thể.
+  <section class="section" style="background: var(--color-bg-alt); padding-block: var(--space-12);" id="faq">
+    <div class="container">
+      <div class="pricing-faq-layout">
+        <div class="pricing-faq-info">
+          <span class="section-badge">❓ Giải đáp</span>
+          <h2 class="section-title" style="text-align: left; margin-top: 12px; margin-bottom: var(--space-4);">Câu Hỏi Thường Gặp Về Học Phí</h2>
+          <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6;">
+            Giải đáp chi tiết các thắc mắc về chính sách học phí, lộ trình thanh toán và cam kết chất lượng của Swim For Life.
           </p>
+          <div style="width: 60px; height: 4px; background: var(--gradient-primary); border-radius: var(--radius-full); margin-bottom: 24px;"></div>
+          <div class="pricing-faq-cta hide-mobile" style="margin-top: 30px; padding: 24px; background: #ffffff; border-radius: var(--radius-lg); border: 1px solid rgba(0, 119, 182, 0.05); box-shadow: var(--shadow-sm);">
+            <p style="font-weight: 600; color: var(--color-primary); margin-bottom: 8px;">Bạn cần nhận báo giá ngay?</p>
+            <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Điền form đăng ký nhận báo giá theo khu vực hoặc liên hệ Hotline/Zalo để được tư vấn miễn phí.</p>
+            <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none; background: var(--gradient-coral); color: white; padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 600;">
+              <span>📞</span> Hotline: 0979.121.097
+            </a>
+          </div>
         </div>
 
-        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
-          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">2. Chi phí học bơi bao gồm những gì? Có phát sinh thêm không?</h4>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Học phí đóng cho trung tâm là trọn gói công dạy của Huấn luyện viên trong suốt khóa học (10-12 buổi). Trung tâm cam kết <strong>không phát sinh bất kỳ khoản phụ thu nào khác</strong> từ phía trung tâm. Học viên chỉ cần tự chuẩn bị đồ bơi cá nhân và mua vé vào bể bơi mỗi buổi học.
-          </p>
-        </div>
+        <div class="faq-list" style="display: flex; flex-direction: column; gap: var(--space-4); width: 100%;">
+          
+          <details class="faq-card" open style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition-base); padding: 0;">
+            <summary class="faq-card__q" style="font-size: 1.05rem; font-weight: 700; color: var(--color-dark); padding: var(--space-5) var(--space-6); display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; user-select: none; gap: var(--space-4); margin-bottom: 0;">
+              <span>Tại sao Swim For Life không công bố giá tiền cụ thể trên website?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a" style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 0;">
+                Học phí dạy bơi của trung tâm phụ thuộc rất nhiều vào: <strong>Địa điểm bể bơi</strong> bạn lựa chọn (mỗi quận, mỗi tỉnh/thành có giá vé bể bơi và mức sống khác nhau), <strong>độ tuổi học viên</strong> (trẻ em dưới 5 tuổi yêu cầu công kèm cặp sát sao hơn), và <strong>nhu cầu kèm cặp</strong> (1 kèm 1, 1 kèm 2 hoặc nhóm nhỏ). Để đảm bảo báo giá chính xác, hợp lý nhất và có lợi nhất cho học viên, chúng tôi sẽ báo giá chi tiết khi nhận được thông tin yêu cầu cụ thể.
+              </p>
+            </div>
+          </details>
 
-        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
-          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">3. Nếu bận nghỉ giữa chừng có được bảo lưu học phí không?</h4>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Có! Swim For Life hỗ trợ bảo lưu khóa học và học phí cho học viên tối đa lên tới <strong>6 tháng</strong> trong trường hợp học viên có vấn đề sức khỏe, đi công tác hoặc đi du lịch. Bạn chỉ cần thông báo cho ban quản lý lớp trước ít nhất 24 giờ.
-          </p>
-        </div>
+          <details class="faq-card" style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition-base); padding: 0;">
+            <summary class="faq-card__q" style="font-size: 1.05rem; font-weight: 700; color: var(--color-dark); padding: var(--space-5) var(--space-6); display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; user-select: none; gap: var(--space-4); margin-bottom: 0;">
+              <span>Chi phí học bơi bao gồm những gì? Có phát sinh thêm không?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a" style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 0;">
+                Học phí đóng cho trung tâm là trọn gói công dạy của Huấn luyện viên trong suốt khóa học (10-12 buổi). Trung tâm cam kết <strong>không phát sinh bất kỳ khoản phụ thu nào khác</strong> từ phía trung tâm. Học viên chỉ cần tự chuẩn bị đồ bơi cá nhân và mua vé vào bể bơi mỗi buổi học.
+              </p>
+            </div>
+          </details>
 
-        <div class="card" style="padding: var(--space-5); border-radius: 12px; background: #ffffff;">
-          <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-2); font-weight: 700;">4. Trung tâm có hỗ trợ trả góp hoặc chia nhỏ đóng học phí không?</h4>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Chúng tôi hỗ trợ chia học phí thành 2 đợt đóng đối với các khóa học VIP 1 kèm 1 để giảm bớt gánh nặng tài chính cho gia đình. Đợt 1 đóng 50% sau buổi học thử và đợt 2 đóng 50% còn lại vào buổi học thứ 5.
-          </p>
-        </div>
+          <details class="faq-card" style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition-base); padding: 0;">
+            <summary class="faq-card__q" style="font-size: 1.05rem; font-weight: 700; color: var(--color-dark); padding: var(--space-5) var(--space-6); display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; user-select: none; gap: var(--space-4); margin-bottom: 0;">
+              <span>Nếu bận nghỉ giữa chừng có được bảo lưu học phí không?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a" style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 0;">
+                Có! Swim For Life hỗ trợ bảo lưu khóa học và học phí cho học viên tối đa lên tới <strong>6 tháng</strong> trong trường hợp học viên có vấn đề sức khỏe, đi công tác hoặc đi du lịch. Bạn chỉ cần thông báo cho ban quản lý lớp trước ít nhất 24 giờ.
+              </p>
+            </div>
+          </details>
 
+          <details class="faq-card" style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition-base); padding: 0;">
+            <summary class="faq-card__q" style="font-size: 1.05rem; font-weight: 700; color: var(--color-dark); padding: var(--space-5) var(--space-6); display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; user-select: none; gap: var(--space-4); margin-bottom: 0;">
+              <span>Trung tâm có hỗ trợ trả góp hoặc chia nhỏ đóng học phí không?</span>
+              <span class="faq-card__icon"></span>
+            </summary>
+            <div class="faq-card__answer-wrap">
+              <p class="faq-card__a" style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 0;">
+                Chúng tôi hỗ trợ chia học phí thành 2 đợt đóng đối với các khóa học VIP 1 kèm 1 để giảm bớt gánh nặng tài chính cho gia đình. Đợt 1 đóng 50% sau buổi học thử và đợt 2 đóng 50% còn lại vào buổi học thứ 5.
+              </p>
+            </div>
+          </details>
+
+        </div>
       </div>
     </div>
   </section>
@@ -256,3 +289,115 @@ import CoachesSection from '../components/CoachesSection.astro';
   </section>
 
 </PageLayout>
+
+<style>
+  /* Local FAQ 2-column styles for Pricing page */
+  .pricing-faq-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .pricing-faq-info {
+    position: sticky;
+    top: 100px;
+  }
+
+  @media (max-width: 991px) {
+    .pricing-faq-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .pricing-faq-info {
+      position: static;
+      text-align: center;
+    }
+    .pricing-faq-info .section-title {
+      text-align: center !important;
+    }
+  }
+
+  /* Zero JS accordion summary */
+  .faq-card__q::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-card__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+
+  .faq-card__icon::before,
+  .faq-card__icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease;
+  }
+
+  /* Vertical line */
+  .faq-card__icon::before {
+    width: 2px;
+    height: 12px;
+    top: 10px;
+    left: 15px;
+  }
+
+  /* Horizontal line */
+  .faq-card__icon::after {
+    width: 12px;
+    height: 2px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .faq-card__answer-wrap {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 var(--space-6);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  /* Style for open state */
+  details.faq-card[open] {
+    border-color: var(--color-primary) !important;
+    background: rgba(240, 248, 255, 0.3) !important;
+  }
+
+  details.faq-card[open] .faq-card__q {
+    color: var(--color-primary) !important;
+  }
+
+  details.faq-card[open] .faq-card__icon {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-teal));
+  }
+
+  details.faq-card[open] .faq-card__icon::before {
+    transform: rotate(90deg);
+    background-color: #ffffff;
+  }
+
+  details.faq-card[open] .faq-card__icon::after {
+    transform: rotate(90deg);
+    background-color: #ffffff;
+    opacity: 0;
+  }
+
+  details.faq-card[open] .faq-card__answer-wrap {
+    max-height: 500px;
+    padding-bottom: var(--space-5);
+    opacity: 1;
+  }
+</style>
