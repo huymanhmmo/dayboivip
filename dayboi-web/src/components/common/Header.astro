@@ -1,0 +1,312 @@
+---
+/**
+ * Header.astro — Sticky header với navigation & language switcher
+ */
+export interface Props {
+  lang?: 'vi' | 'en';
+  currentPath?: string;
+}
+
+const { lang = 'vi', currentPath = '/' } = Astro.props;
+
+const navItems = lang === 'vi' ? [
+  { label: 'Trang chủ', href: '/' },
+  { label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/' },
+  { label: 'Khóa học', href: '/khoa-hoc/' },
+  { label: 'Hướng dẫn', href: '/huong-dan/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Liên hệ', href: '/lien-he' },
+] : [
+  { label: 'Home', href: '/en/' },
+  { label: 'Techniques', href: '/en/swimming-techniques/' },
+  { label: 'Courses', href: '/en/courses/' },
+  { label: 'Guides', href: '/en/guides/' },
+  { label: 'Blog', href: '/en/blog/' },
+  { label: 'Contact', href: '/en/contact' },
+];
+
+const ctaLabel = lang === 'vi' ? 'Đăng Ký Học Thử' : 'Free Trial';
+const ctaHref = lang === 'vi' ? '/lien-he' : '/en/contact';
+const langSwitchHref = lang === 'vi' ? '/en/' : '/';
+const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
+---
+
+<header class="header" id="site-header">
+  <div class="container flex-between">
+    <!-- Logo -->
+    <a href={lang === 'vi' ? '/' : '/en/'} class="header__logo" aria-label="Swim For Life Việt Nam - Trung tâm dạy bơi chuyên nghiệp">
+      <img 
+        src="/images/brand/logo.png" 
+        alt="Swim For Life Việt Nam - Trung tâm dạy bơi chuyên nghiệp" 
+        class="logo-img" 
+        width="180" 
+        height="50" 
+        loading="eager"
+      />
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="header__nav hide-mobile" aria-label="Main navigation">
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={['nav-link', { 'nav-link--active': currentPath === item.href }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
+    <!-- Actions -->
+    <div class="header__actions flex gap-3">
+      <!-- Language Switcher -->
+      <a href={langSwitchHref} class="lang-switch" aria-label={`Switch to ${langSwitchLabel}`}>
+        <span class="lang-switch__icon">🌐</span>
+        <span>{langSwitchLabel}</span>
+      </a>
+      
+      <!-- CTA Button -->
+      <a href={ctaHref} class="btn btn--accent btn--sm hide-mobile">
+        {ctaLabel}
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button
+        class="mobile-toggle hide-desktop"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        id="mobile-toggle"
+      >
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu hide-desktop" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-menu__list">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class="mobile-menu__link">{item.label}</a>
+          </li>
+        ))}
+        <li class="mobile-menu__cta">
+          <a href={ctaHref} class="btn btn--accent btn--lg" style="width:100%">
+            {ctaLabel}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border-light);
+    transition: all var(--transition-smooth);
+  }
+
+  .header > .container {
+    height: 80px;
+    padding-inline: clamp(2rem, 6vw, 6rem);
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity var(--transition-fast);
+  }
+
+  .header__logo:hover .logo-img {
+    opacity: 0.85;
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      height: 36px;
+    }
+  }
+
+  /* Navigation */
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .nav-link {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-50);
+  }
+
+  .nav-link--active {
+    color: var(--color-primary);
+    background: var(--color-primary-50);
+    font-weight: 600;
+  }
+
+  /* Language Switcher */
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .lang-switch:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-50);
+  }
+
+  .lang-switch__icon {
+    font-size: 1rem;
+  }
+
+  /* Hamburger */
+  .mobile-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+  }
+
+  .mobile-toggle:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all var(--transition-smooth);
+  }
+
+  .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--color-bg-card);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-4) var(--container-pad);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-smooth);
+  }
+
+  .mobile-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .mobile-menu__link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-menu__link:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+  }
+
+  .mobile-menu__cta {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-light);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    menu?.classList.toggle('is-open');
+    menu?.setAttribute('aria-hidden', String(isOpen));
+  });
+  
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu?.classList.remove('is-open');
+      menu?.setAttribute('aria-hidden', 'true');
+    });
+  });
+</script>

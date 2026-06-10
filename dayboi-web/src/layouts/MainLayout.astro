@@ -1,0 +1,129 @@
+---
+/**
+ * MainLayout.astro — Layout chính cho toàn bộ website
+ * Xử lý: HTML shell, SEO meta, hreflang, Google Fonts, global CSS
+ */
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  lang?: 'vi' | 'en';
+  canonicalUrl?: string;
+  alternateUrl?: string;
+  alternateLang?: 'vi' | 'en';
+  schema?: object;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description = 'Dạy bơi chuyên nghiệp cho trẻ em và người lớn. Đội ngũ HLV giàu kinh nghiệm, phương pháp hiện đại, an toàn tuyệt đối.',
+  ogImage = '/og-image.jpg',
+  lang = 'vi',
+  canonicalUrl,
+  alternateUrl,
+  alternateLang,
+  schema,
+  noIndex = false,
+} = Astro.props;
+
+const siteName = lang === 'vi' ? 'Swim For Life Việt Nam — Dạy Bơi Chuyên Nghiệp' : 'Swim For Life Vietnam — Professional Swimming Lessons';
+const fullTitle = `${title} | ${siteName}`;
+const siteUrl = 'https://dayboi.vip';
+const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+---
+
+<!DOCTYPE html>
+<html lang={lang} dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+  <link rel="canonical" href={currentUrl} />
+  
+  <!-- Hreflang Tags for Multilingual SEO -->
+  {lang === 'vi' && (
+    <>
+      <link rel="alternate" hreflang="vi" href={currentUrl} />
+      {alternateUrl && <link rel="alternate" hreflang="en" href={new URL(alternateUrl, siteUrl).href} />}
+      <link rel="alternate" hreflang="x-default" href={currentUrl} />
+    </>
+  )}
+  {lang === 'en' && (
+    <>
+      <link rel="alternate" hreflang="en" href={currentUrl} />
+      {alternateUrl && <link rel="alternate" hreflang="vi" href={new URL(alternateUrl, siteUrl).href} />}
+      <link rel="alternate" hreflang="x-default" href={new URL(alternateUrl || '/', siteUrl).href} />
+    </>
+  )}
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={currentUrl} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, siteUrl).href} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content={lang === 'vi' ? 'vi_VN' : 'en_US'} />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  
+  <!-- Google Fonts: Outfit + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  
+  <!-- JSON-LD Schema -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+</head>
+<body>
+  <slot name="header" />
+  
+  <main id="main-content">
+    <slot />
+  </main>
+  
+  <slot name="footer" />
+  
+  <!-- Scroll Reveal Script -->
+  <script>
+    // IntersectionObserver for scroll reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+      revealElements.forEach((el) => observer.observe(el));
+    }
+  </script>
+</body>
+</html>
