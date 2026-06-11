@@ -600,20 +600,21 @@ const isCustomCourse = defaultCourseClean !== '' && !hasMatchedOption;
         
         if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
           // GỬI QUA GOOGLE APPS SCRIPT (Mới - Tự động ghi Sheet của bạn + gửi Mail cho bạn)
-          const formData = new URLSearchParams();
-          formData.append('fullname', fullname);
-          formData.append('phone', phone);
-          formData.append('location', location);
-          formData.append('course', course);
-          formData.append('message', message);
+          const payload = {
+            fullname: fullname,
+            phone: phone,
+            location: location,
+            course: course,
+            message: message
+          };
           
           fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
+              'Content-Type': 'text/plain;charset=utf-8'
             },
-            body: formData.toString()
+            body: JSON.stringify(payload)
           }).catch(err => console.error('Error submitting to Apps Script:', err));
         } else {
           // DỰ PHÒNG (Fallback): Gửi về Google Form cũ nếu chưa gắn URL Apps Script mới
