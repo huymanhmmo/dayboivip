@@ -11,16 +11,54 @@ export interface Props {
 const { 
   id = 'blog-register-form', 
   className = '', 
-  isFullForm = false,
+  isFullForm = false, // Kept for backward compatibility, ignored for rendering
   defaultCourse = '',
   flat = false,
   lang = 'vi'
 } = Astro.props;
+
+// Standard course options
+const standardCoursesVi = [
+  { value: 'Bơi trẻ em', label: 'Dạy bơi trẻ em (3-15 tuổi)' },
+  { value: 'Bơi người lớn', label: 'Dạy bơi người lớn' },
+  { value: 'Bơi 1 kèm 1', label: 'Dạy bơi 1 kèm 1 cá nhân' },
+  { value: 'Bơi nhóm', label: 'Dạy bơi nhóm 3-5 người' },
+  { value: 'Doanh nghiệp', label: 'Dạy bơi doanh nghiệp / trường học' }
+];
+
+const standardCoursesEn = [
+  { value: 'Bơi trẻ em', label: 'Kids swim lessons (3-15 years)' },
+  { value: 'Bơi người lớn', label: 'Adult swim lessons' },
+  { value: 'Bơi 1 kèm 1', label: '1-on-1 private lessons' },
+  { value: 'Bơi nhóm', label: 'Group swim lessons (3-5 students)' },
+  { value: 'Doanh nghiệp', label: 'Corporate / School programs' }
+];
+
+const standardCourses = lang === 'vi' ? standardCoursesVi : standardCoursesEn;
+
+// Clean and check default course matching
+const defaultCourseClean = defaultCourse ? defaultCourse.trim() : '';
+
+// Helper to check match
+const matchesCourse = (value: string) => {
+  if (!defaultCourseClean) return false;
+  return (
+    value.toLowerCase() === defaultCourseClean.toLowerCase() ||
+    (defaultCourseClean === 'tre-em' && value === 'Bơi trẻ em') ||
+    (defaultCourseClean === 'nguoi-lon' && value === 'Bơi người lớn') ||
+    (defaultCourseClean === '1-kem-1' && value === 'Bơi 1 kèm 1') ||
+    (defaultCourseClean === 'nhom' && value === 'Bơi nhóm') ||
+    (defaultCourseClean === 'doanh-nghiep' && value === 'Doanh nghiệp')
+  );
+};
+
+const hasMatchedOption = standardCourses.some(c => matchesCourse(c.value) || matchesCourse(c.label));
+const isCustomCourse = defaultCourseClean !== '' && !hasMatchedOption;
 ---
 
 <div class={`cl-form-card ${flat ? 'cl-form-card--flat' : ''} ${className}`} id={`${id}-container`}>
   <!-- Main Form -->
-  <form class="cl-registration-form" id={id} data-full-form={isFullForm ? "true" : "false"} data-lang={lang}>
+  <form class="cl-registration-form" id={id} data-lang={lang}>
     
     <!-- Fullname Input -->
     <div class="cl-input-group">
@@ -64,7 +102,7 @@ const {
 
     <!-- Location Input -->
     <div class="cl-input-group">
-      <label class="cl-input-label" for={`${id}-location`}>{lang === 'vi' ? 'Khu vực học *' : 'Learning Area *'}</label>
+      <label class="cl-input-label" for={`${id}-location`}>{lang === 'vi' ? 'Bạn muốn học bơi ở khu vực/bể bơi nào? *' : 'Which area/pool do you want to learn swimming? *'}</label>
       <div class="cl-input-wrapper">
         <span class="cl-input-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -72,72 +110,60 @@ const {
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </span>
-        {isFullForm ? (
-          <select id={`${id}-location`} name="location" required class="cl-select-field">
-            <option value="" disabled selected>{lang === 'vi' ? 'Chọn thành phố/khu vực học...' : 'Select city/region...'}</option>
-            <option value="Hà Nội">{lang === 'vi' ? 'Hà Nội' : 'Hanoi'}</option>
-            <option value="TP.HCM">{lang === 'vi' ? 'TP. Hồ Chí Minh' : 'Ho Chi Minh City'}</option>
-            <option value="Tỉnh thành khác">{lang === 'vi' ? 'Tỉnh thành khác' : 'Other province/city'}</option>
-          </select>
-        ) : (
-          <input 
-            type="text" 
-            id={`${id}-location`}
-            name="location" 
-            placeholder={lang === 'vi' ? 'Bạn muốn học ở khu vực nào? (Ví dụ: Quận 7, Cầu Giấy...)' : 'Which area do you want to learn? (e.g. District 7, Cau Giay...)'} 
-            required 
-            class="cl-input-field" 
-          />
-        )}
+        <input 
+          type="text" 
+          id={`${id}-location`}
+          name="location" 
+          placeholder={lang === 'vi' ? 'Ví dụ: Cầu Giấy, Quận 7, Bể bơi Tăng Bạt Hổ...' : 'e.g. Cau Giay, District 7, Tang Bat Ho pool...'} 
+          required 
+          class="cl-input-field" 
+        />
       </div>
-      {!isFullForm && (
-        <small class="cl-form-hint">
-          {lang === 'vi' ? '*(Vui lòng ghi rõ Quận/Huyện hoặc Tên Bể Bơi để Swim For Life sắp xếp lịch gần nhất)' : '*(Please specify District or Pool Name so we can arrange the nearest schedule)'}
-        </small>
-      )}
+      <small class="cl-form-hint">
+        {lang === 'vi' ? '*(Ghi rõ Quận/Huyện hoặc Tên Bể Bơi để trung tâm sắp xếp lịch gần nhất)' : '*(Specify District or Pool Name so we can arrange the nearest schedule)'}
+      </small>
     </div>
 
-    <!-- Course Dropdown (Full Form Only) -->
-    {isFullForm && (
-      <div class="cl-input-group">
-        <label class="cl-input-label" for={`${id}-course`}>{lang === 'vi' ? 'Khóa học quan tâm' : 'Course of Interest'}</label>
-        <div class="cl-input-wrapper">
-          <span class="cl-input-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </span>
-          <select id={`${id}-course`} name="course" class="cl-select-field">
-            <option value="Bơi trẻ em" selected={defaultCourse === 'tre-em' || defaultCourse === 'Bơi trẻ em'}>{lang === 'vi' ? 'Dạy bơi trẻ em (3-15 tuổi)' : 'Kids swim lessons (3-15 years)'}</option>
-            <option value="Bơi người lớn" selected={defaultCourse === 'nguoi-lon' || defaultCourse === 'Bơi người lớn'}>{lang === 'vi' ? 'Dạy bơi người lớn' : 'Adult swim lessons'}</option>
-            <option value="Bơi 1 kèm 1" selected={defaultCourse === '1-kem-1' || defaultCourse === 'Bơi 1 kèm 1'}>{lang === 'vi' ? 'Dạy bơi 1 kèm 1 cá nhân' : '1-on-1 private lessons'}</option>
-            <option value="Bơi nhóm" selected={defaultCourse === 'nhom' || defaultCourse === 'Bơi nhóm'}>{lang === 'vi' ? 'Dạy bơi nhóm 3-5 người' : 'Group swim lessons (3-5 students)'}</option>
-            <option value="Doanh nghiệp" selected={defaultCourse === 'doanh-nghiep' || defaultCourse === 'Doanh nghiệp'}>{lang === 'vi' ? 'Dạy bơi doanh nghiệp / trường học' : 'Corporate / School programs'}</option>
-          </select>
-        </div>
+    <!-- Course Dropdown -->
+    <div class="cl-input-group">
+      <label class="cl-input-label" for={`${id}-course`}>{lang === 'vi' ? 'Khóa học quan tâm' : 'Course of Interest'}</label>
+      <div class="cl-input-wrapper">
+        <span class="cl-input-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </span>
+        <select id={`${id}-course`} name="course" class="cl-select-field">
+          {isCustomCourse && (
+            <option value={defaultCourseClean} selected>{defaultCourseClean}</option>
+          )}
+          {standardCourses.map(c => (
+            <option value={c.value} selected={!isCustomCourse && (matchesCourse(c.value) || matchesCourse(c.label))}>
+              {c.label}
+            </option>
+          ))}
+        </select>
       </div>
-    )}
+    </div>
 
-    <!-- Message Textarea (Full Form Only) -->
-    {isFullForm && (
-      <div class="cl-input-group">
-        <label class="cl-input-label" for={`${id}-message`}>{lang === 'vi' ? 'Yêu cầu bổ sung (nếu có)' : 'Additional Requests (Optional)'}</label>
-        <div class="cl-input-wrapper cl-textarea-wrapper">
-          <span class="cl-input-icon cl-textarea-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-          </span>
-          <textarea 
-            id={`${id}-message`}
-            name="message" 
-            rows="3" 
-            placeholder={lang === 'vi' ? 'Ví dụ: Lịch học rảnh cuối tuần, học viên sợ nước...' : 'e.g., Free on weekends, student is afraid of water...'} 
-            class="cl-textarea-field"
-          ></textarea>
-        </div>
+    <!-- Message Textarea -->
+    <div class="cl-input-group">
+      <label class="cl-input-label" for={`${id}-message`}>{lang === 'vi' ? 'Yêu cầu bổ sung (nếu có)' : 'Additional Requests (Optional)'}</label>
+      <div class="cl-input-wrapper cl-textarea-wrapper">
+        <span class="cl-input-icon cl-textarea-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        </span>
+        <textarea 
+          id={`${id}-message`}
+          name="message" 
+          rows="3" 
+          placeholder={lang === 'vi' ? 'Ví dụ: Lịch học rảnh cuối tuần, học viên sợ nước...' : 'e.g., Free on weekends, student is afraid of water...'} 
+          class="cl-textarea-field"
+        ></textarea>
       </div>
-    )}
+    </div>
 
     <!-- Submit Button -->
     <button type="submit" class="cl-submit-button">
@@ -150,7 +176,7 @@ const {
     </button>
   </form>
 
-  <!-- Success State View -->
+  <!-- Success State View (used for Landing Pages without modals) -->
   <div class="cl-success-state" style="display: none;">
     <div class="cl-success-icon-wrapper">
       <div class="cl-success-checkmark">
@@ -170,8 +196,8 @@ const {
     </p>
     <p class="cl-success-subtext">
       {lang === 'vi' ? 
-        'Đội ngũ HLV của chúng tôi sẽ liên hệ lại với bạn qua Số điện thoại/Zalo trong vòng 15-30 phút tới để xác nhận lịch học thử miễn phí.' : 
-        'Our support team will contact you via Phone/Zalo within 15-30 minutes to confirm your free trial schedule.'}
+        'Chúng tôi đã gửi thông tin đến hệ thống của Trung tâm. Đội ngũ HLV sẽ liên hệ lại qua Số điện thoại/Zalo trong vòng 15-30 phút tới.' : 
+        'We have sent the info to our system. Our support team will contact you via Phone/Zalo within 15-30 minutes.'}
     </p>
     
     <div class="cl-success-actions">
@@ -550,85 +576,185 @@ const {
     forms.forEach(form => {
       // Avoid double binding
       if (form.hasAttribute('data-bound-submit')) return;
-      
-      // If it's the blog register form, we skip and let BlogLayout handle it
-      if (form.id === 'blog-register-form') return;
-      
       form.setAttribute('data-bound-submit', 'true');
       
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Extract elements
         const formEl = e.currentTarget as HTMLFormElement;
         const fullnameEl = formEl.querySelector('[name="fullname"]') as HTMLInputElement;
         const phoneEl = formEl.querySelector('[name="phone"]') as HTMLInputElement;
-        const locationEl = formEl.querySelector('[name="location"]') as HTMLInputElement | HTMLSelectElement;
+        const locationEl = formEl.querySelector('[name="location"]') as HTMLInputElement;
         const courseEl = formEl.querySelector('[name="course"]') as HTMLSelectElement;
         const messageEl = formEl.querySelector('[name="message"]') as HTMLTextAreaElement;
         
         const fullname = fullnameEl ? fullnameEl.value : '';
         const phone = phoneEl ? phoneEl.value : '';
         const location = locationEl ? locationEl.value : '';
+        const course = courseEl ? courseEl.value : '';
+        const message = messageEl ? messageEl.value : '';
         
-        // Compose location if additional fields are present
-        const formLang = formEl.getAttribute('data-lang') || 'vi';
-        let finalLocation = location;
-        if (courseEl || messageEl) {
-          const courseVal = courseEl ? courseEl.value : '';
-          const messageVal = messageEl ? messageEl.value : '';
-          if (formLang === 'en') {
-            finalLocation = `${location} | Course: ${courseVal} | Note: ${messageVal || 'None'}`;
-          } else {
-            finalLocation = `${location} | Khóa: ${courseVal} | Ghi chú: ${messageVal || 'Không'}`;
-          }
+        // Cấu hình URL Web App Google Apps Script của bạn tại đây
+        // (Nếu bạn chưa đổi URL này, hệ thống sẽ tự động chạy Dự phòng để gửi về Google Form cũ của bạn)
+        const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL';
+        
+        if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+          // GỬI QUA GOOGLE APPS SCRIPT (Mới - Tự động ghi Sheet của bạn + gửi Mail cho bạn)
+          const formData = new URLSearchParams();
+          formData.append('fullname', fullname);
+          formData.append('phone', phone);
+          formData.append('location', location);
+          formData.append('course', course);
+          formData.append('message', message);
+          
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData.toString()
+          }).catch(err => console.error('Error submitting to Apps Script:', err));
+        } else {
+          // DỰ PHÒNG (Fallback): Gửi về Google Form cũ nếu chưa gắn URL Apps Script mới
+          const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe1PwdhtzzkWJaTZ4O79rrCUi4cAwuvmPTqx8TTF8rRleCTqA/formResponse';
+          const formData = new URLSearchParams();
+          formData.append('entry.1075795830', fullname);
+          formData.append('entry.406600670', phone);
+          
+          // Gộp thông tin khóa và tin nhắn vào ô Địa điểm của Form cũ
+          const compositeLocation = `${location} | Khóa: ${course}${message ? ' | Yêu cầu: ' + message : ''}`;
+          formData.append('entry.1411149651', compositeLocation);
+
+          fetch(googleFormUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData.toString()
+          }).catch(err => console.error('Error submitting to old Google Form:', err));
         }
         
-        // Google Form details
-        const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe1PwdhtzzkWJaTZ4O79rrCUi4cAwuvmPTqx8TTF8rRleCTqA/formResponse';
-        const formData = new URLSearchParams();
-        formData.append('entry.1075795830', fullname);
-        formData.append('entry.406600670', phone);
-        formData.append('entry.1411149651', finalLocation);
-        
-        // Post asynchronous request
-        fetch(googleFormUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: formData.toString()
-        }).catch(err => console.error('Error submitting to Google Form:', err));
-        
-        // Open Zalo contact in a new tab immediately (prevents browser popup blocker)
+        // Mở Zalo kết nối với HLV ở tab mới
         window.open('https://zalo.me/0979121097', '_blank');
         
-        // Show Success UI
-        const container = formEl.closest('.cl-form-card');
-        if (container) {
-          const successState = container.querySelector('.cl-success-state') as HTMLElement;
-          const successName = container.querySelector('.cl-success-name') as HTMLElement;
+        // Xử lý hiển thị trạng thái thành công
+        const modal = document.getElementById('success-modal');
+        if (modal) {
+          // Nếu trang có success modal (như BlogLayout và các trang tin tức)
+          modal.classList.add('active');
+          formEl.reset();
           
-          if (successName) successName.textContent = fullname;
-          if (successState) {
-            formEl.style.display = 'none';
-            successState.style.display = 'block';
+          const closeBtn = document.getElementById('close-modal-btn');
+          const card = modal.querySelector('.modal-card');
+          let redirectHint = modal.querySelector('.modal-redirect-hint');
+          
+          if (!redirectHint && card && closeBtn) {
+            redirectHint = document.createElement('p');
+            redirectHint.className = 'modal-redirect-hint';
+            redirectHint.style.fontSize = '0.9rem';
+            redirectHint.style.color = 'var(--color-primary, #0077b6)';
+            redirectHint.style.marginTop = '12px';
+            redirectHint.style.fontWeight = '600';
+            redirectHint.style.textAlign = 'center';
+            card.insertBefore(redirectHint, closeBtn);
+          }
+          
+          let secondsLeft = 4;
+          const formLang = formEl.getAttribute('data-lang') || 'vi';
+          if (redirectHint) {
+            if (formLang === 'en') {
+              redirectHint.innerHTML = `Connected Zalo Coach in a new tab. Closing in <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> seconds...`;
+            } else {
+              redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+            }
+          }
+          
+          // Clear any active timers
+          // @ts-ignore
+          if (window.redirectTimeout) clearTimeout(window.redirectTimeout);
+          // @ts-ignore
+          if (window.countdownInterval) clearInterval(window.countdownInterval);
+          
+          // @ts-ignore
+          window.countdownInterval = setInterval(() => {
+            secondsLeft--;
+            if (redirectHint) {
+              if (formLang === 'en') {
+                redirectHint.innerHTML = `Connected Zalo Coach in a new tab. Closing in <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> seconds...`;
+              } else {
+                redirectHint.innerHTML = `Đã kết nối Zalo HLV ở tab mới. Popup tự đóng sau <span style="font-size: 1.15rem; color: var(--color-accent, #ff6b35);">${secondsLeft}</span> giây...`;
+              }
+            }
+            if (secondsLeft <= 0) {
+              // @ts-ignore
+              clearInterval(window.countdownInterval);
+            }
+          }, 1000);
+          
+          // @ts-ignore
+          window.redirectTimeout = setTimeout(() => {
+            modal.classList.remove('active');
+            if (redirectHint) redirectHint.remove();
+          }, 4000);
+          
+        } else {
+          // Nếu trang dùng Success State tại chỗ (như các trang Landing Page khác)
+          const container = formEl.closest('.cl-form-card');
+          if (container) {
+            const successState = container.querySelector('.cl-success-state') as HTMLElement;
+            const successName = container.querySelector('.cl-success-name') as HTMLElement;
             
-            // Smooth transition
-            successState.style.opacity = '0';
-            successState.style.transform = 'translateY(10px)';
-            setTimeout(() => {
-              successState.style.transition = 'all 0.4s ease';
-              successState.style.opacity = '1';
-              successState.style.transform = 'translateY(0)';
-            }, 50);
+            if (successName) successName.textContent = fullname;
+            if (successState) {
+              formEl.style.display = 'none';
+              successState.style.display = 'block';
+              
+              successState.style.opacity = '0';
+              successState.style.transform = 'translateY(10px)';
+              setTimeout(() => {
+                successState.style.transition = 'all 0.4s ease';
+                successState.style.opacity = '1';
+                successState.style.transform = 'translateY(0)';
+              }, 50);
+            }
           }
         }
       });
     });
     
-    // Bind reset buttons
+    // Khởi tạo sự kiện đóng modal thành công nếu modal tồn tại trong DOM
+    const modal = document.getElementById('success-modal');
+    const closeBtn = document.getElementById('close-modal-btn');
+    if (modal && closeBtn) {
+      if (!modal.hasAttribute('data-bound-close')) {
+        modal.setAttribute('data-bound-close', 'true');
+        
+        const cancelRedirect = () => {
+          // @ts-ignore
+          if (window.redirectTimeout) clearTimeout(window.redirectTimeout);
+          // @ts-ignore
+          if (window.countdownInterval) clearInterval(window.countdownInterval);
+          const redirectHint = modal.querySelector('.modal-redirect-hint');
+          if (redirectHint) redirectHint.remove();
+        };
+        
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('active');
+          cancelRedirect();
+        });
+        
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            cancelRedirect();
+          }
+        });
+      }
+    }
+    
+    // Bind reset buttons cho success state tại chỗ
     const resetBtns = document.querySelectorAll('.cl-reset-btn');
     resetBtns.forEach(btn => {
       if (btn.hasAttribute('data-bound-reset')) return;
