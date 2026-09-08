@@ -1,550 +1,217 @@
 ---
-/**
- * Footer.astro — Footer đa ngôn ngữ với thông tin liên hệ thật
- * Hiển thị logo, liên kết nhanh, thông tin liên hệ, và social links
- */
-export interface Props {
-  lang?: 'vi' | 'en';
-}
+/** Global footer with real contact details and original navigation structure. */
+export interface Props { lang?: 'vi' | 'en'; }
 
 const { lang = 'vi' } = Astro.props;
-
 const currentYear = new Date().getFullYear();
-
 const footerNav = lang === 'vi' ? {
   brand: 'Swim For Life Việt Nam',
   tagline: 'Trung tâm dạy bơi chuyên nghiệp hàng đầu Việt Nam. Đào tạo bơi lội cho mọi lứa tuổi với đội ngũ HLV giàu kinh nghiệm.',
   sections: [
-    {
-      title: 'Khóa Học',
-      links: [
-        { label: 'Bơi trẻ em', href: '/khoa-hoc-boi/tre-em/' },
-        { label: 'Bơi người lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
-        { label: 'Lớp bơi nhóm nhỏ', href: '/khoa-hoc-boi/nhom/' },
-        { label: 'Dạy bơi 1 kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
-        { label: 'Lộ trình học bơi', href: '/lo-trinh-hoc-boi/' },
-      ],
-    },
-    {
-      title: 'Kỹ Thuật Bơi',
-      links: [
-        { label: 'Bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/' },
-        { label: 'Bơi sải', href: '/ky-thuat-boi/hoc-boi-sai/' },
-        { label: 'Bơi ngửa', href: '/ky-thuat-boi/hoc-boi-ngua/' },
-        { label: 'Bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/' },
-        { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/' },
-      ],
-    },
-    {
-      title: 'Thông Tin',
-      links: [
-        { label: 'Giới thiệu', href: '/gioi-thieu/' },
-        { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' },
-        { label: 'Bảng giá', href: '/bang-gia/' },
-        { label: 'Blog', href: '/tin-tuc/' },
-        { label: 'Liên hệ', href: '/lien-he/' },
-      ],
-    },
+    { title: 'Khóa Học', links: [
+      { label: 'Bơi trẻ em', href: '/khoa-hoc-boi/tre-em/' },
+      { label: 'Bơi người lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
+      { label: 'Lớp bơi nhóm nhỏ', href: '/khoa-hoc-boi/nhom/' },
+      { label: 'Dạy bơi 1 kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
+      { label: 'Lộ trình học bơi', href: '/lo-trinh-hoc-boi/' }
+    ]},
+    { title: 'Kỹ Thuật Bơi', links: [
+      { label: 'Bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/' },
+      { label: 'Bơi sải', href: '/ky-thuat-boi/hoc-boi-sai/' },
+      { label: 'Bơi ngửa', href: '/ky-thuat-boi/hoc-boi-ngua/' },
+      { label: 'Bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/' },
+      { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
+    ]},
+    { title: 'Thông Tin', links: [
+      { label: 'Giới thiệu', href: '/gioi-thieu/' },
+      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' },
+      { label: 'Bảng giá', href: '/bang-gia/' },
+      { label: 'Blog', href: '/tin-tuc/' },
+      { label: 'Liên hệ', href: '/lien-he/' }
+    ]}
   ],
-  contact: {
-    title: 'Liên Hệ Ngay',
-    phone: '0979.121.097',
-    email: 'dayboivip@gmail.com',
-    zaloLabel: 'Chat Zalo',
-    zaloHref: 'http://zalo.me/0979121097',
-    ctaLabel: 'Liên Hệ Nhận Tư Vấn Miễn Phí',
-    ctaHref: '/lien-he/',
-  },
-  copyright: `© ${currentYear} Swim For Life Việt Nam. Thuộc Công ty CP Your Dreams. Bảo lưu mọi quyền.`,
+  ctaEyebrow: 'Bắt đầu hành trình biết bơi',
+  ctaTitle: 'Một kỹ năng theo bạn suốt đời.',
+  ctaText: 'Để lại nhu cầu, đội ngũ Swim For Life sẽ tư vấn lộ trình và bể bơi gần bạn nhất.',
+  consult: 'Nhận tư vấn miễn phí',
+  contactTitle: 'Kết nối trực tiếp',
+  phone: '0979.121.097',
+  email: 'dayboivip@gmail.com',
+  zalo: 'Chat Zalo',
+  copyright: `© ${currentYear} Swim For Life Việt Nam. Thuộc Công ty CP Your Dreams.`
 } : {
   brand: 'Swim For Life Vietnam',
-  tagline: 'Leading professional swimming center in Vietnam. Swimming training for all ages with experienced coaches.',
+  tagline: 'Vietnam’s professional swimming center, helping every age learn with experienced and caring coaches.',
   sections: [
-    {
-      title: 'Courses',
-      links: [
-        { label: 'Kids Swimming', href: '/en/courses/kids/' },
-        { label: 'Adult Swimming', href: '/en/courses/adults/' },
-        { label: 'Intensive Course', href: '/en/courses/intensive/' },
-        { label: 'Swim Journey', href: '/en/swim-journey/' },
-      ],
-    },
-    {
-      title: 'Techniques',
-      links: [
-        { label: 'Breaststroke', href: '/en/swimming-techniques/breaststroke/' },
-        { label: 'Front Crawl', href: '/en/swimming-techniques/front-crawl/' },
-        { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/' },
-        { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' },
-      ],
-    },
-    {
-      title: 'Information',
-      links: [
-        { label: 'About Us', href: '/en/about/' },
-        { label: 'Coaches', href: '/en/coaches/' },
-        { label: 'Pricing', href: '/en/pricing/' },
-        { label: 'Blog', href: '/en/blog/' },
-        { label: 'Contact', href: '/en/contact/' },
-      ],
-    },
+    { title: 'Courses', links: [
+      { label: 'Kids Swimming', href: '/en/courses/kids/' },
+      { label: 'Adult Swimming', href: '/en/courses/adults/' },
+      { label: 'Intensive Course', href: '/en/courses/intensive/' },
+      { label: 'Swim Journey', href: '/en/swim-journey/' }
+    ]},
+    { title: 'Techniques', links: [
+      { label: 'Breaststroke', href: '/en/swimming-techniques/breaststroke/' },
+      { label: 'Front Crawl', href: '/en/swimming-techniques/front-crawl/' },
+      { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/' },
+      { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' }
+    ]},
+    { title: 'Information', links: [
+      { label: 'About Us', href: '/en/about/' },
+      { label: 'Coaches', href: '/en/coaches/' },
+      { label: 'Pricing', href: '/en/pricing/' },
+      { label: 'Blog', href: '/en/blog/' },
+      { label: 'Contact', href: '/en/contact/' }
+    ]}
   ],
-  contact: {
-    title: 'Contact Us',
-    phone: '0979.121.097',
-    email: 'dayboivip@gmail.com',
-    zaloLabel: 'Chat on Zalo',
-    zaloHref: 'http://zalo.me/0979121097',
-    ctaLabel: 'Get Free Consultation',
-    ctaHref: '/en/contact/',
-  },
-  copyright: `© ${currentYear} Swim For Life Vietnam. Part of Your Dreams JSC. All rights reserved.`,
+  ctaEyebrow: 'Start your swimming journey',
+  ctaTitle: 'One skill. A lifetime of confidence.',
+  ctaText: 'Tell us what you need and our team will recommend a course and pool near you.',
+  consult: 'Get a free consultation',
+  contactTitle: 'Connect directly',
+  phone: '0979.121.097',
+  email: 'dayboivip@gmail.com',
+  zalo: 'Chat on Zalo',
+  copyright: `© ${currentYear} Swim For Life Vietnam. Part of Your Dreams JSC.`
 };
 ---
 
-<footer class="footer" id="site-footer">
-  <!-- Wave decoration -->
-  <div class="footer__wave">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="var(--color-footer-bg)" />
-    </svg>
+<footer class="site-footer" id="site-footer">
+  <div class="footer-cta">
+    <div class="footer-cta__image" aria-hidden="true"></div>
+    <div class="footer-cta__overlay" aria-hidden="true"></div>
+    <div class="container footer-cta__content">
+      <div>
+        <span class="footer-cta__eyebrow">{footerNav.ctaEyebrow}</span>
+        <h2>{footerNav.ctaTitle}</h2>
+        <p>{footerNav.ctaText}</p>
+      </div>
+      <a href={lang === 'vi' ? '/lien-he/' : '/en/contact/'} class="footer-cta__button">
+        <span>{footerNav.consult}</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 
-  <div class="footer__body">
-    <div class="container">
-      <div class="footer__grid">
-        <!-- Brand Column -->
-        <div class="footer__brand">
-          <a href={lang === 'vi' ? '/' : '/en/'} class="footer__logo-link">
-            <img 
-              src="/images/brand/logo.png" 
-              alt={footerNav.brand} 
-              class="footer__logo-img"
-              width="200" 
-              height="55" 
-              loading="lazy"
-            />
-          </a>
-          <p class="footer__tagline">{footerNav.tagline}</p>
-          
-          <!-- Contact Info -->
-          <div class="footer__contact-info">
-            <a href={`tel:${footerNav.contact.phone.replace(/\./g, '')}`} class="footer__contact-item">
-              <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>{footerNav.contact.phone}</span>
-            </a>
-            <a href={`mailto:${footerNav.contact.email}`} class="footer__contact-item">
-              <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22,7-8.97,5.7a1.94,1.94 0 0 1-2.06,0L2,7"/></svg>
-              <span>{footerNav.contact.email}</span>
-            </a>
-            <a href={footerNav.contact.zaloHref} target="_blank" rel="noopener noreferrer" class="footer__contact-item footer__contact-item--zalo">
-              <svg class="footer__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.037 0 11.25c0 3.52 1.687 6.656 4.323 8.743-.12.94-.544 3.448-.624 4.007 0 0-.013.083.04.117a.15.15 0 0 0 .132.002c.53-.09 3.073-1.995 3.735-2.482A13.3 13.3 0 0 0 12 22.5c6.627 0 12-5.037 12-11.25S18.627 0 12 0z"/></svg>
-              <span>{footerNav.contact.zaloLabel}</span>
-            </a>
-          </div>
+  <div class="footer-main">
+    <div class="container footer-main__grid">
+      <div class="footer-brand">
+        <a href={lang === 'vi' ? '/' : '/en/'} class="footer-brand__logo" aria-label={footerNav.brand}>
+          <img src="/images/brand/logo.png" alt={footerNav.brand} width="200" height="55" loading="lazy" />
+        </a>
+        <p>{footerNav.tagline}</p>
+        <div class="footer-brand__proof">
+          <span>10+</span>
+          <small>{lang === 'vi' ? 'năm đào tạo bơi lội' : 'years teaching swimming'}</small>
         </div>
+      </div>
 
-        <!-- Navigation Columns -->
+      <div class="footer-links">
         {footerNav.sections.map((section) => (
-          <div class="footer__nav-col">
-            <h3 class="footer__nav-title">{section.title}</h3>
-            <ul class="footer__nav-list">
-              {section.links.map((link) => (
-                <li>
-                  <a href={link.href} class="footer__nav-link">{link.label}</a>
-                </li>
-              ))}
-            </ul>
+          <div class="footer-links__column">
+            <h3>{section.title}</h3>
+            <ul>{section.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
           </div>
         ))}
       </div>
 
-      <!-- CTA Banner -->
-      <div class="footer__cta-banner">
-        <div class="footer__cta-content">
-          <p class="footer__cta-text">
-            {lang === 'vi' 
-              ? '🏊 Bạn muốn học bơi? Liên hệ ngay để nhận tư vấn miễn phí!' 
-              : '🏊 Want to learn swimming? Contact us for a free consultation!'}
-          </p>
-          <div class="footer__cta-actions">
-            <a href={`tel:${footerNav.contact.phone.replace(/\./g, '')}`} class="btn btn--accent btn--sm">
-              📞 {footerNav.contact.phone}
-            </a>
-            <a href={footerNav.contact.zaloHref} target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
-              💬 {footerNav.contact.zaloLabel}
-            </a>
-          </div>
-        </div>
+      <div class="footer-contact">
+        <span class="footer-contact__label">{footerNav.contactTitle}</span>
+        <a href={`tel:${footerNav.phone.replace(/\./g, '')}`} class="footer-contact__phone">{footerNav.phone}</a>
+        <a href={`mailto:${footerNav.email}`} class="footer-contact__row">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>{footerNav.email}</span>
+        </a>
+        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="footer-contact__row">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15a4 4 0 0 1-4 4H8l-5 3 1.7-5A7.7 7.7 0 0 1 3 12c0-4.4 4-8 9-8s9 3.6 9 8c0 1.1-.3 2.1-1 3Z"/></svg>
+          <span>{footerNav.zalo}</span>
+        </a>
       </div>
+    </div>
 
-      <!-- Bottom Bar -->
-      <div class="footer__bottom">
-        <p class="footer__copyright">{footerNav.copyright}</p>
-        <div class="footer__bottom-links">
-          <a href={lang === 'vi' ? '/' : '/en/'}>
-            {lang === 'vi' ? 'Trang chủ' : 'Home'}
-          </a>
-          <span class="footer__sep">•</span>
-          <a href="https://dayboi.vip" target="_blank" rel="noopener">dayboi.vip</a>
-        </div>
+    <div class="container footer-bottom">
+      <p>{footerNav.copyright} {lang === 'vi' ? 'Bảo lưu mọi quyền.' : 'All rights reserved.'}</p>
+      <div>
+        <a href={lang === 'vi' ? '/' : '/en/'}>{lang === 'vi' ? 'Trang chủ' : 'Home'}</a>
+        <a href="https://dayboi.vip" target="_blank" rel="noopener noreferrer">dayboi.vip</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- Floating Zalo Button -->
-<a 
-  href="http://zalo.me/0979121097" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  class="floating-zalo" 
-  aria-label="Chat Zalo"
-  id="floating-zalo-btn"
->
-  <span class="floating-zalo__pulse"></span>
-  <span class="floating-zalo__icon">
-    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M12 0C5.373 0 0 5.037 0 11.25c0 3.52 1.687 6.656 4.323 8.743-.12.94-.544 3.448-.624 4.007 0 0-.013.083.04.117a.15.15 0 0 0 .132.002c.53-.09 3.073-1.995 3.735-2.482A13.3 13.3 0 0 0 12 22.5c6.627 0 12-5.037 12-11.25S18.627 0 12 0z"/></svg>
-  </span>
-</a>
-
-<!-- Floating Phone Button -->
-<a 
-  href="tel:0979121097" 
-  class="floating-phone" 
-  aria-label="Gọi ngay 0979.121.097"
-  id="floating-phone-btn"
->
-  <span class="floating-phone__pulse"></span>
-  <span class="floating-phone__icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="24" height="24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  </span>
-</a>
+<div class="contact-dock" aria-label={lang === 'vi' ? 'Liên hệ nhanh' : 'Quick contact'}>
+  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" aria-label={footerNav.zalo}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15a4 4 0 0 1-4 4H8l-5 3 1.7-5A7.7 7.7 0 0 1 3 12c0-4.4 4-8 9-8s9 3.6 9 8c0 1.1-.3 2.1-1 3Z"/></svg>
+    <span>Zalo</span>
+  </a>
+  <a href="tel:0979121097" aria-label={`${lang === 'vi' ? 'Gọi' : 'Call'} ${footerNav.phone}`}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6 19.7 19.7 0 0 1-3-8.6A2 2 0 0 1 3.2 1.6h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L7.2 9.5a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.6 2Z"/></svg>
+    <span>{lang === 'vi' ? 'Gọi ngay' : 'Call'}</span>
+  </a>
+</div>
 
 <style>
-  /* ============================================
-     Footer Design — Vibrant Aqua & Coral
-     ============================================ */
+  .site-footer { position: relative; background: var(--blue-950); color: var(--white); }
+  .footer-cta { position: relative; min-height: 420px; display: grid; align-items: end; overflow: hidden; }
+  .footer-cta__image, .footer-cta__overlay { position: absolute; inset: 0; }
+  .footer-cta__image { background: url('/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg') center 42% / cover no-repeat; transform: scale(1.01); }
+  .footer-cta__overlay { background: linear-gradient(90deg, color-mix(in srgb, var(--blue-950) 96%, transparent), color-mix(in srgb, var(--blue-950) 80%, transparent) 55%, color-mix(in srgb, var(--blue-950) 35%, transparent)); }
+  .footer-cta__content { position: relative; z-index: 1; min-height: 420px; display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-10); padding-block: clamp(4rem, 8vw, 6rem); }
+  .footer-cta__content > div { max-width: 720px; }
+  .footer-cta__eyebrow { display: inline-block; margin-bottom: var(--space-4); color: var(--blue-200); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .footer-cta h2 { color: var(--white); font-size: clamp(2.35rem, 5vw, 4.5rem); letter-spacing: -.05em; }
+  .footer-cta p { max-width: 620px; margin: var(--space-5) 0 0; color: color-mix(in srgb, var(--white) 78%, transparent); font-size: var(--text-lg); }
+  .footer-cta__button { min-height: 58px; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); padding-inline: var(--space-6); border-radius: var(--radius-md); background: var(--orange-500); color: var(--white); font-weight: 750; white-space: nowrap; }
+  .footer-cta__button:hover { background: var(--orange-600); color: var(--white); transform: translateY(-2px); }
+  .footer-cta__button svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
 
-  :root {
-    --color-footer-bg: #0a1628;
-    --color-footer-text: #b0bec5;
-    --color-footer-heading: #ffffff;
-    --color-footer-link: #90caf9;
-    --color-footer-link-hover: #00B4D8;
-    --color-zalo: #0068FF;
-  }
+  .footer-main { padding-block: clamp(4rem, 7vw, 6rem) var(--space-6); background: var(--blue-950); }
+  .footer-main__grid { display: grid; grid-template-columns: minmax(240px, 1.1fr) 2fr minmax(220px, .8fr); gap: clamp(2.5rem, 5vw, 5rem); }
+  .footer-brand__logo { display: inline-flex; padding: var(--space-3); border-radius: var(--radius-md); background: var(--white); }
+  .footer-brand__logo img { width: auto; height: 42px; }
+  .footer-brand > p { max-width: 360px; margin: var(--space-5) 0; color: color-mix(in srgb, var(--white) 62%, transparent); font-size: .9rem; }
+  .footer-brand__proof { display: flex; align-items: center; gap: var(--space-3); }
+  .footer-brand__proof span { color: var(--blue-400); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; }
+  .footer-brand__proof small { max-width: 100px; color: color-mix(in srgb, var(--white) 60%, transparent); line-height: 1.35; }
+  .footer-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+  .footer-links h3 { margin-bottom: var(--space-5); color: var(--white); font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+  .footer-links ul { display: grid; gap: .7rem; }
+  .footer-links a { color: color-mix(in srgb, var(--white) 62%, transparent); font-size: .86rem; }
+  .footer-links a:hover { color: var(--blue-200); }
+  .footer-contact { display: flex; flex-direction: column; align-items: flex-start; }
+  .footer-contact__label { margin-bottom: var(--space-3); color: color-mix(in srgb, var(--white) 50%, transparent); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .footer-contact__phone { margin-bottom: var(--space-5); color: var(--white); font-family: var(--font-heading); font-size: clamp(1.45rem, 2vw, 2rem); font-weight: 800; letter-spacing: -.04em; }
+  .footer-contact__row { min-height: 44px; display: inline-flex; align-items: center; gap: var(--space-3); color: color-mix(in srgb, var(--white) 67%, transparent); font-size: .86rem; }
+  .footer-contact__row:hover { color: var(--blue-200); }
+  .footer-contact__row svg { width: 18px; fill: none; stroke: var(--blue-400); stroke-width: 1.7; }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-16); padding-top: var(--space-6); border-top: 1px solid color-mix(in srgb, var(--white) 10%, transparent); }
+  .footer-bottom p, .footer-bottom a { margin: 0; color: color-mix(in srgb, var(--white) 43%, transparent); font-size: .75rem; }
+  .footer-bottom > div { display: flex; gap: var(--space-5); }
+  .footer-bottom a:hover { color: var(--white); }
 
-  .footer__wave {
-    margin-top: -2px;
-    line-height: 0;
-  }
-
-  .footer__wave svg {
-    width: 100%;
-    height: 80px;
-    display: block;
-  }
-
-  .footer__body {
-    background: var(--color-footer-bg);
-    padding: var(--space-10) 0 var(--space-6);
-  }
-
-  /* Grid */
-  .footer__grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: var(--space-8);
-    padding-bottom: var(--space-8);
-  }
-
-  /* Brand */
-  .footer__logo-link {
-    display: inline-block;
-    margin-bottom: var(--space-4);
-  }
-
-  .footer__logo-img {
-    height: 48px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.95;
-    transition: opacity var(--transition-fast);
-  }
-
-  .footer__logo-link:hover .footer__logo-img {
-    opacity: 1;
-  }
-
-  .footer__tagline {
-    color: var(--color-footer-text);
-    font-size: var(--text-sm);
-    line-height: 1.7;
-    margin-bottom: var(--space-5);
-  }
-
-  /* Contact Info */
-  .footer__contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .footer__contact-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    color: var(--color-footer-text);
-    font-size: var(--text-sm);
-    transition: color var(--transition-fast);
-  }
-
-  .footer__contact-item:hover {
-    color: var(--color-footer-link-hover);
-  }
-
-  .footer__contact-item--zalo:hover {
-    color: var(--color-zalo);
-  }
-
-  .footer__icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    opacity: 0.7;
-  }
-
-  /* Nav Columns */
-  .footer__nav-title {
-    color: var(--color-footer-heading);
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: var(--space-4);
-    position: relative;
-    padding-bottom: var(--space-2);
-  }
-
-  .footer__nav-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 32px;
-    height: 2px;
-    background: var(--gradient-primary);
-    border-radius: 2px;
-  }
-
-  .footer__nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .footer__nav-link {
-    color: var(--color-footer-text);
-    font-size: var(--text-sm);
-    transition: all var(--transition-fast);
-    padding: 2px 0;
-  }
-
-  .footer__nav-link:hover {
-    color: var(--color-footer-link-hover);
-    padding-left: 6px;
-  }
-
-  /* CTA Banner */
-  .footer__cta-banner {
-    margin: var(--space-8) 0;
-    background: linear-gradient(135deg, rgba(0, 103, 125, 0.08), rgba(255, 145, 0, 0.08));
-    border-radius: var(--radius-xl);
-    padding: var(--space-6);
-  }
-
-  .footer__cta-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-  }
-
-  .footer__cta-text {
-    color: var(--color-footer-heading);
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-
-  .footer__cta-actions {
-    display: flex;
-    gap: var(--space-3);
-    flex-wrap: wrap;
-  }
-
-  /* Bottom */
-  .footer__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    padding-top: var(--space-6);
-  }
-
-  .footer__copyright {
-    color: var(--color-footer-text);
-    font-size: 0.8rem;
-    opacity: 0.7;
-  }
-
-  .footer__bottom-links {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  .footer__bottom-links a {
-    color: var(--color-footer-text);
-    font-size: 0.8rem;
-    opacity: 0.7;
-    transition: all var(--transition-fast);
-  }
-
-  .footer__bottom-links a:hover {
-    color: var(--color-footer-link-hover);
-    opacity: 1;
-  }
-
-  .footer__sep {
-    color: var(--color-footer-text);
-    opacity: 0.3;
-    font-size: 0.7rem;
-  }
-
-  /* ============================================
-     Floating Buttons (Zalo + Phone)
-     ============================================ */
-
-  .floating-zalo,
-  .floating-phone {
-    position: fixed;
-    z-index: 999;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .floating-zalo {
-    bottom: 100px;
-    right: 24px;
-    background: var(--color-zalo);
-  }
-
-  .floating-phone {
-    bottom: 32px;
-    right: 24px;
-    background: var(--color-accent);
-  }
-
-  .floating-zalo:hover,
-  .floating-phone:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
-  }
-
-  .floating-zalo__icon,
-  .floating-phone__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .floating-zalo__pulse,
-  .floating-phone__pulse {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    animation: floatingPulse 2s ease-in-out infinite;
-  }
-
-  .floating-zalo__pulse {
-    background: var(--color-zalo);
-  }
-
-  .floating-phone__pulse {
-    background: var(--color-accent);
-  }
-
-  @keyframes floatingPulse {
-    0% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.3); opacity: 0; }
-    100% { transform: scale(1); opacity: 0; }
-  }
-
-  /* ============================================
-     Responsive
-     ============================================ */
+  .contact-dock { position: fixed; inset-inline-end: var(--space-5); inset-block-end: var(--space-5); z-index: var(--z-fixed); display: flex; flex-direction: column; gap: var(--space-2); }
+  .contact-dock a { min-width: 52px; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: var(--space-2); padding-inline: var(--space-4); border-radius: var(--radius-full); background: var(--blue-600); color: var(--white); box-shadow: var(--shadow-lg); font-size: .78rem; font-weight: 750; }
+  .contact-dock a:last-child { background: var(--orange-500); }
+  .contact-dock a:hover { color: var(--white); transform: translateY(-2px); }
+  .contact-dock svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
 
   @media (max-width: 1024px) {
-    .footer__grid {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-6);
-    }
-
-    .footer__brand {
-      grid-column: 1 / -1;
-    }
+    .footer-cta__content { align-items: flex-start; justify-content: flex-end; flex-direction: column; }
+    .footer-main__grid { grid-template-columns: 1fr 2fr; }
+    .footer-contact { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, auto); align-items: center; gap: var(--space-4); padding-top: var(--space-6); border-top: 1px solid color-mix(in srgb, var(--white) 10%, transparent); }
+    .footer-contact__label { grid-column: 1 / -1; margin: 0; }
+    .footer-contact__phone { margin: 0; }
   }
 
-  @media (max-width: 640px) {
-    .footer__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .footer__cta-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .footer__cta-actions {
-      justify-content: center;
-    }
-
-    .footer__bottom {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .floating-zalo,
-    .floating-phone {
-      width: 50px;
-      height: 50px;
-      right: 16px;
-    }
-
-    .floating-zalo {
-      bottom: 84px;
-    }
-
-    .floating-phone {
-      bottom: 24px;
-    }
-
-    .footer__wave svg {
-      height: 50px;
-    }
+  @media (max-width: 720px) {
+    .footer-cta, .footer-cta__content { min-height: 500px; }
+    .footer-cta__overlay { background: linear-gradient(0deg, var(--blue-950) 4%, color-mix(in srgb, var(--blue-950) 78%, transparent) 66%, color-mix(in srgb, var(--blue-950) 35%, transparent)); }
+    .footer-cta__button { width: 100%; }
+    .footer-main__grid { grid-template-columns: 1fr; }
+    .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .footer-links__column:last-child { grid-column: 1 / -1; }
+    .footer-contact { grid-template-columns: 1fr; }
+    .footer-bottom { align-items: flex-start; flex-direction: column; margin-top: var(--space-10); }
+    .contact-dock { inset-inline: var(--space-3); inset-block-end: var(--space-3); flex-direction: row; }
+    .contact-dock a { flex: 1; border-radius: var(--radius-md); }
   }
 </style>

@@ -4,6 +4,7 @@
  * Xử lý: HTML shell, SEO meta, hreflang, Google Fonts, global CSS
  */
 import '../styles/global.css';
+import '../styles/design-system.css';
 
 export interface Props {
   title: string;
@@ -93,11 +94,11 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   
-  <!-- Google Fonts: Plus Jakarta Sans + Inter -->
+  <!-- Google Fonts: Be Vietnam Pro + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   
@@ -109,6 +110,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
   <slot name="head" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">{lang === 'vi' ? 'Bỏ qua đến nội dung chính' : 'Skip to main content'}</a>
   <slot name="header" />
   
   <main id="main-content">

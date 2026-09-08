@@ -50,10 +50,10 @@ const { title, subtitle, description, image, stats, slug, lang = 'vi' } = Astro.
         <!-- CTA buttons row -->
         <div class="cl-hero__cta">
           <a href="#dang-ky" class="cl-btn cl-btn-primary cl-btn-lg cl-btn-pulse">
-            <span>{lang === 'vi' ? '🚀 Đăng Ký Ngay' : '🚀 Register Now'}</span>
+            <span>{lang === 'vi' ? 'Đăng Ký Ngay' : 'Register Now'}</span>
           </a>
           <a href="tel:0979121097" class="cl-btn cl-btn-outline cl-btn-lg">
-            <span>{lang === 'vi' ? '📞 Gọi: 0979.121.097' : '📞 Call: 0979.121.097'}</span>
+            <span>{lang === 'vi' ? 'Gọi: 0979.121.097' : 'Call: 0979.121.097'}</span>
           </a>
         </div>
       </div>
@@ -62,7 +62,7 @@ const { title, subtitle, description, image, stats, slug, lang = 'vi' } = Astro.
         <div class="cl-hero__image-wrapper">
           <img src={image} alt={title} class="cl-hero__image" loading="eager" width="560" height="420" />
           <div class="cl-hero__floating-badge">
-            <div class="cl-hero__floating-badge-icon">⭐</div>
+            <div class="cl-hero__floating-badge-icon" aria-hidden="true"></div>
             <div>
               <p class="cl-hero__floating-badge-title">{lang === 'vi' ? 'Cam Kết 100%' : '100% Guaranteed'}</p>
               <p class="cl-hero__floating-badge-desc">{lang === 'vi' ? 'Biết Bơi Sau Khóa Học' : 'Swim After Course'}</p>
@@ -151,7 +151,20 @@ const { title, subtitle, description, image, stats, slug, lang = 'vi' } = Astro.
   }
 
   .cl-hero__floating-badge-icon {
-    font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--cl-cta);
+  }
+
+  .cl-hero__floating-badge-icon::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--color-text-inverse);
+    border-radius: 50%;
   }
 
   .cl-hero__floating-badge-title {

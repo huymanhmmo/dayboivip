@@ -7,6 +7,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import CoachesSection from '../components/CoachesSection.astro';
+import '../styles/home-redesign.css';
 
 const schema = {
   "@context": "https://schema.org",
@@ -137,10 +138,10 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         </p>
         <div class="hero__actions reveal">
           <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
-            💬 Tư Vấn Miễn Phí
+            Tư Vấn Miễn Phí
           </a>
           <a href="tel:0979121097" class="btn btn--hero-outline btn--lg">
-            📞 0979.121.097
+            Gọi 0979.121.097
           </a>
         </div>
         <div class="hero__trust reveal">
@@ -276,9 +277,9 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <h3 class="course-card__title">Khóa Học Bơi Trẻ Em</h3>
             <p class="course-card__desc">Dành cho trẻ từ 4-15 tuổi. Dạy bơi an toàn, vui vẻ, giúp trẻ tự tin dưới nước và nắm vững kỹ năng sinh tồn.</p>
             <ul class="course-card__features">
-              <li>✅ Lớp nhỏ 5-8 học viên</li>
-              <li>✅ Giáo viên tận tâm, vui vẻ</li>
-              <li>✅ Trang bị phao bơi an toàn</li>
+              <li>Lớp nhỏ 5-8 học viên</li>
+              <li>Giáo viên tận tâm, vui vẻ</li>
+              <li>Trang bị phao bơi an toàn</li>
             </ul>
             <div class="course-card__footer">
               <span class="course-card__price">Liên hệ nhận báo giá</span>
@@ -301,9 +302,9 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <h3 class="course-card__title">Khóa Học Bơi Người Lớn</h3>
             <p class="course-card__desc">Dành cho người lớn từ 16 tuổi trở lên. Không bao giờ là quá muộn để học bơi — vượt qua nỗi sợ nước ngay hôm nay!</p>
             <ul class="course-card__features">
-              <li>✅ Lớp riêng, không ngại ngùng</li>
-              <li>✅ Huấn luyện viên kiên nhẫn</li>
-              <li>✅ Linh hoạt thời gian</li>
+              <li>Lớp riêng, không ngại ngùng</li>
+              <li>Huấn luyện viên kiên nhẫn</li>
+              <li>Linh hoạt thời gian</li>
             </ul>
             <div class="course-card__footer">
               <span class="course-card__price">Liên hệ nhận báo giá</span>
@@ -327,9 +328,9 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <h3 class="course-card__title">Dạy Bơi 1 Kèm 1</h3>
             <p class="course-card__desc">Chương trình dạy bơi cá nhân hóa. Giáo viên tập trung 100% vào bạn, tiến bộ nhanh gấp 3 lần lớp nhóm.</p>
             <ul class="course-card__features">
-              <li>✅ 1 HLV - 1 học viên</li>
-              <li>✅ Giáo trình riêng biệt</li>
-              <li>✅ Tiến bộ nhanh nhất</li>
+              <li>1 HLV - 1 học viên</li>
+              <li>Giáo trình riêng biệt</li>
+              <li>Tiến bộ nhanh nhất</li>
             </ul>
             <div class="course-card__footer">
               <span class="course-card__price">Liên hệ nhận báo giá</span>
@@ -353,9 +354,9 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <h3 class="course-card__title">Khóa Bơi Cấp Tốc</h3>
             <p class="course-card__desc">Học bơi nhanh trong 7-10 buổi. Phù hợp cho người bận rộn muốn nắm vững kỹ năng bơi cơ bản trong thời gian ngắn.</p>
             <ul class="course-card__features">
-              <li>✅ Chỉ 7-10 buổi học</li>
-              <li>✅ Cam kết biết bơi</li>
-              <li>✅ Lịch học linh hoạt</li>
+              <li>Chỉ 7-10 buổi học</li>
+              <li>Cam kết biết bơi</li>
+              <li>Lịch học linh hoạt</li>
             </ul>
             <div class="course-card__footer">
               <span class="course-card__price">Liên hệ nhận báo giá</span>
@@ -507,7 +508,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         <p class="section__desc">Hệ thống giáo trình đào tạo đầy đủ 4 kiểu bơi từ cơ bản đến nâng cao</p>
       </div>
       <div class="techniques-grid">
-        <a href="/ky-thuat-boi/boi-ech" class="technique-card reveal">
+        <a href="/ky-thuat-boi/hoc-boi-ech/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
             <img src="/images/techniques/huong-dan-tap-tho-boi-ech.jpg" alt="Hướng dẫn tập thở bơi ếch - Kỹ thuật bơi ếch cơ bản" loading="lazy" />
           </div>
@@ -518,7 +519,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <span class="technique-card__link">Xem chi tiết →</span>
           </div>
         </a>
-        <a href="/ky-thuat-boi/boi-sai" class="technique-card reveal">
+        <a href="/ky-thuat-boi/hoc-boi-sai/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
             <img src="/images/techniques/tap-dong-tac-tay-boi-sai-tren-can.jpg" alt="Tập động tác tay bơi sải trên cạn - Kỹ thuật bơi sải" loading="lazy" />
           </div>
@@ -529,7 +530,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <span class="technique-card__link">Xem chi tiết →</span>
           </div>
         </a>
-        <a href="/ky-thuat-boi/boi-ngua" class="technique-card reveal">
+        <a href="/ky-thuat-boi/hoc-boi-ngua/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
             <img src="/images/safety/khoi-dong-tren-can.jpg" alt="Khởi động trên cạn trước khi tập bơi ngửa - Kỹ thuật bơi ngửa" loading="lazy" />
           </div>
@@ -540,7 +541,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             <span class="technique-card__link">Xem chi tiết →</span>
           </div>
         </a>
-        <a href="/ky-thuat-boi/boi-buom" class="technique-card reveal">
+        <a href="/ky-thuat-boi/hoc-boi-buom/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
             <img src="/images/safety/khoi-dong-lam-nong-co-the.jpg" alt="Khởi động làm nóng cơ thể trước khi tập bơi bướm - Kỹ thuật bơi bướm" loading="lazy" />
           </div>
@@ -572,7 +573,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
             Giấy chứng nhận xác nhận học viên đã nắm vững kỹ năng bơi lội cơ bản, đạt tiêu chuẩn an toàn dưới nước.
           </p>
           <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--md btn--pulse">
-            💬 Đăng Ký Học Bơi Ngay
+            Đăng Ký Học Bơi Ngay
           </a>
         </div>
         <div class="cert-image reveal">
@@ -632,13 +633,13 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         <p class="cta-box__desc">Liên hệ ngay để nhận tư vấn miễn phí về khóa học bơi phù hợp với bạn và gia đình.</p>
         <div class="cta-box__actions">
           <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
-            💬 Chat Zalo Ngay
+            Chat Zalo Ngay
           </a>
           <a href="tel:0979121097" class="btn btn--outline-white btn--lg">
-            📞 Gọi 0979.121.097
+            Gọi 0979.121.097
           </a>
           <a href="mailto:dayboivip@gmail.com" class="btn btn--outline-white btn--lg">
-            ✉️ dayboivip@gmail.com
+            dayboivip@gmail.com
           </a>
         </div>
       </div>
@@ -649,6 +650,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
 </MainLayout>
 
 <style>
+  @layer legacy {
   /* ============================================
      HERO SECTION — Split Screen Premium
      ============================================ */
@@ -1740,5 +1742,6 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
     .hero__actions .btn { width: 100%; text-align: center; }
     .cta-box__actions { flex-direction: column; align-items: center; }
     .cta-box__actions .btn { width: 100%; }
+  }
   }
 </style>

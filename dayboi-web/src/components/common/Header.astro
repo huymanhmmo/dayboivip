@@ -1,7 +1,5 @@
 ---
-/**
- * Header.astro — Sticky header với navigation & language switcher
- */
+/** Global navigation rebuilt for the Aquatic Editorial design system. */
 export interface Props {
   lang?: 'vi' | 'en';
   currentPath?: string;
@@ -11,586 +9,293 @@ const { lang = 'vi', currentPath = '/' } = Astro.props;
 
 const navItems = lang === 'vi' ? [
   { label: 'Trang chủ', href: '/' },
-  { 
-    label: 'Khóa học', 
-    href: '/khoa-hoc-boi/',
-    children: [
-      { label: 'Tất cả khóa học', href: '/khoa-hoc-boi/', icon: '🌊' },
-      { label: 'Lớp 1 Kèm 1', href: '/khoa-hoc-boi/1-kem-1/', icon: '🥇' },
-      { label: 'Lớp Nhóm Nhỏ', href: '/khoa-hoc-boi/nhom/', icon: '👥' },
-      { label: 'Học Bơi Trẻ Em', href: '/khoa-hoc-boi/tre-em/', icon: '👶' },
-      { label: 'Học Bơi Người Lớn', href: '/khoa-hoc-boi/nguoi-lon/', icon: '👨' },
-      { label: 'Cho Người Sợ Nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/', icon: '😌' },
-      { label: 'Cho Người Cao Tuổi', href: '/khoa-hoc-boi/nguoi-cao-tuoi/', icon: '👴' },
-      { label: 'Dạy Bơi Doanh Nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/', icon: '🏢' }
+  {
+    label: 'Khóa học', href: '/khoa-hoc-boi/', children: [
+      { label: 'Tất cả khóa học', href: '/khoa-hoc-boi/' },
+      { label: 'Lớp 1 Kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
+      { label: 'Lớp Nhóm Nhỏ', href: '/khoa-hoc-boi/nhom/' },
+      { label: 'Học Bơi Trẻ Em', href: '/khoa-hoc-boi/tre-em/' },
+      { label: 'Học Bơi Người Lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
+      { label: 'Cho Người Sợ Nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/' },
+      { label: 'Cho Người Cao Tuổi', href: '/khoa-hoc-boi/nguoi-cao-tuoi/' },
+      { label: 'Dạy Bơi Doanh Nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' }
     ]
   },
-  { 
-    label: 'Kỹ thuật bơi', 
-    href: '/ky-thuat-boi/',
-    children: [
-      { label: 'Tất cả kỹ thuật', href: '/ky-thuat-boi/', icon: '🏊' },
-      { label: 'Kỹ thuật bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/', icon: '🐸' },
-      { label: 'Kỹ thuật bơi sải', href: '/ky-thuat-boi/hoc-boi-sai/', icon: '⚡' },
-      { label: 'Kỹ thuật bơi ngửa', href: '/ky-thuat-boi/hoc-boi-ngua/', icon: '🦦' },
-      { label: 'Kỹ thuật bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/', icon: '🦋' },
-      { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/', icon: '⚓' }
+  {
+    label: 'Kỹ thuật bơi', href: '/ky-thuat-boi/', children: [
+      { label: 'Tất cả kỹ thuật', href: '/ky-thuat-boi/' },
+      { label: 'Kỹ thuật bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/' },
+      { label: 'Kỹ thuật bơi sải', href: '/ky-thuat-boi/hoc-boi-sai/' },
+      { label: 'Kỹ thuật bơi ngửa', href: '/ky-thuat-boi/hoc-boi-ngua/' },
+      { label: 'Kỹ thuật bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/' },
+      { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
     ]
   },
-  { 
-    label: 'Địa điểm học', 
-    href: '/hoc-boi-o-dau/',
-    children: [
-      { label: 'Tất cả địa điểm', href: '/hoc-boi-o-dau/', icon: '📍' },
-      { label: 'Học bơi Hà Nội', href: '/hoc-boi-ha-noi/', icon: '🏛️' },
-      { label: 'Học bơi TP.HCM', href: '/hoc-boi-tphcm/', icon: '🏙️' },
-      { label: 'Học bơi Đà Nẵng', href: '/hoc-boi-da-nang/', icon: '🏖️' },
-      { label: 'Học bơi Hải Phòng', href: '/hoc-boi-hai-phong/', icon: '⚓' },
-      { label: 'Học bơi Cần Thơ', href: '/hoc-boi-can-tho/', icon: '🌾' },
-      { label: 'Bể bơi Tăng Bạt Hổ', href: '/hoc-boi-tang-bat-ho/', icon: '🏊' }
+  {
+    label: 'Địa điểm học', href: '/hoc-boi-o-dau/', children: [
+      { label: 'Tất cả địa điểm', href: '/hoc-boi-o-dau/' },
+      { label: 'Học bơi Hà Nội', href: '/hoc-boi-ha-noi/' },
+      { label: 'Học bơi TP.HCM', href: '/hoc-boi-tphcm/' },
+      { label: 'Học bơi Đà Nẵng', href: '/hoc-boi-da-nang/' },
+      { label: 'Học bơi Hải Phòng', href: '/hoc-boi-hai-phong/' },
+      { label: 'Học bơi Cần Thơ', href: '/hoc-boi-can-tho/' },
+      { label: 'Bể bơi Tăng Bạt Hổ', href: '/hoc-boi-tang-bat-ho/' }
     ]
   },
-  { 
-    label: 'Về chúng tôi', 
-    href: '/gioi-thieu/',
-    children: [
-      { label: 'Giới thiệu trung tâm', href: '/gioi-thieu/', icon: '🏫' },
-      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/', icon: '👨‍🏫' },
-      { label: 'Bảng giá học phí', href: '/bang-gia/', icon: '💰' }
+  {
+    label: 'Về chúng tôi', href: '/gioi-thieu/', children: [
+      { label: 'Giới thiệu trung tâm', href: '/gioi-thieu/' },
+      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' },
+      { label: 'Bảng giá học phí', href: '/bang-gia/' }
     ]
   },
   { label: 'Blog', href: '/tin-tuc/' },
   { label: 'Liên hệ', href: '/lien-he/' }
 ] : [
   { label: 'Home', href: '/en/' },
-  { 
-    label: 'Techniques', 
-    href: '/en/swimming-techniques/',
-    children: [
-      { label: 'All Techniques', href: '/en/swimming-techniques/', icon: '🏊' },
-      { label: 'Breaststroke', href: '/en/swimming-techniques/breaststroke/', icon: '🐸' },
-      { label: 'Front Crawl', href: '/en/swimming-techniques/front-crawl/', icon: '⚡' },
-      { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/', icon: '🦦' },
-      { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/', icon: '🦋' },
-      { label: 'Treading Water', href: '/en/swimming-techniques/treading-water/', icon: '⚓' }
+  {
+    label: 'Techniques', href: '/en/swimming-techniques/', children: [
+      { label: 'All Techniques', href: '/en/swimming-techniques/' },
+      { label: 'Breaststroke', href: '/en/swimming-techniques/breaststroke/' },
+      { label: 'Front Crawl', href: '/en/swimming-techniques/front-crawl/' },
+      { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/' },
+      { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' },
+      { label: 'Treading Water', href: '/en/swimming-techniques/treading-water/' }
     ]
   },
-  { 
-    label: 'Courses', 
-    href: '/en/courses/',
-    children: [
-      { label: 'All Courses', href: '/en/courses/', icon: '🌊' },
-      { label: 'Kids Swimming', href: '/en/courses/kids/', icon: '👶' },
-      { label: 'Adults Swimming', href: '/en/courses/adults/', icon: '👨' },
-      { label: 'Intensive Courses', href: '/en/courses/intensive/', icon: '🥇' }
+  {
+    label: 'Courses', href: '/en/courses/', children: [
+      { label: 'All Courses', href: '/en/courses/' },
+      { label: 'Kids Swimming', href: '/en/courses/kids/' },
+      { label: 'Adults Swimming', href: '/en/courses/adults/' },
+      { label: 'Intensive Courses', href: '/en/courses/intensive/' }
     ]
   },
-  { 
-    label: 'Guides', 
-    href: '/en/guides/',
-    children: [
-      { label: 'All Guides', href: '/en/guides/', icon: '📖' },
-      { label: 'How to Swim', href: '/en/guides/how-to-swim/', icon: '🏊' },
-      { label: 'Self-taught Swimming', href: '/en/guides/self-taught-swimming/', icon: '💡' },
-      { label: 'Survival Swimming', href: '/en/guides/survival-swimming/', icon: '🛡️' }
+  {
+    label: 'Guides', href: '/en/guides/', children: [
+      { label: 'All Guides', href: '/en/guides/' },
+      { label: 'How to Swim', href: '/en/guides/how-to-swim/' },
+      { label: 'Self-taught Swimming', href: '/en/guides/self-taught-swimming/' },
+      { label: 'Survival Swimming', href: '/en/guides/survival-swimming/' }
     ]
   },
-  { 
-    label: 'About', 
-    href: '/en/about/',
-    children: [
-      { label: 'About Us', href: '/en/about/', icon: '🏫' },
-      { label: 'Coaches', href: '/en/coaches/', icon: '👨‍🏫' },
-      { label: 'Pricing', href: '/en/pricing/', icon: '💰' }
+  {
+    label: 'About', href: '/en/about/', children: [
+      { label: 'About Us', href: '/en/about/' },
+      { label: 'Coaches', href: '/en/coaches/' },
+      { label: 'Pricing', href: '/en/pricing/' }
     ]
   },
   { label: 'Blog', href: '/en/blog/' },
   { label: 'Contact', href: '/en/contact/' }
 ];
 
-const ctaLabel = lang === 'vi' ? 'Đăng Ký Học Thử' : 'Free Trial';
+const ctaLabel = lang === 'vi' ? 'Đăng ký học thử' : 'Book a free trial';
 const ctaHref = lang === 'vi' ? '/lien-he/' : '/en/contact/';
 const langSwitchHref = lang === 'vi' ? '/en/' : '/';
 const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
+const labels = lang === 'vi'
+  ? { nav: 'Điều hướng chính', menu: 'Mở menu', eyebrow: 'Dạy bơi an toàn từ năm 2014', locations: 'Hà Nội & TP.HCM' }
+  : { nav: 'Main navigation', menu: 'Open menu', eyebrow: 'Safe swimming lessons since 2014', locations: 'Hanoi & Ho Chi Minh City' };
+const isActive = (item: any) => currentPath === item.href || item.children?.some((child: any) => currentPath === child.href);
 ---
 
-<header class="header" id="site-header">
-  <div class="container flex-between">
-    <!-- Logo -->
-    <a href={lang === 'vi' ? '/' : '/en/'} class="header__logo" aria-label="Swim For Life Việt Nam - Trung tâm dạy bơi chuyên nghiệp">
-      <img 
-        src="/images/brand/logo.png" 
-        alt="Swim For Life Việt Nam - Trung tâm dạy bơi chuyên nghiệp" 
-        class="logo-img" 
-        width="180" 
-        height="50" 
-        loading="eager"
-      />
-    </a>
-    
-    <!-- Desktop Navigation -->
-    <nav class="header__nav hide-mobile" aria-label="Main navigation">
-      <ul class="nav-list">
-        {navItems.map((item) => (
-          <li class={item.children ? 'nav-item has-dropdown' : 'nav-item'}>
-            <a
-              href={item.href}
-              class:list={['nav-link', { 'nav-link--active': currentPath === item.href || (item.children && item.children.some(child => currentPath === child.href)) }]}
-            >
-              {item.label}
-              {item.children && <span class="dropdown-caret">▾</span>}
-            </a>
-            {item.children && (
-              <ul class="dropdown-menu">
-                {item.children.map((child) => (
-                  <li>
-                    <a
-                      href={child.href}
-                      class:list={['dropdown-link', { 'dropdown-link--active': currentPath === child.href }]}
-                    >
-                      {child.icon && <span class="dropdown-link__icon">{child.icon}</span>}
-                      <span class="dropdown-link__label">{child.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
-    
-    <!-- Actions -->
-    <div class="header__actions flex gap-3">
-      <!-- Language Switcher -->
-      <a href={langSwitchHref} class="lang-switch" aria-label={`Switch to ${langSwitchLabel}`}>
-        <span class="lang-switch__icon">🌐</span>
-        <span>{langSwitchLabel}</span>
-      </a>
-      
-      <!-- CTA Button -->
-      <a href={ctaHref} class="btn btn--accent btn--sm hide-mobile">
-        {ctaLabel}
-      </a>
-      
-      <!-- Mobile Menu Toggle -->
-      <button
-        class="mobile-toggle hide-desktop"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        id="mobile-toggle"
-      >
-        <span class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
+<header class="site-header" id="site-header">
+  <div class="header-utility hide-mobile" aria-label={labels.eyebrow}>
+    <div class="container header-utility__inner">
+      <span class="header-utility__eyebrow">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c2.25 0 2.25-1.5 4.5-1.5S9.75 15 12 15s2.25-1.5 4.5-1.5S18.75 15 21 15M3 9.5C5.25 9.5 5.25 8 7.5 8S9.75 9.5 12 9.5 14.25 8 16.5 8 18.75 9.5 21 9.5"/></svg>
+        {labels.eyebrow}
+      </span>
+      <div class="header-utility__meta">
+        <span>{labels.locations}</span>
+        <a href="tel:0979121097">Hotline 0979.121.097</a>
+      </div>
     </div>
   </div>
-  
-  <!-- Mobile Menu -->
+
+  <div class="header-main">
+    <div class="container header-main__inner">
+      <a href={lang === 'vi' ? '/' : '/en/'} class="header-logo" aria-label="Swim For Life Việt Nam">
+        <img src="/images/brand/logo.png" alt="Swim For Life Việt Nam" width="180" height="50" loading="eager" />
+      </a>
+
+      <nav class="desktop-nav hide-mobile" aria-label={labels.nav}>
+        <ul class="desktop-nav__list">
+          {navItems.map((item) => (
+            <li class:list={['desktop-nav__item', { 'has-dropdown': item.children }] }>
+              <a href={item.href} class:list={['desktop-nav__link', { 'is-active': isActive(item) }]}>
+                <span>{item.label}</span>
+                {item.children && <svg class="nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>}
+              </a>
+              {item.children && (
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown__intro">
+                    <span>{item.label}</span>
+                    <small>{lang === 'vi' ? 'Khám phá nội dung phù hợp với bạn' : 'Find the right option for you'}</small>
+                  </div>
+                  <ul class="nav-dropdown__list">
+                    {item.children.map((child, index) => (
+                      <li>
+                        <a href={child.href} class:list={['nav-dropdown__link', { 'is-active': currentPath === child.href }]}>
+                          <span class="nav-dropdown__index">{String(index + 1).padStart(2, '0')}</span>
+                          <span>{child.label}</span>
+                          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href={langSwitchHref} class="language-link" aria-label={`Switch to ${langSwitchLabel}`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          <span>{langSwitchLabel}</span>
+        </a>
+        <a href={ctaHref} class="header-cta hide-mobile">
+          <span>{ctaLabel}</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg>
+        </a>
+        <button class="menu-toggle hide-desktop" type="button" aria-label={labels.menu} aria-expanded="false" aria-controls="mobile-menu" id="mobile-toggle">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="mobile-menu hide-desktop" id="mobile-menu" aria-hidden="true">
-    <nav aria-label="Mobile navigation">
+    <nav class="mobile-menu__nav" aria-label={labels.nav}>
       <ul class="mobile-menu__list">
         {navItems.map((item) => (
           <li>
             {item.children ? (
-              <details class="mobile-menu__details">
-                <summary class="mobile-menu__summary">
-                  {item.label}
-                  <span class="summary-caret">▾</span>
-                </summary>
-                <ul class="mobile-menu__submenu">
-                  {item.children.map((child) => (
-                    <li>
-                      <a href={child.href} class="mobile-menu__sublink">
-                        {child.icon && <span class="mobile-menu__subicon">{child.icon}</span>}
-                        <span class="mobile-menu__sublabel">{child.label}</span>
-                      </a>
-                    </li>
+              <details class="mobile-menu__group">
+                <summary><span>{item.label}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg></summary>
+                <ul>
+                  {item.children.map((child, index) => (
+                    <li><a href={child.href}><span>{String(index + 1).padStart(2, '0')}</span>{child.label}</a></li>
                   ))}
                 </ul>
               </details>
             ) : (
-              <a href={item.href} class="mobile-menu__link">{item.label}</a>
+              <a href={item.href} class:list={['mobile-menu__link', { 'is-active': currentPath === item.href }]}>{item.label}</a>
             )}
           </li>
         ))}
-        <li class="mobile-menu__cta">
-          <a href={ctaHref} class="btn btn--accent btn--lg" style="width:100%">
-            {ctaLabel}
-          </a>
-        </li>
       </ul>
+      <a href={ctaHref} class="mobile-menu__cta">{ctaLabel}</a>
+      <a href="tel:0979121097" class="mobile-menu__phone">0979.121.097</a>
     </nav>
   </div>
 </header>
 
 <style>
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: var(--z-sticky);
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(193, 199, 209, 0.15);
-    transition: all var(--transition-smooth);
-  }
+  .site-header { position: sticky; inset-block-start: 0; z-index: var(--z-sticky); color: var(--color-text); }
+  .header-utility { height: 32px; background: var(--blue-950); color: color-mix(in srgb, var(--white) 76%, transparent); font-size: .72rem; font-weight: 600; letter-spacing: .04em; }
+  .header-utility__inner, .header-utility__meta, .header-utility__eyebrow { height: 100%; display: flex; align-items: center; }
+  .header-utility__inner { justify-content: space-between; }
+  .header-utility__meta, .header-utility__eyebrow { gap: var(--space-3); }
+  .header-utility__eyebrow svg { width: 20px; fill: none; stroke: var(--blue-400); stroke-width: 1.7; }
+  .header-utility__meta a { padding-inline-start: var(--space-4); border-inline-start: 1px solid color-mix(in srgb, var(--white) 20%, transparent); color: var(--white); }
 
-  .header > .container {
-    height: 80px;
-    padding-inline: clamp(2rem, 6vw, 6rem);
-  }
+  .header-main { height: 76px; border-bottom: 1px solid var(--color-border-light); background: color-mix(in srgb, var(--white) 94%, transparent); backdrop-filter: blur(18px) saturate(140%); }
+  .header-main__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); }
+  .header-logo { flex: 0 0 auto; display: flex; align-items: center; }
+  .header-logo img { width: auto; height: 43px; }
+  .desktop-nav { align-self: stretch; margin-inline-start: auto; }
+  .desktop-nav__list { height: 100%; display: flex; align-items: stretch; gap: .1rem; }
+  .desktop-nav__item { position: relative; display: flex; align-items: stretch; }
+  .desktop-nav__link { position: relative; display: flex; align-items: center; gap: .3rem; min-height: 44px; padding-inline: .7rem; color: var(--ink-800); font-size: .84rem; font-weight: 650; white-space: nowrap; }
+  .desktop-nav__link::after { content: ''; position: absolute; inset-inline: .7rem; inset-block-end: 0; height: 3px; border-radius: var(--radius-full) var(--radius-full) 0 0; background: var(--blue-600); transform: scaleX(0); transition: transform var(--transition-fast); }
+  .desktop-nav__link:hover, .desktop-nav__link.is-active { color: var(--blue-700); }
+  .desktop-nav__link:hover::after, .desktop-nav__link.is-active::after { transform: scaleX(1); }
+  .nav-chevron { width: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform var(--transition-fast); }
+  .has-dropdown:hover .nav-chevron, .has-dropdown:focus-within .nav-chevron { transform: rotate(180deg); }
 
-  .header__logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
+  .nav-dropdown { position: absolute; inset-block-start: calc(100% - 1px); inset-inline-start: 50%; width: min(620px, 82vw); display: grid; grid-template-columns: .8fr 1.3fr; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-xl); opacity: 0; visibility: hidden; transform: translate(-50%, 12px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); }
+  .has-dropdown:hover .nav-dropdown, .has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translate(-50%, 8px); }
+  .nav-dropdown__intro { display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-2); padding: var(--space-6); border-radius: calc(var(--radius-xl) - var(--space-1)); background: var(--blue-950); color: var(--white); }
+  .nav-dropdown__intro span { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 750; }
+  .nav-dropdown__intro small { color: color-mix(in srgb, var(--white) 72%, transparent); line-height: 1.5; }
+  .nav-dropdown__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; padding: var(--space-2); }
+  .nav-dropdown__link { min-height: 48px; display: grid; grid-template-columns: 28px 1fr 18px; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); color: var(--ink-800); font-size: .82rem; font-weight: 600; }
+  .nav-dropdown__link:hover, .nav-dropdown__link.is-active { background: var(--blue-50); color: var(--blue-700); }
+  .nav-dropdown__index { color: var(--blue-500); font-size: .7rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .nav-dropdown__link svg { width: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; opacity: 0; transform: translateX(-4px); transition: opacity var(--transition-fast), transform var(--transition-fast); }
+  .nav-dropdown__link:hover svg { opacity: 1; transform: none; }
 
-  .logo-img {
-    height: 44px;
-    width: auto;
-    object-fit: contain;
-    transition: opacity var(--transition-fast);
-  }
+  .header-actions { display: flex; align-items: center; gap: var(--space-2); flex: 0 0 auto; }
+  .language-link, .header-cta, .menu-toggle { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .language-link { gap: var(--space-2); padding-inline: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--ink-800); font-size: .78rem; font-weight: 750; }
+  .language-link:hover { border-color: var(--blue-400); color: var(--blue-700); }
+  .language-link svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+  .header-cta { gap: var(--space-2); padding-inline: var(--space-4); border-radius: var(--radius-md); background: var(--orange-500); color: var(--white); font-size: .8rem; font-weight: 750; }
+  .header-cta:hover { background: var(--orange-600); color: var(--white); box-shadow: var(--shadow-coral); }
+  .header-cta svg { width: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .menu-toggle { width: 46px; flex-direction: column; gap: 7px; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+  .menu-toggle span { width: 20px; height: 2px; border-radius: var(--radius-full); background: var(--blue-950); transition: transform var(--transition-fast); }
+  .menu-toggle[aria-expanded='true'] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded='true'] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
 
-  .header__logo:hover .logo-img {
-    opacity: 0.85;
-  }
+  .mobile-menu { position: absolute; inset: 68px 0 auto; max-height: calc(100dvh - 68px); overflow-y: auto; padding: var(--space-4) var(--container-pad) var(--space-8); border-bottom: 1px solid var(--color-border); background: var(--white); box-shadow: var(--shadow-xl); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); }
+  .mobile-menu.is-open { opacity: 1; visibility: visible; transform: none; }
+  .mobile-menu__nav { width: 100%; }
+  .mobile-menu__list { display: grid; gap: var(--space-1); }
+  .mobile-menu__link, .mobile-menu__group summary { min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--color-border-light); color: var(--blue-950); font-family: var(--font-heading); font-weight: 700; }
+  .mobile-menu__link.is-active { color: var(--blue-600); }
+  .mobile-menu__group summary { list-style: none; cursor: pointer; }
+  .mobile-menu__group summary::-webkit-details-marker { display: none; }
+  .mobile-menu__group summary svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform var(--transition-fast); }
+  .mobile-menu__group[open] summary svg { transform: rotate(180deg); }
+  .mobile-menu__group ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); padding: var(--space-3) 0 var(--space-5); }
+  .mobile-menu__group ul a { min-height: 48px; display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); background: var(--sand-50); color: var(--ink-800); font-size: .82rem; font-weight: 600; }
+  .mobile-menu__group ul a span { color: var(--blue-500); font-size: .7rem; font-weight: 800; }
+  .mobile-menu__cta, .mobile-menu__phone { width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; margin-block-start: var(--space-3); border-radius: var(--radius-md); font-weight: 750; }
+  .mobile-menu__cta { background: var(--orange-500); color: var(--white); }
+  .mobile-menu__phone { border: 1px solid var(--color-border); color: var(--blue-800); }
 
-  @media (max-width: 768px) {
-    .logo-img {
-      height: 36px;
-    }
-  }
+  :global(body.menu-open) { overflow: hidden; }
 
-  /* Navigation & Dropdown styling */
-  .nav-list {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  @media (max-width: 1180px) and (min-width: 1025px) {
+    .desktop-nav__link { padding-inline: .5rem; font-size: .78rem; }
+    .header-cta { padding-inline: var(--space-3); }
   }
-
-  .nav-item {
-    position: relative;
-    list-style: none;
+  @media (max-width: 1024px) {
+    .header-main { height: 68px; }
+    .header-logo img { height: 38px; }
   }
-
-  .nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-md);
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
-    text-decoration: none;
-  }
-
-  .nav-link:hover {
-    color: var(--color-primary);
-    background: var(--color-primary-50);
-  }
-
-  .nav-link--active {
-    color: var(--color-primary);
-    background: var(--color-primary-50);
-    font-weight: 600;
-  }
-
-  .dropdown-caret {
-    font-size: 0.75rem;
-    transition: transform var(--transition-fast);
-    opacity: 0.7;
-  }
-
-  .nav-item:hover .dropdown-caret {
-    transform: rotate(180deg);
-  }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(15px);
-    min-width: 250px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 119, 182, 0.08);
-    border-radius: var(--radius-lg, 16px);
-    box-shadow: 0 15px 35px -10px rgba(0, 77, 115, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
-    padding: var(--space-3) var(--space-2);
-    margin: 0;
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0.2s;
-    z-index: 100;
-  }
-
-  .nav-item:hover .dropdown-menu,
-  .nav-item:focus-within .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(8px);
-  }
-
-  .dropdown-link {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    padding: var(--space-2) var(--space-4);
-    font-size: 0.92rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    border-radius: var(--radius-md, 8px);
-    transition: all 0.2s ease;
-    text-decoration: none;
-  }
-
-  .dropdown-link__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    width: 28px;
-    height: 28px;
-    background: rgba(0, 119, 182, 0.05);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-  }
-
-  .dropdown-link:hover,
-  .dropdown-link--active {
-    background: var(--color-primary-50);
-    color: var(--color-primary);
-    transform: translateX(4px);
-  }
-
-  .dropdown-link:hover .dropdown-link__icon,
-  .dropdown-link--active .dropdown-link__icon {
-    background: var(--color-primary);
-    color: white;
-    transform: scale(1.1);
-  }
-
-  /* Language Switcher */
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
-  }
-
-  .lang-switch:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    background: var(--color-primary-50);
-  }
-
-  .lang-switch__icon {
-    font-size: 1rem;
-  }
-
-  /* Hamburger */
-  .mobile-toggle {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-md);
-    transition: background var(--transition-fast);
-  }
-
-  .mobile-toggle:hover {
-    background: var(--color-bg-alt);
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 22px;
-  }
-
-  .hamburger span {
-    display: block;
-    height: 2px;
-    background: var(--color-text);
-    border-radius: 2px;
-    transition: all var(--transition-smooth);
-  }
-
-  .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-  .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* Mobile Menu */
-  .mobile-menu {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: var(--color-bg-card);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow-lg);
-    padding: var(--space-4) var(--container-pad);
-    transform: translateY(-10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-smooth);
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-  }
-
-  .mobile-menu.is-open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .mobile-menu__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .mobile-menu__link {
-    display: block;
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-md);
-    font-weight: 500;
-    color: var(--color-text);
-    transition: all var(--transition-fast);
-    text-decoration: none;
-  }
-
-  .mobile-menu__link:hover {
-    background: var(--color-primary-50);
-    color: var(--color-primary);
-  }
-
-  /* Mobile menu details/summary accordion */
-  .mobile-menu__details {
-    width: 100%;
-  }
-
-  .mobile-menu__summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-3) var(--space-4);
-    font-weight: 500;
-    color: var(--color-text);
-    list-style: none;
-    cursor: pointer;
-    border-radius: var(--radius-md);
-    transition: background var(--transition-fast);
-  }
-
-  .mobile-menu__summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .mobile-menu__summary:hover {
-    background: var(--color-primary-50);
-    color: var(--color-primary);
-  }
-
-  .summary-caret {
-    font-size: 0.8rem;
-    transition: transform var(--transition-fast);
-  }
-
-  .mobile-menu__details[open] .summary-caret {
-    transform: rotate(180deg);
-  }
-
-  .mobile-menu__submenu {
-    list-style: none;
-    padding-left: var(--space-6);
-    margin: var(--space-1) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    border-left: 2px solid rgba(0, 119, 182, 0.1);
-  }
-
-  .mobile-menu__sublink {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    padding: var(--space-2.5) var(--space-4);
-    border-radius: var(--radius-md);
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-  }
-
-  .mobile-menu__sublink:hover {
-    background: var(--color-primary-50);
-    color: var(--color-primary);
-    padding-left: var(--space-5);
-  }
-
-  .mobile-menu__subicon {
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-menu__cta {
-    margin-top: var(--space-4);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border-light);
+  @media (max-width: 560px) {
+    .mobile-menu__group ul { grid-template-columns: 1fr; }
+    .language-link { width: 44px; padding: 0; }
+    .language-link svg { display: none; }
   }
 </style>
 
 <script>
   const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
-  
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    menu?.classList.remove('is-open');
+    menu?.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  };
   toggle?.addEventListener('click', () => {
-    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-    menu?.classList.toggle('is-open');
-    menu?.setAttribute('aria-hidden', String(isOpen));
+    const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(willOpen));
+    menu?.classList.toggle('is-open', willOpen);
+    menu?.setAttribute('aria-hidden', String(!willOpen));
+    document.body.classList.toggle('menu-open', willOpen);
   });
-  
-  // Close menu on link click
-  menu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      toggle?.setAttribute('aria-expanded', 'false');
-      menu?.classList.remove('is-open');
-      menu?.setAttribute('aria-hidden', 'true');
-    });
-  });
+  menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  window.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
 </script>
+
+<style is:global>
+  body.menu-open { overflow: hidden; }
+</style>

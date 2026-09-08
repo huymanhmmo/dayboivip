@@ -1,0 +1,216 @@
+/* Shared visual refresh for course and swimming-technique templates. */
+
+.course-landing {
+  --cl-font: var(--font-heading);
+  --cl-primary: var(--blue-700);
+  --cl-primary-light: var(--blue-500);
+  --cl-cyan: var(--blue-500);
+  --cl-cyan-light: var(--blue-200);
+  --cl-cta: var(--orange-500);
+  --cl-cta-hover: var(--orange-600);
+  --cl-cta-gradient: linear-gradient(135deg, var(--orange-500), var(--orange-400));
+  --cl-gold: var(--orange-400);
+  --cl-dark: var(--blue-950);
+  --cl-text: var(--ink-800);
+  --cl-text-light: var(--ink-600);
+  --cl-bg: var(--white);
+  --cl-bg-alt: var(--sand-50);
+  --cl-bg-dark: var(--blue-950);
+  --cl-hero-gradient: linear-gradient(135deg, var(--blue-950), var(--blue-800));
+  --cl-container: var(--container-xl);
+  --cl-radius: var(--radius-lg);
+  --cl-radius-sm: var(--radius-md);
+  --cl-radius-lg: var(--radius-xl);
+}
+
+.course-landing .cl-hero {
+  min-height: calc(100dvh - var(--header-height));
+  padding: clamp(5rem, 8vw, 8rem) var(--container-pad);
+  background:
+    radial-gradient(circle at 78% 20%, color-mix(in srgb, var(--blue-500) 22%, transparent), transparent 32%),
+    var(--blue-950);
+}
+
+.course-landing .cl-hero::before {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--white) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--white) 8%, transparent) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: .7;
+}
+
+.course-landing .cl-hero::after,
+.course-landing .cl-bubble,
+.course-landing .cl-floating-cta {
+  display: none;
+}
+
+.course-landing .cl-hero__badge {
+  border-color: color-mix(in srgb, var(--blue-400) 32%, transparent);
+  background: color-mix(in srgb, var(--blue-500) 10%, transparent);
+  color: var(--blue-200);
+  backdrop-filter: none;
+}
+
+.course-landing .cl-hero__title {
+  max-width: 760px;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -.055em;
+  text-shadow: none;
+}
+
+.course-landing .cl-hero__subtitle {
+  color: color-mix(in srgb, var(--white) 72%, transparent);
+}
+
+.course-landing .cl-hero__stat {
+  border-color: color-mix(in srgb, var(--white) 16%, transparent);
+  background: color-mix(in srgb, var(--white) 7%, transparent);
+  backdrop-filter: none;
+}
+
+.course-landing .cl-hero__image-wrapper {
+  border: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.course-landing .cl-hero__floating-badge {
+  border-color: color-mix(in srgb, var(--white) 18%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--blue-950) 90%, transparent);
+  animation: none;
+}
+
+.course-landing .cl-section {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.course-landing .cl-card,
+.course-landing .cl-pricing-card,
+.course-landing .cl-testimonial-card,
+.course-landing .cl-faq-item {
+  border: 1px solid var(--color-border);
+  box-shadow: none;
+}
+
+.course-landing .cl-card:hover,
+.course-landing .cl-pricing-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.course-landing .cl-btn {
+  min-height: 48px;
+  border-radius: var(--radius-md);
+}
+
+.course-landing .cl-btn-pulse {
+  animation: none;
+}
+
+.technique-landing {
+  --theme-primary: var(--blue-800);
+  --theme-secondary: var(--blue-500);
+  --theme-dark: var(--blue-950);
+  --theme-glow: color-mix(in srgb, var(--blue-500) 18%, transparent);
+  --theme-accent: var(--orange-500);
+}
+
+.technique-landing .tl-hero {
+  min-height: calc(100dvh - var(--header-height));
+  padding-block: clamp(5rem, 8vw, 7rem);
+  background:
+    radial-gradient(circle at 82% 20%, color-mix(in srgb, var(--blue-500) 22%, transparent), transparent 35%),
+    var(--blue-950);
+}
+
+.technique-landing .tl-hero::after,
+.technique-landing .tl-hero__refractions,
+.technique-landing .tl-toc-wrapper,
+.technique-landing .tl-floating-cta {
+  display: none;
+}
+
+.technique-landing .tl-hero__container,
+.technique-landing .tl-section__container {
+  max-width: var(--container-xl);
+}
+
+.technique-landing .tl-hero__main-row {
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.technique-landing .tl-hero__badge {
+  border-color: color-mix(in srgb, var(--blue-400) 30%, transparent);
+  background: color-mix(in srgb, var(--blue-500) 10%, transparent);
+  color: var(--blue-200);
+  backdrop-filter: none;
+}
+
+.technique-landing .tl-hero__title {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -.055em;
+  text-shadow: none;
+}
+
+.technique-landing .tl-hero__title span.highlight {
+  background: none;
+  color: var(--orange-400);
+  -webkit-text-fill-color: currentColor;
+}
+
+.technique-landing .tl-hero__description {
+  color: color-mix(in srgb, var(--white) 72%, transparent);
+}
+
+.technique-landing .tl-btn {
+  min-height: 50px;
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+
+.technique-landing .tl-btn--accent {
+  background: var(--orange-500);
+}
+
+.technique-landing .tl-btn--accent:hover {
+  background: var(--orange-600);
+  box-shadow: var(--shadow-coral);
+}
+
+.technique-landing .tl-btn--pulse {
+  animation: none;
+}
+
+.technique-landing .tl-hero__video {
+  border: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.technique-landing .tl-gauge-card {
+  border-color: color-mix(in srgb, var(--white) 14%, transparent);
+  background: color-mix(in srgb, var(--white) 6%, transparent);
+  border-radius: var(--radius-lg);
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.technique-landing .tl-section {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.technique-landing :where(.tl-card, .tl-step-card, .tl-error-card, .tl-faq-item) {
+  border: 1px solid var(--color-border);
+  box-shadow: none;
+}
+
+@media (max-width: 991px) {
+  .course-landing .cl-hero,
+  .technique-landing .tl-hero {
+    min-height: auto;
+  }
+}
