@@ -246,6 +246,23 @@ const directorySchema = {
       </section>
     )}
 
+    {research?.relatedPages?.length > 0 && (
+      <section class="section local-directory__related" aria-labelledby="related-title">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__badge">Liên kết theo khu vực</span>
+            <h2 class="section__title" id="related-title">Địa phương và khu vực liên quan</h2>
+            <p class="section__desc">Tiếp tục tra cứu theo khu vực gần nơi ở thay vì chọn lớp chỉ dựa trên quảng cáo.</p>
+          </div>
+          <div class="local-directory__related-grid">
+            {research.relatedPages.map((page) => (
+              <a href={page.href}><strong>{page.label}</strong><span>{page.description}</span><b>Xem trang →</b></a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <section class="section" aria-labelledby="check-title">
       <div class="container local-directory__check-grid">
         <div>

@@ -89,6 +89,14 @@
 .local-directory__references-grid a strong { font-size: .84rem; }
 .local-directory__references-grid a span { font-size: .8rem; text-decoration: underline; text-decoration-color: var(--blue-200); text-underline-offset: 3px; }
 .local-directory__references-grid li p { margin: var(--space-2) 0 0; color: var(--ink-600); font-size: .76rem; line-height: 1.55; }
+
+.local-directory__related { border-top: 1px solid var(--color-border); }
+.local-directory__related-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.local-directory__related-grid a { display: flex; min-height: 190px; padding: var(--space-6); border: 1px solid var(--color-border); color: inherit; text-decoration: none; flex-direction: column; background: #fff; transition: transform .2s ease, border-color .2s ease; }
+.local-directory__related-grid a:hover { transform: translateY(-3px); border-color: var(--blue-500); }
+.local-directory__related-grid strong { font-family: var(--font-display); font-size: 1.25rem; }
+.local-directory__related-grid span { margin-top: var(--space-3); color: var(--ink-600); line-height: 1.6; }
+.local-directory__related-grid b { margin-top: auto; color: var(--orange-600); font-size: .9rem; }
 .local-directory__check-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(3rem, 8vw, 8rem); align-items: start; }
 .local-directory__check-grid ol { display: grid; gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
 .local-directory__check-grid li { display: grid; grid-template-columns: 44px 1fr; gap: var(--space-4); padding: var(--space-4); border-bottom: 1px solid var(--color-border); }
@@ -103,9 +111,9 @@
 .local-directory__enterprise p { margin: var(--space-4) 0 0; color: color-mix(in srgb, var(--white) 70%, transparent); line-height: 1.7; }
 .local-directory__enterprise a { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--space-5); border-radius: var(--radius-md); background: var(--orange-500); color: var(--white); font-weight: 750; white-space: nowrap; }
 @media (max-width: 1120px) { .local-directory__provider-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 1020px) { .local-directory__hero-grid { grid-template-columns: 1fr; } .local-directory__hero figure { max-width: 680px; } .local-directory__discovery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .local-directory__references-grid { grid-template-columns: 1fr; } .local-directory__references-grid > div { position: static; } }
+@media (max-width: 1020px) { .local-directory__hero-grid { grid-template-columns: 1fr; } .local-directory__hero figure { max-width: 680px; } .local-directory__discovery-grid, .local-directory__related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .local-directory__references-grid { grid-template-columns: 1fr; } .local-directory__references-grid > div { position: static; } }
 @media (max-width: 760px) { .local-directory__notice .container, .local-directory__admin-note .container, .local-directory__check-grid, .local-directory__method-grid, .local-directory__category > header { grid-template-columns: 1fr; } .local-directory__pool-grid, .local-directory__provider-grid { grid-template-columns: 1fr; } .local-directory__provider-card { min-height: 0; } .local-directory__method-list p { grid-template-columns: 1fr; gap: var(--space-2); } .local-directory__enterprise-inner { align-items: flex-start; flex-direction: column; } .local-directory__enterprise a { width: 100%; white-space: normal; text-align: center; } }
-@media (max-width: 540px) { .local-directory__hero-actions { flex-direction: column; } .local-directory__hero-actions a { width: 100%; } .local-directory__discovery-grid { grid-template-columns: 1fr; } .local-directory__discovery-card { min-height: 220px; } .local-directory__pool-card { grid-template-columns: 40px 1fr; gap: var(--space-3); padding: var(--space-5); } .local-directory__pool-index { width: 40px; height: 40px; } }
+@media (max-width: 540px) { .local-directory__hero-actions { flex-direction: column; } .local-directory__hero-actions a { width: 100%; } .local-directory__discovery-grid, .local-directory__related-grid { grid-template-columns: 1fr; } .local-directory__discovery-card { min-height: 220px; } .local-directory__related-grid a { min-height: 160px; } .local-directory__pool-card { grid-template-columns: 40px 1fr; gap: var(--space-3); padding: var(--space-5); } .local-directory__pool-index { width: 40px; height: 40px; } }
 
 .directory-hub { background: var(--white); }
 .directory-hub__hero { padding: clamp(4rem, 8vw, 7.5rem) 0; background: var(--blue-950); color: var(--white); }

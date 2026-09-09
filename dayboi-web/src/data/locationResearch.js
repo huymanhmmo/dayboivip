@@ -1,3 +1,5 @@
+import { hcmResearch } from './locationResearchHcm.js';
+
 const reviewedAt = '09/09/2026';
 
 export const locationResearch = {
@@ -302,67 +304,7 @@ export const locationResearch = {
       { publisher: 'Swim To Be Live', title: 'Học bơi ở Hà Nội', url: 'https://swimtobelive.com/hoc-boi-o-ha-noi', usedFor: 'Các điểm Hồ Gươm Plaza và Thái Thịnh.' },
     ],
   },
-  'hoc-boi-tphcm': {
-    level: 'Đã rà soát ưu tiên',
-    reviewedAt,
-    summary: 'Ưu tiên các hồ bơi công cộng lâu năm tại khu trung tâm; bổ sung cảnh báo riêng cho hồ nội khu.',
-    categories: [
-      {
-        id: 'outdoor',
-        label: 'Hồ bơi ngoài trời & công cộng',
-        description: 'Nhóm dễ tiếp cận nhất cho người học lẻ. Nên xem lịch theo ca và xác nhận khu vực dành cho người mới.',
-        venues: [
-          {
-            name: 'Hồ bơi Yết Kiêu',
-            address: 'Số 1 Nguyễn Thị Minh Khai, phường Bến Nghé, Quận 1, TP.HCM',
-            area: 'Quận 1',
-            access: 'Trung tâm thể thao',
-            detail: 'Địa điểm bơi lội lâu năm ở khu trung tâm. Lịch bơi tự do có thể khác lịch tập luyện của câu lạc bộ.',
-            sourceLabel: 'Tổng hợp địa điểm Yết Kiêu',
-            sourceUrl: 'https://paracelresort.com/ho-boi-yet-kieu-o-dau-dia-chi-gio-mo-cua-gia-ve-va-thong-tin-can-biet/',
-            sourceType: 'Nguồn tổng hợp công khai',
-          },
-          {
-            name: 'Hồ bơi Kỳ Đồng',
-            address: '40 Kỳ Đồng, Phường 9, Quận 3, TP.HCM',
-            area: 'Quận 3',
-            access: 'Hồ bơi công cộng',
-            detail: 'Vị trí trung tâm, thường được tìm cho nhu cầu bơi tự do và học bơi. Hãy xem đánh giá mới nhất trước khi chọn ca.',
-            sourceLabel: 'Foody',
-            sourceUrl: 'https://www.foody.vn/ho-chi-minh/ho-boi-ky-dong',
-            sourceType: 'Danh bạ công khai',
-          },
-          {
-            name: 'Hồ bơi Lam Sơn',
-            address: '242 Trần Bình Trọng, Phường 4, Quận 5, TP.HCM',
-            area: 'Quận 5',
-            access: 'Hồ bơi công cộng',
-            detail: 'Bể ở khu trung tâm Quận 5; cần xác nhận lịch theo ca, độ sâu và khu vực dành cho trẻ em tại quầy vé.',
-            sourceLabel: 'Foody',
-            sourceUrl: 'https://www.foody.vn/ho-chi-minh/ho-boi-lam-son-tran-binh-trong',
-            sourceType: 'Danh bạ công khai',
-          },
-        ],
-      },
-      {
-        id: 'restricted',
-        label: 'Hồ bơi nội khu',
-        description: 'Không mặc định mở cho khách ngoài. Chỉ nên chọn sau khi xác nhận quyền sử dụng và quy định của ban quản lý.',
-        venues: [
-          {
-            name: 'Hệ thống hồ bơi Vinhomes Central Park',
-            address: '208 Nguyễn Hữu Cảnh, Phường 22, quận Bình Thạnh, TP.HCM',
-            area: 'Bình Thạnh',
-            access: 'Nội khu cư dân',
-            detail: 'Đây là tiện ích nội khu, không phải hồ công cộng. Người học cần xác nhận quyền ra vào và quy định về HLV bên ngoài.',
-            sourceLabel: 'Google Maps',
-            sourceUrl: 'https://www.google.com/maps/search/?api=1&query=ho%20boi%20Vinhomes%20Central%20Park',
-            sourceType: 'Bản đồ công khai',
-          },
-        ],
-      },
-    ],
-  },
+  'hoc-boi-tphcm': hcmResearch,
   'hoc-boi-da-nang': {
     level: 'Đã rà soát ưu tiên',
     reviewedAt,
