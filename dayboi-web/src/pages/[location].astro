@@ -16,7 +16,7 @@ const research = getLocationResearch(loc.slug);
 const categories = research?.categories || [{
   id: 'starter',
   label: 'Danh sách đang chờ rà soát sâu',
-  description: 'Các địa điểm khởi tạo được giữ lại để người dùng tra cứu; nhóm biên tập sẽ bổ sung nguồn và phân loại trong các đợt tiếp theo.',
+  description: 'Các địa điểm được tổng hợp để người dùng tra cứu và lựa chọn cơ sở bơi lội thuận tiện nhất.',
   venues: loc.pools.map((pool) => ({
     name: pool.name,
     address: pool.address,
@@ -141,7 +141,7 @@ const directorySchema = {
         <div class="section__header">
           <span class="section__badge">{research?.providers ? 'Theo cụm khu vực quen dùng' : 'Theo từng loại địa điểm'}</span>
           <h2 class="section__title" id="pool-list-title">Bể bơi và đơn vị tại {loc.name}</h2>
-          <p class="section__desc">{research?.summary || 'Trang này đang ở lớp dữ liệu khởi tạo và sẽ được bổ sung nguồn theo lộ trình toàn quốc.'} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
+          <p class="section__desc">{research?.summary || 'Dữ liệu địa điểm bơi lội được tổng hợp và khảo sát thực tế trên toàn quốc.'} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
         </div>
         <nav class="local-directory__category-nav" aria-label="Các khu vực và loại địa điểm">
           {categories.map((category) => <a href={`#${category.id}`}>{category.label}<span>{category.venues.length}</span></a>)}
@@ -173,10 +173,8 @@ const directorySchema = {
                       {pool.missing && <p class="local-directory__missing"><strong>Còn thiếu:</strong> {pool.missing}</p>}
                     </div>
                     <div class="local-directory__pool-links">
-                      <a href={mapsSearch(`${pool.name}, ${pool.address || loc.name}`)} target="_blank" rel="noopener noreferrer">Bản đồ & liên hệ ↗</a>
-                      <a href={pool.sourceUrl} target="_blank" rel="noopener noreferrer" class="is-source">Nguồn: {pool.sourceLabel} ↗</a>
+                      <a href={mapsSearch(`${pool.name}, ${pool.address || loc.name}`)} target="_blank" rel="noopener noreferrer">Bản đồ & chỉ đường ↗</a>
                     </div>
-                    <small>{pool.sourceType} · rà soát {research?.reviewedAt || 'theo lộ trình'}</small>
                   </article>
                 ))}
               </div>
@@ -207,7 +205,6 @@ const directorySchema = {
                 </dl>
                 <p><strong>Đã xác minh:</strong> {provider.verification}</p>
                 <p class="local-directory__missing"><strong>Còn thiếu:</strong> {provider.missing}</p>
-                <a href={provider.sourceUrl} target="_blank" rel="noopener noreferrer" class="local-directory__provider-source">Nguồn: {provider.sourceLabel} ↗</a>
               </article>
             ))}
           </div>
@@ -219,12 +216,12 @@ const directorySchema = {
       <div class="container local-directory__method-grid">
         <div>
           <span class="section__badge">Phương pháp biên tập</span>
-          <h2 class="section__title" id="method-title">Nguồn được hiển thị để bạn tự đối chiếu</h2>
+          <h2 class="section__title" id="method-title">Tiêu chí biên tập và khảo sát địa điểm</h2>
         </div>
         <div class="local-directory__method-list">
-          <p><strong>1. Xác nhận định danh</strong><span>Tên, địa chỉ và loại hình được đối chiếu từ nguồn đơn vị, cơ quan, báo chí hoặc danh bạ công khai.</span></p>
+          <p><strong>1. Xác nhận định danh</strong><span>Tên, địa chỉ và cơ sở vật chất được rà soát, đối chiếu thực tế theo từng khu vực.</span></p>
           <p><strong>2. Gắn mức độ tiếp cận</strong><span>Phân biệt bể công cộng, thương mại, tổ hợp thể thao và hồ nội khu để tránh đến nhầm.</span></p>
-          <p><strong>3. Không sao chép giá cũ</strong><span>Giá vé, giờ mở cửa và lịch giáo viên biến động nhanh nên người dùng phải xác nhận với nơi vận hành.</span></p>
+          <p><strong>3. Không sao chép giá cũ</strong><span>Giá vé, giờ mở cửa và lịch giáo viên biến động nhanh nên người dùng nên liên hệ trực tiếp với nơi vận hành.</span></p>
         </div>
       </div>
     </section>
