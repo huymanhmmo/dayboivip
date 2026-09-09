@@ -4,6 +4,7 @@ import { canthoResearch, dongthapResearch, vinhlongResearch, angiangResearch, ca
 import { quangninhResearch } from './research/north.js';
 import { dongnaiResearch, lamdongResearch, daklakResearch, tayninhResearch } from './research/south.js';
 import { bacninhResearch, thainguyenResearch, phuthoResearch, hungyenResearch, ninhbinhResearch } from './research/north-delta.js';
+import { laocaiResearch, langsonResearch, tuyenquangResearch, sonlaResearch, dienbienResearch, laichauResearch, caobangResearch } from './research/north-highland.js';
 
 const reviewedAt = '09/09/2026';
 
@@ -536,20 +537,29 @@ export const locationResearch = {
   'hoc-boi-vinh-long': vinhlongResearch,
   'hoc-boi-an-giang': angiangResearch,
   'hoc-boi-ca-mau': camauResearch,
+  'hoc-boi-lao-cai': laocaiResearch,
+  'hoc-boi-lang-son': langsonResearch,
+  'hoc-boi-tuyen-quang': tuyenquangResearch,
+  'hoc-boi-son-la': sonlaResearch,
+  'hoc-boi-dien-bien': dienbienResearch,
+  'hoc-boi-lai-chau': laichauResearch,
+  'hoc-boi-cao-bang': caobangResearch,
 };
 
 export const locationRollout = [
   {
-    phase: 'Đợt 1 đến 5 (Đô thị trọng điểm, Vệ tinh, Bắc Bộ, Miền Trung, Tây Nguyên & ĐBSCL)',
-    status: 'Đã hoàn thành nghiên cứu chuyên sâu (27 tỉnh/TP)',
-    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh', 'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng', 'Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình', 'Thanh Hóa', 'Nghệ An', 'Hà Tĩnh', 'Quảng Bình', 'Quảng Ngãi', 'Đắk Lắk', 'Tây Ninh', 'Đồng Tháp', 'Vĩnh Long', 'An Giang', 'Cà Mau'],
-    scope: 'Đầy đủ venues theo quận/huyện, đơn vị dạy bơi, nguồn xác minh, liên hệ và FAQs thực tế.',
-  },
-  {
-    phase: 'Đợt 6 (Vùng cao & Biên giới Phía Bắc)',
-    status: 'Đang triển khai',
-    locations: ['Lào Cai', 'Lạng Sơn', 'Tuyên Quang', 'Sơn La', 'Điện Biên', 'Lai Châu', 'Cao Bằng'],
-    scope: 'Vùng cao Tây Bắc và Đông Bắc.',
+    phase: 'Toàn bộ 34 tỉnh/thành phố trên toàn quốc (Đợt 1 đến Đợt 6)',
+    status: 'Đã hoàn thành nghiên cứu chuyên sâu 100% (34/34 tỉnh/TP)',
+    locations: [
+      'Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng',
+      'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh',
+      'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng',
+      'Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình',
+      'Thanh Hóa', 'Nghệ An', 'Hà Tĩnh', 'Quảng Bình', 'Quảng Ngãi',
+      'Đắk Lắk', 'Tây Ninh', 'Đồng Tháp', 'Vĩnh Long', 'An Giang', 'Cà Mau',
+      'Lào Cai', 'Lạng Sơn', 'Tuyên Quang', 'Sơn La', 'Điện Biên', 'Lai Châu', 'Cao Bằng'
+    ],
+    scope: 'Hoàn tất 100% danh bạ cơ sở bơi lội, trung tâm đào tạo, nguồn công khai thẩm định, đối chiếu bể bốn mùa và hệ thống câu hỏi đáp thực tế cho 34 tỉnh/thành phố.',
   },
 ];
 

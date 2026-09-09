@@ -695,12 +695,17 @@ export const locations = [
     headline: "Học Bơi Cao Bằng: Lớp Dạy Bơi Chuyên Nghiệp Thân Thiện",
     subtitle: "Học bơi bài bản chuyên nghiệp tại Cao Bằng. Cam kết biết bơi 100%, dạy thử miễn phí.",
     image: "/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg",
-    intro: "Cao Bằng là tỉnh miền núi biên giới phía Bắc. Học bơi đem lại kỹ năng sống dẻo dai khỏe mạnh và an toàn cho trẻ nhỏ vùng cao.",
+    intro: "Cao Bằng là tỉnh miền núi biên giới phía Bắc với nhiều sông suối ghềnh thác. Học bơi đem lại kỹ năng sinh tồn dẻo dai, bảo vệ an toàn cho trẻ nhỏ và nâng cao thể chất cộng đồng.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Cao Bằng", address: "Đường Kim Đồng, Hợp Giang, Cao Bằng", type: "Ngoài trời", pros: "Bể bơi sạch sẽ mát mẻ, HLV theo sát học viên an toàn." }
+      { name: "Bể bơi Khách sạn Mường Thanh Luxury Cao Bằng", address: "Số 042 phố Kim Đồng, phường Hợp Giang, TP. Cao Bằng", type: "Bốn mùa / Trong nhà", pros: "Bể bơi trong nhà nước ấm 4 sao, tiêu chuẩn khách sạn cao cấp, tắm tráng xông hơi tiện nghi quanh năm." },
+      { name: "Bể bơi Trung tâm Đào tạo & Thi đấu TDTT Cao Bằng", address: "Phố Kim Đồng, phường Hợp Giang, TP. Cao Bằng", type: "Bể thể thao công lập", pros: "Bể tiêu chuẩn 25m phục vụ đào tạo VĐV và mở lớp bơi hè phổ cập phòng chống đuối nước thiếu nhi." },
+      { name: "Bể bơi Tân Giang Cao Bằng", address: "Phường Tân Giang, TP. Cao Bằng", type: "Bể bơi dịch vụ", pros: "Không gian thoáng đãng, nước lọc tuần hoàn, nhiều HLV dạy kèm nhiệt tình giàu chuyên môn." }
     ],
     faqs: [
-      { q: "Học bơi ở Cao Bằng có giáo viên giỏi không?", a: "100% giáo viên tại Cao Bằng của Swim For Life đều tốt nghiệp đại học thể thao sư phạm bơi lội." }
+      { q: "Ở TP. Cao Bằng mùa đông giá lạnh có học bơi được không?", a: "Có thể học tại Bể bơi trong nhà Khách sạn Mường Thanh Luxury Cao Bằng (phố Kim Đồng) có không gian kín gió nước ấm; mùa hè từ tháng 5 đến tháng 9 có thể học tại Bể TDTT tỉnh và Bể Tân Giang." },
+      { q: "Trẻ em vùng cao sông suối Cao Bằng nên học kiểu bơi nào trước?", a: "Khuyến khích học bơi ếch sinh tồn kết hợp kỹ thuật đứng nước thả nổi ngửa mặt, giúp trẻ giữ sức và tự bảo vệ an toàn khi đối mặt với vùng nước sâu hoặc dòng chảy xiết." },
+      { q: "Trung tâm Swim For Life có dạy kèm 1-1 tại bể bơi khách sạn Mường Thanh không?", a: "Có, HLV của trung tâm nhận dạy kèm 1 kèm 1 theo yêu cầu tại bể bơi Mường Thanh Luxury và các bể bơi công cộng trên địa bàn TP. Cao Bằng." },
+      { q: "Khóa học bơi 1 kèm 1 cam kết những tiêu chuẩn đầu ra nào?", a: "Cam kết 100% học viên bơi thành thạo tối thiểu 50m liên tục không nghỉ, tự tin đứng nước ở độ sâu trên 2m và biết kỹ năng tự xử lý chuột rút đuối nước." }
     ]
   },
   {
@@ -715,12 +720,17 @@ export const locations = [
     headline: "Học Bơi Lai Châu: Dạy Bơi Sinh Tồn An Toàn Nhất",
     subtitle: "Khóa học bơi chất lượng vùng biên viễn Lai Châu. Cam kết biết bơi, HLV chuyên nghiệp.",
     image: "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
-    intro: "Lai Châu có khí hậu vùng cao mát mẻ và nhiều thác ghềnh sông suối. Học bơi giúp các em học sinh có kỹ năng sống hữu ích tự bảo vệ chính mình.",
+    intro: "Lai Châu có khí hậu vùng cao mát mẻ và nhiều thác ghềnh sông suối. Học bơi giúp các em học sinh có kỹ năng sống hữu ích tự bảo vệ chính mình trong mùa mưa lũ.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Lai Châu", address: "Phường Quyết Tiến, TP. Lai Châu", type: "Ngoài trời", pros: "Hồ bơi đạt chuẩn, nước sạch thoáng mát thích hợp tập luyện." }
+      { name: "Bể bơi Khách sạn Mường Thanh Grand Lai Châu", address: "Số 004 đường Hoàng Văn Thái, phường Đoàn Kết, TP. Lai Châu", type: "Bể bơi khách sạn 4 sao", pros: "Diện tích hơn 500m2, thiết kế hiện đại có phân khu trẻ em, view quảng trường trung tâm sang trọng." },
+      { name: "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Lai Châu", address: "Đường 30/4, phường Đông Phong, TP. Lai Châu", type: "Bể thể thao công lập", pros: "Cơ sở tổ chức giải bơi thanh thiếu niên và lớp phổ cập bơi học sinh hè toàn tỉnh Lai Châu." },
+      { name: "Bể bơi Đầu Nguồn Lai Châu", address: "Phường Đoàn Kết, TP. Lai Châu", type: "Bể bơi dịch vụ sinh thái", pros: "Nước nguồn tự nhiên trong lành, không gian núi rừng thoáng mát, phù hợp học bơi rèn luyện thể lực." }
     ],
     faqs: [
-      { q: "Đăng ký học bơi ở Lai Châu thế nào?", a: "Vui lòng gọi hotline 0979.121.097 hoặc nhắn Zalo để giáo viên tại Lai Châu sắp xếp lịch học thử cho bé." }
+      { q: "Tại TP. Lai Châu phụ huynh nên chọn bể bơi nào cho con học bơi an toàn nhất?", a: "Bể bơi Mường Thanh Grand Lai Châu (đường Hoàng Văn Thái) là lựa chọn hàng đầu nhờ nước lọc tiêu chuẩn 4 sao và nhân viên cứu hộ túc trực; ngoài ra có Bể Trung tâm TDTT tỉnh tại phường Đông Phong." },
+      { q: "Học bơi kèm riêng tại Lai Châu học mấy buổi thì biết bơi?", a: "Khóa học kèm riêng 1-1 thường kéo dài từ 10 - 12 buổi, nhiều học viên tiếp thu nhanh có thể bơi tốt sau 6 - 8 buổi tập đầu tiên." },
+      { q: "Trẻ em mấy tuổi tại Lai Châu có thể đăng ký lớp bơi sinh tồn?", a: "Trẻ từ 5 tuổi trở lên đã có thể tham gia lớp học bơi sinh tồn, làm quen nước an toàn và rèn phản xạ tự nổi ngửa mặt thở khi chẳng may ngã xuống nước." },
+      { q: "Trung tâm có bảo hành kỹ thuật bơi trọn đời không?", a: "Có, Swim For Life cam kết kèm đến khi học viên bơi thành thạo cự ly tối thiểu 50m và hỗ trợ ôn tập chỉnh sửa dáng bơi hoàn toàn miễn phí trọn đời." }
     ]
   },
   {
@@ -735,12 +745,18 @@ export const locations = [
     headline: "Học Bơi Điện Biên: Trung Tâm Dạy Bơi Uy Tín Bài Bản",
     subtitle: "Dạy bơi uy tín tại Điện Biên Phủ. HLV giàu kinh nghiệm sư phạm thể thao, an toàn tuyệt đối.",
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
-    intro: "Điện Biên lịch sử hào hùng đang phát triển kinh tế mạnh mẽ. Học bơi giúp trẻ em nâng cao thể chất phát triển chiều cao khỏe mạnh dẻo dai.",
+    intro: "Điện Biên lịch sử hào hùng đang phát triển kinh tế xã hội mạnh mẽ. Học bơi giúp trẻ em nâng cao thể chất, phát triển chiều cao và thành thạo kỹ năng sinh tồn thiết yếu.",
     pools: [
-      { name: "Bể bơi thành phố Điện Biên Phủ", address: "Phường Mường Thanh, Điện Biên Phủ", type: "Ngoài trời", pros: "Bể sạch, không gian thoáng đãng thích hợp cho người mới tập." }
+      { name: "Bể bơi Khách sạn Mường Thanh Grand Điện Biên Phủ", address: "Số 514 đường Võ Nguyên Giáp, phường Him Lam, TP. Điện Biên Phủ", type: "Bể bơi ngoài trời 4 sao", pros: "Hồ bơi 4 sao tiêu chuẩn, nước lọc muối tuần hoàn sạch trong, không gian xanh thư giãn." },
+      { name: "Bể bơi Trung tâm Đào tạo & Thi đấu TDTT tỉnh Điện Biên", address: "Đường Trường Chinh, phường Mường Thanh, TP. Điện Biên Phủ", type: "Bể thể thao 50m", pros: "Bể 50m tiêu chuẩn quốc gia, địa điểm tổ chức giải bơi vô địch và bơi thiếu nhi cấp tỉnh." },
+      { name: "Khu Bể Bơi Khoáng Nóng Thanh Luông & U Va", address: "Xã Thanh Luông & Noong Luống, huyện Điện Biên", type: "Khoáng nóng tự nhiên", pros: "Nguồn nước khoáng ấm nóng thiên nhiên bơi lội rèn luyện sức khỏe rất tốt kể cả trong mùa đông." },
+      { name: "Bể bơi Khu Du lịch Sinh thái Him Lam", address: "Khu du lịch Him Lam, phường Him Lam, TP. Điện Biên Phủ", type: "Bể bơi sinh thái", pros: "Nằm trong resort ven hồ Huổi Phạ, view đẹp, thoáng đãng, yên tĩnh." }
     ],
     faqs: [
-      { q: "Thời gian học bơi ở Điện Biên như thế nào?", a: "Lịch học được thỏa thuận hoàn toàn linh hoạt giữa HLV và học viên theo thời gian rảnh của bạn." }
+      { q: "Ở TP. Điện Biên Phủ học bơi tại bể bơi nào có huấn luyện viên tốt và nước sạch?", a: "Bể bơi Mường Thanh Grand Điện Biên Phủ (đường Võ Nguyên Giáp) và Bể bơi Trung tâm TDTT tỉnh (đường Trường Chinh) là hai cơ sở bơi lội quy chuẩn và có giáo viên chuyên môn tốt nhất." },
+      { q: "Mùa đông Điện Biên có địa điểm bơi lội nào ấm áp không?", a: "Mùa đông học viên có thể trải nghiệm bơi và rèn luyện thể lực tại các bể khoáng nóng tự nhiên ở xã Thanh Luông và Khu du lịch U Va với nguồn nước ấm giàu khoáng chất tự nhiên." },
+      { q: "Người lớn sợ nước, nhát nước ở Điện Biên học bơi có khó không?", a: "Với phương pháp kèm riêng 1-1, HLV xuống nước trực tiếp hướng dẫn từng nhịp thở, giúp người sợ nước hoàn toàn giải tỏa tâm lý lo sợ chỉ sau 2-3 buổi đầu." },
+      { q: "Trung tâm có dạy bơi tại huyện Điện Biên, Tuần Giáo hoặc Mường Chà không?", a: "Hiện tại trung tâm tập trung dạy kèm chính tại TP. Điện Biên Phủ; tại các huyện lân cận trung tâm nhận kèm nhóm theo lịch công tác định kỳ vào dịp hè." }
     ]
   },
   {
@@ -755,12 +771,18 @@ export const locations = [
     headline: "Học Bơi Sơn La: Học Bơi Sinh Tồn An Toàn Vùng Cao",
     subtitle: "Lớp học bơi uy tín chất lượng tại Sơn La. HLV giàu kinh nghiệm sư phạm thể thao.",
     image: "/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
-    intro: "Tỉnh Sơn La với nhiều sông suối ngòi hồ có nhu cầu phổ cập bơi phòng chống đuối nước học đường rất cao. Chúng tôi mang đến giáo án bơi lội an toàn chuẩn mực.",
+    intro: "Tỉnh Sơn La với địa hình đồi núi nhiều sông suối ngòi hồ có nhu cầu phổ cập bơi phòng chống đuối nước học đường rất cao. Chúng tôi mang đến giáo án bơi lội an toàn chuẩn mực.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Sơn La", address: "Phường Chiềng Lề, TP. Sơn La", type: "Ngoài trời", pros: "Hồ bơi sạch đẹp thoáng đãng, nước lọc tuần hoàn an toàn." }
+      { name: "Bể bơi 4 Mùa Nước Ấm KGT Sơn La", address: "Khu Đô thị KGT, phường Quyết Thắng, TP. Sơn La", type: "Bốn mùa / Nước ấm trong nhà", pros: "Hệ thống cấp nhiệt heat pump hiện đại duy trì 31°C quanh năm, nước xử lý lọc cát thạch anh sạch tinh khiết." },
+      { name: "Bể bơi Khách sạn Mường Thanh Luxury Sơn La", address: "Số 02 đường Tô Hiệu, phường Tô Hiệu, TP. Sơn La", type: "Bể bơi khách sạn 5 sao", pros: "Thiết kế sang trọng giữa lòng thành phố, làn bơi riêng biệt, dịch vụ khăn tắm phòng xông hơi 5 sao." },
+      { name: "Bể bơi 4 Mùa Thảo Nguyên Resort Mộc Châu", address: "Tiểu khu Khí Tượng, Thị trấn Nông trường Mộc Châu, Sơn La", type: "Bốn mùa / Nước ấm cao nguyên", pros: "Bể bơi nước nóng trong nhà có mái che kính, bơi ngắm đồi chè Mộc Châu quanh năm không sợ rét." },
+      { name: "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Sơn La", address: "Phường Chiềng Lề, TP. Sơn La", type: "Bể thể thao công lập", pros: "Nơi đào tạo bơi lội lứa tuổi thiếu niên và tổ chức giải bơi học sinh phổ thông toàn tỉnh Sơn La." }
     ],
     faqs: [
-      { q: "Học bơi ở Sơn La có HLV kèm riêng không?", a: "Có, 100% các lớp của trung tâm đều dạy theo hình thức HLV kèm riêng 1-1 tại bể." }
+      { q: "Tại TP. Sơn La có bể bơi nước ấm bốn mùa nào mở cửa xuyên mùa đông?", a: "Bể bơi 4 Mùa Nước Ấm KGT (phường Quyết Thắng) và Bể bơi trong nhà Khách sạn Mường Thanh Luxury Sơn La (đường Tô Hiệu) đều duy trì nhiệt độ nước ấm ổn định từ 30°C - 32°C quanh năm." },
+      { q: "Ở Mộc Châu có địa chỉ bơi lội nước nóng bốn mùa nào uy tín?", a: "Bể bơi 4 mùa nước nóng tại Thảo Nguyên Resort Mộc Châu (Thị trấn Nông trường Mộc Châu) là cơ sở bơi lội trong nhà hiện đại có hệ thống gia nhiệt bốn mùa lý tưởng." },
+      { q: "Học phí dạy bơi 1 kèm 1 tại Sơn La là bao nhiêu?", a: "Học phí kèm riêng dao động từ 2.500.000đ - 3.500.000đ/khóa (chưa bao gồm vé vào bể), cam kết bơi chuẩn kỹ thuật và đứng nước an toàn 100%." },
+      { q: "Khóa học bơi sinh tồn tại Sơn La dạy những kỹ năng gì?", a: "Học viên được trang bị kỹ năng thở ngửa mặt bồng bềnh, kỹ thuật đứng nước thả lỏng, kỹ năng bơi ếch bền sức và cách tự thoát hiểm khi rơi xuống nước sâu hoặc dòng chảy xiết." }
     ]
   },
   {
@@ -775,12 +797,18 @@ export const locations = [
     headline: "Học Bơi Lạng Sơn: Khóa Học Bơi Sư Phạm An Toàn Nhất",
     subtitle: "Dạy bơi uy tín tại xứ lạng Lạng Sơn. HLV chuyên môn cao, cam kết biết bơi 100%.",
     image: "/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg",
-    intro: "Lạng Sơn biên giới phía Bắc có nhu cầu học bơi tăng cao rèn luyện sức khỏe. Lớp bơi giúp học viên thành thạo kỹ thuật thở nước đạp chân đẩy nước đúng chuẩn khoa học.",
+    intro: "Lạng Sơn biên giới phía Bắc có nhu cầu học bơi tăng cao rèn luyện sức khỏe. Lớp bơi giúp học viên thành thạo kỹ thuật thở nước đạp chân đẩy nước đúng chuẩn khoa học, tự tin trong mọi môi trường nước.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Lạng Sơn", address: "Phường Chi Lăng, TP. Lạng Sơn", type: "Ngoài trời", pros: "Hồ bơi trung tâm sạch thoáng mát, có cứu hộ trực ban an toàn." }
+      { name: "Bể bơi Bốn Mùa Vincom Lạng Sơn", address: "Tầng 5 Vincom Plaza Lạng Sơn, đường Hùng Vương, phường Chi Lăng, TP. Lạng Sơn", type: "Bốn mùa / Nước ấm trong nhà", pros: "Bể bơi bốn mùa nước nóng cao cấp, hệ thống sấy nhiệt và điều hòa nhiệt độ nước chuẩn quốc tế, bơi ấm áp giữa mùa đông xứ Lạng." },
+      { name: "Bể bơi Khách sạn Mường Thanh Luxury Lạng Sơn", address: "Số 68 đường Ngô Quyền, phường Vĩnh Trại, TP. Lạng Sơn", type: "Bể bơi khách sạn 5 sao", pros: "Nước sạch lọc tuần hoàn không cay mắt, không gian rộng rãi view trung tâm thành phố." },
+      { name: "Bể bơi Cung Thiếu Nhi Lạng Sơn", address: "Đường Yết Kiêu, phường Tam Thanh, TP. Lạng Sơn", type: "Trung tâm thiếu nhi", pros: "Địa chỉ học bơi hè truyền thống uy tín cho học sinh từ 5 - 15 tuổi tại TP. Lạng Sơn." },
+      { name: "Bể bơi Thể thao Anh Việt Mai Pha", address: "Xã Mai Pha, TP. Lạng Sơn", type: "Bể bơi dịch vụ giải trí", pros: "Bể ngoài trời thoáng mát có khu cầu trượt và khu bể vầy cho trẻ nhỏ rèn luyện thể chất." }
     ],
     faqs: [
-      { q: "Đăng ký học bơi ở Lạng Sơn liên hệ thế nào?", a: "Gọi 0979.121.097 hoặc nhắn tin Zalo, HLV Lạng Sơn sẽ liên hệ trực tiếp hỗ trợ xếp lịch ngay." }
+      { q: "Mùa đông ở Lạng Sơn rất lạnh thì học bơi ở đâu an toàn không bị cảm lạnh?", a: "Học viên nên học tại Bể bơi Bốn Mùa Vincom Lạng Sơn (tầng 5 Vincom Plaza Chi Lăng) với hệ thống nước nóng gia nhiệt tự động 31°C, phòng tắm nước nóng kín gió tuyệt đối an toàn cho sức khỏe." },
+      { q: "Trẻ em từ mấy tuổi ở Lạng Sơn nên cho đi học bơi?", a: "Trẻ từ 5 - 6 tuổi là giai đoạn vàng để học bơi sinh tồn, các bé đã nhận thức tốt chỉ dẫn của thầy cô và phát triển hệ xương khớp vượt trội." },
+      { q: "Khóa học bơi 1 kèm 1 tại Lạng Sơn có cam kết đầu ra không?", a: "Swim For Life cam kết 100% học viên biết bơi thành thạo, tự tin bơi cự ly 50m và đứng nước sâu từ 2m trở lên mới hoàn thành khóa học." },
+      { q: "Học viên có thể tự chọn bể bơi gần nhà tại TP. Lạng Sơn không?", a: "Có, phụ huynh và học viên có thể chọn Bể Vincom Plaza, Mường Thanh Luxury, Cung Thiếu Nhi hoặc bất kỳ hồ bơi nào thuận tiện, HLV sẽ đến tận nơi kèm riêng." }
     ]
   },
   {
@@ -797,10 +825,16 @@ export const locations = [
     image: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg",
     intro: "Lào Cai và Yên Bái du lịch phát triển mạnh mẽ. Học bơi giúp các em nhỏ rèn luyện sức đề kháng thích ứng tốt với thời tiết vùng cao dẻo dai khỏe mạnh.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Lào Cai", address: "Phường Kim Tân, TP. Lào Cai", type: "Ngoài trời", pros: "Hồ bơi đạt chuẩn, nước sạch mát thích hợp tập luyện thể thao bơi lội." }
+      { name: "Bể bơi Bốn Mùa Đức Huy Grand Hotel", address: "Số 072-074 Đại lộ Trần Hưng Đạo, phường Bắc Cường, TP. Lào Cai", type: "Bốn mùa thông minh trong nhà", pros: "Bể bơi thông minh có hệ thống kiểm soát nhiệt độ nước tự động quanh năm, nước sạch lọc tuần hoàn không mùi clo nồng." },
+      { name: "Bể bơi Bốn Mùa Pistachio Hotel Sapa", address: "Số 29 tổ 5 đường Thác Bạc, Thị xã Sa Pa, Lào Cai", type: "Hồ bơi bốn mùa kính nước ấm", pros: "Hồ bơi 4 mặt kính view trọn vẹn thung lũng Mường Hoa, nước ấm 31°C bơi thư giãn giữa mùa đông Sa Pa." },
+      { name: "Bể bơi Bốn Mùa I Fitness & Yoga Yên Bái", address: "Số 02 đường Hoàng Hoa Thám, phường Yên Ninh, TP. Yên Bái", type: "Bốn mùa muối khoáng trong nhà", pros: "Bể bơi nước ấm công nghệ điện phân muối khoáng, trần cao thoáng, phòng tắm xông hơi cao cấp." },
+      { name: "Bể bơi Trung tâm Huấn luyện TDTT Lào Cai", address: "Phường Nam Cường, TP. Lào Cai", type: "Bể thể thao 50m", pros: "Hồ bơi tiêu chuẩn 50m, địa điểm thi đấu các giải bơi thanh thiếu nhi và phổ cập bơi hè tỉnh Lào Cai." }
     ],
     faqs: [
-      { q: "Có lớp học bơi ở Yên Bái không?", a: "Có, chúng tôi có đội ngũ HLV bơi lội giàu chuyên môn tại Yên Bái sẵn sàng giảng dạy." }
+      { q: "Tại TP. Lào Cai có bể bơi nước nóng bốn mùa nào tốt nhất để học bơi mùa đông?", a: "Bể bơi Bốn Mùa Đức Huy Grand Hotel (Đại lộ Trần Hưng Đạo) là địa chỉ bể nước ấm thông minh chuẩn nhất TP. Lào Cai, nhiệt độ nước duy trì ổn định không lo gió rét." },
+      { q: "Tại TP. Yên Bái học bơi bốn mùa ở đâu chất lượng cao?", a: "Bể bơi Bốn Mùa I Fitness & Yoga (số 02 Hoàng Hoa Thám, phường Yên Ninh) là cơ sở bơi lội nước ấm điện phân muối khoáng hiện đại hàng đầu TP. Yên Bái." },
+      { q: "Lên Sa Pa du lịch có thể đăng ký học bơi cấp tốc không?", a: "Có, Swim For Life có HLV hỗ trợ dạy kỹ năng bơi sinh tồn và kỹ thuật chỉnh sửa sải bơi cấp tốc tại các bể bơi nước nóng như Pistachio Hotel hoặc Silk Path Sa Pa." },
+      { q: "Trung tâm có cam kết 100% biết bơi cho người lớn sợ nước không?", a: "Cam kết 100% học viên người lớn biết bơi, tự tin bơi ếch hoặc bơi trườn sấp và đứng nước sâu ít nhất 2 - 3 phút an toàn tuyệt đối." }
     ]
   },
   {
@@ -817,10 +851,16 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-vui-ve-ky-luat.jpg",
     intro: "Khu vực Tuyên Quang và Hà Giang sông suối thác khe ngập lũ mùa mưa nguy hiểm. Lớp học bơi sinh tồn giúp trang bị kỹ năng thoát hiểm quý giá cho cuộc sống con trẻ.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Tuyên Quang", address: "Phường Tân Quang, TP. Tuyên Quang", type: "Ngoài trời", pros: "Hồ bơi rộng sạch mát, HLV túc trực đảm bảo an toàn tuyệt đối." }
+      { name: "Bể bơi 4 Mùa Spa2 Ngọc Hà", address: "Số 86 đường Nguyễn Trãi, phường Minh Xuân, TP. Tuyên Quang", type: "Bốn mùa nước ấm trong nhà", pros: "Hệ thống gia nhiệt nước ấm quanh năm, nước lọc vi sinh không xót mắt, dịch vụ tắm tráng xông sục tiện nghi." },
+      { name: "Bể bơi Royal Plaza Center Tuyên Quang", address: "Số 122 đường Lý Nam Đế, phường Tân Quang, TP. Tuyên Quang", type: "Tổ hợp thể thao giải trí", pros: "Bể bơi thiết kế hiện đại có phân làn tập luyện và khu vui chơi nước cho trẻ em." },
+      { name: "Bể bơi Bốn Mùa H2T Hà Giang", address: "Số 192 đường Lý Thường Kiệt, phường Trần Phú, TP. Hà Giang", type: "Bốn mùa / Nước ấm trong nhà", pros: "Bể bơi 4 mùa nước nóng duy nhất quy mô lớn tại trung tâm TP. Hà Giang, trang bị máy cấp nhiệt bơi ấm áp cả mùa đông." },
+      { name: "Bể bơi Khách sạn Yên Biên Luxury Hà Giang", address: "Số 517 đường Nguyễn Trãi, phường Nguyễn Trãi, TP. Hà Giang", type: "Khách sạn 4 sao", pros: "Bể bơi sạch đẹp sang trọng ngay trung tâm thành phố Hà Giang, phục vụ bơi lội thư giãn và học bơi kèm riêng." }
     ],
     faqs: [
-      { q: "Học bơi nhóm ở Tuyên Quang có được giảm giá không?", a: "Có, đăng ký học nhóm từ 2 học viên trở lên sẽ được trung tâm áp dụng mức ưu đãi học phí hấp dẫn." }
+      { q: "Ở TP. Tuyên Quang học bơi bốn mùa nước nóng ở đâu an toàn cho trẻ?", a: "Bể bơi 4 Mùa Spa2 Ngọc Hà (đường Nguyễn Trãi, Minh Xuân) là địa chỉ bơi nước ấm bốn mùa uy tín nhất TP. Tuyên Quang, nước ấm duy trì quanh năm không lo lạnh." },
+      { q: "Tại TP. Hà Giang mùa đông có học bơi được không?", a: "Có, học viên tại Hà Giang có thể tập luyện tại Bể bơi Bốn Mùa H2T (192 Lý Thường Kiệt, Trần Phú) với hệ thống nước nóng gia nhiệt tự động, rất an toàn cho cả trẻ nhỏ và người lớn." },
+      { q: "Trẻ em vùng cao Tuyên Quang và Hà Giang nên trang bị kỹ năng bơi gì trước mùa mưa lũ?", a: "Ưu tiên rèn luyện kỹ năng đứng nước sinh tồn, kỹ thuật bơi ngửa thả nổi lấy hơi và khả năng định hướng dòng chảy để phòng chống tai nạn đuối nước trên sông suối thác ghềnh." },
+      { q: "Một khóa học bơi kèm riêng tại Tuyên Quang - Hà Giang kéo dài bao lâu?", a: "Khóa học kéo dài từ 10 đến 12 buổi, mỗi buổi 60 - 75 phút kèm riêng 1 thầy 1 trò cho đến khi học viên bơi thành thạo cự ly tối thiểu 50m mới tốt nghiệp." }
     ]
   }
 ];
