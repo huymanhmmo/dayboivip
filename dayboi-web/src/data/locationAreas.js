@@ -108,6 +108,93 @@ const areaProfiles = {
   },
 };
 
+const hcmAreaProfiles = {
+  'quan-1': {
+    name: 'Quận 1', shortName: 'Quận 1',
+    nearbyAreas: ['Bến Nghé', 'Đa Kao', 'Nguyễn Thị Minh Khai', 'Nguyễn Bỉnh Khiêm'],
+    relatedSlugs: ['quan-3', 'quan-4', 'binh-thanh', 'phu-nhuan'],
+    audienceFocus: 'Phù hợp người học ở trung tâm thành phố cần bể thể thao lâu năm, lớp cơ bản hoặc lịch tập gần khu Bến Nghé và Đa Kao.',
+    localAdvice: 'Khu trung tâm thường đông vào cuối ngày; nên xác nhận ca bơi tự do, khu vực dành cho người mới và phí gửi xe trước buổi học.',
+  },
+  'quan-3': {
+    name: 'Quận 3', shortName: 'Quận 3',
+    nearbyAreas: ['Kỳ Đồng', 'Võ Văn Tần', 'Bà Huyện Thanh Quan', 'Cách Mạng Tháng Tám'],
+    relatedSlugs: ['quan-1', 'quan-10', 'phu-nhuan', 'quan-4'],
+    audienceFocus: 'Phù hợp học viên nội đô muốn so sánh bể thể thao công cộng với bể khách sạn quanh Kỳ Đồng, Võ Văn Tần và Bà Huyện Thanh Quan.',
+    localAdvice: 'Bể công cộng và bể khách sạn có chính sách khách ngoài rất khác nhau; hãy hỏi rõ vé vào cửa, ca hoạt động và điều kiện thuê HLV.',
+  },
+  'quan-10': {
+    name: 'Quận 10', shortName: 'Quận 10',
+    nearbyAreas: ['Đồng Nai', 'Thành Thái', 'Lê Thị Riêng', 'Cách Mạng Tháng Tám'],
+    relatedSlugs: ['quan-3', 'tan-binh', 'phu-nhuan', 'go-vap'],
+    audienceFocus: 'Phù hợp học sinh, sinh viên và gia đình cần địa điểm dễ tiếp cận quanh Đồng Nai, Thành Thái và Công viên Lê Thị Riêng.',
+    localAdvice: 'Nên đối chiếu lịch lớp với ca bơi công cộng vì một số khung giờ dành cho đội tuyển hoặc chương trình học sinh.',
+  },
+  'phu-nhuan': {
+    name: 'Phú Nhuận', shortName: 'Phú Nhuận',
+    nearbyAreas: ['Rạch Miễu', 'Hoa Phượng', 'Hoàng Văn Thụ', 'Nguyễn Văn Trỗi'],
+    relatedSlugs: ['quan-3', 'tan-binh', 'go-vap', 'binh-thanh'],
+    audienceFocus: 'Phù hợp gia đình ở khu Rạch Miễu và trục Hoàng Văn Thụ cần lớp trẻ em, kỹ năng an toàn nước hoặc bể tập luyện thường xuyên.',
+    localAdvice: 'Các trung tâm thể thao có nhiều hoạt động song song; hãy xác nhận đúng hồ, đúng cổng vào và thời gian làn bơi dành cho lớp học.',
+  },
+  'tan-binh': {
+    name: 'Tân Bình', shortName: 'Tân Bình',
+    nearbyAreas: ['Cộng Hòa', 'Xuân Hồng', 'Hoàng Văn Thụ', 'Bàu Cát'],
+    relatedSlugs: ['phu-nhuan', 'quan-10', 'go-vap', 'quan-12'],
+    audienceFocus: 'Phù hợp người học gần sân bay và các trục Cộng Hòa, Hoàng Văn Thụ, Xuân Hồng cần lớp linh hoạt cho trẻ em hoặc người lớn.',
+    localAdvice: 'Hai tên gọi Cộng Hòa và Triển lãm Tân Bình dễ gây nhầm; cần đối chiếu địa chỉ, cổng vào và số liên hệ trước khi di chuyển.',
+  },
+  'binh-thanh': {
+    name: 'Bình Thạnh', shortName: 'Bình Thạnh',
+    nearbyAreas: ['Nguyễn Hữu Cảnh', 'Nơ Trang Long', 'Văn Thánh', 'Hàng Xanh'],
+    relatedSlugs: ['quan-1', 'phu-nhuan', 'thu-duc', 'go-vap'],
+    audienceFocus: 'Phù hợp người cần bể dài để rèn kỹ thuật hoặc lớp phổ thông quanh Nguyễn Hữu Cảnh, Nơ Trang Long và Hàng Xanh.',
+    localAdvice: 'Hãy hỏi riêng vé bơi, lịch đóng cửa bảo trì và học phí đã bao gồm vé hay chưa; thông tin giá cũ trên bài nguồn chỉ dùng để tham khảo.',
+  },
+  'go-vap': {
+    name: 'Gò Vấp', shortName: 'Gò Vấp',
+    nearbyAreas: ['Thống Nhất', 'Lê Văn Thọ', 'Quang Trung', 'Phan Văn Trị'],
+    relatedSlugs: ['phu-nhuan', 'tan-binh', 'quan-12', 'binh-thanh'],
+    audienceFocus: 'Phù hợp gia đình khu Bắc thành phố muốn tìm bể ngoài trời, lớp nhóm nhỏ hoặc HLV kèm riêng gần Thống Nhất và Lê Văn Thọ.',
+    localAdvice: 'Đường nội quận đông vào giờ tan tầm; nên chọn bể theo quãng đường thực tế và hỏi trước sĩ số, vé bể cùng chính sách học bù.',
+  },
+  'thu-duc': {
+    name: 'Thủ Đức', shortName: 'Thủ Đức',
+    nearbyAreas: ['Thảo Điền', 'Phước Long B', 'Linh Chiểu', 'Kha Vạn Cân'],
+    relatedSlugs: ['binh-thanh', 'quan-1', 'quan-12', 'binh-duong'],
+    audienceFocus: 'Phù hợp gia đình cần chương trình bơi sinh tồn cho trẻ nhỏ, lộ trình kỹ thuật hoặc lớp phổ thông tại các cụm Thảo Điền và Linh Chiểu.',
+    localAdvice: 'Thủ Đức có diện tích lớn; hãy chọn theo cụm dân cư thay vì chỉ theo tên thành phố và xác nhận quyền vào bể trường học hoặc nội khu.',
+  },
+  'quan-4': {
+    name: 'Quận 4', shortName: 'Quận 4',
+    nearbyAreas: ['Khánh Hội', 'Vân Đồn', 'Vĩnh Hội', 'Bến Vân Đồn'],
+    relatedSlugs: ['quan-1', 'quan-3', 'binh-thanh', 'phu-nhuan'],
+    audienceFocus: 'Phù hợp cư dân khu Khánh Hội, Vân Đồn và người làm việc tại trung tâm cần địa điểm gần nhà cho lớp cơ bản hoặc tập kỹ thuật.',
+    localAdvice: 'Tên Hồ Vân Đồn và cơ sở Khánh Hội có thể được dùng không thống nhất; cần đối chiếu đúng địa chỉ và đầu mối quản lý.',
+  },
+  'quan-12': {
+    name: 'Quận 12', shortName: 'Quận 12',
+    nearbyAreas: ['Thạnh Lộc', 'Tô Ký', 'Trung Mỹ Tây', 'Hà Huy Giáp'],
+    relatedSlugs: ['go-vap', 'tan-binh', 'hoc-mon', 'thu-duc'],
+    audienceFocus: 'Phù hợp gia đình phía Bắc thành phố cần bể giải trí kết hợp lớp trẻ em hoặc địa điểm phổ thông quanh Thạnh Lộc và Tô Ký.',
+    localAdvice: 'Khoảng cách giữa các phường khá xa; nên kiểm tra tuyến di chuyển, giờ đông khách và độ sâu khu tập trước khi chọn lớp.',
+  },
+  'hoc-mon': {
+    name: 'Hóc Môn', shortName: 'Hóc Môn',
+    nearbyAreas: ['Thị trấn Hóc Môn', 'Tân Hiệp', 'Đỗ Văn Dậy', 'Lê Lợi'],
+    relatedSlugs: ['quan-12', 'tan-binh', 'go-vap', 'binh-duong'],
+    audienceFocus: 'Phù hợp học sinh và gia đình ngoại thành cần lớp kỹ năng an toàn nước, bơi sinh tồn hoặc địa điểm tập gần thị trấn và Tân Hiệp.',
+    localAdvice: 'Ưu tiên xác nhận lịch mở theo mùa và ca dành cho chương trình thiếu nhi; một số bể có thể giới hạn khách ngoài theo từng đợt.',
+  },
+  'binh-duong': {
+    name: 'Bình Dương', shortName: 'Bình Dương', seoPlace: 'Bình Dương',
+    nearbyAreas: ['Thuận An', 'Dĩ An', 'An Thạnh', 'An Phú'],
+    relatedSlugs: ['thu-duc', 'quan-12', 'hoc-mon', 'go-vap'],
+    audienceFocus: 'Phù hợp gia đình tại khu vực Bình Dương cũ, nhất là Thuận An và Dĩ An, cần lớp phổ cập bơi hoặc kỹ năng an toàn nước.',
+    localAdvice: 'Trang dùng tên Bình Dương quen thuộc để tra cứu trong phạm vi TP.HCM sau sắp xếp; hãy kiểm tra địa chỉ phường và đơn vị quản lý hiện hành.',
+  },
+};
+
 const hasSpecificSource = (sourceUrl) => {
   if (!sourceUrl) return false;
   try {
@@ -125,23 +212,34 @@ const passesQualityGate = (category) => category.venues.length >= 2
     && venue.instructors.every((instructor) => hasSpecificSource(instructor.exactSourceUrl))
   ));
 
-const parentSlug = 'hoc-boi-ha-noi';
-const parent = locations.find((location) => location.slug === parentSlug);
-const research = getLocationResearch(parentSlug);
+const areaGroups = [
+  { parentSlug: 'hoc-boi-ha-noi', seoParentName: 'Hà Nội', profiles: areaProfiles },
+  { parentSlug: 'hoc-boi-tphcm', seoParentName: 'TP.HCM', profiles: hcmAreaProfiles },
+];
 
-export const allLocationAreas = (research?.categories || [])
-  .filter((category) => areaProfiles[category.id])
-  .map((category) => ({
-    ...areaProfiles[category.id],
-    slug: category.id,
-    parentSlug,
-    parentName: parent?.name || 'Hà Nội',
-    parentImage: parent?.image || '/images/classes/lop-hoc-boi-ha-noi.jpg',
-    category,
-    reviewedAt: research.reviewedAt,
-    isPublishable: passesQualityGate(category),
-    url: `/${parentSlug}/${category.id}/`,
-  }));
+export const allLocationAreas = areaGroups.flatMap(({ parentSlug, seoParentName, profiles }) => {
+  const parent = locations.find((location) => location.slug === parentSlug);
+  const research = getLocationResearch(parentSlug);
+
+  return (research?.categories || [])
+    .filter((category) => profiles[category.id])
+    .map((category) => {
+      const profile = profiles[category.id];
+      return {
+        ...profile,
+        slug: category.id,
+        parentSlug,
+        parentName: parent?.name || seoParentName,
+        seoParentName,
+        seoPlace: profile.seoPlace || `${profile.name}, ${seoParentName}`,
+        parentImage: parent?.image || '/images/classes/lop-hoc-boi-ha-noi.jpg',
+        category,
+        reviewedAt: research.reviewedAt,
+        isPublishable: passesQualityGate(category),
+        url: `/${parentSlug}/${category.id}/`,
+      };
+    });
+});
 
 export const publishedLocationAreas = allLocationAreas.filter((area) => area.isPublishable);
 

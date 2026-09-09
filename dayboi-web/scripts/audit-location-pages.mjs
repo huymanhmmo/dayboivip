@@ -84,6 +84,14 @@ for (const area of publishedLocationAreas) {
   assert(sitemap.includes(`https://dayboi.vip${area.url}`), `${area.name}: URL chưa có trong sitemap.`);
 }
 
+const redirectsPath = join(distRoot, '_redirects');
+assert(existsSync(redirectsPath), 'Thiếu file redirect ở tầng hosting.');
+const redirects = readFileSync(redirectsPath, 'utf8');
+assert(
+  redirects.includes('/dia-diem/tphcm/hoc-boi-tan-binh/ /hoc-boi-tphcm/tan-binh/ 301'),
+  'URL Tân Bình cũ chưa có redirect 301 về canonical mới.',
+);
+
 const htmlFiles = collectHtmlFiles(distRoot);
 const brokenInternalLinks = [];
 for (const file of htmlFiles) {

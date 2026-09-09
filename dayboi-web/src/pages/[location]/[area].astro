@@ -18,8 +18,8 @@ const venues = area.category.venues;
 const instructors = venues.flatMap((venue) => venue.instructors || []);
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
-const title = `Học Bơi ${area.name}, Hà Nội: Lớp Uy Tín`;
-const description = `Tìm lớp học bơi, nơi dạy bơi và bể bơi tại ${area.name}, Hà Nội. So sánh ${venues.length} địa điểm có nguồn, liên hệ trực tiếp và chọn lớp phù hợp. Có lưu ý trước khi đăng ký.`;
+const title = `Học Bơi ${area.seoPlace}: Lớp Uy Tín`;
+const description = `Tìm lớp học bơi, nơi dạy bơi và bể bơi tại ${area.seoPlace}. So sánh ${venues.length} địa điểm có nguồn, liên hệ trực tiếp và chọn lớp phù hợp. Có lưu ý trước khi đăng ký.`;
 
 const techniques = [
   {
@@ -68,12 +68,12 @@ const faqs = [
 ];
 
 const relatedAreas = (area.relatedSlugs || [])
-  .map((slug) => publishedLocationAreas.find((item) => item.slug === slug))
+  .map((slug) => publishedLocationAreas.find((item) => item.parentSlug === area.parentSlug && item.slug === slug))
   .filter(Boolean);
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Địa điểm', href: '/hoc-boi-o-dau/' },
-  { label: 'Hà Nội', href: '/hoc-boi-ha-noi/' },
+  { label: area.parentName, href: `/${area.parentSlug}/` },
   { label: area.name },
 ];
 const schema = {
@@ -82,7 +82,7 @@ const schema = {
     {
       '@type': 'CollectionPage',
       '@id': `${canonicalUrl}#page`,
-      name: `Học bơi tại ${area.name}, Hà Nội`,
+      name: `Học bơi tại ${area.seoPlace}`,
       description,
       url: canonicalUrl,
       dateModified: area.reviewedAt.split('/').reverse().join('-'),
@@ -156,7 +156,7 @@ const schema = {
       <div class="container">
         <div class="area-section__heading">
           <span>So sánh trước khi liên hệ</span>
-          <h2 id="venue-title">Bể bơi và nơi dạy bơi tại {area.name}, Hà Nội</h2>
+          <h2 id="venue-title">Bể bơi và nơi dạy bơi tại {area.seoPlace}</h2>
           <p>Mỗi thẻ tách riêng liên hệ ban quản lý bể với liên hệ đăng ký lớp học. Hãy mở bài nguồn và xác nhận lại thông tin biến động.</p>
         </div>
         <div class="area-venue-list">
@@ -263,13 +263,13 @@ const schema = {
       <div class="container">
         <div class="area-section__heading">
           <span>Hub → tỉnh/thành → quận/huyện</span>
-          <h2 id="related-title">Khu vực học bơi khác tại Hà Nội</h2>
+          <h2 id="related-title">Khu vực học bơi khác tại {area.parentName}</h2>
         </div>
         <div class="area-related__grid">
           {relatedAreas.map((item) => (
             <a href={item.url}><span>{item.category.venues.length} địa điểm có nguồn</span><strong>Học bơi {item.name}</strong><b>Xem khu vực →</b></a>
           ))}
-          <a href="/hoc-boi-ha-noi/"><span>Trang cấp thành phố</span><strong>Toàn bộ địa điểm tại Hà Nội</strong><b>Mở danh bạ →</b></a>
+          <a href={`/${area.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {area.parentName}</strong><b>Mở danh bạ →</b></a>
         </div>
       </div>
     </section>

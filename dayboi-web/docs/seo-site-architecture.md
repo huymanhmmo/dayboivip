@@ -17,7 +17,7 @@ Các vấn đề ưu tiên cao đã xử lý:
 7. Đặt `noindex, follow` cho các trang lưu trữ thẻ mỏng; bài viết và danh mục chính vẫn được crawl qua liên kết nội bộ nhưng sitemap không bị pha loãng.
 8. Đồng bộ taxonomy blog với danh mục thực tế và sửa slug/canonical bài lớp người lớn, loại bỏ mạng liên kết trỏ tới các URL không tồn tại.
 
-Kết quả build hiện có 169 route và 13 landing page quận/huyện Hà Nội qua cổng chất lượng. Audit output kiểm 186 tệp HTML, không phát hiện liên kết nội bộ hỏng; toàn bộ landing page đều có trong sitemap, title và meta description đúng ngưỡng, canonical riêng, đúng một H1 và schema CollectionPage/ItemList/FAQPage. Audit toàn site trước đó có 140 trang indexable, không có title hoặc description trùng hoàn toàn. Các outlier metadata còn lại thuộc nhóm trang cũ và cần được biên tập dần theo từng trang thay vì cắt máy móc.
+Kết quả build hiện có 181 route và 25 landing page quận/huyện/khu vực qua cổng chất lượng: 13 trang Hà Nội và 12 trang TP.HCM. Audit output kiểm 210 tệp HTML, không phát hiện liên kết nội bộ hỏng; toàn bộ landing page đều có trong sitemap, title và meta description đúng ngưỡng, canonical riêng, đúng một H1 và schema CollectionPage/ItemList/FAQPage. URL Tân Bình cũ đã được chuyển hướng 301 về cấu trúc mới. Audit toàn site trước đó có 140 trang indexable, không có title hoặc description trùng hoàn toàn. Các outlier metadata còn lại thuộc nhóm trang cũ và cần được biên tập dần theo từng trang thay vì cắt máy móc.
 
 ## 2. Cây website mục tiêu
 
@@ -52,6 +52,18 @@ Trang chủ (/)
 │   │   ├── Thanh Trì (/hoc-boi-ha-noi/thanh-tri/)
 │   │   └── Hà Đông (/hoc-boi-ha-noi/ha-dong/)
 │   ├── TP.HCM (/hoc-boi-tphcm/)
+│   │   ├── Quận 1 (/hoc-boi-tphcm/quan-1/)
+│   │   ├── Quận 3 (/hoc-boi-tphcm/quan-3/)
+│   │   ├── Quận 4 (/hoc-boi-tphcm/quan-4/)
+│   │   ├── Quận 10 (/hoc-boi-tphcm/quan-10/)
+│   │   ├── Quận 12 (/hoc-boi-tphcm/quan-12/)
+│   │   ├── Phú Nhuận (/hoc-boi-tphcm/phu-nhuan/)
+│   │   ├── Tân Bình (/hoc-boi-tphcm/tan-binh/)
+│   │   ├── Bình Thạnh (/hoc-boi-tphcm/binh-thanh/)
+│   │   ├── Gò Vấp (/hoc-boi-tphcm/go-vap/)
+│   │   ├── Thủ Đức (/hoc-boi-tphcm/thu-duc/)
+│   │   ├── Hóc Môn (/hoc-boi-tphcm/hoc-mon/)
+│   │   └── Bình Dương (/hoc-boi-tphcm/binh-duong/)
 │   ├── Đà Nẵng (/hoc-boi-da-nang/)
 │   └── 31 tỉnh/thành còn lại
 ├── Kiến thức (/tin-tuc/)
@@ -92,6 +104,10 @@ graph TD
     HANOI --> SOUTH[Thanh Xuân · Hoàng Mai · Thanh Trì]
     HANOI --> EAST[Long Biên · Gia Lâm]
     HANOI --> NORTH[Tây Hồ]
+    HCM --> HCMCORE[Quận 1 · 3 · 4 · 10]
+    HCM --> HCMNORTH[Gò Vấp · Quận 12 · Hóc Môn]
+    HCM --> HCMEAST[Bình Thạnh · Thủ Đức · Bình Dương]
+    HCM --> HCMAIRPORT[Phú Nhuận · Tân Bình]
 
     EAST --> GIALAM[Gia Lâm]
     GIALAM --> BREAST
@@ -111,6 +127,8 @@ graph TD
 | Học bơi Gia Lâm | `/hoc-boi-ha-noi/gia-lam/` | Hà Nội | Hub, tỉnh, footer | Cao |
 | Học bơi Long Biên | `/hoc-boi-ha-noi/long-bien/` | Hà Nội | Hub, tỉnh, footer | Cao |
 | 11 quận/huyện Hà Nội còn lại | `/hoc-boi-ha-noi/{quan-huyen}/` | Hà Nội | Hub, tỉnh, liên kết chéo theo địa lý | Cao |
+| Học bơi TP.HCM | `/hoc-boi-tphcm/` | Danh bạ | Header dropdown | Cao |
+| 12 khu vực TP.HCM đủ nguồn | `/hoc-boi-tphcm/{khu-vuc}/` | TP.HCM | Hub, tỉnh/thành, liên kết chéo theo địa lý | Cao |
 | Kiến thức | `/tin-tuc/` | Trang chủ | Header | Trung bình |
 
 Các URL ngắn như `/hoc-boi-gia-lam/` được 301 sang URL phân cấp để vừa giữ khả năng truy cập theo thói quen vừa duy trì một canonical duy nhất.
@@ -135,19 +153,20 @@ Một quận/huyện chỉ được đưa vào `publishedLocationAreas` khi th�
 4. Không dùng homepage chung hoặc chính dayboi.vip làm nguồn xác thực.
 5. Trang cung cấp dữ liệu địa phương thật: địa chỉ, quyền tiếp cận, môi trường bể, liên hệ và lưu ý cần xác nhận.
 
-Các quận/huyện chưa đạt cổng vẫn xuất hiện dưới dạng nhóm nội dung trong trang Hà Nội, nhưng chưa có URL indexable riêng. Sau khi nghiên cứu bổ sung, chúng tự động đủ điều kiện để đi vào build.
+Các quận/huyện chưa đạt cổng vẫn xuất hiện dưới dạng nhóm nội dung trong trang tỉnh/thành, nhưng chưa có URL indexable riêng. Tại TP.HCM, nhóm này hiện gồm Quận 5, Quận 7, Quận 8, Quận 11 và Bà Rịa – Vũng Tàu. Sau khi nghiên cứu bổ sung, chúng tự động đủ điều kiện để đi vào build.
 
 ## 7. Navigation spec
 
 - Header: Trang chủ → Học bơi → Kỹ thuật bơi → Địa điểm → Về chúng tôi → Kiến thức → CTA hợp tác.
 - Footer: Chương trình tổ chức, kỹ thuật bơi và các landing page địa điểm nổi bật.
-- Breadcrumb địa phương: Trang chủ → Địa điểm → Hà Nội → Quận/huyện.
+- Breadcrumb địa phương: Trang chủ → Địa điểm → tỉnh/thành → quận/huyện hoặc khu vực quen dùng.
 - Trang tỉnh/thành: liên kết đến landing page quận/huyện đủ chất lượng; khu vực chưa đủ dữ liệu vẫn dùng anchor.
-- Trang quận/huyện: liên kết ngược về Hà Nội, liên kết chéo bốn quận gần hoặc có hành trình phù hợp và liên kết sang bốn hub kỹ thuật.
+- Trang quận/huyện: liên kết ngược về tỉnh/thành, liên kết chéo bốn khu vực gần hoặc có hành trình phù hợp và liên kết sang bốn hub kỹ thuật.
 
 ## 8. Việc tiếp theo theo thứ tự ưu tiên
 
-1. Áp dụng cùng cổng chất lượng cho quận/huyện TP.HCM; hợp nhất URL Tân Bình hiện tại vào cây `/hoc-boi-tphcm/tan-binh/` bằng 301 khi dữ liệu đạt chuẩn.
-2. Bổ sung kiểm tra định kỳ trạng thái HTTP và ngày xác minh của từng nguồn ngoài để phát hiện URL chết hoặc thông tin cũ.
-3. Dùng Google Search Console theo dõi coverage, query/click của từng tầng URL và phát hiện cannibalization.
-4. Đo Core Web Vitals sau triển khai, ưu tiên LCP của hero và tổng kích thước CSS ở landing page địa phương.
+1. Bổ sung URL nguồn chi tiết để mở an toàn Quận 5, Quận 7, Quận 8, Quận 11 và Bà Rịa – Vũng Tàu.
+2. Áp dụng cùng mô hình dữ liệu cho Đà Nẵng và các tỉnh/thành có đủ ít nhất hai địa điểm đã xác minh.
+3. Bổ sung kiểm tra định kỳ trạng thái HTTP và ngày xác minh của từng nguồn ngoài để phát hiện URL chết hoặc thông tin cũ.
+4. Dùng Google Search Console theo dõi coverage, query/click của từng tầng URL và phát hiện cannibalization.
+5. Đo Core Web Vitals sau triển khai, ưu tiên LCP của hero và tổng kích thước CSS ở landing page địa phương.
