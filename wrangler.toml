@@ -1,5 +1,8 @@
 name = "dayboi-web"
 compatibility_date = "2026-06-11"
 
+[build]
+command = "cd dayboi-web && npm install && npm run build"
+
 [assets]
 directory = "./dayboi-web/dist"
