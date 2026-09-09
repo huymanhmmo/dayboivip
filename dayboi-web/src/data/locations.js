@@ -336,10 +336,16 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-vui-ve-ky-luat.jpg",
     intro: "Thanh Hóa là tỉnh có diện tích lớn và bờ biển dài. Học bơi giúp các bé tại Thanh Hóa rèn luyện sức bền thể chất tốt và tự tin tham gia vui chơi hoạt động dưới nước hè.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Thanh Hóa", address: "Đường Lê Lai, Đông Hương, Thanh Hóa", type: "Ngoài trời", pros: "Hồ bơi rộng rãi, nước bể sạch sẽ, nhiều làn bơi thoáng." }
+      { name: "Tổ hợp Thể thao Sun Sport Complex Thanh Hóa", address: "Mặt bằng 530, Khu đô thị Nam thành phố, P. Đông Vệ, TP. Thanh Hóa (sau KS Mường Thanh)", type: "Tiêu chuẩn Olympic & Bể trẻ em", pros: "Hồ bơi lớn 1.250m² 10 làn bơi Olympic và hồ trẻ em 250m², trang thiết bị lọc nước Procopi nhập khẩu từ Pháp." },
+      { name: "Bể bơi Bốn Mùa RACER CITY", address: "Tầng 5, TTTM Thanh Hóa, 27-29 Đại lộ Lê Lợi, P. Lam Sơn, TP. Thanh Hóa", type: "Trong nhà nước ấm vách kính", pros: "Bể bơi vách kính hiện đại ngắm trung tâm thành phố, nước ấm gia nhiệt tự động quanh năm, không gian sang trọng." },
+      { name: "Bể bơi Bốn Mùa Vinhomes Star City", address: "Khu đô thị Vinhomes Star City, Đại lộ Hùng Vương, P. Đông Hải, TP. Thanh Hóa", type: "Mái vòm resort 5 sao", pros: "Mái vòm phong cách hoàng gia Châu Âu, công nghệ khử trùng điện phân muối khoáng an toàn cho da bé." },
+      { name: "Quần thể Bể bơi FLC Sầm Sơn", address: "Đường Hồ Xuân Hương, P. Quảng Cư, TP. Sầm Sơn, Thanh Hóa", type: "Bể nước mặn & Nước ấm trong nhà", pros: "Bể bơi nước mặn 5.100m² lớn nhất Việt Nam và hệ thống bể bơi bốn mùa nước nóng cao cấp tại Grand Hotel." }
     ],
     faqs: [
-      { q: "Học bơi ở Thanh Hóa bao lâu thì biết bơi?", a: "Lộ trình bơi thông thường kéo dài 12 buổi học, học viên được cam kết biết bơi tốt." }
+      { q: "Tại TP. Thanh Hóa có bể bơi nào đạt chuẩn thi đấu Olympic và bể bơi bốn mùa nước ấm không?", a: "Tại TP. Thanh Hóa có tổ hợp Sun Sport Complex (Mặt bằng 530 Đông Vệ) với hồ bơi 1.250m² 10 làn chuẩn Olympic. Ngoài ra, có 2 bể bốn mùa nước ấm trong nhà cao cấp: Bể bơi RACER CITY (Tầng 5 TTTM 27-29 Lê Lợi) và Bể bơi Vinhomes Star City." },
+      { q: "Chi phí học bơi kèm riêng tại Thanh Hóa khoảng bao nhiêu?", a: "Học phí khóa học bơi kèm riêng 1-1 dao động từ 2.500.000đ - 3.500.000đ/khóa tùy độ tuổi và kiểu bơi (chưa bao gồm vé vào bể bơi). Trung tâm cam kết 100% biết bơi thành thạo và đứng nước vững vàng." },
+      { q: "Trẻ em và người lớn chưa từng xuống nước học bao lâu thì bơi thành thạo?", a: "Thông thường khóa học kéo dài 10 đến 12 buổi. Sau 3-5 buổi đầu tiên học viên đã tự tin thả nổi và đạp nước; kết thúc khóa có thể tự tin bơi liên tục 50m - 100m." },
+      { q: "Ở Sầm Sơn và Bỉm Sơn có những địa điểm học bơi nào an toàn cho bé?", a: "Tại Sầm Sơn có hệ thống hồ bơi FLC Sầm Sơn và khách sạn Dragon Sea; tại Bỉm Sơn có hồ bơi Trung tâm VHTT & Truyền thông Bỉm Sơn (đường Trần Phú) phục vụ phổ cập bơi hè an toàn." }
     ]
   },
   {
@@ -356,10 +362,16 @@ export const locations = [
     image: "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
     intro: "Nghệ An là vùng đất hiếu học và gió Lào nắng nóng mùa hè. Học bơi giải nhiệt và rèn luyện thể thao là thói quen lành mạnh phổ biến của các em nhỏ tại thành phố Vinh.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Vinh", address: "Đường Đào Tấn, Vinh, Nghệ An", type: "Ngoài trời", pros: "Hồ bơi tiêu chuẩn, nước sạch, đội ngũ cứu hộ thường trực an toàn." }
+      { name: "Bể bơi Bốn Mùa Pool Plus – VRC Vinh", address: "Số 01 Phan Bội Châu, P. Quán Bàu, TP. Vinh, Nghệ An (Tổ hợp VRC)", type: "Bốn mùa tiêu chuẩn quốc tế", pros: "Bể bơi bốn mùa nước ấm vách kính cao cấp, hệ thống lọc tuần hoàn, phân tách khu bơi người lớn và trẻ em độc lập." },
+      { name: "Bể bơi Bốn Mùa Elite Fitness Vinh", address: "Số 01 Lê Hồng Phong, P. Hưng Bình, TP. Vinh, Nghệ An", type: "Trong nhà nước ấm 5 sao", pros: "Nước ấm duy trì 31°C quanh năm, công nghệ xử lý nước ion bạc không cay mắt, không gian tập luyện chuẩn 5 sao." },
+      { name: "Bể bơi Bốn Mùa Kình Ngư", address: "Khu đô thị Đồng Dâu, Khối Xuân Trung, P. Hưng Dũng, TP. Vinh, Nghệ An", type: "Bốn mùa có mái che + Gym", pros: "Hồ bơi nước ấm kiên cố, nước sạch thay cặn liên tục, tích hợp phòng gym hiện đại cho phụ huynh rèn luyện cùng con." },
+      { name: "Bể bơi Quân Khu 4", address: "Số 124C Lê Duẩn, P. Bến Thủy, TP. Vinh, Nghệ An", type: "Bể thể thao 50m Olympic", pros: "Kích thước 50m tiêu chuẩn thi đấu quân đội, không gian rợp bóng cây xanh, cứu hộ quân sự túc trực kỷ luật." }
     ],
     faqs: [
-      { q: "Trung tâm có nhận dạy bơi cho người lớn ở Vinh không?", a: "Có, chúng tôi có lớp bơi riêng kèm 1-1 cho người lớn sợ nước, cam kết biết bơi hoàn toàn." }
+      { q: "Thành phố Vinh có những bể bơi bốn mùa nước ấm nào học được cả mùa đông?", a: "Tại TP. Vinh có 3 cơ sở bể bơi bốn mùa nước ấm trong nhà hàng đầu: Pool Plus tại VRC (01 Phan Bội Châu), Elite Fitness (01 Lê Hồng Phong) và Bể bơi Kình Ngư (KĐT Đồng Dâu, Hưng Dũng)." },
+      { q: "Bể bơi Quân Khu 4 tại đường Lê Duẩn có nhận dạy bơi cho học sinh ngoài quân đội không?", a: "Có. Vào mỗi dịp hè, Bể bơi Quân khu 4 (124C Lê Duẩn) mở cửa đón học sinh dân sự và tổ chức các lớp phổ cập bơi phòng chống đuối nước rất bài bản." },
+      { q: "Trung tâm có nhận dạy bơi cho người lớn sợ nước, nhát nước tại Vinh không?", a: "Có. Swim For Life có khóa kèm riêng 1-1 chuyên sâu cho người lớn sợ nước. HLV trực tiếp xuống nước cầm tay chỉ dẫn từ kỹ năng thở dưới nước đến khi học viên tự tin thả lỏng." },
+      { q: "Lộ trình và cam kết khi đăng ký lớp học bơi 1 kèm 1 ở Nghệ An như thế nào?", a: "Lộ trình 10-12 buổi, cam kết 100% biết bơi kiểu đã đăng ký (bơi ếch hoặc bơi sải), đứng nước tự tin tại vùng nước sâu và có kỹ năng sinh tồn tự cứu khi rơi xuống nước." }
     ]
   },
   {
@@ -376,10 +388,16 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
     intro: "Hà Tĩnh mùa hè nắng nóng gay gắt. Học bơi giúp các em học sinh Hà Tĩnh rèn luyện sức bền thể chất dẻo dai và có kỹ năng sinh tồn thiết yếu dưới nước.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Hà Tĩnh", address: "Đường Phan Đình Phùng, TP. Hà Tĩnh", type: "Ngoài trời", pros: "Hồ bơi sạch sẽ thoáng mát, HLV giàu kinh nghiệm nhiệt tình." }
+      { name: "Tổ hợp Bể bơi Hào Quang Hà Tĩnh", address: "Số 01 đường Nam Ngạn, P. Tân Giang, TP. Hà Tĩnh (cạnh chợ Hà Tĩnh)", type: "Cụm 3 hồ bơi chuyên biệt", pros: "Gồm hồ vầy trẻ em (0.5m), hồ tập bơi học sinh (0.85m) và hồ người lớn (1.45m), có mái lưới che mát và lọc tuần hoàn." },
+      { name: "Bể bơi Bốn Mùa Meliá Vinpearl Hà Tĩnh", address: "Ngã tư đường Hàm Nghi & Hà Huy Tập, P. Hà Huy Tập, TP. Hà Tĩnh", type: "Bốn mùa nước ấm tầng cao 5 sao", pros: "Bể bơi bốn mùa duy nhất tại Hà Tĩnh có hệ thống gia nhiệt nước ấm tự động, không gian 5 sao view panorama toàn thành phố." },
+      { name: "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Hà Tĩnh", address: "Ngõ 5 đường Nguyễn Biểu, P. Nam Hà, TP. Hà Tĩnh", type: "Bể 50m tiêu chuẩn thể thao", pros: "Hồ bơi 50m chuẩn thể thao phục vụ đào tạo VĐV tỉnh, nhiều làn bơi thoáng đãng, nước trong vắt và cứu hộ túc trực." },
+      { name: "Bể bơi Khách sạn Mường Thanh Grand Kỳ Anh", address: "Khu kinh tế Vũng Áng, P. Kỳ Trinh, Thị xã Kỳ Anh, Hà Tĩnh", type: "Hồ bơi khách sạn 4 sao", pros: "Không gian rộng rãi, sạch sẽ, chuẩn mực nước khách sạn cao cấp, phục vụ cư dân KKT Vũng Áng và thị xã Kỳ Anh." }
     ],
     faqs: [
-      { q: "Đăng ký học bơi ở Hà Tĩnh thế nào?", a: "Liên hệ Hotline 0979.121.097 hoặc nhắn tin Zalo để đặt lịch học thử miễn phí buổi đầu tiên cùng HLV." }
+      { q: "Tại TP. Hà Tĩnh địa điểm học bơi nào phù hợp nhất cho trẻ em mới tập bơi?", a: "Địa điểm phù hợp nhất là Tổ hợp Bể bơi Hào Quang (số 01 đường Nam Ngạn) vì có hồ vầy 0.5m và hồ tập 0.85m có mái lưới che mát, độ sâu an toàn tuyệt đối cho bé mới làm quen nước." },
+      { q: "Ở Hà Tĩnh có bể bơi bốn mùa nước ấm nào hoạt động quanh năm không?", a: "Tại Hà Tĩnh hiện có Bể bơi bốn mùa Meliá Vinpearl Hà Tĩnh (ngã tư Hàm Nghi - Hà Huy Tập) được vận hành hệ thống gia nhiệt nước ấm, cho phép bơi lội và học bơi quanh năm kể cả mùa đông." },
+      { q: "Khu vực Thị xã Kỳ Anh và Hồng Lĩnh có giáo viên dạy kèm riêng không?", a: "Có. Trung tâm có HLV chuyên môn phụ trách các lớp kèm riêng 1-1 tại Bể bơi Khách sạn Mường Thanh Kỳ Anh, Trung tâm VHTT Kỳ Anh và Bể bơi Thể thao TX. Hồng Lĩnh." },
+      { q: "Học phí khóa học bơi kèm riêng tại Hà Tĩnh đã bao gồm vé bể chưa?", a: "Học phí là chi phí đào tạo cam kết đầu ra trọn gói của HLV. Vé vào cổng bể bơi học viên tự mua vé ngày hoặc thẻ bơi tháng trực tiếp tại quầy vé của cơ sở bơi." }
     ]
   },
   {
@@ -396,10 +414,16 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
     intro: "Khu vực miền trung Quảng Bình và Quảng Trị chịu nhiều ảnh hưởng mùa mưa bão ngập lụt. Trang bị kỹ năng bơi lội và tự cứu là hành trang sinh tồn vô cùng quan trọng cho trẻ nhỏ.",
     pools: [
-      { name: "Bể bơi thành phố Đồng Hới", address: "Đường Quách Xuân Kỳ, Đồng Hới, Quảng Bình", type: "Ngoài trời", pros: "Nước sạch tuần hoàn, HLV theo sát học viên trong suốt buổi học." }
+      { name: "Bể bơi Nhà Thiếu Nhi Quảng Bình", address: "Số 1 đường Hùng Vương, P. Đồng Hải, TP. Đồng Hới, Quảng Bình", type: "Thiếu nhi có mái che lưới", pros: "Hồ bơi rộng rãi chuẩn đào tạo thiếu nhi, hệ thống lọc nước tuần hoàn sạch sẽ, HLV sư phạm theo sát học viên." },
+      { name: "Bể bơi Regal Legend Pool", address: "KĐT Regal Legend, đường Võ Nguyên Giáp, xã Bảo Ninh, TP. Đồng Hới, Quảng Bình", type: "Hồ tràn viền điện phân muối", pros: "Hồ bơi tràn viền view biển Bảo Ninh tuyệt đẹp, khử trùng điện phân muối khoáng an toàn cho mắt và da trẻ nhỏ." },
+      { name: "Bể bơi Bốn Mùa Vincom Plaza Đông Hà", address: "Tầng mái TTTM Vincom Plaza, góc Trương Công Kỉnh & Lê Lợi, Phường 2, TP. Đông Hà, Quảng Trị", type: "Bốn mùa trong nhà & Ngoài trời", pros: "Tổ hợp bơi phong cách resort đẳng cấp trên tầng cao với bể bốn mùa nước ấm vách kính và bể ngoài trời ngắm toàn cảnh." },
+      { name: "Bể bơi Khách sạn Mường Thanh Grand Quảng Trị", address: "Số 68 Lê Duẩn, Phường 2, TP. Đông Hà, Quảng Trị", type: "Hồ bơi khách sạn 4 sao", pros: "Bể bơi ngoài trời sạch đẹp, nguồn nước kiểm định chặt chẽ mỗi ngày, không gian an ninh và yên tĩnh." }
     ],
     faqs: [
-      { q: "Học bơi ở Đồng Hới có lớp bơi cho trẻ nhỏ không?", a: "Có, chúng tôi có lớp bơi riêng cho trẻ em từ 4 tuổi trở lên với sự kèm cặp sát sao của HLV." }
+      { q: "Phụ huynh tại Đồng Hới (Quảng Bình) nên cho con học bơi ở bể nào uy tín nhất?", a: "Tại TP. Đồng Hới, Bể bơi Nhà Thiếu Nhi Quảng Bình (số 1 Hùng Vương) là địa chỉ dạy bơi truyền thống uy tín nhất. Nếu muốn trải nghiệm chuẩn resort cao cấp, phụ huynh có thể chọn Regal Legend Pool tại Bảo Ninh." },
+      { q: "Tại thành phố Đông Hà (Quảng Trị) có bể bơi bốn mùa nước ấm nào hiện đại nhất?", a: "Hiện đại nhất tại Đông Hà là Tổ hợp Bể bơi bốn mùa tại tầng mái Vincom Plaza Đông Hà với bể nước ấm trong nhà vách kính bơi được cả 4 mùa quanh năm." },
+      { q: "Trung tâm có đào tạo kỹ năng bơi sinh tồn phòng chống bão lụt cho trẻ nhỏ không?", a: "Có. Do đặc thù địa phương thường chịu ảnh hưởng mùa bão lũ, Swim For Life đặc biệt chú trọng dạy kỹ năng sinh tồn tự cứu: cách nổi sấp nổi ngửa giữ sức, kỹ năng đứng nước lâu và cách xử lý khi bị ngã xuống nước." },
+      { q: "Hình thức dạy bơi 1 kèm 1 tại Đồng Hới và Đông Hà có những ưu điểm gì?", a: "HLV theo sát học viên 100% thời gian dưới nước, chỉnh từng nhịp thở và góc quạt tay, đảm bảo an toàn tuyệt đối và giúp học viên tiến bộ nhanh gấp 3 lần học lớp đông." }
     ]
   },
   {
@@ -416,10 +440,16 @@ export const locations = [
     image: "/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg",
     intro: "Vùng duyên hải Quảng Ngãi và Phú Yên có nhu cầu học bơi rèn luyện phát triển chiều cao vượt trội cho học sinh rất lớn. Khóa bơi giúp trẻ tự tin bơi lội đúng tư thế khoa học.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Quảng Ngãi", address: "Đường Hùng Vương, TP. Quảng Ngãi", type: "Ngoài trời", pros: "Hồ bơi sạch đẹp, HLV tận tâm hướng dẫn từng động tác." }
+      { name: "Hồ bơi TT Hoạt Động Thanh Thiếu Nhi Diên Hồng", address: "Số 60-62 Hùng Vương, P. Trần Phú, TP. Quảng Ngãi", type: "Chuẩn đào tạo thanh thiếu nhi", pros: "Địa chỉ đào tạo bơi lội lâu đời nhất tỉnh, hệ thống lọc nước tuần hoàn sạch sẽ, có mái lưới che nắng mát mẻ." },
+      { name: "Hồ bơi TT Thanh Thiếu Nhi Phú Yên (Cơ sở 2)", address: "Góc đường Trường Chinh & Nguyễn Văn Huyên, Phường 9, TP. Tuy Hòa, Phú Yên", type: "Hồ 1.250m² chuẩn thi đấu", pros: "Hồ bơi quy mô lớn 1.250m² đạt chuẩn thi đấu và đào tạo chính quy cấp tỉnh, cơ sở vật chất khang trang hiện đại bậc nhất Tuy Hòa." },
+      { name: "Hồ bơi Yết Kiêu Tuy Hòa", address: "Sân sau Trường THCS Nguyễn Văn Trỗi, đường Trần Bình Trọng, Phường 3, TP. Tuy Hòa, Phú Yên", type: "CLB bơi phong trào lâu năm", pros: "CLB bơi lội truyền thống uy tín, đội ngũ HLV giàu kinh nghiệm, không gian tập luyện gần gũi và chi phí rất vừa túi tiền." },
+      { name: "Hồ bơi Khu Dân Cư 577 Quảng Ngãi", address: "KĐT 577, P. Trương Quang Trọng, TP. Quảng Ngãi", type: "Hồ bơi cộng đồng hiện đại", pros: "Nằm ở bờ Bắc sông Trà Khúc, nước trong xanh sạch sẽ, không gian thoáng đãng thuận tiện cho cư dân vùng Bắc thành phố." }
     ],
     faqs: [
-      { q: "Học bơi ở Tuy Hòa Phú Yên đăng ký ở đâu?", a: "Liên hệ Hotline 0979.121.097, ban quản lý lớp học bơi Swim For Life sẽ hỗ trợ xếp lịch ngay." }
+      { q: "Tại TP. Quảng Ngãi địa chỉ học bơi nào uy tín và chất lượng nước sạch nhất?", a: "Hồ bơi Trung tâm Hoạt động Thanh thiếu nhi Diên Hồng (60-62 Hùng Vương) là địa chỉ dạy bơi uy tín nhất với đội ngũ giáo viên giàu kinh nghiệm và hệ thống lọc nước tuần hoàn bảo dưỡng thường xuyên." },
+      { q: "Ở Tuy Hòa (Phú Yên) phụ huynh nên đăng ký học bơi cho bé ở hồ bơi nào?", a: "Tại TP. Tuy Hòa, cơ sở hiện đại nhất là Hồ bơi Trung tâm Thanh Thiếu Nhi Phú Yên cơ sở 2 (đường Trường Chinh) rộng 1.250m². Ngoài ra Hồ bơi Yết Kiêu (đường Trần Bình Trọng) cũng là điểm dạy bơi phong trào rất uy tín." },
+      { q: "Khóa học bơi mùa hè tại Quảng Ngãi và Phú Yên bao gồm mấy buổi và cam kết gì?", a: "Khóa học gồm 10 đến 12 buổi học kèm riêng (60 phút/buổi). Cam kết 100% học viên biết bơi chuẩn kỹ thuật, đứng nước tự tin và được cấp chứng chỉ hoàn thành khóa học." },
+      { q: "Người lớn tuổi hoặc người bị đau lưng, thoái hóa cột sống học bơi kiểu nào tốt nhất?", a: "Với học viên lớn tuổi đau lưng thoái hóa, HLV sẽ thiết kế giáo án bơi ngửa và bơi ếch thả lỏng nhẹ nhàng giúp giải phóng áp lực lên đĩa đệm và tăng cường tuần hoàn máu an toàn." }
     ]
   },
   {
