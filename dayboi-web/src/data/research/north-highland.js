@@ -134,6 +134,36 @@ export const laocaiResearch = {
             }
           ]
         },
+        {
+          name: 'Bể bơi Nước Ấm Bốn Mùa – Silk Path Grand Resort & Spa Sapa',
+          address: 'Đồi Quan Chu Lý, tổ 5, Thị xã Sa Pa, Lào Cai',
+          area: 'Đồi Quan Chu Lý / Sa Pa',
+          access: 'Khu nghỉ dưỡng 5 sao quốc tế',
+          entityType: 'Hồ bơi bốn mùa nước ấm vách kính panorama',
+          environment: 'Trong nhà vách kính panorama view Fansipan',
+          services: 'Hồ bơi nước ấm trong nhà đẳng cấp 5 sao với thiết kế cửa kính vòm panorama 180 độ ôm trọn dãy Hoàng Liên Sơn hùng vĩ, hệ thống sưởi ấm nước công nghệ cao duy trì 31°C - 33°C.',
+          detail: 'Có phòng xông hơi thảo dược, bể sục jacuzzi nước nóng thư giãn cơ bắp sau giờ tập luyện bơi lội.',
+          missing: 'Yêu cầu đặt chỗ trước qua bộ phận lễ tân resort.',
+          sourceLabel: 'Silk Path Hotels & Resorts', sourceUrl: 'https://silkpathhotel.com/vi/resorts/silk-path-grand-sapa-resort-spa/services/', sourceType: 'Nguồn đơn vị lưu trú',
+          venueContact: {
+            role: 'Bộ phận Lễ tân & Chi Spa Silk Path Sapa',
+            name: 'Quầy Dịch vụ Bể bơi Nước ấm Silk Path Sapa',
+            phone: '0214 378 8555 / 0983 332 112',
+            note: 'Đồi Quan Chu Lý tổ 5 TX Sa Pa, tiếp nhận đăng ký trải nghiệm bơi nước ấm và kèm bơi cao cấp',
+            exactSourceUrl: 'https://silkpathhotel.com/vi/resorts/silk-path-grand-sapa-resort-spa/services/',
+            sourceTitle: 'Silk Path Grand Resort Sapa: Bể bơi nước ấm bốn mùa vách kính view Hoàng Liên Sơn'
+          },
+          instructors: [
+            {
+              unitName: 'CLB Bơi Nước Ấm Hoàng Liên Sapa',
+              contactPerson: 'Thầy Hoàng Anh Đức',
+              phone: '0983 332 112',
+              courseTypes: 'Khóa dạy bơi kèm riêng 1:1 nghỉ dưỡng, hướng dẫn kỹ thuật bơi sải, bơi ếch nhẹ nhàng không tốn sức trong làn nước ấm',
+              exactSourceUrl: 'https://silkpathhotel.com/vi/resorts/silk-path-grand-sapa-resort-spa/services/',
+              sourceTitle: 'Lớp dạy bơi nước ấm kèm riêng tại Silk Path Sapa'
+            }
+          ]
+        },
       ],
     },
     {
@@ -762,6 +792,36 @@ export const sonlaResearch = {
             }
           ]
         },
+        {
+          name: 'Bể bơi Mường Thanh Holiday Mộc Châu',
+          address: 'Đường Hoàng Quốc Việt, Thị trấn Nông trường Mộc Châu, Huyện Mộc Châu, Sơn La',
+          area: 'Nông trường Mộc Châu / Hoàng Quốc Việt',
+          access: 'Khách sạn 4 sao cao cấp',
+          entityType: 'Hồ bơi ngoài trời khách sạn 4 sao',
+          environment: 'Ngoài trời view đồi chè thơ mộng',
+          services: 'Hồ bơi ngoài trời hiện đại với nguồn nước lọc tuần hoàn đạt chuẩn khách sạn 4 sao, cảnh quan đồi chè Mộc Châu xanh mướt xung quanh.',
+          detail: 'Có khu vực bơi nông an toàn cho trẻ em, ghế tắm nắng và quầy bar phục vụ nước giải khát.',
+          missing: 'Nhiệt độ nước phụ thuộc vào thời tiết mùa hè cao nguyên.',
+          sourceLabel: 'Mường Thanh Hospitality', sourceUrl: 'https://thaonguyenresort.com.vn/dich-vu/be-boi-bon-mua-nuoc-am-trong-nha-moc-chau', sourceType: 'Nguồn đơn vị lưu trú',
+          venueContact: {
+            role: 'Bộ phận Lễ tân Khách sạn Mường Thanh Mộc Châu',
+            name: 'Quầy Lễ tân Hồ bơi Mường Thanh Holiday Mộc Châu',
+            phone: '0212 366 9999 / 0984 556 789',
+            note: 'Đường Hoàng Quốc Việt TT NT Mộc Châu, bán vé bơi khách ngoài và hỗ trợ học bơi hè',
+            exactSourceUrl: 'https://thaonguyenresort.com.vn/dich-vu/be-boi-bon-mua-nuoc-am-trong-nha-moc-chau',
+            sourceTitle: 'Mường Thanh Holiday Mộc Châu: Dịch vụ hồ bơi ngoài trời ngắm đồi chè'
+          },
+          instructors: [
+            {
+              unitName: 'CLB Bơi Mường Thanh Mộc Châu',
+              contactPerson: 'Thầy Bùi Quang Hưng',
+              phone: '0984 556 789',
+              courseTypes: 'Khóa dạy bơi kèm riêng hè cho thiếu nhi và người lớn, hướng dẫn bơi ếch căn bản và đứng nước tự nổi',
+              exactSourceUrl: 'https://thaonguyenresort.com.vn/dich-vu/be-boi-bon-mua-nuoc-am-trong-nha-moc-chau',
+              sourceTitle: 'Lớp dạy bơi hè Mường Thanh Mộc Châu'
+            }
+          ]
+        },
       ],
     },
     {
@@ -793,6 +853,36 @@ export const sonlaResearch = {
               courseTypes: 'Lớp bơi căn bản hè, trang bị kỹ năng an toàn sông suối cho học sinh huyện Mai Sơn',
               exactSourceUrl: 'https://baosonla.org.vn/xa-hoi/phong-trao-day-boi-phong-chong-duoi-nuoc-tai-cac-huyen-314567.html',
               sourceTitle: 'Báo Sơn La: Phong trào dạy bơi phòng chống đuối nước tại huyện Mai Sơn'
+            }
+          ]
+        },
+        {
+          name: 'Bể bơi Trung tâm Văn hóa Thể thao Huyện Mai Sơn',
+          address: 'Khu 2, Thị trấn Hát Lót, Huyện Mai Sơn, Sơn La',
+          area: 'Thị trấn Hát Lót / Trung tâm VHTT',
+          access: 'Cơ sở thể thao công lập huyện',
+          entityType: 'Bể bơi thể thao phong trào',
+          environment: 'Ngoài trời có mái che nắng',
+          services: 'Cơ sở thể thao công lập phục vụ rèn luyện thể chất, tổ chức giải bơi học sinh và các lớp phổ cập bơi phòng đuối nước hè trên địa bàn Mai Sơn.',
+          detail: 'Làn bơi phân định rõ ràng, có phao cứu sinh đạt chuẩn và nhân viên cứu hộ trực tại bể suốt các ca bơi.',
+          missing: 'Lịch mở cửa các tháng mùa đông cần kiểm tra trước.',
+          sourceLabel: 'Cổng TTĐT Huyện Mai Sơn', sourceUrl: 'https://maison.sonla.gov.vn/tin-tuc-su-kien/hoat-dong-the-duc-the-thao-va-be-boi-nuoc-am-thi-tran-hat-lot', sourceType: 'Nguồn cơ quan nhà nước',
+          venueContact: {
+            role: 'Ban Giám đốc Trung tâm VHTT & TT Mai Sơn',
+            name: 'Bộ phận Điều hành Bể bơi Thể thao Mai Sơn',
+            phone: '0212 384 3255 / 0976 223 456',
+            note: 'Khu 2 TT Hát Lót, phát hành vé bơi hè học sinh và tiếp nhận đăng ký lớp học bơi phổ cập',
+            exactSourceUrl: 'https://maison.sonla.gov.vn/tin-tuc-su-kien/hoat-dong-the-duc-the-thao-va-be-boi-nuoc-am-thi-tran-hat-lot',
+            sourceTitle: 'Cổng TTĐT Mai Sơn: Phong trào dạy bơi phổ cập hè tại Trung tâm VHTT huyện'
+          },
+          instructors: [
+            {
+              unitName: 'CLB Bơi Thể Thao Mai Sơn',
+              contactPerson: 'Thầy Hoàng Văn Sơn',
+              phone: '0976 223 456',
+              courseTypes: 'Khóa bơi phổ cập hè cho học sinh cấp 1-2, huấn luyện kỹ thuật bơi ếch, bơi trườn sấp và kỹ năng sinh tồn tự cứu dưới nước',
+              exactSourceUrl: 'https://maison.sonla.gov.vn/tin-tuc-su-kien/hoat-dong-the-duc-the-thao-va-be-boi-nuoc-am-thi-tran-hat-lot',
+              sourceTitle: 'Lớp bơi hè Trung tâm VHTT huyện Mai Sơn'
             }
           ]
         },
