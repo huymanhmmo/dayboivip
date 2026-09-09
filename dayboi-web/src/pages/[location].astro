@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { locations } from '../data/locations.js';
+import { getLocationResearch } from '../data/locationResearch.js';
 import '../styles/location-directory.css';
 
 export function getStaticPaths() {
@@ -10,10 +11,27 @@ export function getStaticPaths() {
 const { loc } = Astro.props;
 const currentYear = new Date().getFullYear();
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-const poolDirectory = loc.pools.map((pool) => ({
-  ...pool,
-  mapsUrl: mapsSearch(`${pool.name}, ${pool.address || loc.name}`),
-}));
+const research = getLocationResearch(loc.slug);
+const categories = research?.categories || [{
+  id: 'starter',
+  label: 'Danh sách đang chờ rà soát sâu',
+  description: 'Các địa điểm khởi tạo được giữ lại để người dùng tra cứu; nhóm biên tập sẽ bổ sung nguồn và phân loại trong các đợt tiếp theo.',
+  venues: loc.pools.map((pool) => ({
+    name: pool.name,
+    address: pool.address,
+    area: loc.name,
+    access: pool.type || 'Chưa xác định',
+    detail: 'Thông tin khởi tạo chưa được rà soát sâu. Vui lòng dùng bản đồ và xác minh trực tiếp trước khi đến.',
+    sourceLabel: 'Google Maps',
+    sourceUrl: mapsSearch(`${pool.name}, ${pool.address || loc.name}`),
+    sourceType: 'Bản đồ công khai',
+  })),
+}];
+const poolDirectory = categories.flatMap((category) => category.venues.map((venue) => ({
+  ...venue,
+  category: category.label,
+  mapsUrl: mapsSearch(`${venue.name}, ${venue.address || loc.name}`),
+})));
 const discoveryLinks = [
   { label: 'Tất cả bể bơi đang được niêm yết', desc: 'Xem giờ mở cửa, website và số liên hệ công khai trên bản đồ.', url: mapsSearch(`bể bơi tại ${loc.name}`), icon: 'pool' },
   { label: 'Giáo viên và đơn vị dạy bơi', desc: 'Tìm các HLV hoặc trung tâm đang công khai dịch vụ tại địa phương.', url: mapsSearch(`giáo viên dạy bơi tại ${loc.name}`), icon: 'coach' },
@@ -23,7 +41,7 @@ const discoveryLinks = [
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Danh bạ địa phương', href: '/hoc-boi-o-dau/' },
+  { label: 'Địa điểm', href: '/hoc-boi-o-dau/' },
   { label: loc.name },
 ];
 
@@ -59,9 +77,13 @@ const directorySchema = {
     <section class="local-directory__hero">
       <div class="container local-directory__hero-grid">
         <div>
-          <span class="local-directory__eyebrow">Danh bạ độc lập · {loc.region}</span>
+          <span class="local-directory__eyebrow">Địa điểm độc lập · {loc.region}</span>
           <h1>Bể bơi & nơi dạy bơi tại <span>{loc.name}</span></h1>
           <p>Trang này giúp người học cá nhân chủ động tìm và liên hệ trực tiếp với bể bơi, câu lạc bộ hoặc giáo viên đang công khai dịch vụ tại {loc.name}. Swim For Life không nhận đăng ký, không thu phí và không đại diện cho các đơn vị được liệt kê.</p>
+          <div class={`local-directory__research-status ${research ? 'is-reviewed' : ''}`}>
+            <strong>{research?.level || 'Đang chờ rà soát chi tiết'}</strong>
+            <span>{research ? `${poolDirectory.length} địa điểm có nguồn · cập nhật ${research.reviewedAt}` : 'Thông tin khởi tạo · cần xác minh trực tiếp'}</span>
+          </div>
           <div class="local-directory__hero-actions">
             <a href="#danh-sach">Xem danh sách tham khảo</a>
             <a href={mapsSearch(`học bơi tại ${loc.name}`)} target="_blank" rel="noopener noreferrer">Tìm toàn bộ trên bản đồ</a>
@@ -104,23 +126,57 @@ const directorySchema = {
     <section class="section section--alt" id="danh-sach" aria-labelledby="pool-list-title">
       <div class="container">
         <div class="section__header">
-          <span class="section__badge">Danh sách khởi tạo</span>
-          <h2 class="section__title" id="pool-list-title">Các bể bơi thường được tìm kiếm tại {loc.name}</h2>
-          <p class="section__desc">Danh sách không tuyên bố bao quát toàn bộ thị trường. Mỗi nút “Kiểm tra & liên hệ” mở listing công khai để bạn xác minh tình trạng hoạt động.</p>
+          <span class="section__badge">Theo từng loại địa điểm</span>
+          <h2 class="section__title" id="pool-list-title">Bể bơi và đơn vị tại {loc.name}</h2>
+          <p class="section__desc">{research?.summary || 'Trang này đang ở lớp dữ liệu khởi tạo và sẽ được bổ sung nguồn theo lộ trình toàn quốc.'} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
         </div>
-        <div class="local-directory__pool-grid">
-          {poolDirectory.map((pool, index) => (
-            <article class="local-directory__pool-card">
-              <div class="local-directory__pool-index">{String(index + 1).padStart(2, '0')}</div>
-              <div>
-                <span>{pool.type || 'Bể bơi'}</span>
-                <h3>{pool.name}</h3>
-                {pool.address && <p><strong>Địa chỉ tham khảo:</strong> {pool.address}</p>}
-                {pool.pros && <p><strong>Mô tả hiện có:</strong> {pool.pros}</p>}
+        <nav class="local-directory__category-nav" aria-label="Các loại địa điểm">
+          {categories.map((category) => <a href={`#${category.id}`}>{category.label}<span>{category.venues.length}</span></a>)}
+        </nav>
+        <div class="local-directory__categories">
+          {categories.map((category) => (
+            <section class="local-directory__category" id={category.id} aria-labelledby={`${category.id}-title`}>
+              <header>
+                <div>
+                  <span>{String(category.venues.length).padStart(2, '0')} địa điểm</span>
+                  <h3 id={`${category.id}-title`}>{category.label}</h3>
+                </div>
+                <p>{category.description}</p>
+              </header>
+              <div class="local-directory__pool-grid">
+                {category.venues.map((pool, index) => (
+                  <article class="local-directory__pool-card">
+                    <div class="local-directory__pool-index">{String(index + 1).padStart(2, '0')}</div>
+                    <div>
+                      <div class="local-directory__pool-meta"><span>{pool.area || loc.name}</span><span>{pool.access || 'Chưa xác định'}</span></div>
+                      <h4>{pool.name}</h4>
+                      {pool.address && <p><strong>Địa chỉ tham khảo:</strong> {pool.address}</p>}
+                      <p><strong>Ghi chú:</strong> {pool.detail}</p>
+                    </div>
+                    <div class="local-directory__pool-links">
+                      <a href={mapsSearch(`${pool.name}, ${pool.address || loc.name}`)} target="_blank" rel="noopener noreferrer">Bản đồ & liên hệ ↗</a>
+                      <a href={pool.sourceUrl} target="_blank" rel="noopener noreferrer" class="is-source">Nguồn: {pool.sourceLabel} ↗</a>
+                    </div>
+                    <small>{pool.sourceType} · rà soát {research?.reviewedAt || 'theo lộ trình'}</small>
+                  </article>
+                ))}
               </div>
-              <a href={pool.mapsUrl} target="_blank" rel="noopener noreferrer">Kiểm tra & liên hệ ↗</a>
-            </article>
+            </section>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section local-directory__method" aria-labelledby="method-title">
+      <div class="container local-directory__method-grid">
+        <div>
+          <span class="section__badge">Phương pháp biên tập</span>
+          <h2 class="section__title" id="method-title">Nguồn được hiển thị để bạn tự đối chiếu</h2>
+        </div>
+        <div class="local-directory__method-list">
+          <p><strong>1. Xác nhận định danh</strong><span>Tên, địa chỉ và loại hình được đối chiếu từ nguồn đơn vị, cơ quan, báo chí hoặc danh bạ công khai.</span></p>
+          <p><strong>2. Gắn mức độ tiếp cận</strong><span>Phân biệt bể công cộng, thương mại, tổ hợp thể thao và hồ nội khu để tránh đến nhầm.</span></p>
+          <p><strong>3. Không sao chép giá cũ</strong><span>Giá vé, giờ mở cửa và lịch giáo viên biến động nhanh nên người dùng phải xác nhận với nơi vận hành.</span></p>
         </div>
       </div>
     </section>

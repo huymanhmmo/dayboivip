@@ -119,9 +119,9 @@
   --transition-spring: 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* Layout */
-  --container-xl: 1280px;
-  --container-2xl: 1380px;
-  --container-pad: clamp(1.25rem, 5vw, 4.5rem);
+  --container-xl: 100%;
+  --container-2xl: 100%;
+  --container-pad: clamp(1rem, 3vw, 4rem);
   --header-height: 108px;
 }
 
@@ -183,12 +183,13 @@ p {
 }
 
 .container {
-  max-width: var(--container-xl);
+  width: 100%;
+  max-width: none;
 }
 
 .container-wide,
 .container--wide {
-  max-width: var(--container-2xl);
+  max-width: none;
 }
 
 .section,
