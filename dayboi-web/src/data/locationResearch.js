@@ -1,8 +1,8 @@
 import { hcmResearch } from './locationResearchHcm.js';
 import { danangResearch, hueResearch, khanhhoaResearch, binhdinhResearch, thanhhoaResearch, ngheanResearch, hatinhResearch, quangbinhResearch, quangngaiResearch } from './research/central.js';
-import { canthoResearch } from './research/mekong.js';
+import { canthoResearch, dongthapResearch, vinhlongResearch, angiangResearch, camauResearch } from './research/mekong.js';
 import { quangninhResearch } from './research/north.js';
-import { dongnaiResearch, lamdongResearch } from './research/south.js';
+import { dongnaiResearch, lamdongResearch, daklakResearch, tayninhResearch } from './research/south.js';
 import { bacninhResearch, thainguyenResearch, phuthoResearch, hungyenResearch, ninhbinhResearch } from './research/north-delta.js';
 
 const reviewedAt = '09/09/2026';
@@ -530,24 +530,24 @@ export const locationResearch = {
   'hoc-boi-ha-tinh': hatinhResearch,
   'hoc-boi-quang-binh': quangbinhResearch,
   'hoc-boi-quang-ngai': quangngaiResearch,
+  'hoc-boi-dak-lak': daklakResearch,
+  'hoc-boi-tay-ninh': tayninhResearch,
+  'hoc-boi-dong-thap': dongthapResearch,
+  'hoc-boi-vinh-long': vinhlongResearch,
+  'hoc-boi-an-giang': angiangResearch,
+  'hoc-boi-ca-mau': camauResearch,
 };
 
 export const locationRollout = [
   {
-    phase: 'Đợt 1, 2, 3 & 4 (Đô thị trọng điểm, Vệ tinh, Đồng Bằng Bắc Bộ & Dải Miền Trung)',
-    status: 'Đã hoàn thành nghiên cứu chuyên sâu (21 tỉnh/TP)',
-    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh', 'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng', 'Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình', 'Thanh Hóa', 'Nghệ An', 'Hà Tĩnh', 'Quảng Bình', 'Quảng Ngãi'],
+    phase: 'Đợt 1 đến 5 (Đô thị trọng điểm, Vệ tinh, Bắc Bộ, Miền Trung, Tây Nguyên & ĐBSCL)',
+    status: 'Đã hoàn thành nghiên cứu chuyên sâu (27 tỉnh/TP)',
+    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh', 'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng', 'Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình', 'Thanh Hóa', 'Nghệ An', 'Hà Tĩnh', 'Quảng Bình', 'Quảng Ngãi', 'Đắk Lắk', 'Tây Ninh', 'Đồng Tháp', 'Vĩnh Long', 'An Giang', 'Cà Mau'],
     scope: 'Đầy đủ venues theo quận/huyện, đơn vị dạy bơi, nguồn xác minh, liên hệ và FAQs thực tế.',
   },
   {
-    phase: 'Đợt 5 (Đồng Bằng Sông Cửu Long & Tây Nguyên)',
-    status: 'Đang triển khai',
-    locations: ['Tây Ninh', 'Đắk Lắk', 'Đồng Tháp', 'Vĩnh Long', 'An Giang', 'Cà Mau'],
-    scope: 'Khu vực Tây Nam Bộ và Tây Nguyên.',
-  },
-  {
     phase: 'Đợt 6 (Vùng cao & Biên giới Phía Bắc)',
-    status: 'Theo kế hoạch tuần tự',
+    status: 'Đang triển khai',
     locations: ['Lào Cai', 'Lạng Sơn', 'Tuyên Quang', 'Sơn La', 'Điện Biên', 'Lai Châu', 'Cao Bằng'],
     scope: 'Vùng cao Tây Bắc và Đông Bắc.',
   },
