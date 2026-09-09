@@ -3,6 +3,7 @@ import { danangResearch, hueResearch, khanhhoaResearch, binhdinhResearch } from 
 import { canthoResearch } from './research/mekong.js';
 import { quangninhResearch } from './research/north.js';
 import { dongnaiResearch, lamdongResearch } from './research/south.js';
+import { bacninhResearch, thainguyenResearch, phuthoResearch, hungyenResearch, ninhbinhResearch } from './research/north-delta.js';
 
 const reviewedAt = '09/09/2026';
 
@@ -519,25 +520,30 @@ export const locationResearch = {
   'hoc-boi-khanh-hoa': khanhhoaResearch,
   'hoc-boi-binh-dinh': binhdinhResearch,
   'hoc-boi-lam-dong': lamdongResearch,
+  'hoc-boi-bac-ninh': bacninhResearch,
+  'hoc-boi-thai-nguyen': thainguyenResearch,
+  'hoc-boi-phu-tho': phuthoResearch,
+  'hoc-boi-hung-yen': hungyenResearch,
+  'hoc-boi-ninh-binh': ninhbinhResearch,
 };
 
 export const locationRollout = [
   {
-    phase: 'Đợt 1 & 2 (Đô thị trọng điểm & Vùng kinh tế sôi động)',
-    status: 'Đã hoàn thành nghiên cứu chuyên sâu (11 tỉnh/TP)',
-    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh', 'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng'],
+    phase: 'Đợt 1, 2 & 3 (Đô thị trọng điểm, Vệ tinh & Đồng Bằng Bắc Bộ)',
+    status: 'Đã hoàn thành nghiên cứu chuyên sâu (16 tỉnh/TP)',
+    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh', 'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng', 'Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình'],
     scope: 'Đầy đủ venues theo quận/huyện, đơn vị dạy bơi, nguồn xác minh, liên hệ và FAQs thực tế.',
   },
   {
-    phase: 'Đợt 3 (Vùng kinh tế công nghiệp & Đồng Bằng Bắc Bộ)',
+    phase: 'Đợt 4 (Dải ven biển Miền Trung & Bắc Trung Bộ)',
     status: 'Đang triển khai',
-    locations: ['Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình'],
-    scope: 'Vùng vệ tinh Hà Nội và các trung tâm công nghiệp lớn.',
+    locations: ['Thanh Hóa', 'Nghệ An', 'Hà Tĩnh', 'Quảng Bình', 'Quảng Ngãi'],
+    scope: 'Khu vực Bắc Trung Bộ và Duyên hải.',
   },
   {
-    phase: 'Đợt 4–6 (Các tỉnh còn lại)',
+    phase: 'Đợt 5–6 (Các tỉnh còn lại)',
     status: 'Theo kế hoạch tuần tự',
-    locations: ['18 tỉnh/thành phố còn lại'],
+    locations: ['13 tỉnh/thành phố còn lại'],
     scope: 'Lần lượt làm theo cụm miền theo kế hoạch tổng thể.',
   },
 ];

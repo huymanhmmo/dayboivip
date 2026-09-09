@@ -210,10 +210,15 @@ export const locations = [
     image: "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
     intro: "Bắc Ninh và Bắc Giang là các tỉnh có tốc độ đô thị hóa nhanh chóng. Học bơi giúp các bé tại đây rèn luyện kỹ năng sinh tồn cần thiết tránh các tai nạn đuối nước thương tâm.",
     pools: [
-      { name: "Bể bơi tỉnh Bắc Ninh", address: "Đường Hàn Thuyên, Đại Phúc, Bắc Ninh", type: "Ngoài trời", pros: "Nước sạch lọc tuần hoàn, HLV trực bể đảm bảo an toàn cao." }
+      { name: "Bể bơi Bốn Mùa Chuyên Bắc Ninh", address: "Khuôn viên THPT Chuyên Bắc Ninh, Kinh Bắc", type: "Trong nhà điện phân muối", pros: "Hệ thống gia nhiệt bốn mùa, điện phân muối khoáng không cay mắt." },
+      { name: "Bể bơi Dolphin Bắc Ninh", address: "146 Lê Hồng Phong, Kinh Bắc, TP. Bắc Ninh", type: "Có mái che hiện đại", pros: "Vị trí trung tâm, nước sạch tuần hoàn, phân khu an toàn cho trẻ nhỏ." },
+      { name: "Bể bơi Anh Vũ Yên Phong", address: "Đường 286, An Ninh, Yên Phụ, Yên Phong", type: "Thương mại & bể sục thủy lực", pros: "Bể bơi thể thao kết hợp bể sục massage, đội ngũ cứu hộ chuyên nghiệp." }
     ],
     faqs: [
-      { q: "Học phí học bơi tại Bắc Ninh là bao nhiêu?", a: "Liên hệ Hotline 0979.121.097 để nhận báo giá chi tiết theo khu vực của bạn, mức giá luôn đi kèm cam kết biết bơi 100%." }
+      { q: "Bắc Ninh có bể bơi bốn mùa nước ấm nào để học bơi quanh năm?", a: "Có. Bể bơi bốn mùa tại Trường THPT Chuyên Bắc Ninh (đường Hồ Ngọc Lân, Kinh Bắc) là cơ sở trong nhà hiện đại bậc nhất với hệ thống gia nhiệt và công nghệ điện phân muối khoáng, giúp duy trì việc học bơi suốt mùa đông ấm áp." },
+      { q: "Tại Yên Phong và Từ Sơn có địa điểm học bơi nào uy tín cho trẻ nhỏ?", a: "Tại huyện Yên Phong có Bể bơi Anh Vũ (đường 286, xã Yên Phụ) có bể bơi trẻ em riêng và bể sục thủy lực; tại Từ Sơn và TP. Bắc Ninh có lớp học bơi kèm riêng của Thầy Quang (0376 920 840) và Swim For Life." },
+      { q: "Học bơi ở Bắc Ninh bao nhiêu buổi thì biết bơi và có giáo viên kèm riêng không?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi. Học viên được cam kết 100% biết bơi ếch chuẩn kỹ thuật, đứng nước sâu tự tin và trang bị kỹ năng phòng chống đuối nước." },
+      { q: "Học phí học bơi tại Bắc Ninh là bao nhiêu?", a: "Mức học phí kèm riêng dao động từ 1,5 đến 2,5 triệu đồng tùy gói học. Học viên được hỗ trợ học thử miễn phí buổi đầu để kiểm tra mức độ thích ứng với nước." }
     ]
   },
   {
@@ -230,10 +235,15 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-vui-ve-ky-luat.jpg",
     intro: "Thái Nguyên và Bắc Kạn có địa hình trung du miền núi nhiều sông suối. Học bơi và trang bị kỹ năng bơi sinh tồn là cực kỳ quan trọng để bảo vệ bản thân khi đi qua các vùng ngập nước mùa mưa lũ.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Thái Nguyên", address: "Đường Nha Trang, Trưng Vương, Thái Nguyên", type: "Ngoài trời", pros: "Nước bể sạch sẽ, không gian học bơi thoáng rộng." }
+      { name: "Bể bơi Trường ĐH Sư phạm Thái Nguyên", address: "Số 20 Lương Ngọc Quyến, Quang Trung, TP. Thái Nguyên", type: "Ngoài trời chuẩn sư phạm", pros: "Cơ sở đào tạo bơi lội uy tín lâu năm, đội ngũ giảng viên TDTT trực tiếp dạy." },
+      { name: "Bể bơi Bốn Mùa Prime Tháp Đôi", address: "Tầng 3, Tháp đôi Prime, số 1 Hoàng Văn Thụ, TP. Thái Nguyên", type: "Trong nhà nước ấm điện phân muối", pros: "Bể bốn mùa cao cấp nhất TP. Thái Nguyên, nước ấm không mùi clo." },
+      { name: "Bể bơi Sinh thái Dũng Tân", address: "KDL Sinh thái Dũng Tân, Cải Đan, Sông Công", type: "Tổ hợp bể bơi 3.000m2", pros: "Bể bơi quy mô lớn nhất tỉnh, cảnh quan xanh mát, phân khu thi đấu." }
     ],
     faqs: [
-      { q: "Người lớn tuổi học bơi tại Thái Nguyên được không?", a: "Được, chúng tôi dạy học viên mọi lứa tuổi từ trẻ em đến người lớn trên 60 tuổi với giáo trình cá nhân hóa." }
+      { q: "Bể bơi nào uy tín và có hệ thống nước ấm bốn mùa tại TP. Thái Nguyên?", a: "Bể bơi Bốn Mùa Prime (Tầng 3 Tháp đôi Prime, số 1 Hoàng Văn Thụ) là bể bơi trong nhà cao cấp với nước ấm quanh năm và lọc điện phân muối. Ngoài ra, Bể bơi ĐH Sư phạm Thái Nguyên (20 Lương Ngọc Quyến) là địa điểm học bơi uy tín lâu năm." },
+      { q: "Tại Sông Công và Phổ Yên có hồ bơi lớn nào dạy bơi cho trẻ em?", a: "Tại TP. Sông Công có Bể bơi KDL Sinh thái Dũng Tân rộng gần 3.000m2 có phân khu trẻ em riêng; tại TP. Phổ Yên có Bể bơi Hoàng Hải (đường 47M Đồng Tiến) phục vụ con em cư dân và công nhân viên KCN Samsung." },
+      { q: "Học bơi ở Thái Nguyên bao nhiêu buổi thì biết bơi và có cam kết đầu ra không?", a: "Khóa học kèm riêng tiêu chuẩn kéo dài 10–12 buổi học. Trung tâm cam kết 100% học viên biết bơi ếch thành thạo, tự tin đứng nước ở chỗ sâu 2m và biết cách thả nổi ngửa thư giãn." },
+      { q: "Người lớn tuổi học bơi tại Thái Nguyên được không?", a: "Hoàn toàn được. Đội ngũ giáo viên có giáo trình cá nhân hóa cho người lớn trên 50–60 tuổi, bơi nhẹ nhàng dưỡng sinh, hỗ trợ điều trị xương khớp và cột sống rất tốt." }
     ]
   },
   {
@@ -250,9 +260,14 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
     intro: "Khu vực Phú Thọ, Vĩnh Phúc và Hòa Bình có nhu cầu học bơi rèn luyện sức khỏe tăng cao. Lớp bơi Swim For Life giúp các bé học sinh phát triển chiều cao và tự tin dưới nước.",
     pools: [
-      { name: "Bể bơi Việt Trì Phú Thọ", address: "Đường Hùng Vương, Việt Trì, Phú Thọ", type: "Ngoài trời", pros: "Hồ bơi trung tâm thành phố sạch sẽ, HLV giàu kinh nghiệm kèm cặp." }
+      { name: "Bể bơi Bốn Mùa Minh Phương", address: "Hồ sinh thái KĐT Minh Phương, TP. Việt Trì", type: "Trong nhà nước ấm gia nhiệt", pros: "Tổ hợp thể thao cao cấp, nước ấm quanh năm, an toàn tuyệt đối cho bé." },
+      { name: "Bể bơi Khu Liên hợp Thể thao tỉnh Phú Thọ", address: "Đường Hùng Vương, Thọ Sơn, Việt Trì", type: "Trong nhà & ngoài trời", pros: "Bể bơi đạt chuẩn quốc tế, không gian rộng rãi, khán đài thoáng đãng." },
+      { name: "Bể bơi Bốn Mùa Fami Fitness Vĩnh Yên", address: "32A Nguyễn Chí Thanh, Đống Đa, Vĩnh Yên", type: "Trong nhà khử trùng OZONE", pros: "Bể bơi bốn mùa cao cấp nhất Vĩnh Phúc, khử trùng ozone không hóa chất." }
     ],
     faqs: [
+      { q: "TP. Việt Trì có những bể bơi bốn mùa nước ấm nào để học bơi mùa lạnh?", a: "Bể bơi Bốn Mùa Minh Phương (Four Seasons) tại hồ sinh thái KĐT Minh Phương là bể bơi trong nhà có hệ thống gia nhiệt hiện đại và lọc điện phân muối, hoạt động suốt bốn mùa." },
+      { q: "Khu vực Vĩnh Yên (Vĩnh Phúc) có bể bơi và lớp dạy bơi kèm riêng nào uy tín?", a: "Tại TP. Vĩnh Yên có Bể bơi bốn mùa Fami Fitness & Yoga (32A Nguyễn Chí Thanh) khử trùng Ozone và Hồ bơi Tỉnh Đội Vĩnh Phúc (đường Lam Sơn) có mái che thoáng mát với các khóa dạy bơi kèm riêng 1:1." },
+      { q: "Trẻ em học bơi tại Phú Thọ bao nhiêu buổi thì biết bơi an toàn?", a: "Với lộ trình kèm riêng 10–12 buổi, trẻ từ 5 tuổi sẽ nắm vững kỹ thuật bơi ếch, lặn thở dưới nước, đứng nước sâu và xử lý tình huống chuột rút an toàn." },
       { q: "Lớp học bơi có dạy vào cuối tuần không?", a: "Có, lịch học được sắp xếp hoàn toàn linh hoạt theo khung giờ trống của học viên kể cả Thứ 7 và Chủ Nhật." }
     ]
   },
@@ -270,10 +285,15 @@ export const locations = [
     image: "/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg",
     intro: "Ninh Bình, Nam Định và Hà Nam có mật độ ao hồ sông ngòi phong phú. Học bơi giúp trẻ em nắm vững kỹ năng tự cứu và rèn luyện thể chất dẻo dai khỏe mạnh.",
     pools: [
-      { name: "Bể bơi thành phố Ninh Bình", address: "Đường Đinh Tiên Hoàng, Đông Thành, Ninh Bình", type: "Ngoài trời", pros: "Hồ bơi đạt chuẩn, HLV túc trực đảm bảo an toàn tuyệt đối." }
+      { name: "Bể bơi Bốn Mùa Lavender Ninh Bình", address: "Đường Trịnh Tú, Ninh Khánh, TP. Ninh Bình", type: "Trong nhà nước ấm bốn mùa", pros: "Bể bốn mùa cao cấp, có mái che kiên cố, xông hơi và bể sục Jacuzzi." },
+      { name: "Bể bơi Thể thao Mai Thế Hệ", address: "142 Nam Thành, TP. Ninh Bình", type: "Trong nhà điện phân muối", pros: "Công nghệ điện phân muối khoáng an toàn cho da trẻ nhỏ, HLV tận tâm." },
+      { name: "Bể bơi Thi đấu Sắc Màu Tam Điệp", address: "Tổ 1, Tây Sơn, TP. Tam Điệp", type: "Bể 50m Olympic tiêu chuẩn", pros: "Hồ bơi đạt chuẩn thi đấu 50m x 25m, lọc nước tuần hoàn hiện đại." }
     ],
     faqs: [
-      { q: "Học phí học bơi tại Ninh Bình bao gồm những gì?", a: "Học phí bao gồm toàn bộ công dạy của HLV trong suốt khóa học. Vé bể bơi học viên tự mua." }
+      { q: "Ninh Bình có bể bơi bốn mùa nước ấm và công nghệ điện phân muối nào?", a: "Tại TP. Ninh Bình có Bể bơi Bốn Mùa Lavender (đường Trịnh Tú) có hệ thống gia nhiệt tự động và Bể bơi Mai Thế Hệ (142 Nam Thành) ứng dụng công nghệ điện phân muối khoáng, giúp bơi lội quanh năm không lo thời tiết." },
+      { q: "Ở Tam Điệp và Nam Định có những bể bơi nào đạt chuẩn thi đấu và sạch đẹp?", a: "Tại TP. Tam Điệp có Bể bơi Sắc Màu (tổ 1 Tây Sơn) đạt chuẩn thi đấu 50m. Tại TP. Nam Định có Bể bơi Khu sinh thái Lộc Vượng rộng 2.000m2 (107 Trần Thị Dung) và Trisport KĐT Hòa Vượng." },
+      { q: "Học bơi ở Ninh Bình có giáo viên dạy kèm riêng 1 kèm 1 không?", a: "Có. Trung tâm có đội ngũ giáo viên cử nhân TDTT chuyên kèm riêng 1-1 cho trẻ em và người lớn, theo sát học viên dưới nước đảm bảo an toàn tuyệt đối." },
+      { q: "Học phí học bơi tại Ninh Bình bao gồm những gì?", a: "Học phí bao gồm toàn bộ công dạy của HLV trong suốt khóa học kèm riêng cam kết 100% biết bơi thành thạo. Vé vào bể bơi học viên tự mua tại quầy vé." }
     ]
   },
   {
@@ -290,10 +310,16 @@ export const locations = [
     image: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg",
     intro: "Hưng Yên và Thái Bình là vùng đất hiếu học. Việc dạy bơi rèn luyện thể chất cho con trẻ luôn được các phụ huynh tại đây đặc biệt quan tâm chuẩn bị hành trang cuộc sống.",
     pools: [
-      { name: "Bể bơi Ecopark Hưng Yên", address: "Khu đô thị Ecopark, Văn Giang, Hưng Yên", type: "Trong nhà & Ngoài trời", pros: "Cực kỳ sạch đẹp hiện đại, tiêu chuẩn resort cao cấp." }
+      { name: "Bể bơi Bốn Mùa Solforest Ecopark", address: "Tầng 3 Tòa SF3 Solforest, KĐT Ecopark, Văn Giang, Hưng Yên", type: "Trong nhà nước ấm bốn mùa", pros: "Hệ thống gia nhiệt tự động quanh năm, công nghệ khử trùng điện phân muối khoáng an toàn cho da trẻ em." },
+      { name: "Bể bơi Bốn Mùa Eden Garden Thái Bình", address: "Tầng 4 Chung cư Eden Garden, đường Lê Lợi, P. Lê Hồng Phong, TP. Thái Bình", type: "Bốn mùa nước ấm cao cấp", pros: "Bể bơi trong nhà cao cấp với hệ thống heat-pump nước nóng 31°C, view panorama ngắm thành phố." },
+      { name: "Sunrise Swimming Pool - Khách Sạn Selegend", address: "36 Quang Trung, P. Trần Hưng Đạo, TP. Thái Bình", type: "Nước ấm khách sạn 4 sao", pros: "Không gian chuẩn 4 sao sang trọng, phòng thay đồ tiện nghi, nguồn nước kiểm định nghiêm ngặt." },
+      { name: "Bể bơi Thể thao Minh Hoàng", address: "Thôn Liêu Trung, Xã Liêu Xá, Huyện Yên Mỹ, Hưng Yên", type: "Có mái che kiên cố", pros: "Khuôn viên rộng rãi gần KCN Thăng Long II, có khu vực hồ vầy riêng cho trẻ nhỏ tập làm quen nước." }
     ],
     faqs: [
-      { q: "Học bơi tại Ecopark Hưng Yên có giáo viên dạy không?", a: "Có, Swim For Life có đội ngũ HLV riêng tại Hưng Yên chuyên dạy tại Ecopark và TP. Hưng Yên." }
+      { q: "Tại Hưng Yên và khu đô thị Ecopark có những bể bơi nào học bơi được quanh năm?", a: "Tại Ecopark có Bể bơi bốn mùa Solforest Ecopark (tầng 3 SF3) với hệ thống gia nhiệt heat-pump và điện phân muối khoáng. Ngoài ra còn có hệ thống bể bơi cư dân tại WestBay, Park River, Rừng Cọ đều có thể học bơi rất thuận tiện." },
+      { q: "Người dân tại Thái Bình có thể tìm bể bơi nước ấm bốn mùa nào chất lượng nhất?", a: "Tại TP. Thái Bình hiện có 2 cơ sở bể bơi nước ấm bốn mùa nổi bật: Bể bơi Bốn Mùa Eden Garden (tầng 4 chung cư Eden Garden) và Sunrise Swimming Pool tại khách sạn Selegend (36 Quang Trung)." },
+      { q: "Trung tâm có nhận dạy kèm riêng 1-1 tại Hưng Yên và Thái Bình không?", a: "Có. Swim For Life cung cấp dịch vụ HLV kèm riêng 1 kèm 1 hoặc nhóm nhỏ 2-3 học viên, giáo viên trực tiếp xuống nước hướng dẫn từng động tác, chỉnh dáng bơi chuẩn sư phạm." },
+      { q: "Bé mấy tuổi có thể bắt đầu đăng ký học bơi tại Hưng Yên?", a: "Trẻ em từ 4.5 - 5 tuổi đã có thể bắt đầu tham gia các khóa học bơi sinh tồn làm quen nước. Với trẻ từ 6 tuổi trở lên, trung tâm cam kết dạy bơi ếch hoặc bơi trườn sấp chuẩn kỹ thuật." }
     ]
   },
   {
