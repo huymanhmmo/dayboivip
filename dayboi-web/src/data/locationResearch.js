@@ -1,4 +1,7 @@
 import { hcmResearch } from './locationResearchHcm.js';
+import { danangResearch, hueResearch } from './research/central.js';
+import { canthoResearch } from './research/mekong.js';
+import { quangninhResearch } from './research/north.js';
 
 const reviewedAt = '09/09/2026';
 
@@ -305,57 +308,7 @@ export const locationResearch = {
     ],
   },
   'hoc-boi-tphcm': hcmResearch,
-  'hoc-boi-da-nang': {
-    level: 'Đã rà soát ưu tiên',
-    reviewedAt,
-    summary: 'Tập trung cơ sở thể thao quy mô lớn tại Hải Châu và các điểm dạy bơi đang được niêm yết công khai.',
-    categories: [
-      {
-        id: 'public',
-        label: 'Bể thi đấu & trung tâm thể thao',
-        description: 'Hạ tầng phù hợp tập luyện bài bản; lịch bơi công cộng có thể bị giới hạn khi có giải đấu hoặc lịch vận động viên.',
-        venues: [
-          {
-            name: 'Bể bơi Thành tích cao Đà Nẵng',
-            address: 'Đường 2 Tháng 9, phường Hòa Cường Bắc, quận Hải Châu, Đà Nẵng',
-            area: 'Hải Châu',
-            access: 'Cơ sở thể thao công lập',
-            detail: 'Cơ sở do thành phố đầu tư cải tạo để phục vụ tập luyện và tổ chức giải. Hãy xác nhận lịch dành cho người dân trước khi đến.',
-            sourceLabel: 'Cổng thông tin TP. Đà Nẵng',
-            sourceUrl: 'https://cttdt.danangportal.gov.vn/en/web/dng/w/du-an-cai-tao-be-boi-thanh-tich-cao-da-nang-i',
-            sourceType: 'Nguồn cơ quan nhà nước',
-          },
-        ],
-      },
-      {
-        id: 'outdoor',
-        label: 'Bể ngoài trời & điểm dạy bơi',
-        description: 'Nên kiểm tra lịch hoạt động theo mùa, mái che và khu vực nước nông cho trẻ em hoặc người mới.',
-        venues: [
-          {
-            name: 'Bể bơi Quân khu 5',
-            address: 'Khu liên hợp thể thao số 7 Duy Tân, Hòa Cường Bắc, Hải Châu, Đà Nẵng',
-            area: 'Hải Châu',
-            access: 'Khu liên hợp thể thao',
-            detail: 'Khu liên hợp có hoạt động bơi lội và phục vụ quần chúng theo thông tin công khai. Cần xác nhận cổng vào, ca bơi và vé tại đơn vị vận hành.',
-            sourceLabel: 'Báo Thanh Niên',
-            sourceUrl: 'https://thanhnien.vn/svd-quan-khu-5-thay-ao-moi-san-sang-don-cac-doi-bong-185241209164146003.htm',
-            sourceType: 'Nguồn báo chí',
-          },
-          {
-            name: 'Hồ bơi Paracel',
-            address: '119 Nguyễn Hữu Thọ, Hải Châu, Đà Nẵng',
-            area: 'Hải Châu',
-            access: 'Hồ bơi thương mại',
-            detail: 'Địa điểm được các danh sách dạy bơi địa phương nhắc đến; nên kiểm tra listing mới nhất và chính sách nhận học viên.',
-            sourceLabel: 'Danh sách địa điểm Đà Nẵng',
-            sourceUrl: 'https://tripi.vn/blog/vi/xep-hang/7-trung-tam-day-boi-dang-trai-nghiem-nhat-tai-da-nang-tripi',
-            sourceType: 'Nguồn tổng hợp công khai',
-          },
-        ],
-      },
-    ],
-  },
+  'hoc-boi-da-nang': danangResearch,
   'hoc-boi-hai-phong': {
     level: 'Đã nghiên cứu chuyên sâu',
     reviewedAt,
@@ -558,77 +511,29 @@ export const locationResearch = {
       { publisher: 'Bilico', title: 'Danh sách bể bơi Hải Phòng', url: 'https://bilico.vn/', usedFor: 'Bể SVĐ Lạch Tray 50m và danh sách tổng hợp.' },
     ],
   },
-  'hoc-boi-can-tho': {
-    level: 'Đã rà soát ưu tiên',
-    reviewedAt,
-    summary: 'Ưu tiên các câu lạc bộ có định danh rõ và địa điểm thể thao khu Ninh Kiều, Bình Thủy; ghi rõ hạn chế của hồ nội khu.',
-    categories: [
-      {
-        id: 'club',
-        label: 'Câu lạc bộ & trung tâm thể thao',
-        description: 'Phù hợp người muốn tìm chương trình học hoặc tập luyện có tổ chức. Hãy hỏi rõ giáo viên phụ trách và sĩ số từng ca.',
-        venues: [
-          {
-            name: 'CLB Bơi lội Ánh Viên / Quân khu 9',
-            address: 'Số 9 Nguyễn Đệ, An Hòa, Bình Thủy, Cần Thơ',
-            area: 'Bình Thủy',
-            access: 'Câu lạc bộ thể thao',
-            detail: 'Tên CLB Ánh Viên được công bố từ CLB bơi lội Quân khu 9. Địa chỉ hiện tại cần đối chiếu listing trước khi di chuyển.',
-            sourceLabel: 'Tuổi Trẻ Online',
-            sourceUrl: 'https://tuoitre.vn/can-tho-co-clb-boi-loi-mang-ten-anh-vien-1001290.htm',
-            sourceType: 'Nguồn báo chí',
-          },
-          {
-            name: 'Trung tâm Thể dục Thể thao TP. Cần Thơ',
-            address: '3 Lê Lợi, Ninh Kiều, Cần Thơ',
-            area: 'Ninh Kiều',
-            access: 'Trung tâm thể thao',
-            detail: 'Đầu mối thể thao ở khu Cái Khế. Hãy hỏi trung tâm về bể đang khai thác, lịch lớp và hình thức đăng ký hiện tại.',
-            sourceLabel: 'Foody',
-            sourceUrl: 'https://www.foody.vn/(A(JyI=))/can-tho/beauty/ho-boi-san-van-dong',
-            sourceType: 'Danh bạ công khai',
-          },
-        ],
-      },
-      {
-        id: 'restricted',
-        label: 'Hồ bơi nội khu',
-        description: 'Có thể giới hạn cho cư dân hoặc theo lượt đăng ký; cần xác nhận trực tiếp trước khi đưa giáo viên bên ngoài vào.',
-        venues: [
-          {
-            name: 'Hồ bơi Nam Long 2 Central Lake',
-            address: 'Khu đô thị Nam Long 2 Central Lake, Cái Răng, Cần Thơ',
-            area: 'Cái Răng',
-            access: 'Tiện ích khu đô thị',
-            detail: 'Nguồn dự án công bố hồ bơi hoạt động từ tháng 5/2026 và giới hạn lượt sử dụng. Cần kiểm tra điều kiện dành cho khách ngoài.',
-            sourceLabel: 'Nam Long 2 Central Lake',
-            sourceUrl: 'https://namlongcentrallakecantho.vn/ho-boi-nam-long-2-central-lake/',
-            sourceType: 'Nguồn đơn vị vận hành',
-          },
-        ],
-      },
-    ],
-  },
+  'hoc-boi-can-tho': canthoResearch,
+  'hoc-boi-hue': hueResearch,
+  'hoc-boi-quang-ninh': quangninhResearch,
 };
 
 export const locationRollout = [
   {
-    phase: 'Ưu tiên 1',
-    status: 'Đã xuất bản bản rà soát đầu tiên',
-    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Hải Phòng', 'Cần Thơ'],
-    scope: 'Phân loại bể, địa chỉ, quyền tiếp cận, ghi chú sử dụng và nguồn cho từng địa điểm.',
+    phase: 'Đợt 1 (Đô thị trọng điểm)',
+    status: 'Đã hoàn thành nghiên cứu chuyên sâu',
+    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh'],
+    scope: 'Đầy đủ venues theo quận/huyện, đơn vị dạy bơi, nguồn xác minh, liên hệ và FAQs thực tế.',
   },
   {
-    phase: 'Ưu tiên 2',
-    status: 'Đang lập danh sách nguồn',
-    locations: ['Huế', 'Đồng Nai', 'Quảng Ninh', 'Khánh Hòa', 'Bình Định'],
-    scope: 'Thành phố du lịch, đô thị vệ tinh và trung tâm tỉnh có nhu cầu học bơi cao.',
+    phase: 'Đợt 2 (Đô thị vệ tinh & Duyên hải Nam Trung Bộ)',
+    status: 'Đang triển khai',
+    locations: ['Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng'],
+    scope: 'Biên Hòa, Nha Trang, Quy Nhơn, Đà Lạt.',
   },
   {
-    phase: 'Ưu tiên 3',
-    status: 'Rà soát theo cụm vùng',
-    locations: ['Các tỉnh, thành còn lại'],
-    scope: 'Làm lần lượt theo miền; chỉ công bố địa điểm khi có định danh và nguồn công khai đối chiếu được.',
+    phase: 'Đợt 3–6 (Các tỉnh còn lại)',
+    status: 'Theo kế hoạch tuần tự',
+    locations: ['23 tỉnh/thành phố còn lại'],
+    scope: 'Lần lượt làm theo cụm miền theo kế hoạch tổng thể.',
   },
 ];
 

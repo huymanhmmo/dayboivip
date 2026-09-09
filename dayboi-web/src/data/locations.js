@@ -67,7 +67,10 @@ export const locations = [
       { name: "Bể bơi Thành Tích Cao Đà Nẵng", address: "Đường 2/9, Hải Châu, Đà Nẵng", type: "Trong nhà", pros: "Trang thiết bị hiện đại, làn bơi chuẩn thi đấu quốc tế." }
     ],
     faqs: [
-      { q: "Lớp học bơi ở Đà Nẵng có dạy ở biển không?", a: "Không, toàn bộ quy trình dạy bơi cơ bản đều được thực hiện tại bể bơi an toàn để HLV dễ dàng kiểm soát. Sau khi bơi tốt ở bể, HLV có thể hướng dẫn bổ sung kỹ năng bơi biển." }
+      { q: "Đà Nẵng có những bể bơi bốn mùa nước ấm nào để học quanh năm?", a: "Tại Đà Nẵng có Bể bơi Bốn Mùa 39 đường 30/4 (Hải Châu) có hệ thống cấp nhiệt hiện đại, Fuji Swimming Club tại tầng 5 FHOME (16 Lý Thường Kiệt), và hệ thống bể bơi nước ấm khách sạn 4-5 sao như Cen Skills Mường Thanh Grand (962 Ngô Quyền) và Meliã Vinpearl (341 Trần Hưng Đạo)." },
+      { q: "Trung tâm dạy bơi nào uy tín tại Đà Nẵng theo hình thức kèm riêng?", a: "BP Swimming Center (Thầy Sanh: 0935 468 419) là đơn vị lớn với giáo trình chuẩn quốc tế tại các bể bơi nước ấm; Học bơi Hùng Anh (HLV tốt nghiệp ĐH Thể dục Thể thao) tại Thanh Khê và Sơn Trà; CLB Bơi lội Cá Heo tại Bể Bốn Mùa 30/4." },
+      { q: "Học bơi ở Đà Nẵng bao nhiêu buổi thì biết bơi và có cam kết không?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài từ 10 đến 12 buổi học. Các trung tâm uy tín đều cam kết 100% học viên biết bơi tự tin và đứng nước an toàn sau khóa học, được học tiếp miễn phí nếu chưa thành thạo." },
+      { q: "Lớp học bơi ở Đà Nẵng có dạy ở biển không?", a: "Không, toàn bộ quy trình dạy bơi cơ bản đều được thực hiện tại bể bơi an toàn để HLV dễ dàng kiểm soát. Sau khi bơi tốt ở bể, học viên có thể đăng ký lớp kỹ năng bơi biển và thoát dòng chảy xa bờ (rip current)." }
     ]
   },
   {
@@ -108,10 +111,14 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg",
     intro: "Thừa thiên Huế với sông Hương thơ mộng nhưng cũng tiềm ẩn nhiều nguy cơ về sông nước. Học bơi giúp các em học sinh tại Huế trang bị kỹ năng tự bảo vệ mình và phát triển chiều cao vượt trội.",
     pools: [
-      { name: "Bể bơi Trung tâm Thể thao Tỉnh", address: "01 Hà Huy Tập, Xuân Phú, TP. Huế", type: "Ngoài trời", pros: "Hồ bơi rộng rãi, thoáng mát, khu vực nước nông an toàn cho bé." }
+      { name: "Bể bơi Trung tâm Thể thao Tỉnh", address: "01 Hà Huy Tập, Xuân Phú, TP. Huế", type: "Ngoài trời", pros: "Hồ bơi rộng rãi, thoáng mát, khu vực nước nông an toàn cho bé." },
+      { name: "Bể bơi nước ấm Star Fitness", address: "Tầng 5-6 The Manor Crown, 62 Tố Hữu, TP. Huế", type: "Trong nhà nước ấm muối biển", pros: "Bể bốn mùa duy trì nhiệt Heatpump, lọc muối biển an toàn cho da bé." }
     ],
     faqs: [
-      { q: "Học bơi tại Huế có cam kết biết bơi không?", a: "Có, chúng tôi cam kết bằng văn bản hợp đồng. Học viên đi học đầy đủ sẽ thành thạo bơi lội và đứng nước sâu tự tin." }
+      { q: "Huế có bể bơi nước ấm bốn mùa nào để học bơi vào mùa mưa lạnh?", a: "Có. Bể bơi Star Fitness tại Tòa tháp The Manor Crown (62 Tố Hữu, Xuân Phú) là bể bơi trong nhà có hệ thống cấp nhiệt Heatpump duy trì nước ấm ổn định và lọc bằng muối khoáng tự nhiên, giúp học viên duy trì việc học bơi suốt mùa mưa lạnh ở Huế." },
+      { q: "Địa điểm học bơi cho trẻ em uy tín và an toàn nhất tại TP. Huế ở đâu?", a: "Phụ huynh có thể lựa chọn Bể bơi Trung tâm Thể thao Tỉnh (01 Hà Huy Tập), Bể bơi Trung tâm Hoạt động Thanh thiếu nhi (57 Lâm Hoằng, Vỹ Dạ) hoặc Bể bơi Khách sạn Park View (09 Ngô Quyền) với không gian sạch sẽ và mực nước phù hợp cho bé." },
+      { q: "Học bơi ở Huế bao nhiêu buổi thì biết bơi và có cam kết đầu ra không?", a: "Lộ trình học bơi chuẩn từ 10 đến 12 buổi học. Với hình thức kèm riêng 1:1 hoặc nhóm nhỏ 2–4 học viên, trung tâm cam kết học viên biết bơi ếch thành thạo, tự tin đứng nước ở chỗ sâu và trang bị kỹ năng phòng chống đuối nước sinh tồn." },
+      { q: "Học bơi kèm riêng tại Huế có những trung tâm hoặc câu lạc bộ nào?", a: "Các đơn vị dạy bơi nổi bật tại Huế gồm Trung tâm Dạy bơi Kình Ngư Huế (Hotline: 0911 345 369, dạy tại Park View), CLB Bơi lội An Cựu Dolphin (khu đô thị An Cựu City) và đội ngũ HLV kèm riêng chuyên nghiệp của Swim For Life." }
     ]
   },
   {
@@ -128,10 +135,15 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
     intro: "Cần Thơ, Sóc Trăng và Hậu Giang là thủ phủ của vùng sông nước miền Tây Nam Bộ. Trang bị kỹ năng bơi lội cho con trẻ tại đây không chỉ là môn thể thao mà còn là kỹ năng sinh tồn bắt buộc để phòng tránh đuối nước.",
     pools: [
-      { name: "Bể bơi Quốc gia Cần Thơ", address: "Đại lộ Hòa Bình, Ninh Kiều, Cần Thơ", type: "Ngoài trời 50m", pros: "Hồ bơi tiêu chuẩn thi đấu, nước sạch, không gian thoáng đãng." }
+      { name: "CLB Bơi lội Quân Khu 9", address: "Số 9 Nguyễn Đệ, An Hòa, Bình Thủy, Cần Thơ", type: "Bể 50m tiêu chuẩn Olympic & Bể 25m", pros: "Hồ bơi tiêu chuẩn thi đấu quân đội, không gian rộng rãi, bề dày thành tích đào tạo." },
+      { name: "Hồ bơi Hùng Quân", address: "122 Hoàng Quốc Việt, An Bình, Ninh Kiều, Cần Thơ", type: "Ngoài trời đa tầng độ sâu", pros: "Cơ sở dạy bơi gia đình uy tín, nước sạch, an toàn cho trẻ nhỏ." },
+      { name: "Hồ bơi ĐH Nam Cần Thơ (DNC)", address: "168 Nguyễn Văn Cừ nối dài, Cần Thơ", type: "Ngoài trời >1.200m2", pros: "Hồ bơi đạt chuẩn quốc gia hiện đại, phân khu người lớn và trẻ em." }
     ],
     faqs: [
-      { q: "Trẻ mấy tuổi nên bắt đầu học bơi ở Cần Thơ?", a: "Độ tuổi vàng để bé bắt đầu học bơi một cách ý thức và hiệu quả nhất là từ 4 tuổi trở lên." }
+      { q: "Cần Thơ có những hồ bơi tiêu chuẩn thi đấu Olympic và câu lạc bộ nào lớn nhất?", a: "CLB Bơi lội Quân khu 9 (số 9 Nguyễn Đệ, Bình Thủy) là trung tâm đào tạo thể thao dưới nước lớn nhất miền Tây, sở hữu hồ bơi tiêu chuẩn 50m và hồ nhỏ 25m. Ngoài ra, Hồ bơi ĐH Nam Cần Thơ (DNC) với diện tích trên 1.200m2 cũng đạt chuẩn thi đấu quốc gia." },
+      { q: "Trẻ mấy tuổi nên bắt đầu học bơi ở Cần Thơ và học ở đâu an toàn?", a: "Độ tuổi lý tưởng nhất là từ 4 tuổi trở lên. Tại Cần Thơ, phụ huynh có thể cho bé học tại Hồ bơi Hùng Quân (Hoàng Quốc Việt), Hồ bơi Minh Phương (Cái Răng) hoặc các lớp kèm riêng tại hồ bơi khách sạn Mường Thanh Cần Thơ (Cồn Cái Khế) với độ sâu an toàn." },
+      { q: "Các hồ bơi sạch đẹp và có lớp dạy kèm riêng uy tín tại Ninh Kiều & Cái Răng?", a: "Khu vực Ninh Kiều có Hồ bơi Công an TP (54 Sông Hậu), hồ bơi Mường Thanh Luxury, hồ bơi Vinpearl Cần Thơ. Khu vực Cái Răng có hồ bơi đại dự án Nam Long 2 Central Lake và hồ bơi DNC Campus." },
+      { q: "Học phí học bơi tại Cần Thơ là bao nhiêu và lộ trình kéo dài bao lâu?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi. Học phí dao động từ 1,5 đến 2,5 triệu đồng tùy hình thức học (nhóm nhỏ hoặc 1 kèm 1), cam kết 100% biết bơi thành thạo và đứng nước vững vàng." }
     ]
   },
   {
@@ -168,10 +180,15 @@ export const locations = [
     image: "/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg",
     intro: "Quảng Ninh là tỉnh ven biển phát triển mạnh về du lịch nước. Biết bơi giúp người dân và các em nhỏ ở Quảng Ninh tự tin tham gia các hoạt động vui chơi trên vịnh Hạ Long và biển đảo an toàn.",
     pools: [
-      { name: "Bể bơi Trung tâm TDTT Quảng Ninh", address: "Nguyễn Văn Cừ, Hồng Hải, Hạ Long", type: "Trong nhà", pros: "Cơ sở vật chất hiện đại, bể nước ấm bốn mùa sạch sẽ." }
+      { name: "Cung Thể thao Dưới nước Đại Yên", address: "Khu Liên hợp Thể thao tỉnh Quảng Ninh, Đại Yên, Hạ Long", type: "Trong nhà chuẩn Olympic", pros: "Quần thể thể thao hiện đại tầm cỡ quốc tế, nơi tổ chức các giải bơi lội quốc gia." },
+      { name: "Bể bơi Bốn Mùa Lê Thánh Tông", address: "Số 1 Điện Biên Phủ, Hồng Hà, TP. Hạ Long", type: "Trong nhà nước ấm quanh năm", pros: "Bể bốn mùa nước ấm 31°C, trung tâm Hòn Gai, thích hợp học bơi mùa đông." },
+      { name: "Bể bơi Khoáng Nóng Cẩm Phả", address: "Trung tâm Điều dưỡng Địa chất, Cẩm Thạch, Cẩm Phả", type: "Nước khoáng nóng tự nhiên", pros: "Nguồn khoáng mặn nóng tự nhiên độc đáo, tốt cho sức khỏe và bơi dưỡng sinh." }
     ],
     faqs: [
-      { q: "Bé sợ nước có học được không?", a: "Đội ngũ HLV Swim For Life Quảng Ninh được đào tạo chuyên sâu về tâm lý, giúp các bé vượt qua nỗi sợ nước cực kỳ hiệu quả sau 2-3 buổi." }
+      { q: "Quảng Ninh có những bể bơi bốn mùa nước ấm nào để học bơi mùa đông?", a: "Tại TP. Hạ Long có Bể bơi Bốn Mùa Lê Thánh Tông (Số 1 Điện Biên Phủ, Hồng Hà) với nhiệt độ nước luôn duy trì 30–31°C và Bể bơi Bốn Mùa iFit Sapphire (Số 1 Bến Đoan, Hồng Gai) sử dụng công nghệ lọc muối khoáng ấm áp trong nhà." },
+      { q: "Ở Cẩm Phả có bể bơi nước khoáng nóng tự nhiên nào bơi được quanh năm?", a: "Có. Bể bơi Trung tâm Điều dưỡng Khoáng nóng Địa chất (phường Cẩm Thạch, Cẩm Phả) khai thác nguồn khoáng mặn nóng tự nhiên từ lòng đất, mở cửa hoạt động xuyên suốt mùa đông, rất tốt cho sức khỏe và xương khớp." },
+      { q: "Bể bơi thi đấu quốc tế và trung tâm huấn luyện bơi lội lớn nhất Quảng Ninh ở đâu?", a: "Đó là Nhà thi đấu Thể thao Dưới nước thuộc Khu Liên hợp Thể thao tỉnh Quảng Ninh tại phường Đại Yên, TP. Hạ Long. Đây là công trình đạt chuẩn Olympic từng đăng cai SEA Games và các giải vô địch quốc gia." },
+      { q: "Học bơi ở Hạ Long cho người sợ nước hoặc trẻ nhỏ có giáo viên kèm riêng không?", a: "Có. Swim For Life và các CLB bơi lội uy tín như Hạ Long Swim Club có hình thức dạy 1 kèm 1 với giáo án tâm lý học thể thao, giúp học viên vượt qua nỗi sợ nước chỉ sau 2–3 buổi và tự tin bơi lội an toàn." }
     ]
   },
   {
