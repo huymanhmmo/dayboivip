@@ -5,10 +5,10 @@
 
 export const kids = {
   slug: "kids",
-  title: "Kids Swimming Lessons: Fun, Safe & Professional",
+  title: "Kids Swimming Lessons: A Guide for Each Age Group",
   shortTitle: "Kids Swimming Lessons",
-  subtitle: "Equip your child with the most vital water survival skills today!",
-  description: "International-standard swimming lessons for kids aged 3 - 15. Game-based teaching methods, child-friendly coaches, 100% learn-to-swim guarantee after 10-12 sessions. Book a free trial today!",
+  subtitle: "Build water comfort, basic safety habits, and age-appropriate swimming skills.",
+  description: "A guide to swimming lessons for children ages 3–15, covering readiness, class size, water safety, basic skills, and questions parents should ask before enrolling.",
   icon: "👶",
   targetAudience: "Kids aged 3 - 15",
   duration: "10-12 sessions",
@@ -223,10 +223,10 @@ export const kids = {
 
 export const adults = {
   slug: "adults",
-  title: "Adult Swimming Lessons: Conquer Fear, Master Strokes",
+  title: "Adult Swimming Lessons: From Water Anxiety to Basics",
   shortTitle: "Adult Swimming Lessons",
-  subtitle: "It is never too late to start! Learn to swim confidently and safely.",
-  description: "Specialized swimming lessons for adults, busy professionals, or individuals with water anxiety. 1-on-1 patient coaching, flexible booking times, premium partner pools, and 100% learn-to-swim guarantee in 10-12 sessions.",
+  subtitle: "Start with breathing, floating, and gliding, then progress at a pace that matches your comfort and fitness.",
+  description: "A practical guide to adult swimming lessons for beginners and people with water anxiety. Compare class formats, scheduling, pool access, and realistic learning goals.",
   icon: "👨",
   targetAudience: "Adults aged 18 - 65",
   duration: "10-12 sessions",
@@ -437,10 +437,10 @@ export const adults = {
 
 export const intensive = {
   slug: "intensive",
-  title: "Private 1-on-1 VIP Swimming Course: Elite Coaching",
+  title: "Private 1-on-1 Swimming Lessons: When to Choose Them",
   shortTitle: "VIP 1-on-1 Lessons",
-  subtitle: "1 Coach - 1 Student. Maximum safety, 100% flexible, accelerated results.",
-  description: "The premium swimming program at Swim For Life Vietnam. 100% in-water coach attention, custom curriculum mapped to your body condition, flexible locations near your home or condo, learning 3x faster than group classes.",
+  subtitle: "One coach works with one learner, which can suit water anxiety, specific goals, or changing schedules.",
+  description: "Learn when private 1-on-1 swimming lessons make sense, what to ask a coach, how fees and pool access work, and how individual instruction compares with small groups.",
   icon: "👤",
   targetAudience: "All ages & levels (kids, adults, water anxiety, advanced training)",
   duration: "10-12 sessions",

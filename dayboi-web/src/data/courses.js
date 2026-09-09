@@ -5,10 +5,10 @@
 
 export const treEm = {
   slug: "tre-em",
-  title: "Khóa Học Bơi Trẻ Em: Vui Nhộn, An Toàn & Chuyên Nghiệp",
+  title: "Khóa Học Bơi Trẻ Em: Lộ Trình Theo Từng Độ Tuổi",
   shortTitle: "Học Bơi Trẻ Em",
-  subtitle: "Trang bị kỹ năng sinh tồn quan trọng nhất cho con yêu ngay hôm nay!",
-  description: "Lớp học bơi chuẩn quốc tế dành cho trẻ từ 3 - 15 tuổi. Phương pháp dạy bơi kết hợp trò chơi, HLV tâm lý yêu trẻ, cam kết biết bơi an toàn sau 10-12 buổi. Học thử miễn phí!",
+  subtitle: "Giúp trẻ làm quen với nước, tập kỹ năng an toàn và học động tác phù hợp với độ tuổi.",
+  description: "Khóa học bơi trẻ em dành cho độ tuổi 3–15, tập trung vào làm quen với nước, kỹ năng an toàn và kỹ thuật cơ bản. Xem lộ trình, sĩ số và lưu ý chọn lớp.",
   icon: "👶",
   targetAudience: "Trẻ em từ 3 - 15 tuổi",
   duration: "10-12 buổi",
@@ -151,7 +151,7 @@ export const treEm = {
         period: "khóa học / bé",
         features: [
           "Chính xác 1 HLV kèm 1 bé suốt buổi",
-          "An toàn tuyệt đối 100% dưới nước",
+          "Giáo viên theo sát dưới nước",
           "Giáo trình cá nhân hóa theo tâm lý bé",
           "Thời gian và địa điểm linh hoạt theo ba mẹ",
           "Miễn phí học thử 1 buổi trước khi đóng học phí",
@@ -223,10 +223,10 @@ export const treEm = {
 
 export const nguoiLon = {
   slug: "nguoi-lon",
-  title: "Khóa Học Bơi Cho Người Lớn: Vượt Nỗi Sợ Nước, Tự Tin Bơi Lội",
+  title: "Khóa Học Bơi Cho Người Lớn: Từ Sợ Nước Đến Bơi Cơ Bản",
   shortTitle: "Học Bơi Người Lớn",
-  subtitle: "Không bao giờ là quá muộn để bắt đầu! Tự tin làm chủ làn nước mát lạnh.",
-  description: "Lớp học bơi thiết kế chuyên biệt cho người lớn, người đi làm bận rộn hoặc sợ nước. Phương pháp dạy 1 kèm 1 tâm lý, bảo mật, thời gian linh động tự chọn, cam kết biết bơi 100% sau 10-12 buổi.",
+  subtitle: "Bắt đầu từ thở, nổi và lướt nước; sắp xếp bài tập theo thể lực và mức độ sợ nước.",
+  description: "Khóa học bơi cho người lớn và người sợ nước, đi từ làm quen với nước đến bơi cơ bản. Xem cách chọn giáo viên, lịch học, sĩ số và mục tiêu đầu ra.",
   icon: "👨",
   targetAudience: "Người lớn từ 18 - 65 tuổi",
   duration: "10-12 buổi",
@@ -422,7 +422,7 @@ export const nguoiLon = {
     },
     {
       question: "Tôi đã lớn tuổi (trên 50), xương khớp hơi cứng có học được không?",
-      answer: "Hoàn toàn được! Bơi lội là môn thể thao tốt nhất cho người lớn tuổi vì không gây áp lực lên xương khớp. HLV sẽ thiết kế các động tác nhẹ nhàng, tập trung vào hô hấp và giãn cơ, giúp cải thiện sức khỏe tim mạch và độ dẻo dai của khớp mà vẫn đảm bảo an toàn tuyệt đối."
+      answer: "Có thể, nếu sức khỏe phù hợp. Người có bệnh tim mạch, huyết áp, hô hấp hoặc vấn đề xương khớp nên hỏi ý kiến bác sĩ trước, sau đó chọn bài tập nhẹ và tăng dần theo thể trạng."
     },
     {
       question: "Lịch học có thể thay đổi linh hoạt theo tuần không?",
@@ -437,10 +437,10 @@ export const nguoiLon = {
 
 export const caNhan = {
   slug: "1-kem-1",
-  title: "Khóa Học Bơi 1 Kèm 1: Dạy Bơi Cá Nhân Chuyên Nghiệp VIP",
+  title: "Khóa Học Bơi 1 Kèm 1: Khi Nào Nên Chọn Kèm Riêng?",
   shortTitle: "Học Bơi 1 Kèm 1",
-  subtitle: "1 HLV - 1 Học Viên. Hiệu quả tối đa, an toàn tuyệt đối, linh hoạt 100%.",
-  description: "Trải nghiệm khóa học bơi cao cấp nhất tại Swim For Life Việt Nam. HLV cá nhân theo sát 100% thời gian dưới nước, giáo trình thiết kế riêng biệt theo thể trạng, tự chọn bể bơi gần nhà, cam kết biết bơi nhanh gấp 3 lần.",
+  subtitle: "Một giáo viên theo sát một học viên, phù hợp người sợ nước hoặc cần lịch học linh hoạt.",
+  description: "Tìm hiểu lớp học bơi 1 kèm 1, đối tượng phù hợp, cách đánh giá giáo viên và những khoản phí cần hỏi trước. So sánh kèm riêng với lớp nhóm nhỏ.",
   icon: "👤",
   targetAudience: "Tất cả mọi đối tượng (trẻ em, người lớn, người sợ nước, người muốn nâng cao)",
   duration: "10-12 buổi",
@@ -642,10 +642,10 @@ export const caNhan = {
 
 export const nhom = {
   slug: "nhom",
-  title: "Khóa Học Bơi Theo Nhóm: Vui Vẻ, Gắn Kết & Tiết Kiệm Chi Phí",
+  title: "Khóa Học Bơi Theo Nhóm: Sĩ Số, Chi Phí & Cách Chọn Lớp",
   shortTitle: "Học Bơi Theo Nhóm",
-  subtitle: "Học bơi cùng gia đình, bạn bè, đồng nghiệp. Chi phí tối ưu, hiệu quả cam kết.",
-  description: "Khóa học bơi theo nhóm nhỏ từ 3 - 5 học viên tại Swim For Life. Thiết kế tối ưu sự tương tác vui nhộn, tạo không khí học tập sôi nổi, cam kết biết bơi cho từng thành viên với mức học phí cực kỳ tiết kiệm.",
+  subtitle: "Học cùng gia đình hoặc bạn bè; cần chọn sĩ số vừa phải để mỗi người có đủ thời gian thực hành.",
+  description: "Tìm hiểu khóa học bơi theo nhóm nhỏ, cách chọn sĩ số, phân chia trình độ và tính tổng học phí. Phù hợp gia đình, nhóm bạn hoặc đồng nghiệp học cùng nhau.",
   icon: "👥",
   targetAudience: "Nhóm bạn bè, gia đình, đồng nghiệp hoặc ghép lớp tự do",
   duration: "10-12 buổi",
@@ -830,10 +830,10 @@ export const nhom = {
 
 export const nguoiCaoTuoi = {
   slug: "nguoi-cao-tuoi",
-  title: "Khóa Học Bơi Người Cao Tuổi: Rèn Luyện Sức Khỏe, Dưỡng Sinh An Toàn",
+  title: "Khóa Học Bơi Người Cao Tuổi: Lộ Trình An Toàn",
   shortTitle: "Học Bơi Người Cao Tuổi",
-  subtitle: "Cải thiện xương khớp, tăng cường tim mạch, rèn luyện cơ thể dẻo dai tuổi xế chiều.",
-  description: "Khóa học bơi dưỡng sinh và trị liệu thiết kế riêng cho học viên từ 50 tuổi trở lên. Phương pháp dạy chậm rãi, kiên nhẫn, đề cao an toàn tuyệt đối, giúp nâng cao sức khỏe xương khớp và tim mạch hiệu quả dưới sự đồng hành sát sao của HLV.",
+  subtitle: "Làm quen với nước và vận động vừa sức, có đánh giá sức khỏe trước khi bắt đầu.",
+  description: "Khóa học bơi cho người cao tuổi cần nhịp độ chậm, bể phù hợp và người hướng dẫn theo sát. Xem lưu ý sức khỏe, cách chọn lớp và chuẩn bị trước buổi học.",
   icon: "👵",
   targetAudience: "Người trung niên và cao tuổi từ 50 - 75 tuổi trở lên",
   duration: "10-12 buổi",
@@ -843,7 +843,7 @@ export const nguoiCaoTuoi = {
   priceFrom: "Liên hệ báo giá",
   stats: [
     { number: 500, suffix: "+", label: "Học viên lớn tuổi đã biết bơi" },
-    { number: 100, suffix: "%", label: "Đảm bảo an toàn tuyệt đối" },
+    { number: 1, suffix: " kèm 1", label: "Có thể chọn giáo viên theo sát" },
     { number: 90, suffix: "%", label: "Giảm đau mỏi xương khớp rõ rệt" }
   ],
   problems: {
@@ -948,7 +948,7 @@ export const nguoiCaoTuoi = {
       "Chứng chỉ y học thể thao và vật lý trị liệu phục hồi chức năng",
       "Hơn 10 năm kinh nghiệm dạy bơi cho các bác, các cô chú hưu trí"
     ],
-    quote: "Học bơi ở tuổi xế chiều không cần nhanh, không cần mạnh. Quan trọng là sự thư thái, đều đặn, thở sâu và an toàn tuyệt đối."
+    quote: "Học bơi ở tuổi cao không cần vội. Điều quan trọng là tập đều, giữ nhịp thở ổn định và chọn cường độ phù hợp với sức khỏe."
   },
   pricing: {
     note: "Khóa học người cao tuổi được tổ chức tại các bể bơi bốn mùa nước ấm cao cấp đảm bảo sức khỏe.",
@@ -993,21 +993,21 @@ export const nguoiCaoTuoi = {
     },
     {
       question: "HLV có xuống nước cùng các bác suốt buổi học không?",
-      answer: "Có, HLV kèm 1-1 bắt buộc phải xuống nước sát cánh 100% thời gian buổi học cùng học viên cao tuổi để nâng đỡ, bảo hộ an toàn tuyệt đối và hướng dẫn động tác trực quan nhất."
+      answer: "Với người cần hỗ trợ vận động hoặc chưa tự tin dưới nước, nên hỏi rõ giáo viên có trực tiếp xuống bể, cách hỗ trợ và phạm vi quan sát trong suốt buổi học."
     },
     {
       question: "Bị cao huyết áp có tham gia học bơi được không?",
-      answer: "Bị cao huyết áp ở mức độ kiểm soát được vẫn học bơi rất tốt để điều hòa huyết áp. Tuy nhiên, trước mỗi buổi học HLV sẽ kiểm tra tình trạng sức khỏe của học viên, nếu huyết áp quá cao sẽ lùi lịch học buổi đó để đảm bảo an toàn tuyệt đối."
+      answer: "Người có cao huyết áp cần hỏi ý kiến bác sĩ trước khi bơi và tuân thủ hướng dẫn điều trị. Không xuống nước khi thấy chóng mặt, đau ngực, khó thở hoặc huyết áp chưa ổn định."
     }
   ]
 };
 
 export const nguoiSoNuoc = {
   slug: "nguoi-so-nuoc",
-  title: "Khóa Học Đặc Biệt Người Sợ Nước: Vượt Nỗi Sợ, Tự Tin Làm Chủ",
+  title: "Khóa Học Bơi Cho Người Sợ Nước: Bắt Đầu Từng Bước",
   shortTitle: "Học Bơi Người Sợ Nước",
-  subtitle: "Xóa tan nỗi ám ảnh sợ nước sâu dưới sự kèm cặp chuyên biệt từ chuyên gia.",
-  description: "Giáo trình tâm lý độc quyền dành riêng cho người sợ nước ở mọi độ tuổi. HLV kiên nhẫn vượt trội xuống nước hỗ trợ 100%, tiếp cận từng bước cực kỳ chậm rãi, cam kết giúp bạn tự tin nổi ngửa vượt qua nỗi sợ nước chỉ sau 4 buổi đầu tiên.",
+  subtitle: "Làm quen ở vùng nước nông, kiểm soát nhịp thở và tăng độ khó khi người học đã sẵn sàng.",
+  description: "Khóa học bơi cho người sợ nước bắt đầu ở vùng nước nông, tập thở và nổi theo từng bước. Xem cách chọn giáo viên, bể tập và tốc độ học phù hợp.",
   icon: "😰",
   targetAudience: "Người lớn hoặc trẻ em có nỗi sợ nước sâu cực lớn (Aquaphobia)",
   duration: "12 buổi",
@@ -1055,7 +1055,7 @@ export const nguoiSoNuoc = {
     {
       icon: "🛡️",
       title: "An tâm tuyệt đối dưới nước",
-      description: "HLV luôn ôm đỡ, giữ chặt cơ thể học viên ở bể nông 1.2m, tạo cảm giác an toàn tuyệt đối."
+      description: "Bắt đầu ở khu nước nông phù hợp, có giáo viên ở gần và chỉ tăng độ khó khi người học đã kiểm soát được nhịp thở."
     },
     {
       icon: "🎈",
@@ -1137,7 +1137,7 @@ export const nguoiSoNuoc = {
           "1 kèm 1 riêng biệt suốt khóa học",
           "HLV chuyên môn tâm lý kiên nhẫn vượt trội",
           "Học ở bể nông 1.2m cực kỳ an toàn",
-          "Bảo đảm an toàn tuyệt đối 100%",
+          "Giáo viên theo sát trong buổi học",
           "Cam kết hoàn tiền 100% nếu sau 4 buổi không nổi ngửa được",
           "Học thử MIỄN PHÍ buổi đầu tiên",
           "Bảo lưu dài hạn 3 tháng khi bận rộn"
@@ -1172,10 +1172,10 @@ export const nguoiSoNuoc = {
 
 export const doanhNghiep = {
   slug: "doanh-nghiep",
-  title: "Khóa Học Bơi Doanh Nghiệp: Teambuilding Khỏe Mạnh, Gắn Kết",
+  title: "Khóa Học Bơi Doanh Nghiệp: Chương Trình Theo Quy Mô",
   shortTitle: "Học Bơi Doanh Nghiệp",
-  subtitle: "Chăm sóc sức khỏe nhân viên, gia tăng hiệu suất công việc, teambuilding độc đáo.",
-  description: "Chương trình huấn luyện bơi lội và kỹ năng cứu hộ nước sâu thiết kế riêng cho các công ty và tổ chức. Giải pháp Corporate Wellness hoàn hảo giúp cải thiện sức khỏe vai gáy của nhân viên văn phòng, tăng cường tinh thần đồng đội và nâng cao hình ảnh doanh nghiệp.",
+  subtitle: "Thiết kế nội dung, nhân sự và phương án an toàn theo số người, địa điểm và mục tiêu của tổ chức.",
+  description: "Chương trình học bơi cho doanh nghiệp và tổ chức từ 10 người, thiết kế theo số lượng, địa điểm và mục tiêu. Có kế hoạch nhân sự, an toàn và đánh giá đầu ra.",
   icon: "🏢",
   targetAudience: "Các cơ quan, doanh nghiệp, tổ chức, trường học",
   duration: "Thiết kế theo yêu cầu (Thường 10-15 buổi)",

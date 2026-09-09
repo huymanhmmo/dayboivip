@@ -1,0 +1,22 @@
+# Swim For Life Việt Nam
+
+> Website hướng dẫn học bơi, kỹ thuật bơi và tra cứu địa điểm học bơi tại Việt Nam.
+
+## Nội dung chính
+
+- [Học bơi và tìm lớp gần bạn](https://dayboi.vip/): Trang tổng quan cho người mới bắt đầu.
+- [Danh bạ địa điểm học bơi](https://dayboi.vip/hoc-boi-o-dau/): Chọn tỉnh, thành hoặc khu vực để tìm bể bơi và đầu mối lớp học.
+- [Khóa học bơi](https://dayboi.vip/khoa-hoc-boi/): Chọn chương trình theo độ tuổi, trình độ và mục tiêu.
+- [Kỹ thuật bơi](https://dayboi.vip/ky-thuat-boi/): Hướng dẫn bơi ếch, bơi sải, bơi ngửa, bơi bướm và kỹ năng đứng nước.
+- [Kiến thức bơi lội](https://dayboi.vip/kien-thuc-boi/): Bài viết về tập luyện, an toàn và lựa chọn dụng cụ.
+- [Giới thiệu Swim For Life](https://dayboi.vip/gioi-thieu/): Thông tin về đội ngũ và phạm vi hoạt động.
+- [Liên hệ](https://dayboi.vip/lien-he/): Kênh trao đổi với Swim For Life.
+
+## Lưu ý về danh bạ địa phương
+
+Swim For Life không đại diện và không thu phí giới thiệu từ các bể bơi, câu lạc bộ hoặc giáo viên được liệt kê. Lịch học, học phí, số điện thoại và điều kiện vào bể có thể thay đổi; người học cần xác nhận trực tiếp với đơn vị trước khi đăng ký.
+
+## Ngôn ngữ
+
+- Nội dung chính: tiếng Việt.
+- English overview: https://dayboi.vip/en/

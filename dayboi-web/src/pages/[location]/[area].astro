@@ -18,8 +18,17 @@ const venues = area.category.venues;
 const instructors = venues.flatMap((venue) => venue.instructors || []);
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
-const title = `Học Bơi ${area.seoPlace}: Lớp Uy Tín`;
-const description = `Tìm lớp học bơi, nơi dạy bơi và bể bơi tại ${area.seoPlace}. So sánh ${venues.length} địa điểm có nguồn, liên hệ trực tiếp và chọn lớp phù hợp. Có lưu ý trước khi đăng ký.`;
+const customerCopy = (value = '') => String(value)
+  .replace(/cam kết 100%/gi, 'đặt mục tiêu')
+  .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn')
+  .replace(/uy tín nhất/gi, 'được nhiều người biết đến')
+  .replace(/hoàn hảo nhất/gi, 'phù hợp');
+const titleBase = `Học Bơi ${area.seoPlace}: Bể Bơi & Lớp Học`;
+const title = titleBase.length < 38
+  ? `${titleBase} Theo Khu Vực`
+  : (titleBase.length < 45 ? `${titleBase} Gần Bạn` : titleBase);
+const descriptionBase = `Tìm lớp học bơi, giáo viên và bể bơi tại ${area.seoPlace}. So sánh ${venues.length} địa điểm, cách liên hệ, đối tượng phù hợp và lưu ý cần biết trước khi đăng ký.`;
+const description = descriptionBase.length < 145 ? `${descriptionBase} Xem trước khi đăng ký.` : descriptionBase;
 
 const techniques = [
   {
@@ -123,22 +132,22 @@ const schema = {
     <header class="area-hero">
       <div class="container area-hero__grid">
         <div class="area-hero__content">
-          <span class="area-eyebrow">Danh bạ đã qua cổng chất lượng · cập nhật {area.reviewedAt}</span>
-          <h1>Học bơi ở <span>{area.name}</span>: lớp học bơi & địa điểm có nguồn</h1>
-          <p>{area.category.description} {area.audienceFocus}</p>
+          <span class="area-eyebrow">Thông tin học bơi tại {area.seoPlace} · cập nhật {area.reviewedAt}</span>
+          <h1>Học bơi ở <span>{area.name}</span>: địa điểm và lớp học phù hợp</h1>
+          <p>{customerCopy(area.category.description)} {customerCopy(area.audienceFocus)}</p>
           <div class="area-hero__actions">
             <a href="#dia-diem" class="area-button area-button--primary">So sánh {venues.length} địa điểm</a>
             <a href="#kieu-boi" class="area-button area-button--secondary">Chọn kiểu bơi muốn học</a>
           </div>
         </div>
-        <aside class="area-hero__summary" aria-label="Tóm tắt dữ liệu">
-          <span>Hồ sơ khu vực</span>
+        <aside class="area-hero__summary" aria-label="Thông tin nhanh">
+          <span>Thông tin nhanh</span>
           <dl>
-            <div><dt>Địa điểm có nguồn</dt><dd>{venues.length}</dd></div>
+            <div><dt>Địa điểm tham khảo</dt><dd>{venues.length}</dd></div>
             <div><dt>Đầu mối lớp học</dt><dd>{instructors.length}</dd></div>
             <div><dt>Cụm lân cận</dt><dd>{area.nearbyAreas.length}</dd></div>
           </dl>
-          <p>Swim For Life biên tập danh bạ độc lập, không thu phí giới thiệu và không đại diện các đơn vị được niêm yết.</p>
+          <p>Swim For Life không thu phí giới thiệu và không đại diện các đơn vị trong danh sách.</p>
         </aside>
       </div>
     </header>
@@ -157,7 +166,7 @@ const schema = {
         <div class="area-section__heading">
           <span>So sánh trước khi liên hệ</span>
           <h2 id="venue-title">Bể bơi và nơi dạy bơi tại {area.seoPlace}</h2>
-          <p>Mỗi thẻ tách riêng liên hệ ban quản lý bể với liên hệ đăng ký lớp học. Hãy mở bài nguồn và xác nhận lại thông tin biến động.</p>
+          <p>Thông tin ban quản lý bể và đầu mối đăng ký lớp được ghi riêng. Bạn nên xác nhận lại lịch, giá và quyền vào bể trước khi đến.</p>
         </div>
         <div class="area-venue-list">
           {venues.map((venue, index) => (
@@ -166,14 +175,14 @@ const schema = {
               <div class="area-venue__main">
                 <div class="area-venue__tags">
                   <span>{venue.area || area.name}</span>
-                  <span>{venue.access}</span>
-                  {venue.environment && <span>{venue.environment}</span>}
+                  <span>{customerCopy(venue.access)}</span>
+                  {venue.environment && <span>{customerCopy(venue.environment)}</span>}
                 </div>
                 <h3>{venue.name}</h3>
                 <p><strong>Địa chỉ:</strong> {venue.address}</p>
-                {venue.services && <p><strong>Tiện ích:</strong> {venue.services}</p>}
-                <p><strong>Đánh giá sử dụng:</strong> {venue.detail}</p>
-                {venue.missing && <p class="area-venue__note"><strong>Cần xác nhận:</strong> {venue.missing}</p>}
+                {venue.services && <p><strong>Tiện ích:</strong> {customerCopy(venue.services)}</p>}
+                <p><strong>Phù hợp với:</strong> {customerCopy(venue.detail)}</p>
+                {venue.missing && <p class="area-venue__note"><strong>Cần xác nhận:</strong> {customerCopy(venue.missing)}</p>}
               </div>
               <div class="area-venue__contacts">
                 {venue.venueContact && (
@@ -181,8 +190,8 @@ const schema = {
                     <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
                     <h4>{venue.venueContact.name}</h4>
                     <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
-                    {venue.venueContact.note && <p>{venue.venueContact.note}</p>}
-                    <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Nguồn: {venue.venueContact.sourceTitle} ↗</a>
+                    {venue.venueContact.note && <p>{customerCopy(venue.venueContact.note)}</p>}
+                    <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin công khai: {venue.venueContact.sourceTitle} ↗</a>
                   </section>
                 )}
                 {(venue.instructors || []).map((instructor) => (
@@ -191,8 +200,8 @@ const schema = {
                     <h4>{instructor.unitName}</h4>
                     <p>{instructor.contactPerson}</p>
                     <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
-                    <p>{instructor.courseTypes}</p>
-                    <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Nguồn: {instructor.sourceTitle} ↗</a>
+                    <p>{customerCopy(instructor.courseTypes)}</p>
+                    <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin lớp: {instructor.sourceTitle} ↗</a>
                   </section>
                 ))}
                 <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="area-map">Mở bản đồ & chỉ đường ↗</a>
@@ -206,9 +215,9 @@ const schema = {
     <section class="area-section area-section--dark" id="kieu-boi" aria-labelledby="technique-title">
       <div class="container">
         <div class="area-section__heading">
-          <span>Gộp ý định tìm kiếm đúng cách</span>
+          <span>Chọn kiểu bơi muốn học</span>
           <h2 id="technique-title">Học bơi ếch, sải, ngửa, bướm ở {area.name}</h2>
-          <p>Một landing page khu vực bao phủ các kiểu bơi liên quan; mỗi kỹ thuật dẫn về hướng dẫn chuyên môn riêng để tránh tạo nhiều trang địa phương gần như trùng nhau.</p>
+          <p>Nếu chưa biết nên bắt đầu từ kiểu bơi nào, hãy xem mục tiêu và yêu cầu nền tảng của từng kỹ thuật trước khi trao đổi với giáo viên.</p>
         </div>
         <div class="area-techniques">
           {techniques.map((technique, index) => (
@@ -226,9 +235,9 @@ const schema = {
     <section class="area-section" id="cach-chon" aria-labelledby="choice-title">
       <div class="container area-choice">
         <div>
-          <span class="area-eyebrow">Quy trình chọn lớp</span>
-          <h2 id="choice-title">Chọn lớp học bơi {area.name} theo 4 tầng thông tin</h2>
-          <p class="area-choice__local"><strong>Lưu ý riêng cho {area.name}:</strong> {area.localAdvice}</p>
+          <span class="area-eyebrow">Kiểm tra trước khi đăng ký</span>
+          <h2 id="choice-title">Bốn điều cần hỏi khi chọn lớp học bơi {area.name}</h2>
+          <p class="area-choice__local"><strong>Lưu ý riêng cho {area.name}:</strong> {customerCopy(area.localAdvice)}</p>
           <div class="area-nearby" aria-label="Các cụm khu vực lân cận">
             {area.nearbyAreas.map((place) => <span>{place}</span>)}
           </div>
@@ -262,12 +271,12 @@ const schema = {
     <section class="area-section area-related" aria-labelledby="related-title">
       <div class="container">
         <div class="area-section__heading">
-          <span>Hub → tỉnh/thành → quận/huyện</span>
+          <span>Địa điểm lân cận</span>
           <h2 id="related-title">Khu vực học bơi khác tại {area.parentName}</h2>
         </div>
         <div class="area-related__grid">
           {relatedAreas.map((item) => (
-            <a href={item.url}><span>{item.category.venues.length} địa điểm có nguồn</span><strong>Học bơi {item.name}</strong><b>Xem khu vực →</b></a>
+            <a href={item.url}><span>{item.category.venues.length} địa điểm tham khảo</span><strong>Học bơi {item.name}</strong><b>Xem khu vực →</b></a>
           ))}
           <a href={`/${area.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {area.parentName}</strong><b>Mở danh bạ →</b></a>
         </div>

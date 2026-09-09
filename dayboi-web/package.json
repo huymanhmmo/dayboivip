@@ -9,6 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "audit:locations": "node scripts/audit-location-pages.mjs",
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "audit:seo:strict": "node scripts/audit-seo.mjs --strict",
+    "images:dimensions": "node scripts/add-image-dimensions.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

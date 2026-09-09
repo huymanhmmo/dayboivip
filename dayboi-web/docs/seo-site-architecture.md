@@ -17,7 +17,7 @@ Các vấn đề ưu tiên cao đã xử lý:
 7. Đặt `noindex, follow` cho các trang lưu trữ thẻ mỏng; bài viết và danh mục chính vẫn được crawl qua liên kết nội bộ nhưng sitemap không bị pha loãng.
 8. Đồng bộ taxonomy blog với danh mục thực tế và sửa slug/canonical bài lớp người lớn, loại bỏ mạng liên kết trỏ tới các URL không tồn tại.
 
-Kết quả build hiện có 181 route và 25 landing page quận/huyện/khu vực qua cổng chất lượng: 13 trang Hà Nội và 12 trang TP.HCM. Audit output kiểm 210 tệp HTML, không phát hiện liên kết nội bộ hỏng; toàn bộ landing page đều có trong sitemap, title và meta description đúng ngưỡng, canonical riêng, đúng một H1 và schema CollectionPage/ItemList/FAQPage. URL Tân Bình cũ đã được chuyển hướng 301 về cấu trúc mới. Audit toàn site trước đó có 140 trang indexable, không có title hoặc description trùng hoàn toàn. Các outlier metadata còn lại thuộc nhóm trang cũ và cần được biên tập dần theo từng trang thay vì cắt máy móc.
+Kết quả build hiện có 181 route và 25 landing page quận/huyện/khu vực qua cổng chất lượng: 13 trang Hà Nội và 12 trang TP.HCM. Audit kiểm 210 tệp HTML, xác định 159 URL indexable và 29 URL chuyển hướng; không có title hoặc description trùng hoàn toàn. Toàn bộ landing page có canonical riêng, đúng một H1 và schema CollectionPage/ItemList/FAQPage. URL Tân Bình cũ đã được chuyển hướng về cấu trúc mới. 62 ảnh JPEG đã được nén từ 208,9 MB xuống 22,4 MB và 216 thẻ ảnh được bổ sung kích thước để hạn chế xô lệch bố cục.
 
 ## 2. Cây website mục tiêu
 
@@ -163,10 +163,79 @@ Các quận/huyện chưa đạt cổng vẫn xuất hiện dưới dạng nhóm
 - Trang tỉnh/thành: liên kết đến landing page quận/huyện đủ chất lượng; khu vực chưa đủ dữ liệu vẫn dùng anchor.
 - Trang quận/huyện: liên kết ngược về tỉnh/thành, liên kết chéo bốn khu vực gần hoặc có hành trình phù hợp và liên kết sang bốn hub kỹ thuật.
 
-## 8. Việc tiếp theo theo thứ tự ưu tiên
+## 8. Dữ liệu từ khóa đầu vào
 
-1. Bổ sung URL nguồn chi tiết để mở an toàn Quận 5, Quận 7, Quận 8, Quận 11 và Bà Rịa – Vũng Tàu.
-2. Áp dụng cùng mô hình dữ liệu cho Đà Nẵng và các tỉnh/thành có đủ ít nhất hai địa điểm đã xác minh.
-3. Bổ sung kiểm tra định kỳ trạng thái HTTP và ngày xác minh của từng nguồn ngoài để phát hiện URL chết hoặc thông tin cũ.
-4. Dùng Google Search Console theo dõi coverage, query/click của từng tầng URL và phát hiện cannibalization.
-5. Đo Core Web Vitals sau triển khai, ưu tiên LCP của hero và tổng kích thước CSS ở landing page địa phương.
+Nguồn phân tích là workbook `Bộ từ khóa đầy đủ học bơi.xlsx`. Sau khi loại dòng trống và gộp từ khóa trùng, tệp có khoảng 1.859 từ khóa; tổng lượng tìm kiếm tham khảo của cụm “học bơi” là 22.450.
+
+| Cụm từ khóa | Lượng tìm kiếm tham khảo | Trang sở hữu |
+|---|---:|---|
+| học bơi | 2.400 | `/` và hub `/khoa-hoc-boi/`, phân vai theo ý định |
+| học bơi ếch | 720 | `/ky-thuat-boi/hoc-boi-ech/` |
+| học bơi Hà Nội | 480 | `/hoc-boi-ha-noi/` |
+| học bơi sải | 480 | `/ky-thuat-boi/hoc-boi-sai/` |
+| cách học bơi | 480 | `/cach-hoc-boi/` |
+| cách học bơi nhanh nhất | 390 | `/cach-hoc-boi-nhanh-nhat/` |
+| học bơi trẻ em | 320 | `/hoc-boi-tre-em/` |
+| học bơi Quận 7 | 320 | trang khu vực chỉ xuất bản sau khi đủ dữ liệu |
+| học bơi ở đâu | 260 | `/hoc-boi-o-dau/` |
+| học bơi cho người lớn | 170 | `/hoc-boi-nguoi-lon/` |
+| học bơi Gò Vấp | 170 | `/hoc-boi-tphcm/go-vap/` |
+| học bơi Đà Nẵng | 170 | `/hoc-boi-da-nang/` |
+| tự học bơi | 170 | `/tu-hoc-boi/` |
+
+Hai nhóm truy vấn cơ sở có lượng tìm kiếm đáng chú ý là “bể bơi Học viện Kỹ thuật Quân sự” (390) và “bể bơi Học viện Tài chính” (210). Chỉ tạo trang cơ sở riêng khi có đủ địa chỉ, quyền vào bể, giờ hoạt động, liên hệ, nguồn chính thức và nội dung thực sự khác trang quận.
+
+## 9. Quy tắc phân vai từ khóa
+
+| Ý định | Trang đích | Nội dung bắt buộc | Không làm |
+|---|---|---|---|
+| Tìm hiểu chung | Trang chủ | Trả lời website giúp gì, dẫn tới lớp, kỹ thuật và địa điểm | Nhồi tên tất cả tỉnh/thành vào hero |
+| Chọn chương trình | Hub khóa học | So sánh đối tượng, hình thức, sĩ số, chi phí cần hỏi | Dùng giá hoặc cam kết cũ làm dữ kiện hiện hành |
+| Học kỹ thuật | Trang ếch/sải/ngửa/bướm | Bài tập, lỗi sai, thứ tự luyện, lưu ý an toàn | Tạo bản sao theo từng quận/huyện |
+| Tìm lớp tại địa phương | Tỉnh/thành và quận/huyện | Bể bơi thật, quyền tiếp cận, liên hệ, nguồn, khu vực gần | Tạo trang chỉ thay tên địa phương |
+| Tự học/cách học | Bài hướng dẫn | Câu trả lời trực tiếp, các bước thực hành, giới hạn an toàn | Hứa biết bơi trong số buổi cố định |
+| Chọn lớp cho trẻ/người lớn | Trang đối tượng | Tiêu chí chọn giáo viên, sĩ số, bể và mục tiêu đầu ra | Dùng nỗi sợ hoặc bệnh lý để thúc ép đăng ký |
+
+## 10. Checklist SEO và AI search áp dụng cho mỗi trang
+
+1. Title duy nhất, ưu tiên từ khóa chính ở đầu và giữ trong khoảng 45–65 ký tự khi tự nhiên.
+2. Meta description 140–170 ký tự, nói rõ người dùng nhận được gì; không dùng “uy tín nhất”, “an toàn tuyệt đối” hoặc cam kết không có bằng chứng.
+3. Chỉ một H1; các H2/H3 theo đúng thứ bậc và viết theo câu hỏi hoặc nhiệm vụ thật của khách hàng.
+4. Phần mở đầu trả lời trực tiếp ý định trong 2–3 câu, sau đó mới giải thích chi tiết.
+5. Ảnh dùng tên tệp có nghĩa, alt mô tả đúng nội dung, có `width`/`height`, lazy-load với ảnh dưới màn hình đầu tiên và nén trước khi xuất bản.
+6. Mỗi trang có canonical, breadcrumb và 3–6 liên kết nội bộ đến trang cha, trang con hoặc bài hỗ trợ liên quan.
+7. Schema chỉ mô tả nội dung đang hiển thị. Dùng `CollectionPage`/`ItemList` cho danh bạ, `Article` cho bài viết và `FAQPage` khi câu hỏi–trả lời thực sự có trên trang.
+8. Nội dung sức khỏe và an toàn phải có nguồn đáng tin cậy, tác giả/người rà soát, ngày cập nhật và giới hạn áp dụng rõ ràng.
+9. Đoạn văn ngắn, danh sách rõ, bảng dùng cho dữ liệu so sánh; tránh câu mở đầu chung chung và từ ngữ giống báo cáo nội bộ.
+10. CTA đúng mô hình vận hành: cá nhân tự liên hệ đơn vị địa phương; yêu cầu cho tổ chức từ 10 người chuyển tới trang liên hệ.
+
+## 11. Kế hoạch triển khai 90 ngày
+
+### 0–14 ngày: sửa nền tảng và trang có nhu cầu cao
+
+- Hoàn thiện trang chủ, hub khóa học, hub địa điểm, bốn trang kỹ thuật và các landing page Hà Nội/TP.HCM.
+- Biên tập lại các bài `cách học bơi`, `cách học bơi nhanh nhất`, `học bơi trẻ em`, `học bơi người lớn` theo câu hỏi thực tế; loại cam kết tuyệt đối và số liệu không có nguồn.
+- Chạy build cùng `audit:seo:strict` trước mỗi lần đưa code lên GitHub.
+- Gắn Search Console và GA4 theo nhóm URL để lấy baseline impression, click, CTR và vị trí trung bình.
+
+### 15–45 ngày: mở rộng đúng nơi có nhu cầu và dữ liệu
+
+- Ưu tiên nghiên cứu Quận 7, Gò Vấp, Đà Nẵng và các truy vấn bể bơi có volume trong workbook.
+- Mỗi trang địa phương cần ít nhất hai địa điểm đủ nguồn; ghi rõ bể công cộng, khách sạn, trường học hay nội khu và điều kiện cho khách ngoài.
+- Tạo liên kết từ bài kỹ thuật/đối tượng sang danh bạ phù hợp, đồng thời liên kết ngược từ địa phương về hướng dẫn kỹ thuật.
+- Không xuất bản trang mỏng chỉ để chiếm biến thể từ khóa.
+
+### 46–90 ngày: tăng độ tin cậy và khả năng được trích dẫn
+
+- Rà soát 30 URL nội dung cũ còn chứa từ ngữ phóng đại; ưu tiên trang có impression trước.
+- Bổ sung nguồn chính thức cho số liệu an toàn, sức khỏe, độ tuổi và hướng dẫn kỹ thuật; tách rõ kinh nghiệm của đội ngũ với khuyến nghị y khoa.
+- Thêm ngày kiểm tra nguồn, người biên tập và người duyệt chuyên môn cho bài quan trọng.
+- Cập nhật `llms.txt`, sitemap và ngày sửa đổi sau mỗi đợt nội dung lớn.
+- Theo dõi truy vấn mới trong Search Console để mở rộng FAQ hoặc đoạn trả lời, không tạo URL mới nếu trang hiện tại đã đúng ý định.
+
+## 12. Chỉ số theo dõi
+
+- Kỹ thuật: số URL indexable hợp lệ, Core Web Vitals, ảnh thiếu kích thước/alt, canonical/H1 lỗi và liên kết hỏng.
+- Tìm kiếm: impression, click, CTR, vị trí theo từng cụm từ khóa và tỷ lệ URL được index.
+- AI search: lượt referral từ công cụ AI, số trang đích được truy cập, truy vấn thương hiệu và số lần nội dung nguồn được nhắc lại có thể kiểm chứng.
+- Chuyển đổi: click gọi điện/mở bản đồ ở trang địa phương và số yêu cầu chương trình tổ chức; không dùng traffic đơn thuần làm thước đo duy nhất.

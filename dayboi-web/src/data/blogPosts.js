@@ -1,6 +1,6 @@
 export const blogPosts = [
   {
-    title: 'Đồ Bơi Học Sinh: Cẩm Nang Chọn Đồ Bơi Cho Bé Đẹp, Bền & Đúng Chuẩn Trường Học',
+    title: 'Đồ Bơi Học Sinh: Cách Chọn Theo Độ Tuổi Và Mục Đích',
     slug: 'do-boi-hoc-sinh',
     excerpt: 'Kinh nghiệm lựa chọn đồ bơi học sinh tiểu học, THCS và THPT. Hướng dẫn chọn chất liệu thun co giãn 4 chiều tốt, kiểu dáng kín đáo và đúng quy định học đường.',
     image: '/images/classes/hoc-sinh-trang-bi-phao.jpg',
@@ -12,7 +12,7 @@ export const blogPosts = [
     readTime: '18 phút đọc',
   },
   {
-    title: 'Học Bơi Ở Tân Bình: Top 5 Bể Bơi & Địa Chỉ Dạy Bơi Uy Tín Nhất TPHCM',
+    title: 'Học Bơi Ở Tân Bình: 5 Bể Bơi Và Nơi Dạy Bơi Tham Khảo',
     slug: 'dia-diem/tphcm/hoc-boi-tan-binh',
     excerpt: 'Bạn đang tìm địa điểm học bơi ở Tân Bình tốt nhất? Tổng hợp các lớp học bơi 1 kèm 1 và nhóm nhỏ tại quận Tân Bình, review bể bơi sạch sẽ, học phí hợp lý.',
     image: '/images/classes/lop-hoc-boi-tre-em-tphcm.jpg',
@@ -24,7 +24,7 @@ export const blogPosts = [
     readTime: '20 phút đọc',
   },
   {
-    title: 'Học Bơi Tăng Bạt Hổ: Lớp Học Bơi Uy Tín Tại Bể Bơi Hiện Đại Nhất Hà Nội',
+    title: 'Học Bơi Tăng Bạt Hổ: Bể Bơi, Lớp Học & Học Phí',
     slug: 'hoc-boi-tang-bat-ho',
     excerpt: 'Thông tin chi tiết về các lớp học bơi tại bể bơi Tăng Bạt Hổ (Hai Bà Trưng, Hà Nội). Đánh giá chất lượng nước, HLV chuyên nghiệp, học phí và lịch học mới nhất.',
     image: '/images/classes/lop-hoc-boi-ha-noi.jpg',
@@ -36,9 +36,9 @@ export const blogPosts = [
     readTime: '19 phút đọc',
   },
   {
-    title: 'Hướng Dẫn Học Bơi Toàn Diện Cho Người Mới Bắt Đầu',
+    title: 'Hướng Dẫn Học Bơi Cho Người Mới: 6 Bước Cơ Bản',
     slug: 'huong-dan-hoc-boi',
-    excerpt: 'Cẩm nang hướng dẫn học bơi toàn diện từ con số 0. Lộ trình làm quen nước, các kỹ thuật bơi cơ bản, đứng nước sinh tồn và kinh nghiệm từ chuyên gia giúp bạn biết bơi an toàn.',
+    excerpt: 'Hướng dẫn học bơi cho người mới theo 6 bước: làm quen với nước, tập thở, nổi, lướt, ghép động tác và đứng nước. Có bài tập cùng lưu ý an toàn.',
     image: '/images/classes/hlv-chuyen-mon-cao-tam-ly.jpeg',
     date: '25/05',
     category: 'Hướng Dẫn Học Bơi',
@@ -48,9 +48,9 @@ export const blogPosts = [
     readTime: '22 phút đọc',
   },
   {
-    title: 'Chứng Chỉ Học Bơi: Tất Tần Tật Những Điều Cần Biết',
+    title: 'Chứng Chỉ Học Bơi: Điều Kiện, Quy Trình Và Giá Trị Sử Dụng',
     slug: 'chung-chi-hoc-boi',
-    excerpt: 'Tìm hiểu về các loại chứng chỉ học bơi tại Việt Nam, giá trị pháp lý, quy trình thi cấp chứng chỉ bơi cho học sinh và người lớn mới nhất.',
+    excerpt: 'Tìm hiểu chứng chỉ học bơi tại Việt Nam: đơn vị cấp, điều kiện dự thi, nội dung sát hạch, hồ sơ cần chuẩn bị và cách kiểm tra giá trị sử dụng.',
     image: '/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg',
     date: '25/05',
     category: 'Góc Tư Vấn',
@@ -72,7 +72,7 @@ export const blogPosts = [
     readTime: '18 phút đọc',
   },
   {
-    title: 'Dạy Bơi Cho Học Sinh Tiểu Học: Giải Pháp Toàn Diện Phòng Chống Đuối Nước',
+    title: 'Dạy Bơi Học Sinh Tiểu Học: Kỹ Năng An Toàn Dưới Nước',
     slug: 'day-boi-hoc-sinh-tieu-hoc',
     excerpt: 'Cẩm nang dạy bơi cho học sinh tiểu học (6-11 tuổi): Phương pháp sư phạm tâm lý, lộ trình học bơi sinh tồn và các lưu ý quan trọng dành cho phụ huynh và nhà trường.',
     image: '/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg',
@@ -96,7 +96,7 @@ export const blogPosts = [
     readTime: '15 phút đọc',
   },
   {
-    title: 'Video Học Bơi Cho Người Mới: Tổng Hợp Các Bài Tập Trực Quan Từ A-Z',
+    title: 'Video Học Bơi Cho Người Mới: Bài Tập Theo Từng Bước',
     slug: 'video-hoc-boi',
     excerpt: 'Tổng hợp video học bơi hướng dẫn trực quan các kỹ thuật: Thở nước, thả nổi, đạp chân bơi ếch, quạt tay bơi sải giúp bạn dễ dàng tự tập luyện và sửa lỗi sai.',
     image: '/images/classes/giao-vien-chinh-sua-ky-thuat.jpg',
@@ -156,7 +156,7 @@ export const blogPosts = [
     readTime: '18 phút đọc',
   },
   {
-    title: 'Học Bơi Ở Đâu? Hướng Dẫn Chọn Trung Tâm Dạy Bơi Uy Tín Từ A-Z',
+    title: 'Học Bơi Ở Đâu? Tiêu Chí Chọn Bể Bơi Và Lớp Học',
     slug: 'hoc-boi-o-dau',
     excerpt: 'Bạn đang thắc mắc học bơi ở đâu tốt nhất? Bài viết phân tích chi tiết các tiêu chí chọn trung tâm dạy bơi uy tín tại Hà Nội và TPHCM, so sánh giá cả, chất lượng HLV và cơ sở vật chất.',
     image: '/images/classes/lop-hoc-boi-ha-noi.jpg',
@@ -168,9 +168,9 @@ export const blogPosts = [
     readTime: '22 phút đọc',
   },
   {
-    title: 'Học Bơi Trẻ Em: Hướng Dẫn Toàn Diện Cho Bố Mẹ Từ A-Z [2026]',
+    title: 'Học Bơi Trẻ Em: Lộ Trình Và Cách Chọn Lớp Cho Bé',
     slug: 'hoc-boi-tre-em',
-    excerpt: 'Hướng dẫn toàn diện về học bơi trẻ em: độ tuổi vàng, quy trình chuẩn, cách chọn HLV, chi phí, và kinh nghiệm thực tế từ hơn 10.000 học viên nhí tại Swim For Life.',
+    excerpt: 'Hướng dẫn học bơi trẻ em theo độ tuổi: dấu hiệu sẵn sàng, kỹ năng nên học, cách chọn giáo viên, sĩ số, bể tập và các khoản phí cần hỏi trước.',
     image: '/images/classes/lop-boi-tre-em-bai-ban.jpg',
     date: '25/05',
     category: 'Bơi Lội Trẻ Em',
@@ -182,7 +182,7 @@ export const blogPosts = [
   {
     title: 'Học Bơi Cho Người Lớn: Từ Sợ Nước Đến Biết Bơi Sau 10 Buổi',
     slug: 'hoc-boi-nguoi-lon',
-    excerpt: 'Hướng dẫn học bơi cho người lớn từ A-Z. Vượt qua nỗi sợ nước, lộ trình 10-12 buổi, kinh nghiệm thực tế từ hơn 3.000 học viên người lớn tại Swim For Life.',
+    excerpt: 'Hướng dẫn học bơi cho người lớn: cách làm quen với nước, chọn kiểu bơi, sắp xếp lịch tập, đánh giá giáo viên và đặt mục tiêu phù hợp với thể lực.',
     image: '/images/classes/hoc-vien-khoi-dong.jpg',
     date: '25/05',
     category: 'Hướng Dẫn Học Bơi',
@@ -216,9 +216,9 @@ export const blogPosts = [
     readTime: '8 phút',
   },
   {
-    title: 'Cách Học Bơi Nhanh Nhất: 7 Bí Quyết Biết Bơi Sau 5-7 Buổi',
+    title: 'Cách Học Bơi Nhanh Nhất? Lộ Trình An Toàn Cho Người Mới',
     slug: 'cach-hoc-boi-nhanh-nhat',
-    excerpt: 'Hướng dẫn cách học bơi nhanh nhất cho người mới bắt đầu. 7 bí quyết từ HLV chuyên nghiệp giúp bạn biết bơi chỉ sau 5-7 buổi tập luyện.',
+    excerpt: 'Tìm hiểu cách học bơi nhanh nhất theo khả năng thực tế: tập thở và nổi trước, chia nhỏ động tác, chọn lịch đều và biết khi nào cần giáo viên hỗ trợ.',
     image: '/images/classes/hoc-sinh-tap-tren-thanh-be.jpg',
     date: '20/05',
     category: 'Hướng Dẫn Học Bơi',
@@ -228,7 +228,7 @@ export const blogPosts = [
     readTime: '15 phút',
   },
   {
-    title: 'Cách Học Bơi: Hướng Dẫn Toàn Diện Từ A-Z Cho Người Mới Bắt Đầu',
+    title: 'Cách Học Bơi Cho Người Mới: Từ Thở Nước Đến Phối Hợp',
     slug: 'cach-hoc-boi',
     excerpt: 'Hướng dẫn cách học bơi hiệu quả và nhanh nhất cho người mới bắt đầu. Các bước chuẩn bị, kỹ năng làm quen nước, tập thở, tập nổi, kỹ thuật bơi ếch, bơi sải từ HLV.',
     image: '/images/techniques/hoc-boi-sai-tay-tren-can.jpg',
@@ -240,9 +240,9 @@ export const blogPosts = [
     readTime: '11 phút',
   },
   {
-    title: 'Trẻ Mấy Tuổi Học Bơi? Độ Tuổi Vàng Cho Bé Học Bơi An Toàn',
+    title: 'Trẻ Mấy Tuổi Học Bơi? Hướng Dẫn Theo Từng Độ Tuổi',
     slug: 'tre-may-tuoi-hoc-boi',
-    excerpt: 'Giải đáp thắc mắc trẻ mấy tuổi học bơi được, độ tuổi phù hợp nhất để cho bé bắt đầu học bơi an toàn và hiệu quả.',
+    excerpt: 'Trẻ mấy tuổi học bơi được? Xem mục tiêu phù hợp cho từng giai đoạn, dấu hiệu trẻ đã sẵn sàng và các tiêu chí an toàn phụ huynh cần kiểm tra.',
     image: '/images/classes/hoc-sinh-trang-bi-phao.jpg',
     date: '18/05',
     category: 'Bơi Lội Trẻ Em',

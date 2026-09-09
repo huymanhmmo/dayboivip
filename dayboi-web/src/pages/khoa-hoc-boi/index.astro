@@ -16,33 +16,20 @@ const breadcrumbs = [
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Khóa Học Bơi Swim For Life",
-  "description": "Khóa học bơi từ cơ bản đến nâng cao, cam kết biết bơi sau 10-12 buổi. Dạy bơi 1 kèm 1, nhóm, doanh nghiệp tại Hà Nội và TPHCM.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
-    "url": "https://dayboi.vip"
-  },
-  "hasCourseInstance": [
-    {
-      "@type": "CourseInstance",
-      "name": "Khóa Bơi Cá Nhân 1 Kèm 1",
-      "courseMode": "onsite",
-      "courseWorkload": "PT10H"
-    },
-    {
-      "@type": "CourseInstance",
-      "name": "Khóa Bơi Nhóm 3-5 Người",
-      "courseMode": "onsite",
-      "courseWorkload": "PT12H"
-    },
-    {
-      "@type": "CourseInstance",
-      "name": "Chương Trình Doanh Nghiệp & Vinhomes",
-      "courseMode": "onsite"
-    }
-  ]
+  "@type": "CollectionPage",
+  "name": "Khóa học bơi theo độ tuổi và mục tiêu",
+  "description": "Trang tổng hợp chương trình học bơi cho trẻ em, người lớn, người sợ nước, nhóm và tổ chức.",
+  "url": "https://dayboi.vip/khoa-hoc-boi/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": courses.length,
+    "itemListElement": courses.map((course, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": course.shortTitle,
+      "url": `https://dayboi.vip/khoa-hoc-boi/${course.slug}/`
+    }))
+  }
 };
 
 const faqSchema = {
@@ -54,7 +41,7 @@ const faqSchema = {
       "name": "Khóa học bơi Swim For Life kéo dài bao lâu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Khóa học bơi cơ bản tại Swim For Life thường kéo dài 10-12 buổi, mỗi buổi 60-90 phút. Cam kết học viên sẽ biết bơi thành thạo ít nhất 1 kiểu bơi sau khóa học."
+        "text": "Thời lượng phụ thuộc trình độ đầu vào, mục tiêu và tần suất tập. Hãy hỏi đơn vị tổ chức về số buổi, thời lượng mỗi buổi và tiêu chí đánh giá đầu ra trước khi đăng ký."
       }
     },
     {
@@ -62,7 +49,7 @@ const faqSchema = {
       "name": "Swim For Life có những loại khóa học nào?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Swim For Life cung cấp 3 loại khóa học: Khóa cá nhân 1 kèm 1, Khóa nhóm 3-5 người, và Chương trình doanh nghiệp/Vinhomes. Mỗi loại có ưu điểm riêng phù hợp với nhu cầu khác nhau."
+        "text": "Website có nội dung tham khảo cho trẻ em, người lớn, người sợ nước, lớp kèm riêng, nhóm nhỏ và chương trình cho tổ chức."
       }
     },
     {
@@ -70,7 +57,7 @@ const faqSchema = {
       "name": "Học phí khóa bơi tại Swim For Life là bao nhiêu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Học phí được tính theo từng loại khóa và số buổi. Swim For Life cam kết mức học phí cạnh tranh, minh bạch. Liên hệ hotline 0979.121.097 để nhận báo giá chi tiết."
+        "text": "Học phí thay đổi theo địa điểm, vé bể, sĩ số và số buổi. Người học cá nhân nên hỏi trực tiếp đơn vị trong danh bạ; tổ chức nhận báo giá theo quy mô và yêu cầu triển khai."
       }
     },
     {
@@ -78,7 +65,7 @@ const faqSchema = {
       "name": "Swim For Life dạy những kỹ thuật bơi nào?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Swim For Life dạy đầy đủ 4 kỹ thuật bơi: Bơi ếch, Bơi sải (bơi tự do), Bơi ngửa, Bơi bướm, cộng thêm kỹ năng đứng nước. Học viên sẽ được học từ kỹ thuật cơ bản nhất."
+        "text": "Nội dung kỹ thuật gồm bơi ếch, bơi sải, bơi ngửa, bơi bướm và kỹ năng đứng nước. Người mới nên bắt đầu bằng thở, nổi và lướt nước."
       }
     },
     {
@@ -88,14 +75,6 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Không. Người học cá nhân được hướng dẫn dùng danh bạ địa phương để tự liên hệ bể bơi, câu lạc bộ hoặc giáo viên độc lập. Swim For Life chỉ tiếp nhận chương trình cho tổ chức và đoàn từ 10 người."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Chính sách bảo lưu khóa học như thế nào?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Swim For Life cho phép bảo lưu khóa học lên đến 2.5 tháng. Học viên có thể linh hoạt sắp xếp lịch học phù hợp với công việc và sinh hoạt cá nhân."
-      }
     }
   ]
 };
@@ -103,15 +82,15 @@ const faqSchema = {
 const combinedSchema = [schema, faqSchema];
 
 const hubHeroStats = [
-  { number: 5000, suffix: '+', label: 'Học viên đã biết bơi' },
-  { number: 10, suffix: '-12', label: 'Buổi cam kết biết bơi' },
-  { number: 98, suffix: '%', label: 'Tỉ lệ biết bơi' }
+  { number: courses.length, suffix: '', label: 'Chương trình tham khảo' },
+  { number: 4, suffix: '', label: 'Kiểu bơi phổ biến' },
+  { number: 34, suffix: '', label: 'Tỉnh, thành trong danh bạ' }
 ];
 
 const faqs = [
   {
     question: "Khóa học bơi Swim For Life kéo dài bao lâu?",
-    answer: "Khóa học bơi cơ bản tại Swim For Life thường kéo dài 10-12 buổi, mỗi buổi 60-90 phút. Cam kết học viên sẽ biết bơi thành thạo ít nhất 1 kiểu bơi sau khóa học. Tần suất học lý tưởng là 3-4 buổi/tuần để đạt kết quả tốt nhất."
+    answer: "Thời lượng phụ thuộc trình độ đầu vào, mục tiêu và tần suất tập. Hãy hỏi đơn vị tổ chức về số buổi, thời lượng mỗi buổi và tiêu chí đánh giá đầu ra trước khi đăng ký."
   },
   {
     question: "Swim For Life có những loại khóa học nào?",
@@ -123,22 +102,18 @@ const faqs = [
   },
   {
     question: "Swim For Life dạy những kỹ thuật bơi nào?",
-    answer: "Swim For Life dạy đầy đủ 4 kỹ thuật bơi: Bơi ếch (cơ bản, dễ học), Bơi sải/tự do (nhanh nhất), Bơi ngửa (thở thoải mái), Bơi bướm (nâng cao). Ngoài ra còn dạy kỹ năng đứng nước – kỹ năng sinh tồn quan trọng nhất."
+    answer: "Nội dung kỹ thuật gồm bơi ếch, bơi sải, bơi ngửa, bơi bướm và kỹ năng đứng nước. Người mới nên bắt đầu bằng thở, nổi và lướt nước."
   },
   {
     question: "Swim For Life có tiếp nhận học viên cá nhân không?",
     answer: "Không. Người học cá nhân dùng danh bạ địa phương để tự liên hệ đơn vị phù hợp. Swim For Life chỉ tiếp nhận chương trình cho tổ chức và đoàn từ 10 người."
   },
-  {
-    question: "Chính sách bảo lưu khóa học như thế nào?",
-    answer: "Swim For Life cho phép bảo lưu khóa học lên đến 2.5 tháng. Bạn có thể linh hoạt sắp xếp lịch học phù hợp với công việc và sinh hoạt cá nhân mà không lo mất phí đã đóng."
-  }
 ];
 ---
 
 <PageLayout
-  title={`Khóa Học Bơi Swim For Life: Từ Cơ Bản Đến Nâng Cao [${currentYear}]`}
-  description="Thư viện chương trình và phương pháp học bơi. Người học cá nhân tra cứu danh bạ địa phương; tổ chức từ 10 người có thể yêu cầu chương trình đào tạo riêng."
+  title="Khóa Học Bơi Cho Trẻ Em & Người Lớn | Swim For Life"
+  description="Tìm hiểu khóa học bơi theo độ tuổi và mục tiêu. Người học cá nhân tra cứu lớp gần nhà; trường học, doanh nghiệp và khu dân cư có thể yêu cầu chương trình riêng."
   canonical="https://dayboi.vip/khoa-hoc-boi/"
   breadcrumbs={breadcrumbs}
   schema={combinedSchema}
@@ -146,9 +121,9 @@ const faqs = [
   <div class="course-landing">
     <!-- Hero Section -->
     <CourseHero 
-      title={`Khóa Học Bơi Swim For Life: Từ Cơ Bản Đến Nâng Cao [${currentYear}]`}
-      subtitle="Chương trình dạy bơi bài bản, khoa học – cam kết biết bơi sau 10-12 buổi. HLV tâm lý, phương pháp giảng dạy hiện đại, phù hợp mọi lứa tuổi."
-      description="Chương trình dạy bơi bài bản, khoa học – cam kết biết bơi sau 10-12 buổi. HLV tâm lý, phương pháp giảng dạy hiện đại, phù hợp mọi lứa tuổi."
+      title="Khóa học bơi cho trẻ em, người lớn và tổ chức"
+      subtitle="Chọn nội dung theo độ tuổi, trình độ và mục tiêu. Người học cá nhân có thể tìm lớp gần nhà; tổ chức từ 10 người được tư vấn chương trình riêng."
+      description="Chọn nội dung theo độ tuổi, trình độ và mục tiêu. Người học cá nhân có thể tìm lớp gần nhà; tổ chức từ 10 người được tư vấn chương trình riêng."
       image="/images/classes/giang-vien-huong-dan-ky-thuat.jpg"
       stats={hubHeroStats}
       slug="hub"
@@ -159,13 +134,13 @@ const faqs = [
       <div class="cl-section__container">
         <div class="cl-section-title">
           <span class="cl-section-title__badge">
-            Danh Sách Lớp Học
+            Chương Trình Tham Khảo
           </span>
           <h2 class="cl-section-title__heading">
-            Các Khóa Học Bơi Thiết Kế Riêng Cho Bạn
+            Chọn khóa học bơi theo nhu cầu
           </h2>
           <p class="cl-section-title__sub">
-            Từ lớp dạy bơi cho trẻ nhỏ từ 3 tuổi đến các lớp cho người lớn nhát nước lâu năm, chúng tôi có chương trình phù hợp với mọi nhu cầu.
+            Xem nội dung dành cho trẻ em, người lớn, người sợ nước, nhóm nhỏ và tổ chức trước khi chọn nơi học.
           </p>
           <span class="cl-section-title__decoration"></span>
         </div>
@@ -174,7 +149,7 @@ const faqs = [
           {courses.map((course) => (
             <div class="cl-hub-card cl-animate">
               <div class="cl-hub-card__image-wrapper">
-                <img src={course.heroImage} alt={course.title} class="cl-hub-card__image" loading="lazy" />
+                <img src={course.heroImage} alt={course.title} class="cl-hub-card__image" loading="lazy" width="640" height="360" />
                 <span class="cl-hub-card__badge">{course.targetAudience}</span>
               </div>
               <div class="cl-hub-card__content">
@@ -197,8 +172,8 @@ const faqs = [
                 </div>
                 <div class="cl-hub-card__footer">
                   <div class="cl-hub-card__price-wrapper">
-                    <span class="cl-hub-card__price-label">{course.priceFrom === "Liên hệ báo giá" ? "Học phí" : "Giá chỉ từ"}</span>
-                    <span class="cl-hub-card__price">{course.priceFrom}</span>
+                    <span class="cl-hub-card__price-label">Nội dung</span>
+                    <span class="cl-hub-card__price">Tham khảo</span>
                   </div>
                   <a href={`/khoa-hoc-boi/${course.slug}/`} class="cl-hub-card__btn">
                     Xem chi tiết →
@@ -222,7 +197,7 @@ const faqs = [
             So Sánh Các Hình Thức Học Bơi
           </h2>
           <p class="cl-section-title__sub">
-            Bảng so sánh chi tiết giúp học viên và phụ huynh lựa chọn hình thức học bơi tối ưu nhất với nhu cầu của mình.
+            So sánh sĩ số, cách tổ chức và mức độ linh hoạt để chọn hình thức phù hợp với người học.
           </p>
           <span class="cl-section-title__decoration"></span>
         </div>

@@ -20,7 +20,7 @@ export interface Props {
 
 const {
   title,
-  description = 'Dạy bơi chuyên nghiệp cho trẻ em và người lớn. Đội ngũ HLV giàu kinh nghiệm, phương pháp hiện đại, an toàn tuyệt đối.',
+  description = 'Hướng dẫn học bơi, kỹ thuật bơi và danh bạ lớp học bơi theo địa phương. Tìm nơi học phù hợp cho trẻ em, người lớn và tổ chức.',
   ogImage = '/og-image.jpg',
   lang = 'vi',
   canonicalUrl,
@@ -30,7 +30,7 @@ const {
   noIndex = false,
 } = Astro.props;
 
-const siteName = lang === 'vi' ? 'Swim For Life Việt Nam — Dạy Bơi Chuyên Nghiệp' : 'Swim For Life Vietnam — Professional Swimming Lessons';
+const siteName = lang === 'vi' ? 'Swim For Life Việt Nam' : 'Swim For Life Vietnam';
 const titleWithoutRepeatedBrand = title
   .replace(/\s*\|\s*Swim For Life Việt Nam\s*$/i, '')
   .replace(/\s*\|\s*Swim For Life Vietnam\s*$/i, '')

@@ -14,7 +14,7 @@ const schema = {
   "@type": "Organization",
   "name": "Swim For Life Việt Nam",
   "alternateName": "Trung tâm dạy bơi Swim For Life",
-  "description": "Đơn vị triển khai chương trình đào tạo bơi quy mô lớn cho doanh nghiệp, trường học và khu dân cư; đồng thời vận hành danh bạ bơi lội địa phương.",
+  "description": "Nền tảng hướng dẫn học bơi, kỹ thuật bơi và tra cứu lớp học bơi theo địa phương; đồng thời thiết kế chương trình cho trường học, doanh nghiệp và khu dân cư.",
   "url": "https://dayboi.vip",
   "image": "https://dayboi.vip/images/brand/logo.png",
   "areaServed": "VN"
@@ -86,8 +86,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
 ---
 
 <MainLayout
-  title="Đào Tạo Bơi Quy Mô Lớn & Danh Bạ Bơi Lội Toàn Quốc"
-  description="Swim For Life triển khai chương trình bơi cho doanh nghiệp, trường học và khu dân cư. Người học cá nhân tự tra cứu bể bơi, CLB và giáo viên qua danh bạ địa phương."
+  title="Học Bơi, Dạy Bơi & Tìm Lớp Gần Bạn | Swim For Life"
+  description="Tìm lớp học bơi, hướng dẫn kỹ thuật và địa điểm học bơi trên toàn quốc. Swim For Life thiết kế chương trình cho trường học, doanh nghiệp và khu dân cư."
   lang="vi"
   alternateUrl="/en/"
   schema={schema}
@@ -115,32 +115,32 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
       <div class="hero__text">
         <div class="hero__badge reveal">
           <span class="hero__badge-dot"></span>
-          Đào tạo tổ chức · Danh bạ cho cộng đồng
+          Học bơi cho cá nhân và tổ chức
         </div>
         <h1 class="hero__title reveal">
-          Bơi Lội<br/>
-          <span class="hero__title-highlight">Quy Mô</span> — An Toàn<br/>
-          & <span class="hero__title-accent">Có Hệ Thống</span>
+          Học Bơi<br/>
+          <span class="hero__title-highlight">Đúng Cách</span> — Chọn Lớp<br/>
+          <span class="hero__title-accent">Gần Bạn</span>
         </h1>
         <p class="hero__subtitle reveal">
-          Giải pháp đào tạo dành cho doanh nghiệp, trường học và khu dân cư. Người học cá nhân có thể dùng danh bạ để tự chọn và liên hệ đơn vị tại địa phương.
+          Tra cứu nơi dạy bơi, bể bơi và hướng dẫn bốn kiểu bơi phổ biến. Trường học, doanh nghiệp và khu dân cư có thể yêu cầu chương trình riêng theo quy mô.
         </p>
         <div class="hero__actions reveal">
           <a href="/khoa-hoc-boi/doanh-nghiep/" class="btn btn--accent btn--lg">
-            Giải Pháp Cho Tổ Chức
+            Tư Vấn Cho Tổ Chức
           </a>
           <a href="/hoc-boi-o-dau/" class="btn btn--hero-outline btn--lg">
-            Tra Cứu Nơi Học Gần Bạn
+            Tìm Lớp Học Gần Bạn
           </a>
         </div>
         <div class="hero__trust reveal">
           <div class="hero__trust-avatars">
-            <img src="/images/team/thay-nguyen-huy-manh.png" alt="Thầy Nguyễn Huy Mạnh - HLV Swim For Life" class="hero__trust-avatar" />
-            <img src="/images/team/thay-vu-van-thinh.jpg" alt="Thầy Vũ Văn Thịnh - HLV Swim For Life" class="hero__trust-avatar" />
-            <img src="/images/team/co-le-thi-giang.jpg" alt="Cô Lê Thị Giang - HLV Swim For Life" class="hero__trust-avatar" />
+            <img src="/images/team/thay-nguyen-huy-manh.png" alt="Thầy Nguyễn Huy Mạnh - HLV Swim For Life" class="hero__trust-avatar" width="1244" height="700" />
+            <img src="/images/team/thay-vu-van-thinh.jpg" alt="Thầy Vũ Văn Thịnh - HLV Swim For Life" class="hero__trust-avatar" width="700" height="700" />
+            <img src="/images/team/co-le-thi-giang.jpg" alt="Cô Lê Thị Giang - HLV Swim For Life" class="hero__trust-avatar" width="934" height="700" />
           </div>
           <div class="hero__trust-text">
-            <strong>5,000+ học viên</strong> đã biết bơi cùng chúng tôi
+            <strong>Giáo viên theo sát</strong> trong từng buổi học
           </div>
         </div>
       </div>
@@ -167,13 +167,13 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         </div>
         <div class="hero__collage">
           <div class="hero__photo hero__photo--main">
-            <img src="/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg" alt="Lớp học bơi chuyên nghiệp cho trẻ em tại Swim For Life Việt Nam" loading="eager" fetchpriority="high" />
+            <img src="/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg" alt="Lớp học bơi chuyên nghiệp cho trẻ em tại Swim For Life Việt Nam" loading="eager" fetchpriority="high" width="1920" height="1280" />
           </div>
           <div class="hero__photo hero__photo--top">
-            <img src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" alt="Giáo viên chỉnh sửa kỹ thuật bơi cho học viên" loading="eager" />
+            <img src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" alt="Giáo viên chỉnh sửa kỹ thuật bơi cho học viên" loading="eager" width="1920" height="1280" />
           </div>
           <div class="hero__photo hero__photo--bottom">
-            <img src="/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg" alt="Lớp học bơi trẻ em bài bản chuyên nghiệp" loading="eager" />
+            <img src="/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg" alt="Lớp học bơi trẻ em bài bản chuyên nghiệp" loading="eager" width="1920" height="866" />
           </div>
         </div>
         <div class="hero__float-card hero__float-card--top">
@@ -182,7 +182,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         </div>
         <div class="hero__float-card hero__float-card--bottom">
           <span class="hero__float-icon">🎯</span>
-          <div><strong>100%</strong><span>cam kết biết bơi</span></div>
+          <div><strong>4 kiểu bơi</strong><span>hướng dẫn chi tiết</span></div>
         </div>
         <div class="hero__float-card hero__float-card--left">
           <span class="hero__float-icon">📍</span>
@@ -203,38 +203,38 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
   <section class="section why-us" id="why-choose-us">
     <div class="container">
       <div class="section__header text-center reveal">
-        <span class="section__badge">Tại Sao Chọn Chúng Tôi?</span>
-        <h2 class="section__title">Swim For Life Việt Nam — <span class="text-gradient">Khác Biệt Từ Tâm</span></h2>
-        <p class="section__desc">Chúng tôi không chỉ dạy bơi, mà còn truyền cảm hứng và kỹ năng sinh tồn dưới nước cho mọi lứa tuổi.</p>
+        <span class="section__badge">Học bơi từ nền tảng</span>
+        <h2 class="section__title">Những yếu tố giúp bạn <span class="text-gradient">học bơi hiệu quả</span></h2>
+        <p class="section__desc">Một lớp học phù hợp cần có giáo viên theo sát, mục tiêu rõ ràng và thời lượng thực hành vừa với trình độ của người học.</p>
       </div>
       <div class="why-us__grid">
         <div class="feature-card reveal">
           <div class="feature-card__icon feature-card__icon--aqua">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="feature-card__title">An Toàn Tuyệt Đối</h3>
-          <p class="feature-card__desc">Giáo viên luôn đồng hành sát sao, trang bị phao bơi đầy đủ, tuân thủ quy trình an toàn nghiêm ngặt trong mọi buổi học.</p>
+          <h3 class="feature-card__title">An toàn trong từng buổi</h3>
+          <p class="feature-card__desc">Người học được làm quen với nước, tập ở độ sâu phù hợp và sử dụng dụng cụ hỗ trợ khi cần.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-card__icon feature-card__icon--coral">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="feature-card__title">HLV Chuyên Nghiệp</h3>
-          <p class="feature-card__desc">Đội ngũ huấn luyện viên được đào tạo bài bản, nhiều năm kinh nghiệm, tận tâm và vui vẻ với từng học viên.</p>
+          <h3 class="feature-card__title">Giáo viên theo sát</h3>
+          <p class="feature-card__desc">Giáo viên quan sát từng động tác, sửa lỗi ngay trong buổi học và điều chỉnh bài tập theo khả năng.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-card__icon feature-card__icon--teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <h3 class="feature-card__title">Phương Pháp Khoa Học</h3>
-          <p class="feature-card__desc">Giáo trình dạy bơi theo chuẩn quốc tế, kết hợp lý thuyết trên cạn và thực hành dưới nước hiệu quả.</p>
+          <h3 class="feature-card__title">Học theo từng bước</h3>
+          <p class="feature-card__desc">Bắt đầu từ thở, nổi và lướt nước rồi mới ghép chân, tay và nhịp thở của từng kiểu bơi.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-card__icon feature-card__icon--gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <h3 class="feature-card__title">Cam Kết Kết Quả</h3>
-          <p class="feature-card__desc">100% học viên biết bơi sau khóa học. Cấp giấy chứng nhận hoàn thành khóa học bơi chính thức.</p>
+          <h3 class="feature-card__title">Mục tiêu dễ theo dõi</h3>
+          <p class="feature-card__desc">Tiến độ được đánh giá theo kỹ năng thực tế: tự nổi, kiểm soát nhịp thở, di chuyển và xử lý khi mệt.</p>
         </div>
       </div>
     </div>
@@ -247,8 +247,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
     <div class="container">
       <div class="section__header text-center reveal">
         <span class="section__badge">Khóa Học Bơi</span>
-        <h2 class="section__title">Chọn Khóa Học <span class="text-gradient">Phù Hợp Với Bạn</span></h2>
-        <p class="section__desc">Đa dạng khóa học cho mọi lứa tuổi và trình độ — từ bơi cơ bản đến nâng cao.</p>
+        <h2 class="section__title">Chọn lớp học bơi <span class="text-gradient">theo đúng nhu cầu</span></h2>
+        <p class="section__desc">Xem chương trình tham khảo theo độ tuổi, trình độ và mục tiêu; sau đó tìm đơn vị phù hợp ở gần nơi bạn sống.</p>
       </div>
       <div class="courses-grid">
         <!-- Bơi Trẻ Em -->
@@ -258,7 +258,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               src="/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg" 
               alt="Lớp học bơi trẻ em được tổ chức giảng dạy bài bản, chuyên nghiệp tại Swim For Life Việt Nam" 
               class="course-card__img" 
-              loading="lazy"
+              loading="lazy" width="1920" height="866"
             />
             <span class="course-card__badge course-card__badge--hot">Phổ Biến</span>
           </div>
@@ -284,7 +284,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               src="/images/safety/hoc-vien-duoc-huong-dan-trong-nuoc.jpg" 
               alt="Học viên được hướng dẫn chỉnh sửa kỹ thuật tận tình trong quá trình tập luyện bơi" 
               class="course-card__img" 
-              loading="lazy"
+              loading="lazy" width="1920" height="1169"
             />
           </div>
           <div class="course-card__body">
@@ -309,7 +309,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" 
               alt="Giáo viên tận tình chỉnh sửa kỹ thuật bơi cho từng học sinh - dạy bơi 1 kèm 1" 
               class="course-card__img" 
-              loading="lazy"
+              loading="lazy" width="1920" height="1280"
             />
             <span class="course-card__badge course-card__badge--vip">VIP</span>
           </div>
@@ -335,7 +335,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" 
               alt="Tổ chức tập luyện bơi bài bản chuyên nghiệp tại Swim For Life Việt Nam" 
               class="course-card__img" 
-              loading="lazy"
+              loading="lazy" width="1920" height="866"
             />
             <span class="course-card__badge course-card__badge--fast">Cấp Tốc</span>
           </div>
@@ -369,7 +369,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               src="/images/coaches/giam-doc-nguyen-huy-manh-vtc9.png" 
               alt="HLV Nguyễn Huy Mạnh - Giám đốc Trung tâm dạy bơi Swim For Life trả lời phỏng vấn trên kênh VTC9" 
               class="about-img" 
-              loading="lazy"
+              loading="lazy" width="1920" height="1080"
             />
           </div>
           <div class="about-img-secondary">
@@ -377,7 +377,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               src="/images/team/thay-nguyen-huy-manh.png" 
               alt="Thầy Nguyễn Huy Mạnh - Giám đốc Trung tâm dạy bơi chuyên nghiệp Swim For Life Việt Nam" 
               class="about-img" 
-              loading="lazy"
+              loading="lazy" width="1244" height="700"
             />
           </div>
         </div>
@@ -435,51 +435,51 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
       </div>
       <div class="gallery-grid reveal">
         <div class="gallery-item">
-          <img src="/images/classes/lop-hoc-boi-mien-phi-vinhomes-times-city.jpg" alt="Lớp học bơi miễn phí Vinhomes Times City - Swim For Life Việt Nam" loading="lazy" />
+          <img src="/images/classes/lop-hoc-boi-mien-phi-vinhomes-times-city.jpg" alt="Lớp học bơi miễn phí Vinhomes Times City - Swim For Life Việt Nam" loading="lazy" width="1920" height="1233" />
           <div class="gallery-item__caption">Lớp bơi miễn phí Vinhomes Times City</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/coaches/giao-vien-vui-ve-tam-ly.jpeg" alt="Giáo viên vui vẻ, tâm lý giúp học sinh vượt qua nỗi sợ nước" loading="lazy" />
+          <img src="/images/coaches/giao-vien-vui-ve-tam-ly.jpeg" alt="Giáo viên vui vẻ, tâm lý giúp học sinh vượt qua nỗi sợ nước" loading="lazy" width="1920" height="1081" />
           <div class="gallery-item__caption">Giáo viên tâm lý, vui vẻ</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/safety/hoc-sinh-trang-bi-phao-boi-an-toan.jpg" alt="Học sinh được trang bị phao bơi đảm bảo an toàn trong quá trình học bơi" loading="lazy" />
-          <div class="gallery-item__caption">An toàn là ưu tiên số 1</div>
+          <img src="/images/safety/hoc-sinh-trang-bi-phao-boi-an-toan.jpg" alt="Học sinh được trang bị phao bơi đảm bảo an toàn trong quá trình học bơi" loading="lazy" width="1920" height="1081" />
+          <div class="gallery-item__caption">An toàn luôn được ưu tiên</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/techniques/thi-pham-dong-tac-tay-boi-ech.jpg" alt="Giáo viên thị phạm động tác tay trong bơi ếch cho học viên" loading="lazy" />
+          <img src="/images/techniques/thi-pham-dong-tac-tay-boi-ech.jpg" alt="Giáo viên thị phạm động tác tay trong bơi ếch cho học viên" loading="lazy" width="1920" height="1280" />
           <div class="gallery-item__caption">Hướng dẫn kỹ thuật bơi ếch</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/classes/lop-hoc-boi-ha-noi.jpg" alt="Lớp học bơi Hà Nội của Trung tâm dạy bơi Swim For Life Việt Nam" loading="lazy" />
+          <img src="/images/classes/lop-hoc-boi-ha-noi.jpg" alt="Lớp học bơi Hà Nội của Trung tâm dạy bơi Swim For Life Việt Nam" loading="lazy" width="1920" height="866" />
           <div class="gallery-item__caption">Lớp học bơi tại Hà Nội</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/coaches/giao-vien-tan-tam-ho-tro.jpg" alt="Giáo viên luôn quan tâm, hỗ trợ, hướng dẫn học viên tận tâm" loading="lazy" />
+          <img src="/images/coaches/giao-vien-tan-tam-ho-tro.jpg" alt="Giáo viên luôn quan tâm, hỗ trợ, hướng dẫn học viên tận tâm" loading="lazy" width="2560" height="1706" />
           <div class="gallery-item__caption">Giáo viên tận tâm hỗ trợ</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg" alt="Lớp học bơi vui vẻ tràn ngập tiếng cười tại Swim For Life" loading="lazy" />
+          <img src="/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg" alt="Lớp học bơi vui vẻ tràn ngập tiếng cười tại Swim For Life" loading="lazy" width="1920" height="1081" />
           <div class="gallery-item__caption">Luôn tràn ngập tiếng cười</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/safety/hoc-sinh-lang-nghe-nguyen-tac-an-toan.jpg" alt="Học sinh chăm chú lắng nghe hướng dẫn nguyên tắc an toàn trước khi xuống nước" loading="lazy" />
+          <img src="/images/safety/hoc-sinh-lang-nghe-nguyen-tac-an-toan.jpg" alt="Học sinh chăm chú lắng nghe hướng dẫn nguyên tắc an toàn trước khi xuống nước" loading="lazy" width="1920" height="1081" />
           <div class="gallery-item__caption">Phổ biến nguyên tắc an toàn</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/classes/lop-hoc-boi-tre-em-tphcm.jpg" alt="Lớp học bơi trẻ em TP.HCM của Trung tâm dạy bơi Swim For Life Việt Nam" loading="lazy" />
+          <img src="/images/classes/lop-hoc-boi-tre-em-tphcm.jpg" alt="Lớp học bơi trẻ em TP.HCM của Trung tâm dạy bơi Swim For Life Việt Nam" loading="lazy" width="1920" height="1081" />
           <div class="gallery-item__caption">Lớp bơi trẻ em tại TP.HCM</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg" alt="Huấn luyện viên có chuyên môn cao, tâm lý, vui vẻ, tận tâm với từng học viên" loading="lazy" />
+          <img src="/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg" alt="Huấn luyện viên có chuyên môn cao, tâm lý, vui vẻ, tận tâm với từng học viên" loading="lazy" width="1920" height="1081" />
           <div class="gallery-item__caption">HLV chuyên môn cao, tâm lý</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/classes/lop-hoc-boi-mien-phi-vinhomes.jpg" alt="Lớp học bơi miễn phí cho cư dân Vinhomes - Swim For Life" loading="lazy" />
+          <img src="/images/classes/lop-hoc-boi-mien-phi-vinhomes.jpg" alt="Lớp học bơi miễn phí cho cư dân Vinhomes - Swim For Life" loading="lazy" width="1920" height="1081" />
           <div class="gallery-item__caption">Lớp bơi miễn phí Vinhomes</div>
         </div>
         <div class="gallery-item">
-          <img src="/images/events/giai-boi-kinh-ngu-ocean-city-2023.jpg" alt="Swim For Life tổ chức Giải bơi Kình ngư Quận biển Ocean City 2023" loading="lazy" />
+          <img src="/images/events/giai-boi-kinh-ngu-ocean-city-2023.jpg" alt="Swim For Life tổ chức Giải bơi Kình ngư Quận biển Ocean City 2023" loading="lazy" width="1920" height="1280" />
           <div class="gallery-item__caption">Giải bơi Kình ngư Ocean City 2023</div>
         </div>
       </div>
@@ -499,7 +499,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
       <div class="techniques-grid">
         <a href="/ky-thuat-boi/hoc-boi-ech/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
-            <img src="/images/techniques/huong-dan-tap-tho-boi-ech.jpg" alt="Hướng dẫn tập thở bơi ếch - Kỹ thuật bơi ếch cơ bản" loading="lazy" />
+            <img src="/images/techniques/huong-dan-tap-tho-boi-ech.jpg" alt="Hướng dẫn tập thở bơi ếch - Kỹ thuật bơi ếch cơ bản" loading="lazy" width="1920" height="1440" />
           </div>
           <div class="technique-card__body">
             <span class="technique-card__number">01</span>
@@ -510,7 +510,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         </a>
         <a href="/ky-thuat-boi/hoc-boi-sai/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
-            <img src="/images/techniques/tap-dong-tac-tay-boi-sai-tren-can.jpg" alt="Tập động tác tay bơi sải trên cạn - Kỹ thuật bơi sải" loading="lazy" />
+            <img src="/images/techniques/tap-dong-tac-tay-boi-sai-tren-can.jpg" alt="Tập động tác tay bơi sải trên cạn - Kỹ thuật bơi sải" loading="lazy" width="1920" height="1280" />
           </div>
           <div class="technique-card__body">
             <span class="technique-card__number">02</span>
@@ -521,7 +521,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         </a>
         <a href="/ky-thuat-boi/hoc-boi-ngua/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
-            <img src="/images/safety/khoi-dong-tren-can.jpg" alt="Khởi động trên cạn trước khi tập bơi ngửa - Kỹ thuật bơi ngửa" loading="lazy" />
+            <img src="/images/safety/khoi-dong-tren-can.jpg" alt="Khởi động trên cạn trước khi tập bơi ngửa - Kỹ thuật bơi ngửa" loading="lazy" width="1920" height="1280" />
           </div>
           <div class="technique-card__body">
             <span class="technique-card__number">03</span>
@@ -532,7 +532,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
         </a>
         <a href="/ky-thuat-boi/hoc-boi-buom/" class="technique-card reveal">
           <div class="technique-card__img-wrap">
-            <img src="/images/safety/khoi-dong-lam-nong-co-the.jpg" alt="Khởi động làm nóng cơ thể trước khi tập bơi bướm - Kỹ thuật bơi bướm" loading="lazy" />
+            <img src="/images/safety/khoi-dong-lam-nong-co-the.jpg" alt="Khởi động làm nóng cơ thể trước khi tập bơi bướm - Kỹ thuật bơi bướm" loading="lazy" width="1920" height="1081" />
           </div>
           <div class="technique-card__body">
             <span class="technique-card__number">04</span>
@@ -569,7 +569,7 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
           <img 
             src="/images/events/giay-chung-nhan-hoan-thanh-khoa-hoc.jpg" 
             alt="Giấy chứng nhận hoàn thành khóa học bơi của Trung tâm dạy bơi Swim For Life Việt Nam" 
-            loading="lazy"
+            loading="lazy" width="1920" height="1091"
           />
         </div>
       </div>

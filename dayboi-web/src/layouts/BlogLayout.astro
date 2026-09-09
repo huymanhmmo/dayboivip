@@ -191,7 +191,7 @@ const tagsList = Array.from(tagsMap.values());
         {tocItems && tocItems.length > 0 && (
           <aside class="blog-sidebar-left">
             <div class="sidebar-widget toc-sidebar-widget">
-              <h3 class="widget-title">📑 {lang === 'en' ? 'Table of Contents' : 'Mục Lục'}</h3>
+              <h2 class="widget-title">📑 {lang === 'en' ? 'Table of Contents' : 'Mục Lục'}</h2>
               <nav class="toc-list" aria-label={lang === 'en' ? 'Article table of contents (desktop)' : 'Mục lục bài viết (bản máy tính)'}>
                 {tocItems.map(item => (
                   <a href={`#${item.id}`}>{item.text}</a>
@@ -245,7 +245,7 @@ const tagsList = Array.from(tagsMap.values());
         <aside class="blog-sidebar-right">
           <!-- Widget: Categories -->
           <div class="sidebar-widget">
-            <h3 class="widget-title">📁 {lang === 'en' ? 'Navigation' : 'Danh Mục'}</h3>
+            <h2 class="widget-title">📁 {lang === 'en' ? 'Navigation' : 'Danh Mục'}</h2>
             {lang === 'en' ? (
               <ul class="sidebar-categories-list">
                 <li>
@@ -280,13 +280,13 @@ const tagsList = Array.from(tagsMap.values());
 
           <!-- Widget: Recent Posts -->
           <div class="sidebar-widget">
-            <h3 class="widget-title">📰 {lang === 'en' ? 'Recent Articles' : 'Bài Viết Mới'}</h3>
+            <h2 class="widget-title">📰 {lang === 'en' ? 'Recent Articles' : 'Bài Viết Mới'}</h2>
             <div class="recent-posts-list">
               {(lang === 'en' ? englishRecentPosts : blogPosts.slice(0, 10)).map(post => (
                 <a href={post.slug.startsWith('http') || post.slug.startsWith('/') ? post.slug : `/${post.slug}/`} class="recent-post-item">
                   <img src={post.image} alt={post.title} class="recent-post-thumb" loading="lazy" width="70" height="70" />
                   <div class="recent-post-info">
-                    <h4 class="recent-post-title">{post.title}</h4>
+                    <h3 class="recent-post-title">{post.title}</h3>
                     <span class="recent-post-meta">📅 {post.date}/{currentYear}</span>
                   </div>
                 </a>

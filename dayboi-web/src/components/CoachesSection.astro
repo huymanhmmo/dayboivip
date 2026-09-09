@@ -49,7 +49,7 @@ const coaches = [
     <!-- Featured Lead Coach Spotlight (Thầy Nguyễn Huy Mạnh) -->
     <div class="featured-coach reveal">
       <div class="featured-coach__img-wrap">
-        <img src={coaches[0].img} alt={`Huấn luyện viên ${coaches[0].name}`} class="featured-coach__img" />
+        <img src={coaches[0].img} alt={`Huấn luyện viên ${coaches[0].name}`} class="featured-coach__img" width="700" height="700" loading="lazy" />
         <div class="featured-coach__badge">Sáng Lập / Giám Đốc Đào Tạo</div>
       </div>
       <div class="featured-coach__content">
@@ -72,7 +72,7 @@ const coaches = [
       {coaches.slice(1).map((coach) => (
         <div class="coach-card">
           <div class="coach-card__img-wrap">
-            <img src={coach.img} alt={`Huấn luyện viên ${coach.name}`} class="coach-card__img" />
+            <img src={coach.img} alt={`Huấn luyện viên ${coach.name}`} class="coach-card__img" width="700" height="700" loading="lazy" />
             <div class="coach-card__tags">
               {coach.tags.map((tag) => (
                 <span class="coach-tag">{tag}</span>

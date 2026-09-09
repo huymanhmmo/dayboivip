@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { locations } from '../data/locations.js';
-import { countReviewedVenues, locationRollout } from '../data/locationResearch.js';
+import { countReviewedVenues } from '../data/locationResearch.js';
 import { publishedLocationAreas } from '../data/locationAreas.js';
 import '../styles/location-directory.css';
 
@@ -47,9 +47,9 @@ const schema = {
     <section class="directory-hub__hero">
       <div class="container directory-hub__hero-grid">
         <div>
-          <span class="local-directory__eyebrow">34 tỉnh, thành · {publishedLocationAreas.length} landing page cấp quận/huyện</span>
+          <span class="local-directory__eyebrow">34 tỉnh, thành · {publishedLocationAreas.length} khu vực có trang chi tiết</span>
           <h1>Tìm nơi học bơi <span>gần bạn</span></h1>
-          <p>Swim For Life chuyển phần dành cho người học cá nhân thành danh bạ độc lập. Bạn chọn địa phương, xem các cơ sở tham khảo rồi liên hệ trực tiếp qua listing công khai của bể bơi, CLB hoặc giáo viên.</p>
+          <p>Chọn tỉnh, thành hoặc quận huyện để xem bể bơi, lớp học và đầu mối dạy bơi gần nơi bạn sống. Hãy kiểm tra lịch học, học phí và điều kiện vào bể trực tiếp với đơn vị trước khi đăng ký.</p>
           <label class="directory-hub__search">
             <span class="sr-only">Tìm tỉnh hoặc thành phố</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
@@ -58,7 +58,7 @@ const schema = {
         </div>
         <figure>
           <img src="/images/classes/lop-hoc-boi-ha-noi.jpg" alt="Lớp bơi thực tế với huấn luyện viên hướng dẫn dưới nước" width="700" height="520" loading="eager" />
-          <figcaption>Ảnh hoạt động bơi lội thực tế của Swim For Life; danh bạ bên dưới gồm các đơn vị độc lập.</figcaption>
+          <figcaption>Tham khảo địa điểm trước, sau đó trao đổi trực tiếp với đơn vị tổ chức lớp.</figcaption>
         </figure>
       </div>
     </section>
@@ -76,22 +76,22 @@ const schema = {
         <div class="section__header">
           <span class="section__badge">Chọn địa phương</span>
           <h2 class="section__title" id="directory-title">Danh bạ bơi lội toàn quốc</h2>
-          <p class="section__desc">Các URL cũ được giữ nguyên để người dùng và công cụ tìm kiếm không gặp liên kết hỏng.</p>
+          <p class="section__desc">Nhập tên địa phương vào ô tìm kiếm hoặc chọn một khu vực bên dưới để bắt đầu.</p>
         </div>
         <p class="directory-hub__empty" id="directory-empty" hidden>Không tìm thấy địa phương phù hợp. Hãy thử tên tỉnh/thành khác.</p>
         <div class="directory-hub__regions" id="directory-regions">
-          <section class="directory-hub__region" data-region="Khu vực Hà Nội đã qua cổng chất lượng">
+          <section class="directory-hub__region" data-region="Khu vực có thông tin chi tiết">
             <div class="directory-hub__region-heading">
               <span>{String(publishedLocationAreas.length).padStart(2, '0')}</span>
-              <h3>Khu vực Hà Nội đã có landing page riêng</h3>
+              <h3>Khu vực có thông tin chi tiết</h3>
             </div>
             <div class="directory-hub__grid">
               {publishedLocationAreas.map((area) => (
                 <a href={area.url} class="directory-hub__card" data-location={`${area.name} ${area.nearbyAreas.join(' ')}`.toLowerCase()}>
-                  <img src={area.parentImage} alt="" width="320" height="210" loading="lazy" />
+                  <img src={area.parentImage} alt={`Học bơi tại ${area.seoPlace}`} width="320" height="210" loading="lazy" />
                   <div>
-                    <span>{area.category.venues.length} địa điểm đã kiểm nguồn</span>
-                    <h4>{area.name}, Hà Nội</h4>
+                    <span>{area.category.venues.length} địa điểm tham khảo</span>
+                    <h4>{area.name}, {area.parentName}</h4>
                     <p>{area.nearbyAreas.join(' · ')}</p>
                     <strong>Xem lớp học & bể bơi <b>→</b></strong>
                   </div>
@@ -108,9 +108,9 @@ const schema = {
               <div class="directory-hub__grid">
                 {locations.filter((location) => location.region === region).map((location) => (
                   <a href={`/${location.slug}/`} class="directory-hub__card" data-location={`${location.name} ${location.mergedFrom || ''}`.toLowerCase()}>
-                    <img src={location.image} alt="" width="320" height="210" loading="lazy" />
+                    <img src={location.image} alt={`Địa điểm học bơi tại ${location.name}`} width="320" height="210" loading="lazy" />
                     <div>
-                      <span>{countReviewedVenues(location.slug) ? `${countReviewedVenues(location.slug)} địa điểm có nguồn` : `${location.pools.length} địa điểm khởi tạo`}</span>
+                      <span>{countReviewedVenues(location.slug) ? `${countReviewedVenues(location.slug)} địa điểm tham khảo` : `${location.pools.length} địa điểm đang cập nhật`}</span>
                       <h4>{location.name}</h4>
                       {location.mergedFrom && <p>Khu vực: {location.mergedFrom}</p>}
                       <strong>Xem bể bơi, CLB & HLV <b>→</b></strong>
@@ -127,19 +127,29 @@ const schema = {
     <section class="section section--alt directory-hub__roadmap" aria-labelledby="roadmap-title">
       <div class="container">
         <div class="section__header">
-          <span class="section__badge">Lộ trình dữ liệu địa phương</span>
-          <h2 class="section__title" id="roadmap-title">Làm kỹ thành phố lớn trước, mở rộng theo cụm vùng</h2>
-          <p class="section__desc">Mỗi vòng rà soát đều yêu cầu phân loại địa điểm, ghi rõ quyền tiếp cận và gắn nguồn để người dùng tự kiểm tra.</p>
+          <span class="section__badge">Trước khi đăng ký</span>
+          <h2 class="section__title" id="roadmap-title">Ba bước chọn nơi học bơi phù hợp</h2>
+          <p class="section__desc">Đừng chỉ chọn theo quảng cáo. Một vài câu hỏi ngắn sẽ giúp bạn tránh đi xa, phát sinh chi phí hoặc vào nhầm lớp.</p>
         </div>
         <div class="directory-hub__roadmap-grid">
-          {locationRollout.map((item, index) => (
-            <article>
-              <div><span>0{index + 1}</span><strong>{item.phase}</strong></div>
-              <h3>{item.status}</h3>
-              <p>{item.locations.join(' · ')}</p>
-              <small>{item.scope}</small>
-            </article>
-          ))}
+          <article>
+            <div><span>01</span><strong>Khoảng cách</strong></div>
+            <h3>Chọn bể thuận đường đi</h3>
+            <p>Ưu tiên địa điểm gần nhà, trường học hoặc nơi làm việc để duy trì lịch học đều.</p>
+            <small>Kiểm tra chỗ gửi xe, giờ cao điểm và thời gian di chuyển.</small>
+          </article>
+          <article>
+            <div><span>02</span><strong>Lớp học</strong></div>
+            <h3>Hỏi rõ đối tượng và sĩ số</h3>
+            <p>Xác nhận độ tuổi, trình độ đầu vào, số học viên mỗi giáo viên và cách học bù.</p>
+            <small>Người sợ nước hoặc trẻ nhỏ thường cần lớp ít người hơn.</small>
+          </article>
+          <article>
+            <div><span>03</span><strong>Chi phí</strong></div>
+            <h3>Chốt tổng phí trước khi học</h3>
+            <p>Hỏi học phí đã gồm vé bể, dụng cụ, buổi kiểm tra đầu vào và phí học bù hay chưa.</p>
+            <small>Nên nhận thông tin bằng tin nhắn để dễ đối chiếu.</small>
+          </article>
         </div>
       </div>
     </section>

@@ -12,6 +12,11 @@ export function getStaticPaths() {
 const { loc } = Astro.props;
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const googleSearch = (query) => `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+const customerCopy = (value = '') => String(value)
+  .replace(/cam kết 100%/gi, 'đặt mục tiêu')
+  .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn')
+  .replace(/uy tín nhất/gi, 'được nhiều người biết đến')
+  .replace(/hoàn hảo nhất/gi, 'phù hợp');
 const research = getLocationResearch(loc.slug);
 const categories = research?.categories || [{
   id: 'starter',
@@ -84,15 +89,15 @@ const directorySchema = {
     <section class="local-directory__hero">
       <div class="container local-directory__hero-grid">
         <div>
-          <span class="local-directory__eyebrow">Địa điểm độc lập · {loc.region}</span>
+          <span class="local-directory__eyebrow">Tìm lớp học bơi tại {loc.region}</span>
           <h1>Học bơi tại <span>{loc.name}</span>: bể bơi, lớp học & nơi dạy bơi</h1>
-          <p>Trang này giúp người học cá nhân chủ động tìm lớp học bơi, bể bơi, câu lạc bộ hoặc giáo viên đang công khai dịch vụ tại {loc.name}. Các nhu cầu học bơi ếch, bơi sải, bơi ngửa và bơi bướm được gom theo một cấu trúc khu vực để dễ so sánh. Swim For Life không nhận đăng ký, không thu phí và không đại diện cho các đơn vị được liệt kê.</p>
+          <p>Tìm bể bơi, câu lạc bộ hoặc giáo viên dạy bơi tại {loc.name}; xem địa chỉ, đối tượng nhận học và cách liên hệ. Bạn cũng có thể chọn hướng dẫn bơi ếch, bơi sải, bơi ngửa hoặc bơi bướm theo mục tiêu của mình.</p>
           <div class={`local-directory__research-status ${research ? 'is-reviewed' : ''}`}>
-            <strong>{research?.level || 'Đang chờ rà soát chi tiết'}</strong>
-            <span>{research ? `${poolDirectory.length} địa điểm được khảo sát · cập nhật ${research.reviewedAt}` : 'Thông tin tham khảo · cần xác minh trực tiếp'}</span>
+            <strong>Thông tin học bơi theo khu vực</strong>
+            <span>{research ? `${poolDirectory.length} địa điểm · cập nhật ${research.reviewedAt}` : 'Hãy xác minh lịch và giá trực tiếp với đơn vị'}</span>
           </div>
           <div class="local-directory__hero-actions">
-            <a href="#danh-sach">Xem danh sách tham khảo</a>
+            <a href="#danh-sach">Xem bể bơi và lớp học</a>
             <a href={mapsSearch(`học bơi tại ${loc.name}`)} target="_blank" rel="noopener noreferrer">Tìm toàn bộ trên bản đồ</a>
           </div>
         </div>
@@ -121,7 +126,7 @@ const directorySchema = {
         <div class="section__header">
           <span class="section__badge">Tra cứu theo nhu cầu</span>
           <h2 class="section__title" id="discovery-title">Tìm đúng loại đơn vị tại {loc.name}</h2>
-          <p class="section__desc">Các liên kết dưới đây mở kết quả Google và Google Maps theo thời gian thực để bạn xem thông tin công khai và liên hệ trực tiếp.</p>
+          <p class="section__desc">Chọn đúng nhu cầu để xem thêm địa điểm, giờ mở cửa, hình ảnh và đánh giá gần đây.</p>
         </div>
         <div class="local-directory__discovery-grid">
           {discoveryLinks.map((item) => (
@@ -139,9 +144,9 @@ const directorySchema = {
     <section class="section section--alt" id="danh-sach" aria-labelledby="pool-list-title">
       <div class="container">
         <div class="section__header">
-          <span class="section__badge">{research?.providers ? 'Theo cụm khu vực quen dùng' : 'Theo từng loại địa điểm'}</span>
+          <span class="section__badge">{research?.providers ? 'Chọn khu vực gần bạn' : 'Chọn theo loại địa điểm'}</span>
           <h2 class="section__title" id="pool-list-title">Bể bơi và đơn vị tại {loc.name}</h2>
-          <p class="section__desc">{research?.summary || 'Dữ liệu địa điểm bơi lội được tổng hợp và khảo sát thực tế trên toàn quốc.'} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
+          <p class="section__desc">{customerCopy(research?.summary || 'Danh sách giúp bạn tham khảo địa điểm bơi lội tại địa phương.')} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
         </div>
         <nav class="local-directory__category-nav" aria-label="Các khu vực và loại địa điểm">
           {categories.map((category) => {
@@ -161,10 +166,10 @@ const directorySchema = {
                   <h3 id={`${category.id}-title`}>{category.label}</h3>
                 </div>
                 <div>
-                  <p>{category.description}</p>
+                  <p>{customerCopy(category.description)}</p>
                   {getPublishedAreaUrl(loc.slug, category.id) && (
                     <a class="local-directory__area-link" href={getPublishedAreaUrl(loc.slug, category.id)}>
-                      Xem landing page học bơi {category.label.replace('Khu vực ', '')} →
+                      Xem thông tin học bơi {category.label.replace('Khu vực ', '')} →
                     </a>
                   )}
                 </div>
@@ -176,13 +181,13 @@ const directorySchema = {
                     <div>
                       <div class="local-directory__pool-meta">
                         <span>{pool.area || loc.name}</span>
-                        <span>{pool.entityType || pool.access || 'Chưa xác định'}</span>
-                        {pool.environment && <span>{pool.environment}</span>}
+                        <span>{customerCopy(pool.entityType || pool.access || 'Chưa xác định')}</span>
+                        {pool.environment && <span>{customerCopy(pool.environment)}</span>}
                       </div>
                       <h4>{pool.name}</h4>
-                      {pool.address && <p><strong>Địa chỉ tham khảo:</strong> {pool.address}</p>}
-                      {pool.services && <p><strong>Cơ sở vật chất & tiện ích:</strong> {pool.services}</p>}
-                      <p><strong>Ghi chú:</strong> {pool.detail}</p>
+                      {pool.address && <p><strong>Địa chỉ:</strong> {pool.address}</p>}
+                      {pool.services && <p><strong>Cơ sở vật chất & tiện ích:</strong> {customerCopy(pool.services)}</p>}
+                      <p><strong>Phù hợp với:</strong> {customerCopy(pool.detail)}</p>
 
                       {pool.venueContact && (
                         <div class="local-directory__venue-contact">
@@ -193,10 +198,10 @@ const directorySchema = {
                               <span>Hotline / ĐT:</span>
                               <a href={`tel:${pool.venueContact.phone.split(' ')[0].replace(/[^0-9+]/g, '')}`}>{pool.venueContact.phone}</a>
                             </p>
-                            {pool.venueContact.note && <p class="local-directory__contact-note">{pool.venueContact.note}</p>}
+                            {pool.venueContact.note && <p class="local-directory__contact-note">{customerCopy(pool.venueContact.note)}</p>}
                             {pool.venueContact.exactSourceUrl && (
                               <a href={pool.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="local-directory__source-link">
-                                📄 Bài viết xác thực: {pool.venueContact.sourceTitle || 'Xem bài viết nguồn'} ↗
+                                📄 Xem thông tin công khai: {pool.venueContact.sourceTitle || 'Mở trang thông tin'} ↗
                               </a>
                             )}
                           </div>
@@ -217,10 +222,10 @@ const directorySchema = {
                                   <span>Đăng ký học bơi:</span>
                                   <a href={`tel:${inst.phone.split(' ')[0].replace(/[^0-9+]/g, '')}`}><strong>{inst.phone}</strong></a>
                                 </p>
-                                <p class="local-directory__instructor-courses"><strong>Khóa học:</strong> {inst.courseTypes}</p>
+                                <p class="local-directory__instructor-courses"><strong>Khóa học:</strong> {customerCopy(inst.courseTypes)}</p>
                                 {inst.exactSourceUrl && (
                                   <a href={inst.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="local-directory__source-link">
-                                    🔗 Bài viết xác thực: {inst.sourceTitle || 'Xem thông tin chi tiết'} ↗
+                                    🔗 Xem thông tin lớp: {inst.sourceTitle || 'Xem thông tin chi tiết'} ↗
                                   </a>
                                 )}
                               </div>
@@ -229,7 +234,7 @@ const directorySchema = {
                         </div>
                       )}
 
-                      {pool.missing && <p class="local-directory__missing"><strong>Lưu ý:</strong> {pool.missing}</p>}
+                      {pool.missing && <p class="local-directory__missing"><strong>Lưu ý:</strong> {customerCopy(pool.missing)}</p>}
                     </div>
                     <div class="local-directory__pool-links">
                       <a href={mapsSearch(`${pool.name}, ${pool.address || loc.name}`)} target="_blank" rel="noopener noreferrer">Bản đồ & chỉ đường ↗</a>
@@ -247,7 +252,7 @@ const directorySchema = {
       <section class="section local-directory__providers" aria-labelledby="provider-title">
         <div class="container">
           <div class="section__header">
-            <span class="section__badge">Đơn vị tổ chức lớp đã đối chiếu</span>
+            <span class="section__badge">Đơn vị có thông tin công khai</span>
             <h2 class="section__title" id="provider-title">Trung tâm và câu lạc bộ dạy bơi tại {loc.name}</h2>
             <p class="section__desc">Danh sách này tách khỏi danh sách bể bơi. Một đơn vị có thể dạy tại nhiều bể; một bể cũng có thể được nhiều đơn vị sử dụng.</p>
           </div>
@@ -259,11 +264,11 @@ const directorySchema = {
                 <dl>
                   <div><dt>Khu vực</dt><dd>{provider.areas}</dd></div>
                   <div><dt>Đối tượng</dt><dd>{provider.audiences}</dd></div>
-                  <div><dt>Hình thức</dt><dd>{provider.formats}</dd></div>
+                  <div><dt>Hình thức</dt><dd>{customerCopy(provider.formats)}</dd></div>
                   {provider.contact && <div><dt>Liên hệ công khai</dt><dd>{provider.contact}</dd></div>}
                 </dl>
-                <p><strong>Đã xác minh:</strong> {provider.verification}</p>
-                <p class="local-directory__missing"><strong>Còn thiếu:</strong> {provider.missing}</p>
+                <p><strong>Thông tin đã có:</strong> {customerCopy(provider.verification)}</p>
+                <p class="local-directory__missing"><strong>Cần hỏi thêm:</strong> {customerCopy(provider.missing)}</p>
               </article>
             ))}
           </div>
@@ -274,13 +279,13 @@ const directorySchema = {
     <section class="section local-directory__method" aria-labelledby="method-title">
       <div class="container local-directory__method-grid">
         <div>
-          <span class="section__badge">Phương pháp biên tập</span>
-          <h2 class="section__title" id="method-title">Tiêu chí biên tập và khảo sát địa điểm</h2>
+          <span class="section__badge">Cách đọc danh sách</span>
+          <h2 class="section__title" id="method-title">Thông tin nào cần kiểm tra trước khi đi?</h2>
         </div>
         <div class="local-directory__method-list">
-          <p><strong>1. Xác nhận định danh</strong><span>Tên, địa chỉ và cơ sở vật chất được rà soát, đối chiếu thực tế theo từng khu vực.</span></p>
-          <p><strong>2. Gắn mức độ tiếp cận</strong><span>Phân biệt bể công cộng, thương mại, tổ hợp thể thao và hồ nội khu để tránh đến nhầm.</span></p>
-          <p><strong>3. Không sao chép giá cũ</strong><span>Giá vé, giờ mở cửa và lịch giáo viên biến động nhanh nên người dùng nên liên hệ trực tiếp với nơi vận hành.</span></p>
+          <p><strong>1. Đúng địa chỉ</strong><span>Mở bản đồ để kiểm tra lối vào, chỗ gửi xe và quãng đường từ nhà đến bể.</span></p>
+          <p><strong>2. Có được vào bể</strong><span>Bể công cộng, khách sạn và hồ nội khu có quy định khách ngoài khác nhau.</span></p>
+          <p><strong>3. Lịch và tổng chi phí</strong><span>Hỏi lại giờ mở cửa, lịch giáo viên, học phí và vé bể trước khi đăng ký.</span></p>
         </div>
       </div>
     </section>

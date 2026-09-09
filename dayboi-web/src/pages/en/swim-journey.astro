@@ -2,7 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import LocalDirectoryCTA from '../../components/LocalDirectoryCTA.astro';
 
-const title = 'Swimming Learning Path: Beginner to Advanced | Swim For Life Vietnam';
+const title = 'Swimming Learning Path: Beginner to Confident Swimmer';
 const description = 'Explore our structured 12-session swimming syllabus for children & adults. From water adaptation, breathing, to mastering breaststroke, crawl, and treading.';
 
 const breadcrumbs = [
@@ -120,14 +120,14 @@ const journeySchema = {
 
             <div class="grid grid-2" style="gap: var(--space-8); align-items: start; margin-top: var(--space-2);">
               <div>
-                <h3 style="font-size: var(--text-xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-3); line-height: 1.3;">
+                <h2 style="font-size: var(--text-xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-3); line-height: 1.3;">
                   {step.title}
-                </h3>
+                </h2>
                 <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-6); line-height: 1.6; font-style: italic;">
                   "{step.desc}"
                 </p>
 
-                <h4 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Detailed training focus:</h4>
+                <h3 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Detailed training focus:</h3>
                 <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text); line-height: 1.6;">
                   {step.details.map((detail) => (
                     <li style="display: flex; align-items: flex-start; gap: var(--space-2);">
@@ -143,6 +143,8 @@ const journeySchema = {
                   alt={step.title} 
                   style="border-radius: 12px; width: 100%; height: 260px; object-fit: cover; box-shadow: var(--shadow-sm);"
                   loading="lazy"
+                  width="640"
+                  height="360"
                 />
               </div>
             </div>
@@ -164,7 +166,7 @@ const journeySchema = {
             src="/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg" 
             alt="Swim class Vinhomes Times City" 
             style="border-radius: 16px; box-shadow: var(--shadow-md); width: 100%; object-fit: cover; height: 350px;"
-            loading="lazy"
+            loading="lazy" width="1920" height="1280"
           />
         </div>
         <div>
