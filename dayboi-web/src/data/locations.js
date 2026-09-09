@@ -88,7 +88,10 @@ export const locations = [
       { name: "Bể bơi Vinhomes Imperia", address: "Thượng Lý, Hồng Bàng, Hải Phòng", type: "Trong nhà & ngoài trời", pros: "Cơ sở vật chất hiện đại bậc nhất, sang trọng và rất an toàn." }
     ],
     faqs: [
-      { q: "Học bơi ở Hải Phòng bao nhiêu buổi thì biết bơi?", a: "Lộ trình chuẩn của trung tâm là 12 buổi học bài bản, đa số học viên biết bơi từ buổi thứ 8 đến thứ 10." }
+      { q: "Hải Phòng có những bể bơi tiêu chuẩn thi đấu nào?", a: "Bể bơi Bến Bính (Hồng Bàng) vừa đăng cai Giải Bơi – Lặn vô địch CLB quốc gia tháng 8/2026. Bể bơi Sân vận động Lạch Tray (Ngô Quyền) có bể 50m phục vụ huấn luyện chuyên nghiệp. Cả hai đều là bể tiêu chuẩn thi đấu." },
+      { q: "Ở Hải Phòng có trường bơi chuyên biệt cho trẻ nhỏ không?", a: "Có. Aqua-Tots Swim Schools (Dương Kinh) dạy bơi sinh tồn chuẩn Mỹ cho trẻ từ 4 tháng đến 12 tuổi với lớp nhóm nhỏ 4:1 và nước ấm 30–32°C quanh năm. Liên hệ: 0225 710 8889." },
+      { q: "Học bơi ở Hải Phòng bao nhiêu buổi thì biết bơi?", a: "Tùy theo hình thức học và trình độ. Đất Cảng Swim Club cam kết học viên bơi được 25m, nếu sau 10 buổi chưa bơi được sẽ tiếp tục dạy miễn phí (chỉ tính vé bể). Các trung tâm khác thường có lộ trình 10–15 buổi." },
+      { q: "Hải Phòng có bể bơi bốn mùa nước ấm không?", a: "Có nhiều lựa chọn: Aqua Dreams (Vinhomes Imperia), Paradise Pool (Lê Hồng Phong), Hồ Sen (Lê Chân), CT Pool (Hoàng Huy), Hải Long (Kiến An) và Cựu Viên (nước mặn đầu tiên tại HP). Tất cả đều hoạt động quanh năm." }
     ]
   },
   {
