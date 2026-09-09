@@ -4,8 +4,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import CourseHero from '../../../components/course/CourseHero.astro';
 import CourseTrust from '../../../components/course/CourseTrust.astro';
 import CourseFAQ from '../../../components/course/CourseFAQ.astro';
-import FloatingCTA from '../../../components/course/FloatingCTA.astro';
-import RegistrationForm from '../../../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../../../components/LocalDirectoryCTA.astro';
 import { courses } from '../../../data/courses.js';
 import '../../../styles/course-landing.css';
 
@@ -56,15 +55,15 @@ const faqData = [
   },
   {
     question: "How much are the tuition fees at Swim For Life?",
-    answer: "Fees depend on the chosen class type, location, and the number of sessions. Swim For Life guarantees highly competitive and transparent rates. Contact us via hotline/Zalo at 0979.121.097 for a personalized quote."
+    answer: "Individuals should request pricing directly from a provider in the local directory. Organization programs are quoted according to participant count, venue, duration, and safety requirements."
   },
   {
     question: "What strokes do you teach?",
     answer: "We teach all 4 core strokes: Breaststroke (easiest for beginners), Freestyle (fastest), Backstroke (comfort and easy breathing), and Butterfly (advanced). We also specialize in survival treading."
   },
   {
-    question: "Do you offer a free trial class?",
-    answer: "Yes! Every student is entitled to one free trial session to experience our teaching approach, meet their coach, and have their skills evaluated before registering."
+    question: "Does Swim For Life accept individual learners?",
+    answer: "No. Individual learners use the local directory to contact an independent pool, club, or instructor. Swim For Life only accepts organization programs for groups of 10 or more."
   },
   {
     question: "What is your course preservation policy?",
@@ -162,7 +161,7 @@ const enCourses = courses.map(c => {
 
 <PageLayout
   title={`Professional Swimming Courses: Basic to Advanced [${currentYear}] | Swim For Life`}
-  description="Structured swimming classes by Swim For Life Vietnam. Master swimming in 10-12 sessions guaranteed. Kids & adults classes, certified coaches. Book a free trial today!"
+  description="Swimming program and technique library. Individuals can use the local directory; organizations with 10 or more participants can request a tailored training program."
   canonical="https://dayboi.vip/en/courses/"
   breadcrumbs={breadcrumbs}
   schema={combinedSchema}
@@ -319,55 +318,7 @@ const enCourses = courses.map(c => {
       faqs={faqData}
     />
 
-    <!-- Form Section -->
-    <section class="cl-section cl-section--alt" id="dang-ky">
-      <div class="cl-section__container">
-        <div class="cl-section-title">
-          <span class="cl-section-title__badge">
-            Book Today
-          </span>
-          <h2 class="cl-section-title__heading">
-            Start Your Swimming Journey Today
-          </h2>
-          <p class="cl-section-title__sub">
-            Fill in the form below. Swim For Life will contact you to set up your FREE trial lesson immediately.
-          </p>
-          <span class="cl-section-title__decoration"></span>
-        </div>
-
-        <div class="cl-form-container">
-          <div class="cl-form-info">
-            <h3 class="cl-form-info__title">24/7 Support</h3>
-            <p class="cl-form-info__text">
-              Reach out directly via phone call or Zalo chat to get answers instantly:
-            </p>
-            <div class="cl-form-info__links">
-              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
-                <span class="cl-form-info__icon">📞</span>
-                <div>
-                  <span class="cl-form-info__label">Hotline</span>
-                  <span class="cl-form-info__value">0979.121.097</span>
-                </div>
-              </a>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
-                <span class="cl-form-info__icon">💬</span>
-                <div>
-                  <span class="cl-form-info__label">Zalo Chat</span>
-                  <span class="cl-form-info__value">Mr. Manh (0979.121.097)</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <div class="cl-form-wrapper">
-            <RegistrationForm id="en-course-register-form" className="cl-astro-form" lang="en" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Floating Mobile CTA -->
-    <FloatingCTA />
+    <LocalDirectoryCTA lang="en" />
   </div>
 </PageLayout>
 

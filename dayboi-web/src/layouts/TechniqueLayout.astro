@@ -1,7 +1,7 @@
 ---
 import PageLayout from './PageLayout.astro';
 import YouTubeVideo from '../components/YouTubeVideo.astro';
-import RegistrationForm from '../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 import CoachesSection from '../components/CoachesSection.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
@@ -326,8 +326,8 @@ const themeStyles = (() => {
             </p>
             
             <div class="tl-hero__ctas">
-              <a href="#dang-ky" class="tl-btn tl-btn--accent tl-btn--pulse">{isEn ? '📞 Free Trial Lesson' : '📞 Học Thử Miễn Phí'}</a>
-              <a href={`#${toc[0]?.id || 'gioi-thieu'}`} class="tl-btn tl-btn--outline">{isEn ? '📖 Read Guide' : '📖 Xem Kỹ Thuật'}</a>
+              <a href={isEn ? '/en/guides/' : '/hoc-boi-o-dau/'} class="tl-btn tl-btn--accent">{isEn ? 'Find a Local Provider' : 'Tìm Nơi Học Gần Bạn'}</a>
+              <a href={`#${toc[0]?.id || 'gioi-thieu'}`} class="tl-btn tl-btn--outline">{isEn ? 'Read Guide' : 'Xem Kỹ Thuật'}</a>
             </div>
           </div>
 
@@ -790,46 +790,9 @@ const themeStyles = (() => {
 
     {!isEn && <CoachesSection />}
 
-    <!-- Registration Form Block -->
-    <section class="tl-section tl-section--alt" id="dang-ky">
+    <section class="tl-section tl-section--alt">
       <div class="tl-section__container">
-        <div class="tl-section-title">
-          <span class="tl-section-title__badge">{isEn ? 'Book a Lesson' : 'Đăng ký học bơi'}</span>
-          <h2 class="tl-section-title__heading">{isEn ? 'Train with Professional Coaches' : 'Luyện Tập Cùng Huấn Luyện Viên Chuyên Nghiệp'}</h2>
-          <p class="tl-section-title__sub">
-            {isEn ? 'Sign up for a FREE trial lesson with a 1-on-1 private coach at Swim For Life Vietnam today.' : 'Đăng ký học thử 1 buổi MIỄN PHÍ cùng HLV 1 kèm 1 tại Swim For Life Việt Nam để chỉnh sửa lỗi kỹ thuật bơi chuẩn nhất.'}
-          </p>
-          <span class="tl-section-title__decoration"></span>
-        </div>
-
-        <div class="tl-form-container">
-          <div class="tl-form-info">
-            <h3 class="tl-form-info__title">{isEn ? 'Swim For Life Vietnam' : 'Swim For Life Việt Nam'}</h3>
-            <p class="tl-form-info__text">
-              {isEn ? 'We guarantee 100% results after a 10-12 session course. Dedicated 1-on-1 private coach in the water, personalized lesson plan tailored to individual fitness.' : 'Chúng tôi cam kết 100% học viên biết bơi sau khóa học 10-12 buổi. HLV kèm riêng tận tâm dưới nước, giáo án cá nhân hóa theo thể trạng từng học viên.'}
-            </p>
-            <div class="tl-form-info__links">
-              <a href="tel:0979121097" class="tl-form-info__link">
-                <span class="tl-form-info__icon">📞</span>
-                <div>
-                  <span class="tl-form-info__label">{isEn ? 'Consultation Hotline / Zalo' : 'Hotline / Zalo tư vấn'}</span>
-                  <span class="tl-form-info__value">0979.121.097</span>
-                </div>
-              </a>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-form-info__link">
-                <span class="tl-form-info__icon">💬</span>
-                <div>
-                  <span class="tl-form-info__label">{isEn ? 'Chat via Zalo' : 'Trò chuyện qua Zalo'}</span>
-                  <span class="tl-form-info__value">Mr.Mạnh (0979.121.097)</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <div class="tl-form-wrapper">
-            <RegistrationForm id="technique-register-form" className="tl-astro-form" lang={lang} />
-          </div>
-        </div>
+        <LocalDirectoryCTA lang={lang} />
       </div>
     </section>
 
@@ -847,11 +810,9 @@ const themeStyles = (() => {
               <span class="tl-section-title__decoration" style="margin-inline: 0;"></span>
               
               <div class="tl-faq-cta hide-mobile">
-                <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 8px;">{isEn ? 'Still have questions?' : 'Vẫn còn thắc mắc khác?'}</p>
-                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">{isEn ? 'Feel free to contact our Lead Coach directly for support.' : 'Đừng ngần ngại liên hệ trực tiếp với HLV Trưởng của chúng tôi để được tư vấn nhanh nhất.'}</p>
-                <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
-                  <span>📞</span> {isEn ? 'Call: 0979.121.097' : 'Hotline: 0979.121.097'}
-                </a>
+                <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 8px;">{isEn ? 'Need in-person instruction?' : 'Cần người hướng dẫn trực tiếp?'}</p>
+                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">{isEn ? 'Use the public directory to find a local pool, club or independent instructor.' : 'Tra cứu danh bạ công khai để tìm bể bơi, CLB hoặc giáo viên độc lập tại địa phương.'}</p>
+                <a href={isEn ? '/en/guides/' : '/hoc-boi-o-dau/'} class="btn btn--accent btn--sm">{isEn ? 'Open local directory' : 'Mở danh bạ địa phương'}</a>
               </div>
             </div>
 
@@ -900,13 +861,6 @@ const themeStyles = (() => {
       </div>
     </section>
 
-    <!-- Floating CTA Mobile -->
-    <div class="tl-floating-cta">
-      <div class="tl-floating-cta-inner">
-        <a href="tel:0979121097" class="tl-btn tl-btn--accent">{isEn ? '📞 Call Hotline' : '📞 Gọi Hotline'}</a>
-        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-btn tl-btn--outline" style="color: #0077B6; border-color: #0077B6;">{isEn ? '💬 Zalo Chat' : '💬 Chat Zalo'}</a>
-      </div>
-    </div>
   </div>
 </PageLayout>
 

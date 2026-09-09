@@ -10,15 +10,11 @@ const { lang = 'vi', currentPath = '/' } = Astro.props;
 const navItems = lang === 'vi' ? [
   { label: 'Trang chủ', href: '/' },
   {
-    label: 'Khóa học', href: '/khoa-hoc-boi/', children: [
-      { label: 'Tất cả khóa học', href: '/khoa-hoc-boi/' },
-      { label: 'Lớp 1 Kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
-      { label: 'Lớp Nhóm Nhỏ', href: '/khoa-hoc-boi/nhom/' },
-      { label: 'Học Bơi Trẻ Em', href: '/khoa-hoc-boi/tre-em/' },
-      { label: 'Học Bơi Người Lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
-      { label: 'Cho Người Sợ Nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/' },
-      { label: 'Cho Người Cao Tuổi', href: '/khoa-hoc-boi/nguoi-cao-tuoi/' },
-      { label: 'Dạy Bơi Doanh Nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' }
+    label: 'Giải pháp tổ chức', href: '/khoa-hoc-boi/doanh-nghiep/', children: [
+      { label: 'Đào tạo cho doanh nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' },
+      { label: 'Gửi yêu cầu chương trình', href: '/lien-he/' },
+      { label: 'Năng lực đội ngũ', href: '/doi-ngu-hlv/' },
+      { label: 'Giới thiệu Swim For Life', href: '/gioi-thieu/' }
     ]
   },
   {
@@ -32,27 +28,31 @@ const navItems = lang === 'vi' ? [
     ]
   },
   {
-    label: 'Địa điểm học', href: '/hoc-boi-o-dau/', children: [
-      { label: 'Tất cả địa điểm', href: '/hoc-boi-o-dau/' },
-      { label: 'Học bơi Hà Nội', href: '/hoc-boi-ha-noi/' },
-      { label: 'Học bơi TP.HCM', href: '/hoc-boi-tphcm/' },
-      { label: 'Học bơi Đà Nẵng', href: '/hoc-boi-da-nang/' },
-      { label: 'Học bơi Hải Phòng', href: '/hoc-boi-hai-phong/' },
-      { label: 'Học bơi Cần Thơ', href: '/hoc-boi-can-tho/' },
-      { label: 'Bể bơi Tăng Bạt Hổ', href: '/hoc-boi-tang-bat-ho/' }
+    label: 'Danh bạ địa phương', href: '/hoc-boi-o-dau/', children: [
+      { label: 'Danh bạ toàn quốc', href: '/hoc-boi-o-dau/' },
+      { label: 'Bể bơi tại Hà Nội', href: '/hoc-boi-ha-noi/' },
+      { label: 'Bể bơi tại TP.HCM', href: '/hoc-boi-tphcm/' },
+      { label: 'Bể bơi tại Đà Nẵng', href: '/hoc-boi-da-nang/' },
+      { label: 'Bể bơi tại Hải Phòng', href: '/hoc-boi-hai-phong/' },
+      { label: 'Bể bơi tại Cần Thơ', href: '/hoc-boi-can-tho/' }
     ]
   },
   {
     label: 'Về chúng tôi', href: '/gioi-thieu/', children: [
       { label: 'Giới thiệu trung tâm', href: '/gioi-thieu/' },
-      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' },
-      { label: 'Bảng giá học phí', href: '/bang-gia/' }
+      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' }
     ]
   },
-  { label: 'Blog', href: '/tin-tuc/' },
-  { label: 'Liên hệ', href: '/lien-he/' }
+  { label: 'Blog', href: '/tin-tuc/' }
 ] : [
   { label: 'Home', href: '/en/' },
+  {
+    label: 'Organizations', href: '/en/contact/', children: [
+      { label: 'Organization programs', href: '/en/contact/' },
+      { label: 'Team expertise', href: '/en/coaches/' },
+      { label: 'About Swim For Life', href: '/en/about/' }
+    ]
+  },
   {
     label: 'Techniques', href: '/en/swimming-techniques/', children: [
       { label: 'All Techniques', href: '/en/swimming-techniques/' },
@@ -61,14 +61,6 @@ const navItems = lang === 'vi' ? [
       { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/' },
       { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' },
       { label: 'Treading Water', href: '/en/swimming-techniques/treading-water/' }
-    ]
-  },
-  {
-    label: 'Courses', href: '/en/courses/', children: [
-      { label: 'All Courses', href: '/en/courses/' },
-      { label: 'Kids Swimming', href: '/en/courses/kids/' },
-      { label: 'Adults Swimming', href: '/en/courses/adults/' },
-      { label: 'Intensive Courses', href: '/en/courses/intensive/' }
     ]
   },
   {
@@ -82,21 +74,19 @@ const navItems = lang === 'vi' ? [
   {
     label: 'About', href: '/en/about/', children: [
       { label: 'About Us', href: '/en/about/' },
-      { label: 'Coaches', href: '/en/coaches/' },
-      { label: 'Pricing', href: '/en/pricing/' }
+      { label: 'Coaches', href: '/en/coaches/' }
     ]
   },
-  { label: 'Blog', href: '/en/blog/' },
-  { label: 'Contact', href: '/en/contact/' }
+  { label: 'Blog', href: '/en/blog/' }
 ];
 
-const ctaLabel = lang === 'vi' ? 'Đăng ký học thử' : 'Book a free trial';
+const ctaLabel = lang === 'vi' ? 'Yêu cầu hợp tác' : 'Organization enquiry';
 const ctaHref = lang === 'vi' ? '/lien-he/' : '/en/contact/';
 const langSwitchHref = lang === 'vi' ? '/en/' : '/';
 const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
 const labels = lang === 'vi'
-  ? { nav: 'Điều hướng chính', menu: 'Mở menu', eyebrow: 'Dạy bơi an toàn từ năm 2014', locations: 'Hà Nội & TP.HCM' }
-  : { nav: 'Main navigation', menu: 'Open menu', eyebrow: 'Safe swimming lessons since 2014', locations: 'Hanoi & Ho Chi Minh City' };
+  ? { nav: 'Điều hướng chính', menu: 'Mở menu', eyebrow: 'Kiến thức bơi cho cộng đồng', locations: 'Đào tạo quy mô lớn toàn quốc' }
+  : { nav: 'Main navigation', menu: 'Open menu', eyebrow: 'Swimming knowledge for everyone', locations: 'Large-scale programs nationwide' };
 const isActive = (item: any) => currentPath === item.href || item.children?.some((child: any) => currentPath === child.href);
 ---
 
@@ -109,7 +99,6 @@ const isActive = (item: any) => currentPath === item.href || item.children?.some
       </span>
       <div class="header-utility__meta">
         <span>{labels.locations}</span>
-        <a href="tel:0979121097">Hotline 0979.121.097</a>
       </div>
     </div>
   </div>
@@ -189,7 +178,6 @@ const isActive = (item: any) => currentPath === item.href || item.children?.some
         ))}
       </ul>
       <a href={ctaHref} class="mobile-menu__cta">{ctaLabel}</a>
-      <a href="tel:0979121097" class="mobile-menu__phone">0979.121.097</a>
     </nav>
   </div>
 </header>

@@ -21,14 +21,14 @@ const { faqs, lang = 'vi' } = Astro.props;
           {lang === 'vi' ? 'Giải Đáp Thắc Mắc Thường Gặp' : 'Frequently Asked Questions'}
         </h2>
         <p class="cl-section-title__sub">
-          {lang === 'vi' ? 'Những thắc mắc phổ biến của học viên và phụ huynh khi đăng ký học bơi tại trung tâm.' : 'Find answers to the most common questions about our swimming classes.'}
+          {lang === 'vi' ? 'Những thắc mắc phổ biến về kỹ thuật, lộ trình và cách tìm đơn vị dạy bơi phù hợp.' : 'Answers about technique, learning pathways, and choosing a suitable local provider.'}
         </p>
         <span class="cl-section-title__decoration" style="margin-inline: 0;"></span>
         <div class="cl-faq-cta hide-mobile">
-          <p style="font-weight: 600; color: var(--cl-dark); margin-bottom: 8px;">{lang === 'vi' ? 'Vẫn còn thắc mắc khác?' : 'Still have questions?'}</p>
-          <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">{lang === 'vi' ? 'Đừng ngần ngại liên hệ trực tiếp với HLV Trưởng của chúng tôi để được tư vấn nhanh nhất.' : 'Feel free to contact our Lead Coach directly for support.'}</p>
-          <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
-            <span>📞</span> {lang === 'vi' ? 'Hotline: 0979.121.097' : 'Call: 0979.121.097'}
+          <p style="font-weight: 600; color: var(--cl-dark); margin-bottom: 8px;">{lang === 'vi' ? 'Cần người hướng dẫn trực tiếp?' : 'Need in-person instruction?'}</p>
+          <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">{lang === 'vi' ? 'Tự chọn và liên hệ bể bơi, câu lạc bộ hoặc giáo viên tại địa phương.' : 'Choose and contact a local pool, club, or independent instructor directly.'}</p>
+          <a href="/hoc-boi-o-dau/" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
+            {lang === 'vi' ? 'Mở danh bạ địa phương' : 'Open local directory'}
           </a>
         </div>
       </div>

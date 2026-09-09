@@ -1,7 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
 import PageLayout from '../../../layouts/PageLayout.astro';
-import RegistrationForm from '../../../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../../../components/LocalDirectoryCTA.astro';
 import '../../../styles/technique-landing.css';
 
 const breadcrumbs = [
@@ -221,7 +221,7 @@ const hotspotCoords = {
             
             <div class="tl-hero__ctas">
               <a href="#danh-sach-ky-thuat" class="tl-btn tl-btn--accent tl-btn--pulse">🏊 View Techniques</a>
-              <a href="#dang-ky" class="tl-btn tl-btn--outline">📞 Register Free Trial</a>
+              <a href="/hoc-boi-o-dau/" class="tl-btn tl-btn--outline">Find a Local Provider</a>
             </div>
           </div>
         </div>
@@ -428,41 +428,7 @@ const hotspotCoords = {
       </div>
     </section>
 
-    <!-- Registration Section -->
-    <section class="tl-section" id="dang-ky" style="background-color: var(--color-bg-alt);">
-      <div class="tl-section__container">
-        <div class="tl-form-container">
-          <!-- Information Column -->
-          <div class="tl-form-info">
-            <h3 class="tl-form-info__title">Register Free Trial Lesson</h3>
-            <p class="tl-form-info__text">
-              Leave your details below. The head coach of Swim For Life will contact you to consult on a personalized learning path and schedule your free 1-on-1 trial session.
-            </p>
-            <div class="tl-form-info__links">
-              <a href="tel:0979121097" class="tl-form-info__link">
-                <span class="tl-form-info__icon">📞</span>
-                <div>
-                  <span class="tl-form-info__label">24/7 Hotline support</span>
-                  <span class="tl-form-info__value">0979.121.097</span>
-                </div>
-              </a>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-form-info__link">
-                <span class="tl-form-info__icon">💬</span>
-                <div>
-                  <span class="tl-form-info__label">Chat via Zalo</span>
-                  <span class="tl-form-info__value">Mr. Manh</span>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Form Column -->
-          <div class="tl-form-wrapper">
-            <RegistrationForm id="hub-register-form" className="flat" flat={true} isFullForm={true} defaultCourse="Swimming Technique" lang="en" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <LocalDirectoryCTA lang="en" />
 
     <!-- FAQ Accordion Section -->
     <section class="tl-section" id="faq">
@@ -477,11 +443,9 @@ const hotspotCoords = {
             <span class="tl-section-title__decoration" style="margin-inline: 0;"></span>
             
             <div class="tl-faq-cta hide-mobile">
-              <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 8px;">Still have questions?</p>
-              <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Feel free to contact our Lead Coach directly for support.</p>
-              <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
-                <span>📞</span> Call: 0979.121.097
-              </a>
+              <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 8px;">Need in-person instruction?</p>
+              <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Use the local directory to choose and contact an independent provider.</p>
+              <a href="/hoc-boi-o-dau/" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">Open directory</a>
             </div>
           </div>
 
@@ -504,13 +468,6 @@ const hotspotCoords = {
       </div>
     </section>
 
-    <!-- Floating CTA Mobile -->
-    <div class="tl-floating-cta">
-      <div class="tl-floating-cta-inner">
-        <a href="tel:0979121097" class="tl-btn tl-btn--accent">📞 Call Hotline</a>
-        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="tl-btn tl-btn--outline" style="color: #0077B6; border-color: #0077B6;">💬 Chat Zalo</a>
-      </div>
-    </div>
   </div>
 </PageLayout>
 

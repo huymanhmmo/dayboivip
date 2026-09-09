@@ -1,7 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import RegistrationForm from '../components/RegistrationForm.astro';
-import SuccessModal from '../components/SuccessModal.astro';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 export async function getStaticPaths() {
@@ -244,15 +243,7 @@ const categories = [
           </div>
         )}
 
-        <!-- Widget: Form Registration -->
-        <div class="sidebar-widget">
-          <h3 class="widget-title">🏊 Đăng Ký Học Thử</h3>
-          <p class="widget-subtitle">Nhận ngay 1 buổi học thử 1 kèm 1 miễn phí cùng HLV chuyên nghiệp tại bể bơi gần nhà bạn nhất!</p>
-          <RegistrationForm id="blog-register-form" />
-          <div class="widget-trust">
-            🔒 Bảo mật thông tin • Cam kết biết bơi 100%
-          </div>
-        </div>
+        <LocalDirectoryCTA compact={true} />
       </aside>
 
     </div>
@@ -263,17 +254,15 @@ const categories = [
 <section class="section-sm" style="background: var(--color-bg-alt); border-top: 1px solid rgba(0, 119, 182, 0.05);">
   <div class="container">
     <div class="cta-banner">
-      <h2>Bạn Muốn Học Bơi Chuyên Nghiệp?</h2>
-      <p>Đăng ký học thử miễn phí với HLV Swim For Life ngay hôm nay!</p>
+      <h2>Bạn Đang Tìm Nơi Học Bơi?</h2>
+      <p>Mở danh bạ địa phương để tự chọn bể bơi, giáo viên hoặc đơn vị phù hợp.</p>
       <div class="btn-group">
-        <a href="/lien-he/" class="btn btn-accent btn-lg">Đăng Ký Học Thử Miễn Phí</a>
-        <a href="/khoa-hoc-boi/" class="btn btn-white btn-lg">Xem Khóa Học</a>
+        <a href="/hoc-boi-o-dau/" class="btn btn-accent btn-lg">Mở Danh Bạ Địa Phương</a>
+        <a href="/lien-he/" class="btn btn-white btn-lg">Dành Cho Tổ Chức</a>
       </div>
     </div>
   </div>
 </section>
-
-<SuccessModal />
 
 </PageLayout>
 

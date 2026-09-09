@@ -1,127 +1,87 @@
----import PageLayout from '../layouts/PageLayout.astro';
+---
+import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
-
-const title = 'Liên Hệ & Đăng Ký Học Bơi Thử Miễn Phí Tại Swim For Life Việt Nam';
-const description = 'Liên hệ đăng ký khóa học bơi thử miễn phí. Hotline/Zalo: 0979.121.097. Hỗ trợ tư vấn 24/7.';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Liên hệ' },
+  { label: 'Hợp tác đào tạo' },
 ];
 
 const contactSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Liên hệ Swim For Life Việt Nam",
-  "description": "Trang liên hệ đăng ký học bơi thử miễn phí và thông tin hotline hỗ trợ khách hàng của Swim For Life Việt Nam.",
-  "url": "https://dayboi.vip/lien-he/",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+84979121097",
-      "contactType": "customer service",
-      "availableLanguage": "Vietnamese"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Yêu cầu hợp tác đào tạo bơi quy mô lớn',
+  description: 'Biểu mẫu dành cho doanh nghiệp, trường học, khu dân cư và đoàn thể cần triển khai chương trình bơi lội từ 10 người.',
+  url: 'https://dayboi.vip/lien-he/',
 };
 ---
 
 <PageLayout
-  title={title}
-  description={description}
+  title="Hợp Tác Đào Tạo Bơi Cho Doanh Nghiệp & Tổ Chức"
+  description="Gửi yêu cầu xây dựng chương trình đào tạo bơi quy mô lớn cho doanh nghiệp, trường học, khu dân cư và đoàn thể từ 10 người."
   canonical="https://dayboi.vip/lien-he/"
   breadcrumbs={breadcrumbs}
   schema={contactSchema}
   alternateUrl="/en/contact/"
   alternateLang="en"
 >
-
-  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">📞 Kết nối ngay</span>
-        <h1 class="section-title">Liên Hệ & Đăng Ký Học Bơi</h1>
-        <p class="section-subtitle">
-          Hãy để lại thông tin của bạn, bộ phận tư vấn của Swim For Life sẽ liên hệ ngay trong vòng 15 phút để sắp xếp lịch học thử MIỄN PHÍ.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-12); align-items: start;">
-        
-        <!-- Contact Form Column -->
-        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-lg); background: #ffffff; border-radius: 16px;">
-          <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Đăng Ký Học Thử Miễn Phí</h2>
-          <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Học viên được trải nghiệm 1 buổi học thử 1 kèm 1 hoàn toàn miễn phí cùng Huấn luyện viên trước khi quyết định đăng ký.</p>
-
-<RegistrationForm id="contact-form" isFullForm={true} flat={true} />
+  <main class="enterprise-contact">
+    <section class="enterprise-contact__hero">
+      <div class="container enterprise-contact__hero-grid">
+        <div>
+          <span>Đào tạo theo đoàn từ 10 người</span>
+          <h1>Thiết kế chương trình bơi cho <em>tổ chức của bạn</em></h1>
+          <p>Swim For Life chỉ tiếp nhận yêu cầu từ doanh nghiệp, trường học, khu dân cư và đoàn thể cần triển khai đào tạo bơi hoặc an toàn nước ở quy mô lớn.</p>
+          <ul>
+            <li>Khảo sát đối tượng, địa điểm và rủi ro trước khi lập kế hoạch</li>
+            <li>Bố trí đội ngũ HLV, cứu hộ và tỷ lệ giám sát theo quy mô</li>
+            <li>Đề xuất lộ trình, tiến độ và tiêu chí đánh giá đầu ra</li>
+          </ul>
         </div>
+        <img src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" alt="Chương trình huấn luyện bơi theo nhóm được tổ chức bài bản" width="720" height="540" loading="eager" />
+      </div>
+    </section>
 
-        <!-- Info Column -->
-        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
-          <div>
-            <h2 style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--space-4);">Thông Tin Liên Hệ Tư Vấn 24/7</h2>
-            <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">Quý phụ huynh và học viên có thể gọi điện trực tiếp hoặc nhắn tin Zalo qua đường dây nóng dưới đây để được hỗ trợ sắp xếp lớp nhanh nhất:</p>
-            
-            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
-              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
-                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">📞</div>
-                <div>
-                  <strong style="font-size: var(--text-lg); display: block;">Hotline Tư Vấn:</strong>
-                  <a href="tel:0979121097" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097</a>
-                </div>
-              </div>
-              
-              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
-                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">💬</div>
-                <div>
-                  <strong style="font-size: var(--text-lg); display: block;">Zalo Chat:</strong>
-                  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097 (Click chat ngay)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="background: var(--color-bg-alt); padding: var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--color-gray-200); display: flex; flex-direction: column; gap: var(--space-4);">
-            <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;">
-              <img
-                src="/images/logo/swim-for-life-logo.png"
-                alt="Logo Swim For Life Việt Nam"
-                style="max-height: 45px; width: auto; object-fit: contain;"
-                loading="lazy"
-              />
-              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 600; text-transform: lowercase;">trực thuộc</span>
-              <img
-                src="/images/logo/your-dreams-logo.png"
-                alt="Logo Công ty Cổ phần Your Dreams"
-                style="max-height: 45px; width: auto; object-fit: contain;"
-                loading="lazy"
-              />
-            </div>
-            <div style="border-top: 1px solid var(--color-gray-200); padding-top: var(--space-3);">
-              <h3 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-1); margin-top: 0;">Thông Tin Pháp Nhân</h3>
-              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: var(--text-sm);">
-                <strong>Trung tâm dạy bơi Swim For Life Việt Nam</strong><br/>
-                Đơn vị chủ quản: <strong>Công ty Cổ phần Your Dreams</strong><br/>
-                Mã số thuế: 0108879900<br/>
-                Email: dayboivip@gmail.com
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-2);">Thời Gian Làm Việc</h3>
-            <p style="color: var(--color-text-secondary);">
-              Chúng tôi làm việc liên tục từ <strong>06:00 - 21:00</strong> tất cả các ngày trong tuần (kể cả Thứ 7, Chủ Nhật và ngày lễ).
-            </p>
+    <section class="section" id="yeu-cau-hop-tac">
+      <div class="container enterprise-contact__form-grid">
+        <div>
+          <span class="section__badge">Yêu cầu đề xuất</span>
+          <h2 class="section__title">Cho chúng tôi biết phạm vi triển khai</h2>
+          <p class="section__desc">Thông tin càng cụ thể, đội ngũ càng dễ đánh giá tính khả thi và chuẩn bị phương án phù hợp trước khi phản hồi.</p>
+          <div class="enterprise-contact__criteria">
+            <div><strong>Đối tượng phù hợp</strong><p>Doanh nghiệp, trường học, ban quản lý khu dân cư, tổ chức xã hội hoặc đoàn từ 10 người.</p></div>
+            <div><strong>Không tiếp nhận</strong><p>Đăng ký học cá nhân, học thử 1 kèm 1 hoặc yêu cầu ghép lớp lẻ.</p></div>
           </div>
         </div>
-
+        <RegistrationForm id="enterprise-contact-form" flat={true} />
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="section section--alt">
+      <div class="container">
+        <LocalDirectoryCTA />
+      </div>
+    </section>
+  </main>
 </PageLayout>
+
+<style>
+  .enterprise-contact__hero { position: relative; overflow: hidden; padding: clamp(4rem, 8vw, 7.5rem) 0; background: var(--blue-950); color: var(--white); }
+  .enterprise-contact__hero::before { content: ''; position: absolute; inset: 0; opacity: .14; background-image: linear-gradient(color-mix(in srgb, var(--white) 12%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--white) 12%, transparent) 1px, transparent 1px); background-size: 72px 72px; }
+  .enterprise-contact__hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); }
+  .enterprise-contact__hero span { color: var(--blue-200); font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .enterprise-contact__hero h1 { margin: var(--space-4) 0 0; color: var(--white); font-size: clamp(2.8rem, 5.8vw, 5.8rem); line-height: 1; letter-spacing: -.06em; }
+  .enterprise-contact__hero h1 em { color: var(--orange-400); font-style: normal; }
+  .enterprise-contact__hero p { margin: var(--space-6) 0 0; color: color-mix(in srgb, var(--white) 72%, transparent); font-size: var(--text-lg); line-height: 1.75; }
+  .enterprise-contact__hero ul { display: grid; gap: var(--space-3); margin: var(--space-6) 0 0; padding: 0; list-style: none; }
+  .enterprise-contact__hero li { display: flex; gap: var(--space-3); color: color-mix(in srgb, var(--white) 82%, transparent); }
+  .enterprise-contact__hero li::before { content: ''; width: 8px; height: 8px; flex: 0 0 auto; margin-top: .55em; border-radius: 50%; background: var(--orange-400); }
+  .enterprise-contact__hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-xl); }
+  .enterprise-contact__form-grid { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr); gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+  .enterprise-contact__criteria { display: grid; gap: var(--space-4); margin-top: var(--space-8); }
+  .enterprise-contact__criteria div { padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--sand-50); }
+  .enterprise-contact__criteria strong { color: var(--blue-900); }
+  .enterprise-contact__criteria p { margin: var(--space-2) 0 0; color: var(--ink-600); font-size: .86rem; line-height: 1.6; }
+  @media (max-width: 900px) { .enterprise-contact__hero-grid, .enterprise-contact__form-grid { grid-template-columns: 1fr; } .enterprise-contact__hero img { max-width: 680px; } }
+</style>

@@ -12,10 +12,9 @@ import CourseGallery from '../components/course/CourseGallery.astro';
 import CoursePricing from '../components/course/CoursePricing.astro';
 import CourseTrust from '../components/course/CourseTrust.astro';
 import CourseFAQ from '../components/course/CourseFAQ.astro';
-import CourseCTA from '../components/course/CourseCTA.astro';
-import FloatingCTA from '../components/course/FloatingCTA.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 import CoachesSection from '../components/CoachesSection.astro';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 
 import '../styles/course-landing.css';
 import '../styles/template-redesign.css';
@@ -88,6 +87,7 @@ export interface Props {
 }
 
 const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } = Astro.props;
+const isEnterprise = course.slug === 'doanh-nghiep';
 ---
 
 <PageLayout
@@ -112,6 +112,7 @@ const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } 
       stats={course.stats}
       slug={course.slug}
       lang={lang}
+      isEnterprise={isEnterprise}
     />
 
     <!-- Quick Info Grid (Interest) -->
@@ -167,13 +168,9 @@ const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } 
     />
 
     <!-- Pricing Tables (Action) -->
-    <CoursePricing 
-      pricing={course.pricing}
-      lang={lang}
-    />
+    {isEnterprise && <CoursePricing pricing={course.pricing} lang={lang} />}
 
-    <!-- Trust & Quality Guarantee Badges -->
-    <CourseTrust lang={lang} />
+    {isEnterprise && <CourseTrust lang={lang} />}
 
     <!-- FAQ Accordion -->
     <CourseFAQ 
@@ -181,44 +178,28 @@ const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } 
       lang={lang}
     />
 
-    <!-- Form Section -->
-    <section class="cl-section cl-section--alt" id="dang-ky">
+    {isEnterprise ? (
+    <section class="cl-section cl-section--alt" id="yeu-cau-hop-tac">
       <div class="cl-section__container">
         <div class="cl-section-title">
           <span class="cl-section-title__badge">
-            {lang === 'vi' ? 'Đăng Ký Ngay' : 'Book Today'}
+            {lang === 'vi' ? 'Yêu cầu hợp tác' : 'Organization enquiry'}
           </span>
           <h2 class="cl-section-title__heading">
-            {lang === 'vi' ? 'Bắt Đầu Hành Trình Học Bơi Hôm Nay' : 'Start Your Swimming Journey Today'}
+            {lang === 'vi' ? 'Nhận Đề Xuất Chương Trình Theo Quy Mô' : 'Request a Program Designed for Your Scale'}
           </h2>
           <p class="cl-section-title__sub">
-            {lang === 'vi' ? 'Để lại thông tin dưới đây, Swim For Life sẽ liên hệ tư vấn lộ trình và xếp lịch học thử MIỄN PHÍ sớm nhất cho bạn/bé.' : 'Fill in the form below. Swim For Life will contact you to set up your FREE trial lesson immediately.'}
+            {lang === 'vi' ? 'Biểu mẫu dành riêng cho doanh nghiệp, trường học, khu dân cư và đoàn thể có từ 10 học viên.' : 'This form is exclusively for organizations, schools, residential communities and groups of 10 or more.'}
           </p>
           <span class="cl-section-title__decoration"></span>
         </div>
 
         <div class="cl-form-container">
           <div class="cl-form-info">
-            <h3 class="cl-form-info__title">{lang === 'vi' ? 'Hỗ Trợ Nhanh 24/7' : '24/7 Support'}</h3>
+            <h3 class="cl-form-info__title">{lang === 'vi' ? 'Thông tin cần chuẩn bị' : 'Information to prepare'}</h3>
             <p class="cl-form-info__text">
-              {lang === 'vi' ? 'Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:' : 'Reach out directly via phone call or Zalo chat to get answers instantly:'}
+              {lang === 'vi' ? 'Vui lòng cung cấp quy mô, đối tượng học viên, địa điểm và thời gian dự kiến để đội ngũ đánh giá tính khả thi.' : 'Please provide group size, audience, locations and expected timeline so the team can assess feasibility.'}
             </p>
-            <div class="cl-form-info__links">
-              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
-                <span class="cl-form-info__icon">📞</span>
-                <div>
-                  <span class="cl-form-info__label">{lang === 'vi' ? 'Hotline tư vấn' : 'Hotline'}</span>
-                  <span class="cl-form-info__value">0979.121.097</span>
-                </div>
-              </a>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
-                <span class="cl-form-info__icon">💬</span>
-                <div>
-                  <span class="cl-form-info__label">{lang === 'vi' ? 'Trò chuyện Zalo' : 'Zalo Chat'}</span>
-                  <span class="cl-form-info__value">Mr.Mạnh (0979.121.097)</span>
-                </div>
-              </a>
-            </div>
           </div>
           
           <div class="cl-form-wrapper">
@@ -227,9 +208,9 @@ const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } 
         </div>
       </div>
     </section>
-
-    <!-- Floating Mobile CTA -->
-    <FloatingCTA lang={lang} />
+    ) : (
+      <section class="cl-section cl-section--alt"><div class="cl-section__container"><LocalDirectoryCTA lang={lang} /></div></section>
+    )}
   </div>
 </PageLayout>
 

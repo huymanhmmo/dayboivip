@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import RegistrationForm from '../../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../../components/LocalDirectoryCTA.astro';
 
 const title = 'Meet Our Professional Swim Coaches | Swim For Life Vietnam';
 const description = 'Meet the outstanding coaching team of Swim For Life Vietnam, led by Head Coach Nguyen Huy Manh. Patient, certified, and fully committed to your success.';
@@ -217,25 +217,6 @@ const teamSchema = {
     </div>
   </section>
 
-  <!-- Booking and Contact Form Container -->
-  <section class="section">
-    <div class="container" style="max-width: 900px;">
-      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
-        <div>
-          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Register for a VIP Lesson</h2>
-          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
-            Sign up today to receive a free 1-on-1 trial session with our experienced swimming instructors.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
-            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
-            <div><strong>💬 Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Coach Manh)</a></div>
-          </div>
-        </div>
-        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
-          <RegistrationForm id="en-hlv-page-form" isFullForm={false} flat={true} lang="en" />
-        </div>
-      </div>
-    </div>
-  </section>
+  <LocalDirectoryCTA lang="en" />
 
 </PageLayout>

@@ -1,35 +1,25 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import RegistrationForm from '../../components/RegistrationForm.astro';
-
-const title = 'Contact Us & Register for a Free Swim Trial | Swim For Life Vietnam';
-const description = 'Contact us to register for a free 1-on-1 trial swimming lesson. Hotline/Zalo: 0979.121.097. 24/7 customer support.';
+import LocalDirectoryCTA from '../../components/LocalDirectoryCTA.astro';
 
 const breadcrumbs = [
   { label: 'Home', href: '/en/' },
-  { label: 'Contact' },
+  { label: 'Organization programs' },
 ];
 
 const contactSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact Swim For Life Vietnam",
-  "description": "Contact page to register for free trial swimming lessons and get support from Swim For Life Vietnam.",
-  "url": "https://dayboi.vip/en/contact/",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+84979121097",
-      "contactType": "customer service",
-      "availableLanguage": ["Vietnamese", "English"]
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Large-group swimming program request',
+  description: 'A program request form for companies, schools, residential communities, and organizations training groups of 10 or more.',
+  url: 'https://dayboi.vip/en/contact/',
 };
 ---
 
 <PageLayout
-  title={title}
-  description={description}
+  title="Swimming Programs for Companies & Organizations"
+  description="Request a large-group swimming or water-safety program for a company, school, residential community, or organization with 10 or more participants."
   canonical="https://dayboi.vip/en/contact/"
   breadcrumbs={breadcrumbs}
   schema={contactSchema}
@@ -37,93 +27,62 @@ const contactSchema = {
   alternateUrl="/lien-he/"
   alternateLang="vi"
 >
-
-  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">📞 Connect With Us</span>
-        <h1 class="section-title">Contact & Register</h1>
-        <p class="section-subtitle">
-          Leave your details below, and our team will get in touch within 15 minutes to arrange your FREE 1-on-1 trial swimming lesson.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-12); align-items: start;">
-        
-        <!-- Contact Form Column -->
-        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-lg); background: #ffffff; border-radius: 16px;">
-          <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Free Trial Registration</h2>
-          <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Experience one completely free 1-on-1 swimming lesson with our certified coach before deciding to enroll.</p>
-          
-          <RegistrationForm id="en-contact-form" isFullForm={true} flat={true} lang="en" />
+  <main class="enterprise-contact">
+    <section class="enterprise-contact__hero">
+      <div class="container enterprise-contact__hero-grid">
+        <div>
+          <span>Group training for 10+ participants</span>
+          <h1>A swimming program built for <em>your organization</em></h1>
+          <p>Swim For Life accepts enquiries from companies, schools, residential communities, and organizations that need structured swimming or water-safety training at scale.</p>
+          <ul>
+            <li>Participant, venue, and risk assessment before planning</li>
+            <li>Coaching, lifeguard, and supervision ratios matched to group size</li>
+            <li>Clear program roadmap, timeline, and outcome criteria</li>
+          </ul>
         </div>
+        <img src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" alt="A structured group swimming training program" width="720" height="540" loading="eager" />
+      </div>
+    </section>
 
-        <!-- Info Column -->
-        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
-          <div>
-            <h2 style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--space-4);">24/7 Consultation Support</h2>
-            <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">Feel free to call us directly or chat on Zalo/WhatsApp via the hotline below to get scheduled immediately:</p>
-            
-            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
-              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
-                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">📞</div>
-                <div>
-                  <strong style="font-size: var(--text-lg); display: block;">Consultation Hotline:</strong>
-                  <a href="tel:0979121097" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097</a>
-                </div>
-              </div>
-              
-              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
-                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">💬</div>
-                <div>
-                  <strong style="font-size: var(--text-lg); display: block;">Zalo Chat:</strong>
-                  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); text-decoration: none;">0979.121.097 (Chat Now)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="background: var(--color-bg-alt); padding: var(--space-5); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: var(--space-4);">
-            <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;">
-              <img
-                src="/images/logo/swim-for-life-logo.png"
-                alt="Logo Swim For Life Vietnam"
-                style="max-height: 45px; width: auto; object-fit: contain;"
-                loading="lazy"
-              />
-              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 600;">under</span>
-              <img
-                src="/images/logo/your-dreams-logo.png"
-                alt="Logo Your Dreams JSC"
-                style="max-height: 45px; width: auto; object-fit: contain;"
-                loading="lazy"
-              />
-            </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-3);">
-              <h3 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-1); margin-top: 0;">Entity Information</h3>
-              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: var(--text-sm);">
-                <strong>Swim For Life Vietnam Swim School</strong><br/>
-                Managed by: <strong>Your Dreams Joint Stock Company</strong><br/>
-                Tax Code: 0108879900<br/>
-                Email: dayboivip@gmail.com
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-2);">Working Hours</h3>
-            <p style="color: var(--color-text-secondary);">
-              We operate continuously from <strong>06:00 AM - 09:00 PM</strong> daily, including weekends (Saturday, Sunday) and public holidays.
-            </p>
+    <section class="section" id="program-request">
+      <div class="container enterprise-contact__form-grid">
+        <div>
+          <span class="section__badge">Request a proposal</span>
+          <h2 class="section__title">Tell us about the rollout</h2>
+          <p class="section__desc">Specific information helps the team assess feasibility and prepare an appropriate program before responding.</p>
+          <div class="enterprise-contact__criteria">
+            <div><strong>Suitable enquiries</strong><p>Companies, schools, property management teams, social organizations, or groups with at least 10 participants.</p></div>
+            <div><strong>Not accepted here</strong><p>Individual lessons, private trial sessions, or requests to join a small retail class.</p></div>
           </div>
         </div>
-
+        <RegistrationForm id="en-enterprise-contact-form" flat={true} lang="en" />
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="section section--alt">
+      <div class="container">
+        <LocalDirectoryCTA lang="en" />
+      </div>
+    </section>
+  </main>
 </PageLayout>
+
+<style>
+  .enterprise-contact__hero { position: relative; overflow: hidden; padding: clamp(4rem, 8vw, 7.5rem) 0; background: var(--blue-950); color: var(--white); }
+  .enterprise-contact__hero::before { content: ''; position: absolute; inset: 0; opacity: .14; background-image: linear-gradient(color-mix(in srgb, var(--white) 12%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--white) 12%, transparent) 1px, transparent 1px); background-size: 72px 72px; }
+  .enterprise-contact__hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); }
+  .enterprise-contact__hero span { color: var(--blue-200); font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .enterprise-contact__hero h1 { margin: var(--space-4) 0 0; color: var(--white); font-size: clamp(2.8rem, 5.8vw, 5.8rem); line-height: 1; letter-spacing: -.06em; }
+  .enterprise-contact__hero h1 em { color: var(--orange-400); font-style: normal; }
+  .enterprise-contact__hero p { margin: var(--space-6) 0 0; color: color-mix(in srgb, var(--white) 72%, transparent); font-size: var(--text-lg); line-height: 1.75; }
+  .enterprise-contact__hero ul { display: grid; gap: var(--space-3); margin: var(--space-6) 0 0; padding: 0; list-style: none; }
+  .enterprise-contact__hero li { display: flex; gap: var(--space-3); color: color-mix(in srgb, var(--white) 82%, transparent); }
+  .enterprise-contact__hero li::before { content: ''; width: 8px; height: 8px; flex: 0 0 auto; margin-top: .55em; border-radius: 50%; background: var(--orange-400); }
+  .enterprise-contact__hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-xl); }
+  .enterprise-contact__form-grid { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr); gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+  .enterprise-contact__criteria { display: grid; gap: var(--space-4); margin-top: var(--space-8); }
+  .enterprise-contact__criteria div { padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--sand-50); }
+  .enterprise-contact__criteria strong { color: var(--blue-900); }
+  .enterprise-contact__criteria p { margin: var(--space-2) 0 0; color: var(--ink-600); font-size: .86rem; line-height: 1.6; }
+  @media (max-width: 900px) { .enterprise-contact__hero-grid, .enterprise-contact__form-grid { grid-template-columns: 1fr; } .enterprise-contact__hero img { max-width: 680px; } }
+</style>

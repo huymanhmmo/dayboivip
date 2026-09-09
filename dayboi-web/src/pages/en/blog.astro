@@ -1,8 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
 import PageLayout from '../../layouts/PageLayout.astro';
-import RegistrationForm from '../../components/RegistrationForm.astro';
-import SuccessModal from '../../components/SuccessModal.astro';
+import LocalDirectoryCTA from '../../components/LocalDirectoryCTA.astro';
 
 const title = 'Swimming Blog | Tips, Techniques & Water Safety | Swim For Life';
 const description = 'Discover professional swimming tips, step-by-step guides, swimming styles, and water safety advice from Swim For Life Vietnam.';
@@ -253,14 +252,7 @@ const blogSchema = {
         )}
 
         <!-- Widget: Form Registration -->
-        <div class="sidebar-widget">
-          <h3 class="widget-title">🏊 Book a Free Trial</h3>
-          <p class="widget-subtitle">Receive 1 free 1-on-1 trial session with a professional coach at your nearest pool!</p>
-          <RegistrationForm id="blog-register-form" lang="en" />
-          <div class="widget-trust">
-            🔒 Secure info • 100% Learn-to-swim guarantee
-          </div>
-        </div>
+        <LocalDirectoryCTA compact={true} lang="en" />
       </aside>
 
     </div>
@@ -271,22 +263,15 @@ const blogSchema = {
 <section class="section-sm" style="background: var(--color-bg-alt); border-top: 1px solid rgba(0, 119, 182, 0.05);">
   <div class="container">
     <div class="cta-banner">
-      <h2>Want to Learn Swimming Professionally?</h2>
-      <p>Sign up for a free trial with a Swim For Life coach today!</p>
+      <h2>Looking for Swimming Lessons?</h2>
+      <p>Use the local directory to find and contact a pool, coach, or provider directly.</p>
       <div class="btn-group">
-        <a href="/en/contact/" class="btn btn-accent btn-lg">Book Free Trial Session</a>
-        <a href="/en/courses/" class="btn btn-white btn-lg">View Our Courses</a>
+        <a href="/hoc-boi-o-dau/" class="btn btn-accent btn-lg">Open Local Directory</a>
+        <a href="/en/contact/" class="btn btn-white btn-lg">For Organizations</a>
       </div>
     </div>
   </div>
 </section>
-
-<SuccessModal 
-  id="success-modal"
-  title="Registration Successful!"
-  text="Thank you for registering a free trial at Swim For Life. Our coordinator will contact you via Phone/Zalo within 15-30 minutes to confirm your session."
-  closeLabel="Close"
-/>
 
 </PageLayout>
 

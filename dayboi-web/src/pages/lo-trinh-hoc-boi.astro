@@ -1,5 +1,5 @@
 ---import PageLayout from '../layouts/PageLayout.astro';
-import RegistrationForm from '../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 
 const title = 'Lộ Trình Học Bơi Từ Cơ Bản Đến Nâng Cao | Swim For Life Việt Nam';
 const description = 'Lộ trình học bơi 12 buổi chuẩn sư phạm dành cho trẻ em & người lớn tại Swim For Life. Từ nhát nước, học làm quen nước đến thành thạo các kiểu bơi sải, bơi ếch, đứng nước.';
@@ -187,25 +187,6 @@ import CoachesSection from '../components/CoachesSection.astro';
 
     <CoachesSection />
 
-<!-- Register Form Container -->
-  <section class="section">
-    <div class="container" style="max-width: 900px;">
-      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
-        <div>
-          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Bắt Đầu Hành Trình Học Bơi Ngay</h2>
-          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
-            Hãy để chúng tôi đồng hành cùng bạn và con trẻ trên hành trình làm quen nước và thành thạo bơi lội an toàn.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
-            <div><strong>📞 Hotline hỗ trợ:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
-            <div><strong>💬 Zalo hỗ trợ:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Thầy Nguyễn Huy Mạnh)</a></div>
-          </div>
-        </div>
-        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
-          <RegistrationForm id="journey-page-form" isFullForm={false} flat={true} />
-        </div>
-      </div>
-    </div>
-  </section>
+  <LocalDirectoryCTA />
 
 </PageLayout>

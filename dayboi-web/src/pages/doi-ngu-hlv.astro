@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import RegistrationForm from '../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 
 const title = 'Đội Ngũ Huấn Luyện Viên Dạy Bơi Chuyên Nghiệp | Swim For Life Việt Nam';
 const description = 'Gặp gỡ đội ngũ HLV dạy bơi xuất sắc của Swim For Life Việt Nam, dẫn dắt bởi Thầy Nguyễn Huy Mạnh. HLV giàu kinh nghiệm, tận tâm, cam kết biết bơi 100%.';
@@ -220,25 +220,6 @@ const teamSchema = {
     </div>
   </section>
 
-  <!-- Booking and Contact Form Container -->
-  <section class="section">
-    <div class="container" style="max-width: 900px;">
-      <div class="grid grid-2" style="gap: var(--space-8); align-items: center; background: #ffffff; border-radius: 20px; box-shadow: var(--shadow-xl); padding: var(--space-8);">
-        <div>
-          <h2 style="font-size: var(--text-2xl); color: var(--color-primary); margin-bottom: var(--space-3); font-weight: 700;">Đăng Ký Học Thử Cùng HLV VIP</h2>
-          <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
-            Đăng ký học thử ngay hôm nay để nhận 1 buổi dạy thử miễn phí 1 kèm 1 cùng các huấn luyện viên giàu kinh nghiệm của trung tâm.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
-            <div><strong>📞 Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
-            <div><strong>💬 Zalo HLV Trưởng:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">0979.121.097 (Thầy Mạnh)</a></div>
-          </div>
-        </div>
-        <div style="border-left: 1px solid var(--color-border); padding-left: var(--space-8);">
-          <RegistrationForm id="hlv-page-form" isFullForm={false} flat={true} />
-        </div>
-      </div>
-    </div>
-  </section>
+  <LocalDirectoryCTA />
 
 </PageLayout>

@@ -1,623 +1,156 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import RegistrationForm from '../components/RegistrationForm.astro';
-import CoachesSection from '../components/CoachesSection.astro';
 import { locations } from '../data/locations.js';
-import '../styles/location-page.css';
+import '../styles/location-directory.css';
 
 export function getStaticPaths() {
-  return locations.map((loc) => ({
-    params: { location: loc.slug },
-    props: { loc },
-  }));
+  return locations.map((loc) => ({ params: { location: loc.slug }, props: { loc } }));
 }
 
 const { loc } = Astro.props;
 const currentYear = new Date().getFullYear();
+const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+const poolDirectory = loc.pools.map((pool) => ({
+  ...pool,
+  mapsUrl: mapsSearch(`${pool.name}, ${pool.address || loc.name}`),
+}));
+const discoveryLinks = [
+  { label: 'Tất cả bể bơi đang được niêm yết', desc: 'Xem giờ mở cửa, website và số liên hệ công khai trên bản đồ.', url: mapsSearch(`bể bơi tại ${loc.name}`), icon: 'pool' },
+  { label: 'Giáo viên và đơn vị dạy bơi', desc: 'Tìm các HLV hoặc trung tâm đang công khai dịch vụ tại địa phương.', url: mapsSearch(`giáo viên dạy bơi tại ${loc.name}`), icon: 'coach' },
+  { label: 'Câu lạc bộ bơi lội', desc: 'Tra cứu CLB, lớp nhóm và chương trình do đơn vị địa phương vận hành.', url: mapsSearch(`câu lạc bộ bơi lội tại ${loc.name}`), icon: 'club' },
+  { label: 'Trung tâm thể thao công lập', desc: 'Tìm nhà thi đấu và trung tâm văn hóa – thể thao có bộ môn bơi.', url: mapsSearch(`trung tâm thể thao bể bơi ${loc.name}`), icon: 'public' },
+];
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: `Học bơi ${loc.name}` },
+  { label: 'Danh bạ địa phương', href: '/hoc-boi-o-dau/' },
+  { label: loc.name },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": loc.title,
-  "description": loc.description,
-  "author": {
-    "@type": "Person",
-    "name": "Thầy Nguyễn Huy Mạnh",
-    "jobTitle": "Giám đốc đào tạo",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Swim For Life Việt Nam"
-    }
+const directorySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Danh bạ bể bơi và đơn vị dạy bơi tại ${loc.name}`,
+  description: `Danh sách tham khảo các bể bơi, câu lạc bộ và công cụ tìm giáo viên dạy bơi có thông tin công khai tại ${loc.name}.`,
+  url: `https://dayboi.vip/${loc.slug}/`,
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: poolDirectory.length,
+    itemListElement: poolDirectory.map((pool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: pool.name,
+      url: pool.mapsUrl,
+    })),
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Swim For Life Việt Nam",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dayboi.vip/images/brand/logo.png"
-    }
-  },
-  "datePublished": "2026-01-25",
-  "dateModified": "2026-06-10",
-  "image": `https://dayboi.vip${loc.image}`,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://dayboi.vip/${loc.slug}/`
-  }
 };
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": `Trung tâm dạy bơi Swim For Life Việt Nam - Chi nhánh ${loc.name}`,
-  "description": `Khóa học bơi chuyên nghiệp dạy kèm riêng tại khu vực ${loc.name} và lân cận. Cam kết biết bơi hoàn toàn.`,
-  "telephone": "0979121097",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": loc.name,
-    "addressCountry": "VN"
-  },
-  "url": `https://dayboi.vip/${loc.slug}/`,
-  "image": `https://dayboi.vip${loc.image}`,
-  "priceRange": "Liên hệ nhận báo giá"
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": loc.faqs.map((faq) => ({
-    "@type": "Question",
-    "name": faq.q,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.a
-    }
-  }))
-};
-
-const combinedSchema = [articleSchema, localBusinessSchema, faqSchema];
-
-let enSlug = loc.slug.replace('hoc-boi-', 'swimming-lessons-');
-if (loc.slug === 'hoc-boi-tphcm') enSlug = 'swimming-lessons-ho-chi-minh';
-const alternateUrl = `/en/${enSlug}/`;
 ---
 
 <PageLayout
-  title={`${loc.title} [${currentYear}]`}
-  description={loc.description}
+  title={`Danh Bạ Bể Bơi & Giáo Viên Dạy Bơi ${loc.name} [${currentYear}]`}
+  description={`Tra cứu bể bơi, câu lạc bộ và giáo viên dạy bơi có thông tin công khai tại ${loc.name}. Người học chủ động kiểm tra và liên hệ trực tiếp với từng đơn vị.`}
   canonical={`https://dayboi.vip/${loc.slug}/`}
   image={loc.image}
-  type="article"
+  type="website"
   breadcrumbs={breadcrumbs}
-  schema={combinedSchema}
-  alternateUrl={alternateUrl}
-  alternateLang="en"
+  schema={directorySchema}
 >
-
-  <!-- ============================================
-       HERO SECTION — Premium Full Width Split Screen
-       ============================================ -->
-  <section class="loc-hero">
-    <div class="loc-hero__bg">
-      <div class="loc-hero__bg-gradient"></div>
-      <div class="loc-hero__bubbles" aria-hidden="true">
-        <span class="bubble bubble--1"></span>
-        <span class="bubble bubble--2"></span>
-        <span class="bubble bubble--3"></span>
-        <span class="bubble bubble--4"></span>
-        <span class="bubble bubble--5"></span>
+  <main class="local-directory">
+    <section class="local-directory__hero">
+      <div class="container local-directory__hero-grid">
+        <div>
+          <span class="local-directory__eyebrow">Danh bạ độc lập · {loc.region}</span>
+          <h1>Bể bơi & nơi dạy bơi tại <span>{loc.name}</span></h1>
+          <p>Trang này giúp người học cá nhân chủ động tìm và liên hệ trực tiếp với bể bơi, câu lạc bộ hoặc giáo viên đang công khai dịch vụ tại {loc.name}. Swim For Life không nhận đăng ký, không thu phí và không đại diện cho các đơn vị được liệt kê.</p>
+          <div class="local-directory__hero-actions">
+            <a href="#danh-sach">Xem danh sách tham khảo</a>
+            <a href={mapsSearch(`học bơi tại ${loc.name}`)} target="_blank" rel="noopener noreferrer">Tìm toàn bộ trên bản đồ</a>
+          </div>
+        </div>
+        <figure>
+          <img src={loc.image} alt={`Minh họa hoạt động bơi lội tại ${loc.name}`} width="680" height="510" loading="eager" />
+          <figcaption>Ảnh minh họa hoạt động bơi lội; không đại diện cho một cơ sở cụ thể.</figcaption>
+        </figure>
       </div>
-    </div>
-    <div class="container loc-hero__grid">
-      <div class="loc-hero__text reveal">
-        <div class="loc-hero__badge">
-          <span class="loc-hero__badge-dot"></span>
-          Trung Tầm Dạy Bơi {loc.name} Uy Tín Số 1 {loc.mergedFrom && `(${loc.mergedFrom})`}
-        </div>
-        <h1 class="loc-hero__title">
-          Dạy Học Bơi <br/>
-          <span class="text-gradient">{loc.name}</span> — Lớp Học Bơi<br/>
-          <span class="text-accent">Kèm Riêng 1 Kèm 1</span>
-        </h1>
-        <p class="loc-hero__desc">
-          Swim For Life Việt Nam mang đến các khóa học bơi tại {loc.name} chất lượng vượt trội. 
-          Lớp dạy bơi kèm riêng biệt 1 kèm 1 tận tâm dưới nước, thiết lập giáo trình riêng cho từng học viên, giúp bạn tự tin bơi lội an toàn chỉ sau 10-12 buổi.
-        </p>
-        
-        <div class="loc-hero__value-props">
-          <div class="v-prop">
-            <span class="v-prop__icon">🏆</span>
-            <div class="v-prop__content">
-              <strong>Học thử 1 buổi hoàn toàn miễn phí</strong>
-              <span>Trải nghiệm trực tiếp dịch vụ trước khi đưa ra quyết định đăng ký học bơi tại {loc.name}</span>
-            </div>
-          </div>
-          <div class="v-prop">
-            <span class="v-prop__icon">🛡️</span>
-            <div class="v-prop__content">
-              <strong>Bảo hành & Cam kết biết bơi 100%</strong>
-              <span>Dạy tiếp hoàn toàn miễn phí nếu học viên đi học đầy đủ mà chưa biết bơi thành thạo</span>
-            </div>
-          </div>
-        </div>
+    </section>
 
-        <div class="loc-hero__actions">
-          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
-            💬 Đăng Ký Học Thử Miễn Phí
-          </a>
-          <a href="#dia-diem-hoc-boi" class="btn btn--hero-outline btn--lg">
-            🏊 Xem Địa Điểm Bể Bơi
-          </a>
-        </div>
+    <section class="local-directory__notice">
+      <div class="container">
+        <strong>Lưu ý trước khi liên hệ</strong>
+        <p>Giờ mở cửa, học phí, HLV và số điện thoại có thể thay đổi. Hãy kiểm tra listing mới nhất, đọc đánh giá gần đây và xác nhận trực tiếp với đơn vị trước khi đến. Website không bảo chứng chất lượng cho bất kỳ bên thứ ba nào.</p>
       </div>
+    </section>
 
-      <div class="loc-hero__visual reveal">
-        <div class="loc-hero__water-bubbles" aria-hidden="true">
-          <span class="water-bubble wb--1"></span>
-          <span class="water-bubble wb--2"></span>
-          <span class="water-bubble wb--3"></span>
-          <span class="water-bubble wb--4"></span>
-          <span class="water-bubble wb--5"></span>
-          <span class="water-bubble wb--6"></span>
-          <span class="water-bubble wb--7"></span>
-          <span class="water-bubble wb--8"></span>
-          <span class="water-bubble wb--9"></span>
-          <span class="water-bubble wb--10"></span>
+    <section class="section" aria-labelledby="discovery-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__badge">Tra cứu theo nhu cầu</span>
+          <h2 class="section__title" id="discovery-title">Tìm đúng loại đơn vị tại {loc.name}</h2>
+          <p class="section__desc">Các liên kết dưới đây mở kết quả bản đồ theo thời gian thực để bạn xem thông tin công khai và liên hệ trực tiếp.</p>
         </div>
-        <div class="loc-hero__collage">
-          <div class="loc-hero__photo loc-hero__photo--main">
-            <img 
-              src={loc.image} 
-              alt={`Lớp dạy học bơi kèm riêng chuyên nghiệp tại ${loc.name} - Swim For Life Việt Nam`} 
-              loading="eager"
-            />
-          </div>
-          <div class="loc-hero__photo loc-hero__photo--top">
-            <img 
-              src="/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg" 
-              alt="Giáo viên chỉnh sửa kỹ thuật bơi cho học viên" 
-              loading="eager" 
-            />
-          </div>
-          <div class="loc-hero__photo loc-hero__photo--bottom">
-            <img 
-              src="/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg" 
-              alt={`Lớp học bơi Swim For Life tại ${loc.name}`} 
-              loading="eager" 
-            />
-          </div>
-        </div>
-        <div class="loc-hero__float-card loc-hero__float-card--top">
-          <span class="loc-hero__float-icon">🏆</span>
-          <div><strong>{loc.pools.length}+ Bể bơi</strong><span>khắp {loc.name}</span></div>
-        </div>
-        <div class="loc-hero__float-card loc-hero__float-card--bottom">
-          <span class="loc-hero__float-icon">🎯</span>
-          <div><strong>100%</strong><span>cam kết biết bơi</span></div>
-        </div>
-        <div class="loc-hero__float-card loc-hero__float-card--left">
-          <span class="loc-hero__float-icon">🌟</span>
-          <div><strong>Học thử</strong><span>miễn phí 1 buổi</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       STATISTICS SECTION
-       ============================================ -->
-  <section class="section loc-stats-section">
-    <div class="container">
-      <div class="loc-stats-grid reveal">
-        <div class="stat-item">
-          <span class="stat-item__num">99.8%</span>
-          <span class="stat-item__label">Học viên biết bơi hoàn toàn</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__num">{loc.pools.length}+</span>
-          <span class="stat-item__label">Chỗ học bơi ở {loc.name} khang trang</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__num">12+</span>
-          <span class="stat-item__label">Năm kinh nghiệm đào tạo</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__num">3000+</span>
-          <span class="stat-item__label">Học viên tốt nghiệp hàng năm</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       INTRO SECTION
-       ============================================ -->
-  <section class="section section--alt loc-intro-section">
-    <div class="container">
-      <div class="loc-intro-grid reveal">
-        <div class="loc-intro-text">
-          <span class="section__badge">Về Lớp Học</span>
-          <h2 class="section__title">Dạy Bơi {loc.name} <span class="text-gradient">An Toàn & Hiệu Quả</span></h2>
-          <p class="about-text" style="color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-4); font-size: var(--text-base);">
-            {loc.intro}
-          </p>
-          <p class="about-text" style="color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); font-size: var(--text-base);">
-            Tại các **trung tâm dạy bơi {loc.name}**, Swim For Life tự hào đi đầu trong việc áp dụng mô hình kèm riêng biệt (1 HLV kèm tối đa 2 học viên), giúp giáo viên bám sát học viên 100% thời gian dưới nước, khắc phục chứng sợ nước và sửa lỗi động tác chính xác. Học viên được chủ động chọn địa điểm học bơi ở {loc.name} gần nhà mình nhất.
-          </p>
-          
-          <div class="loc-intro-features">
-            <div class="intro-feat">
-              <span class="intro-feat__icon">✅</span>
-              <span>Đội ngũ giáo viên dạy bơi tại {loc.name} chuyên nghiệp, tốt nghiệp chuyên ngành bơi lội ĐH TDTT.</span>
-            </div>
-            <div class="intro-feat">
-              <span class="intro-feat__icon">✅</span>
-              <span>Học viên chủ động sắp xếp thời gian biểu học linh hoạt từ 6h00 đến 21h00 hàng ngày.</span>
-            </div>
-            <div class="intro-feat">
-              <span class="intro-feat__icon">✅</span>
-              <span>Đầy đủ giáo viên Nam và Nữ, đáp ứng nhu cầu học kèm riêng kín đáo, kiên nhẫn.</span>
-            </div>
-          </div>
-        </div>
-        <div class="loc-intro-image-wrap">
-          <img 
-            src="/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg" 
-            alt={`Lớp dạy bơi cho trẻ em và người lớn tại ${loc.name}`} 
-            class="loc-intro-img"
-            loading="lazy"
-          />
-          <div class="img-caption">Lớp học bơi kèm riêng vui vẻ và chất lượng tại {loc.name}</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       PARTNER POOLS GRID
-       ============================================ -->
-  <section class="section loc-pools-section" id="dia-diem-hoc-boi">
-    <div class="container">
-      <div class="section__header text-center reveal">
-        <span class="section__badge">Địa Điểm Thực Hành</span>
-        <h2 class="section__title">Địa Điểm Học Bơi Ở {loc.name} — <span class="text-gradient">Bể Thực Hành</span></h2>
-        <p class="section__desc">Chúng tôi hợp tác với hệ thống bể bơi lớn, khang trang và sạch sẽ tại {loc.name} để mang lại sự tiện lợi tối đa cho bạn khi đăng ký dạy bơi.</p>
-      </div>
-
-      <div class="loc-pools-grid reveal">
-        {loc.pools.map((pool, index) => (
-          <div class="pool-card">
-            <div class="pool-card__header">
-              <span class="pool-card__icon">🏊</span>
-              <span class="pool-card__badge">{index === 0 ? "Bể bơi trọng điểm" : "Bể thực hành"}</span>
-            </div>
-            <div class="pool-card__body">
-              <h3 class="pool-card__title">{pool.name}</h3>
-              <p class="pool-card__detail"><strong>📍 Địa chỉ:</strong> {pool.address}</p>
-              <p class="pool-card__detail"><strong>🎨 Loại bể:</strong> {pool.type}</p>
-              <div class="pool-card__pros">
-                <strong>⭐ Điểm nổi bật:</strong>
-                <span>{pool.pros}</span>
-              </div>
-            </div>
-            <div class="pool-card__footer">
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="pool-card__btn">
-                Đăng ký lớp học bơi tại đây →
-              </a>
-            </div>
-          </div>
-        ))}
-
-        <!-- Custom Request Pool Card -->
-        <div class="pool-card pool-card--request">
-          <div class="pool-card__request-content">
-            <span class="request-icon">❓</span>
-            <h3 class="pool-card__title">Bạn muốn học bể bơi khác?</h3>
-            <p class="pool-card__request-desc">Chúng tôi nhận dạy kèm riêng tại nhà hoặc bất kỳ bể bơi nào theo yêu cầu của học viên tại {loc.name}.</p>
-            <a href="tel:0979121097" class="btn btn--accent btn--sm">
-              📞 Gọi 0979.121.097
+        <div class="local-directory__discovery-grid">
+          {discoveryLinks.map((item) => (
+            <a href={item.url} target="_blank" rel="noopener noreferrer" class="local-directory__discovery-card">
+              <span class={`local-directory__icon local-directory__icon--${item.icon}`} aria-hidden="true"></span>
+              <strong>{item.label}</strong>
+              <p>{item.desc}</p>
+              <span>Xem kết quả mới nhất <b>↗</b></span>
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       COURSE PROGRAMS GRID
-       ============================================ -->
-  <section class="section section--alt loc-programs-section">
-    <div class="container">
-      <div class="section__header text-center reveal">
-        <span class="section__badge">Chương Trình Đào Tạo</span>
-        <h2 class="section__title">Khóa Học Bơi {loc.name} <span class="text-gradient">Cho Mọi Lứa Tuổi</span></h2>
-        <p class="section__desc">Lựa chọn chương trình học phù hợp với nhu cầu và lứa tuổi của bạn. Cam kết đầu ra lớp học bơi chất lượng nhất.</p>
-      </div>
-
-      <div class="loc-programs-grid reveal">
-        <!-- Program 1 -->
-        <div class="program-card">
-          <div class="program-card__img-wrap">
-            <img src="/images/classes/lop-boi-tre-em-bai-ban.jpg" alt={`Học bơi trẻ em tại ${loc.name}`} />
-            <span class="program-card__tag">Dành cho trẻ em</span>
-          </div>
-          <div class="program-card__body">
-            <h3 class="program-card__title">Học Bơi Trẻ Em {loc.name}</h3>
-            <p class="program-card__desc">Lớp học bơi cho bé ở {loc.name} từ 5-15 tuổi. Giáo trình chuẩn giúp bé tự tin phản xạ dưới nước, học bơi cơ bản bài bản và rèn kỹ năng phòng chống đuối nước tự cứu mình.</p>
-            <ul class="program-card__list">
-              <li>⏱️ Số buổi: 10 - 12 buổi (60 phút/buổi)</li>
-              <li>👨 HLV kèm sát sao dưới nước</li>
-              <li>🛡️ Học thử 1 buổi miễn phí</li>
-            </ul>
-          </div>
-          <div class="program-card__footer">
-            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Đăng Ký Khóa Trẻ Em</a>
-          </div>
-        </div>
-
-        <!-- Program 2 -->
-        <div class="program-card">
-          <div class="program-card__img-wrap">
-            <img src="/images/classes/hoc-vien-chinh-sua-trong-nuoc.jpg" alt={`Học bơi người lớn tại ${loc.name}`} />
-            <span class="program-card__tag program-card__tag--orange">Dành cho người lớn</span>
-          </div>
-          <div class="program-card__body">
-            <h3 class="program-card__title">Học Bơi Người Lớn {loc.name}</h3>
-            <p class="program-card__desc">Lớp học bơi cho người lớn ở {loc.name} (từ 16 tuổi trở lên). Giáo án cá nhân hóa hỗ trợ học viên nhát nước lâu năm vượt qua nỗi sợ hãi, bơi ếch, bơi sải tự tin.</p>
-            <ul class="program-card__list">
-              <li>⏱️ Lịch học linh hoạt do học viên sắp xếp</li>
-              <li>🏊 Học bơi Ếch cơ bản hoặc bơi Sải nâng cao</li>
-              <li>🛡️ Cam kết biết bơi hoàn toàn 100%</li>
-            </ul>
-          </div>
-          <div class="program-card__footer">
-            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Đăng Ký Khóa Người Lớn</a>
-          </div>
-        </div>
-
-        <!-- Program 3 -->
-        <div class="program-card">
-          <div class="program-card__img-wrap">
-            <img src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" alt={`Dạy bơi kèm riêng tại ${loc.name}`} />
-            <span class="program-card__tag program-card__tag--green">1 Kèm 1 Đỉnh Cao</span>
-          </div>
-          <div class="program-card__body">
-            <h3 class="program-card__title">Dạy Bơi Kèm Riêng 1 Kèm 1</h3>
-            <p class="program-card__desc">Khóa học bơi kèm riêng tại {loc.name} an toàn nhất. Có lớp học bơi giáo viên nam/nữ theo yêu cầu cho trẻ em hoặc học viên cần sự kiên nhẫn tỉ mỉ.</p>
-            <ul class="program-card__list">
-              <li>🎯 1 Giáo viên kèm tối đa 2 học viên dưới nước</li>
-              <li>🛡️ An toàn tuyệt đối 100%</li>
-              <li>🎨 Tùy chọn giáo viên Nam/Nữ</li>
-            </ul>
-          </div>
-          <div class="program-card__footer">
-            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--full btn--pulse">Đăng Ký Lớp 1 Kèm 1</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       SWIM TECHNIQUES PREVIEW
-       ============================================ -->
-  <section class="section techniques-section" id="techniques-preview">
-    <div class="container">
-      <div class="section__header text-center reveal">
-        <span class="section__badge">Kỹ Thuật Bơi</span>
-        <h2 class="section__title">4 Kỹ Thuật Bơi <span class="text-gradient">Cơ Bản & Nâng Cao</span></h2>
-        <p class="section__desc">Hệ thống giáo trình đào tạo đầy đủ 4 kiểu bơi từ cơ bản đến nâng cao</p>
-      </div>
-      <div class="techniques-grid">
-        <a href="/ky-thuat-boi/hoc-boi-ech/" class="technique-card reveal">
-          <div class="technique-card__img-wrap">
-            <img src="/images/techniques/huong-dan-tap-tho-boi-ech.jpg" alt="Hướng dẫn tập thở bơi ếch - Kỹ thuật bơi ếch cơ bản" loading="lazy" />
-          </div>
-          <div class="technique-card__body">
-            <span class="technique-card__number">01</span>
-            <h3 class="technique-card__title">Bơi Ếch</h3>
-            <p class="technique-card__desc">Kiểu bơi phổ biến nhất, dễ học, phù hợp cho người mới bắt đầu.</p>
-            <span class="technique-card__link">Xem chi tiết →</span>
-          </div>
-        </a>
-        <a href="/ky-thuat-boi/hoc-boi-sai/" class="technique-card reveal">
-          <div class="technique-card__img-wrap">
-            <img src="/images/techniques/tap-dong-tac-tay-boi-sai-tren-can.jpg" alt="Tập động tác tay bơi sải trên cạn - Kỹ thuật bơi sải" loading="lazy" />
-          </div>
-          <div class="technique-card__body">
-            <span class="technique-card__number">02</span>
-            <h3 class="technique-card__title">Bơi Sải</h3>
-            <p class="technique-card__desc">Kiểu bơi nhanh nhất, còn gọi là bơi trườn sấp (Front Crawl).</p>
-            <span class="technique-card__link">Xem chi tiết →</span>
-          </div>
-        </a>
-        <a href="/ky-thuat-boi/hoc-boi-ngua/" class="technique-card reveal">
-          <div class="technique-card__img-wrap">
-            <img src="/images/safety/khoi-dong-tren-can.jpg" alt="Khởi động trên cạn trước khi tập bơi ngửa - Kỹ thuật bơi ngửa" loading="lazy" />
-          </div>
-          <div class="technique-card__body">
-            <span class="technique-card__number">03</span>
-            <h3 class="technique-card__title">Bơi Ngửa</h3>
-            <p class="technique-card__desc">Kiểu bơi thư giãn, thoải mái, giúp rèn luyện khả năng nổi.</p>
-            <span class="technique-card__link">Xem chi tiết →</span>
-          </div>
-        </a>
-        <a href="/ky-thuat-boi/hoc-boi-buom/" class="technique-card reveal">
-          <div class="technique-card__img-wrap">
-            <img src="/images/safety/khoi-dong-lam-nong-co-the.jpg" alt="Khởi động làm nóng cơ thể trước khi tập bơi bướm - Kỹ thuật bơi bướm" loading="lazy" />
-          </div>
-          <div class="technique-card__body">
-            <span class="technique-card__number">04</span>
-            <h3 class="technique-card__title">Bơi Bướm</h3>
-            <p class="technique-card__desc">Kiểu bơi nâng cao, đẹp mắt và đòi hỏi sức mạnh toàn thân.</p>
-            <span class="technique-card__link">Xem chi tiết →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       PRICING SECTION
-       ============================================ -->
-  <section class="section loc-pricing-section" id="bang-gia">
-    <div class="container">
-      <div class="section__header text-center reveal">
-        <span class="section__badge">Học Phí Lớp Học Bơi</span>
-        <h2 class="section__title">Bảng Giá Học Phí <span class="text-gradient">Lớp Học Bơi {loc.name}</span></h2>
-        <p class="section__desc">Swim For Life cung cấp các khóa học bơi chất lượng cao với mức học phí hợp lý, cam kết đầu ra lớp học bơi tốt nhất.</p>
-      </div>
-
-      <div class="loc-pricing-grid reveal">
-        <!-- Lớp Kèm Riêng -->
-        <div class="pricing-card pricing-card--primary">
-          <div>
-            <span class="pricing-card__sub">Lớp Học Cao Cấp</span>
-            <h3 class="pricing-card__title">Lớp Học Bơi Kèm Riêng 1-1</h3>
-            <p class="pricing-card__desc">Dành cho trẻ em (từ 5 tuổi) và người lớn muốn biết bơi nhanh và an toàn nhất với giáo án kèm riêng biệt.</p>
-            <div class="pricing-card__price">Liên hệ nhận báo giá</div>
-            <ul class="pricing-card__features">
-              <li><span>✅</span> <span>1 Giáo viên kèm 1 Học viên dưới nước</span></li>
-              <li><span>✅</span> <span>Thời lượng: 10 - 12 buổi học (60 phút/buổi)</span></li>
-              <li><span>✅</span> <span>Lịch học chủ động, linh động theo mong muốn</span></li>
-              <li><span>✅</span> <span>Tùy chọn HLV Nam hoặc HLV Nữ</span></li>
-              <li><span>✅</span> <span>Cam kết 100% biết bơi thành thạo</span></li>
-            </ul>
-          </div>
-          <div class="pricing-card__footer">
-            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Nhận Báo Giá Chi Tiết</a>
-          </div>
-        </div>
-
-        <!-- Trải Nghiệm Học Thử -->
-        <div class="pricing-card pricing-card--featured">
-          <div class="badge-popular">Đặc Biệt</div>
-          <div>
-            <span class="pricing-card__sub pricing-card__sub--accent">Trải Nghiệm Đỉnh Cao</span>
-            <h3 class="pricing-card__title">Trải Nghiệm Bơi Thử 1-1</h3>
-            <p class="pricing-card__desc">Buổi học thử hoàn toàn miễn phí giúp học viên làm quen nước và đánh giá phương pháp của trung tâm.</p>
-            <div class="pricing-card__price">Hoàn toàn miễn phí <small style="display: block; font-size: var(--text-xs); color: var(--color-text-secondary); font-weight: 500; margin-top: 4px;">Miễn phí học thử 1 buổi</small></div>
-            <ul class="pricing-card__features">
-              <li><span>✅</span> <span>Trực tiếp xuống nước cùng HLV chuyên nghiệp</span></li>
-              <li><span>✅</span> <span>Hướng dẫn kỹ năng thở nước, đứng nước cơ bản</span></li>
-              <li><span>✅</span> <span>HLV đánh giá thể lực & mức độ tự tin trước khi bắt đầu</span></li>
-              <li><span>✅</span> <span>Hoàn toàn miễn phí, không cam kết phải đăng ký học tiếp</span></li>
-            </ul>
-          </div>
-          <div class="pricing-card__footer">
-            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--full btn--pulse">Đăng Ký Học Thử Ngay</a>
-          </div>
-        </div>
-
-        <!-- Lớp Nhóm Nhỏ -->
-        <div class="pricing-card pricing-card--teal">
-          <div>
-            <span class="pricing-card__sub pricing-card__sub--teal">Học Nhóm Tiết Kiệm</span>
-            <h3 class="pricing-card__title">Lớp Học Bơi Nhóm Nhỏ (2-3 Học Viên)</h3>
-            <p class="pricing-card__desc">Giải pháp học bơi tiết kiệm tại {loc.name} cho nhóm bạn bè hoặc các thành viên trong gia đình học cùng nhau.</p>
-            <div class="pricing-card__price">Liên hệ nhận báo giá</div>
-            <ul class="pricing-card__features">
-              <li><span>✅</span> <span>1 Giáo viên kèm nhóm 2 - 3 học viên</span></li>
-              <li><span>✅</span> <span>Thời lượng: 10 - 12 buổi học</span></li>
-              <li><span>✅</span> <span>Lịch học thống nhất theo nhóm</span></li>
-              <li><span>✅</span> <span>Vẫn đảm bảo chất lượng dạy sát sao</span></li>
-              <li><span>✅</span> <span>Cam kết biết bơi sau khóa học</span></li>
-            </ul>
-          </div>
-          <div class="pricing-card__footer">
-            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Nhận Báo Giá Nhóm</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="pricing-note reveal">
-        <p>⚠️ <strong>Lưu ý về chi phí học bơi ở {loc.name}:</strong> Học phí trên đã bao gồm vé vào cửa của giáo viên. Học viên tự mua vé vào cửa bể bơi cho mình (vé lượt hoặc vé tháng tại địa điểm bể bơi đã chọn).</p>
-      </div>
-    </div>
-  </section>
-
-  <CoachesSection />
-
-  <!-- ============================================
-       REGISTRATION SECTION with Glassmorphism Box
-       ============================================ -->
-  <section class="section section--alt loc-register-section" id="dang-ky">
-    <div class="container">
-      <div class="loc-register-box reveal">
-        <div class="loc-register-content">
-          <span class="loc-register-badge">Đăng Ký Học Thử</span>
-          <h2 class="loc-register-title">Đăng Ký Khóa Học Bơi <span class="text-gradient">Tại {loc.name} [2026]</span></h2>
-          <p class="loc-register-desc">Để lại thông tin liên hệ để nhận cuộc gọi tư vấn hoàn toàn miễn phí từ ban quản lý lớp học. Lớp học thử 1 buổi sẽ giúp bạn trải nghiệm dịch vụ trước khi có quyết định chính thức.</p>
-          
-          <div class="loc-steps">
-            <div class="loc-step">
-              <div class="loc-step__number">1</div>
-              <div class="loc-step__text"><strong>Đăng ký:</strong> Điền form liên hệ bên cạnh</div>
-            </div>
-            <div class="loc-step">
-              <div class="loc-step__number">2</div>
-              <div class="loc-step__text"><strong>Liên hệ:</strong> HLV trưởng gọi điện tư vấn bể bơi phù hợp</div>
-            </div>
-            <div class="loc-step">
-              <div class="loc-step__number">3</div>
-              <div class="loc-step__text"><strong>Bơi thử:</strong> Nhận buổi bơi thử 1 kèm 1 miễn phí</div>
-            </div>
-            <div class="loc-step">
-              <div class="loc-step__number">4</div>
-              <div class="loc-step__text"><strong>Cam kết:</strong> Bắt đầu khóa học chính thức & Nhận bảo hành</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="loc-register-form-wrap">
-          <RegistrationForm id="location-page-register" isFullForm={false} flat={true} defaultCourse={`Khóa học bơi ${loc.name} kèm riêng`} />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       FAQ SECTION
-       ============================================ -->
-  <section class="section loc-faq-section" id="faq">
-    <div class="container">
-      <div class="loc-faq-layout">
-        <div class="loc-faq-info reveal">
-          <span class="section__badge">Giải Đáp Thắc Mắc</span>
-          <h2 class="section__title">Câu Hỏi Thường Gặp Về <span class="text-gradient">Học Bơi {loc.name}</span></h2>
-          <p style="color: var(--color-text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6;">
-            Tổng hợp và giải đáp các thắc mắc phổ biến nhất của học viên và phụ huynh khi đăng ký khóa học bơi tại khu vực {loc.name}.
-          </p>
-          <span class="divider" style="margin-inline: 0; margin-bottom: 24px;"></span>
-          <div class="loc-faq-cta hide-mobile">
-            <p style="font-weight: 600; color: var(--color-primary); margin-bottom: 8px;">Bạn cần tư vấn chi tiết hơn?</p>
-            <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px; color: var(--color-text-secondary);">Liên hệ HLV Trưởng để nhận tư vấn lộ trình và sắp xếp buổi học thử miễn phí tại bể bơi gần nhà.</p>
-            <a href="tel:0979121097" class="btn btn--accent btn--sm" style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-decoration: none;">
-              <span>📞</span> Hotline: 0979.121.097
-            </a>
-          </div>
-        </div>
-
-        <div class="loc-faq-list reveal">
-          {loc.faqs.map((faq, index) => (
-            <details class="faq-card" open={index === 0}>
-              <summary class="faq-card__q">
-                <span>{faq.q}</span>
-                <span class="faq-card__icon"></span>
-              </summary>
-              <div class="faq-card__answer-wrap">
-                <p class="faq-card__a">{faq.a}</p>
-              </div>
-            </details>
           ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="section section--alt" id="danh-sach" aria-labelledby="pool-list-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__badge">Danh sách khởi tạo</span>
+          <h2 class="section__title" id="pool-list-title">Các bể bơi thường được tìm kiếm tại {loc.name}</h2>
+          <p class="section__desc">Danh sách không tuyên bố bao quát toàn bộ thị trường. Mỗi nút “Kiểm tra & liên hệ” mở listing công khai để bạn xác minh tình trạng hoạt động.</p>
+        </div>
+        <div class="local-directory__pool-grid">
+          {poolDirectory.map((pool, index) => (
+            <article class="local-directory__pool-card">
+              <div class="local-directory__pool-index">{String(index + 1).padStart(2, '0')}</div>
+              <div>
+                <span>{pool.type || 'Bể bơi'}</span>
+                <h3>{pool.name}</h3>
+                {pool.address && <p><strong>Địa chỉ tham khảo:</strong> {pool.address}</p>}
+                {pool.pros && <p><strong>Mô tả hiện có:</strong> {pool.pros}</p>}
+              </div>
+              <a href={pool.mapsUrl} target="_blank" rel="noopener noreferrer">Kiểm tra & liên hệ ↗</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="check-title">
+      <div class="container local-directory__check-grid">
+        <div>
+          <span class="section__badge">Tự đánh giá trước khi học</span>
+          <h2 class="section__title" id="check-title">5 điểm cần xác nhận trực tiếp</h2>
+          <p class="section__desc">Không chuyển khoản hoặc đăng ký dài hạn trước khi bạn xác minh được đơn vị và người dạy.</p>
+        </div>
+        <ol>
+          <li><span>01</span><div><strong>Danh tính và chứng chỉ HLV</strong><p>Yêu cầu xem chứng chỉ chuyên môn, cứu hộ còn hiệu lực và kinh nghiệm với đúng nhóm tuổi.</p></div></li>
+          <li><span>02</span><div><strong>Nhân viên cứu hộ tại bể</strong><p>Xác nhận ca học luôn có cứu hộ, phao và quy trình xử lý sự cố.</p></div></li>
+          <li><span>03</span><div><strong>Sĩ số và độ sâu</strong><p>Hỏi rõ số học viên trên mỗi HLV và khu vực nước nông dành cho người mới.</p></div></li>
+          <li><span>04</span><div><strong>Chi phí đầy đủ</strong><p>Xác nhận học phí, vé bể, dụng cụ, số buổi và chính sách nghỉ/bù bằng văn bản.</p></div></li>
+          <li><span>05</span><div><strong>Đánh giá gần đây</strong><p>Ưu tiên đánh giá có ảnh thật, nội dung cụ thể và được đăng trong thời gian gần.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="local-directory__enterprise">
+      <div class="container local-directory__enterprise-inner">
+        <div>
+          <span>Chỉ dành cho tổ chức</span>
+          <h2>Cần triển khai đào tạo bơi quy mô từ 10 người?</h2>
+          <p>Doanh nghiệp, trường học và khu dân cư có thể gửi yêu cầu để nhận đề xuất chương trình theo quy mô, địa điểm và tiêu chuẩn an toàn riêng.</p>
+        </div>
+        <a href="/khoa-hoc-boi/doanh-nghiep/">Xem giải pháp đào tạo tổ chức</a>
+      </div>
+    </section>
+  </main>
 </PageLayout>

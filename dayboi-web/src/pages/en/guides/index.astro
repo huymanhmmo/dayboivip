@@ -1,7 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
 import PageLayout from '../../../layouts/PageLayout.astro';
-import RegistrationForm from '../../../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../../../components/LocalDirectoryCTA.astro';
 
 const title = 'Ultimate Swimming Learning Guide for Beginners | Swim For Life Vietnam';
 const description = 'A comprehensive step-by-step guide to learning how to swim. Master water comfort, breathing, floating, gliding, treading, and stroke mechanics safely.';
@@ -154,23 +154,8 @@ const guideSchema = {
         <!-- Sidebar Column -->
         <aside style="display: flex; flex-direction: column; gap: var(--space-8);">
           
-          <!-- Registration Widget -->
-          <div style="background: #ffffff; border: 1px solid var(--color-border); padding: var(--space-6); border-radius: 16px; box-shadow: var(--shadow-md);">
-            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2);">Book Free Trial</h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
-              Register today for a free 1-on-1 trial session near your home with our certified coaches.
-            </p>
-            <RegistrationForm id="en-guide-sidebar-form" lang="en" />
-          </div>
+          <LocalDirectoryCTA compact={true} lang="en" />
 
-          <!-- Quick Contact -->
-          <div style="background: var(--color-bg-alt); padding: var(--space-6); border-radius: 16px; border: 1px dashed var(--color-primary);">
-            <h4 style="font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3); font-size: 0.95rem;">Need Instant Help?</h4>
-            <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: 0.85rem;">
-              <div>📞 <strong>Hotline:</strong> <a href="tel:0979121097" style="color: var(--color-accent); font-weight: 600;">0979.121.097</a></div>
-              <div>💬 <strong>Zalo:</strong> <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">Coach Manh</a></div>
-            </div>
-          </div>
 
         </aside>
 

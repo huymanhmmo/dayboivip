@@ -11,23 +11,13 @@ import '../styles/home-redesign.css';
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Organization",
   "name": "Swim For Life Việt Nam",
   "alternateName": "Trung tâm dạy bơi Swim For Life",
-  "description": "Trung tâm dạy bơi chuyên nghiệp hàng đầu Việt Nam. Đào tạo bơi lội cho mọi lứa tuổi từ trẻ em đến người lớn với đội ngũ HLV giàu kinh nghiệm.",
+  "description": "Đơn vị triển khai chương trình đào tạo bơi quy mô lớn cho doanh nghiệp, trường học và khu dân cư; đồng thời vận hành danh bạ bơi lội địa phương.",
   "url": "https://dayboi.vip",
-  "telephone": "+84979121097",
-  "email": "dayboivip@gmail.com",
   "image": "https://dayboi.vip/images/brand/logo.png",
-  "priceRange": "Liên hệ nhận báo giá",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "VN",
-    "addressLocality": "Hà Nội"
-  },
-  "sameAs": [
-    "http://zalo.me/0979121097"
-  ]
+  "areaServed": "VN"
 };
 
 const regions = [
@@ -96,8 +86,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
 ---
 
 <MainLayout
-  title="Trung Tâm Dạy Bơi Chuyên Nghiệp"
-  description="Swim For Life Việt Nam — Trung tâm dạy bơi chuyên nghiệp hàng đầu. Khóa học bơi cho trẻ em & người lớn, đội ngũ HLV giàu kinh nghiệm, phương pháp an toàn. Gọi ngay 0979.121.097!"
+  title="Đào Tạo Bơi Quy Mô Lớn & Danh Bạ Bơi Lội Toàn Quốc"
+  description="Swim For Life triển khai chương trình bơi cho doanh nghiệp, trường học và khu dân cư. Người học cá nhân tự tra cứu bể bơi, CLB và giáo viên qua danh bạ địa phương."
   lang="vi"
   alternateUrl="/en/"
   schema={schema}
@@ -125,23 +115,22 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
       <div class="hero__text">
         <div class="hero__badge reveal">
           <span class="hero__badge-dot"></span>
-          Trung Tâm Dạy Bơi Chuyên Nghiệp #1 Việt Nam
+          Đào tạo tổ chức · Danh bạ cho cộng đồng
         </div>
         <h1 class="hero__title reveal">
-          Học Bơi<br/>
-          <span class="hero__title-highlight">An Toàn</span> — Vui Vẻ<br/>
-          & <span class="hero__title-accent">Hiệu Quả</span>
+          Bơi Lội<br/>
+          <span class="hero__title-highlight">Quy Mô</span> — An Toàn<br/>
+          & <span class="hero__title-accent">Có Hệ Thống</span>
         </h1>
         <p class="hero__subtitle reveal">
-          Swim For Life Việt Nam — Đào tạo bơi lội cho mọi lứa tuổi với đội ngũ HLV chuyên nghiệp, 
-          phương pháp khoa học, và cam kết an toàn tuyệt đối.
+          Giải pháp đào tạo dành cho doanh nghiệp, trường học và khu dân cư. Người học cá nhân có thể dùng danh bạ để tự chọn và liên hệ đơn vị tại địa phương.
         </p>
         <div class="hero__actions reveal">
-          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
-            Tư Vấn Miễn Phí
+          <a href="/khoa-hoc-boi/doanh-nghiep/" class="btn btn--accent btn--lg">
+            Giải Pháp Cho Tổ Chức
           </a>
-          <a href="tel:0979121097" class="btn btn--hero-outline btn--lg">
-            Gọi 0979.121.097
+          <a href="/hoc-boi-o-dau/" class="btn btn--hero-outline btn--lg">
+            Tra Cứu Nơi Học Gần Bạn
           </a>
         </div>
         <div class="hero__trust reveal">
@@ -282,8 +271,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               <li>Trang bị phao bơi an toàn</li>
             </ul>
             <div class="course-card__footer">
-              <span class="course-card__price">Liên hệ nhận báo giá</span>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Đăng Ký Ngay</a>
+              <span class="course-card__price">Tự chọn đơn vị địa phương</span>
+              <a href="/hoc-boi-o-dau/" class="btn btn--primary btn--sm">Mở Danh Bạ</a>
             </div>
           </div>
         </div>
@@ -307,8 +296,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               <li>Linh hoạt thời gian</li>
             </ul>
             <div class="course-card__footer">
-              <span class="course-card__price">Liên hệ nhận báo giá</span>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Đăng Ký Ngay</a>
+              <span class="course-card__price">Tự chọn đơn vị địa phương</span>
+              <a href="/hoc-boi-o-dau/" class="btn btn--primary btn--sm">Mở Danh Bạ</a>
             </div>
           </div>
         </div>
@@ -333,8 +322,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               <li>Tiến bộ nhanh nhất</li>
             </ul>
             <div class="course-card__footer">
-              <span class="course-card__price">Liên hệ nhận báo giá</span>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--sm">Đăng Ký Ngay</a>
+              <span class="course-card__price">Tự chọn đơn vị địa phương</span>
+              <a href="/hoc-boi-o-dau/" class="btn btn--accent btn--sm">Mở Danh Bạ</a>
             </div>
           </div>
         </div>
@@ -359,8 +348,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
               <li>Lịch học linh hoạt</li>
             </ul>
             <div class="course-card__footer">
-              <span class="course-card__price">Liên hệ nhận báo giá</span>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">Đăng Ký Ngay</a>
+              <span class="course-card__price">Tự chọn đơn vị địa phương</span>
+              <a href="/hoc-boi-o-dau/" class="btn btn--primary btn--sm">Mở Danh Bạ</a>
             </div>
           </div>
         </div>
@@ -572,8 +561,8 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
           <p class="about-text">
             Giấy chứng nhận xác nhận học viên đã nắm vững kỹ năng bơi lội cơ bản, đạt tiêu chuẩn an toàn dưới nước.
           </p>
-          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--md btn--pulse">
-            Đăng Ký Học Bơi Ngay
+          <a href="/ky-thuat-boi/" class="btn btn--accent btn--md">
+            Xem Thư Viện Kỹ Thuật
           </a>
         </div>
         <div class="cert-image reveal">
@@ -593,9 +582,9 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
   <section class="section locations-section" id="locations-section">
     <div class="container">
       <div class="section__header text-center reveal">
-        <span class="section__badge">Địa Điểm Học Bơi</span>
-        <h2 class="section__title">Hệ Thống Lớp Học Bơi <span class="text-gradient">Toàn Quốc</span></h2>
-        <p class="section__desc">Swim For Life Việt Nam đã có mặt tại 34 tỉnh/thành phố, mang các lớp dạy bơi chất lượng, uy tín và an toàn đến gần gia đình bạn.</p>
+        <span class="section__badge">Danh Bạ Địa Phương</span>
+        <h2 class="section__title">Tự Tìm Nơi Học Bơi <span class="text-gradient">Toàn Quốc</span></h2>
+        <p class="section__desc">Chọn tỉnh/thành để tra cứu bể bơi, câu lạc bộ và giáo viên có thông tin công khai; bạn chủ động xác minh và liên hệ trực tiếp.</p>
       </div>
       
       <div class="locations-grid">
@@ -629,17 +618,14 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
   <section class="section cta-section" id="cta-bottom">
     <div class="container">
       <div class="cta-box reveal">
-        <h2 class="cta-box__title">Bạn Sẵn Sàng Học Bơi Chưa?</h2>
-        <p class="cta-box__desc">Liên hệ ngay để nhận tư vấn miễn phí về khóa học bơi phù hợp với bạn và gia đình.</p>
+        <h2 class="cta-box__title">Một website, hai lối đi rõ ràng.</h2>
+        <p class="cta-box__desc">Cá nhân tra cứu danh bạ địa phương. Doanh nghiệp và tổ chức gửi yêu cầu chương trình đào tạo quy mô lớn.</p>
         <div class="cta-box__actions">
-          <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn--accent btn--lg btn--pulse">
-            Chat Zalo Ngay
+          <a href="/hoc-boi-o-dau/" class="btn btn--accent btn--lg">
+            Danh Bạ Cho Người Học
           </a>
-          <a href="tel:0979121097" class="btn btn--outline-white btn--lg">
-            Gọi 0979.121.097
-          </a>
-          <a href="mailto:dayboivip@gmail.com" class="btn btn--outline-white btn--lg">
-            dayboivip@gmail.com
+          <a href="/lien-he/" class="btn btn--outline-white btn--lg">
+            Yêu Cầu Cho Tổ Chức
           </a>
         </div>
       </div>

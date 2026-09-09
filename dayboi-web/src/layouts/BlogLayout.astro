@@ -1,8 +1,7 @@
 ---
 import PageLayout from './PageLayout.astro';
 import AuthorBio from '../components/AuthorBio.astro';
-import RegistrationForm from '../components/RegistrationForm.astro';
-import SuccessModal from '../components/SuccessModal.astro';
+import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 export interface Props {
@@ -295,14 +294,9 @@ const tagsList = Array.from(tagsMap.values());
             </div>
           </div>
 
-          <!-- Widget 2: Form Registration -->
+          <!-- Widget 2: Independent local directory -->
           <div class="sidebar-widget">
-            <h3 class="widget-title">{lang === 'en' ? '🏊 Book Free Trial' : '🏊 Đăng Ký Học Thử'}</h3>
-            <p class="widget-subtitle">{lang === 'en' ? 'Register today for a free 1-on-1 trial session near your home with our certified coaches.' : 'Nhận ngay 1 buổi học thử 1 kèm 1 miễn phí cùng HLV chuyên nghiệp tại bể bơi gần nhà bạn nhất!'}</p>
-            <RegistrationForm id="blog-register-form" lang={lang} />
-            <div class="widget-trust">
-              {lang === 'en' ? '🔒 Info secured • 100% swim guarantee' : '🔒 Bảo mật thông tin • Cam kết biết bơi 100%'}
-            </div>
+            <LocalDirectoryCTA lang={lang} compact={true} />
           </div>
         </aside>
 
@@ -335,8 +329,6 @@ const tagsList = Array.from(tagsMap.values());
       </div>
     </section>
   )}
-
-  <SuccessModal />
 
 </PageLayout>
 

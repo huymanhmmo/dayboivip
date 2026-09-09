@@ -4,8 +4,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import CourseHero from '../../components/course/CourseHero.astro';
 import CourseTrust from '../../components/course/CourseTrust.astro';
 import CourseFAQ from '../../components/course/CourseFAQ.astro';
-import FloatingCTA from '../../components/course/FloatingCTA.astro';
-import RegistrationForm from '../../components/RegistrationForm.astro';
+import LocalDirectoryCTA from '../../components/LocalDirectoryCTA.astro';
 import { courses } from '../../data/courses.js';
 import CoachesSection from '../../components/CoachesSection.astro';
 import '../../styles/course-landing.css';
@@ -84,10 +83,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Có được học thử miễn phí không?",
+      "name": "Swim For Life có tiếp nhận học viên cá nhân không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Có! Swim For Life cung cấp buổi học thử miễn phí để học viên trải nghiệm phương pháp giảng dạy, gặp gỡ huấn luyện viên và đánh giá trình độ trước khi đăng ký chính thức."
+        "text": "Không. Người học cá nhân được hướng dẫn dùng danh bạ địa phương để tự liên hệ bể bơi, câu lạc bộ hoặc giáo viên độc lập. Swim For Life chỉ tiếp nhận chương trình cho tổ chức và đoàn từ 10 người."
       }
     },
     {
@@ -116,19 +115,19 @@ const faqs = [
   },
   {
     question: "Swim For Life có những loại khóa học nào?",
-    answer: "Swim For Life cung cấp 3 loại khóa học chính: Khóa cá nhân 1 kèm 1 (HLV riêng, linh hoạt tối đa), Khóa nhóm 3-5 người (tiết kiệm, vui vẻ), và Chương trình doanh nghiệp/Vinhomes (quy mô lớn, chương trình đặc biệt). Mỗi loại có ưu điểm riêng phù hợp với nhu cầu khác nhau."
+    answer: "Các nội dung cá nhân trên website được giữ lại như tài liệu tham khảo. Swim For Life hiện chỉ tiếp nhận chương trình doanh nghiệp, trường học, khu dân cư và tổ chức có quy mô từ 10 người."
   },
   {
     question: "Học phí khóa bơi tại Swim For Life là bao nhiêu?",
-    answer: "Học phí được tính theo từng loại khóa và số buổi. Swim For Life cam kết mức học phí bơi lội cạnh tranh, minh bạch, không phát sinh chi phí. Liên hệ hotline/zalo 0979.121.097 để nhận báo giá chi tiết nhất."
+    answer: "Người học cá nhân cần hỏi giá trực tiếp từ đơn vị trong danh bạ địa phương. Chương trình tổ chức được báo giá riêng theo số người, địa điểm, thời lượng và yêu cầu an toàn."
   },
   {
     question: "Swim For Life dạy những kỹ thuật bơi nào?",
     answer: "Swim For Life dạy đầy đủ 4 kỹ thuật bơi: Bơi ếch (cơ bản, dễ học), Bơi sải/tự do (nhanh nhất), Bơi ngửa (thở thoải mái), Bơi bướm (nâng cao). Ngoài ra còn dạy kỹ năng đứng nước – kỹ năng sinh tồn quan trọng nhất."
   },
   {
-    question: "Có được học thử miễn phí không?",
-    answer: "Có! Swim For Life cung cấp buổi học thử miễn phí để bạn trải nghiệm phương pháp giảng dạy, gặp gỡ huấn luyện viên và đánh giá trình độ trước khi đăng ký chính thức. Liên hệ hotline để đặt lịch học thử."
+    question: "Swim For Life có tiếp nhận học viên cá nhân không?",
+    answer: "Không. Người học cá nhân dùng danh bạ địa phương để tự liên hệ đơn vị phù hợp. Swim For Life chỉ tiếp nhận chương trình cho tổ chức và đoàn từ 10 người."
   },
   {
     question: "Chính sách bảo lưu khóa học như thế nào?",
@@ -139,7 +138,7 @@ const faqs = [
 
 <PageLayout
   title={`Khóa Học Bơi Swim For Life: Từ Cơ Bản Đến Nâng Cao [${currentYear}]`}
-  description="Khóa học bơi chuyên nghiệp tại Swim For Life - Cam kết biết bơi sau 10-12 buổi. Dạy bơi 1 kèm 1, nhóm, doanh nghiệp. HLV tâm lý, học thử miễn phí. Hotline: 0979.121.097"
+  description="Thư viện chương trình và phương pháp học bơi. Người học cá nhân tra cứu danh bạ địa phương; tổ chức từ 10 người có thể yêu cầu chương trình đào tạo riêng."
   canonical="https://dayboi.vip/khoa-hoc-boi/"
   breadcrumbs={breadcrumbs}
   schema={combinedSchema}
@@ -297,55 +296,7 @@ const faqs = [
 
     <CoachesSection />
 
-    <!-- Form Section -->
-    <section class="cl-section cl-section--alt" id="dang-ky">
-      <div class="cl-section__container">
-        <div class="cl-section-title">
-          <span class="cl-section-title__badge">
-            Đăng Ký Ngay
-          </span>
-          <h2 class="cl-section-title__heading">
-            Bắt Đầu Hành Trình Học Bơi Hôm Nay
-          </h2>
-          <p class="cl-section-title__sub">
-            Để lại thông tin dưới đây, Swim For Life sẽ liên hệ tư vấn lộ trình và xếp lịch học thử MIỄN PHÍ sớm nhất cho bạn/bé.
-          </p>
-          <span class="cl-section-title__decoration"></span>
-        </div>
-
-        <div class="cl-form-container">
-          <div class="cl-form-info">
-            <h3 class="cl-form-info__title">Hỗ Trợ Nhanh 24/7</h3>
-            <p class="cl-form-info__text">
-              Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:
-            </p>
-            <div class="cl-form-info__links">
-              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
-                <span class="cl-form-info__icon">📞</span>
-                <div>
-                  <span class="cl-form-info__label">Hotline tư vấn</span>
-                  <span class="cl-form-info__value">0979.121.097</span>
-                </div>
-              </a>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
-                <span class="cl-form-info__icon">💬</span>
-                <div>
-                  <span class="cl-form-info__label">Trò chuyện Zalo</span>
-                  <span class="cl-form-info__value">Mr.Mạnh (0979.121.097)</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <div class="cl-form-wrapper">
-            <RegistrationForm id="course-register-form" className="cl-astro-form" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Floating Mobile CTA -->
-    <FloatingCTA />
+    <LocalDirectoryCTA />
   </div>
 </PageLayout>
 
