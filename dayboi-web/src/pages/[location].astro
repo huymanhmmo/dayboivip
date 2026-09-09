@@ -229,22 +229,7 @@ const directorySchema = {
       </div>
     </section>
 
-    {research?.references?.length > 0 && (
-      <section class="section section--alt local-directory__references" aria-labelledby="references-title">
-        <div class="container local-directory__references-grid">
-          <div>
-            <span class="section__badge">Tài liệu đối chiếu</span>
-            <h2 class="section__title" id="references-title">Nguồn tham khảo cho {loc.name}</h2>
-            <p class="section__desc">Ưu tiên website chính thức và tài liệu cơ quan; nguồn của đơn vị dạy chỉ được dùng cho thông tin họ tự công bố.</p>
-          </div>
-          <ol>
-            {research.references.map((source) => (
-              <li><a href={source.url} target="_blank" rel="noopener noreferrer"><strong>{source.publisher}</strong><span>{source.title}</span></a><p>{source.usedFor}</p></li>
-            ))}
-          </ol>
-        </div>
-      </section>
-    )}
+
 
     {research?.relatedPages?.length > 0 && (
       <section class="section local-directory__related" aria-labelledby="related-title">
