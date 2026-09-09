@@ -3,165 +3,134 @@ name: location-research
 description: Quy trình nghiên cứu sâu và cập nhật landing page địa phương cho hệ thống danh bạ học bơi toàn quốc trên dayboi.vip. Sử dụng khi cần mở rộng dữ liệu cho một tỉnh/thành phố cụ thể.
 ---
 
-# Location Research Skill — Danh bạ Học bơi Địa phương
+# Location Research Skill — Danh bạ Học bơi Địa phương Đa nguồn Chuyên sâu
 
-## Mục tiêu
+## 1. Mục tiêu Cốt lõi
 
-Nghiên cứu, tổng hợp và cập nhật dữ liệu cho landing page `/hoc-boi-[dia-phuong]/` trên website dayboi.vip. Mỗi lần thực hiện cho **một tỉnh/thành phố**, tạo ra dữ liệu phong phú, chính xác, có nguồn xác minh.
+Nghiên cứu, tổng hợp và cấu trúc dữ liệu cho hệ thống landing page `/hoc-boi-[dia-phuong]/` trên website `dayboi.vip`. Dữ liệu phải đạt độ chính xác cao, chi tiết, hữu ích thực tế cho người cần tìm lớp học bơi và tra cứu bể bơi:
+- **Tại mỗi địa điểm bơi (Venue)**: Cung cấp thông tin liên hệ của chính bể bơi (BQL/Quầy vé) VÀ danh sách đầy đủ **các giáo viên, huấn luyện viên, trung tâm khác nhau cùng giảng dạy tại địa điểm đó**.
+- **Định danh người liên hệ rõ ràng**: Phải ghi chính xác số điện thoại này là của ai (của Ban quản lý bể bơi để hỏi vé/giờ bơi, hay của Giáo viên/Trung tâm nào để đăng ký học bơi).
+- **Link nguồn gốc chính xác tuyệt đối**: **BẮT BUỘC đưa link chính xác tới bài viết/bài đăng/thông báo cụ thể**. Tuyệt đối **KHÔNG ĐƯỢC đưa link trang chủ** chung chung.
 
-## Cấu trúc dữ liệu cần tạo
+---
 
-Mỗi địa phương cần có entry trong `locationResearch.js` (hoặc file riêng nếu lớn) với cấu trúc:
+## 2. Chuẩn Cấu trúc Dữ liệu (Schema Chuẩn)
+
+Mỗi địa phương nằm trong `locationResearch.js` (hoặc các file module vùng `research/*.js`) tuân thủ cấu trúc sau:
 
 ```javascript
-'hoc-boi-[slug]': {
-  level: 'Đã nghiên cứu chuyên sâu',  // hoặc 'Đã rà soát ưu tiên'
-  reviewedAt,
-  summary: '...',           // Mô tả tổng quan danh sách
-  groupingNote: '...',      // Ghi chú về đơn vị hành chính (nếu có sáp nhập)
-  categories: [...],        // Cụm khu vực → venues
-  providers: [...],         // Đơn vị tổ chức lớp (tách khỏi bể bơi)
-  relatedPages: [...],      // Liên kết đến trang địa phương liên quan
-  references: [...],        // Danh sách nguồn tham khảo
-}
+export const [province]Research = {
+  level: 'Đã nghiên cứu chuyên sâu',
+  reviewedAt: '09/09/2026',
+  summary: 'Mô tả tổng quan danh sách đối chiếu theo khu vực...',
+  groupingNote: 'Ghi chú về phân nhóm khu vực, quận/huyện hoặc cụm hành chính...',
+  categories: [
+    {
+      id: 'quan-huyen-slug',
+      label: 'Khu vực [Tên Quận / Huyện / Thị Xã]',
+      description: 'Đặc điểm cụm bể bơi, môi trường tập luyện tại khu vực...',
+      venues: [
+        {
+          name: 'Tên bể bơi / Cơ sở thể thao',
+          address: 'Số nhà, tên đường, phường/xã, quận/huyện đầy đủ',
+          area: 'Cụm khu vực quen dùng',
+          access: 'Bể bốn mùa trong nhà | Bể công cộng | Bể khách sạn | Bể nội khu',
+          entityType: 'Bể bơi thể thao & dịch vụ nước ấm',
+          environment: 'Trong nhà / Nước ấm bốn mùa / Lọc tuần hoàn ozone...',
+
+          // 1. LIÊN HỆ BỂ BƠI (Ban quản lý / Quầy vé / Lễ tân)
+          venueContact: {
+            role: 'Ban quản lý & quầy vé bể bơi',
+            name: 'Tên đơn vị quản lý bể (kèm tên người phụ trách nếu có)',
+            phone: '098x.xxx.xxx / 024.xxxx.xxxx',
+            note: 'Giờ mở cửa, giá vé bơi tự do, chính sách vé tháng hoặc thuê làn',
+            exactSourceUrl: 'https://domain.com/bai-viet-chinh-xac-ve-be-boi/', // Link BÀI VIẾT cụ thể
+            sourceTitle: 'Tiêu đề bài viết xác thực về giờ mở cửa và giá vé bể',
+          },
+
+          // 2. DANH SÁCH NHIỀU GIÁO VIÊN / TRUNG TÂM CÙNG DẠY TẠI BỂ NÀY
+          instructors: [
+            {
+              unitName: 'Tên Trung tâm / CLB / Nhóm HLV',
+              contactPerson: 'Thầy A - Cô B (Cử nhân ĐH TDTT / HLV Quốc gia)',
+              phone: '094x.xxx.xxx / 091x.xxx.xxx',
+              courseTypes: 'Lớp 1 kèm 1 cho trẻ em (từ 4 tuổi), người lớn sợ nước, bơi sinh tồn, chỉnh dáng thi đấu...',
+              exactSourceUrl: 'https://domain.com/bai-viet-tuyen-sinh-lop-boi-tai-be-nay.html', // Link BÀI VIẾT cụ thể
+              sourceTitle: 'Tiêu đề bài viết thông báo tuyển sinh lớp học bơi tại bể này',
+            },
+            {
+              unitName: 'Trung tâm hoặc Giáo viên thứ 2 cùng dạy tại bể',
+              contactPerson: 'Thầy C (HLV trưởng...)',
+              phone: '098x.xxx.xxx',
+              courseTypes: 'Khóa bơi cấp tốc hè, bơi ếch, bơi sải...',
+              exactSourceUrl: 'https://domain.com/bai-viet-lop-hoc-boi-be-nay/',
+              sourceTitle: 'Bài viết chi tiết về khóa học bơi tại cơ sở',
+            }
+          ],
+
+          services: 'Mô tả cơ sở vật chất, hệ sinh thái tiện ích (phòng tắm nóng lạnh, xông hơi, bãi đỗ xe)...',
+          detail: 'Ghi chú thực tế về không gian, mật độ học viên, thời điểm lý tưởng để tập bơi...',
+          missing: 'Thông tin biến động cần học viên gọi điện xác nhận trước khi đến.',
+        },
+      ],
+    },
+  ],
+};
 ```
 
-### Venue (Địa điểm bơi)
-```javascript
-{
-  name: 'Tên bể bơi / trung tâm',
-  address: 'Địa chỉ đầy đủ',
-  area: 'Khu vực / quận huyện',
-  access: 'Loại hình: Bể công cộng | Bể thương mại | Trường bơi | Nội khu | ...',
-  entityType: 'Địa điểm bơi | Đơn vị + địa điểm | Địa điểm + cơ sở dạy',
-  environment: 'Trong nhà | Ngoài trời | Bốn mùa | Có mái che | ...',
-  services: 'Mô tả khóa học/dịch vụ đã xác minh từ nguồn',
-  detail: 'Ghi chú bổ sung, ngữ cảnh',
-  missing: 'Thông tin còn thiếu, cần xác minh',
-  sourceLabel: 'Tên nguồn',
-  sourceUrl: 'URL nguồn',
-  sourceType: 'Loại nguồn: Website chính thức | Nguồn cơ quan nhà nước | Báo chí | ...',
-}
-```
+---
 
-### Provider (Đơn vị tổ chức lớp)
-```javascript
-{
-  name: 'Tên đơn vị',
-  kind: 'CLB | Trung tâm | Trường bơi | ...',
-  areas: 'Khu vực hoạt động',
-  audiences: 'Đối tượng phục vụ',
-  formats: 'Hình thức: Kèm riêng · Nhóm · Cấp tốc · ...',
-  contact: 'Số điện thoại / liên hệ công khai',
-  website: 'URL website hoặc fanpage',
-  verification: 'Thông tin đã xác minh được',
-  missing: 'Thông tin còn thiếu',
-  sourceLabel: 'Tên nguồn',
-  sourceUrl: 'URL nguồn',
-}
-```
+## 3. Quy tắc Nghiên cứu Thực tế (4 Quy tắc Bắt buộc)
 
-## Quy trình nghiên cứu (6 bước)
+### Quy tắc 1: Khảo sát đa giáo viên tại cùng một bể bơi
+Thực tế tại các đô thị, một bể bơi (đặc biệt là bể bốn mùa nước ấm hoặc bể tiêu chuẩn) thường có từ 2–4 trung tâm, câu lạc bộ hoặc giáo viên tự do cùng thuê làn để dạy học viên. Agent phải tìm kiếm các trung tâm/thầy cô khác nhau cùng nhận dạy tại cơ sở đó để người đọc có đầy đủ sự lựa chọn.
 
-### Bước 1: Tìm kiếm đa nguồn
+### Quy tắc 2: Ghi rõ số điện thoại này là của ai
+- **Tuyệt đối không ghi số điện thoại chung chung không rõ chủ thể**.
+- Phải ghi rõ:
+  + *"Ban quản lý Bể bơi X (Hotline quầy vé)"* để học viên biết gọi mua vé bơi tự do.
+  + *"Thầy Nam / Cô Trang - Trung tâm Dạy Bơi Y"* để học viên gọi tư vấn học phí và đặt lịch học bơi.
 
-Sử dụng **nhiều biến thể từ khóa** để tìm kiếm trên Google và các nguồn công khai:
+### Quy tắc 3: Link nguồn gốc phải là link bài viết chính xác
+- **CẤM TUYỆT ĐỐI**: Dẫn link trang chủ chung chung dạng `https://domain.com/` hoặc `https://facebook.com/`.
+- **BẮT BUỘC**: Dẫn link URL cụ thể tới trang bài viết giới thiệu bể bơi hoặc bài thông báo tuyển sinh lớp bơi tại cơ sở đó.
+  - Ví dụ chuẩn: `https://boicaptoc.vn/hoc-boi-o-be-van-bao.html`
+  - Ví dụ chuẩn: `https://goswim.vn/be-boi-73-van-bao/`
+  - Ví dụ chuẩn: `https://nhakhachlathanh.vn/dich-vu-the-thao/`
+  - Ví dụ chuẩn: `https://www.facebook.com/beboibonmuakhanquangdo` (fanpage chính thức riêng của bể).
 
-```
-dạy bơi [tỉnh/TP]
-học bơi [tỉnh/TP]
-lớp học bơi [tỉnh/TP]
-trung tâm dạy bơi [tỉnh/TP]
-khóa học bơi [tỉnh/TP]
-học bơi cho trẻ em [tỉnh/TP]
-học bơi cho người lớn [tỉnh/TP]
-dạy bơi kèm riêng [tỉnh/TP]
-bể bơi [tỉnh/TP] danh sách
-giải bơi học sinh [tỉnh/TP] [năm]
-bể bơi bốn mùa [tỉnh/TP]
-câu lạc bộ bơi lội [tỉnh/TP]
-bể bơi [quận/huyện cụ thể]
-```
+### Quy tắc 4: Xác thực đa nguồn trước khi niêm yết
+Kết hợp tra cứu qua:
+1. Website tuyển sinh chính thức của các trung tâm bơi lội lâu năm.
+2. Bài viết đánh giá, review chuyên sâu từ các cổng thông tin thể thao uy tín.
+3. Thông báo chính thức của Ban quản lý bể bơi hoặc Cổng thông tin cơ quan chủ quản (Nhà khách, Trung tâm TDTT quận/huyện, Khách sạn 4-5 sao).
 
-### Bước 2: Khai thác nguồn đa dạng
+---
 
-**Ưu tiên theo thứ tự:**
-1. **Cơ quan nhà nước**: Cổng thông tin tỉnh/TP, Sở GD&ĐT, Sở VH-TT
-2. **Báo chí chính thống**: Báo địa phương, Đảng Cộng sản, Tuổi Trẻ, Dân Trí...
-3. **Website chính thức**: Của bể bơi, trung tâm, CLB
-4. **Danh bạ chuyên ngành**: toancaupool.com, bilico.vn, beboidep.vn...
-5. **Danh bạ công khai**: Foody, MyTour, Google Maps
-6. **Mạng xã hội công khai**: Facebook Fanpage (thông tin tự đơn vị công bố)
+## 4. Quy trình Thực hiện theo Từng Khu vực (SOP 5 Bước)
 
-**KHÔNG:**
-- Tự tạo tên cơ sở, địa chỉ, số điện thoại
-- Mặc định mọi bể bơi đều có lớp dạy bơi
-- Gộp thông tin từ quảng cáo HLV vào dịch vụ của bể
+1. **Bước 1: Quét danh sách các bể bơi thực tế theo quận/huyện/thị xã**:
+   - Dùng cú pháp tìm kiếm: `"bể bơi" "[tên bể hoặc tên đường]" "[quận/huyện]" "học bơi" OR "dạy bơi" liên hệ điện thoại`.
+2. **Bước 2: Bóc tách danh tính liên hệ & số điện thoại**:
+   - Tìm số điện thoại của Ban quản lý/Quầy vé bể bơi.
+   - Tìm các trung tâm, câu lạc bộ, HLV đang có bài đăng nhận dạy học viên tại bể này.
+   - Lưu lại số hotline kèm tên người phụ trách rõ ràng.
+3. **Bước 3: Lấy link bài viết xác thực cụ thể**:
+   - Truy cập trang bài viết giới thiệu lớp bơi tại bể đó, lấy URL đầy đủ của bài viết.
+4. **Bước 4: Cập nhật dữ liệu vào code**:
+   - Cập nhật object venue vào `locationResearch.js` hoặc file module vùng tương ứng.
+5. **Bước 5: Kiểm tra Build & Git Push**:
+   - Chạy `npm run build` trong `dayboi-web` xác nhận biên dịch không lỗi.
+   - Thực hiện `git commit` và `git push origin main` theo skill `git-push`.
 
-### Bước 3: Thu thập và chuẩn hóa
+---
 
-Với mỗi địa điểm/đơn vị, cố gắng thu thập:
-- ✅ Tên chính thức
-- ✅ Địa chỉ và khu vực hành chính
-- ✅ Loại hình (bể công cộng, thương mại, trường bơi, nội khu...)
-- ✅ Khóa học/đối tượng phục vụ (NẾU CÓ NGUỒN)
-- ✅ Hình thức: nhóm, kèm riêng, trẻ em, người lớn, cấp tốc...
-- ✅ Liên hệ và website (NẾU ĐƯỢC CÔNG KHAI)
-- ✅ Nguồn tham khảo + URL
-- ⚠️ Ghi rõ thông tin còn thiếu/chưa xác minh
+## 5. Địa phương Thí điểm Kiểu mẫu
 
-### Bước 4: Phân nhóm theo khu vực
-
-- Chia venues theo **quận/huyện hoặc cụm khu vực** quen dùng
-- Mỗi category có ID dạng slug, label, description và danh sách venues
-- **Tách riêng** providers (đơn vị tổ chức lớp) khỏi venues (địa điểm bơi)
-- Một bể có thể có nhiều đơn vị dạy; một đơn vị có thể dạy tại nhiều bể
-
-### Bước 5: Cập nhật code
-
-1. **File chính**: `dayboi-web/src/data/locationResearch.js`
-   - Thêm/sửa entry cho slug tương ứng
-   - Nếu dữ liệu quá lớn (>200 venues), tách ra file riêng như `locationResearchHcm.js`
-
-2. **FAQs**: `dayboi-web/src/data/locations.js`
-   - Cập nhật FAQs với nội dung phản ánh dữ liệu nghiên cứu thực tế
-   - Tối thiểu 3–4 câu FAQ có giá trị
-
-3. **Rollout**: Cập nhật `locationRollout` trong `locationResearch.js` nếu cần
-
-### Bước 6: Verify và Push
-
-```bash
-cd dayboi-web && npm run build   # Verify build thành công
-git add -A
-git commit -m "feat(data): nghiên cứu sâu danh bạ học bơi [Tên TP]"
-git push origin main
-```
-
-## Chuẩn chất lượng
-
-### Mức "Đã nghiên cứu chuyên sâu" (như HN, HCM)
-- ≥ 10 venues từ nhiều khu vực
-- ≥ 2 providers
-- Có references list
-- Có relatedPages
-- ≥ 50% venues có nguồn từ cơ quan nhà nước hoặc website chính thức
-
-### Mức "Đã rà soát ưu tiên" (như ĐN, CT trước khi mở rộng)
-- ≥ 3 venues có nguồn xác minh
-- Phân loại rõ ràng (công cộng vs nội khu)
-- Ghi rõ thông tin còn thiếu
-
-## Ví dụ tham khảo
-
-- **Hà Nội**: `locationResearch.js` → 8 categories, 20+ venues, 7 providers
-- **TP.HCM**: `locationResearchHcm.js` → 8 categories, 25+ venues, 9 providers
-- **Hải Phòng**: `locationResearch.js` → 5 categories, 12 venues, 3 providers
-
-## Lưu ý quan trọng
-
-1. **Không sao chép giá cũ** — Giá vé, học phí thay đổi nhanh, ghi "cần xác nhận"
-2. **Phân biệt rõ** — Địa điểm bơi ≠ Đơn vị tổ chức lớp
-3. **Ghi nguồn cho mọi thông tin** — Không có nguồn = không liệt kê
-4. **Ghi rõ missing** — Trung thực về thông tin chưa xác minh được
-5. **Push ngay sau khi hoàn thành** — Theo skill `git-push`
+Tham khảo cấu trúc hoàn chỉnh tại:
+- **Khu vực Ba Đình (Hà Nội)** trong file [locationResearch.js](file:///e:/3.%20CodeX/github-dayboivip/dayboi-web/src/data/locationResearch.js):
+  - Bể bơi bốn mùa 73 Vạn Bảo (BQL: Thầy Quang Anh; HLV: Thầy Công - Cô Trang, Thầy Vũ Goswim).
+  - Bể bơi Khách sạn La Thành (BQL: Nhà khách La Thành; HLV: Thầy Công - Cô Trang, Thầy Quyết Qswim).
+  - Bể bơi 115 Quán Thánh (BQL: Trung tâm TDTT Ba Đình; HLV: CLB 10-10, Bơi Lội Phương Nam, Bơi Cấp Tốc).
+  - Bể bơi Khăn Quàng Đỏ (BQL: Bể bơi Bốn Mùa Khăn Quàng Đỏ; HLV: Tổ HLV tại bể).
+  - Hồ bơi Serenity Khách sạn Daewoo (BQL: TT Thể thao Daewoo).

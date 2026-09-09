@@ -168,9 +168,55 @@ const directorySchema = {
                       </div>
                       <h4>{pool.name}</h4>
                       {pool.address && <p><strong>Địa chỉ tham khảo:</strong> {pool.address}</p>}
-                      {pool.services && <p><strong>Khóa học / đối tượng đã xác minh:</strong> {pool.services}</p>}
+                      {pool.services && <p><strong>Cơ sở vật chất & tiện ích:</strong> {pool.services}</p>}
                       <p><strong>Ghi chú:</strong> {pool.detail}</p>
-                      {pool.missing && <p class="local-directory__missing"><strong>Còn thiếu:</strong> {pool.missing}</p>}
+
+                      {pool.venueContact && (
+                        <div class="local-directory__venue-contact">
+                          <div class="local-directory__contact-badge">📞 Liên hệ Bể bơi / Ban quản lý</div>
+                          <div class="local-directory__contact-body">
+                            <p><strong>{pool.venueContact.name}</strong> ({pool.venueContact.role})</p>
+                            <p class="local-directory__contact-phone">
+                              <span>Hotline / ĐT:</span>
+                              <a href={`tel:${pool.venueContact.phone.split(' ')[0].replace(/[^0-9+]/g, '')}`}>{pool.venueContact.phone}</a>
+                            </p>
+                            {pool.venueContact.note && <p class="local-directory__contact-note">{pool.venueContact.note}</p>}
+                            {pool.venueContact.exactSourceUrl && (
+                              <a href={pool.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="local-directory__source-link">
+                                📄 Bài viết xác thực: {pool.venueContact.sourceTitle || 'Xem bài viết nguồn'} ↗
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {pool.instructors?.length > 0 && (
+                        <div class="local-directory__pool-instructors">
+                          <h5>🏊 Giáo viên & Trung tâm dạy bơi tại bể này ({pool.instructors.length}):</h5>
+                          <div class="local-directory__instructor-list">
+                            {pool.instructors.map((inst) => (
+                              <div class="local-directory__instructor-item">
+                                <div class="local-directory__instructor-header">
+                                  <strong>{inst.unitName}</strong>
+                                  <span class="local-directory__instructor-person">HLV: {inst.contactPerson}</span>
+                                </div>
+                                <p class="local-directory__instructor-phone">
+                                  <span>Đăng ký học bơi:</span>
+                                  <a href={`tel:${inst.phone.split(' ')[0].replace(/[^0-9+]/g, '')}`}><strong>{inst.phone}</strong></a>
+                                </p>
+                                <p class="local-directory__instructor-courses"><strong>Khóa học:</strong> {inst.courseTypes}</p>
+                                {inst.exactSourceUrl && (
+                                  <a href={inst.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="local-directory__source-link">
+                                    🔗 Bài viết xác thực: {inst.sourceTitle || 'Xem thông tin chi tiết'} ↗
+                                  </a>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {pool.missing && <p class="local-directory__missing"><strong>Lưu ý:</strong> {pool.missing}</p>}
                     </div>
                     <div class="local-directory__pool-links">
                       <a href={mapsSearch(`${pool.name}, ${pool.address || loc.name}`)} target="_blank" rel="noopener noreferrer">Bản đồ & chỉ đường ↗</a>
