@@ -1,7 +1,8 @@
 import { hcmResearch } from './locationResearchHcm.js';
-import { danangResearch, hueResearch } from './research/central.js';
+import { danangResearch, hueResearch, khanhhoaResearch, binhdinhResearch } from './research/central.js';
 import { canthoResearch } from './research/mekong.js';
 import { quangninhResearch } from './research/north.js';
+import { dongnaiResearch, lamdongResearch } from './research/south.js';
 
 const reviewedAt = '09/09/2026';
 
@@ -514,25 +515,29 @@ export const locationResearch = {
   'hoc-boi-can-tho': canthoResearch,
   'hoc-boi-hue': hueResearch,
   'hoc-boi-quang-ninh': quangninhResearch,
+  'hoc-boi-dong-nai': dongnaiResearch,
+  'hoc-boi-khanh-hoa': khanhhoaResearch,
+  'hoc-boi-binh-dinh': binhdinhResearch,
+  'hoc-boi-lam-dong': lamdongResearch,
 };
 
 export const locationRollout = [
   {
-    phase: 'Đợt 1 (Đô thị trọng điểm)',
-    status: 'Đã hoàn thành nghiên cứu chuyên sâu',
-    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh'],
+    phase: 'Đợt 1 & 2 (Đô thị trọng điểm & Vùng kinh tế sôi động)',
+    status: 'Đã hoàn thành nghiên cứu chuyên sâu (11 tỉnh/TP)',
+    locations: ['Hà Nội', 'TP. Hồ Chí Minh', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Huế', 'Quảng Ninh', 'Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng'],
     scope: 'Đầy đủ venues theo quận/huyện, đơn vị dạy bơi, nguồn xác minh, liên hệ và FAQs thực tế.',
   },
   {
-    phase: 'Đợt 2 (Đô thị vệ tinh & Duyên hải Nam Trung Bộ)',
+    phase: 'Đợt 3 (Vùng kinh tế công nghiệp & Đồng Bằng Bắc Bộ)',
     status: 'Đang triển khai',
-    locations: ['Đồng Nai', 'Khánh Hòa', 'Bình Định', 'Lâm Đồng'],
-    scope: 'Biên Hòa, Nha Trang, Quy Nhơn, Đà Lạt.',
+    locations: ['Bắc Ninh', 'Thái Nguyên', 'Phú Thọ', 'Hưng Yên', 'Ninh Bình'],
+    scope: 'Vùng vệ tinh Hà Nội và các trung tâm công nghiệp lớn.',
   },
   {
-    phase: 'Đợt 3–6 (Các tỉnh còn lại)',
+    phase: 'Đợt 4–6 (Các tỉnh còn lại)',
     status: 'Theo kế hoạch tuần tự',
-    locations: ['23 tỉnh/thành phố còn lại'],
+    locations: ['18 tỉnh/thành phố còn lại'],
     scope: 'Lần lượt làm theo cụm miền theo kế hoạch tổng thể.',
   },
 ];

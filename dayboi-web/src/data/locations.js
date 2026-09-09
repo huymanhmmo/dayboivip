@@ -160,10 +160,15 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-vui-ve-ky-luat.jpg",
     intro: "Tỉnh Đồng Nai (bao gồm Bình Phước cũ) là vùng kinh tế trọng điểm phía Nam với dân cư đông đúc. Nhu cầu học bơi tăng cao do người dân quan tâm cải thiện thể chất và chiều cao cho con em mình.",
     pools: [
-      { name: "Bể bơi Sông Phố Biên Hòa", address: "Cách Mạng Tháng Tám, Quyết Thắng, Biên Hòa", type: "Ngoài trời", pros: "Bể sạch, không gian thoáng đãng, nhiều làn bơi cho người học." }
+      { name: "Hồ bơi Sông Phố Biên Hòa", address: "Số 05 Nguyễn Ái Quốc, Tân Phong, Biên Hòa", type: "Chuẩn thi đấu & tập luyện", pros: "Hồ bơi lớn nhất Đồng Nai, bề dày thành tích, làn bơi tiêu chuẩn thi đấu." },
+      { name: "Hồ bơi Babylon Trảng Dài", address: "KDC Phú Gia 1, Trảng Dài, Biên Hòa", type: "Ngoài trời thương mại sạch đẹp", pros: "Không gian hiện đại, nước sạch không mùi clo nồng, thích hợp gia đình." },
+      { name: "Hồ bơi Thủy Tiên Long Khánh", address: "175 Nguyễn Văn Cừ, Xuân An, Long Khánh", type: "Ngoài trời", pros: "Hồ bơi học đường an toàn, thường xuyên mở các lớp phổ cập bơi hè." }
     ],
     faqs: [
-      { q: "Học bơi ở Biên Hòa Đồng Nai đăng ký thế nào?", a: "Bạn chỉ cần gọi điện số 0979.121.097, nhân viên sẽ bố trí HLV liên hệ hướng dẫn buổi học thử miễn phí ngay." }
+      { q: "Hồ bơi nào lớn nhất và đạt chuẩn thi đấu tại Biên Hòa Đồng Nai?", a: "Hồ bơi Sông Phố (Số 05 Nguyễn Ái Quốc, P. Tân Phong) là trung tâm thể thao dưới nước lớn nhất tỉnh Đồng Nai với hồ bơi 50m tiêu chuẩn thi đấu và hồ tập luyện chuyên nghiệp." },
+      { q: "Học bơi ở Biên Hòa có những trung tâm nào nhận dạy kèm riêng cam kết đầu ra?", a: "Các đơn vị uy tín gồm Trung tâm Dạy bơi SwimGroup Đồng Nai (cam kết không biết bơi hoàn tiền 100%), CLB Bơi lội Sông Phố và đội ngũ HLV kèm riêng 1 kèm 1 của Swim For Life tại các hồ bơi Babylon, Thảo Linh, Cát Tường." },
+      { q: "Tại Long Khánh và Nhơn Trạch có hồ bơi và lớp dạy bơi không?", a: "Có. Tại TP. Long Khánh có Hồ bơi Thủy Tiên (175 Nguyễn Văn Cừ) và Hồ bơi Nàng Quen (Bảo Vinh). Tại Nhơn Trạch có Hồ bơi Terra Flora và Hồ bơi Thành Đạt KCN Nhơn Trạch." },
+      { q: "Học bơi ở Đồng Nai bao nhiêu buổi thì biết bơi?", a: "Khóa học kèm riêng tiêu chuẩn kéo dài từ 10 đến 12 buổi học. Với sự kèm cặp sát sao của giáo viên, hầu hết học viên biết bơi ếch và đứng nước tự tin từ buổi thứ 8 đến thứ 10." }
     ]
   },
   {
@@ -405,10 +410,15 @@ export const locations = [
     image: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg",
     intro: "Bình Định và Gia Lai có địa hình chuyển tiếp đa dạng. Lớp học bơi Swim For Life đem lại môi trường tập luyện thể thao lành mạnh và kỹ năng phòng vệ sông nước chắc chắn cho bé.",
     pools: [
-      { name: "Bể bơi thành phố Quy Nhơn", address: "Đường Nguyễn Huệ, Quy Nhơn, Bình Định", type: "Ngoài trời", pros: "Gần biển thoáng mát, nước sạch, HLV chuyên nghiệp sư phạm tốt." }
+      { name: "Trung tâm Phổ cập Bơi lội Quy Nhơn", address: "282 Diên Hồng, Lý Thường Kiệt, Quy Nhơn", type: "Ngoài trời đào tạo chuyên trách", pros: "Đơn vị đào tạo phòng chống đuối nước uy tín của thành phố." },
+      { name: "Hồ bơi Khách sạn Sài Gòn Quy Nhơn", address: "24 Nguyễn Huệ, Lê Lợi, Quy Nhơn", type: "Ngoài trời view biển", pros: "Vị trí trung tâm phố biển, nước sạch trong vắt, thoáng mát." },
+      { name: "Hồ bơi FLC Quy Nhơn", address: "KDL Sinh thái FLC Quy Nhơn, Nhơn Lý", type: "Hồ bơi nước mặn quy mô lớn", pros: "Hệ thống hồ bơi vô cực và nước mặn công nghệ cao ven biển." }
     ],
     faqs: [
-      { q: "Có lớp học bơi ở Pleiku Gia Lai không?", a: "Có, Swim For Life có mạng lưới HLV bơi lội chuyên nghiệp tại TP. Pleiku, Gia Lai sẵn sàng giảng dạy." }
+      { q: "Học bơi ở Quy Nhơn Bình Định có những trung tâm dạy kèm riêng nào uy tín?", a: "Các địa chỉ nổi bật gồm Trung tâm Dạy bơi Quy Nhơn (231/9 Tây Sơn - dạy kèm riêng tại các hồ bơi FLC, TMS, Mường Thanh), Trung tâm Phổ cập Bơi lội Diên Hồng (282 Diên Hồng) và đội ngũ HLV kèm riêng của Swim For Life." },
+      { q: "Bể bơi nào sạch đẹp và có bán vé bơi lẻ cho người dân tại trung tâm TP. Quy Nhơn?", a: "Khách lẻ có thể đến bơi tại Hồ bơi Khách sạn Sài Gòn Quy Nhơn (24 Nguyễn Huệ, liên hệ lễ tân: 0256 382 9922) hoặc mua gói Swimming Combo tại Anya Hotel Quy Nhơn (03 Nguyễn Trung Tín)." },
+      { q: "Trẻ em học bơi tại Quy Nhơn bao nhiêu buổi thì biết bơi và có cam kết không?", a: "Khóa bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi học. HLV cam kết 100% học viên nắm vững kỹ thuật bơi ếch, nổi ngửa thả lỏng và tự tin đứng nước sâu an toàn." },
+      { q: "Có lớp học bơi ở Pleiku Gia Lai không?", a: "Có, Swim For Life có mạng lưới HLV bơi lội chuyên nghiệp tại TP. Pleiku, Gia Lai sẵn sàng giảng dạy kèm riêng tại các hồ bơi trung tâm Pleiku." }
     ]
   },
   {
@@ -425,10 +435,15 @@ export const locations = [
     image: "/images/classes/lop-hoc-boi-vui-ve-ky-luat.jpg",
     intro: "Khánh Hòa, Ninh Thuận và Bình Thuận là các tỉnh duyên hải Nam Trung Bộ nắng ấm quanh năm. Học bơi bơi lội là kỹ năng bắt buộc để bảo vệ sự an toàn cho bản thân khi tham gia du lịch biển đảo.",
     pools: [
-      { name: "Bể bơi trung tâm TP. Nha Trang", address: "Đường Yersin, Nha Trang, Khánh Hòa", type: "Ngoài trời", pros: "Hồ bơi chất lượng tốt, nước bể thay liên tục sạch sẽ." }
+      { name: "Hồ bơi Yersin Nha Trang", address: "10-12 Yersin, Vạn Thạnh, Nha Trang", type: "Ngoài trời công lập lâu năm", pros: "Hồ bơi truyền thống uy tín, tổ chức các giải bơi lội thanh thiếu nhi hè." },
+      { name: "Hồ bơi Không Quân Nha Trang", address: "75/1 Nguyễn Thị Minh Khai, Tân Lập, Nha Trang", type: "Ngoài trời", pros: "Không gian thoáng mát, yên tĩnh, địa điểm dạy kèm riêng lý tưởng." },
+      { name: "Hồ bơi Venus Fitness VCN Phước Hải", address: "Tầng 4, CT2 VCN Phước Hải, Nha Trang", type: "Trong nhà cao cấp", pros: "Hồ bơi trong nhà hiện đại, nước sạch không nồng mùi hóa chất." }
     ],
     faqs: [
-      { q: "Lớp bơi ở Nha Trang có dạy người lớn tuổi nhát nước không?", a: "Có, chúng tôi chuyên kèm người lớn sợ nước bằng giáo án cá nhân hóa nhẹ nhàng tâm lý." }
+      { q: "Hồ bơi nào uy tín và lâu đời nhất tại TP. Nha Trang?", a: "Hồ bơi Yersin (10-12 Yersin, Trung tâm VHTT & Thể thao Nha Trang) và Hồ bơi Không Quân (75/1 Nguyễn Thị Minh Khai) là hai địa điểm bơi lội và học bơi truyền thống gắn bó lâu năm với người dân phố biển." },
+      { q: "Địa chỉ học bơi kèm riêng uy tín cho trẻ em và người lớn tại Nha Trang ở đâu?", a: "Lớp dạy bơi Thầy Vinh Nha Trang (12 Thi Sách, thayvinh.edu.vn) có hơn 10 năm kinh nghiệm; Trung tâm Bơi lặn Yết Kiêu (10 Yersin) và đội ngũ HLV chuyên nghiệp của Swim For Life tại các hồ bơi trung tâm." },
+      { q: "Lớp bơi ở Nha Trang có dạy người lớn tuổi nhát nước không?", a: "Có. Chúng tôi có giáo án tâm lý học bơi riêng biệt cho người lớn tuổi sợ nước, hướng dẫn tỉ mỉ từng bước thở nước, nổi ngửa và quạt tay nhẹ nhàng, cam kết 100% biết bơi tự tin." },
+      { q: "Tại Cam Ranh và Diên Khánh có hồ bơi và lớp dạy bơi hè không?", a: "Có. Tại TP. Cam Ranh có Hồ bơi Trung tâm TDTT Cam Ranh (đường Phạm Văn Đồng) và tại huyện Diên Khánh có các hồ bơi thể thao tư nhân mở lớp phổ cập bơi hè thường xuyên." }
     ]
   },
   {
@@ -465,10 +480,15 @@ export const locations = [
     image: "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
     intro: "Lâm Đồng với khí hậu mát mẻ đặc trưng, các lớp học bơi tại Đà Lạt thường được tổ chức tại bể bơi bốn mùa nước ấm trong nhà để đảm bảo sức khỏe tối đa cho các bé học sinh tập luyện.",
     pools: [
-      { name: "Bể bơi nước ấm Đà Lạt", address: "Đường Trần Hưng Đạo, TP. Đà Lạt", type: "Trong nhà nước ấm", pros: "Hệ thống gia nhiệt hiện đại ấm áp, cơ sở sạch sẽ, kín gió." }
+      { name: "Hồ bơi nước ấm Phù Đổng Đà Lạt", address: "02 Trần Nhân Tông, Phường 2, TP. Đà Lạt", type: "Trong nhà nước ấm gia nhiệt 30°C", pros: "Bể bơi nước ấm lâu năm nhất Đà Lạt, nhiệt độ 28–32°C ổn định quanh năm." },
+      { name: "Hồ bơi nước ấm Dalat Wonder", address: "111 Nguyễn Văn Trỗi, Phường 2, TP. Đà Lạt", type: "Bể bốn mùa trong nhà", pros: "Công nghệ lọc nước tiên tiến không mùi clo, ấm áp an toàn cho trẻ nhỏ." },
+      { name: "Hồ bơi nước mặn Stillus Boutique", address: "Đường Triệu Việt Vương, Phường 3, TP. Đà Lạt", type: "Trong nhà nước mặn tự điều chỉnh nhiệt", pros: "Hồ bơi nước mặn cao cấp, liên kết đào tạo bơi an toàn học đường." }
     ],
     faqs: [
-      { q: "Mùa lạnh ở Đà Lạt học bơi có ảnh hưởng sức khỏe không?", a: "Không, giáo viên bố trí lớp tại bể bơi trong nhà có sưởi ấm nước nên tuyệt đối an toàn cho sức khỏe học viên." }
+      { q: "Mùa lạnh ở Đà Lạt học bơi có bị cảm lạnh không?", a: "Hoàn toàn không. Toàn bộ các lớp học bơi tại Đà Lạt đều được tổ chức tại các bể bơi trong nhà có hệ thống cấp nhiệt hiện đại (như Hồ bơi Phù Đổng, Dalat Wonder, Stillus Boutique) duy trì nhiệt độ nước ổn định 28–32°C, phòng kín gió tuyệt đối." },
+      { q: "Địa chỉ bể bơi nước ấm uy tín nhất cho trẻ em tại TP. Đà Lạt?", a: "Hồ bơi Phù Đổng (02 Trần Nhân Tông) và Hồ bơi nước ấm Dalat Wonder (111 Nguyễn Văn Trỗi) là hai địa chỉ uy tín hàng đầu với phân khu bể vầy nông cho bé và HLV kèm cặp chu đáo." },
+      { q: "Tại Bảo Lộc và Đức Trọng có hồ bơi và lớp dạy bơi không?", a: "Có. Tại TP. Bảo Lộc có Hồ bơi Lộc Nga và Hồ bơi Yết Kiêu; tại huyện Đức Trọng có Hồ bơi Dona (thị trấn Liên Nghĩa). Đây là những địa điểm thường xuyên mở lớp dạy bơi hè cho học sinh." },
+      { q: "Bé nhát nước ở Đà Lạt học bao nhiêu buổi thì biết bơi?", a: "Với giáo án kèm riêng 1 kèm 1 trong môi trường nước ấm thư giãn, các bé nhát nước thường làm quen và vượt qua nỗi sợ sau 2–3 buổi đầu, biết bơi ếch và đứng nước tự tin sau lộ trình 10–12 buổi học." }
     ]
   },
   {
