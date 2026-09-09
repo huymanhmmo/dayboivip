@@ -101,9 +101,9 @@ export const bacninhResearch = {
       ],
     },
     {
-      id: 'yen-phong-tu-son',
-      label: 'Khu vực Yên Phong & Từ Sơn',
-      description: 'Cụm bể bơi phục vụ chuyên gia, công nhân viên và con em các khu công nghiệp trọng điểm.',
+      id: 'yen-phong',
+      label: 'Khu vực Huyện Yên Phong',
+      description: 'Cơ sở bể bơi phục vụ chuyên gia, công nhân viên và con em các khu công nghiệp trọng điểm Yên Phong.',
       venues: [
         {
           name: 'Bể bơi Anh Vũ Yên Phong',
@@ -278,9 +278,9 @@ export const thainguyenResearch = {
       ],
     },
     {
-      id: 'song-cong-pho-yen',
-      label: 'Khu vực TP. Sông Công & TP. Phổ Yên',
-      description: 'Phục vụ cư dân đô thị công nghiệp và thanh thiếu nhi khu vực phía nam Thái Nguyên.',
+      id: 'tp-song-cong',
+      label: 'Khu vực TP. Sông Công',
+      description: 'Tổ hợp bể bơi sinh thái quy mô lớn Dũng Tân và các khóa bơi dã ngoại hè tại TP. Sông Công.',
       venues: [
         {
           name: 'Bể bơi Khu du lịch sinh thái Dũng Tân',
@@ -311,6 +311,13 @@ export const thainguyenResearch = {
           detail: 'Hệ thống lọc nước tiên tiến, điểm tổ chức các lớp bơi dã ngoại và kỹ năng sinh tồn hè thu hút đông đảo học sinh.',
           missing: 'Thời gian mở cửa vào mùa đông cần xác nhận trước.',
         },
+      ],
+    },
+    {
+      id: 'tp-pho-yen',
+      label: 'Khu vực TP. Phổ Yên',
+      description: 'Hệ thống bể bơi phong trào và lớp học bơi cho học sinh, con em công nhân viên KCN Samsung Phổ Yên.',
+      venues: [
         {
           name: 'Bể bơi Hoàng Hải Phổ Yên',
           address: 'Đường 47M, tổ dân phố Hoàng Thanh, phường Đồng Tiến, TP. Phổ Yên, Thái Nguyên',
@@ -661,9 +668,9 @@ export const hungyenResearch = {
       ],
     },
     {
-      id: 'tp-hung-yen-my-hao',
-      label: 'Khu vực TP. Hưng Yên & Mỹ Hào',
-      description: 'Cụm hồ bơi phục vụ dân sinh và thanh thiếu nhi tại các huyện thị trung tâm.',
+      id: 'yen-my',
+      label: 'Khu vực Huyện Yên Mỹ',
+      description: 'Hồ bơi dân sinh uy tín, vệ sinh nguồn nước sạch sẽ tại trung tâm thị trấn Yên Mỹ.',
       venues: [
         {
           name: 'Bể bơi Minh Hoàng Yên Mỹ',
@@ -694,6 +701,13 @@ export const hungyenResearch = {
           detail: 'Giá vé bình dân, HLV tận tâm hướng dẫn kỹ thuật thở nước và đạp chân chuẩn xác.',
           missing: 'Giờ mở cửa các ngày cuối tuần.',
         },
+      ],
+    },
+    {
+      id: 'tx-my-hao',
+      label: 'Khu vực Thị xã Mỹ Hào',
+      description: 'Điểm bơi phong trào và các lớp phổ cập bơi chống đuối nước hè tại phường Bần Yên Nhân, thị xã Mỹ Hào.',
+      venues: [
         {
           name: 'Bể bơi Hướng Dương Mỹ Hào',
           address: 'Phường Bần Yên Nhân, thị xã Mỹ Hào, Hưng Yên',
@@ -727,7 +741,7 @@ export const hungyenResearch = {
     },
     {
       id: 'thai-binh-trung-tam',
-      label: 'Khu vực TP. Thái Bình (Sáp nhập)',
+      label: 'Khu vực TP. Thái Bình',
       description: 'Hệ thống bể bơi bốn mùa trong khách sạn cao cấp tại thành phố Thái Bình.',
       venues: [
         {
@@ -834,13 +848,13 @@ export const hungyenResearch = {
 export const ninhbinhResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
-  summary: 'Danh bạ Ninh Bình (bao gồm Tam Điệp, Nam Định và Phủ Lý Hà Nam sáp nhập) được tổng hợp từ các bể bơi bốn mùa điện phân muối, bể bơi thi đấu Tam Điệp, khu sinh thái Lộc Vượng Nam Định và bể bơi Tân Thủy Phủ Lý.',
+  summary: 'Danh bạ khu vực Ninh Bình, Nam Định và Phủ Lý (Hà Nam) được tổng hợp từ các bể bơi bốn mùa điện phân muối, bể bơi thi đấu Tam Điệp, khu sinh thái Lộc Vượng Nam Định và bể bơi Tân Thủy Phủ Lý.',
   groupingNote: 'Khu vực nam đồng bằng sông Hồng có mật độ sông ngòi dày đặc. Điểm học bơi tập trung tại TP. Ninh Bình (Trịnh Tú, Nam Thành), TP. Tam Điệp, TP. Nam Định và TP. Phủ Lý (Hà Nam).',
   categories: [
     {
-      id: 'tp-ninh-binh-tam-diep',
-      label: 'Khu vực TP. Ninh Bình & TP. Tam Điệp',
-      description: 'Nơi có bể bơi bốn mùa công nghệ cao và bể bơi 50m tiêu chuẩn thi đấu.',
+      id: 'tp-ninh-binh',
+      label: 'Khu vực TP. Ninh Bình',
+      description: 'Hệ thống bể bơi bốn mùa nước ấm trong nhà Lavender và bể điện phân muối khoáng Mai Thế Hệ tại TP. Ninh Bình.',
       venues: [
         {
           name: 'Bể bơi Bốn Mùa Lavender Ninh Bình',
@@ -900,6 +914,13 @@ export const ninhbinhResearch = {
           detail: 'Địa chỉ quen thuộc được nhiều phụ huynh TP. Ninh Bình tin tưởng gửi gắm con em học bơi sinh tồn.',
           missing: 'Học phí theo từng khóa học bơi ếch, bơi sải.',
         },
+      ],
+    },
+    {
+      id: 'tp-tam-diep',
+      label: 'Khu vực TP. Tam Điệp',
+      description: 'Bể bơi 50m tiêu chuẩn thi đấu thể thao Sắc Màu và các lớp phổ cập bơi chống đuối nước tại TP. Tam Điệp.',
+      venues: [
         {
           name: 'Bể bơi Tiêu Chuẩn Thi Đấu Sắc Màu Tam Điệp',
           address: 'Khu trung tâm thể thao, tổ 1, phường Tây Sơn, TP. Tam Điệp, Ninh Bình',
@@ -932,9 +953,9 @@ export const ninhbinhResearch = {
       ],
     },
     {
-      id: 'nam-dinh-phu-ly',
-      label: 'Khu vực TP. Nam Định & TP. Phủ Lý (Hà Nam)',
-      description: 'Cụm hồ bơi khu sinh thái quy mô lớn và bể bơi tiêu chuẩn cấp tỉnh phục vụ học sinh.',
+      id: 'tp-nam-dinh',
+      label: 'Khu vực TP. Nam Định',
+      description: 'Tổ hợp hồ bơi sinh thái 2.000m2 Lộc Vượng và các lớp dạy bơi chuyên nghiệp Trisport tại TP. Nam Định.',
       venues: [
         {
           name: 'Bể bơi Khu sinh thái Lộc Vượng Nam Định',
@@ -965,6 +986,13 @@ export const ninhbinhResearch = {
           detail: 'Không gian xanh mát, thoáng đãng, phụ huynh có chỗ ngồi chờ thoải mái.',
           missing: 'Lịch hoạt động vào các tháng mùa đông.',
         },
+      ],
+    },
+    {
+      id: 'tp-phu-ly',
+      label: 'Khu vực TP. Phủ Lý (Hà Nam)',
+      description: 'Bể bơi đạt chuẩn cấp tỉnh Tân Thủy tại Sân vận động tỉnh Hà Nam với các lớp phổ cập bơi có cấp chứng chỉ.',
+      venues: [
         {
           name: 'Bể bơi Tân Thủy – Sân vận động tỉnh Hà Nam',
           address: 'Sân vận động tỉnh Hà Nam, đường Lý Thái Tổ, TP. Phủ Lý, Hà Nam',

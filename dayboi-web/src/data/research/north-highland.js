@@ -7,9 +7,9 @@ export const laocaiResearch = {
   groupingNote: 'Vùng cao biên giới có mùa đông lạnh kéo dài, việc học bơi phụ thuộc mật thiết vào các bể bơi bốn mùa nước ấm trong nhà có gia nhiệt tự động. Danh bạ bao quát TP. Lào Cai, Sa Pa và TP. Yên Bái.',
   categories: [
     {
-      id: 'tp-lao-cai-sapa',
-      label: 'Khu vực Thành phố Lào Cai & Sa Pa',
-      description: 'Trung tâm tỉnh và thị xã du lịch với các bể bơi bốn mùa thông minh và bể bơi nước ấm trên cao.',
+      id: 'tp-lao-cai',
+      label: 'Khu vực Thành phố Lào Cai',
+      description: 'Trung tâm tỉnh với các bể bơi bốn mùa thông minh Đức Huy Grand, Sapaly và bể bơi Nhà thi đấu TDTT tỉnh.',
       venues: [
         {
           name: 'Bể bơi Bốn Mùa Đức Huy Grand Hotel',
@@ -43,33 +43,6 @@ export const laocaiResearch = {
               courseTypes: 'Dạy bơi 1 kèm 1 trong bể nước ấm bốn mùa, kèm kỹ năng sinh tồn sông suối, 100% biết bơi',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-lao-cai/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Lào Cai'
-            }
-          ]
-        },
-        {
-          name: 'Bể bơi Bốn Mùa Pistachio Hotel Sapa',
-          address: 'Số 29 tổ 5, đường Thác Bạc, Thị xã Sa Pa, Lào Cai',
-          area: 'Thị xã Sa Pa', access: 'Khách sạn 4 sao quốc tế', entityType: 'Hồ bơi bốn mùa 4 mặt kính', environment: 'Trong nhà kính / Nước ấm',
-          services: 'Hồ bơi trong nhà 4 mặt kính view trọn vẹn thung lũng Mường Hoa, nước ấm duy trì 30°C - 32°C kể cả khi mùa đông Sa Pa có tuyết rơi.',
-          detail: 'Không gian sang trọng, thích hợp cho học viên học bơi trải nghiệm hoặc rèn luyện thể lực trong điều kiện thời tiết vùng cao.',
-          missing: 'Ưu tiên khách lưu trú và mở cửa bán vé bơi có phụ thu vào dịp cuối tuần.',
-          sourceLabel: 'Pistachio Hotel Sapa', sourceUrl: 'https://pistachiohotel.com/tien-ich/be-boi-bon-mua-kinh-view-muong-hoa', sourceType: 'Website chính thức đơn vị',
-          venueContact: {
-            role: 'Bộ phận Lễ tân & Spa Pistachio Hotel Sa Pa',
-            name: 'Quầy Dịch vụ Bể bơi Kính View Thung lũng',
-            phone: '0214 356 6666',
-            note: 'Phục vụ vé bơi nước ấm 32°C cho khách ngoài, khăn tắm và trà gừng giữ ấm cơ thể',
-            exactSourceUrl: 'https://pistachiohotel.com/tien-ich/be-boi-bon-mua-kinh-view-muong-hoa',
-            sourceTitle: 'Pistachio Hotel Sapa: Trải nghiệm bể bơi bốn mùa nước ấm 4 mặt kính độc đáo'
-          },
-          instructors: [
-            {
-              unitName: 'Lớp Bơi Nước Ấm Nghỉ Dưỡng Sa Pa',
-              contactPerson: 'Thầy Tuấn (HLV Swim For Life)',
-              phone: '0979 121 097',
-              courseTypes: 'Dạy bơi kèm riêng 1:1, chỉnh tư thế nổi cân bằng, bơi sải dài sức trong khí hậu sương mù',
-              exactSourceUrl: 'https://dayboi.vip/hoc-boi-lao-cai/',
-              sourceTitle: 'Swim For Life: Khóa học bơi nước ấm trải nghiệm tại Sa Pa'
             }
           ]
         },
@@ -112,7 +85,7 @@ export const laocaiResearch = {
             role: 'Ban Quản lý Nhà Thi đấu Thể dục Thể thao Tỉnh',
             name: 'Bộ phận Bán vé & Cứu hộ Bể bơi Hoàng Liên',
             phone: '0214 382 2345',
-            note: 'Phụ trách mở cửa ca sáng và chiều hè, bán vé bơi dân sinh và đón học sinh',
+            note: 'Phục vụ mở cửa ca sáng và chiều hè, bán vé bơi dân sinh và đón học sinh',
             exactSourceUrl: 'https://svhttdl.laocai.gov.vn/hoat-dong-the-thao/cong-tac-to-chuc-cac-lop-pho-cap-boi-phong-chong-duoi-nuoc-thanh-thieu-nhi',
             sourceTitle: 'Sở VHTTDL Lào Cai: Công tác tổ chức các lớp phổ cập bơi phòng chống đuối nước cho thiếu nhi'
           },
@@ -124,6 +97,40 @@ export const laocaiResearch = {
               courseTypes: 'Lớp phổ cập bơi hè theo khóa 12 buổi, kỹ thuật bơi ếch, bơi sải chuẩn thi đấu',
               exactSourceUrl: 'https://baolaocai.vn/the-thao/phat-trien-phong-trao-tap-luyen-boi-loi-va-phong-chong-duoi-nuoc-post368124.html',
               sourceTitle: 'Báo Lào Cai: Hoạt động huấn luyện bơi lội thanh thiếu nhi tại Nhà thi đấu TDTT tỉnh'
+            }
+          ]
+        },
+      ],
+    },
+    {
+      id: 'tx-sa-pa',
+      label: 'Khu vực Thị xã Sa Pa',
+      description: 'Bể bơi bốn mùa 4 mặt kính nước ấm 32°C ngắm thung lũng Mường Hoa tại Pistachio Hotel Sa Pa.',
+      venues: [
+        {
+          name: 'Bể bơi Bốn Mùa Pistachio Hotel Sapa',
+          address: 'Số 29 tổ 5, đường Thác Bạc, Thị xã Sa Pa, Lào Cai',
+          area: 'Thị xã Sa Pa', access: 'Khách sạn 4 sao quốc tế', entityType: 'Hồ bơi bốn mùa 4 mặt kính', environment: 'Trong nhà kính / Nước ấm',
+          services: 'Hồ bơi trong nhà 4 mặt kính view trọn vẹn thung lũng Mường Hoa, nước ấm duy trì 30°C - 32°C kể cả khi mùa đông Sa Pa có tuyết rơi.',
+          detail: 'Không gian sang trọng, thích hợp cho học viên học bơi trải nghiệm hoặc rèn luyện thể lực trong điều kiện thời tiết vùng cao.',
+          missing: 'Ưu tiên khách lưu trú và mở cửa bán vé bơi có phụ thu vào dịp cuối tuần.',
+          sourceLabel: 'Pistachio Hotel Sapa', sourceUrl: 'https://pistachiohotel.com/tien-ich/be-boi-bon-mua-kinh-view-muong-hoa', sourceType: 'Website chính thức đơn vị',
+          venueContact: {
+            role: 'Bộ phận Lễ tân & Spa Pistachio Hotel Sa Pa',
+            name: 'Quầy Dịch vụ Bể bơi Kính View Thung lũng',
+            phone: '0214 356 6666',
+            note: 'Phục vụ vé bơi nước ấm 32°C cho khách ngoài, khăn tắm và trà gừng giữ ấm cơ thể',
+            exactSourceUrl: 'https://pistachiohotel.com/tien-ich/be-boi-bon-mua-kinh-view-muong-hoa',
+            sourceTitle: 'Pistachio Hotel Sapa: Trải nghiệm bể bơi bốn mùa nước ấm 4 mặt kính độc đáo'
+          },
+          instructors: [
+            {
+              unitName: 'Lớp Bơi Nước Ấm Nghỉ Dưỡng Sa Pa',
+              contactPerson: 'Thầy Tuấn (HLV Swim For Life)',
+              phone: '0979 121 097',
+              courseTypes: 'Dạy bơi kèm riêng 1:1, chỉnh tư thế nổi cân bằng, bơi sải dài sức trong khí hậu sương mù',
+              exactSourceUrl: 'https://dayboi.vip/hoc-boi-lao-cai/',
+              sourceTitle: 'Swim For Life: Khóa học bơi nước ấm trải nghiệm tại Sa Pa'
             }
           ]
         },
@@ -724,9 +731,9 @@ export const sonlaResearch = {
       ],
     },
     {
-      id: 'moc-chau-mai-son',
-      label: 'Khu vực Mộc Châu & Mai Sơn',
-      description: 'Cao nguyên du lịch Mộc Châu và huyện Mai Sơn với các bể bơi bốn mùa nước ấm độc đáo.',
+      id: 'moc-chau',
+      label: 'Khu vực Huyện Mộc Châu',
+      description: 'Cao nguyên du lịch Mộc Châu với bể bơi bốn mùa nước ấm trong nhà Thảo Nguyên Resort.',
       venues: [
         {
           name: 'Bể bơi Bốn Mùa Thảo Nguyên Resort Mộc Châu',
@@ -755,6 +762,13 @@ export const sonlaResearch = {
             }
           ]
         },
+      ],
+    },
+    {
+      id: 'mai-son',
+      label: 'Khu vực Huyện Mai Sơn',
+      description: 'Bể bơi 4 mùa nước ấm có mái che kiên cố tại thị trấn Hát Lót, huyện Mai Sơn.',
+      venues: [
         {
           name: 'Bể bơi 4 Mùa Thị Trấn Hát Lót (Mai Sơn)',
           address: 'Thị trấn Hát Lót, Huyện Mai Sơn, Sơn La',

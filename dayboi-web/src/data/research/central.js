@@ -3,8 +3,8 @@ const reviewedAt = '09/09/2026';
 export const danangResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
-  summary: 'Danh bạ Đà Nẵng được tổng hợp từ nguồn cơ quan quản lý thể thao, trường đại học TDTT, website trung tâm và các đơn vị dạy bơi lâu năm. Phân loại theo 4 cụm quận huyện chính với thông tin rõ ràng về bể nước ấm, bể thi đấu và trung tâm dạy kèm riêng.',
-  groupingNote: 'Các địa điểm được phân theo các quận trung tâm Đà Nẵng: Hải Châu, Thanh Khê, Sơn Trà & Ngũ Hành Sơn, Cẩm Lệ. Trước khi đến học bơi hoặc bơi tự do, học viên nên liên hệ xác nhận lịch làn bơi và chi phí cập nhật.',
+  summary: 'Danh bạ Đà Nẵng được tổng hợp từ nguồn cơ quan quản lý thể thao, trường đại học TDTT, website trung tâm và các đơn vị dạy bơi lâu năm. Phân loại theo từng quận huyện độc lập với thông tin rõ ràng về bể nước ấm, bể thi đấu và trung tâm dạy kèm riêng.',
+  groupingNote: 'Các địa điểm được phân tách độc lập theo từng quận trung tâm Đà Nẵng: Hải Châu, Thanh Khê, Sơn Trà, Cẩm Lệ. Trước khi đến học bơi hoặc bơi tự do, học viên nên liên hệ xác nhận lịch làn bơi và chi phí cập nhật.',
   categories: [
     {
       id: 'hai-chau',
@@ -203,8 +203,8 @@ export const danangResearch = {
       ],
     },
     {
-      id: 'son-tra-ngu-hanh-son',
-      label: 'Khu vực Sơn Trà & Ngũ Hành Sơn',
+      id: 'son-tra',
+      label: 'Khu vực Quận Sơn Trà',
       description: 'Cụm hồ bơi khách sạn 4-5 sao ven biển và trường bơi kỹ năng liên kết trung tâm uy tín tại Ngô Quyền và Trần Hưng Đạo.',
       venues: [
         {
@@ -268,9 +268,9 @@ export const danangResearch = {
       ],
     },
     {
-      id: 'cam-le-hoa-vang',
-      label: 'Khu vực Cẩm Lệ & Hòa Vang',
-      description: 'Cụm hồ bơi khu đô thị sinh thái Caribe Hòa Xuân và hồ bơi Bệnh viện Y học cổ truyền phục vụ cư dân phía Nam thành phố.',
+      id: 'cam-le',
+      label: 'Khu vực Quận Cẩm Lệ (Hòa Xuân)',
+      description: 'Cụm hồ bơi khu đô thị sinh thái Caribe Hòa Xuân và hồ bơi Bệnh viện Y học cổ truyền phục vụ cư dân Cẩm Lệ và khu vực lân cận.',
       venues: [
         {
           name: 'Hồ bơi Caribe Hòa Xuân',
@@ -392,12 +392,12 @@ export const hueResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ học bơi tại TP. Huế được đối chiếu từ trung tâm thể thao tỉnh, các cơ sở khách sạn có bể bơi nhận học viên, trường bơi thanh thiếu nhi và trung tâm dạy bơi nước ấm bốn mùa hiện đại.',
-  groupingNote: 'Học bơi tại Huế chủ yếu tập trung quanh các trục đường chính như Hà Huy Tập, Lê Quý Đôn, Ngô Quyền, Lâm Hoằng và khu đô thị An Cựu City. Mùa mưa lạnh tại Huế cần ưu tiên các bể nước ấm bốn mùa trong nhà.',
+  groupingNote: 'Học bơi tại Huế được phân chia cụ thể theo từng khu vực: phường Xuân Phú (Hà Huy Tập, Tố Hữu), trung tâm Phú Nhuận (Lê Quý Đôn), phường Vỹ Dạ, khu vực ven sông Hương (Ngô Quyền, Lê Lợi), khu đô thị An Cựu City và phường Thủy Xuân. Mùa mưa lạnh tại Huế nên ưu tiên các bể nước ấm bốn mùa trong nhà.',
   categories: [
     {
-      id: 'trung-tam-xuan-phu',
-      label: 'Khu vực Trung tâm TP & Xuân Phú',
-      description: 'Cụm thể thao trung tâm tỉnh với bể bơi công lập quy mô lớn và tổ hợp bể bơi nước ấm công nghệ muối biển.',
+      id: 'xuan-phu',
+      label: 'Khu vực Phường Xuân Phú',
+      description: 'Cụm thể thao trung tâm tỉnh với bể bơi công lập quy mô lớn tại 01 Hà Huy Tập và tổ hợp bể bơi nước ấm The Manor Crown.',
       venues: [
         {
           name: 'Bể bơi Trung tâm Thể thao Tỉnh (01 Hà Huy Tập)',
@@ -437,35 +437,6 @@ export const hueResearch = {
           missing: 'Lịch hoạt động theo ca buổi sáng và chiều cần đối chiếu vé tại cổng.',
         },
         {
-          name: 'Bể bơi Kình Ngư (Trung tâm Thể thao Dưới nước)',
-          address: 'Số 2 Lê Quý Đôn, phường Phú Nhuận, TP. Huế',
-          area: 'Phú Nhuận',
-          access: 'Cơ sở thể thao chuyên môn',
-          entityType: 'Địa điểm bơi thể thao',
-          environment: 'Ngoài trời / có khán đài',
-          venueContact: {
-            role: 'Ban Quản lý Trung tâm Thể thao Dưới nước',
-            name: 'Bộ phận Bể bơi Kình Ngư 02 Lê Quý Đôn',
-            phone: '0234.383.1234 / 0911.345.369',
-            note: 'Vé bơi thi đấu, đăng ký thẻ tập luyện và liên hệ lịch bơi phong trào',
-            exactSourceUrl: 'https://huengaynay.vn/the-thao/be-boi-kinh-ngu-diem-tap-luyen-the-thao-duoi-nuoc-tieu-chuan-tp-hue-102938.html',
-            sourceTitle: 'Bể bơi Kình Ngư điểm tập luyện thể thao dưới nước tiêu chuẩn TP Huế - Báo Huế Ngày Nay',
-          },
-          instructors: [
-            {
-              unitName: 'Trung tâm Dạy Bơi Kình Ngư Huế',
-              contactPerson: 'Thầy Nguyễn Văn Nam (Chủ nhiệm CLB Kình Ngư)',
-              phone: '0911.345.369',
-              courseTypes: 'Dạy bơi 4 kiểu chuẩn thi đấu (ếch, sải, ngửa, bướm), đào tạo năng khiếu bơi lội trẻ em và thanh thiếu niên',
-              exactSourceUrl: 'https://huetoplist.vn/top-dia-chi-day-hoc-boi-o-hue/',
-              sourceTitle: 'Trung tâm dạy bơi Kình Ngư số 2 Lê Quý Đôn Huế',
-            },
-          ],
-          services: 'Bể bơi tiêu chuẩn thi đấu, nơi tập luyện của các đội tuyển bơi lặn tỉnh và mở các lớp dạy bơi chất lượng cao.',
-          detail: 'Vị trí trung tâm thuận tiện di chuyển, nước sạch được lọc tuần hoàn hằng ngày.',
-          missing: 'Quy định đối với người học bơi tự do và vé tháng cần liên hệ văn phòng trung tâm.',
-        },
-        {
           name: 'Bể bơi nước ấm Star Fitness – The Manor Crown',
           address: 'Tầng 5 & 6, Tòa tháp The Manor Crown, 62 Tố Hữu, phường Xuân Phú, TP. Huế',
           area: 'Tố Hữu',
@@ -497,9 +468,45 @@ export const hueResearch = {
       ],
     },
     {
-      id: 'vy-da-ben-ngu',
-      label: 'Khu vực Vỹ Dạ & Bến Ngự',
-      description: 'Nơi có trường bơi thiếu nhi truyền thống và các bể bơi khách sạn uy tín liên kết dạy bơi.',
+      id: 'phu-nhuan',
+      label: 'Khu vực Trung tâm (Lê Quý Đôn - Phú Nhuận)',
+      description: 'Bể bơi tiêu chuẩn thi đấu Kình Ngư tại số 2 Lê Quý Đôn, nơi đào tạo năng khiếu và rèn luyện thể thao chuyên nghiệp.',
+      venues: [
+        {
+          name: 'Bể bơi Kình Ngư (Trung tâm Thể thao Dưới nước)',
+          address: 'Số 2 Lê Quý Đôn, phường Phú Nhuận, TP. Huế',
+          area: 'Phú Nhuận',
+          access: 'Cơ sở thể thao chuyên môn',
+          entityType: 'Địa điểm bơi thể thao',
+          environment: 'Ngoài trời / có khán đài',
+          venueContact: {
+            role: 'Ban Quản lý Trung tâm Thể thao Dưới nước',
+            name: 'Bộ phận Bể bơi Kình Ngư 02 Lê Quý Đôn',
+            phone: '0234.383.1234 / 0911.345.369',
+            note: 'Vé bơi thi đấu, đăng ký thẻ tập luyện và liên hệ lịch bơi phong trào',
+            exactSourceUrl: 'https://huengaynay.vn/the-thao/be-boi-kinh-ngu-diem-tap-luyen-the-thao-duoi-nuoc-tieu-chuan-tp-hue-102938.html',
+            sourceTitle: 'Bể bơi Kình Ngư điểm tập luyện thể thao dưới nước tiêu chuẩn TP Huế - Báo Huế Ngày Nay',
+          },
+          instructors: [
+            {
+              unitName: 'Trung tâm Dạy Bơi Kình Ngư Huế',
+              contactPerson: 'Thầy Nguyễn Văn Nam (Chủ nhiệm CLB Kình Ngư)',
+              phone: '0911.345.369',
+              courseTypes: 'Dạy bơi 4 kiểu chuẩn thi đấu (ếch, sải, ngửa, bướm), đào tạo năng khiếu bơi lội trẻ em và thanh thiếu niên',
+              exactSourceUrl: 'https://huetoplist.vn/top-dia-chi-day-hoc-boi-o-hue/',
+              sourceTitle: 'Trung tâm dạy bơi Kình Ngư số 2 Lê Quý Đôn Huế',
+            },
+          ],
+          services: 'Bể bơi tiêu chuẩn thi đấu, nơi tập luyện của các đội tuyển bơi lặn tỉnh và mở các lớp dạy bơi chất lượng cao.',
+          detail: 'Vị trí trung tâm thuận tiện di chuyển, nước sạch được lọc tuần hoàn hằng ngày.',
+          missing: 'Quy định đối với người học bơi tự do và vé tháng cần liên hệ văn phòng trung tâm.',
+        },
+      ],
+    },
+    {
+      id: 'vy-da',
+      label: 'Khu vực Phường Vỹ Dạ',
+      description: 'Trường bơi thiếu nhi truyền thống tại 57 Lâm Hoằng với 2 bể bơi tiêu chuẩn và mức học phí trợ giá.',
       venues: [
         {
           name: 'Bể bơi Trung tâm Hoạt động Thanh thiếu nhi Thừa Thiên Huế',
@@ -530,6 +537,13 @@ export const hueResearch = {
           detail: 'Môi trường sư phạm an toàn, giáo viên tâm lý, chi phí học bơi được nhà nước trợ giá rất hợp lý cho học sinh.',
           missing: 'Bể có thể tạm dừng theo mùa đông hoặc bảo trì thời tiết, cần gọi điện xác nhận trước mùa hè.',
         },
+      ],
+    },
+    {
+      id: 'ven-song-huong',
+      label: 'Khu vực Ven Sông Hương (Vĩnh Ninh)',
+      description: 'Cụm bể bơi khách sạn cao cấp Park View (Ngô Quyền) và Hương Giang Resort (Lê Lợi) view sông Hương thoáng đãng.',
+      venues: [
         {
           name: 'Bể bơi Khách sạn Park View',
           address: '09 Ngô Quyền (hoặc 02 Trần Cao Vân), phường Vĩnh Ninh, TP. Huế',
@@ -591,9 +605,9 @@ export const hueResearch = {
       ],
     },
     {
-      id: 'an-cuu-thuy-xuan',
-      label: 'Khu vực An Cựu & Thủy Xuân',
-      description: 'Khu đô thị mới với bể bơi thông minh công nghệ châu Âu và các điểm bơi sinh thái.',
+      id: 'an-cuu',
+      label: 'Khu đô thị An Cựu City',
+      description: 'Tổ hợp bể bơi thông minh diện tích hơn 1.300m² công nghệ châu Âu phục vụ cư dân An Cựu và cộng đồng.',
       venues: [
         {
           name: 'Tổ hợp Bể bơi Khu đô thị An Cựu City',
@@ -624,6 +638,13 @@ export const hueResearch = {
           detail: 'Thiết kế đẹp, có khu vui chơi nước cho trẻ nhỏ, nhiều giáo viên mở lớp dạy bơi hè tại đây.',
           missing: 'Cần kiểm tra tình trạng bảo trì định kỳ trước khi đến bơi.',
         },
+      ],
+    },
+    {
+      id: 'thuy-xuan',
+      label: 'Khu vực Phường Thủy Xuân',
+      description: 'Bể bơi sinh thái thiên nhiên BLUE Thủy Xuân không gian thoáng mát gần gũi thiên nhiên.',
+      venues: [
         {
           name: 'Bể bơi Thiên nhiên BLUE Thủy Xuân',
           address: 'Kiệt 129 Trần Thái Tông, phường Thủy Xuân, TP. Huế',
@@ -702,7 +723,7 @@ export const khanhhoaResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ Khánh Hòa (trung tâm Nha Trang, Cam Ranh) được tổng hợp từ trung tâm văn hóa thể thao thành phố, các câu lạc bộ bơi lặn truyền thống và các trung tâm thể thao hiện đại tại các khu đô thị VCN.',
-  groupingNote: 'Nha Trang là thành phố biển phát triển du lịch, người dân đặc biệt chú trọng kỹ năng bơi lội an toàn và đứng nước sinh tồn. Địa bàn tập trung tại cụm trung tâm nội thành (Yersin, Minh Khai), cụm VCN Phước Hải/Vĩnh Hải và khu vực Cam Ranh.',
+  groupingNote: 'Nha Trang là thành phố biển phát triển du lịch, người dân đặc biệt chú trọng kỹ năng bơi lội an toàn và đứng nước sinh tồn. Địa bàn được phân tách cụ thể theo từng khu vực: trung tâm nội thành (Yersin, Minh Khai), khu đô thị VCN Phước Hải, khu vực Vĩnh Hải và TP. Cam Ranh.',
   categories: [
     {
       id: 'nha-trang-trung-tam',
@@ -807,9 +828,9 @@ export const khanhhoaResearch = {
       ],
     },
     {
-      id: 'phuoc-hai-vinh-hai',
-      label: 'Khu vực VCN Phước Hải & Vĩnh Hải',
-      description: 'Cụm hồ bơi trong các khu đô thị mới hiện đại và trung tâm thể thao phía bắc thành phố.',
+      id: 'vcn-phuoc-hai',
+      label: 'Khu vực VCN Phước Hải',
+      description: 'Hồ bơi trong nhà có mái che tại khu đô thị mới VCN Phước Hải, kín gió và hiện đại.',
       venues: [
         {
           name: 'Hồ bơi Venus Fitness & Yoga (VCN Phước Hải)',
@@ -840,6 +861,13 @@ export const khanhhoaResearch = {
           detail: 'Không gian sạch sẽ, kín gió, kết hợp phòng xông hơi và tập gym thư giãn đẳng cấp.',
           missing: 'Gói vé lượt và điều kiện dành cho học viên theo học HLV ngoài.',
         },
+      ],
+    },
+    {
+      id: 'vinh-hai',
+      label: 'Khu vực Vĩnh Hải (Bắc Nha Trang)',
+      description: 'Trung tâm thể thao và sân bơi phục vụ dân cư khu vực phía Bắc Nha Trang.',
+      venues: [
         {
           name: 'MH Sport Nha Trang',
           address: 'Khu A Tây Nam, phường Vĩnh Hải, TP. Nha Trang, Khánh Hòa',
@@ -872,9 +900,9 @@ export const khanhhoaResearch = {
       ],
     },
     {
-      id: 'cam-ranh-dien-khanh',
-      label: 'Khu vực TP. Cam Ranh & Diên Khánh',
-      description: 'Phục vụ cư dân phía nam tỉnh Khánh Hòa và khu vực lân cận.',
+      id: 'cam-ranh',
+      label: 'Khu vực TP. Cam Ranh',
+      description: 'Hồ bơi thể thao phong trào và các lớp phổ cập bơi hè cho học sinh, thanh thiếu nhi phía Nam tỉnh Khánh Hòa.',
       venues: [
         {
           name: 'Hồ bơi Trung tâm TDTT TP. Cam Ranh',
@@ -953,7 +981,7 @@ export const binhdinhResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ Bình Định (trung tâm Quy Nhơn) được tổng hợp từ Trung tâm Phổ cập Bơi lội TP. Quy Nhơn, các hồ bơi khách sạn ven biển nhận học viên và các trung tâm dạy bơi kèm riêng bài bản.',
-  groupingNote: 'TP. Quy Nhơn có đường bờ biển đẹp và phong trào thể thao phát triển. Các điểm học bơi tập trung tại khu vực nội thành (Diên Hồng, Tây Sơn, Nguyễn Huệ) và các khu chung cư, khách sạn lớn.',
+  groupingNote: 'TP. Quy Nhơn có đường bờ biển đẹp và phong trào thể thao phát triển. Các điểm học bơi được phân tách độc lập theo từng khu vực: trung tâm nội thành Quy Nhơn (Diên Hồng, Tây Sơn, Nguyễn Huệ), khu nghỉ dưỡng sinh thái Nhơn Lý và thị xã An Nhơn.',
   categories: [
     {
       id: 'quy-nhon-trung-tam',
@@ -1079,9 +1107,9 @@ export const binhdinhResearch = {
       ],
     },
     {
-      id: 'nhon-ly-an-nhon',
-      label: 'Khu vực Nhơn Lý & An Nhơn',
-      description: 'Hồ bơi khu nghỉ dưỡng sinh thái và các hồ bơi phục vụ dân sinh tại thị xã lân cận.',
+      id: 'nhon-ly',
+      label: 'Khu vực Nhơn Lý (FLC Quy Nhơn)',
+      description: 'Hồ bơi khu nghỉ dưỡng sinh thái ven biển quy mô lớn tại xã Nhơn Lý.',
       venues: [
         {
           name: 'Hồ bơi Quần thể Nghỉ dưỡng FLC Quy Nhơn',
@@ -1112,6 +1140,13 @@ export const binhdinhResearch = {
           detail: 'Chủ yếu phục vụ du khách nghỉ dưỡng; khách ngoài có thể sử dụng dịch vụ thông qua các gói vé trong ngày.',
           missing: 'Chính sách mở lớp dạy bơi phụ thuộc vào đối tác huấn luyện viên được FLC cấp phép.',
         },
+      ],
+    },
+    {
+      id: 'an-nhon',
+      label: 'Khu vực Thị xã An Nhơn',
+      description: 'Hồ bơi dân sinh phục vụ phong trào và dạy bơi hè cho thanh thiếu nhi thị xã An Nhơn.',
+      venues: [
         {
           name: 'Hồ bơi Thị xã An Nhơn',
           address: 'Đường Lê Hồng Phong, phường Bình Định, thị xã An Nhơn, Bình Định',
@@ -1188,8 +1223,8 @@ export const binhdinhResearch = {
 export const thanhhoaResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
-  summary: 'Danh bạ bơi lội Thanh Hóa được tổng hợp từ nguồn Sở VHTTDL tỉnh Thanh Hóa, các trung tâm TDTT lớn, tổ hợp thể thao Sun Sport Complex và hệ thống resort FLC Sầm Sơn. Phân loại theo TP. Thanh Hóa, Sầm Sơn và thị xã Bỉm Sơn.',
-  groupingNote: 'Thanh Hóa có mạng lưới hồ bơi phát triển mạnh mẽ với tổ hợp chuẩn Olympic Sun Sport và nhiều bể bốn mùa trong nhà. Học viên nên liên hệ trước để kiểm tra nhiệt độ nước và lịch dạy kèm.',
+  summary: 'Danh bạ bơi lội Thanh Hóa được tổng hợp từ nguồn Sở VHTTDL tỉnh Thanh Hóa, các trung tâm TDTT lớn, tổ hợp thể thao Sun Sport Complex và hệ thống resort FLC Sầm Sơn. Phân loại theo từng khu vực độc lập: TP. Thanh Hóa, TP. Sầm Sơn và thị xã Bỉm Sơn.',
+  groupingNote: 'Thanh Hóa có mạng lưới hồ bơi phát triển mạnh mẽ với tổ hợp chuẩn Olympic Sun Sport và nhiều bể bốn mùa trong nhà. Các khu vực được phân tách độc lập: TP. Thanh Hóa, TP. Sầm Sơn và thị xã Bỉm Sơn.',
   categories: [
     {
       id: 'tp-thanh-hoa',
@@ -1337,9 +1372,9 @@ export const thanhhoaResearch = {
       ],
     },
     {
-      id: 'sam-son-bim-son',
-      label: 'Khu vực Sầm Sơn & Thị xã Bỉm Sơn',
-      description: 'Khu vực ven biển và thị xã công nghiệp phía Bắc Thanh Hóa với hệ sinh thái nghỉ dưỡng và hồ bơi công cộng.',
+      id: 'sam-son',
+      label: 'Khu vực Thành phố Sầm Sơn',
+      description: 'Khu vực đô thị biển với hệ sinh thái nghỉ dưỡng, bể bơi khách sạn ven biển và bể nước mặn quy mô lớn.',
       venues: [
         {
           name: 'Hệ thống Bể bơi Quần thể FLC Sầm Sơn',
@@ -1393,6 +1428,13 @@ export const thanhhoaResearch = {
             },
           ],
         },
+      ],
+    },
+    {
+      id: 'bim-son',
+      label: 'Khu vực Thị xã Bỉm Sơn',
+      description: 'Hồ bơi thể thao công lập phục vụ đào tạo bơi phổ cập và phòng chống đuối nước cho thanh thiếu nhi thị xã Bỉm Sơn.',
+      venues: [
         {
           name: 'Bể bơi Trung tâm VHTT & Truyền thông Bỉm Sơn',
           address: 'Đường Trần Phú, phường Ba Đình, Thị xã Bỉm Sơn, Thanh Hóa',
@@ -1467,7 +1509,7 @@ export const ngheanResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ bơi lội tỉnh Nghệ An được tổng hợp từ Sở VHTTDL Nghệ An, Báo Quân khu 4, tổ hợp giải trí VRC và các trung tâm thể thao uy tín tại thành phố Vinh, thị xã Cửa Lò và huyện Diễn Châu.',
-  groupingNote: 'Thành phố Vinh có nhiều bể bơi bốn mùa chất lượng cao như VRC Pool Plus, Elite Fitness và bể bơi Quân khu 4 đạt chuẩn 50m. Phù hợp cho việc học bơi cả mùa hè lẫn mùa lạnh.',
+  groupingNote: 'Nghệ An có mạng lưới cơ sở bơi lội phát triển mạnh mẽ. Các địa điểm được phân tách độc lập theo từng khu vực: trung tâm TP. Vinh (bể bốn mùa VRC, Elite, Quân khu 4), đô thị du lịch Cửa Lò và huyện Diễn Châu.',
   categories: [
     {
       id: 'tp-vinh',
@@ -1615,9 +1657,9 @@ export const ngheanResearch = {
       ],
     },
     {
-      id: 'cua-lo-dien-chau',
-      label: 'Khu vực Cửa Lò & Diễn Châu',
-      description: 'Địa bàn ven biển và các huyện đồng bằng với các khu nghỉ dưỡng cao cấp và trung tâm thể thao huyện.',
+      id: 'cua-lo',
+      label: 'Khu vực Thị xã Cửa Lò',
+      description: 'Hồ bơi vô cực view biển và bể bơi ngoài trời khách sạn 4 sao cao cấp tại Cửa Lò.',
       venues: [
         {
           name: 'Hồ bơi Vô cực Khách sạn Summer Cửa Lò',
@@ -1671,6 +1713,13 @@ export const ngheanResearch = {
             },
           ],
         },
+      ],
+    },
+    {
+      id: 'dien-chau',
+      label: 'Khu vực Huyện Diễn Châu',
+      description: 'Hồ bơi thể thao phục vụ chương trình phổ cập bơi an toàn phòng chống tai nạn sông nước cho học sinh huyện Diễn Châu.',
+      venues: [
         {
           name: 'Bể bơi Trung tâm TDTT Huyện Diễn Châu',
           address: 'Khối 3, Thị trấn Diễn Châu, Huyện Diễn Châu, Nghệ An',
@@ -1745,7 +1794,7 @@ export const hatinhResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ bơi lội tỉnh Hà Tĩnh được nghiên cứu từ Sở VHTTDL Hà Tĩnh, Báo Hà Tĩnh, Trung tâm Huấn luyện TDTT tỉnh và các tổ hợp thể thao tại TP. Hà Tĩnh, thị xã Kỳ Anh và thị xã Hồng Lĩnh.',
-  groupingNote: 'Hà Tĩnh mùa hè nắng nóng với gió Lào khô rát, nhu cầu học bơi giải nhiệt rất cao. Bể bơi Hào Quang và bể bơi Trung tâm TDTT tỉnh là hai địa chỉ học bơi phong trào đông nhất.',
+  groupingNote: 'Hà Tĩnh mùa hè nắng nóng với gió Lào khô rát, nhu cầu học bơi giải nhiệt rất cao. Các địa điểm được phân tách độc lập theo từng khu vực: trung tâm TP. Hà Tĩnh (Bể bơi Hào Quang, Bể TDTT tỉnh, Meliá Vinpearl), thị xã Kỳ Anh và thị xã Hồng Lĩnh.',
   categories: [
     {
       id: 'tp-ha-tinh',
@@ -1867,9 +1916,9 @@ export const hatinhResearch = {
       ],
     },
     {
-      id: 'ky-anh-hong-linh',
-      label: 'Khu vực Thị xã Kỳ Anh & Hồng Lĩnh',
-      description: 'Khu kinh tế Vũng Áng và thị xã cửa ngõ phía Bắc tỉnh với nhu cầu bơi lội an toàn cho gia đình.',
+      id: 'ky-anh',
+      label: 'Khu vực Thị xã Kỳ Anh',
+      description: 'Khu kinh tế Vũng Áng và thị xã Kỳ Anh với hồ bơi khách sạn 4 sao cao cấp và trung tâm bơi lội phổ cập thị xã.',
       venues: [
         {
           name: 'Bể bơi Khách sạn Mường Thanh Grand Hà Tĩnh (Kỳ Anh)',
@@ -1923,6 +1972,13 @@ export const hatinhResearch = {
             },
           ],
         },
+      ],
+    },
+    {
+      id: 'hong-linh',
+      label: 'Khu vực Thị xã Hồng Lĩnh',
+      description: 'Hồ bơi thể thao phục vụ thanh thiếu nhi thị xã Hồng Lĩnh và khu vực lân cận phía Bắc tỉnh.',
+      venues: [
         {
           name: 'Bể bơi Thể thao Thị xã Hồng Lĩnh',
           address: 'Đường Nguyễn Đổng Chi, phường Bắc Hồng, Thị xã Hồng Lĩnh, Hà Tĩnh',

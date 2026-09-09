@@ -13,7 +13,7 @@ export const locationResearch = {
     level: 'Đã nghiên cứu chuyên sâu',
     reviewedAt,
     summary: 'Danh sách Hà Nội được đối chiếu theo từng cụm khu vực, tách riêng địa điểm bơi và đơn vị tổ chức lớp học. Chỉ những dịch vụ được nguồn công khai nêu rõ mới được ghi là có lớp.',
-    groupingNote: 'Hà Nội vận hành 126 xã, phường mới từ 01/07/2025. Các nhãn Ba Đình, Đống Đa, Thanh Xuân… dưới đây là cụm khu vực quen dùng theo địa giới quận/huyện cũ, giúp người dùng định vị và tìm kiếm dễ hơn; địa chỉ hiện hành cần kiểm tra lại với đơn vị.',
+    groupingNote: 'Hệ thống bể bơi và đơn vị đào tạo bơi lội tại Hà Nội được phân theo từng quận/huyện độc lập (Ba Đình, Hai Bà Trưng, Đống Đa, Thanh Xuân, Cầu Giấy, Nam Từ Liêm, Tây Hồ, Bắc Từ Liêm, Hoàng Mai, Thanh Trì, Hà Đông, Long Biên, Gia Lâm) giúp người học tra cứu thuận tiện nhất.',
     categories: [
       {
         id: 'ba-dinh',
@@ -546,9 +546,9 @@ export const locationResearch = {
         ],
       },
       {
-        id: 'cau-giay-tu-liem',
-        label: 'Khu vực Cầu Giấy & Từ Liêm',
-        description: 'Tổ hợp thể thao quốc gia tiêu chuẩn thi đấu Olympic, các trường bơi quốc tế chuẩn Mỹ và hệ thống bể bơi bốn mùa hiện đại tại Cầu Giấy và Mỹ Đình.',
+        id: 'cau-giay',
+        label: 'Khu vực Cầu Giấy',
+        description: 'Trường bơi quốc tế chuyên biệt trẻ em chuẩn Mỹ Aqua-Tots Khúc Thừa Dụ và bể bơi Trung tâm Thể thao Cầu Giấy phục vụ đào tạo bơi lội bài bản.',
         venues: [
           {
             name: 'Aqua-Tots Cầu Giấy',
@@ -579,6 +579,42 @@ export const locationResearch = {
             detail: 'Trường bơi hàng đầu tại quận Cầu Giấy được đông đảo phụ huynh tin tưởng đăng ký cho con nhỏ rèn kỹ năng sinh tồn.',
             missing: 'Học phí và ca học cần đăng ký trước do sĩ số mỗi lớp giới hạn nghiêm ngặt.',
           },
+          {
+            name: 'Bể bơi Cầu Giấy (Trung tâm TDTT Cầu Giấy)',
+            address: 'Số 110 Cầu Giấy, phường Quan Hoa, quận Cầu Giấy, Hà Nội',
+            area: 'Cầu Giấy - Quan Hoa',
+            access: 'Bể bơi trung tâm thể thao công lập',
+            entityType: 'Bể bơi dịch vụ công cộng',
+            environment: 'Trong nhà / Mái che / Bể bơi rộng rãi',
+            venueContact: {
+              role: 'Ban quản lý Bể bơi Cầu Giấy',
+              name: 'Ban Quản lý Trung tâm Văn hóa Thể thao Cầu Giấy',
+              phone: '024.3833.0118 / 0968.619.595',
+              note: 'Mua vé bơi lượt, vé tháng mùa hè và liên hệ đăng ký lớp phổ cập bơi thiếu nhi',
+              exactSourceUrl: 'https://goswim.vn/',
+              sourceTitle: 'Bể bơi Cầu Giấy 110 Cầu Giấy - Goswim',
+            },
+            instructors: [
+              {
+                unitName: 'Trung tâm Dạy Bơi Hà Nội Goswim',
+                contactPerson: 'Thầy Vũ (HLV Trưởng Goswim)',
+                phone: '0948.492.662',
+                courseTypes: 'Dạy bơi 1 kèm 1 cam kết biết bơi, lớp bơi ếch căn bản, lớp bơi trườn sấp nâng cao cho mọi lứa tuổi',
+                exactSourceUrl: 'https://goswim.vn/',
+                sourceTitle: 'Lớp học bơi tại quận Cầu Giấy - Goswim',
+              },
+            ],
+            services: 'Bể bơi có kích thước tiêu chuẩn, giá vé bình dân, vị trí ngay mặt đường Cầu Giấy thuận tiện đi lại.',
+            detail: 'Địa điểm học bơi phong trào có truyền thống lâu năm phục vụ nhân dân trên địa bàn quận Cầu Giấy.',
+            missing: 'Vào các tháng hè cao điểm lượng khách bơi tự do rất đông.',
+          },
+        ],
+      },
+      {
+        id: 'nam-tu-liem',
+        label: 'Khu vực Nam Từ Liêm (Mỹ Đình)',
+        description: 'Cung Thể thao Dưới nước Mỹ Đình tiêu chuẩn Olympic quốc gia và tổ hợp bể bốn mùa cao cấp Green Pool 24 Nguyễn Cơ Thạch.',
+        venues: [
           {
             name: 'Green Pool 24 Nguyễn Cơ Thạch',
             address: 'Tầng 3, tòa Golden Field, 24 Nguyễn Cơ Thạch, phường Mỹ Đình 2, quận Nam Từ Liêm, Hà Nội',
@@ -645,71 +681,13 @@ export const locationResearch = {
             detail: 'Nơi tập luyện của các vận động viên đội tuyển quốc gia, đồng thời mở cửa đón học viên và người dân đến học bơi, rèn luyện thể lực.',
             missing: 'Lịch bơi công cộng có thể tạm hoãn trong các đợt tổ chức giải bơi lặn quốc gia hoặc khu vực.',
           },
-          {
-            name: 'Bể bơi Cầu Giấy (Trung tâm TDTT Cầu Giấy)',
-            address: 'Số 110 Cầu Giấy, phường Quan Hoa, quận Cầu Giấy, Hà Nội',
-            area: 'Cầu Giấy - Quan Hoa',
-            access: 'Bể bơi trung tâm thể thao công lập',
-            entityType: 'Bể bơi dịch vụ công cộng',
-            environment: 'Trong nhà / Mái che / Bể bơi rộng rãi',
-            venueContact: {
-              role: 'Ban quản lý Bể bơi Cầu Giấy',
-              name: 'Ban Quản lý Trung tâm Văn hóa Thể thao Cầu Giấy',
-              phone: '024.3833.0118 / 0968.619.595',
-              note: 'Mua vé bơi lượt, vé tháng mùa hè và liên hệ đăng ký lớp phổ cập bơi thiếu nhi',
-              exactSourceUrl: 'https://goswim.vn/',
-              sourceTitle: 'Bể bơi Cầu Giấy 110 Cầu Giấy - Goswim',
-            },
-            instructors: [
-              {
-                unitName: 'Trung tâm Dạy Bơi Hà Nội Goswim',
-                contactPerson: 'Thầy Vũ (HLV Trưởng Goswim)',
-                phone: '0948.492.662',
-                courseTypes: 'Dạy bơi 1 kèm 1 cam kết biết bơi, lớp bơi ếch căn bản, lớp bơi trườn sấp nâng cao cho mọi lứa tuổi',
-                exactSourceUrl: 'https://goswim.vn/',
-                sourceTitle: 'Lớp học bơi tại quận Cầu Giấy - Goswim',
-              },
-            ],
-            services: 'Bể bơi có kích thước tiêu chuẩn, giá vé bình dân, vị trí ngay mặt đường Cầu Giấy thuận tiện đi lại.',
-            detail: 'Địa điểm học bơi phong trào có truyền thống lâu năm phục vụ nhân dân trên địa bàn quận Cầu Giấy.',
-            missing: 'Vào các tháng hè cao điểm lượng khách bơi tự do rất đông.',
-          },
         ],
       },
       {
-        id: 'tay-ho-bac-tu-liem',
-        label: 'Khu vực Tây Hồ & Bắc Từ Liêm',
-        description: 'Bể bơi khách sạn ven Hồ Tây thoáng đãng, trường bơi quốc tế Starlake và các cơ sở bốn mùa nước ấm chất lượng cao tại Thụy Khuê và Yên Phụ.',
+        id: 'tay-ho',
+        label: 'Khu vực Tây Hồ',
+        description: 'Bể bơi ngoài trời nhìn thẳng mặt nước Hồ Tây tại Khách sạn Thắng Lợi và tổ hợp bể bơi bốn mùa nước ấm Green Pool 20 Thụy Khuê.',
         venues: [
-          {
-            name: 'Aqua-Tots Tây Hồ',
-            address: 'Lô H3-LC, khu đô thị Starlake Tây Hồ Tây, phường Xuân Tảo, quận Bắc Từ Liêm, Hà Nội',
-            area: 'Starlake - Tây Hồ Tây',
-            access: 'Trường bơi chuyên biệt quốc tế',
-            entityType: 'Trường bơi chuẩn Mỹ trẻ em',
-            environment: 'Trong nhà / Nước ấm 30-32°C / Tiêu chuẩn không gian Starlake',
-            venueContact: {
-              role: 'Lễ tân & Tuyển sinh Aqua-Tots Tây Hồ',
-              name: 'Văn phòng Trường bơi Aqua-Tots Tây Hồ Starlake',
-              phone: '024.7100.0005 / 0961.352.626',
-              note: 'Đặt lịch trải nghiệm bơi sinh tồn cho bé từ 4 tháng đến 12 tuổi',
-              exactSourceUrl: 'https://www.aqua-tots.com/tay-ho/',
-              sourceTitle: 'Aqua-Tots Swim Schools Tây Hồ Starlake - Website chính thức',
-            },
-            instructors: [
-              {
-                unitName: 'Đội ngũ HLV Quốc tế Aqua-Tots Tây Hồ',
-                contactPerson: 'Ban Giảng viên Quốc tế Aqua-Tots',
-                phone: '024.7100.0005',
-                courseTypes: 'Chương trình bơi sinh tồn 8 cấp độ chuẩn Mỹ: lớp nhóm 4:1, bán riêng 2:1 và kèm riêng 1:1',
-                exactSourceUrl: 'https://www.aqua-tots.com/tay-ho/',
-                sourceTitle: 'Chương trình đào tạo Aqua-Tots Tây Hồ',
-              },
-            ],
-            services: 'Cơ sở vật chất hiện đại bậc nhất khu đô thị Starlake, phòng thay đồ sạch sẽ, nhiệt độ nước được kiểm soát tự động chuẩn khoa học.',
-            detail: 'Lựa chọn hàng đầu cho cư dân Ngoại Giao Đoàn, Tây Hồ Tây và Ciputra muốn cho con học bơi sinh tồn chuẩn quốc tế.',
-            missing: 'Cần đặt lịch trước để được sắp xếp huấn luyện viên kèm cặp phù hợp với độ tuổi.',
-          },
           {
             name: 'Bể bơi Khách sạn Thắng Lợi',
             address: 'Số 200 Yên Phụ, phường Yên Phụ, quận Tây Hồ, Hà Nội',
@@ -771,9 +749,45 @@ export const locationResearch = {
         ],
       },
       {
-        id: 'hoang-mai-thanh-tri',
-        label: 'Khu vực Hoàng Mai & Thanh Trì',
-        description: 'Cụm bể bơi bốn mùa nước ấm phía Nam thành phố phục vụ cư dân Linh Đàm, Định Công, Ngọc Hồi và Tân Triều.',
+        id: 'bac-tu-liem',
+        label: 'Khu vực Bắc Từ Liêm',
+        description: 'Trường bơi sinh tồn trẻ em chuẩn Mỹ Aqua-Tots tại khu đô thị Starlake Tây Hồ Tây phục vụ con em cư dân Ngoại Giao Đoàn và Bắc Từ Liêm.',
+        venues: [
+          {
+            name: 'Aqua-Tots Tây Hồ',
+            address: 'Lô H3-LC, khu đô thị Starlake Tây Hồ Tây, phường Xuân Tảo, quận Bắc Từ Liêm, Hà Nội',
+            area: 'Starlake - Tây Hồ Tây',
+            access: 'Trường bơi chuyên biệt quốc tế',
+            entityType: 'Trường bơi chuẩn Mỹ trẻ em',
+            environment: 'Trong nhà / Nước ấm 30-32°C / Tiêu chuẩn không gian Starlake',
+            venueContact: {
+              role: 'Lễ tân & Tuyển sinh Aqua-Tots Tây Hồ',
+              name: 'Văn phòng Trường bơi Aqua-Tots Tây Hồ Starlake',
+              phone: '024.7100.0005 / 0961.352.626',
+              note: 'Đặt lịch trải nghiệm bơi sinh tồn cho bé từ 4 tháng đến 12 tuổi',
+              exactSourceUrl: 'https://www.aqua-tots.com/tay-ho/',
+              sourceTitle: 'Aqua-Tots Swim Schools Tây Hồ Starlake - Website chính thức',
+            },
+            instructors: [
+              {
+                unitName: 'Đội ngũ HLV Quốc tế Aqua-Tots Tây Hồ',
+                contactPerson: 'Ban Giảng viên Quốc tế Aqua-Tots',
+                phone: '024.7100.0005',
+                courseTypes: 'Chương trình bơi sinh tồn 8 cấp độ chuẩn Mỹ: lớp nhóm 4:1, bán riêng 2:1 và kèm riêng 1:1',
+                exactSourceUrl: 'https://www.aqua-tots.com/tay-ho/',
+                sourceTitle: 'Chương trình đào tạo Aqua-Tots Tây Hồ',
+              },
+            ],
+            services: 'Cơ sở vật chất hiện đại bậc nhất khu đô thị Starlake, phòng thay đồ sạch sẽ, nhiệt độ nước được kiểm soát tự động chuẩn khoa học.',
+            detail: 'Lựa chọn hàng đầu cho cư dân Ngoại Giao Đoàn, Tây Hồ Tây và Ciputra muốn cho con học bơi sinh tồn chuẩn quốc tế.',
+            missing: 'Cần đặt lịch trước để được sắp xếp huấn luyện viên kèm cặp phù hợp với độ tuổi.',
+          },
+        ],
+      },
+      {
+        id: 'hoang-mai',
+        label: 'Khu vực Hoàng Mai',
+        description: 'Tổ hợp bể bốn mùa nước ấm và chăm sóc sức khỏe Green Pool tại số 5 Linh Đường phục vụ cư dân bán đảo Linh Đàm và quận Hoàng Mai.',
         venues: [
           {
             name: 'Green Pool Hoàng Mai',
@@ -804,6 +818,13 @@ export const locationResearch = {
             detail: 'Địa chỉ bơi lội quen thuộc của cư dân bán đảo Linh Đàm và khu vực Hoàng Mai.',
             missing: 'Vé bơi lượt và vé tháng bơi tự do có chính sách ưu đãi theo từng đợt.',
           },
+        ],
+      },
+      {
+        id: 'thanh-tri',
+        label: 'Khu vực Thanh Trì',
+        description: 'Bể bơi bốn mùa Trung tâm Thể thao Thanh Trì và bể bốn mùa vòm kính Housinco Tân Triều phục vụ học viên khu vực Tây Nam Kim Giang.',
+        venues: [
           {
             name: 'Green Pool Thanh Trì',
             address: 'Trung tâm Văn hóa & Thể thao Thanh Trì, ngõ 673 Ngọc Hồi, huyện Thanh Trì, Hà Nội',
@@ -865,9 +886,9 @@ export const locationResearch = {
         ],
       },
       {
-        id: 'ha-dong-long-bien',
-        label: 'Khu vực Hà Đông, Long Biên & Gia Lâm',
-        description: 'Các trung tâm bơi lội quy mô lớn tại phía Tây và phía Đông thủ đô gồm Hồ Gươm Plaza, Ocean Park và Bể bơi Mai Phúc.',
+        id: 'ha-dong',
+        label: 'Khu vực Hà Đông',
+        description: 'Bể bơi bốn mùa nước ấm Hồ Gươm Plaza 102 Trần Phú phục vụ học viên khu vực Hà Đông, Mỗ Lao, Văn Quán và Làng Việt Kiều Châu Âu.',
         venues: [
           {
             name: 'Bể bơi Hồ Gươm Plaza',
@@ -906,35 +927,13 @@ export const locationResearch = {
             detail: 'Địa chỉ học bơi uy tín hàng đầu quận Hà Đông, thu hút đông đảo cư dân các khu đô thị Mỗ Lao, Văn Quán và Làng Việt Kiều Châu Âu.',
             missing: 'Cần mua vé bơi tự do hoặc thẻ tập theo quy định của ban quản lý tòa nhà.',
           },
-          {
-            name: 'Aqua-Tots Gia Lâm (Vinhomes Ocean Park)',
-            address: 'PT-01, khu đô thị Vinhomes Ocean Park, xã Đa Tốn, huyện Gia Lâm, Hà Nội',
-            area: 'Ocean Park - Gia Lâm',
-            access: 'Trường bơi chuyên biệt chuẩn Mỹ',
-            entityType: 'Trường bơi quốc tế trẻ em',
-            environment: 'Trong nhà / Nước ấm 30-32°C / Chuẩn an toàn trường bơi Mỹ',
-            venueContact: {
-              role: 'Bộ phận Tuyển sinh Aqua-Tots Gia Lâm',
-              name: 'Văn phòng Tuyển sinh Aqua-Tots Ocean Park (ASC Education)',
-              phone: '024.7100.0003 / 0961.352.626',
-              note: 'Đăng ký tư vấn khóa bơi trẻ em, kiểm tra trình độ nước miễn phí cho bé 4 tháng - 12 tuổi',
-              exactSourceUrl: 'https://asc.edu.vn/',
-              sourceTitle: 'Trường bơi Aqua-Tots Ocean Park Gia Lâm - ASC Education',
-            },
-            instructors: [
-              {
-                unitName: 'Đội ngũ HLV Quốc tế Aqua-Tots Gia Lâm',
-                contactPerson: 'Ban Giảng viên Quốc tế Aqua-Tots',
-                phone: '024.7100.0003',
-                courseTypes: 'Chương trình bơi sinh tồn chuẩn Mỹ 8 cấp độ, lớp nhóm nhỏ tỷ lệ 4 bé / 1 HLV, bán riêng 2:1 và kèm 1:1',
-                exactSourceUrl: 'https://asc.edu.vn/',
-                sourceTitle: 'Khóa học bơi Aqua-Tots Ocean Park - ASC Education',
-              },
-            ],
-            services: 'Cơ sở trường bơi chuyên biệt chuẩn quốc tế tại thành phố biển hồ Vinhomes Ocean Park, trang thiết bị đồng bộ nhập khẩu từ Mỹ.',
-            detail: 'Địa điểm bơi lội sinh tồn tin cậy bậc nhất cho con em cư dân Gia Lâm và các khu đô thị lân cận bờ đông Hà Nội.',
-            missing: 'Lịch học và sĩ số mỗi lớp giới hạn, cần liên hệ đặt lịch trước.',
-          },
+        ],
+      },
+      {
+        id: 'long-bien',
+        label: 'Khu vực Long Biên',
+        description: 'Bể bơi bốn mùa trong nhà Mai Phúc với hệ thống gia nhiệt hiện đại phục vụ cư dân quận Long Biên, Phúc Đồng và Vinhomes Riverside.',
+        venues: [
           {
             name: 'Bể bơi Bốn Mùa Mai Phúc (Long Biên)',
             address: 'Số 190 Mai Phúc, phường Phúc Đồng, quận Long Biên, Hà Nội',
@@ -963,6 +962,42 @@ export const locationResearch = {
             services: 'Bể bơi bốn mùa trong nhà với công nghệ gia nhiệt hiện đại, nước ấm áp quanh năm, không gian rộng rãi và thoáng khí.',
             detail: 'Địa điểm học bơi uy tín tại quận Long Biên, thuận tiện cho cư dân khu vực Phúc Đồng, Sài Đồng và Vinhomes Riverside.',
             missing: 'Cần kiểm tra giờ cao điểm buổi chiều để chọn lịch học bơi thoải mái nhất.',
+          },
+        ],
+      },
+      {
+        id: 'gia-lam',
+        label: 'Khu vực Gia Lâm',
+        description: 'Trường bơi chuyên biệt chuẩn Mỹ Aqua-Tots tại thành phố biển hồ Vinhomes Ocean Park Gia Lâm đào tạo bơi sinh tồn trẻ nhỏ.',
+        venues: [
+          {
+            name: 'Aqua-Tots Gia Lâm (Vinhomes Ocean Park)',
+            address: 'PT-01, khu đô thị Vinhomes Ocean Park, xã Đa Tốn, huyện Gia Lâm, Hà Nội',
+            area: 'Ocean Park - Gia Lâm',
+            access: 'Trường bơi chuyên biệt chuẩn Mỹ',
+            entityType: 'Trường bơi quốc tế trẻ em',
+            environment: 'Trong nhà / Nước ấm 30-32°C / Chuẩn an toàn trường bơi Mỹ',
+            venueContact: {
+              role: 'Bộ phận Tuyển sinh Aqua-Tots Gia Lâm',
+              name: 'Văn phòng Tuyển sinh Aqua-Tots Ocean Park (ASC Education)',
+              phone: '024.7100.0003 / 0961.352.626',
+              note: 'Đăng ký tư vấn khóa bơi trẻ em, kiểm tra trình độ nước miễn phí cho bé 4 tháng - 12 tuổi',
+              exactSourceUrl: 'https://asc.edu.vn/',
+              sourceTitle: 'Trường bơi Aqua-Tots Ocean Park Gia Lâm - ASC Education',
+            },
+            instructors: [
+              {
+                unitName: 'Đội ngũ HLV Quốc tế Aqua-Tots Gia Lâm',
+                contactPerson: 'Ban Giảng viên Quốc tế Aqua-Tots',
+                phone: '024.7100.0003',
+                courseTypes: 'Chương trình bơi sinh tồn chuẩn Mỹ 8 cấp độ, lớp nhóm nhỏ tỷ lệ 4 bé / 1 HLV, bán riêng 2:1 và kèm 1:1',
+                exactSourceUrl: 'https://asc.edu.vn/',
+                sourceTitle: 'Khóa học bơi Aqua-Tots Ocean Park - ASC Education',
+              },
+            ],
+            services: 'Cơ sở trường bơi chuyên biệt chuẩn quốc tế tại thành phố biển hồ Vinhomes Ocean Park, trang thiết bị đồng bộ nhập khẩu từ Mỹ.',
+            detail: 'Địa điểm bơi lội sinh tồn tin cậy bậc nhất cho con em cư dân Gia Lâm và các khu đô thị lân cận bờ đông Hà Nội.',
+            missing: 'Lịch học và sĩ số mỗi lớp giới hạn, cần liên hệ đặt lịch trước.',
           },
         ],
       },
@@ -1039,8 +1074,8 @@ export const locationResearch = {
   'hoc-boi-hai-phong': {
     level: 'Đã nghiên cứu chuyên sâu',
     reviewedAt,
-    summary: 'Danh sách Hải Phòng (bao gồm khu vực Hải Dương cũ) được nghiên cứu từ nhiều nguồn: cơ quan nhà nước, báo chí, website đơn vị và danh bạ chuyên ngành. Tách riêng bể bơi công cộng, bể thương mại, trường bơi và đơn vị tổ chức lớp.',
-    groupingNote: 'Hải Phòng hiện là thành phố trực thuộc trung ương, sáp nhập khu vực Hải Dương cũ. Các nhãn Hồng Bàng, Ngô Quyền, Lê Chân, Kiến An, Dương Kinh… dưới đây là cụm khu vực theo địa giới quận/huyện quen dùng để người dùng dễ định vị; địa chỉ hành chính hiện hành cần kiểm tra lại với đơn vị.',
+    summary: 'Danh sách bể bơi và trung tâm dạy bơi tại Hải Phòng được tổng hợp và đối chiếu thực tế. Tách riêng bể bơi công cộng, bể thương mại, trường bơi và đơn vị tổ chức lớp.',
+    groupingNote: 'Hệ thống bể bơi và đơn vị đào tạo bơi lội tại Hải Phòng được phân theo từng quận/huyện độc lập (Hồng Bàng, Ngô Quyền, Lê Chân, Kiến An, Dương Kinh, An Dương) giúp người học tra cứu thuận tiện nhất.',
     categories: [
       {
         id: 'hong-bang',
@@ -1303,9 +1338,9 @@ export const locationResearch = {
         ],
       },
       {
-        id: 'duong-kinh-an-duong',
-        label: 'Khu vực Dương Kinh & An Dương',
-        description: 'Trường bơi quốc tế chuyên biệt trẻ nhỏ chuẩn Mỹ Aqua-Tots tại Dương Kinh và trung tâm bơi lặn Biển Đông tại An Dương.',
+        id: 'duong-kinh',
+        label: 'Khu vực Quận Dương Kinh',
+        description: 'Trường bơi chuyên biệt chuẩn Mỹ Aqua-Tots Swim Schools tại KĐT Sao Đỏ Dương Kinh đào tạo bơi sinh tồn trẻ nhỏ.',
         venues: [
           {
             name: 'Aqua-Tots Swim Schools Hải Phòng',
@@ -1336,13 +1371,20 @@ export const locationResearch = {
             detail: 'Trường bơi sinh tồn chuẩn Mỹ đầu tiên tại Hải Phòng, đặt nền móng an toàn nước cho trẻ từ những năm tháng đầu đời.',
             missing: 'Sĩ số giới hạn tối đa 4 bé/HLV, cần đăng ký xếp lịch trước.',
           },
+        ],
+      },
+      {
+        id: 'an-duong',
+        label: 'Khu vực Huyện An Dương',
+        description: 'Trung tâm bơi lặn Biển Đông tại An Dương với hệ thống bể bơi tiêu chuẩn và lớp kèm riêng uy tín.',
+        venues: [
           {
             name: 'Trung tâm Bơi lặn Biển Đông',
             address: 'Thôn Quỳnh Hoàng, xã Nam Sơn, huyện An Dương, Hải Phòng',
             area: 'Nam Sơn - An Dương',
             access: 'Trung tâm bơi lặn thể thao',
             entityType: 'Bể bơi có mái che & đào tạo kỹ năng bơi',
-            environment: 'Có mái che chuyên nghiệp / Hệ thống lọc nước công nghệ Tây Ban Nha / Phân khu người lớn và trẻ em',
+            environment: 'Có mái che chuyên nghiệp / Hệ thống lọc nước công nghệ Tây Ban Nha / Phan khu người lớn và trẻ em',
             venueContact: {
               role: 'Ban Quản lý Trung tâm Bơi lặn Biển Đông',
               name: 'Chủ nhiệm Trung tâm Bơi Biển Đông',

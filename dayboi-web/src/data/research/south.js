@@ -185,9 +185,9 @@ export const dongnaiResearch = {
       ],
     },
     {
-      id: 'nhon-trach-long-thanh',
-      label: 'Khu vực Nhơn Trạch & Long Thành',
-      description: 'Các hồ bơi khu đô thị và khu công nghiệp phục vụ công nhân viên, cư dân đô thị mới.',
+      id: 'nhon-trach',
+      label: 'Khu vực Huyện Nhơn Trạch',
+      description: 'Các hồ bơi khu đô thị và khu công nghiệp phục vụ công nhân viên, cư dân đô thị mới tại Nhơn Trạch.',
       venues: [
         {
           name: 'Hồ bơi Terra Flora Nhơn Trạch',
@@ -411,9 +411,9 @@ export const lamdongResearch = {
       ],
     },
     {
-      id: 'bao-loc-duc-trong',
-      label: 'Khu vực TP. Bảo Lộc & Đức Trọng',
-      description: 'Phục vụ cư dân khu vực phía nam tỉnh Lâm Đồng với khí hậu ôn hòa hơn.',
+      id: 'bao-loc',
+      label: 'Khu vực TP. Bảo Lộc',
+      description: 'Hệ thống hồ bơi phong trào và câu lạc bộ rèn luyện thể thao phục vụ cư dân và học sinh TP. Bảo Lộc.',
       venues: [
         {
           name: 'Hồ bơi Lộc Nga Bảo Lộc',
@@ -441,6 +441,13 @@ export const lamdongResearch = {
             },
           ],
         },
+      ],
+    },
+    {
+      id: 'duc-trong',
+      label: 'Khu vực Huyện Đức Trọng',
+      description: 'Các điểm bơi lội và lớp phổ cập bơi hè tại trung tâm thị trấn Liên Nghĩa và vùng lân cận huyện Đức Trọng.',
+      venues: [
         {
           name: 'Hồ bơi Dona Đức Trọng',
           address: 'Thị trấn Liên Nghĩa, huyện Đức Trọng, Lâm Đồng',
@@ -663,9 +670,9 @@ export const daklakResearch = {
       ],
     },
     {
-      id: 'gia-nghia-kon-tum',
-      label: 'Khu vực Gia Nghĩa (Đắk Nông) & Kon Tum',
-      description: 'Cơ sở bơi lội tại các trung tâm hành chính tỉnh Đắk Nông và Kon Tum.',
+      id: 'tp-kon-tum',
+      label: 'Khu vực TP. Kon Tum',
+      description: 'Hồ bơi 50m tiêu chuẩn thể thao huấn luyện và hồ bơi view sông Đắk Bla tại TP. Kon Tum.',
       venues: [
         {
           name: 'Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Kon Tum',
@@ -719,6 +726,13 @@ export const daklakResearch = {
             },
           ],
         },
+      ],
+    },
+    {
+      id: 'tp-gia-nghia',
+      label: 'Khu vực TP. Gia Nghĩa (Đắk Nông)',
+      description: 'Hồ bơi thể thao công lập và các lớp phổ cập bơi phòng chống đuối nước tại TP. Gia Nghĩa.',
+      venues: [
         {
           name: 'Bể bơi Trung tâm VHTT & TT TP. Gia Nghĩa (Đắk Nông)',
           address: 'Đường 23 Tháng 3, phường Nghĩa Đức, TP. Gia Nghĩa, Đắk Nông',
@@ -796,9 +810,9 @@ export const tayninhResearch = {
   groupingNote: 'Tây Ninh và Long An là cửa ngõ kết nối Đông Nam Bộ với miền Tây, có khí hậu nắng ấm quanh năm rất thích hợp cho việc học bơi ngoài trời và rèn luyện thể chất sinh tồn vùng sông nước.',
   categories: [
     {
-      id: 'tp-tay-ninh-hoa-thanh',
-      label: 'Khu vực Thành phố Tây Ninh & Hòa Thành',
-      description: 'Trung tâm tỉnh với hồ bơi bốn mùa 5 sao, tổ hợp thể thao hiện đại CANA và hồ bơi thanh thiếu nhi.',
+      id: 'tp-tay-ninh',
+      label: 'Khu vực TP. Tây Ninh',
+      description: 'Trung tâm tỉnh với hồ bơi bốn mùa 5 sao Meliá Vinpearl, Trung tâm Sinh hoạt Thanh Thiếu Nhi và hồ bơi dịch vụ Mai Anh.',
       venues: [
         {
           name: 'Hồ bơi Bốn Mùa Meliá Vinpearl Tây Ninh',
@@ -831,32 +845,6 @@ export const tayninhResearch = {
               courseTypes: 'Dạy bơi kèm riêng cho trẻ nhỏ và doanh nhân, bơi thư giãn chuẩn 5 sao',
               exactSourceUrl: 'https://www.melia.com/vi/hotels/vietnam/tay-ninh/melia-vinpearl-tay-ninh/services',
               sourceTitle: 'Meliá Vinpearl Tây Ninh: Lớp học bơi nước ấm bốn mùa',
-            },
-          ],
-        },
-        {
-          name: 'Hồ bơi CANA Tây Ninh',
-          address: 'Số 22 đường Lý Thường Kiệt, Thị xã Hòa Thành, Tây Ninh (TTTM & Giải trí CANA)',
-          area: 'Hòa Thành Tây Ninh', access: 'Tổ hợp thương mại giải trí', entityType: 'Hồ bơi thương mại chuẩn Châu Âu', environment: 'Ngoài trời',
-          services: 'Hồ bơi hiện đại ứng dụng công nghệ xử lý nước lọc cát tuần hoàn nhập khẩu từ Pháp, nước trong veo không hóa chất độc hại.',
-          detail: 'Không gian xanh mát, thường xuyên tổ chức các sự kiện thể thao dưới nước và lớp chiêu sinh dạy bơi phong trào hè.',
-          missing: 'Giờ mở cửa: 6h00 - 19h30 hàng ngày. Giá vé lượt tham khảo 40.000đ - 60.000đ.',
-          venueContact: {
-            role: 'Ban Quản Lý Tổ Hợp Thể Thao',
-            name: 'Bộ phận Lễ tân Hồ bơi CANA Tây Ninh',
-            phone: '0276 384 0099',
-            note: 'Số 22 đường Lý Thường Kiệt TX Hòa Thành, bán vé bơi và đăng ký bơi hè',
-            exactSourceUrl: 'https://cana.com.vn/dich-vu-the-thao/he-thong-ho-boi-chuan-chau-au-tai-cana-tay-ninh',
-            sourceTitle: 'CANA Tây Ninh: Hệ thống hồ bơi chuẩn châu Âu tại TTTM CANA Hòa Thành',
-          },
-          instructors: [
-            {
-              unitName: 'CLB Bơi Thể Thao CANA Hòa Thành',
-              contactPerson: 'Thầy Lê Văn Nam',
-              phone: '0918 456 789',
-              courseTypes: 'Lớp bơi hè thanh thiếu nhi, đào tạo kỹ thuật bơi ếch bơi sải trong làn nước lọc Pháp tuần hoàn',
-              exactSourceUrl: 'https://cana.com.vn/dich-vu-the-thao/he-thong-ho-boi-chuan-chau-au-tai-cana-tay-ninh',
-              sourceTitle: 'CANA Tây Ninh: Lớp dạy bơi thanh thiếu nhi',
             },
           ],
         },
@@ -909,6 +897,39 @@ export const tayninhResearch = {
               courseTypes: 'Dạy bơi kèm nhóm nhỏ cho học sinh và người lớn rèn luyện sức khỏe mỗi buổi chiều',
               exactSourceUrl: 'https://foody.vn/tay-ninh/ho-boi-dich-vu-mai-anh-pham-van-xuyen-4321.html',
               sourceTitle: 'Foody: Lớp học bơi Mai Anh Tây Ninh',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'tx-hoa-thanh',
+      label: 'Khu vực Thị xã Hòa Thành',
+      description: 'Tổ hợp thương mại giải trí CANA với hệ thống hồ bơi tiêu chuẩn Châu Âu và các lớp bơi phong trào.',
+      venues: [
+        {
+          name: 'Hồ bơi CANA Tây Ninh',
+          address: 'Số 22 đường Lý Thường Kiệt, Thị xã Hòa Thành, Tây Ninh (TTTM & Giải trí CANA)',
+          area: 'Hòa Thành Tây Ninh', access: 'Tổ hợp thương mại giải trí', entityType: 'Hồ bơi thương mại chuẩn Châu Âu', environment: 'Ngoài trời',
+          services: 'Hồ bơi hiện đại ứng dụng công nghệ xử lý nước lọc cát tuần hoàn nhập khẩu từ Pháp, nước trong veo không hóa chất độc hại.',
+          detail: 'Không gian xanh mát, thường xuyên tổ chức các sự kiện thể thao dưới nước và lớp chiêu sinh dạy bơi phong trào hè.',
+          missing: 'Giờ mở cửa: 6h00 - 19h30 hàng ngày. Giá vé lượt tham khảo 40.000đ - 60.000đ.',
+          venueContact: {
+            role: 'Ban Quản Lý Tổ Hợp Thể Thao',
+            name: 'Bộ phận Lễ tân Hồ bơi CANA Tây Ninh',
+            phone: '0276 384 0099',
+            note: 'Số 22 đường Lý Thường Kiệt TX Hòa Thành, bán vé bơi và đăng ký bơi hè',
+            exactSourceUrl: 'https://cana.com.vn/dich-vu-the-thao/he-thong-ho-boi-chuan-chau-au-tai-cana-tay-ninh',
+            sourceTitle: 'CANA Tây Ninh: Hệ thống hồ bơi chuẩn châu Âu tại TTTM CANA Hòa Thành',
+          },
+          instructors: [
+            {
+              unitName: 'CLB Bơi Thể Thao CANA Hòa Thành',
+              contactPerson: 'Thầy Lê Văn Nam',
+              phone: '0918 456 789',
+              courseTypes: 'Lớp bơi hè thanh thiếu nhi, đào tạo kỹ thuật bơi ếch bơi sải trong làn nước lọc Pháp tuần hoàn',
+              exactSourceUrl: 'https://cana.com.vn/dich-vu-the-thao/he-thong-ho-boi-chuan-chau-au-tai-cana-tay-ninh',
+              sourceTitle: 'CANA Tây Ninh: Lớp dạy bơi thanh thiếu nhi',
             },
           ],
         },

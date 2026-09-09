@@ -4,7 +4,7 @@ export const canthoResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ Cần Thơ (thủ phủ miền Tây) được tổng hợp từ các câu lạc bộ thể thao quân đội, trung tâm thể thao thành phố, hồ bơi trường đại học và các khu đô thị lớn tại Ninh Kiều, Bình Thủy, Cái Răng.',
-  groupingNote: 'Địa bàn dạy bơi tại Cần Thơ chia rõ rệt: cụm Ninh Kiều (trung tâm hành chính & thương mại), cụm Bình Thủy (khu thể thao Quân khu 9) và cụm Cái Răng (khu đô thị Nam Long, ĐH Nam Cần Thơ).',
+  groupingNote: 'Địa bàn dạy bơi tại Cần Thơ được phân tách độc lập theo từng quận: quận Ninh Kiều (trung tâm hành chính & thương mại), quận Bình Thủy (khu thể thao Quân khu 9) và quận Cái Răng (khu đô thị Nam Long, ĐH Nam Cần Thơ).',
   categories: [
     {
       id: 'ninh-kieu',
@@ -195,8 +195,8 @@ export const canthoResearch = {
       ],
     },
     {
-      id: 'cai-rang-nam-can-tho',
-      label: 'Khu vực Cái Răng & Nam Cần Thơ',
+      id: 'cai-rang',
+      label: 'Khu vực Quận Cái Răng',
       description: 'Khu vực đô thị mới với các hồ bơi trong khu đô thị sinh thái và khuôn viên trường đại học quốc tế.',
       venues: [
         {
@@ -339,9 +339,9 @@ export const dongthapResearch = {
   groupingNote: 'Hai tỉnh thuộc vùng rốn lũ miền Tây với hệ thống kênh rạch chằng chịt, kỹ năng bơi lội sinh tồn tự cứu và đứng nước là trang bị sống còn cho trẻ em. Danh bạ bao gồm TP. Cao Lãnh (Đồng Tháp) và TP. Mỹ Tho (Tiền Giang).',
   categories: [
     {
-      id: 'cao-lanh-sa-dec',
-      label: 'Khu vực Thành phố Cao Lãnh & Sa Đéc (Đồng Tháp)',
-      description: 'Trung tâm tỉnh Đồng Tháp với hồ bơi thể thao tiêu chuẩn và hồ bơi hoạt động thanh thiếu nhi chuyên trách.',
+      id: 'cao-lanh',
+      label: 'Khu vực Thành phố Cao Lãnh',
+      description: 'Trung tâm tỉnh Đồng Tháp với hồ bơi thể thao tiêu chuẩn tại Duy Tân và hồ bơi hoạt động thanh thiếu nhi chuyên trách tại Điện Biên Phủ.',
       venues: [
         {
           name: 'Hồ bơi Khu Liên Hợp TDTT Đồng Tháp',
@@ -610,7 +610,7 @@ export const vinhlongResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ bơi lội Vĩnh Long, Bến Tre và Trà Vinh được tổng hợp từ Sở VHTTDL các tỉnh, Hồ bơi Minh Anh Vĩnh Long, Hồ bơi muối khoáng LPHOME Bến Tre và Khu sinh thái Huỳnh Kha Trà Vinh.',
-  groupingNote: 'Ba tỉnh cù lao giữa sông Tiền và sông Hậu có mạng lưới kênh rạch dày đặc. Danh bạ bao quát các cơ sở tại TP. Vĩnh Long, TP. Bến Tre và TP. Trà Vinh.',
+  groupingNote: 'Ba tỉnh cù lao giữa sông Tiền và sông Hậu có mạng lưới kênh rạch dày đặc. Danh bạ được phân tách độc lập theo từng thành phố: TP. Vĩnh Long, TP. Bến Tre và TP. Trà Vinh.',
   categories: [
     {
       id: 'tp-vinh-long',
@@ -709,9 +709,9 @@ export const vinhlongResearch = {
       ],
     },
     {
-      id: 'ben-tre-tra-vinh',
-      label: 'Khu vực Bến Tre & Trà Vinh',
-      description: 'Thành phố Bến Tre và Trà Vinh với các hồ bơi công nghệ muối khoáng và tổ hợp sinh thái hiện đại.',
+      id: 'tp-ben-tre',
+      label: 'Khu vực Thành phố Bến Tre',
+      description: 'Thành phố Bến Tre với hồ bơi công nghệ muối khoáng LPHOME và hồ bơi thể thao Hoàng Lam phục vụ phổ cập bơi.',
       venues: [
         {
           name: 'Hồ bơi Muối Khoáng LPHOME Bến Tre',
@@ -775,6 +775,13 @@ export const vinhlongResearch = {
             }
           ]
         },
+      ],
+    },
+    {
+      id: 'tp-tra-vinh',
+      label: 'Khu vực Thành phố Trà Vinh',
+      description: 'Thành phố Trà Vinh với tổ hợp công viên nước sinh thái Huỳnh Kha và hồ bơi nhà thi đấu thể thao tỉnh cạnh Ao Bà Om.',
+      venues: [
         {
           name: 'Hồ bơi Khu Du Lịch Sinh Thái Huỳnh Kha Trà Vinh',
           address: 'Đường Chu Văn An, Phường 4, TP. Trà Vinh',
@@ -884,11 +891,11 @@ export const angiangResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ bơi lội An Giang và Kiên Giang được tổng hợp từ Sở VHTTDL hai tỉnh, Hồ bơi Yết Kiêu Long Xuyên, Công viên nước Sao Vàng và Hồ bơi Phú Cường Park tại Rạch Giá.',
-  groupingNote: 'Khu vực Tứ Giác Long Xuyên và duyên hải vịnh Thái Lan có hệ thống sông rạch và bờ biển dài. Danh bạ bao quát cơ sở bơi tại TP. Long Xuyên (An Giang) và TP. Rạch Giá (Kiên Giang).',
+  groupingNote: 'Khu vực Tứ Giác Long Xuyên và duyên hải vịnh Thái Lan có hệ thống sông rạch và bờ biển dài. Danh bạ được phân tách độc lập theo từng thành phố: TP. Long Xuyên và TP. Rạch Giá.',
   categories: [
     {
-      id: 'long-xuyen-an-giang',
-      label: 'Khu vực Thành phố Long Xuyên (An Giang)',
+      id: 'tp-long-xuyen',
+      label: 'Khu vực Thành phố Long Xuyên',
       description: 'Trung tâm tỉnh An Giang với hồ bơi thể thao thành phố, câu lạc bộ bơi truyền thống và công viên nước.',
       venues: [
         {
@@ -983,8 +990,8 @@ export const angiangResearch = {
       ],
     },
     {
-      id: 'rach-gia-kien-giang',
-      label: 'Khu vực Thành phố Rạch Giá (Kiên Giang)',
+      id: 'tp-rach-gia',
+      label: 'Khu vực Thành phố Rạch Giá',
       description: 'Thành phố biển Rạch Giá với hồ bơi khu đô thị lấn biển cao cấp và tổ hợp bơi trung tâm thương mại.',
       venues: [
         {
@@ -1123,7 +1130,7 @@ export const camauResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
   summary: 'Danh bạ bơi lội Cà Mau, Bạc Liêu và Sóc Trăng được tổng hợp từ Sở VHTTDL các tỉnh, Khách sạn Mường Thanh Luxury Cà Mau, Nhà Thiếu nhi Cà Mau, Hồ bơi Công Tử Bạc Liêu và TANK CLUB Sóc Trăng.',
-  groupingNote: 'Vùng đất cực Nam và bán đảo Cà Mau có hệ sinh thái rừng ngập mặn và mạng lưới sông ngòi chằng chịt. Kỹ năng bơi lội sinh tồn tự cứu là hành trang bắt buộc cho trẻ em vùng sông nước.',
+  groupingNote: 'Vùng đất cực Nam và bán đảo Cà Mau có hệ sinh thái rừng ngập mặn và mạng lưới sông ngòi chằng chịt. Danh bạ được phân tách độc lập theo từng thành phố: TP. Cà Mau, TP. Bạc Liêu và TP. Sóc Trăng.',
   categories: [
     {
       id: 'tp-ca-mau',
@@ -1249,9 +1256,9 @@ export const camauResearch = {
       ],
     },
     {
-      id: 'bac-lieu-soc-trang',
-      label: 'Khu vực Bạc Liêu & Sóc Trăng',
-      description: 'Hai tỉnh duyên hải Tây Nam Bộ với các hồ bơi đại học, tổ hợp thể thao hiện đại và nhà thiếu nhi.',
+      id: 'tp-bac-lieu',
+      label: 'Khu vực Thành phố Bạc Liêu',
+      description: 'Thành phố Bạc Liêu với hồ bơi vô cực khách sạn Công Tử Bạc Liêu và hồ bơi trường Đại học Bạc Liêu.',
       venues: [
         {
           name: 'Hồ bơi Khách sạn Công Tử Bạc Liêu',
@@ -1307,6 +1314,13 @@ export const camauResearch = {
             }
           ]
         },
+      ],
+    },
+    {
+      id: 'tp-soc-trang',
+      label: 'Khu vực Thành phố Sóc Trăng',
+      description: 'Thành phố Sóc Trăng với tổ hợp thể thao TANK CLUB hiện đại và hồ bơi Nhà thiếu nhi tỉnh.',
+      venues: [
         {
           name: 'Hồ bơi TANK CLUB Sóc Trăng',
           address: 'Đường Nguyễn Chí Thanh, Phường 6, TP. Sóc Trăng',

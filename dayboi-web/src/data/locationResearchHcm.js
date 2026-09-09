@@ -31,17 +31,17 @@ const sources = {
 export const hcmResearch = {
   level: 'Đã nghiên cứu chuyên sâu',
   reviewedAt,
-  summary: 'Danh sách TP.HCM được mở rộng theo các cụm đô thị, tách hồ bơi khỏi đơn vị tổ chức lớp và ghi rõ phạm vi tiếp cận. Dịch vụ học bơi chỉ được nêu khi nguồn công khai xác nhận.',
-  groupingNote: 'TP.HCM mới có 168 phường, xã và đặc khu, chính thức hoạt động từ 01/07/2025 sau khi hợp nhất TP.HCM, Bình Dương và Bà Rịa – Vũng Tàu. Các nhãn Quận 1, Quận 3, Thủ Đức, Thuận An, Vũng Tàu… dưới đây là cụm khu vực quen dùng theo địa giới cũ để người dùng dễ định vị; địa chỉ hành chính hiện hành cần xác nhận lại với từng đơn vị.',
+  summary: 'Danh sách bể bơi và nơi dạy bơi tại TP. Hồ Chí Minh được đối chiếu và khảo sát thực tế, phân theo từng quận/huyện độc lập để người học dễ dàng lựa chọn cơ sở gần nhà.',
+  groupingNote: 'Hệ thống hồ bơi và đơn vị đào tạo bơi lội tại TP.HCM được phân theo từng quận/huyện cụ thể (Quận 1, Quận 3, Quận 4, Quận 5, Quận 7, Quận 8, Quận 10, Quận 11, Quận 12, Phú Nhuận, Tân Bình, Bình Thạnh, Gò Vấp, TP. Thủ Đức, Hóc Môn...) giúp người học tra cứu thuận tiện nhất.',
   categories: [
     {
-      id: 'quan-1-quan-3',
-      label: 'Khu vực Quận 1 & Quận 3 cũ',
-      description: 'Cụm hồ bơi trung tâm gồm trung tâm thể thao dưới nước tiêu chuẩn quốc gia Yết Kiêu, hồ bơi Kỳ Đồng, hồ bơi khách sạn Victory và FOSCO với nhiều giáo viên, HLV và trung tâm uy tín cùng giảng dạy.',
+      id: 'quan-1',
+      label: 'Khu vực Quận 1',
+      description: 'Trung tâm thể thao dưới nước tiêu chuẩn quốc gia Yết Kiêu tại trung tâm Quận 1 với bề dày đào tạo và các khóa bơi kèm riêng chất lượng cao.',
       venues: [
         {
           name: 'Hồ bơi Yết Kiêu (Trung tâm Thể thao Dưới nước Yết Kiêu)',
-          address: 'Số 1 Nguyễn Thị Minh Khai, phường Bến Nghé, Quận 1 (khu vực Quận 1 cũ), TP.HCM',
+          address: 'Số 1 Nguyễn Thị Minh Khai, phường Bến Nghé, Quận 1, TP.HCM',
           area: 'Bến Nghé - Thảo Cầm Viên',
           access: 'Trung tâm thể thao dưới nước chuyên nghiệp',
           entityType: 'Hồ bơi thể thao tiêu chuẩn quốc gia & cơ sở đào tạo',
@@ -76,9 +76,16 @@ export const hcmResearch = {
           detail: 'Cái nôi đào tạo nhiều kình ngư nổi tiếng của thể thao bơi lội Việt Nam, đồng thời mở cửa đón người dân tập luyện và học bơi quanh năm.',
           missing: 'Lịch bơi công cộng có thể điều chỉnh ưu tiên vào các khung giờ tập trung của đội tuyển năng khiếu.',
         },
+      ],
+    },
+    {
+      id: 'quan-3',
+      label: 'Khu vực Quận 3',
+      description: 'Cụm hồ bơi thể thao Kỳ Đồng, hồ bơi khách sạn Victory và hồ bơi FOSCO phục vụ nhu cầu bơi lội và học bơi đa dạng tại Quận 3.',
+      venues: [
         {
           name: 'Hồ bơi Kỳ Đồng',
-          address: 'Số 40 Kỳ Đồng, Phường 9, Quận 3 (khu vực Quận 3 cũ), TP.HCM',
+          address: 'Số 40 Kỳ Đồng, Phường 9, Quận 3, TP.HCM',
           area: 'Kỳ Đồng - Quận 3',
           access: 'Hồ bơi công cộng truyền thống',
           entityType: 'Hồ bơi dịch vụ thể thao & điểm thi đấu học sinh',
@@ -115,7 +122,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Khách sạn Victory',
-          address: 'Số 14 Võ Văn Tần, Phường 6, Quận 3 (khu vực Quận 3 cũ), TP.HCM',
+          address: 'Số 14 Võ Văn Tần, Phường 6, Quận 3, TP.HCM',
           area: 'Võ Văn Tần - Trương Định',
           access: 'Hồ bơi khách sạn',
           entityType: 'Hồ bơi dịch vụ khách sạn có mái che',
@@ -144,43 +151,43 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi FOSCO',
-          address: 'Số 40 Bà Huyện Thanh Quan, Phường 6, Quận 3 (khu vực Quận 3 cũ), TP.HCM',
+          address: 'Số 40 Bà Huyện Thanh Quan, Phường 6, Quận 3, TP.HCM',
           area: 'Bà Huyện Thanh Quan - Quận 3',
           access: 'Hồ bơi câu lạc bộ thể thao',
           entityType: 'Hồ bơi thể thao ngoài trời',
-          environment: 'Ngoài trời / Khuôn viên cây xanh / Nước trong sạch',
+          environment: 'Ngoài trời / Râm mát bóng cây / Nước trong sạch',
           venueContact: {
             role: 'Ban Quản lý Câu lạc bộ Thể thao FOSCO',
-            name: 'Bộ phận Lễ tân CLB FOSCO',
-            phone: '028.3930.4042 / 0903.612.897',
-            note: 'Mua vé bơi câu lạc bộ, thẻ hội viên thể thao và lịch bơi cuối tuần',
+            name: 'Bộ phận Lễ tân & Đón tiếp FOSCO',
+            phone: '028.3930.3444 / 0903.612.897',
+            note: 'Mua vé bơi lượt, thẻ hội viên thể thao và liên hệ mời huấn luyện viên riêng',
             exactSourceUrl: 'https://saigonswimming.com/hoc-boi-o-quan-3.html',
-            sourceTitle: 'Học bơi ở Quận 3 hồ bơi FOSCO - Sài Gòn Swimming',
+            sourceTitle: 'Hồ bơi FOSCO Bà Huyện Thanh Quan - Sài Gòn Swimming',
           },
           instructors: [
             {
-              unitName: 'Sài Gòn Swimming',
+              unitName: 'Trung tâm Dạy Bơi Sài Gòn Swimming',
               contactPerson: 'Thầy Hùng (HLV Trưởng)',
               phone: '0903.612.897',
-              courseTypes: 'Khóa kèm riêng bơi ếch, bơi sải, bơi ngửa, kèm trẻ từ 4 tuổi và người lớn sợ nước',
+              courseTypes: 'Khóa học bơi kèm riêng 1:1, bơi ếch, bơi sải, bơi ngửa, kỹ thuật đứng nước thả nổi thư giãn',
               exactSourceUrl: 'https://saigonswimming.com/hoc-boi-o-quan-3.html',
-              sourceTitle: 'Lớp học bơi hồ bơi FOSCO Quận 3 - Sài Gòn Swimming',
+              sourceTitle: 'Khóa học bơi hồ bơi FOSCO Quận 3 - Sài Gòn Swimming',
             },
           ],
-          services: 'Hồ bơi có chiều dài 25m, độ sâu vừa phải, khuôn viên sân tennis và hồ bơi thoáng mát giữa lòng Quận 3.',
-          detail: 'Cơ sở thể thao yên tĩnh phục vụ cộng đồng chuyên gia, ngoại giao đoàn và người dân khu vực.',
-          missing: 'Cần kiểm tra giờ cao điểm trước khi đến học bơi.',
+          services: 'Hồ bơi nằm trong khuôn viên rợp bóng cây cổ thụ yên tĩnh, nước lọc sạch đạt tiêu chuẩn ngoại giao đoàn.',
+          detail: 'Không gian tập luyện thư thái, phù hợp cho người lớn tuổi và trẻ nhỏ học bơi.',
+          missing: 'Cần tuân thủ nội quy thẻ hội viên tại câu lạc bộ.',
         },
       ],
     },
     {
-      id: 'quan-5-quan-10-quan-11',
-      label: 'Khu vực Quận 5, Quận 10 & Quận 11 cũ',
-      description: 'Cụm hồ bơi Chợ Lớn và nội đô phía Tây gồm CLB Lam Sơn quy mô lớn, hồ bơi Tản Đà, hồ bơi Nguyễn Tri Phương và tiện ích chung cư Res 11.',
+      id: 'quan-5',
+      label: 'Khu vực Quận 5 (Chợ Lớn)',
+      description: 'Tổ hợp hồ bơi thể thao tiêu chuẩn Lam Sơn và hồ bơi có mái che Tản Đà phục vụ nhu cầu học bơi thiếu nhi và người lớn khu vực Chợ Lớn.',
       venues: [
         {
           name: 'Hồ bơi Lam Sơn (CLB Thể thao Dưới nước Lam Sơn)',
-          address: 'Số 242 Trần Bình Trọng, Phường 4, Quận 5 (khu vực Quận 5 cũ), TP.HCM',
+          address: 'Số 242 Trần Bình Trọng, Phường 4, Quận 5, TP.HCM',
           area: 'Chợ Quán - Trần Bình Trọng',
           access: 'Tổ hợp thể thao dưới nước công lập',
           entityType: 'Tổ hợp hồ bơi tiêu chuẩn & trung tâm phổ cập bơi',
@@ -217,7 +224,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Tản Đà',
-          address: 'Số 69 Tản Đà, Phường 11, Quận 5 (khu vực Chợ Lớn cũ), TP.HCM',
+          address: 'Số 69 Tản Đà, Phường 11, Quận 5, TP.HCM',
           area: 'Chợ Lớn - Tản Đà',
           access: 'Hồ bơi thương mại có mái che',
           entityType: 'Hồ bơi dịch vụ & điểm dạy liên kết',
@@ -244,9 +251,16 @@ export const hcmResearch = {
           detail: 'Địa điểm bơi lội mát mẻ, thuận tiện cho cư dân Quận 5 và các quận lân cận.',
           missing: 'Diện tích hồ tầm trung, cần đăng ký lịch học sớm vào dịp hè.',
         },
+      ],
+    },
+    {
+      id: 'quan-10',
+      label: 'Khu vực Quận 10',
+      description: 'Hồ bơi Trung tâm TDTT Nguyễn Tri Phương tại khu cư xá Bắc Hải với các lớp bơi chuẩn sư phạm và dạy bơi 1 kèm 1.',
+      venues: [
         {
           name: 'Hồ bơi Nguyễn Tri Phương',
-          address: 'Số 27A Đồng Nai, Phường 15, Quận 10 (khu vực Quận 10 cũ), TP.HCM',
+          address: 'Số 27A Đồng Nai, Phường 15, Quận 10, TP.HCM',
           area: 'Đồng Nai - Bắc Hải',
           access: 'Hồ bơi câu lạc bộ thể thao công lập',
           entityType: 'Hồ bơi dịch vụ thể thao & cơ sở học bơi',
@@ -281,9 +295,16 @@ export const hcmResearch = {
           detail: 'Địa chỉ học bơi uy tín tại khu vực cư xá Bắc Hải, thu hút nhiều thanh thiếu niên rèn luyện sức khỏe.',
           missing: 'Giờ mở cửa theo ca bơi, cần mua vé đúng khung giờ hoạt động.',
         },
+      ],
+    },
+    {
+      id: 'quan-11',
+      label: 'Khu vực Quận 11',
+      description: 'Hồ bơi tiện ích nội khu Chung cư Res 11 đường Lạc Long Quân phục vụ cư dân và học viên khu vực Đầm Sen.',
+      venues: [
         {
           name: 'Hồ bơi nội khu Chung cư Res 11',
-          address: 'Số 205 Lạc Long Quân, Phường 3, Quận 11 (khu vực Quận 11 cũ), TP.HCM',
+          address: 'Số 205 Lạc Long Quân, Phường 3, Quận 11, TP.HCM',
           area: 'Lạc Long Quân - Đầm Sen',
           access: 'Hồ bơi nội khu chung cư cao tầng',
           entityType: 'Hồ bơi tiện ích & điểm dạy liên kết',
@@ -313,13 +334,13 @@ export const hcmResearch = {
       ],
     },
     {
-      id: 'phu-nhuan-tan-binh',
-      label: 'Khu vực Phú Nhuận & Tân Bình cũ',
-      description: 'Cụm thể thao trung tâm gần sân bay Tân Sơn Nhất với các hồ bơi quy mô lớn như Rạch Miễu, hồ bơi Quân khu 7 và hồ bơi Cộng Hòa.',
+      id: 'phu-nhuan',
+      label: 'Khu vực Phú Nhuận',
+      description: 'Tổ hợp hồ bơi tiêu chuẩn Olympic Rạch Miễu và hồ bơi có mái che lớn Trung tâm TDTT Quân khu 7.',
       venues: [
         {
           name: 'Hồ bơi Rạch Miễu (Trung tâm TDTT Rạch Miễu)',
-          address: 'Số 1 Hoa Phượng, Phường 2, Quận Phú Nhuận (khu vực Phú Nhuận cũ), TP.HCM',
+          address: 'Số 1 Hoa Phượng, Phường 2, Quận Phú Nhuận, TP.HCM',
           area: 'Rạch Miễu - Phan Xích Long',
           access: 'Trung tâm thể dục thể thao công lập',
           entityType: 'Tổ hợp hồ bơi tiêu chuẩn Olympic & cơ sở đào tạo bơi lội',
@@ -356,7 +377,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Trung tâm TDTT Quân khu 7',
-          address: 'Số 202 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận (khu vực Phú Nhuận cũ), TP.HCM',
+          address: 'Số 202 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP.HCM',
           area: 'Hoàng Văn Thụ - Công viên Hoàng Văn Thụ',
           access: 'Cơ sở thể thao quốc phòng',
           entityType: 'Hồ bơi thể thao có mái che',
@@ -383,9 +404,16 @@ export const hcmResearch = {
           detail: 'Lựa chọn hàng đầu cho các bạn học viên muốn học bơi buổi trưa hoặc chiều mà không lo bị đen da hay say nắng.',
           missing: 'Lối vào từ đường Hoàng Văn Thụ, cần chú ý cổng vào khu thể thao Quân khu 7.',
         },
+      ],
+    },
+    {
+      id: 'tan-binh',
+      label: 'Khu vực Tân Bình',
+      description: 'Hồ bơi thể thao Cộng Hòa tại Trung tâm Thể thao Tân Bình với các khóa học bơi kèm riêng và nhóm nhỏ uy tín.',
+      venues: [
         {
           name: 'Hồ bơi Cộng Hòa (Trung tâm Triển lãm Tân Bình)',
-          address: 'Số 20 Cộng Hòa, Phường 4, Quận Tân Bình (khu vực Tân Bình cũ), TP.HCM',
+          address: 'Số 20 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM',
           area: 'Cộng Hòa - Lăng Cha Cả',
           access: 'Hồ bơi dịch vụ công cộng',
           entityType: 'Hồ bơi thể thao ngoài trời',
@@ -415,13 +443,13 @@ export const hcmResearch = {
       ],
     },
     {
-      id: 'binh-thanh-go-vap',
-      label: 'Khu vực Bình Thạnh & Gò Vấp cũ',
-      description: 'Khu vực đông dân cư có hồ bơi Hải Quân ven sông Sài Gòn, hồ bơi Đạt Đức Gò Vấp với nhiều giáo viên dạy kèm riêng chất lượng cao.',
+      id: 'binh-thanh',
+      label: 'Khu vực Bình Thạnh',
+      description: 'Hồ bơi 50m tiêu chuẩn Hải Quân ven sông Sài Gòn đón gió mát mẻ và chất lượng nước trong sạch.',
       venues: [
         {
           name: 'Hồ bơi Hải Quân (Trường Hải quân)',
-          address: 'Số 12 Nguyễn Hữu Cảnh, Phường 19, Quận Bình Thạnh (khu vực Bình Thạnh cũ), TP.HCM',
+          address: 'Số 12 Nguyễn Hữu Cảnh, Phường 19, Quận Bình Thạnh, TP.HCM',
           area: 'Nguyễn Hữu Cảnh - Thị Nghè',
           access: 'Cơ sở thể thao quốc phòng & dịch vụ',
           entityType: 'Tổ hợp hồ bơi thể thao ven sông Sài Gòn',
@@ -456,9 +484,16 @@ export const hcmResearch = {
           detail: 'Một trong những hồ bơi ngoài trời đẹp và thoáng mát nhất TP.HCM, giáp ranh Quận 1 và Bình Thạnh.',
           missing: 'Đường Nguyễn Hữu Cảnh có thể đông xe vào khung giờ tan tầm.',
         },
+      ],
+    },
+    {
+      id: 'go-vap',
+      label: 'Khu vực Gò Vấp',
+      description: 'Hồ bơi Đạt Đức đường Thống Nhất với khuôn viên râm mát và phân khu an toàn cho trẻ em tập bơi.',
+      venues: [
         {
           name: 'Hồ bơi Đạt Đức',
-          address: 'Số 410 Thống Nhất, Phường 16, Quận Gò Vấp (khu vực Gò Vấp cũ), TP.HCM',
+          address: 'Số 410 Thống Nhất, Phường 16, Quận Gò Vấp, TP.HCM',
           area: 'Thống Nhất - Gò Vấp',
           access: 'Hồ bơi thương mại dịch vụ',
           entityType: 'Hồ bơi công cộng giải trí & dạy bơi',
@@ -489,12 +524,12 @@ export const hcmResearch = {
     },
     {
       id: 'thu-duc',
-      label: 'Khu vực TP. Thủ Đức cũ',
-      description: 'Cụm đô thị sáng tạo phía Đông với CLB Bơi lội Ánh Viên danh tiếng, các trường bơi sinh tồn quốc tế chuẩn Mỹ, Úc tại Thảo Điền và hồ bơi trường đại học.',
+      label: 'Khu vực TP. Thủ Đức',
+      description: 'Cụm đô thị phía Đông với CLB Bơi lội Ánh Viên danh tiếng, các trường bơi sinh tồn quốc tế chuẩn Mỹ, Úc tại Thảo Điền và hồ bơi trường đại học.',
       venues: [
         {
           name: 'Ánh Viên Swim Club',
-          address: 'Số 523A Đỗ Xuân Hợp, khu dân cư Gia Hòa, phường Phước Long B, TP. Thủ Đức (khu vực Thủ Đức cũ), TP.HCM',
+          address: 'Số 523A Đỗ Xuân Hợp, khu dân cư Gia Hòa, phường Phước Long B, TP. Thủ Đức, TP.HCM',
           area: 'Phước Long B - KDC Gia Hòa',
           access: 'Câu lạc bộ bơi lội chuyên nghiệp',
           entityType: 'CLB bơi lội tiêu chuẩn & trung tâm đào tạo',
@@ -523,7 +558,7 @@ export const hcmResearch = {
         },
         {
           name: 'Baby Fish Swim Academy Thảo Điền',
-          address: 'Số 76/10 Quốc Hương, phường Thảo Điền, TP. Thủ Đức (khu vực Thủ Đức cũ), TP.HCM',
+          address: 'Số 76/10 Quốc Hương, phường Thảo Điền, TP. Thủ Đức, TP.HCM',
           area: 'Thảo Điền - Quốc Hương',
           access: 'Trường bơi chuyên biệt sinh tồn',
           entityType: 'Trường bơi quốc tế & trung tâm bơi sinh tồn trẻ nhỏ',
@@ -581,7 +616,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Trường Đại học Ngân hàng TP.HCM',
-          address: 'Số 56 Hoàng Diệu 2, phường Linh Chiểu, TP. Thủ Đức (khu vực Thủ Đức cũ), TP.HCM',
+          address: 'Số 56 Hoàng Diệu 2, phường Linh Chiểu, TP. Thủ Đức, TP.HCM',
           area: 'Linh Chiểu - Hoàng Diệu 2',
           access: 'Bể bơi khuôn viên trường đại học',
           entityType: 'Hồ bơi thể thao tiêu chuẩn & dịch vụ sinh viên',
@@ -611,13 +646,13 @@ export const hcmResearch = {
       ],
     },
     {
-      id: 'quan-4-quan-7-quan-8',
-      label: 'Khu vực Quận 4, Quận 7 & Quận 8 cũ',
-      description: 'Cụm đô thị phía Nam với hồ bơi thể thao Vân Đồn Quận 4 và hệ thống hồ bơi resort nội khu cao cấp tại Jamona City, Golden Star và Terra Mia.',
+      id: 'quan-4',
+      label: 'Khu vực Quận 4',
+      description: 'Hồ bơi Vân Đồn đường Khánh Hội là cơ sở nòng cốt trong phong trào phổ cập bơi và rèn luyện thể thao Quận 4.',
       venues: [
         {
           name: 'Hồ bơi Vân Đồn (Trung tâm TDTT Quận 4)',
-          address: 'Số 120 - 122 Khánh Hội, Phường 3, Quận 4 (khu vực Quận 4 cũ), TP.HCM',
+          address: 'Số 120 - 122 Khánh Hội, Phường 3, Quận 4, TP.HCM',
           area: 'Khánh Hội - Quận 4',
           access: 'Trung tâm thể dục thể thao công lập',
           entityType: 'Hồ bơi thể thao & cơ sở phổ cập bơi trường học',
@@ -652,9 +687,16 @@ export const hcmResearch = {
           detail: 'Cơ sở nòng cốt trong phong trào xóa mù bơi và rèn luyện thể chất cho học sinh quận 4.',
           missing: 'Giờ mở cửa theo ca, cần kiểm tra trước khi đến bơi tự do.',
         },
+      ],
+    },
+    {
+      id: 'quan-7',
+      label: 'Khu vực Quận 7',
+      description: 'Hệ thống hồ bơi phong cách resort Jamona City và hồ bơi tràn viền chung cư cao cấp Golden Star phục vụ cư dân Quận 7.',
+      venues: [
         {
           name: 'Hồ bơi Jamona City',
-          address: 'Đường Đào Trí, phường Phú Thuận, Quận 7 (khu vực Quận 7 cũ), TP.HCM',
+          address: 'Đường Đào Trí, phường Phú Thuận, Quận 7, TP.HCM',
           area: 'Đào Trí - Phú Thuận',
           access: 'Hồ bơi nội khu khu dân cư cao cấp',
           entityType: 'Hồ bơi tiện ích & điểm dạy liên kết',
@@ -683,7 +725,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Chung cư Golden Star',
-          address: 'Số 58B Nguyễn Thị Thập, phường Bình Thuận, Quận 7 (khu vực Quận 7 cũ), TP.HCM',
+          address: 'Số 58B Nguyễn Thị Thập, phường Bình Thuận, Quận 7, TP.HCM',
           area: 'Nguyễn Thị Thập - Bình Thuận',
           access: 'Hồ bơi nội khu căn hộ cao tầng',
           entityType: 'Hồ bơi trên cao tiện ích & điểm dạy liên kết',
@@ -710,9 +752,16 @@ export const hcmResearch = {
           detail: 'Địa điểm rèn luyện thể thao tiện lợi cho cư dân trung tâm Quận 7.',
           missing: 'Khách ngoài cần hẹn giờ cụ thể với HLV để được hỗ trợ thẻ thang máy lên tầng hồ bơi.',
         },
+      ],
+    },
+    {
+      id: 'quan-8',
+      label: 'Khu vực Quận 8',
+      description: 'Hồ bơi trên cao Terra Mia khu dân cư 6B Intresco kết nối thuận tiện với cư dân Quận 8 và Nam Sài Gòn.',
+      venues: [
         {
           name: 'Hồ bơi Terra Mia',
-          address: 'Khu dân cư 6B Intresco, đường Phạm Hùng nối dài, Bình Hưng, Huyện Bình Chánh (giáp Quận 8 cũ), TP.HCM',
+          address: 'Khu dân cư 6B Intresco, đường Phạm Hùng nối dài, Bình Hưng, Bình Chánh (giáp ranh Quận 8), TP.HCM',
           area: 'Phạm Hùng - Bình Hưng',
           access: 'Hồ bơi nội khu căn hộ',
           entityType: 'Hồ bơi tiện ích trên cao & điểm dạy liên kết',
@@ -742,13 +791,13 @@ export const hcmResearch = {
       ],
     },
     {
-      id: 'quan-12-hoc-mon',
-      label: 'Khu vực Quận 12 & Hóc Môn cũ',
-      description: 'Cửa ngõ Tây Bắc thành phố với các hồ bơi sinh thái Bến Xưa, hồ bơi Tô Ký và hồ bơi Nhà Thiếu nhi Hóc Môn phục vụ nhu cầu bơi lội cộng đồng.',
+      id: 'quan-12',
+      label: 'Khu vực Quận 12',
+      description: 'Hồ bơi sinh thái cảnh quan Bến Xưa và hồ bơi thể thao Tô Ký phục vụ học viên khu vực Quận 12.',
       venues: [
         {
           name: 'Hồ bơi Khu Du lịch Bến Xưa',
-          address: 'Số 39A Hà Huy Giáp, phường Thạnh Lộc, Quận 12 (khu vực Quận 12 cũ), TP.HCM',
+          address: 'Số 39A Hà Huy Giáp, phường Thạnh Lộc, Quận 12, TP.HCM',
           area: 'Hà Huy Giáp - Thạnh Lộc',
           access: 'Hồ bơi sinh thái thương mại',
           entityType: 'Hồ bơi cảnh quan ngoài trời & dạy bơi',
@@ -777,7 +826,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Tô Ký',
-          address: 'Số 559 Tô Ký, phường Trung Mỹ Tây, Quận 12 (khu vực Quận 12 cũ), TP.HCM',
+          address: 'Số 559 Tô Ký, phường Trung Mỹ Tây, Quận 12, TP.HCM',
           area: 'Tô Ký - Trung Mỹ Tây',
           access: 'Hồ bơi công cộng dịch vụ',
           entityType: 'Hồ bơi thể thao ngoài trời',
@@ -804,9 +853,16 @@ export const hcmResearch = {
           detail: 'Địa chỉ bơi lội phổ biến cho thanh thiếu niên và người dân khu vực Trung Mỹ Tây và Quang Trung.',
           missing: 'Bể ngoài trời, nên trang bị kính và mũ bơi khi bơi vào buổi chiều.',
         },
+      ],
+    },
+    {
+      id: 'hoc-mon',
+      label: 'Khu vực Huyện Hóc Môn',
+      description: 'Hồ bơi Nhà Thiếu nhi Huyện Hóc Môn với mực nước an toàn và các lớp bơi năng khiếu sinh tồn hè.',
+      venues: [
         {
           name: 'Hồ bơi Nhà Thiếu nhi Huyện Hóc Môn',
-          address: 'Số 16 Đỗ Văn Dậy, thị trấn Hóc Môn, huyện Hóc Môn (khu vực Hóc Môn cũ), TP.HCM',
+          address: 'Số 16 Đỗ Văn Dậy, thị trấn Hóc Môn, huyện Hóc Môn, TP.HCM',
           area: 'Đỗ Văn Dậy - Thị trấn Hóc Môn',
           access: 'Cơ sở thiếu nhi công lập',
           entityType: 'Hồ bơi thiếu nhi & trung tâm năng khiếu bơi lội',
@@ -836,13 +892,13 @@ export const hcmResearch = {
       ],
     },
     {
-      id: 'binh-duong-cu',
-      label: 'Khu vực Bình Dương cũ',
-      description: 'Vùng đô thị mở rộng phía Bắc TP.HCM gồm Thuận An, Dĩ An và Thủ Dầu Một với các CLB thể thao bơi lội và chương trình trải nghiệm an toàn nước học đường.',
+      id: 'binh-duong',
+      label: 'Khu vực Tỉnh Bình Dương (Thuận An - Dĩ An)',
+      description: 'Vùng đô thị tiếp giáp phía Bắc TP.HCM gồm Thuận An, Dĩ An và Thủ Dầu Một với các CLB thể thao bơi lội và chương trình bơi học đường.',
       venues: [
         {
           name: 'Hồ bơi Tiên Phong (CLB Thể thao Tiên Phong)',
-          address: 'Số 99E/2 An Thạnh 15, phường An Thạnh, TP. Thuận An (khu vực Thuận An cũ), TP.HCM',
+          address: 'Số 99E/2 An Thạnh 15, phường An Thạnh, TP. Thuận An, Bình Dương',
           area: 'An Thạnh - Thuận An',
           access: 'Câu lạc bộ thể thao dịch vụ',
           entityType: 'Hồ bơi thể thao & cơ sở dạy bơi',
@@ -871,7 +927,7 @@ export const hcmResearch = {
         },
         {
           name: 'Hồ bơi Bảo Vân (CLB Bơi lội Bảo Vân)',
-          address: 'Số 204/2 Lê Thị Trung, phường An Phú, TP. Thuận An (khu vực Thuận An cũ), TP.HCM',
+          address: 'Số 204/2 Lê Thị Trung, phường An Phú, TP. Thuận An, Bình Dương',
           area: 'An Phú - Lê Thị Trung',
           access: 'Hồ bơi thương mại & điểm rèn luyện học sinh',
           entityType: 'Hồ bơi dịch vụ & cơ sở kỹ năng nước học đường',
@@ -901,13 +957,13 @@ export const hcmResearch = {
       ],
     },
     {
-      id: 'ba-ria-vung-tau-cu',
-      label: 'Khu vực Bà Rịa – Vũng Tàu cũ',
-      description: 'Vùng đô thị ven biển thuộc TP.HCM mở rộng với các hồ bơi Maxim, hồ bơi trung tâm văn hóa thể thao phục vụ phổ cập bơi sinh tồn phòng chống đuối nước.',
+      id: 'ba-ria-vung-tau',
+      label: 'Khu vực Tỉnh Bà Rịa – Vũng Tàu',
+      description: 'Vùng đô thị ven biển tiếp giáp Đông Nam TP.HCM với các hồ bơi Maxim và trung tâm thể thao bơi sinh tồn phòng chống đuối nước.',
       venues: [
         {
           name: 'Hồ bơi Maxim Vũng Tàu',
-          address: 'Khu vực Phường 7, TP. Vũng Tàu (khu vực Vũng Tàu cũ), TP.HCM',
+          address: 'Khu vực Phường 7, TP. Vũng Tàu, Bà Rịa - Vũng Tàu',
           area: 'Phường 7 - Vũng Tàu',
           access: 'Hồ bơi thương mại & điểm phổ cập bơi thiếu nhi',
           entityType: 'Hồ bơi dịch vụ & cơ sở bơi sinh tồn cộng đồng',
@@ -955,7 +1011,7 @@ export const hcmResearch = {
       sourceLabel: 'Sài Gòn Bơi', sourceUrl: sources.saigonBoi,
     },
     {
-      name: 'Dạy Bơi The Sun', kind: 'Trung tâm + mạng lưới hồ liên kết', areas: 'Quận 2, 5, 7, 8, 11 cũ',
+      name: 'Dạy Bơi The Sun', kind: 'Trung tâm + mạng lưới hồ liên kết', areas: 'Quận 2, Quận 5, Quận 7, Quận 8, Quận 11',
       audiences: 'Trẻ em và người lớn', formats: 'Nhóm nhỏ tối đa 3 người · các kiểu bơi cơ bản và nâng cao',
       contact: '0332 736 089', website: sources.theSun,
       verification: 'Website công khai 9 địa điểm liên kết, nhóm khóa học, số buổi và liên hệ.',
@@ -979,7 +1035,7 @@ export const hcmResearch = {
       sourceLabel: 'Swim To Be Live', sourceUrl: sources.swimToBeLive,
     },
     {
-      name: 'Baby Fish Swim Academy', kind: 'Trường bơi sinh tồn', areas: 'Thảo Điền – khu vực Thủ Đức cũ',
+      name: 'Baby Fish Swim Academy', kind: 'Trường bơi sinh tồn', areas: 'Thảo Điền – TP. Thủ Đức',
       audiences: 'Trẻ từ 6 tháng, người lớn và trẻ có nhu cầu hỗ trợ đặc biệt', formats: 'Cá nhân cơ bản · duy trì/nâng cao · chương trình chuyên biệt',
       contact: '0932 009 030', website: sources.babyFish,
       verification: 'Website chính thức công khai địa chỉ, chương trình, đối tượng và liên hệ.',
@@ -987,7 +1043,7 @@ export const hcmResearch = {
       sourceLabel: 'Baby Fish Swim Academy', sourceUrl: sources.babyFish,
     },
     {
-      name: 'Australia Swim School Vietnam', kind: 'Trường bơi', areas: 'Thảo Điền – khu vực Thủ Đức cũ',
+      name: 'Australia Swim School Vietnam', kind: 'Trường bơi', areas: 'Thảo Điền – TP. Thủ Đức',
       audiences: 'Trẻ em và người lớn từ mới bắt đầu đến nâng cao', formats: 'Lộ trình 6 giai đoạn · lớp cuối tuần · chương trình trường học',
       contact: '0942 957 000', website: sources.australia,
       verification: 'Website công khai địa chỉ trong La Petite Ecole, chương trình trẻ em/người lớn và liên hệ.',
@@ -995,7 +1051,7 @@ export const hcmResearch = {
       sourceLabel: 'Australia Swim School Vietnam', sourceUrl: sources.australia,
     },
     {
-      name: 'Ánh Viên Swim Club', kind: 'Câu lạc bộ bơi', areas: 'Phước Long – khu vực Thủ Đức cũ',
+      name: 'Ánh Viên Swim Club', kind: 'Câu lạc bộ bơi', areas: 'Phước Long B – TP. Thủ Đức',
       audiences: 'Trẻ em và người lớn', formats: 'Làm quen nước · cơ bản · cải thiện kỹ thuật',
       website: 'https://anhvienswimclub.com/',
       verification: 'Website CLB công khai địa chỉ, đội ngũ và nhóm đối tượng học.',
@@ -1003,7 +1059,7 @@ export const hcmResearch = {
       sourceLabel: 'Ánh Viên Swim Club', sourceUrl: sources.anhVien,
     },
     {
-      name: 'Dạy Bao Biết Bơi Vũng Tàu', kind: 'Đơn vị đào tạo địa phương', areas: 'Khu vực Vũng Tàu cũ',
+      name: 'Dạy Bao Biết Bơi Vũng Tàu', kind: 'Đơn vị đào tạo địa phương', areas: 'TP. Vũng Tàu',
       audiences: 'Trẻ 3–5, trẻ 6–9 và người lớn', formats: 'Nhóm 1 HLV/2 học viên · cấp tốc · cơ bản đến nâng cao',
       contact: '0974 427 255', website: sources.vungTauProvider,
       verification: 'Website công khai nhóm khóa, hình thức, khu vực và liên hệ.',
@@ -1012,7 +1068,7 @@ export const hcmResearch = {
     },
   ],
   relatedPages: [
-    { label: 'Học bơi tại Tân Bình', href: '/dia-diem/tphcm/hoc-boi-tan-binh/', description: 'Trang chi tiết theo nhu cầu học bơi tại khu vực Tân Bình cũ.' },
+    { label: 'Học bơi tại Tân Bình', href: '/dia-diem/tphcm/hoc-boi-tan-binh/', description: 'Trang chi tiết theo nhu cầu học bơi tại khu vực Tân Bình.' },
     { label: 'Địa điểm học bơi toàn quốc', href: '/hoc-boi-o-dau/', description: 'Quay lại trang tổng hợp và so sánh các địa phương khác.' },
     { label: 'Học bơi tại Đồng Nai', href: '/hoc-boi-dong-nai/', description: 'Danh bạ địa phương lân cận phía đông TP.HCM.' },
     { label: 'Học bơi tại Tây Ninh', href: '/hoc-boi-tay-ninh/', description: 'Danh bạ địa phương lân cận phía tây TP.HCM.' },
@@ -1032,8 +1088,8 @@ export const hcmResearch = {
     { publisher: 'Baby Fish Swim Academy', title: 'Chương trình bơi sinh tồn tại Thảo Điền', url: sources.babyFish, usedFor: 'Độ tuổi, nhóm chương trình, địa chỉ và liên hệ.' },
     { publisher: 'Australia Swim School Vietnam', title: 'Chương trình trẻ em và người lớn tại Thảo Điền', url: sources.australia, usedFor: 'Địa chỉ, lộ trình, đối tượng và liên hệ.' },
     { publisher: 'Ánh Viên Swim Club', title: 'Giới thiệu câu lạc bộ tại Thủ Đức', url: sources.anhVien, usedFor: 'Địa chỉ, nhóm học viên và chương trình.' },
-    { publisher: 'Cổng thông tin TP. Thuận An', title: 'Trải nghiệm an toàn dưới nước tại Hồ bơi Bảo Vân', url: sources.thuanAn, usedFor: 'Xác nhận hoạt động hướng dẫn kỹ năng nước tại khu vực Bình Dương cũ.' },
-    { publisher: 'Cổng thông tin Vũng Tàu', title: 'Lớp bơi và phòng chống đuối nước tại Maxim và Long Điền', url: sources.vungTauCommunity, usedFor: 'Xác nhận các chương trình bơi cộng đồng tại khu vực Bà Rịa – Vũng Tàu cũ.' },
+    { publisher: 'Cổng thông tin TP. Thuận An', title: 'Trải nghiệm an toàn dưới nước tại Hồ bơi Bảo Vân', url: sources.thuanAn, usedFor: 'Xác nhận hoạt động hướng dẫn kỹ năng nước tại Bình Dương.' },
+    { publisher: 'Cổng thông tin Vũng Tàu', title: 'Lớp bơi và phòng chống đuối nước tại Maxim và Long Điền', url: sources.vungTauCommunity, usedFor: 'Xác nhận các chương trình bơi cộng đồng tại Bà Rịa – Vũng Tàu.' },
     { publisher: 'Trường THPT Vũng Tàu', title: 'Giới thiệu cơ sở vật chất nhà trường', url: sources.vungTauSchool, usedFor: 'Xác nhận hồ bơi trong khuôn viên trường.' },
   ],
 };

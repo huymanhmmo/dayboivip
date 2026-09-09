@@ -8,7 +8,7 @@ export const quangninhResearch = {
   categories: [
     {
       id: 'ha-long-trung-tam',
-      label: 'Khu vực TP. Hạ Long (Hòn Gai & Bãi Cháy & Đại Yên)',
+      label: 'Khu vực TP. Hạ Long',
       description: 'Cụm thể thao quốc tế Đại Yên, bể bơi bốn mùa trong nhà và các tổ hợp căn hộ cao cấp ven vịnh.',
       venues: [
         {
