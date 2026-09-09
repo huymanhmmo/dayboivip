@@ -13,11 +13,11 @@ Các vấn đề ưu tiên cao đã xử lý:
 3. Gom toàn bộ từ khóa kiểu bơi của một khu vực vào một landing page, sau đó liên kết sang hub kỹ thuật tương ứng để tránh cannibalization.
 4. Sửa tiêu đề toàn site để không lặp thương hiệu và giảm tình trạng title quá dài.
 5. Đưa “Học bơi” thành nhóm điều hướng cấp một, tách rõ với “Kỹ thuật”, “Địa điểm” và “Kiến thức”.
-6. Sửa dữ liệu Aqua-Tots Gia Lâm về đúng số cơ sở và URL nguồn chi tiết; loại listing Swim For Life nhận học viên lẻ vì mâu thuẫn với mô hình danh bạ độc lập.
+6. Sửa dữ liệu Aqua-Tots Gia Lâm và Cầu Giấy theo trang cơ sở chính thức; loại listing tự dẫn nguồn hoặc chưa chứng minh được dịch vụ dạy bơi.
 7. Đặt `noindex, follow` cho các trang lưu trữ thẻ mỏng; bài viết và danh mục chính vẫn được crawl qua liên kết nội bộ nhưng sitemap không bị pha loãng.
 8. Đồng bộ taxonomy blog với danh mục thực tế và sửa slug/canonical bài lớp người lớn, loại bỏ mạng liên kết trỏ tới các URL không tồn tại.
 
-Kết quả crawl cuối có 140 trang indexable; tất cả đều có title, meta description, canonical riêng, đúng một H1 và đúng một landmark `main`. Không phát hiện title, description trùng hoàn toàn hoặc liên kết nội bộ hỏng. Audit ban đầu phát hiện 75 output có thẻ `main` lồng nhau, 133 title dài hơn 60 ký tự và 41 description nằm ngoài khoảng 120–170 ký tự. Chín template gây lồng `main` đã được sửa; chuẩn hóa title toàn cục giảm title dài từ 133 xuống 20, còn số description ngoài khoảng mục tiêu giảm từ 41 xuống 18 sau khi loại tag archive mỏng khỏi chỉ mục và sửa taxonomy. Các outlier còn lại cần được biên tập dần theo từng trang thay vì cắt máy móc.
+Kết quả build hiện có 169 route và 13 landing page quận/huyện Hà Nội qua cổng chất lượng. Audit output kiểm 186 tệp HTML, không phát hiện liên kết nội bộ hỏng; toàn bộ landing page đều có trong sitemap, title và meta description đúng ngưỡng, canonical riêng, đúng một H1 và schema CollectionPage/ItemList/FAQPage. Audit toàn site trước đó có 140 trang indexable, không có title hoặc description trùng hoàn toàn. Các outlier metadata còn lại thuộc nhóm trang cũ và cần được biên tập dần theo từng trang thay vì cắt máy móc.
 
 ## 2. Cây website mục tiêu
 
@@ -38,11 +38,19 @@ Trang chủ (/)
 │   └── Đứng nước (/ky-thuat-boi/ky-nang-dung-nuoc/)
 ├── Địa điểm (/hoc-boi-o-dau/)
 │   ├── Hà Nội (/hoc-boi-ha-noi/)
+│   │   ├── Ba Đình (/hoc-boi-ha-noi/ba-dinh/)
+│   │   ├── Hai Bà Trưng (/hoc-boi-ha-noi/hai-ba-trung/)
+│   │   ├── Đống Đa (/hoc-boi-ha-noi/dong-da/)
+│   │   ├── Thanh Xuân (/hoc-boi-ha-noi/thanh-xuan/)
+│   │   ├── Cầu Giấy (/hoc-boi-ha-noi/cau-giay/)
 │   │   ├── Gia Lâm (/hoc-boi-ha-noi/gia-lam/)
 │   │   ├── Long Biên (/hoc-boi-ha-noi/long-bien/)
 │   │   ├── Hoàng Mai (/hoc-boi-ha-noi/hoang-mai/)
 │   │   ├── Nam Từ Liêm (/hoc-boi-ha-noi/nam-tu-liem/)
-│   │   └── Tây Hồ (/hoc-boi-ha-noi/tay-ho/)
+│   │   ├── Tây Hồ (/hoc-boi-ha-noi/tay-ho/)
+│   │   ├── Bắc Từ Liêm (/hoc-boi-ha-noi/bac-tu-liem/)
+│   │   ├── Thanh Trì (/hoc-boi-ha-noi/thanh-tri/)
+│   │   └── Hà Đông (/hoc-boi-ha-noi/ha-dong/)
 │   ├── TP.HCM (/hoc-boi-tphcm/)
 │   ├── Đà Nẵng (/hoc-boi-da-nang/)
 │   └── 31 tỉnh/thành còn lại
@@ -79,12 +87,13 @@ graph TD
     LOCATIONS --> HANOI[Hà Nội]
     LOCATIONS --> HCM[TP.HCM]
     LOCATIONS --> PROVINCES[32 tỉnh thành khác]
-    HANOI --> GIALAM[Gia Lâm]
-    HANOI --> LONGBIEN[Long Biên]
-    HANOI --> HOANGMAI[Hoàng Mai]
-    HANOI --> NAMTULIEM[Nam Từ Liêm]
-    HANOI --> TAYHO[Tây Hồ]
+    HANOI --> CENTRAL[Ba Đình · Hai Bà Trưng · Đống Đa]
+    HANOI --> WEST[Cầu Giấy · Nam/Bắc Từ Liêm · Hà Đông]
+    HANOI --> SOUTH[Thanh Xuân · Hoàng Mai · Thanh Trì]
+    HANOI --> EAST[Long Biên · Gia Lâm]
+    HANOI --> NORTH[Tây Hồ]
 
+    EAST --> GIALAM[Gia Lâm]
     GIALAM --> BREAST
     GIALAM --> CRAWL
     GIALAM --> BACK
@@ -101,7 +110,7 @@ graph TD
 | Học bơi Hà Nội | `/hoc-boi-ha-noi/` | Danh bạ | Header dropdown | Cao |
 | Học bơi Gia Lâm | `/hoc-boi-ha-noi/gia-lam/` | Hà Nội | Hub, tỉnh, footer | Cao |
 | Học bơi Long Biên | `/hoc-boi-ha-noi/long-bien/` | Hà Nội | Hub, tỉnh, footer | Cao |
-| Các quận đã kiểm nguồn | `/hoc-boi-ha-noi/{quan-huyen}/` | Hà Nội | Hub, tỉnh, liên kết chéo | Trung bình |
+| 11 quận/huyện Hà Nội còn lại | `/hoc-boi-ha-noi/{quan-huyen}/` | Hà Nội | Hub, tỉnh, liên kết chéo theo địa lý | Cao |
 | Kiến thức | `/tin-tuc/` | Trang chủ | Header | Trung bình |
 
 Các URL ngắn như `/hoc-boi-gia-lam/` được 301 sang URL phân cấp để vừa giữ khả năng truy cập theo thói quen vừa duy trì một canonical duy nhất.
@@ -131,14 +140,14 @@ Các quận/huyện chưa đạt cổng vẫn xuất hiện dưới dạng nhóm
 ## 7. Navigation spec
 
 - Header: Trang chủ → Học bơi → Kỹ thuật bơi → Địa điểm → Về chúng tôi → Kiến thức → CTA hợp tác.
-- Footer: Chương trình tổ chức, kỹ thuật bơi và địa điểm nổi bật; Gia Lâm và Long Biên được liên kết trực tiếp.
+- Footer: Chương trình tổ chức, kỹ thuật bơi và các landing page địa điểm nổi bật.
 - Breadcrumb địa phương: Trang chủ → Địa điểm → Hà Nội → Quận/huyện.
 - Trang tỉnh/thành: liên kết đến landing page quận/huyện đủ chất lượng; khu vực chưa đủ dữ liệu vẫn dùng anchor.
-- Trang quận/huyện: liên kết ngược về Hà Nội, liên kết chéo bốn quận khác và liên kết sang bốn hub kỹ thuật.
+- Trang quận/huyện: liên kết ngược về Hà Nội, liên kết chéo bốn quận gần hoặc có hành trình phù hợp và liên kết sang bốn hub kỹ thuật.
 
 ## 8. Việc tiếp theo theo thứ tự ưu tiên
 
-1. Hoàn thiện nguồn chi tiết cho Ba Đình, Hai Bà Trưng, Đống Đa, Thanh Xuân, Cầu Giấy, Bắc Từ Liêm, Thanh Trì và Hà Đông để mở khóa landing page.
-2. Áp dụng cùng cổng chất lượng cho quận/huyện TP.HCM; hợp nhất URL Tân Bình hiện tại vào cây `/hoc-boi-tphcm/tan-binh/` bằng 301 khi dữ liệu đạt chuẩn.
+1. Áp dụng cùng cổng chất lượng cho quận/huyện TP.HCM; hợp nhất URL Tân Bình hiện tại vào cây `/hoc-boi-tphcm/tan-binh/` bằng 301 khi dữ liệu đạt chuẩn.
+2. Bổ sung kiểm tra định kỳ trạng thái HTTP và ngày xác minh của từng nguồn ngoài để phát hiện URL chết hoặc thông tin cũ.
 3. Dùng Google Search Console theo dõi coverage, query/click của từng tầng URL và phát hiện cannibalization.
 4. Đo Core Web Vitals sau triển khai, ưu tiên LCP của hero và tổng kích thước CSS ở landing page địa phương.

@@ -18,7 +18,7 @@ const venues = area.category.venues;
 const instructors = venues.flatMap((venue) => venue.instructors || []);
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
-const title = `Học Bơi ${area.name}: Lớp Học Bơi Uy Tín`;
+const title = `Học Bơi ${area.name}, Hà Nội: Lớp Uy Tín`;
 const description = `Tìm lớp học bơi, nơi dạy bơi và bể bơi tại ${area.name}, Hà Nội. So sánh ${venues.length} địa điểm có nguồn, liên hệ trực tiếp và chọn lớp phù hợp. Có lưu ý trước khi đăng ký.`;
 
 const techniques = [
@@ -67,7 +67,9 @@ const faqs = [
   },
 ];
 
-const relatedAreas = publishedLocationAreas.filter((item) => item.url !== area.url).slice(0, 4);
+const relatedAreas = (area.relatedSlugs || [])
+  .map((slug) => publishedLocationAreas.find((item) => item.slug === slug))
+  .filter(Boolean);
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Địa điểm', href: '/hoc-boi-o-dau/' },
@@ -176,7 +178,7 @@ const schema = {
               <div class="area-venue__contacts">
                 {venue.venueContact && (
                   <section>
-                    <span>Ban quản lý / quầy vé</span>
+                    <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
                     <h4>{venue.venueContact.name}</h4>
                     <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
                     {venue.venueContact.note && <p>{venue.venueContact.note}</p>}
