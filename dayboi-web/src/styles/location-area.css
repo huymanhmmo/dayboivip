@@ -36,6 +36,20 @@
   gap: clamp(2rem, 7vw, 6rem);
 }
 
+.area-tree-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, .56);
+  font-size: .75rem;
+}
+
+.area-tree-path a { color: #8cebf3; }
+.area-tree-path a:hover,
+.area-tree-path strong { color: var(--white); }
+
 .area-eyebrow,
 .area-section__heading > span,
 .area-hero__summary > span {
@@ -162,4 +176,3 @@
 @media (max-width: 480px) {
   .area-related__grid { grid-template-columns: 1fr; }
 }
-

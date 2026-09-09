@@ -53,7 +53,7 @@ const discoveryLinks = [
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Địa điểm', href: '/hoc-boi-o-dau/' },
+  { label: 'Toàn quốc', href: '/hoc-boi-o-dau/' },
   { label: loc.name },
 ];
 
@@ -89,7 +89,10 @@ const directorySchema = {
     <section class="local-directory__hero">
       <div class="container local-directory__hero-grid">
         <div>
-          <span class="local-directory__eyebrow">Tìm lớp học bơi tại {loc.region}</span>
+          <nav class="local-directory__tree-path" aria-label="Vị trí trong danh bạ">
+            <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><strong>{loc.name}</strong><span>›</span><small>{categories.length} khu vực</small>
+          </nav>
+          <span class="local-directory__eyebrow">Tỉnh, thành phố · {loc.region}</span>
           <h1>Học bơi tại <span>{loc.name}</span>: bể bơi, lớp học & nơi dạy bơi</h1>
           <p>Tìm bể bơi, câu lạc bộ hoặc giáo viên dạy bơi tại {loc.name}; xem địa chỉ, đối tượng nhận học và cách liên hệ. Bạn cũng có thể chọn hướng dẫn bơi ếch, bơi sải, bơi ngửa hoặc bơi bướm theo mục tiêu của mình.</p>
           <div class={`local-directory__research-status ${research ? 'is-reviewed' : ''}`}>

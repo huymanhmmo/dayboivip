@@ -81,7 +81,7 @@ const relatedAreas = (area.relatedSlugs || [])
   .filter(Boolean);
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Địa điểm', href: '/hoc-boi-o-dau/' },
+  { label: 'Toàn quốc', href: '/hoc-boi-o-dau/' },
   { label: area.parentName, href: `/${area.parentSlug}/` },
   { label: area.name },
 ];
@@ -132,6 +132,9 @@ const schema = {
     <header class="area-hero">
       <div class="container area-hero__grid">
         <div class="area-hero__content">
+          <nav class="area-tree-path" aria-label="Vị trí trong danh bạ">
+            <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${area.parentSlug}/`}>{area.parentName}</a><span>›</span><strong>{area.name}</strong>
+          </nav>
           <span class="area-eyebrow">Thông tin học bơi tại {area.seoPlace} · cập nhật {area.reviewedAt}</span>
           <h1>Học bơi ở <span>{area.name}</span>: địa điểm và lớp học phù hợp</h1>
           <p>{customerCopy(area.category.description)} {customerCopy(area.audienceFocus)}</p>

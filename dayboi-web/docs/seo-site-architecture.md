@@ -8,7 +8,7 @@ Website là mô hình lai gồm: năng lực đào tạo cho tổ chức, nội 
 
 Các vấn đề ưu tiên cao đã xử lý:
 
-1. Tạo cấu trúc địa điểm ba tầng: hub toàn quốc → tỉnh/thành → quận/huyện.
+1. Tạo cấu trúc địa điểm ba tầng: hub toàn quốc → tỉnh/thành → quận/huyện hoặc cụm địa phương.
 2. Chỉ xuất bản trang quận/huyện khi qua cổng chất lượng dữ liệu; không sinh hàng loạt trang chỉ thay tên địa phương.
 3. Gom toàn bộ từ khóa kiểu bơi của một khu vực vào một landing page, sau đó liên kết sang hub kỹ thuật tương ứng để tránh cannibalization.
 4. Sửa tiêu đề toàn site để không lặp thương hiệu và giảm tình trạng title quá dài.
@@ -36,7 +36,7 @@ Trang chủ (/)
 │   ├── Bơi ngửa (/ky-thuat-boi/hoc-boi-ngua/)
 │   ├── Bơi bướm (/ky-thuat-boi/hoc-boi-buom/)
 │   └── Đứng nước (/ky-thuat-boi/ky-nang-dung-nuoc/)
-├── Địa điểm (/hoc-boi-o-dau/)
+├── Danh bạ toàn quốc (/hoc-boi-o-dau/)
 │   ├── Hà Nội (/hoc-boi-ha-noi/)
 │   │   ├── Ba Đình (/hoc-boi-ha-noi/ba-dinh/)
 │   │   ├── Hai Bà Trưng (/hoc-boi-ha-noi/hai-ba-trung/)
@@ -82,7 +82,7 @@ Trang chủ (/)
 graph TD
     HOME[Trang chủ] --> COURSES[Học bơi]
     HOME --> TECH[Kỹ thuật bơi]
-    HOME --> LOCATIONS[Địa điểm]
+    HOME --> LOCATIONS[Danh bạ toàn quốc]
     HOME --> CONTENT[Kiến thức]
     HOME --> ABOUT[Về chúng tôi]
 
@@ -99,22 +99,29 @@ graph TD
     LOCATIONS --> HANOI[Hà Nội]
     LOCATIONS --> HCM[TP.HCM]
     LOCATIONS --> PROVINCES[32 tỉnh thành khác]
-    HANOI --> CENTRAL[Ba Đình · Hai Bà Trưng · Đống Đa]
-    HANOI --> WEST[Cầu Giấy · Nam/Bắc Từ Liêm · Hà Đông]
-    HANOI --> SOUTH[Thanh Xuân · Hoàng Mai · Thanh Trì]
-    HANOI --> EAST[Long Biên · Gia Lâm]
-    HANOI --> NORTH[Tây Hồ]
-    HCM --> HCMCORE[Quận 1 · 3 · 4 · 10]
-    HCM --> HCMNORTH[Gò Vấp · Quận 12 · Hóc Môn]
-    HCM --> HCMEAST[Bình Thạnh · Thủ Đức · Bình Dương]
-    HCM --> HCMAIRPORT[Phú Nhuận · Tân Bình]
+    HANOI --> BADINH[Ba Đình]
+    HANOI --> GIALAM[Gia Lâm]
+    HANOI --> HANOIAREAS[11 quận huyện khác]
+    HCM --> QUAN1[Quận 1]
+    HCM --> THUDUC[TP. Thủ Đức]
+    HCM --> HCMAREAS[Các quận huyện khác]
+    PROVINCES --> LOCALAREAS[Quận huyện · thành phố · cụm địa điểm]
 
-    EAST --> GIALAM[Gia Lâm]
     GIALAM --> BREAST
     GIALAM --> CRAWL
     GIALAM --> BACK
     GIALAM --> FLY
 ```
+
+Trong giao diện danh bạ, ba cấp địa phương được hiển thị bằng một cây duy nhất:
+
+```text
+Toàn quốc
+└── Tỉnh/thành phố
+    └── Quận/huyện, thành phố trực thuộc hoặc cụm địa điểm
+```
+
+Tỉnh/thành và địa phương con không còn xuất hiện như các thẻ ngang cấp. Trang khu vực chỉ được mở thành URL riêng khi qua cổng chất lượng; nếu chưa đủ dữ liệu, nút cấp ba dẫn tới đúng nhóm nội dung trên trang tỉnh/thành. Các bể bơi và lớp học là dữ liệu chi tiết bên trong cấp ba, không tạo thêm một tầng URL hàng loạt.
 
 ## 4. URL map trọng tâm
 
@@ -159,7 +166,8 @@ Các quận/huyện chưa đạt cổng vẫn xuất hiện dưới dạng nhóm
 
 - Header: Trang chủ → Học bơi → Kỹ thuật bơi → Địa điểm → Về chúng tôi → Kiến thức → CTA hợp tác.
 - Footer: Chương trình tổ chức, kỹ thuật bơi và các landing page địa điểm nổi bật.
-- Breadcrumb địa phương: Trang chủ → Địa điểm → tỉnh/thành → quận/huyện hoặc khu vực quen dùng.
+- Breadcrumb địa phương: Trang chủ → Toàn quốc → tỉnh/thành → quận/huyện hoặc khu vực quen dùng.
+- Hub danh bạ hiển thị trực tiếp 34 tỉnh/thành và 121 địa phương con theo cây đóng/mở; tìm kiếm được theo cả tỉnh, quận/huyện và tên bể bơi.
 - Trang tỉnh/thành: liên kết đến landing page quận/huyện đủ chất lượng; khu vực chưa đủ dữ liệu vẫn dùng anchor.
 - Trang quận/huyện: liên kết ngược về tỉnh/thành, liên kết chéo bốn khu vực gần hoặc có hành trình phù hợp và liên kết sang bốn hub kỹ thuật.
 
