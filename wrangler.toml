@@ -1,0 +1,5 @@
+name = "dayboi-web"
+compatibility_date = "2026-06-11"
+
+[assets]
+directory = "./dayboi-web/dist"
