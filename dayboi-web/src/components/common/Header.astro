@@ -10,11 +10,13 @@ const { lang = 'vi', currentPath = '/' } = Astro.props;
 const navItems = lang === 'vi' ? [
   { label: 'Trang chủ', href: '/' },
   {
-    label: 'Giải pháp tổ chức', href: '/khoa-hoc-boi/doanh-nghiep/', children: [
-      { label: 'Đào tạo cho doanh nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' },
-      { label: 'Gửi yêu cầu chương trình', href: '/lien-he/' },
-      { label: 'Năng lực đội ngũ', href: '/doi-ngu-hlv/' },
-      { label: 'Giới thiệu Swim For Life', href: '/gioi-thieu/' }
+    label: 'Học bơi', href: '/khoa-hoc-boi/', children: [
+      { label: 'Tất cả khóa học', href: '/khoa-hoc-boi/' },
+      { label: 'Lớp trẻ em', href: '/khoa-hoc-boi/tre-em/' },
+      { label: 'Lớp người lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
+      { label: 'Học bơi 1 kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
+      { label: 'Dành cho người sợ nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/' },
+      { label: 'Đào tạo cho tổ chức', href: '/khoa-hoc-boi/doanh-nghiep/' }
     ]
   },
   {
@@ -43,7 +45,7 @@ const navItems = lang === 'vi' ? [
       { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' }
     ]
   },
-  { label: 'Blog', href: '/tin-tuc/' }
+  { label: 'Kiến thức', href: '/tin-tuc/' }
 ] : [
   { label: 'Home', href: '/en/' },
   {

@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { locations } from '../data/locations.js';
 import { getLocationResearch } from '../data/locationResearch.js';
+import { getPublishedAreaUrl } from '../data/locationAreas.js';
 import '../styles/location-directory.css';
 
 export function getStaticPaths() {
@@ -9,7 +10,6 @@ export function getStaticPaths() {
 }
 
 const { loc } = Astro.props;
-const currentYear = new Date().getFullYear();
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const googleSearch = (query) => `https://www.google.com/search?q=${encodeURIComponent(query)}`;
 const research = getLocationResearch(loc.slug);
@@ -34,8 +34,8 @@ const poolDirectory = categories.flatMap((category) => category.venues.map((venu
   mapsUrl: mapsSearch(`${venue.name}, ${venue.address || loc.name}`),
 })));
 const pageTitle = research?.providers
-  ? `Địa Điểm & Trung Tâm Học Bơi ${loc.name} Theo Khu Vực [${currentYear}]`
-  : `Danh Bạ Bể Bơi & Giáo Viên Dạy Bơi ${loc.name} [${currentYear}]`;
+  ? `Học Bơi ${loc.name}: Bể Bơi & Lớp Học Theo Khu Vực`
+  : `Học Bơi ${loc.name}: Danh Bạ Bể Bơi & Giáo Viên`;
 const pageDescription = research?.providers
   ? `Danh sách bể bơi và trung tâm học bơi tại ${loc.name}, phân nhóm theo khu vực. Có đối tượng học, hình thức lớp, tiện ích và hướng dẫn liên hệ trực tiếp.`
   : `Tra cứu bể bơi, câu lạc bộ và giáo viên dạy bơi tại ${loc.name}. Người học chủ động kiểm tra và liên hệ trực tiếp với từng cơ sở.`;
@@ -80,13 +80,13 @@ const directorySchema = {
   breadcrumbs={breadcrumbs}
   schema={directorySchema}
 >
-  <main class="local-directory">
+  <div class="local-directory">
     <section class="local-directory__hero">
       <div class="container local-directory__hero-grid">
         <div>
           <span class="local-directory__eyebrow">Địa điểm độc lập · {loc.region}</span>
-          <h1>Bể bơi & nơi dạy bơi tại <span>{loc.name}</span></h1>
-          <p>Trang này giúp người học cá nhân chủ động tìm và liên hệ trực tiếp với bể bơi, câu lạc bộ hoặc giáo viên đang công khai dịch vụ tại {loc.name}. Swim For Life không nhận đăng ký, không thu phí và không đại diện cho các đơn vị được liệt kê.</p>
+          <h1>Học bơi tại <span>{loc.name}</span>: bể bơi, lớp học & nơi dạy bơi</h1>
+          <p>Trang này giúp người học cá nhân chủ động tìm lớp học bơi, bể bơi, câu lạc bộ hoặc giáo viên đang công khai dịch vụ tại {loc.name}. Các nhu cầu học bơi ếch, bơi sải, bơi ngửa và bơi bướm được gom theo một cấu trúc khu vực để dễ so sánh. Swim For Life không nhận đăng ký, không thu phí và không đại diện cho các đơn vị được liệt kê.</p>
           <div class={`local-directory__research-status ${research ? 'is-reviewed' : ''}`}>
             <strong>{research?.level || 'Đang chờ rà soát chi tiết'}</strong>
             <span>{research ? `${poolDirectory.length} địa điểm được khảo sát · cập nhật ${research.reviewedAt}` : 'Thông tin tham khảo · cần xác minh trực tiếp'}</span>
@@ -144,7 +144,13 @@ const directorySchema = {
           <p class="section__desc">{research?.summary || 'Dữ liệu địa điểm bơi lội được tổng hợp và khảo sát thực tế trên toàn quốc.'} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
         </div>
         <nav class="local-directory__category-nav" aria-label="Các khu vực và loại địa điểm">
-          {categories.map((category) => <a href={`#${category.id}`}>{category.label}<span>{category.venues.length}</span></a>)}
+          {categories.map((category) => {
+            const areaUrl = getPublishedAreaUrl(loc.slug, category.id);
+            return <a href={areaUrl || `#${category.id}`} class:list={{ 'has-area-page': areaUrl }}>
+              {category.label}
+              <span>{category.venues.length}{areaUrl && <small>trang riêng</small>}</span>
+            </a>;
+          })}
         </nav>
         <div class="local-directory__categories">
           {categories.map((category) => (
@@ -154,7 +160,14 @@ const directorySchema = {
                   <span>{String(category.venues.length).padStart(2, '0')} địa điểm</span>
                   <h3 id={`${category.id}-title`}>{category.label}</h3>
                 </div>
-                <p>{category.description}</p>
+                <div>
+                  <p>{category.description}</p>
+                  {getPublishedAreaUrl(loc.slug, category.id) && (
+                    <a class="local-directory__area-link" href={getPublishedAreaUrl(loc.slug, category.id)}>
+                      Xem landing page học bơi {category.label.replace('Khu vực ', '')} →
+                    </a>
+                  )}
+                </div>
               </header>
               <div class="local-directory__pool-grid">
                 {category.venues.map((pool, index) => (
@@ -318,5 +331,5 @@ const directorySchema = {
         <a href="/khoa-hoc-boi/doanh-nghiep/">Xem giải pháp đào tạo tổ chức</a>
       </div>
     </section>
-  </main>
+  </div>
 </PageLayout>

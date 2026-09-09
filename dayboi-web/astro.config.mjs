@@ -1,6 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { publishedLocationAreas } from './src/data/locationAreas.js';
+
+const areaRedirects = Object.fromEntries(
+  publishedLocationAreas.map((area) => [`/hoc-boi-${area.slug}`, area.url]),
+);
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,6 +14,7 @@ export default defineConfig({
     '/dia-diem/ha-noi': '/hoc-boi-ha-noi',
     '/dia-diem/tphcm': '/hoc-boi-tphcm',
     '/blog': '/tin-tuc',
+    ...areaRedirects,
   },
   integrations: [
     sitemap({

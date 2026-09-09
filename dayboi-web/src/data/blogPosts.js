@@ -133,7 +133,7 @@ export const blogPosts = [
   },
   {
     title: 'Lớp Học Bơi Cho Người Lớn: So Sánh & Chọn Lớp Phù Hợp Nhất',
-    slug: 'lop-hoc-boi-nguoi-lon',
+    slug: 'lop-hoc-boi-cho-nguoi-lon',
     excerpt: 'So sánh chi tiết các hình thức lớp học bơi cho người lớn: 1 kèm 1, nhóm nhỏ, lớp buổi tối. Bảng giá, lịch học linh hoạt và review từ học viên thực tế.',
     image: '/images/classes/khoi-dong-tren-can.jpg',
     date: '25/05',

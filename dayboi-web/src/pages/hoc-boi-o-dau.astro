@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { locations } from '../data/locations.js';
 import { countReviewedVenues, locationRollout } from '../data/locationResearch.js';
+import { publishedLocationAreas } from '../data/locationAreas.js';
 import '../styles/location-directory.css';
 
 const regions = [...new Set(locations.map((location) => location.region))];
@@ -17,12 +18,17 @@ const schema = {
   url: 'https://dayboi.vip/hoc-boi-o-dau/',
   mainEntity: {
     '@type': 'ItemList',
-    numberOfItems: locations.length,
-    itemListElement: locations.map((location, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
+    numberOfItems: locations.length + publishedLocationAreas.length,
+    itemListElement: [...locations.map((location) => ({
       name: `Danh bạ bơi lội ${location.name}`,
       url: `https://dayboi.vip/${location.slug}/`,
+    })), ...publishedLocationAreas.map((area) => ({
+      name: `Học bơi tại ${area.name}, ${area.parentName}`,
+      url: `https://dayboi.vip${area.url}`,
+    }))].map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      ...item,
     })),
   },
 };
@@ -37,11 +43,11 @@ const schema = {
   breadcrumbs={breadcrumbs}
   schema={schema}
 >
-  <main class="directory-hub">
+  <div class="directory-hub">
     <section class="directory-hub__hero">
       <div class="container directory-hub__hero-grid">
         <div>
-          <span class="local-directory__eyebrow">34 tỉnh, thành · có nguồn đối chiếu</span>
+          <span class="local-directory__eyebrow">34 tỉnh, thành · {publishedLocationAreas.length} landing page cấp quận/huyện</span>
           <h1>Tìm nơi học bơi <span>gần bạn</span></h1>
           <p>Swim For Life chuyển phần dành cho người học cá nhân thành danh bạ độc lập. Bạn chọn địa phương, xem các cơ sở tham khảo rồi liên hệ trực tiếp qua listing công khai của bể bơi, CLB hoặc giáo viên.</p>
           <label class="directory-hub__search">
@@ -74,6 +80,25 @@ const schema = {
         </div>
         <p class="directory-hub__empty" id="directory-empty" hidden>Không tìm thấy địa phương phù hợp. Hãy thử tên tỉnh/thành khác.</p>
         <div class="directory-hub__regions" id="directory-regions">
+          <section class="directory-hub__region" data-region="Khu vực Hà Nội đã qua cổng chất lượng">
+            <div class="directory-hub__region-heading">
+              <span>{String(publishedLocationAreas.length).padStart(2, '0')}</span>
+              <h3>Khu vực Hà Nội đã có landing page riêng</h3>
+            </div>
+            <div class="directory-hub__grid">
+              {publishedLocationAreas.map((area) => (
+                <a href={area.url} class="directory-hub__card" data-location={`${area.name} ${area.nearbyAreas.join(' ')}`.toLowerCase()}>
+                  <img src={area.parentImage} alt="" width="320" height="210" loading="lazy" />
+                  <div>
+                    <span>{area.category.venues.length} địa điểm đã kiểm nguồn</span>
+                    <h4>{area.name}, Hà Nội</h4>
+                    <p>{area.nearbyAreas.join(' · ')}</p>
+                    <strong>Xem lớp học & bể bơi <b>→</b></strong>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
           {regions.map((region) => (
             <section class="directory-hub__region" data-region={region}>
               <div class="directory-hub__region-heading">
@@ -129,7 +154,7 @@ const schema = {
         <a href="/khoa-hoc-boi/doanh-nghiep/">Gửi yêu cầu cho tổ chức</a>
       </div>
     </section>
-  </main>
+  </div>
 </PageLayout>
 
 <script>

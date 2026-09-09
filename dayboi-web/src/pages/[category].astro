@@ -31,7 +31,7 @@ const { categoryName, posts } = Astro.props;
 
 const currentYear = new Date().getFullYear();
 const title = `Danh mục: ${categoryName} | Blog Dạy Bơi`;
-const description = `Các bài viết hữu ích thuộc chủ đề ${categoryName} từ Trung tâm dạy bơi Swim For Life Việt Nam.`;
+const description = `Tổng hợp bài viết chuyên sâu về ${categoryName}: hướng dẫn kỹ thuật, kinh nghiệm học bơi và lưu ý an toàn. Chọn nội dung phù hợp để áp dụng hiệu quả.`;
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
@@ -93,8 +93,8 @@ const categories = [
   { name: 'Tất cả', slug: '' },
   { name: 'Hướng Dẫn Học Bơi', slug: 'huong-dan-hoc-boi' },
   { name: 'Bơi Lội Trẻ Em', slug: 'boi-loi-tre-em' },
-  { name: 'Kỹ Thuật Bơi Lội', slug: 'ky-thuat-boi-loi' },
-  { name: 'Kinh Nghiệm & Thiết Bị', slug: 'kinh-nghiem-thiet-bi' },
+  { name: 'An Toàn Bơi Lội', slug: 'an-toan-boi-loi' },
+  { name: 'Góc Tư Vấn', slug: 'goc-tu-van' },
 ];
 ---
 

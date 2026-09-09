@@ -31,7 +31,15 @@ const {
 } = Astro.props;
 
 const siteName = lang === 'vi' ? 'Swim For Life Việt Nam — Dạy Bơi Chuyên Nghiệp' : 'Swim For Life Vietnam — Professional Swimming Lessons';
-const fullTitle = `${title} | ${siteName}`;
+const titleWithoutRepeatedBrand = title
+  .replace(/\s*\|\s*Swim For Life Việt Nam\s*$/i, '')
+  .replace(/\s*\|\s*Swim For Life Vietnam\s*$/i, '')
+  .replace(/\s*\|\s*Swim For Life\s*$/i, '');
+const shortBrand = lang === 'vi' ? 'Swim For Life' : 'Swim For Life Vietnam';
+const titleAlreadyHasBrand = titleWithoutRepeatedBrand.toLowerCase().includes('swim for life');
+const fullTitle = titleAlreadyHasBrand || titleWithoutRepeatedBrand.length > 43
+  ? titleWithoutRepeatedBrand
+  : `${titleWithoutRepeatedBrand} | ${shortBrand}`;
 const siteUrl = 'https://dayboi.vip';
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 ---
@@ -56,7 +64,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
   <!-- SEO Primary Meta Tags -->
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
-  <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+  <meta name="robots" content={noIndex ? 'noindex, follow' : 'index, follow'} />
   <link rel="canonical" href={currentUrl} />
   
   <!-- Hreflang Tags for Multilingual SEO -->

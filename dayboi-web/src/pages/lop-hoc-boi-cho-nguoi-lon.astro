@@ -2,7 +2,7 @@
 import BlogLayout from '../layouts/BlogLayout.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
-const post = blogPosts.find((p) => p.slug === 'lop-hoc-boi-nguoi-lon');
+const post = blogPosts.find((p) => p.slug === 'lop-hoc-boi-cho-nguoi-lon');
 if (!post) throw new Error('Post not found in blogPosts.js');
 
 const breadcrumbs = [
