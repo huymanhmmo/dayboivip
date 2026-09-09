@@ -5,6 +5,11 @@ import { getLocationResearch } from '../data/locationResearch.js';
 import { getPublishedAreaUrl } from '../data/locationAreas.js';
 import '../styles/location-directory.css';
 
+const normalizeSearch = (value = '') => value
+  .toLowerCase()
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/đ/g, 'd');
 const cleanAreaName = (label = '') => label.replace(/^Khu vực\s+/i, '');
 const directoryTree = locations.map((location) => {
   const research = getLocationResearch(location.slug);
@@ -20,28 +25,32 @@ const directoryTree = locations.map((location) => {
       href: publishedUrl || `/${location.slug}/#${category.id}`,
       venueCount: category.venues.length,
       isPublished: Boolean(publishedUrl),
-      searchText: `${category.label} ${category.venues.map((venue) => `${venue.name} ${venue.area || ''}`).join(' ')}`.toLowerCase(),
+      searchText: normalizeSearch(`${category.label} ${category.venues.map((venue) => `${venue.name} ${venue.area || ''}`).join(' ')}`),
     };
   });
   return {
     ...location,
     areas,
     venueCount: areas.reduce((total, area) => total + area.venueCount, 0),
-    searchText: `${location.name} ${location.region} ${location.mergedFrom || ''}`.toLowerCase(),
+    searchText: normalizeSearch(`${location.name} ${location.region} ${location.mergedFrom || ''}`),
   };
 });
 
+const preferredRegionOrder = ['Miền Bắc', 'Miền Trung', 'Tây Nguyên & Đông Nam Bộ', 'Miền Tây Nam Bộ'];
+const regions = preferredRegionOrder.filter((region) => directoryTree.some((location) => location.region === region));
+const featuredSlugs = ['hoc-boi-ha-noi', 'hoc-boi-tphcm', 'hoc-boi-da-nang', 'hoc-boi-hai-phong', 'hoc-boi-can-tho'];
+const featuredLocations = featuredSlugs.map((slug) => directoryTree.find((location) => location.slug === slug)).filter(Boolean);
 const totalAreas = directoryTree.reduce((total, location) => total + location.areas.length, 0);
 const totalVenues = directoryTree.reduce((total, location) => total + location.venueCount, 0);
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Toàn quốc' },
+  { label: 'Danh bạ học bơi toàn quốc' },
 ];
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Danh bạ học bơi toàn quốc theo tỉnh, thành phố và khu vực',
-  description: 'Tra cứu nơi học bơi theo cấu trúc toàn quốc, tỉnh hoặc thành phố, sau đó chọn quận, huyện và khu vực gần bạn.',
+  description: 'Tìm lớp học bơi, nơi dạy bơi và bể bơi theo tỉnh thành, quận huyện trên toàn quốc, kèm địa chỉ và cách liên hệ.',
   url: 'https://dayboi.vip/hoc-boi-o-dau/',
   mainEntity: {
     '@type': 'ItemList',
@@ -70,165 +79,246 @@ const schema = {
 ---
 
 <PageLayout
-  title="Danh Bạ Học Bơi Toàn Quốc Theo Tỉnh Thành"
-  description="Tìm lớp học bơi theo cây địa phương: chọn tỉnh, thành phố rồi chọn quận, huyện hoặc khu vực gần bạn. Có địa điểm và hướng dẫn liên hệ trực tiếp."
+  title="Học Bơi Ở Đâu? Danh Bạ Lớp Học Bơi Theo Tỉnh Thành"
+  description="Tìm lớp học bơi, nơi dạy bơi và bể bơi theo tỉnh thành, quận huyện trên toàn quốc. Xem địa chỉ, khu vực và cách liên hệ trước khi chọn lớp phù hợp."
   canonical="https://dayboi.vip/hoc-boi-o-dau/"
   image="/images/classes/lop-hoc-boi-ha-noi.jpg"
   type="website"
   breadcrumbs={breadcrumbs}
   schema={schema}
 >
-  <div class="directory-hub">
+  <div class="directory-hub directory-hub--refined">
     <section class="directory-hub__hero">
       <div class="container directory-hub__hero-grid">
-        <div>
-          <span class="local-directory__eyebrow">Toàn quốc · {directoryTree.length} tỉnh, thành · {totalAreas} khu vực</span>
-          <h1>Danh bạ học bơi <span>toàn quốc</span></h1>
-          <p>Chọn tỉnh hoặc thành phố, sau đó mở quận, huyện hay khu vực gần bạn để xem bể bơi và nơi dạy bơi. Mỗi địa phương nằm đúng trong nhánh của tỉnh, thành phố tương ứng.</p>
-          <label class="directory-hub__search">
-            <span class="sr-only">Tìm tỉnh, thành phố, quận, huyện hoặc bể bơi</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
-            <input type="search" id="directory-search" placeholder="Tìm tỉnh, thành phố, quận, huyện…" autocomplete="off" />
+        <div class="directory-hub__hero-content">
+          <span class="local-directory__eyebrow">Danh bạ học bơi toàn quốc</span>
+          <h1><span>Học bơi ở đâu?</span> Tìm lớp học bơi gần bạn</h1>
+          <p>Tra cứu bể bơi, lớp học bơi và nơi dạy bơi theo tỉnh, thành phố, quận hoặc huyện. Xem khu vực, địa chỉ và đầu mối liên hệ trước khi đăng ký.</p>
+          <label class="directory-hub__search" for="directory-search">
+            <span class="directory-hub__search-label">Bạn muốn học bơi ở đâu?</span>
+            <span class="directory-hub__search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+              <input type="search" id="directory-search" placeholder="Ví dụ: Gia Lâm, Đà Nẵng, Quận 1…" autocomplete="off" aria-controls="directory-regions" />
+            </span>
           </label>
         </div>
-        <figure>
-          <img src="/images/classes/lop-hoc-boi-ha-noi.jpg" alt="Lớp bơi thực tế với huấn luyện viên hướng dẫn dưới nước" width="700" height="520" loading="eager" />
-          <figcaption>Đi từ tỉnh, thành phố đến khu vực gần nhất trước khi so sánh địa điểm học.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="directory-hub__principles">
-      <div class="container">
-        <div><strong>Cấp 1 · Toàn quốc</strong><span>Điểm bắt đầu chung của toàn bộ danh bạ địa phương.</span></div>
-        <div><strong>Cấp 2 · Tỉnh, thành phố</strong><span>Mỗi tỉnh, thành phố có một trang tổng hợp riêng.</span></div>
-        <div><strong>Cấp 3 · Khu vực, địa điểm</strong><span>Chọn quận, huyện hoặc cụm địa điểm gần nơi bạn sống.</span></div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="directory-title">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__badge">Cây địa phương</span>
-          <h2 class="section__title" id="directory-title">Toàn quốc → Tỉnh, thành phố → Khu vực</h2>
-          <p class="section__desc">Mở một tỉnh, thành phố để xem các địa phương con. Những khu vực đã đủ thông tin có trang chi tiết riêng; các khu vực còn lại dẫn tới đúng phần trên trang tỉnh, thành phố.</p>
-        </div>
-        <div class="directory-tree__toolbar">
-          <p><strong>{directoryTree.length}</strong> tỉnh, thành · <strong>{totalAreas}</strong> khu vực · <strong>{totalVenues}</strong> địa điểm tham khảo</p>
-          <button type="button" id="directory-toggle" aria-expanded="false">Mở tất cả tỉnh, thành</button>
-        </div>
-        <p class="directory-hub__empty" id="directory-empty" hidden>Không tìm thấy địa phương phù hợp. Hãy thử tên tỉnh, quận, huyện hoặc bể bơi khác.</p>
-
-        <nav class="directory-tree" aria-label="Danh bạ học bơi theo cây địa phương">
-          <div class="directory-tree__root">
-            <span class="directory-tree__level">Cấp 1</span>
-            <div>
-              <strong>Toàn quốc</strong>
-              <small>{directoryTree.length} tỉnh, thành phố</small>
-            </div>
+        <aside class="directory-hub__featured" aria-labelledby="featured-title">
+          <div class="directory-hub__featured-heading">
+            <span>Chọn nhanh</span>
+            <h2 id="featured-title">Địa phương được tìm nhiều</h2>
           </div>
-          <ol class="directory-tree__provinces">
-            {directoryTree.map((location, index) => (
-              <li class="directory-tree__province" data-province={location.searchText} data-initial-open={index < 2 ? 'true' : 'false'}>
-                <details open={index < 2}>
-                  <summary>
-                    <span class="directory-tree__branch" aria-hidden="true"></span>
-                    <span class="directory-tree__identity">
-                      <small>Cấp 2 · {location.region}</small>
-                      <strong>{location.name}</strong>
-                    </span>
-                    <span class="directory-tree__count">
-                      <strong>{location.areas.length}</strong>
-                      <small>khu vực</small>
-                    </span>
-                    <span class="directory-tree__chevron" aria-hidden="true"></span>
-                  </summary>
-                  <div class="directory-tree__province-body">
-                    <a class="directory-tree__province-link" href={`/${location.slug}/`}>
-                      Xem trang tổng hợp học bơi tại {location.name} <span>→</span>
-                    </a>
-                    <ol class="directory-tree__areas">
-                      {location.areas.map((area) => (
-                        <li data-place={area.searchText}>
-                          <a href={area.href}>
-                            <span class="directory-tree__area-level">Cấp 3</span>
-                            <span class="directory-tree__area-name">
-                              <strong>{area.name}</strong>
-                              <small>{area.venueCount} địa điểm tham khảo{area.isPublished ? ' · có trang chi tiết' : ''}</small>
-                            </span>
-                            <span class="directory-tree__area-arrow" aria-hidden="true">→</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </details>
+          <ul>
+            {featuredLocations.map((location) => (
+              <li>
+                <a href={`/${location.slug}/`}>
+                  <span>
+                    <strong>Học bơi {location.name}</strong>
+                    <small>{location.areas.length} khu vực · {location.venueCount} địa điểm</small>
+                  </span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
               </li>
             ))}
-          </ol>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section directory-hub__directory" aria-labelledby="directory-title">
+      <div class="container">
+        <div class="directory-hub__directory-heading">
+          <div>
+            <span class="section__badge">Tìm theo địa phương</span>
+            <h2 class="section__title" id="directory-title">Chọn tỉnh, thành phố để xem địa điểm học bơi</h2>
+          </div>
+          <p>Danh sách được sắp xếp theo vùng để bạn tìm nhanh hơn. Mở tỉnh hoặc thành phố đang sống, sau đó chọn quận, huyện hay khu vực thuận tiện nhất.</p>
+        </div>
+
+        <div class="directory-browser__path" aria-label="Cấu trúc danh bạ">
+          <strong>Toàn quốc</strong>
+          <span aria-hidden="true">›</span>
+          <span>Tỉnh, thành phố</span>
+          <span aria-hidden="true">›</span>
+          <span>Quận, huyện và khu vực</span>
+        </div>
+
+        <div class="directory-browser__controls">
+          <div class="directory-browser__filters" aria-label="Lọc tỉnh thành theo vùng">
+            <button type="button" class="is-active" data-region-filter="" aria-pressed="true">Tất cả</button>
+            {regions.map((region) => (
+              <button type="button" data-region-filter={normalizeSearch(region)} aria-pressed="false">{region}</button>
+            ))}
+          </div>
+          <button type="button" class="directory-browser__toggle" id="directory-toggle" aria-expanded="false">Mở tất cả</button>
+        </div>
+
+        <p class="directory-hub__empty" id="directory-empty" role="status" hidden>Chưa tìm thấy địa phương phù hợp. Hãy thử tên tỉnh, quận, huyện hoặc bể bơi khác.</p>
+
+        <nav class="directory-regions" id="directory-regions" aria-label="Danh bạ học bơi theo tỉnh thành">
+          {regions.map((region) => {
+            const regionLocations = directoryTree.filter((location) => location.region === region);
+            return (
+              <section class="directory-region" data-region-group={normalizeSearch(region)} aria-labelledby={`region-${normalizeSearch(region).replace(/\s+/g, '-')}`}>
+                <header class="directory-region__heading">
+                  <div>
+                    <span>Khu vực</span>
+                    <h3 id={`region-${normalizeSearch(region).replace(/\s+/g, '-')}`}>{region}</h3>
+                  </div>
+                  <strong>{regionLocations.length} tỉnh, thành</strong>
+                </header>
+                <ol class="directory-region__list">
+                  {regionLocations.map((location) => (
+                    <li class="directory-tree__province" data-province={location.searchText} data-region={normalizeSearch(location.region)}>
+                      <details>
+                        <summary>
+                          <span class="directory-tree__marker" aria-hidden="true"></span>
+                          <span class="directory-tree__identity">
+                            <strong>{location.name}</strong>
+                            <small>{location.areas.length} khu vực · {location.venueCount} địa điểm tham khảo</small>
+                          </span>
+                          <span class="directory-tree__chevron" aria-hidden="true"></span>
+                        </summary>
+                        <div class="directory-tree__province-body">
+                          <a class="directory-tree__province-link" href={`/${location.slug}/`}>
+                            Xem lớp học bơi tại {location.name} <span>→</span>
+                          </a>
+                          <p>Chọn khu vực gần bạn:</p>
+                          <ol class="directory-tree__areas">
+                            {location.areas.map((area) => (
+                              <li data-place={area.searchText}>
+                                <a href={area.href}>
+                                  <span class="directory-tree__area-name">
+                                    <strong>{area.name}</strong>
+                                    <small>{area.venueCount} địa điểm · {area.isPublished ? 'có trang chi tiết' : 'xem trong trang tỉnh, thành'}</small>
+                                  </span>
+                                  <span class="directory-tree__area-arrow" aria-hidden="true">→</span>
+                                </a>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      </details>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            );
+          })}
         </nav>
+
+        <div class="directory-hub__summary">
+          <strong>{directoryTree.length} tỉnh, thành phố</strong>
+          <span>{totalAreas} khu vực</span>
+          <span>{totalVenues} bể bơi và nơi dạy bơi tham khảo</span>
+        </div>
       </div>
     </section>
 
     <section class="section section--alt directory-hub__roadmap" aria-labelledby="roadmap-title">
       <div class="container">
         <div class="section__header">
-          <span class="section__badge">Trước khi đăng ký</span>
-          <h2 class="section__title" id="roadmap-title">Ba bước chọn nơi học bơi phù hợp</h2>
-          <p class="section__desc">Đừng chỉ chọn theo quảng cáo. Một vài câu hỏi ngắn sẽ giúp bạn tránh đi xa, phát sinh chi phí hoặc vào nhầm lớp.</p>
+          <span class="section__badge">Chọn lớp phù hợp</span>
+          <h2 class="section__title" id="roadmap-title">Nên kiểm tra gì trước khi đăng ký học bơi?</h2>
+          <p class="section__desc">Ba thông tin dưới đây giúp bạn chọn nơi học thuận tiện và hạn chế chi phí phát sinh.</p>
         </div>
         <div class="directory-hub__roadmap-grid">
-          <article><div><span>01</span><strong>Khoảng cách</strong></div><h3>Chọn bể thuận đường đi</h3><p>Ưu tiên địa điểm gần nhà, trường học hoặc nơi làm việc để duy trì lịch học đều.</p><small>Kiểm tra chỗ gửi xe, giờ cao điểm và thời gian di chuyển.</small></article>
-          <article><div><span>02</span><strong>Lớp học</strong></div><h3>Hỏi rõ đối tượng và sĩ số</h3><p>Xác nhận độ tuổi, trình độ đầu vào, số học viên mỗi giáo viên và cách học bù.</p><small>Người sợ nước hoặc trẻ nhỏ thường cần lớp ít người hơn.</small></article>
-          <article><div><span>03</span><strong>Chi phí</strong></div><h3>Chốt tổng phí trước khi học</h3><p>Hỏi học phí đã gồm vé bể, dụng cụ, buổi kiểm tra đầu vào và phí học bù hay chưa.</p><small>Nên nhận thông tin bằng tin nhắn để dễ đối chiếu.</small></article>
+          <article>
+            <div><span>01</span><strong>Khoảng cách</strong></div>
+            <h3>Chọn bể thuận đường đi</h3>
+            <p>Ưu tiên địa điểm gần nhà, trường học hoặc nơi làm việc để duy trì lịch học đều.</p>
+            <small>Kiểm tra chỗ gửi xe, giờ cao điểm và thời gian di chuyển.</small>
+          </article>
+          <article>
+            <div><span>02</span><strong>Lớp học</strong></div>
+            <h3>Hỏi rõ đối tượng và sĩ số</h3>
+            <p>Xác nhận độ tuổi, trình độ đầu vào, số học viên mỗi giáo viên và cách học bù.</p>
+            <small>Người sợ nước hoặc trẻ nhỏ thường phù hợp với lớp ít người.</small>
+          </article>
+          <article>
+            <div><span>03</span><strong>Chi phí</strong></div>
+            <h3>Xác nhận tổng phí trước khi học</h3>
+            <p>Hỏi học phí đã gồm vé bể, dụng cụ, buổi kiểm tra đầu vào và phí học bù hay chưa.</p>
+            <small>Nên nhận thông tin bằng tin nhắn để dễ đối chiếu.</small>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="local-directory__enterprise">
       <div class="container local-directory__enterprise-inner">
-        <div><span>Doanh nghiệp · trường học · khu dân cư</span><h2>Cần một chương trình đào tạo quy mô lớn?</h2><p>Swim For Life chỉ tiếp nhận yêu cầu đào tạo theo đoàn từ 10 người, có kế hoạch an toàn, nhân sự và tiến độ triển khai rõ ràng.</p></div>
-        <a href="/khoa-hoc-boi/doanh-nghiep/">Gửi yêu cầu cho tổ chức</a>
+        <div>
+          <span>Doanh nghiệp · trường học · khu dân cư</span>
+          <h2>Cần tổ chức chương trình học bơi cho một nhóm lớn?</h2>
+          <p>Gửi số lượng học viên, độ tuổi và địa điểm dự kiến để Swim For Life tư vấn chương trình đào tạo theo đoàn từ 10 người.</p>
+        </div>
+        <a href="/khoa-hoc-boi/doanh-nghiep/">Xem chương trình cho tổ chức</a>
       </div>
     </section>
   </div>
 </PageLayout>
 
 <script>
-  const setupDirectoryTree = () => {
+  const setupDirectory = () => {
     const input = document.querySelector<HTMLInputElement>('#directory-search');
     const provinces = [...document.querySelectorAll<HTMLElement>('[data-province]')];
+    const regionGroups = [...document.querySelectorAll<HTMLElement>('[data-region-group]')];
+    const regionButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-region-filter]')];
     const empty = document.querySelector<HTMLElement>('#directory-empty');
     const toggle = document.querySelector<HTMLButtonElement>('#directory-toggle');
     if (!input || input.dataset.bound === 'true') return;
     input.dataset.bound = 'true';
+    let activeRegion = '';
 
-    const filterTree = () => {
-      const query = input.value.trim().toLocaleLowerCase('vi');
+    const normalize = (value = '') => value
+      .toLocaleLowerCase('vi')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd');
+
+    const resetToggle = () => {
+      if (!toggle) return;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Mở tất cả';
+    };
+
+    const filterDirectory = () => {
+      const query = normalize(input.value.trim());
       let visible = 0;
       provinces.forEach((province) => {
         const details = province.querySelector<HTMLDetailsElement>('details');
         const places = [...province.querySelectorAll<HTMLElement>('[data-place]')];
+        const regionMatches = !activeRegion || province.dataset.region === activeRegion;
         const provinceMatches = !query || (province.dataset.province || '').includes(query);
         let matchingPlaces = 0;
         places.forEach((place) => {
-          const show = provinceMatches || (place.dataset.place || '').includes(query);
+          const show = regionMatches && (provinceMatches || (place.dataset.place || '').includes(query));
           place.hidden = !show;
           if (show) matchingPlaces += 1;
         });
-        const showProvince = provinceMatches || matchingPlaces > 0;
+        const showProvince = regionMatches && (provinceMatches || matchingPlaces > 0);
         province.hidden = !showProvince;
         if (showProvince) visible += 1;
-        if (details) details.open = query ? showProvince : province.dataset.initialOpen === 'true';
+        if (details) details.open = Boolean(query && showProvince);
+      });
+      regionGroups.forEach((group) => {
+        group.hidden = !group.querySelector('[data-province]:not([hidden])');
       });
       if (empty) empty.hidden = visible > 0;
-      if (toggle && !query) {
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = 'Mở tất cả tỉnh, thành';
-      }
+      resetToggle();
     };
 
-    input.addEventListener('input', filterTree);
+    input.addEventListener('input', filterDirectory);
+    regionButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeRegion = button.dataset.regionFilter || '';
+        regionButtons.forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', String(isActive));
+        });
+        filterDirectory();
+      });
+    });
     toggle?.addEventListener('click', () => {
       const shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
       provinces.filter((province) => !province.hidden).forEach((province) => {
@@ -236,10 +326,10 @@ const schema = {
         if (details) details.open = shouldOpen;
       });
       toggle.setAttribute('aria-expanded', String(shouldOpen));
-      toggle.textContent = shouldOpen ? 'Thu gọn tất cả' : 'Mở tất cả tỉnh, thành';
+      toggle.textContent = shouldOpen ? 'Thu gọn tất cả' : 'Mở tất cả';
     });
   };
-  document.addEventListener('DOMContentLoaded', setupDirectoryTree);
-  document.addEventListener('astro:page-load', setupDirectoryTree);
-  setupDirectoryTree();
+  document.addEventListener('DOMContentLoaded', setupDirectory);
+  document.addEventListener('astro:page-load', setupDirectory);
+  setupDirectory();
 </script>
