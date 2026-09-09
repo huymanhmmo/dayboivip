@@ -37,13 +37,13 @@ const pageTitle = research?.providers
   ? `Địa Điểm & Trung Tâm Học Bơi ${loc.name} Theo Khu Vực [${currentYear}]`
   : `Danh Bạ Bể Bơi & Giáo Viên Dạy Bơi ${loc.name} [${currentYear}]`;
 const pageDescription = research?.providers
-  ? `Danh sách bể bơi và trung tâm học bơi tại ${loc.name}, phân nhóm theo khu vực. Có đối tượng học, hình thức lớp, liên hệ, thông tin còn thiếu và nguồn đối chiếu.`
-  : `Tra cứu bể bơi, câu lạc bộ và giáo viên dạy bơi có thông tin công khai tại ${loc.name}. Người học chủ động kiểm tra và liên hệ trực tiếp với từng đơn vị.`;
+  ? `Danh sách bể bơi và trung tâm học bơi tại ${loc.name}, phân nhóm theo khu vực. Có đối tượng học, hình thức lớp, tiện ích và hướng dẫn liên hệ trực tiếp.`
+  : `Tra cứu bể bơi, câu lạc bộ và giáo viên dạy bơi tại ${loc.name}. Người học chủ động kiểm tra và liên hệ trực tiếp với từng cơ sở.`;
 const discoveryLinks = [
-  { label: 'Tất cả bể bơi đang được niêm yết', desc: 'Xem giờ mở cửa, website và số liên hệ công khai trên bản đồ.', url: mapsSearch(`bể bơi tại ${loc.name}`), icon: 'pool' },
+  { label: 'Tất cả bể bơi đang được niêm yết', desc: 'Xem giờ mở cửa, hình ảnh và vị trí thực tế trên bản đồ.', url: mapsSearch(`bể bơi tại ${loc.name}`), icon: 'pool' },
   { label: 'Lớp trẻ em & bơi sinh tồn', desc: 'Mở kết quả Google về lớp trẻ em, độ tuổi nhận học và chương trình an toàn dưới nước.', url: googleSearch(`học bơi trẻ em bơi sinh tồn ${loc.name}`), icon: 'coach' },
   { label: 'Lớp người lớn & kèm riêng', desc: 'Tìm trung tâm công khai lớp cho người lớn, người sợ nước hoặc nhu cầu học 1 kèm 1.', url: googleSearch(`học bơi người lớn kèm riêng 1 kèm 1 ${loc.name}`), icon: 'club' },
-  { label: 'Khóa cấp tốc & trung tâm', desc: 'Đối chiếu khóa cấp tốc, câu lạc bộ và trung tâm dạy bơi trên các website công khai.', url: googleSearch(`khóa học bơi cấp tốc trung tâm dạy bơi ${loc.name}`), icon: 'public' },
+  { label: 'Khóa cấp tốc & trung tâm', desc: 'Khảo sát khóa cấp tốc, câu lạc bộ và lớp dạy bơi theo nhu cầu tại địa phương.', url: googleSearch(`khóa học bơi cấp tốc trung tâm dạy bơi ${loc.name}`), icon: 'public' },
 ];
 
 const breadcrumbs = [
@@ -89,7 +89,7 @@ const directorySchema = {
           <p>Trang này giúp người học cá nhân chủ động tìm và liên hệ trực tiếp với bể bơi, câu lạc bộ hoặc giáo viên đang công khai dịch vụ tại {loc.name}. Swim For Life không nhận đăng ký, không thu phí và không đại diện cho các đơn vị được liệt kê.</p>
           <div class={`local-directory__research-status ${research ? 'is-reviewed' : ''}`}>
             <strong>{research?.level || 'Đang chờ rà soát chi tiết'}</strong>
-            <span>{research ? `${poolDirectory.length} địa điểm có nguồn · cập nhật ${research.reviewedAt}` : 'Thông tin khởi tạo · cần xác minh trực tiếp'}</span>
+            <span>{research ? `${poolDirectory.length} địa điểm được khảo sát · cập nhật ${research.reviewedAt}` : 'Thông tin tham khảo · cần xác minh trực tiếp'}</span>
           </div>
           <div class="local-directory__hero-actions">
             <a href="#danh-sach">Xem danh sách tham khảo</a>
@@ -106,7 +106,7 @@ const directorySchema = {
     <section class="local-directory__notice">
       <div class="container">
         <strong>Lưu ý trước khi liên hệ</strong>
-        <p>Giờ mở cửa, học phí, HLV và số điện thoại có thể thay đổi. Hãy kiểm tra listing mới nhất, đọc đánh giá gần đây và xác nhận trực tiếp với đơn vị trước khi đến. Website không bảo chứng chất lượng cho bất kỳ bên thứ ba nào.</p>
+        <p>Giờ mở cửa, học phí, HLV và số điện thoại có thể thay đổi. Hãy kiểm tra thông tin mới nhất, đọc đánh giá gần đây và xác nhận trực tiếp với đơn vị trước khi đến. Hệ thống không bảo chứng chất lượng cho bất kỳ bên thứ ba nào.</p>
       </div>
     </section>
 
@@ -195,7 +195,7 @@ const directorySchema = {
           <div class="local-directory__provider-grid">
             {research.providers.map((provider) => (
               <article class="local-directory__provider-card">
-                <div class="local-directory__provider-top"><span>{provider.kind}</span><a href={provider.website} target="_blank" rel="noopener noreferrer">Website ↗</a></div>
+                <div class="local-directory__provider-top"><span>{provider.kind}</span></div>
                 <h3>{provider.name}</h3>
                 <dl>
                   <div><dt>Khu vực</dt><dd>{provider.areas}</dd></div>
