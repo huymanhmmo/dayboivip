@@ -1,21 +1,28 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import { publishedLocationAreas } from '../../data/locationAreas.js';
+import { getAllCommunePages, getCommunesForLocation } from '../../data/communePages.js';
+import { locations } from '../../data/locations.js';
 import '../../styles/location-area.css';
 
 export function getStaticPaths() {
-  return publishedLocationAreas.map((area) => ({
+  const areaPaths = publishedLocationAreas.map((area) => ({
     params: { location: area.parentSlug, area: area.slug },
-    props: { area },
+    props: { area, isCommune: false },
   }));
+
+  const communePages = getAllCommunePages();
+  const communePaths = communePages.map((commune) => ({
+    params: { location: commune.parentSlug, area: commune.slug },
+    props: { commune, isCommune: true },
+  }));
+
+  return [...areaPaths, ...communePaths];
 }
 
-const { area } = Astro.props;
+const { area, commune, isCommune = false } = Astro.props;
 const currentYear = new Date().getFullYear();
-const canonicalPath = area.url;
-const canonicalUrl = `https://dayboi.vip${canonicalPath}`;
-const venues = area.category.venues;
-const instructors = venues.flatMap((venue) => venue.instructors || []);
+
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
 const customerCopy = (value = '') => String(value)
@@ -26,12 +33,6 @@ const customerCopy = (value = '') => String(value)
   .replace(/hiện đại số 1/gi, 'hiện đại đạt chuẩn')
   .replace(/an toàn số 1/gi, 'tiêu chuẩn an toàn cao')
   .replace(/hoàn hảo nhất/gi, 'phù hợp');
-const titleBase = `Học Bơi ${area.seoPlace}: Bể Bơi & Lớp Học`;
-const title = titleBase.length < 38
-  ? `${titleBase} Theo Khu Vực`
-  : (titleBase.length < 45 ? `${titleBase} Gần Bạn` : titleBase);
-const descriptionBase = `Tìm lớp học bơi, giáo viên và bể bơi tại ${area.seoPlace}. So sánh ${venues.length} địa điểm, cách liên hệ, đối tượng phù hợp và lưu ý cần biết trước khi đăng ký.`;
-const description = descriptionBase.length < 145 ? `${descriptionBase} Xem trước khi đăng ký.` : descriptionBase;
 
 const techniques = [
   {
@@ -60,246 +61,629 @@ const techniques = [
   },
 ];
 
-const faqs = [
-  {
-    question: `Học bơi ở ${area.name} nên chọn địa điểm nào?`,
-    answer: `Hãy chọn theo quyền vào bể, khoảng cách di chuyển, độ sâu khu tập và đối tượng nhận học. Trang này đang đối chiếu ${venues.length} địa điểm tại ${area.name}; mỗi địa điểm có nguồn và kênh liên hệ riêng để bạn xác minh trước khi đến.`,
-  },
-  {
-    question: `Lớp học bơi ${area.name} có nhận trẻ em và người lớn không?`,
-    answer: `Tùy đơn vị. Danh sách hiện có ${instructors.length} đầu mối lớp học được gắn với từng bể. Bạn nên hỏi rõ độ tuổi, tỷ lệ học viên trên HLV, số buổi, học phí và vé bể trước khi đăng ký.`,
-  },
-  {
-    question: `Có thể học bơi ếch, bơi sải, bơi ngửa và bơi bướm tại ${area.name} không?`,
-    answer: `Nhiều đơn vị nhận dạy từ cơ bản đến nâng cao, nhưng không phải bể nào cũng có đủ làn và HLV cho cả bốn kiểu bơi. Hãy dùng mục khóa học của từng đơn vị để đối chiếu và xác nhận trực tiếp kỹ thuật bạn muốn học.`,
-  },
-  {
-    question: `Thông tin dạy bơi ở ${area.name} được kiểm tra như thế nào?`,
-    answer: `Mỗi listing phải có địa chỉ, chủ thể liên hệ và URL bài viết hoặc trang cơ sở cụ thể. Giá, lịch và quyền vào bể biến động nên website không sao chép thành cam kết; người học cần xác minh lại với đơn vị vận hành.`,
-  },
-];
+let title = '';
+let description = '';
+let canonicalUrl = '';
+let pageImage = '';
+let breadcrumbs = [];
+let venues = [];
+let instructors = [];
+let faqs = [];
+let relatedItems = [];
+let schema = {};
 
-const relatedAreas = (area.relatedSlugs || [])
-  .map((slug) => publishedLocationAreas.find((item) => item.parentSlug === area.parentSlug && item.slug === slug))
-  .filter(Boolean);
-const breadcrumbs = [
-  { label: 'Trang chủ', href: '/' },
-  { label: 'Toàn quốc', href: '/hoc-boi-o-dau/' },
-  { label: area.parentName, href: `/${area.parentSlug}/` },
-  { label: area.name },
-];
-const schema = {
-  '@context': 'https://schema.org',
-  '@graph': [
+if (isCommune) {
+  canonicalUrl = `https://dayboi.vip/${commune.parentSlug}/${commune.slug}/`;
+  const locMeta = locations.find((l) => l.slug === commune.parentSlug);
+  pageImage = locMeta?.image || '/images/hero-swimming.webp';
+
+  let t = `Học Bơi Tại ${commune.fullName}: Lớp Kèm Riêng & Bể Bơi`;
+  if (t.length > 65) {
+    t = `Học Bơi ${commune.fullName}: Lớp Kèm & Bể Bơi`;
+  }
+  if (t.length < 45) {
+    t = `${t} Gần Bạn`;
+  }
+  title = t;
+
+  const prevSummary = (commune.previous || [])
+    .map((p) => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
+    .slice(0, 3)
+    .join(', ');
+  const descLead = `Tìm lớp học bơi tại ${commune.fullName}${prevSummary ? ` (gồm ${prevSummary})` : ''} tại ${commune.parentName}.`;
+  const descTail = commune.hasVenues
+    ? ` Xem danh sách ${commune.directVenues.length} bể bơi, học phí HLV kèm riêng và liên hệ trực tiếp.`
+    : ` Tra cứu địa điểm học bơi, gợi ý 3 bể bơi lân cận gần nhất kèm khoảng cách chi tiết.`;
+  let d = `${descLead}${descTail}`;
+  if (d.length < 140) d += ` Cập nhật thông tin mới nhất năm ${currentYear}.`;
+  if (d.length > 170) d = d.slice(0, 166).trim() + '...';
+  description = d;
+
+  venues = commune.hasVenues ? commune.directVenues : commune.nearbyVenues;
+  instructors = venues.flatMap((v) => v.instructors || []);
+
+  breadcrumbs = [
+    { label: 'Trang chủ', href: '/' },
+    { label: 'Toàn quốc', href: '/hoc-boi-o-dau/' },
+    { label: commune.parentName, href: `/${commune.parentSlug}/` },
+    { label: commune.fullName },
+  ];
+
+  const nearbyListStr = (commune.nearbyVenues || []).map((v) => `${v.name} (~${v.distanceKm}km)`).join(', ');
+  faqs = [
     {
-      '@type': 'CollectionPage',
-      '@id': `${canonicalUrl}#page`,
-      name: `Học bơi tại ${area.seoPlace}`,
-      description,
-      url: canonicalUrl,
-      dateModified: area.reviewedAt.split('/').reverse().join('-'),
-      mainEntity: { '@id': `${canonicalUrl}#venues` },
+      question: `Tại ${commune.fullName} có những địa điểm học bơi nào?`,
+      answer: commune.hasVenues
+        ? `Hiện tại khu vực ${commune.fullName} ghi nhận ${commune.directVenues.length} địa điểm bể bơi hoặc lớp dạy bơi đang hoạt động. Người học có thể tham khảo địa chỉ cụ thể và thông tin liên hệ trong danh sách bên dưới.`
+        : `Theo khảo sát thực tế, tại địa bàn ${commune.fullName} chưa có bể bơi tiêu chuẩn mở lớp công khai. Bạn nên di chuyển tới các cơ sở lân cận gần nhất như ${nearbyListStr} để đảm bảo cơ sở vật chất và an toàn tập luyện.`,
     },
     {
-      '@type': 'ItemList',
-      '@id': `${canonicalUrl}#venues`,
-      numberOfItems: venues.length,
-      itemListElement: venues.map((venue, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'SportsActivityLocation',
-          '@id': `${canonicalUrl}#dia-diem-${index + 1}`,
-          name: venue.name,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: venue.address || `${venue.name}, ${area.name}`,
-            addressLocality: area.name,
-            addressRegion: area.parentName,
-            addressCountry: 'VN',
+      question: `${commune.fullName} sau sáp nhập gồm những phường hoặc xã cũ nào?`,
+      answer: (commune.previous && commune.previous.length > 0)
+        ? `Theo phương án sắp xếp đơn vị hành chính mới, ${commune.fullName} được hình thành trên cơ sở sáp nhập và điều chỉnh địa giới từ: ${commune.previous.join(', ')}. Cư dân tại các khu vực cũ đều có thể thuận tiện tham khảo các lớp học bơi tại đây.`
+        : `${commune.fullName} trực thuộc ${commune.parentName}, đáp ứng nhu cầu rèn luyện thể thao và học bơi phòng chống đuối nước cho cư dân địa phương.`,
+    },
+    {
+      question: `Chi phí học bơi kèm riêng tại ${commune.fullName} khoảng bao nhiêu?`,
+      answer: `Học phí các khóa học bơi kèm riêng (1 kèm 1 hoặc 1 kèm 2) tại khu vực ${commune.parentName} nói chung và ${commune.fullName} nói riêng thường dao động từ 2.500.000đ - 3.500.000đ/khóa (chưa bao gồm vé vào bể). Mức phí có thể thay đổi tùy theo độ tuổi và thời lượng buổi tập.`,
+    },
+    {
+      question: `Người mới học bơi ở ${commune.fullName} nên bắt đầu với kiểu bơi nào?`,
+      answer: `Người mới bắt đầu (cả trẻ em từ 6 tuổi và người lớn) nên học bơi ếch trước vì động tác đạp chân, quạt tay tự nhiên, dễ nổi và nhanh nắm vững kỹ thuật thở nước sinh tồn. Sau khi thuần thục bơi ếch, bạn có thể học tiếp bơi sải để tăng cường thể lực.`,
+    },
+  ];
+
+  const siblingCommunes = getCommunesForLocation(commune.parentSlug)
+    .filter((c) => c.slug !== commune.slug)
+    .slice(0, 9);
+  relatedItems = siblingCommunes.map((c) => ({
+    name: c.fullName,
+    url: `/${c.parentSlug}/${c.slug}/`,
+    tag: c.hasVenues ? `${c.directVenues.length} địa điểm` : 'Gợi ý lân cận',
+  }));
+
+  schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${canonicalUrl}#page`,
+        name: title,
+        description,
+        url: canonicalUrl,
+        dateModified: '2026-09-12',
+        mainEntity: { '@id': `${canonicalUrl}#venues` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonicalUrl}#venues`,
+        numberOfItems: venues.length,
+        itemListElement: venues.map((venue, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'SportsActivityLocation',
+            '@id': `${canonicalUrl}#dia-diem-${index + 1}`,
+            name: venue.name,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: venue.address || `${venue.name}, ${commune.fullName}`,
+              addressLocality: commune.fullName,
+              addressRegion: commune.parentName,
+              addressCountry: 'VN',
+            },
+            telephone: venue.venueContact?.phone || (venue.instructors && venue.instructors[0]?.phone) || undefined,
+            url: `${canonicalUrl}#dia-diem-${index + 1}`,
+            description: venue.detail || venue.services || `Địa điểm học bơi tại ${venue.name}.`,
           },
-          telephone: venue.venueContact?.phone || (venue.instructors && venue.instructors[0]?.phone) || undefined,
-          url: `${canonicalUrl}#dia-diem-${index + 1}`,
-          description: venue.detail || venue.services || `Địa điểm học bơi và hồ bơi tại ${venue.name}, ${area.name}.`,
-        },
-      })),
+        })),
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      },
+    ],
+  };
+
+} else {
+  canonicalUrl = `https://dayboi.vip${area.url}`;
+  pageImage = area.parentImage;
+  venues = area.category.venues;
+  instructors = venues.flatMap((venue) => venue.instructors || []);
+
+  const titleBase = `Học Bơi ${area.seoPlace}: Bể Bơi & Lớp Học`;
+  title = titleBase.length < 38
+    ? `${titleBase} Theo Khu Vực`
+    : (titleBase.length < 45 ? `${titleBase} Gần Bạn` : titleBase);
+  const descriptionBase = `Tìm lớp học bơi, giáo viên và bể bơi tại ${area.seoPlace}. So sánh ${venues.length} địa điểm, cách liên hệ, đối tượng phù hợp và lưu ý cần biết trước khi đăng ký.`;
+  description = descriptionBase.length < 145 ? `${descriptionBase} Xem trước khi đăng ký.` : descriptionBase;
+
+  breadcrumbs = [
+    { label: 'Trang chủ', href: '/' },
+    { label: 'Toàn quốc', href: '/hoc-boi-o-dau/' },
+    { label: area.parentName, href: `/${area.parentSlug}/` },
+    { label: area.name },
+  ];
+
+  faqs = [
+    {
+      question: `Học bơi ở ${area.name} nên chọn địa điểm nào?`,
+      answer: `Hãy chọn theo quyền vào bể, khoảng cách di chuyển, độ sâu khu tập và đối tượng nhận học. Trang này đang đối chiếu ${venues.length} địa điểm tại ${area.name}; mỗi địa điểm có nguồn và kênh liên hệ riêng để bạn xác minh trước khi đến.`,
     },
     {
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
+      question: `Lớp học bơi ${area.name} có nhận trẻ em và người lớn không?`,
+      answer: `Tùy đơn vị. Danh sách hiện có ${instructors.length} đầu mối lớp học được gắn với từng bể. Bạn nên hỏi rõ độ tuổi, tỷ lệ học viên trên HLV, số buổi, học phí và vé bể trước khi đăng ký.`,
     },
-  ],
-};
+    {
+      question: `Có thể học bơi ếch, bơi sải, bơi ngửa và bơi bướm tại ${area.name} không?`,
+      answer: `Nhiều đơn vị nhận dạy từ cơ bản đến nâng cao, nhưng không phải bể nào cũng có đủ làn và HLV cho cả bốn kiểu bơi. Hãy dùng mục khóa học của từng đơn vị để đối chiếu và xác nhận trực tiếp kỹ thuật bạn muốn học.`,
+    },
+    {
+      question: `Thông tin dạy bơi ở ${area.name} được kiểm tra như thế nào?`,
+      answer: `Mỗi listing phải có địa chỉ, chủ thể liên hệ và URL bài viết hoặc trang cơ sở cụ thể. Giá, lịch và quyền vào bể biến động nên website không sao chép thành cam kết; người học cần xác minh lại với đơn vị vận hành.`,
+    },
+  ];
+
+  const relatedAreas = (area.relatedSlugs || [])
+    .map((slug) => publishedLocationAreas.find((item) => item.parentSlug === area.parentSlug && item.slug === slug))
+    .filter(Boolean);
+  relatedItems = relatedAreas.map((item) => ({
+    name: `Học bơi ${item.name}`,
+    url: item.url,
+    tag: `${item.category.venues.length} địa điểm tham khảo`,
+  }));
+
+  schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${canonicalUrl}#page`,
+        name: `Học bơi tại ${area.seoPlace}`,
+        description,
+        url: canonicalUrl,
+        dateModified: area.reviewedAt.split('/').reverse().join('-'),
+        mainEntity: { '@id': `${canonicalUrl}#venues` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonicalUrl}#venues`,
+        numberOfItems: venues.length,
+        itemListElement: venues.map((venue, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'SportsActivityLocation',
+            '@id': `${canonicalUrl}#dia-diem-${index + 1}`,
+            name: venue.name,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: venue.address || `${venue.name}, ${area.name}`,
+              addressLocality: area.name,
+              addressRegion: area.parentName,
+              addressCountry: 'VN',
+            },
+            telephone: venue.venueContact?.phone || (venue.instructors && venue.instructors[0]?.phone) || undefined,
+            url: `${canonicalUrl}#dia-diem-${index + 1}`,
+            description: venue.detail || venue.services || `Địa điểm học bơi và hồ bơi tại ${venue.name}, ${area.name}.`,
+          },
+        })),
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      },
+    ],
+  };
+}
 ---
 
 <PageLayout
   title={title}
   description={description}
   canonical={canonicalUrl}
-  image={area.parentImage}
+  image={pageImage}
   breadcrumbs={breadcrumbs}
   schema={schema}
 >
   <article class="area-page">
-    <header class="area-hero">
-      <div class="container area-hero__grid">
-        <div class="area-hero__content">
-          <nav class="area-tree-path" aria-label="Vị trí trong danh bạ">
-            <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${area.parentSlug}/`}>{area.parentName}</a><span>›</span><strong>{area.name}</strong>
-          </nav>
-          <span class="area-eyebrow">Thông tin học bơi tại {area.seoPlace} · cập nhật {area.reviewedAt}</span>
-          <h1>Học bơi ở <span>{area.name}</span>: địa điểm và lớp học phù hợp</h1>
-          <p>{customerCopy(area.category.description)} {customerCopy(area.audienceFocus)}</p>
-          <div class="area-hero__actions">
-            <a href="#dia-diem" class="area-button area-button--primary">So sánh {venues.length} địa điểm</a>
-            <a href="#kieu-boi" class="area-button area-button--secondary">Chọn kiểu bơi muốn học</a>
+    {isCommune ? (
+      <!-- COMMUNE LANDING PAGE -->
+      <header class="area-hero">
+        <div class="container area-hero__grid">
+          <div class="area-hero__content">
+            <nav class="area-tree-path" aria-label="Vị trí trong danh bạ">
+              <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${commune.parentSlug}/`}>{commune.parentName}</a><span>›</span><strong>{commune.fullName}</strong>
+            </nav>
+            <span class="area-eyebrow">Đơn vị hành chính cấp xã/phường · cập nhật {commune.reviewedAt}</span>
+            <h1>Học bơi ở <span>{commune.fullName}</span>: địa điểm và lớp học phù hợp</h1>
+            <p>Tra cứu danh sách hồ bơi, trung tâm dạy bơi và giáo viên dạy bơi kèm riêng tại {commune.fullName}, {commune.parentName}. Toàn bộ thông tin được cập nhật chính xác theo quy hoạch địa giới hành chính mới, hỗ trợ tối đa cho học viên tìm kiếm theo cả tên địa chỉ cũ và mới.</p>
+            <div class="area-hero__actions">
+              <a href="#dia-diem" class="area-button area-button--primary">{commune.hasVenues ? `Xem ${commune.directVenues.length} địa điểm` : 'Xem bể bơi lân cận'}</a>
+              <a href="#kieu-boi" class="area-button area-button--secondary">Chọn kiểu bơi muốn học</a>
+            </div>
           </div>
+          <aside class="area-hero__summary" aria-label="Thông tin nhanh">
+            <span>Thông tin hành chính & địa bàn</span>
+            <dl>
+              <div><dt>Trạng thái cơ sở</dt><dd>{commune.hasVenues ? `${commune.directVenues.length} bể trực tiếp` : '3 bể lân cận'}</dd></div>
+              <div><dt>Diện tích</dt><dd>{commune.areaKm2 ? `${commune.areaKm2} km²` : 'Đang cập nhật'}</dd></div>
+              <div><dt>Dân số quy chuẩn</dt><dd>{commune.population ? `${commune.population.toLocaleString('vi-VN')} người` : 'Đang cập nhật'}</dd></div>
+            </dl>
+            <p>Swim For Life cung cấp thông tin trung thực, khách quan và không thu phí môi giới từ người học.</p>
+          </aside>
         </div>
-        <aside class="area-hero__summary" aria-label="Thông tin nhanh">
-          <span>Thông tin nhanh</span>
-          <dl>
-            <div><dt>Địa điểm tham khảo</dt><dd>{venues.length}</dd></div>
-            <div><dt>Đầu mối lớp học</dt><dd>{instructors.length}</dd></div>
-            <div><dt>Cụm lân cận</dt><dd>{area.nearbyAreas.length}</dd></div>
-          </dl>
-          <p>Swim For Life không thu phí giới thiệu và không đại diện các đơn vị trong danh sách.</p>
-        </aside>
-      </div>
-    </header>
+      </header>
 
-    <nav class="area-jump" aria-label="Mục lục trang">
-      <div class="container">
-        <a href="#dia-diem">Địa điểm</a>
-        <a href="#kieu-boi">Kiểu bơi</a>
-        <a href="#cach-chon">Cách chọn lớp</a>
-        <a href="#cau-hoi">Câu hỏi thường gặp</a>
-      </div>
-    </nav>
-
-    <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
-      <div class="container">
-        <div class="area-section__heading">
-          <span>So sánh trước khi liên hệ</span>
-          <h2 id="venue-title">Bể bơi và nơi dạy bơi tại {area.seoPlace}</h2>
-          <p>Thông tin ban quản lý bể và đầu mối đăng ký lớp được ghi riêng. Bạn nên xác nhận lại lịch, giá và quyền vào bể trước khi đến.</p>
+      <nav class="area-jump" aria-label="Mục lục trang">
+        <div class="container">
+          <a href="#dia-gioi">Địa giới sáp nhập</a>
+          <a href="#dia-diem">Địa điểm học bơi</a>
+          <a href="#kieu-boi">Kiểu bơi</a>
+          <a href="#cach-chon">Cách chọn lớp</a>
+          <a href="#cau-hoi">Câu hỏi thường gặp</a>
         </div>
-        <div class="area-venue-list">
-          {venues.map((venue, index) => (
-            <article class="area-venue" id={`dia-diem-${index + 1}`}>
-              <div class="area-venue__index">{String(index + 1).padStart(2, '0')}</div>
-              <div class="area-venue__main">
-                <div class="area-venue__tags">
-                  <span>{venue.area || area.name}</span>
-                  <span>{customerCopy(venue.access)}</span>
-                  {venue.environment && <span>{customerCopy(venue.environment)}</span>}
-                </div>
-                <h3>{venue.name}</h3>
-                <p><strong>Địa chỉ:</strong> {venue.address}</p>
-                {venue.services && <p><strong>Tiện ích:</strong> {customerCopy(venue.services)}</p>}
-                <p><strong>Phù hợp với:</strong> {customerCopy(venue.detail)}</p>
-                {venue.missing && <p class="area-venue__note"><strong>Cần xác nhận:</strong> {customerCopy(venue.missing)}</p>}
-              </div>
-              <div class="area-venue__contacts">
-                {venue.venueContact && (
-                  <section>
-                    <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
-                    <h4>{venue.venueContact.name}</h4>
-                    <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
-                    {venue.venueContact.note && <p>{customerCopy(venue.venueContact.note)}</p>}
-                    <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin công khai: {venue.venueContact.sourceTitle} ↗</a>
-                  </section>
-                )}
-                {(venue.instructors || []).map((instructor) => (
-                  <section>
-                    <span>Đăng ký lớp học bơi</span>
-                    <h4>{instructor.unitName}</h4>
-                    <p>{instructor.contactPerson}</p>
-                    <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
-                    <p>{customerCopy(instructor.courseTypes)}</p>
-                    <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin lớp: {instructor.sourceTitle} ↗</a>
-                  </section>
+      </nav>
+
+      <section class="area-section" id="dia-gioi" aria-labelledby="admin-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Thông tin hành chính 2026</span>
+            <h2 id="admin-title">Địa giới hành chính và sáp nhập tại {commune.fullName}</h2>
+            <p>Dữ liệu đối chiếu chuẩn xác giữa tên xã/phường mới và các đơn vị hành chính cũ trước khi sáp nhập.</p>
+          </div>
+          <div class="area-admin-card">
+            <dl class="area-admin-stats">
+              <div><dt>Tỉnh/Thành phố</dt><dd>{commune.parentName}</dd></div>
+              <div><dt>Loại hình đơn vị</dt><dd>{commune.type === 'phường' ? 'Phường đô thị' : (commune.type === 'xã' ? 'Xã nông thôn' : 'Đặc khu')}</dd></div>
+              <div><dt>Trung tâm hành chính</dt><dd>{commune.administrativeCenter || commune.name}</dd></div>
+              <div><dt>Tọa độ WGS84</dt><dd>{commune.latitude && commune.longitude ? `${commune.latitude.toFixed(4)}°B, ${commune.longitude.toFixed(4)}°Đ` : 'Đang cập nhật'}</dd></div>
+            </dl>
+            <div class="area-admin-history">
+              <h3>Các xã/phường cũ sáp nhập vào {commune.fullName}</h3>
+              <p>Nếu bạn đang tìm kiếm thông tin theo địa chỉ cũ, danh sách dưới đây là các đơn vị hành chính đã được hợp nhất thành {commune.fullName}:</p>
+              <div class="area-prev-tags">
+                {(commune.previous || []).map((prev) => (
+                  <span class="area-prev-tag">{prev}</span>
                 ))}
-                <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="area-map">Mở bản đồ & chỉ đường ↗</a>
               </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="area-section area-section--dark" id="kieu-boi" aria-labelledby="technique-title">
-      <div class="container">
-        <div class="area-section__heading">
-          <span>Chọn kiểu bơi muốn học</span>
-          <h2 id="technique-title">Học bơi ếch, sải, ngửa, bướm ở {area.name}</h2>
-          <p>Nếu chưa biết nên bắt đầu từ kiểu bơi nào, hãy xem mục tiêu và yêu cầu nền tảng của từng kỹ thuật trước khi trao đổi với giáo viên.</p>
-        </div>
-        <div class="area-techniques">
-          {techniques.map((technique, index) => (
-            <a href={technique.href}>
-              <span>0{index + 1} · {technique.level}</span>
-              <h3>{technique.name} tại {area.name}</h3>
-              <p>{technique.description}</p>
-              <strong>Xem hướng dẫn kỹ thuật →</strong>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="area-section" id="cach-chon" aria-labelledby="choice-title">
-      <div class="container area-choice">
-        <div>
-          <span class="area-eyebrow">Kiểm tra trước khi đăng ký</span>
-          <h2 id="choice-title">Bốn điều cần hỏi khi chọn lớp học bơi {area.name}</h2>
-          <p class="area-choice__local"><strong>Lưu ý riêng cho {area.name}:</strong> {customerCopy(area.localAdvice)}</p>
-          <div class="area-nearby" aria-label="Các cụm khu vực lân cận">
-            {area.nearbyAreas.map((place) => <span>{place}</span>)}
+              <p style="margin-top: 1rem; font-size: 0.86rem; color: var(--ink-600);">
+                Dù bạn sinh sống tại bất kỳ khu vực cũ nào kể trên, các cơ sở bơi lội và lớp học bơi được tổng hợp dưới đây đều nằm trong bán kính di chuyển thuận tiện hàng ngày.
+              </p>
+            </div>
           </div>
         </div>
-        <ol>
-          <li><span>01</span><div><strong>Quyền tiếp cận bể</strong><p>Bể công cộng, khách sạn và nội khu có quy định khách ngoài khác nhau.</p></div></li>
-          <li><span>02</span><div><strong>Đúng đối tượng học</strong><p>Xác nhận độ tuổi, trình độ, mục tiêu sinh tồn hay hoàn thiện kỹ thuật.</p></div></li>
-          <li><span>03</span><div><strong>An toàn & sĩ số</strong><p>Hỏi tỷ lệ học viên/HLV, cứu hộ, độ sâu và khu vực dành cho người mới.</p></div></li>
-          <li><span>04</span><div><strong>Tổng chi phí</strong><p>Chốt bằng văn bản học phí, vé bể, số buổi, lịch bù và dụng cụ cần mua.</p></div></li>
-        </ol>
-      </div>
-    </section>
+      </section>
 
-    <section class="area-section area-section--soft" id="cau-hoi" aria-labelledby="faq-title">
-      <div class="container area-faq">
-        <div class="area-section__heading">
-          <span>Giải đáp theo khu vực</span>
-          <h2 id="faq-title">Câu hỏi về học bơi tại {area.name}</h2>
+      <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
+        <div class="container">
+          {commune.hasVenues ? (
+            <div>
+              <div class="area-section__heading">
+                <span>So sánh trước khi liên hệ</span>
+                <h2 id="venue-title">Bể bơi và nơi dạy bơi tại {commune.fullName}</h2>
+                <p>Thông tin ban quản lý bể và đầu mối đăng ký lớp được ghi riêng. Bạn nên xác nhận lại lịch, giá và quyền vào bể trước khi đến.</p>
+              </div>
+              <div class="area-venue-list">
+                {commune.directVenues.map((venue, index) => (
+                  <article class="area-venue" id={`dia-diem-${index + 1}`}>
+                    <div class="area-venue__index">{String(index + 1).padStart(2, '0')}</div>
+                    <div class="area-venue__main">
+                      <div class="area-venue__tags">
+                        <span>{commune.fullName}</span>
+                        <span>{customerCopy(venue.access || 'Bể bơi')}</span>
+                        {venue.environment && <span>{customerCopy(venue.environment)}</span>}
+                      </div>
+                      <h3>{venue.name}</h3>
+                      <p><strong>Địa chỉ:</strong> {venue.address}</p>
+                      {venue.services && <p><strong>Tiện ích:</strong> {customerCopy(venue.services)}</p>}
+                      <p><strong>Phù hợp với:</strong> {customerCopy(venue.detail)}</p>
+                      {venue.missing && <p class="area-venue__note"><strong>Cần xác nhận:</strong> {customerCopy(venue.missing)}</p>}
+                    </div>
+                    <div class="area-venue__contacts">
+                      {venue.venueContact && (
+                        <section>
+                          <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
+                          <h4>{venue.venueContact.name}</h4>
+                          <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
+                          {venue.venueContact.note && <p>{customerCopy(venue.venueContact.note)}</p>}
+                          <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin công khai: {venue.venueContact.sourceTitle} ↗</a>
+                        </section>
+                      )}
+                      {(venue.instructors || []).map((instructor) => (
+                        <section>
+                          <span>Đăng ký lớp học bơi</span>
+                          <h4>{instructor.unitName}</h4>
+                          <p>{instructor.contactPerson}</p>
+                          <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
+                          <p>{customerCopy(instructor.courseTypes)}</p>
+                          <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin lớp: {instructor.sourceTitle} ↗</a>
+                        </section>
+                      ))}
+                      <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="area-map">Mở bản đồ & chỉ đường ↗</a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div class="area-section__heading">
+                <span>Minh bạch thông tin địa phương</span>
+                <h2 id="venue-title">Địa điểm học bơi phù hợp cho cư dân {commune.fullName}</h2>
+                <p>Hệ thống tự động tính toán khoảng cách GPS thực tế từ trung tâm {commune.fullName} đến các bể bơi đạt chuẩn gần nhất.</p>
+              </div>
+              <div class="area-notice-banner">
+                <h3>⚠️ Chưa ghi nhận bể bơi đạt chuẩn trực tiếp tại {commune.fullName}</h3>
+                <p>Theo khảo sát dữ liệu thực tế năm {currentYear}, trên địa bàn {commune.fullName} hiện chưa có bể bơi thương mại hoặc trường học mở lớp bơi công khai. Để đảm bảo điều kiện xử lý nước đạt chuẩn, có cứu hộ thường trực và cơ sở vật chất an toàn, Swim For Life khuyến nghị bạn tham khảo 3 địa điểm bơi lội lân cận gần nhất dưới đây.</p>
+              </div>
+              <div class="area-nearby-grid">
+                {commune.nearbyVenues.map((venue, index) => (
+                  <article class="area-nearby-card" id={`dia-diem-${index + 1}`}>
+                    <span class="area-nearby-badge">📍 Cách trung tâm ~{venue.distanceKm} km</span>
+                    <h3>{venue.name}</h3>
+                    <p><strong>Địa chỉ:</strong> {venue.address}</p>
+                    {venue.services && <p><strong>Tiện ích:</strong> {customerCopy(venue.services)}</p>}
+                    <p><strong>Đặc điểm:</strong> {customerCopy(venue.detail)}</p>
+                    <div class="area-nearby-actions">
+                      {venue.instructors?.length > 0 && (
+                        <a href={phoneHref(venue.instructors[0].phone)} class="btn-call">
+                          📞 Đăng ký lớp ({venue.instructors[0].phone})
+                        </a>
+                      )}
+                      {venue.venueContact && !venue.instructors?.length && (
+                        <a href={phoneHref(venue.venueContact.phone)} class="btn-call">
+                          📞 Hotline bể ({venue.venueContact.phone})
+                        </a>
+                      )}
+                      <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="btn-map">
+                        Mở bản đồ & chỉ đường ↗
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-        <div class="area-faq__list">
-          {faqs.map((faq) => (
-            <details>
-              <summary>{faq.question}</summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="area-section area-related" aria-labelledby="related-title">
-      <div class="container">
-        <div class="area-section__heading">
-          <span>Địa điểm lân cận</span>
-          <h2 id="related-title">Khu vực học bơi khác tại {area.parentName}</h2>
+      <section class="area-section area-section--dark" id="kieu-boi" aria-labelledby="technique-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Chọn kiểu bơi muốn học</span>
+            <h2 id="technique-title">Học bơi ếch, sải, ngửa, bướm ở {commune.fullName}</h2>
+            <p>Nếu chưa biết nên bắt đầu từ kiểu bơi nào, hãy xem mục tiêu và yêu cầu nền tảng của từng kỹ thuật trước khi trao đổi với giáo viên.</p>
+          </div>
+          <div class="area-techniques">
+            {techniques.map((technique, index) => (
+              <a href={technique.href}>
+                <span>0{index + 1} · {technique.level}</span>
+                <h3>{technique.name} tại {commune.fullName}</h3>
+                <p>{technique.description}</p>
+                <strong>Xem hướng dẫn kỹ thuật →</strong>
+              </a>
+            ))}
+          </div>
         </div>
-        <div class="area-related__grid">
-          {relatedAreas.map((item) => (
-            <a href={item.url}><span>{item.category.venues.length} địa điểm tham khảo</span><strong>Học bơi {item.name}</strong><b>Xem khu vực →</b></a>
-          ))}
-          <a href={`/${area.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {area.parentName}</strong><b>Mở danh bạ →</b></a>
+      </section>
+
+      <section class="area-section" id="cach-chon" aria-labelledby="choice-title">
+        <div class="container area-choice">
+          <div>
+            <span class="area-eyebrow">Kiểm tra trước khi đăng ký</span>
+            <h2 id="choice-title">Bốn điều cần hỏi khi chọn lớp học bơi tại {commune.fullName}</h2>
+            <p class="area-choice__local"><strong>Lưu ý riêng cho {commune.fullName}:</strong> Ưu tiên lựa chọn các cơ sở có hệ thống lọc nước tuần hoàn sạch, có nhân viên cứu hộ chuyên nghiệp và thỏa thuận minh bạch về học phí trọn gói trước khi bắt đầu buổi tập.</p>
+            <div class="area-nearby" aria-label="Đơn vị hành chính cũ">
+              {(commune.previous || []).map((place) => <span>{place}</span>)}
+            </div>
+          </div>
+          <ol>
+            <li><span>01</span><div><strong>Quyền tiếp cận bể</strong><p>Bể công cộng, khách sạn và nội khu có quy định khách ngoài khác nhau.</p></div></li>
+            <li><span>02</span><div><strong>Đúng đối tượng học</strong><p>Xác nhận độ tuổi, trình độ, mục tiêu sinh tồn hay hoàn thiện kỹ thuật.</p></div></li>
+            <li><span>03</span><div><strong>An toàn & sĩ số</strong><p>Hỏi tỷ lệ học viên/HLV, cứu hộ, độ sâu và khu vực dành cho người mới.</p></div></li>
+            <li><span>04</span><div><strong>Tổng chi phí</strong><p>Chốt bằng văn bản học phí, vé bể, số buổi, lịch bù và dụng cụ cần mua.</p></div></li>
+          </ol>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="area-section area-section--soft" id="cau-hoi" aria-labelledby="faq-title">
+        <div class="container area-faq">
+          <div class="area-section__heading">
+            <span>Giải đáp theo khu vực</span>
+            <h2 id="faq-title">Câu hỏi về học bơi tại {commune.fullName}</h2>
+          </div>
+          <div class="area-faq__list">
+            {faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section area-related" aria-labelledby="related-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Địa điểm lân cận</span>
+            <h2 id="related-title">Khu vực xã/phường khác tại {commune.parentName}</h2>
+          </div>
+          <div class="area-related__grid">
+            {relatedItems.map((item) => (
+              <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>Xem khu vực →</b></a>
+            ))}
+            <a href={`/${commune.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {commune.parentName}</strong><b>Mở danh bạ →</b></a>
+          </div>
+        </div>
+      </section>
+    ) : (
+      <!-- DISTRICT / EXISTING AREA PAGE -->
+      <header class="area-hero">
+        <div class="container area-hero__grid">
+          <div class="area-hero__content">
+            <nav class="area-tree-path" aria-label="Vị trí trong danh bạ">
+              <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${area.parentSlug}/`}>{area.parentName}</a><span>›</span><strong>{area.name}</strong>
+            </nav>
+            <span class="area-eyebrow">Thông tin học bơi tại {area.seoPlace} · cập nhật {area.reviewedAt}</span>
+            <h1>Học bơi ở <span>{area.name}</span>: địa điểm và lớp học phù hợp</h1>
+            <p>{customerCopy(area.category.description)} {customerCopy(area.audienceFocus)}</p>
+            <div class="area-hero__actions">
+              <a href="#dia-diem" class="area-button area-button--primary">So sánh {venues.length} địa điểm</a>
+              <a href="#kieu-boi" class="area-button area-button--secondary">Chọn kiểu bơi muốn học</a>
+            </div>
+          </div>
+          <aside class="area-hero__summary" aria-label="Thông tin nhanh">
+            <span>Thông tin nhanh</span>
+            <dl>
+              <div><dt>Địa điểm tham khảo</dt><dd>{venues.length}</dd></div>
+              <div><dt>Đầu mối lớp học</dt><dd>{instructors.length}</dd></div>
+              <div><dt>Cụm lân cận</dt><dd>{area.nearbyAreas.length}</dd></div>
+            </dl>
+            <p>Swim For Life không thu phí giới thiệu và không đại diện các đơn vị trong danh sách.</p>
+          </aside>
+        </div>
+      </header>
+
+      <nav class="area-jump" aria-label="Mục lục trang">
+        <div class="container">
+          <a href="#dia-diem">Địa điểm</a>
+          <a href="#kieu-boi">Kiểu bơi</a>
+          <a href="#cach-chon">Cách chọn lớp</a>
+          <a href="#cau-hoi">Câu hỏi thường gặp</a>
+        </div>
+      </nav>
+
+      <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>So sánh trước khi liên hệ</span>
+            <h2 id="venue-title">Bể bơi và nơi dạy bơi tại {area.seoPlace}</h2>
+            <p>Thông tin ban quản lý bể và đầu mối đăng ký lớp được ghi riêng. Bạn nên xác nhận lại lịch, giá và quyền vào bể trước khi đến.</p>
+          </div>
+          <div class="area-venue-list">
+            {venues.map((venue, index) => (
+              <article class="area-venue" id={`dia-diem-${index + 1}`}>
+                <div class="area-venue__index">{String(index + 1).padStart(2, '0')}</div>
+                <div class="area-venue__main">
+                  <div class="area-venue__tags">
+                    <span>{venue.area || area.name}</span>
+                    <span>{customerCopy(venue.access)}</span>
+                    {venue.environment && <span>{customerCopy(venue.environment)}</span>}
+                  </div>
+                  <h3>{venue.name}</h3>
+                  <p><strong>Địa chỉ:</strong> {venue.address}</p>
+                  {venue.services && <p><strong>Tiện ích:</strong> {customerCopy(venue.services)}</p>}
+                  <p><strong>Phù hợp với:</strong> {customerCopy(venue.detail)}</p>
+                  {venue.missing && <p class="area-venue__note"><strong>Cần xác nhận:</strong> {customerCopy(venue.missing)}</p>}
+                </div>
+                <div class="area-venue__contacts">
+                  {venue.venueContact && (
+                    <section>
+                      <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
+                      <h4>{venue.venueContact.name}</h4>
+                      <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
+                      {venue.venueContact.note && <p>{customerCopy(venue.venueContact.note)}</p>}
+                      <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin công khai: {venue.venueContact.sourceTitle} ↗</a>
+                    </section>
+                  )}
+                  {(venue.instructors || []).map((instructor) => (
+                    <section>
+                      <span>Đăng ký lớp học bơi</span>
+                      <h4>{instructor.unitName}</h4>
+                      <p>{instructor.contactPerson}</p>
+                      <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
+                      <p>{customerCopy(instructor.courseTypes)}</p>
+                      <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin lớp: {instructor.sourceTitle} ↗</a>
+                    </section>
+                  ))}
+                  <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="area-map">Mở bản đồ & chỉ đường ↗</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section area-section--dark" id="kieu-boi" aria-labelledby="technique-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Chọn kiểu bơi muốn học</span>
+            <h2 id="technique-title">Học bơi ếch, sải, ngửa, bướm ở {area.name}</h2>
+            <p>Nếu chưa biết nên bắt đầu từ kiểu bơi nào, hãy xem mục tiêu và yêu cầu nền tảng của từng kỹ thuật trước khi trao đổi với giáo viên.</p>
+          </div>
+          <div class="area-techniques">
+            {techniques.map((technique, index) => (
+              <a href={technique.href}>
+                <span>0{index + 1} · {technique.level}</span>
+                <h3>{technique.name} tại {area.name}</h3>
+                <p>{technique.description}</p>
+                <strong>Xem hướng dẫn kỹ thuật →</strong>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section" id="cach-chon" aria-labelledby="choice-title">
+        <div class="container area-choice">
+          <div>
+            <span class="area-eyebrow">Kiểm tra trước khi đăng ký</span>
+            <h2 id="choice-title">Bốn điều cần hỏi khi chọn lớp học bơi {area.name}</h2>
+            <p class="area-choice__local"><strong>Lưu ý riêng cho {area.name}:</strong> {customerCopy(area.localAdvice)}</p>
+            <div class="area-nearby" aria-label="Các cụm khu vực lân cận">
+              {area.nearbyAreas.map((place) => <span>{place}</span>)}
+            </div>
+          </div>
+          <ol>
+            <li><span>01</span><div><strong>Quyền tiếp cận bể</strong><p>Bể công cộng, khách sạn và nội khu có quy định khách ngoài khác nhau.</p></div></li>
+            <li><span>02</span><div><strong>Đúng đối tượng học</strong><p>Xác nhận độ tuổi, trình độ, mục tiêu sinh tồn hay hoàn thiện kỹ thuật.</p></div></li>
+            <li><span>03</span><div><strong>An toàn & sĩ số</strong><p>Hỏi tỷ lệ học viên/HLV, cứu hộ, độ sâu và khu vực dành cho người mới.</p></div></li>
+            <li><span>04</span><div><strong>Tổng chi phí</strong><p>Chốt bằng văn bản học phí, vé bể, số buổi, lịch bù và dụng cụ cần mua.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="area-section area-section--soft" id="cau-hoi" aria-labelledby="faq-title">
+        <div class="container area-faq">
+          <div class="area-section__heading">
+            <span>Giải đáp theo khu vực</span>
+            <h2 id="faq-title">Câu hỏi về học bơi tại {area.name}</h2>
+          </div>
+          <div class="area-faq__list">
+            {faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section area-related" aria-labelledby="related-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Địa điểm lân cận</span>
+            <h2 id="related-title">Khu vực học bơi khác tại {area.parentName}</h2>
+          </div>
+          <div class="area-related__grid">
+            {relatedItems.map((item) => (
+              <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>Xem khu vực →</b></a>
+            ))}
+            <a href={`/${area.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {area.parentName}</strong><b>Mở danh bạ →</b></a>
+          </div>
+        </div>
+      </section>
+    )}
   </article>
 </PageLayout>

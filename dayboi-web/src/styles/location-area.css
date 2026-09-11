@@ -176,3 +176,170 @@
 @media (max-width: 480px) {
   .area-related__grid { grid-template-columns: 1fr; }
 }
+
+/* Administrative Information Card */
+.area-admin-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--sand-50);
+  margin-top: 1.5rem;
+}
+.area-admin-stats {
+  display: grid;
+  gap: 1rem;
+}
+.area-admin-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.area-admin-stats dt {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.area-admin-stats dd {
+  margin: 0;
+  color: var(--blue-950);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.area-admin-history h3 {
+  margin: 0 0 0.8rem;
+  color: var(--blue-950);
+  font-size: 1.15rem;
+}
+.area-admin-history p {
+  color: var(--ink-600);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.area-prev-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.area-prev-tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: var(--white);
+  border: 1px solid var(--color-border);
+  color: var(--blue-900);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Zero Fabrication Notice */
+.area-notice-banner {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--radius-xl);
+  background: #fff8f1;
+  border: 1px solid #fed7aa;
+  margin-bottom: 2.5rem;
+}
+.area-notice-banner h3 {
+  margin: 0 0 0.5rem;
+  color: #9a3412;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.area-notice-banner p {
+  margin: 0;
+  color: #7c2d12;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Nearby Venues Grid */
+.area-nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.area-nearby-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.area-nearby-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.area-nearby-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  background: #ecfdf5;
+  color: #065f46;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.area-nearby-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--blue-950);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+.area-nearby-card p {
+  color: var(--ink-600);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+.area-nearby-card strong {
+  color: var(--ink-800);
+}
+.area-nearby-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.area-nearby-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.area-nearby-actions .btn-call {
+  background: var(--blue-900);
+  color: var(--white);
+}
+.area-nearby-actions .btn-map {
+  background: var(--sand-100);
+  color: var(--ink-800);
+}
+
+@media (max-width: 900px) {
+  .area-admin-card {
+    grid-template-columns: 1fr;
+  }
+}
+

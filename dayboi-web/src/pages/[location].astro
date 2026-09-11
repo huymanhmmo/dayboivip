@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { locations } from '../data/locations.js';
 import { getLocationResearch } from '../data/locationResearch.js';
 import { getPublishedAreaUrl } from '../data/locationAreas.js';
+import { getCommunesForLocation } from '../data/communePages.js';
 import '../styles/location-directory.css';
 
 export function getStaticPaths() {
@@ -41,6 +42,7 @@ const poolDirectory = categories.flatMap((category) => category.venues.map((venu
   category: category.label,
   mapsUrl: mapsSearch(`${venue.name}, ${venue.address || loc.name}`),
 })));
+const communes = getCommunesForLocation(loc.slug);
 const pageTitle = research?.providers
   ? `Học Bơi ${loc.name}: Bể Bơi & Lớp Học Theo Khu Vực`
   : `Học Bơi ${loc.name}: Danh Bạ Bể Bơi & Giáo Viên`;
@@ -339,7 +341,26 @@ const directorySchema = {
       </div>
     </section>
 
-
+    {communes?.length > 0 && (
+      <section class="section local-directory__communes" id="xa-phuong" aria-labelledby="communes-title">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__badge">Đơn vị hành chính mới 2026</span>
+            <h2 class="section__title" id="communes-title">Tra cứu học bơi theo xã, phường tại {loc.name}</h2>
+            <p class="section__desc">Chọn xã hoặc phường nơi bạn sinh sống để xem danh sách bể bơi trực tiếp hoặc địa điểm lân cận gần nhất kèm thông tin sáp nhập địa giới cũ.</p>
+          </div>
+          <div class="local-directory__commune-grid">
+            {communes.map((c) => (
+              <a href={`/${c.parentSlug}/${c.slug}/`} class="local-directory__commune-card">
+                <strong>{c.fullName}</strong>
+                <span>{c.hasVenues ? `${c.directVenues.length} địa điểm bơi` : 'Gợi ý bể gần nhất'}</span>
+                {c.previous?.length > 0 && <small>Gồm: {c.previous.slice(0, 2).join(', ')}</small>}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     {research?.relatedPages?.length > 0 && (
       <section class="section local-directory__related" aria-labelledby="related-title">
