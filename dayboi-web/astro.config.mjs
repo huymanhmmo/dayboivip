@@ -13,6 +13,7 @@ export default defineConfig({
   redirects: {
     '/dia-diem/ha-noi': '/hoc-boi-ha-noi',
     '/dia-diem/tphcm': '/hoc-boi-tphcm',
+    '/dia-diem/tphcm/hoc-boi-tan-binh': '/hoc-boi-tphcm/tan-binh',
     '/blog': '/tin-tuc',
     ...areaRedirects,
   },
@@ -21,7 +22,7 @@ export default defineConfig({
        changefreq: 'weekly',
        priority: 0.7,
        lastmod: new Date(),
-       filter: (page) => !page.includes('/the/') && !page.includes('/en/blog/the/'),
+       filter: (page) => !page.includes('/the/') && !page.includes('/en/blog/the/') && !page.includes('/dia-diem/'),
      }),
    ],
   build: {

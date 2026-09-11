@@ -372,7 +372,7 @@ export const nguoiLon = {
           "Bảo mật thông tin, làn bơi riêng tư, thoải mái",
           "Tự chọn HLV nam/nữ theo yêu cầu",
           "Linh hoạt tự chọn thời gian học mỗi buổi",
-          "Cam kết biết bơi 100% (nếu không hoàn tiền)",
+          "Cam kết đầu ra biết bơi thành thạo (bảo đảm học phí)",
           "Bảo lưu khóa học lên đến 2.5 tháng",
           "Học thử MIỄN PHÍ 1 buổi trước khi đóng tiền"
         ],
@@ -774,7 +774,7 @@ export const nhom = {
         features: [
           "Áp dụng cho nhóm tự đăng ký từ 3 - 5 người",
           "Tự chọn lịch học linh hoạt theo ý nhóm",
-          "Cam kết biết bơi 100% cho từng thành viên",
+          "Cam kết đồng hành bơi thành thạo cho từng thành viên",
           "HLV đi theo suốt chương trình riêng của nhóm",
           "Bảo lưu lịch học linh hoạt nếu cả nhóm bận",
           "Thích hợp cho gia đình cùng đi học bơi"
@@ -1138,7 +1138,7 @@ export const nguoiSoNuoc = {
           "HLV chuyên môn tâm lý kiên nhẫn vượt trội",
           "Học ở bể nông 1.2m cực kỳ an toàn",
           "Giáo viên theo sát trong buổi học",
-          "Cam kết hoàn tiền 100% nếu sau 4 buổi không nổi ngửa được",
+          "Chính sách bảo đảm học phí nếu sau 4 buổi không nổi ngửa được",
           "Học thử MIỄN PHÍ buổi đầu tiên",
           "Bảo lưu dài hạn 3 tháng khi bận rộn"
         ],
@@ -1157,7 +1157,7 @@ export const nguoiSoNuoc = {
   faqs: [
     {
       question: "Nếu sau 4 buổi học tôi vẫn không dám ngụp đầu xuống nước thì thế nào?",
-      answer: "Swim For Life cam kết hoàn tiền 100% học phí hoặc đổi HLV khác phù hợp hơn nếu sau 4 buổi học nghiêm túc đầu tiên học viên không thể ngụp đầu hoặc nổi ngửa cơ bản. Sự an tâm của học viên là ưu tiên cao nhất của chúng tôi."
+      answer: "Swim For Life cam kết hoàn lại trọn gói học phí hoặc đổi HLV khác phù hợp hơn nếu sau 4 buổi học nghiêm túc đầu tiên học viên không thể ngụp đầu hoặc nổi ngửa cơ bản. Sự an tâm của học viên là ưu tiên cao nhất của chúng tôi."
     },
     {
       question: "Khóa này có giới hạn độ tuổi không?",
@@ -1303,7 +1303,7 @@ export const doanhNghiep = {
         features: [
           "Phân bổ 1-2 HLV cao cấp theo sát nhóm",
           "Lịch học linh động chọn ngoài giờ hành chính",
-          "Cam kết biết bơi 100% cho từng người",
+          "Cam kết đồng hành đến khi bơi thành thạo cho từng người",
           "Học tại bể bơi cao cấp gần công ty",
           "Bao gồm giáo trình sơ cứu đuối nước",
           "Hỗ trợ bảo lưu cho nhân viên đi công tác"

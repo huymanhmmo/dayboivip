@@ -11,13 +11,43 @@ import '../styles/home-redesign.css';
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Swim For Life Việt Nam",
-  "alternateName": "Trung tâm dạy bơi Swim For Life",
-  "description": "Nền tảng hướng dẫn học bơi, kỹ thuật bơi và tra cứu lớp học bơi theo địa phương; đồng thời thiết kế chương trình cho trường học, doanh nghiệp và khu dân cư.",
-  "url": "https://dayboi.vip",
-  "image": "https://dayboi.vip/images/brand/logo.png",
-  "areaServed": "VN"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://dayboi.vip/#website",
+      "url": "https://dayboi.vip",
+      "name": "Swim For Life Việt Nam",
+      "description": "Nền tảng hướng dẫn học bơi, kỹ thuật bơi chuẩn sư phạm và danh bạ bể bơi toàn quốc.",
+      "publisher": { "@id": "https://dayboi.vip/#organization" },
+      "inLanguage": "vi"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://dayboi.vip/#organization",
+      "name": "Swim For Life Việt Nam",
+      "alternateName": ["Trung tâm dạy bơi Swim For Life", "Dayboi.vip"],
+      "description": "Nền tảng hướng dẫn học bơi, kỹ thuật bơi và tra cứu lớp học bơi theo địa phương; đồng thời thiết kế chương trình cho trường học, doanh nghiệp và khu dân cư.",
+      "url": "https://dayboi.vip",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dayboi.vip/images/brand/logo.png"
+      },
+      "image": "https://dayboi.vip/images/brand/logo.png",
+      "telephone": "0983811192",
+      "email": "lienhe@dayboi.vip",
+      "founder": {
+        "@type": "Person",
+        "name": "Nguyễn Huy Mạnh",
+        "jobTitle": "Giám đốc đào tạo & Huấn luyện viên trưởng",
+        "url": "https://dayboi.vip/doi-ngu-hlv/"
+      },
+      "sameAs": [
+        "https://www.facebook.com/dayboivip",
+        "https://www.youtube.com/@dayboivip"
+      ],
+      "areaServed": "VN"
+    }
+  ]
 };
 
 const regions = [

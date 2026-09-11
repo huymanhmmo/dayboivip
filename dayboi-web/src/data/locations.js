@@ -6,12 +6,12 @@ export const locations = [
     isTW: true,
     color: "aqua",
     mergedFrom: "",
-    title: "Học Bơi Hà Nội: Trung Tâm Dạy Bơi Chuyên Nghiệp Uy Tín Nhất",
+    title: "Học Bơi Hà Nội: Trung Tâm Dạy Bơi Chuyên Nghiệp được đông đảo học viên lựa chọn",
     description: "Học bơi Hà Nội tại Swim For Life Việt Nam. Lớp dạy bơi 1 kèm 1 cho trẻ em & người lớn tại các bể bơi Tăng Bạt Hổ, Bách Khoa, Times City, Bảo Sơn, Hapulico. Cam kết biết bơi 100%.",
     headline: "Học Bơi Hà Nội: Khóa Học Bơi Uy Tín & Chuyên Nghiệp Nhất",
     subtitle: "Hệ thống bể bơi chất lượng cao khắp Hà Nội. Dạy bơi 1 kèm 1 cho trẻ em & người lớn. Đội ngũ 50+ HLV chuyên nghiệp, cam kết biết bơi sau 10-12 buổi.",
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
-    intro: "Hà Nội — thủ đô của Việt Nam với hơn 8 triệu dân — là một trong những địa điểm có nhu cầu học bơi cao nhất cả nước, đặc biệt vào mùa hè nóng bức. Thấu hiểu nhu cầu đó, Swim For Life mang tới các lớp dạy bơi chất lượng cao với HLV kèm cặp sát sao, đảm bảo an toàn tuyệt đối.",
+    intro: "Hà Nội — thủ đô của Việt Nam với hơn 8 triệu dân — là một trong những địa điểm có nhu cầu học bơi cao nhất cả nước, đặc biệt vào mùa hè nóng bức. Thấu hiểu nhu cầu đó, Swim For Life mang tới các lớp dạy bơi chất lượng cao với HLV kèm cặp sát sao, đảm bảo đảm bảo an toàn tối đa.",
     pools: [
       { name: "Bể bơi Tăng Bạt Hổ", address: "30 Tăng Bạt Hổ, Phạm Đình Hổ, Hai Bà Trưng, Hà Nội", type: "Ngoài trời & trong nhà", pros: "Bể lớn tiêu chuẩn, nước sạch, làn bơi riêng biệt." },
       { name: "Bể bơi Đại học Bách Khoa", address: "Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội", type: "Ngoài trời", pros: "Không gian rộng rãi, thoáng mát, HLV chuyên nghiệp nhiệt tình." },
@@ -34,7 +34,7 @@ export const locations = [
     mergedFrom: "TP.HCM + Bình Dương + Bà Rịa-Vũng Tàu",
     title: "Học Bơi TPHCM: Lớp Dạy Bơi Sài Gòn Uy Tín 1 Kèm 1",
     description: "Lớp học bơi TPHCM (Sài Gòn, Bình Dương, Vũng Tàu) uy tín hàng đầu. Dạy bơi 1 kèm 1 cho mọi lứa tuổi tại các quận 1, 2, 3, 7, Tân Bình, Bình Thạnh. Cam kết biết bơi.",
-    headline: "Học Bơi TPHCM: Trung Tâm Dạy Bơi Sài Gòn Uy Tín Số 1",
+    headline: "Học Bơi TPHCM: Trung Tâm Dạy Bơi Sài Gòn được nhiều học viên tin chọn",
     subtitle: "Dạy bơi 1 kèm 1 chất lượng cao tại TP.HCM, Bình Dương và Bà Rịa - Vũng Tàu. Cam kết biết bơi 100%, học thử miễn phí buổi đầu.",
     image: "/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
     intro: "TP. Hồ Chí Minh cùng khu vực đô thị vệ tinh (Bình Dương, Vũng Tàu) có khí hậu nắng nóng quanh năm, vì vậy nhu cầu học bơi rèn luyện sức khỏe và trang bị kỹ năng sinh tồn là cực kỳ cấp thiết cho cả trẻ nhỏ và người lớn.",
@@ -42,7 +42,7 @@ export const locations = [
       { name: "Bể bơi Kỳ Đồng", address: "40 Kỳ Đồng, Quận 3, TP.HCM", type: "Ngoài trời", pros: "Trung tâm tiện lợi, hồ bơi sạch sẽ, có khu vực riêng cho người tập bơi." },
       { name: "Bể bơi Lam Sơn", address: "242 Trần Bình Trọng, Quận 5, TP.HCM", type: "Ngoài trời", pros: "Hồ bơi rộng rãi, thiết kế tiêu chuẩn thi đấu." },
       { name: "Bể bơi Yết Kiêu", address: "1 Nguyễn Thị Minh Khai, Bến Nghé, Quận 1, TP.HCM", type: "Ngoài trời", pros: "Câu lạc bộ bơi lội lâu đời, giàu truyền thống và HLV giỏi." },
-      { name: "Bể bơi Vinhomes Central Park", address: "208 Nguyễn Hữu Cảnh, Bình Thạnh, TP.HCM", type: "Nội khu cao cấp", pros: "Hồ bơi sang trọng, nước lọc công nghệ cao, an toàn tuyệt đối." }
+      { name: "Bể bơi Vinhomes Central Park", address: "208 Nguyễn Hữu Cảnh, Bình Thạnh, TP.HCM", type: "Nội khu cao cấp", pros: "Hồ bơi sang trọng, nước lọc công nghệ cao, đảm bảo an toàn tối đa." }
     ],
     faqs: [
       { q: "Học bơi ở TPHCM quận nào tiện nhất?", a: "Swim For Life có giáo viên dạy khắp các quận huyện TPHCM và các khu vực lân cận như Bình Dương, Vũng Tàu. HLV sẽ đến bể bơi gần nhà bạn nhất để giảng dạy." },
@@ -57,7 +57,7 @@ export const locations = [
     color: "teal",
     mergedFrom: "Quảng Nam + Đà Nẵng",
     title: "Học Bơi Đà Nẵng: Khóa Học Bơi 1 Kèm 1 Uy Tín Tại Đà Nẵng & Quảng Nam",
-    description: "Đăng ký lớp học bơi Đà Nẵng và Quảng Nam uy tín cùng Swim For Life. Dạy bơi 1 kèm 1 cho mọi trình độ, bể bơi sạch sẽ an toàn, cam kết 100% biết bơi.",
+    description: "Đăng ký lớp học bơi Đà Nẵng và Quảng Nam uy tín cùng Swim For Life. Dạy bơi 1 kèm 1 cho mọi trình độ, bể bơi sạch sẽ an toàn, đồng hành đến khi biết bơi thành thạo.",
     headline: "Học Bơi Đà Nẵng: Lớp Dạy Bơi Uy Tín Tại Đà Nẵng & Quảng Nam",
     subtitle: "Dạy bơi chuyên nghiệp tại thành phố biển Đà Nẵng và tỉnh Quảng Nam. HLV tận tâm nhiệt huyết, cam kết biết bơi an toàn.",
     image: "/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg",
@@ -69,7 +69,7 @@ export const locations = [
     faqs: [
       { q: "Đà Nẵng có những bể bơi bốn mùa nước ấm nào để học quanh năm?", a: "Tại Đà Nẵng có Bể bơi Bốn Mùa 39 đường 30/4 (Hải Châu) có hệ thống cấp nhiệt hiện đại, Fuji Swimming Club tại tầng 5 FHOME (16 Lý Thường Kiệt), và hệ thống bể bơi nước ấm khách sạn 4-5 sao như Cen Skills Mường Thanh Grand (962 Ngô Quyền) và Meliã Vinpearl (341 Trần Hưng Đạo)." },
       { q: "Trung tâm dạy bơi nào uy tín tại Đà Nẵng theo hình thức kèm riêng?", a: "BP Swimming Center (Thầy Sanh: 0935 468 419) là đơn vị lớn với giáo trình chuẩn quốc tế tại các bể bơi nước ấm; Học bơi Hùng Anh (HLV tốt nghiệp ĐH Thể dục Thể thao) tại Thanh Khê và Sơn Trà; CLB Bơi lội Cá Heo tại Bể Bốn Mùa 30/4." },
-      { q: "Học bơi ở Đà Nẵng bao nhiêu buổi thì biết bơi và có cam kết không?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài từ 10 đến 12 buổi học. Các trung tâm uy tín đều cam kết 100% học viên biết bơi tự tin và đứng nước an toàn sau khóa học, được học tiếp miễn phí nếu chưa thành thạo." },
+      { q: "Học bơi ở Đà Nẵng bao nhiêu buổi thì biết bơi và có cam kết không?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài từ 10 đến 12 buổi học. Các trung tâm uy tín đều đồng hành cam kết đầu ra học viên biết bơi tự tin và đứng nước an toàn sau khóa học, được học tiếp miễn phí nếu chưa thành thạo." },
       { q: "Lớp học bơi ở Đà Nẵng có dạy ở biển không?", a: "Không, toàn bộ quy trình dạy bơi cơ bản đều được thực hiện tại bể bơi an toàn để HLV dễ dàng kiểm soát. Sau khi bơi tốt ở bể, học viên có thể đăng ký lớp kỹ năng bơi biển và thoát dòng chảy xa bờ (rip current)." }
     ]
   },
@@ -83,7 +83,7 @@ export const locations = [
     title: "Học Bơi Hải Phòng - Hải Dương: Khóa Học Uy Tín Cho Trẻ Em & Người Lớn",
     description: "Dạy bơi Hải Phòng và Hải Dương chất lượng cao. Lớp học bơi 1 kèm 1 cam kết biết bơi từ Swim For Life. HLV tận tâm, bể bơi chất lượng tốt nhất.",
     headline: "Học Bơi Hải Phòng - Hải Dương: Lớp Học Bơi Uy Tín Cực Kỳ Chất Lượng",
-    subtitle: "Giảng dạy tại các bể bơi trung tâm Hải Phòng và Hải Dương. Đội ngũ giáo viên chuyên nghiệp, tận tình, cam kết 100% biết bơi.",
+    subtitle: "Giảng dạy tại các bể bơi trung tâm Hải Phòng và Hải Dương. Đội ngũ giáo viên chuyên nghiệp, tận tình, đồng hành đến khi biết bơi thành thạo.",
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
     intro: "Hải Phòng (sáp nhập khu vực Hải Dương cũ) là thành phố cảng lớn với hệ thống sông ngòi dày đặc. Học bơi là giải pháp phòng chống đuối nước hàng đầu được các gia đình tại Hải Phòng và Hải Dương chú trọng đầu tư.",
     pools: [
@@ -143,7 +143,7 @@ export const locations = [
       { q: "Cần Thơ có những hồ bơi tiêu chuẩn thi đấu Olympic và câu lạc bộ nào lớn nhất?", a: "CLB Bơi lội Quân khu 9 (số 9 Nguyễn Đệ, Bình Thủy) là trung tâm đào tạo thể thao dưới nước lớn nhất miền Tây, sở hữu hồ bơi tiêu chuẩn 50m và hồ nhỏ 25m. Ngoài ra, Hồ bơi ĐH Nam Cần Thơ (DNC) với diện tích trên 1.200m2 cũng đạt chuẩn thi đấu quốc gia." },
       { q: "Trẻ mấy tuổi nên bắt đầu học bơi ở Cần Thơ và học ở đâu an toàn?", a: "Độ tuổi lý tưởng nhất là từ 4 tuổi trở lên. Tại Cần Thơ, phụ huynh có thể cho bé học tại Hồ bơi Hùng Quân (Hoàng Quốc Việt), Hồ bơi Minh Phương (Cái Răng) hoặc các lớp kèm riêng tại hồ bơi khách sạn Mường Thanh Cần Thơ (Cồn Cái Khế) với độ sâu an toàn." },
       { q: "Các hồ bơi sạch đẹp và có lớp dạy kèm riêng uy tín tại Ninh Kiều & Cái Răng?", a: "Khu vực Ninh Kiều có Hồ bơi Công an TP (54 Sông Hậu), hồ bơi Mường Thanh Luxury, hồ bơi Vinpearl Cần Thơ. Khu vực Cái Răng có hồ bơi đại dự án Nam Long 2 Central Lake và hồ bơi DNC Campus." },
-      { q: "Học phí học bơi tại Cần Thơ là bao nhiêu và lộ trình kéo dài bao lâu?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi. Học phí dao động từ 1,5 đến 2,5 triệu đồng tùy hình thức học (nhóm nhỏ hoặc 1 kèm 1), cam kết 100% biết bơi thành thạo và đứng nước vững vàng." }
+      { q: "Học phí học bơi tại Cần Thơ là bao nhiêu và lộ trình kéo dài bao lâu?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi. Học phí dao động từ 1,5 đến 2,5 triệu đồng tùy hình thức học (nhóm nhỏ hoặc 1 kèm 1), đồng hành đến khi biết bơi thành thạo thành thạo và đứng nước vững vàng." }
     ]
   },
   {
@@ -178,7 +178,7 @@ export const locations = [
     isTW: false,
     color: "aqua",
     mergedFrom: "",
-    title: "Học Bơi Quảng Ninh: Lớp Học Bơi Hạ Long Uy Tín Số 1",
+    title: "Học Bơi Quảng Ninh: Lớp Học Bơi Hạ Long được nhiều học viên tin chọn",
     description: "Đăng ký học bơi tại Quảng Ninh (Hạ Long, Cẩm Phả). Lớp học bơi trẻ em & người lớn chuyên nghiệp cam kết biết bơi cùng Swim For Life Việt Nam.",
     headline: "Học Bơi Quảng Ninh: Dạy Bơi Uy Tín Tại Hạ Long & Cẩm Phả",
     subtitle: "Khóa học bơi chất lượng cao vùng đất mỏ. HLV chuyên nghiệp từ Đại học TDTT, cam kết bơi tốt đứng nước tự tin.",
@@ -204,7 +204,7 @@ export const locations = [
     color: "aqua",
     mergedFrom: "Bắc Giang + Bắc Ninh",
     title: "Học Bơi Bắc Ninh - Bắc Giang: Lớp Học Bơi Chuyên Nghiệp 1 Kèm 1",
-    description: "Lớp học bơi Bắc Ninh và Bắc Giang chất lượng cao. Swim For Life cam kết 100% học viên biết bơi, bơi chuẩn kỹ thuật, đứng nước sâu vững vàng.",
+    description: "Lớp học bơi Bắc Ninh và Bắc Giang chất lượng cao. Swim For Life đồng hành cam kết đầu ra học viên biết bơi, bơi chuẩn kỹ thuật, đứng nước sâu vững vàng.",
     headline: "Học Bơi Bắc Ninh - Bắc Giang: Trung Tâm Dạy Bơi Chuyên Nghiệp",
     subtitle: "Dạy bơi chất lượng tại Bắc Ninh và Bắc Giang. Đội ngũ giáo viên sư phạm thể thao, an toàn và tận tâm.",
     image: "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
@@ -217,7 +217,7 @@ export const locations = [
     faqs: [
       { q: "Bắc Ninh có bể bơi bốn mùa nước ấm nào để học bơi quanh năm?", a: "Có. Bể bơi bốn mùa tại Trường THPT Chuyên Bắc Ninh (đường Hồ Ngọc Lân, Kinh Bắc) là cơ sở trong nhà hiện đại bậc nhất với hệ thống gia nhiệt và công nghệ điện phân muối khoáng, giúp duy trì việc học bơi suốt mùa đông ấm áp." },
       { q: "Tại Yên Phong và Từ Sơn có địa điểm học bơi nào uy tín cho trẻ nhỏ?", a: "Tại huyện Yên Phong có Bể bơi Anh Vũ (đường 286, xã Yên Phụ) có bể bơi trẻ em riêng và bể sục thủy lực; tại Từ Sơn và TP. Bắc Ninh có lớp học bơi kèm riêng của Thầy Quang (0376 920 840) và Swim For Life." },
-      { q: "Học bơi ở Bắc Ninh bao nhiêu buổi thì biết bơi và có giáo viên kèm riêng không?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi. Học viên được cam kết 100% biết bơi ếch chuẩn kỹ thuật, đứng nước sâu tự tin và trang bị kỹ năng phòng chống đuối nước." },
+      { q: "Học bơi ở Bắc Ninh bao nhiêu buổi thì biết bơi và có giáo viên kèm riêng không?", a: "Khóa học bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi. Học viên được đồng hành đến khi biết bơi thành thạo ếch chuẩn kỹ thuật, đứng nước sâu tự tin và trang bị kỹ năng phòng chống đuối nước." },
       { q: "Học phí học bơi tại Bắc Ninh là bao nhiêu?", a: "Mức học phí kèm riêng dao động từ 1,5 đến 2,5 triệu đồng tùy gói học. Học viên được hỗ trợ học thử miễn phí buổi đầu để kiểm tra mức độ thích ứng với nước." }
     ]
   },
@@ -242,7 +242,7 @@ export const locations = [
     faqs: [
       { q: "Bể bơi nào uy tín và có hệ thống nước ấm bốn mùa tại TP. Thái Nguyên?", a: "Bể bơi Bốn Mùa Prime (Tầng 3 Tháp đôi Prime, số 1 Hoàng Văn Thụ) là bể bơi trong nhà cao cấp với nước ấm quanh năm và lọc điện phân muối. Ngoài ra, Bể bơi ĐH Sư phạm Thái Nguyên (20 Lương Ngọc Quyến) là địa điểm học bơi uy tín lâu năm." },
       { q: "Tại Sông Công và Phổ Yên có hồ bơi lớn nào dạy bơi cho trẻ em?", a: "Tại TP. Sông Công có Bể bơi KDL Sinh thái Dũng Tân rộng gần 3.000m2 có phân khu trẻ em riêng; tại TP. Phổ Yên có Bể bơi Hoàng Hải (đường 47M Đồng Tiến) phục vụ con em cư dân và công nhân viên KCN Samsung." },
-      { q: "Học bơi ở Thái Nguyên bao nhiêu buổi thì biết bơi và có cam kết đầu ra không?", a: "Khóa học kèm riêng tiêu chuẩn kéo dài 10–12 buổi học. Trung tâm cam kết 100% học viên biết bơi ếch thành thạo, tự tin đứng nước ở chỗ sâu 2m và biết cách thả nổi ngửa thư giãn." },
+      { q: "Học bơi ở Thái Nguyên bao nhiêu buổi thì biết bơi và có cam kết đầu ra không?", a: "Khóa học kèm riêng tiêu chuẩn kéo dài 10–12 buổi học. Trung tâm đồng hành cam kết đầu ra học viên biết bơi ếch thành thạo, tự tin đứng nước ở chỗ sâu 2m và biết cách thả nổi ngửa thư giãn." },
       { q: "Người lớn tuổi học bơi tại Thái Nguyên được không?", a: "Hoàn toàn được. Đội ngũ giáo viên có giáo trình cá nhân hóa cho người lớn trên 50–60 tuổi, bơi nhẹ nhàng dưỡng sinh, hỗ trợ điều trị xương khớp và cột sống rất tốt." }
     ]
   },
@@ -253,14 +253,14 @@ export const locations = [
     isTW: false,
     color: "aqua",
     mergedFrom: "Vĩnh Phúc + Phú Thọ + Hòa Bình",
-    title: "Học Bơi Phú Thọ - Vĩnh Phúc - Hòa Bình: Lớp Học Bơi Uy Tín Nhất",
+    title: "Học Bơi Phú Thọ - Vĩnh Phúc - Hòa Bình: Lớp Học Bơi được đông đảo học viên lựa chọn",
     description: "Tuyển sinh lớp học bơi Phú Thọ, Vĩnh Phúc và Hòa Bình uy tín. Dạy bơi 1 kèm 1 cam kết biết bơi tốt, kỹ năng đứng nước sâu vững vàng.",
     headline: "Học Bơi Phú Thọ - Vĩnh Phúc - Hòa Bình: Dạy Bơi Chuyên Nghiệp",
     subtitle: "Lớp học bơi uy tín hàng đầu khu vực Phú Thọ, Vĩnh Phúc và Hòa Bình. Cam kết biết bơi 100%, HLV tận tình.",
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
     intro: "Khu vực Phú Thọ, Vĩnh Phúc và Hòa Bình có nhu cầu học bơi rèn luyện sức khỏe tăng cao. Lớp bơi Swim For Life giúp các bé học sinh phát triển chiều cao và tự tin dưới nước.",
     pools: [
-      { name: "Bể bơi Bốn Mùa Minh Phương", address: "Hồ sinh thái KĐT Minh Phương, TP. Việt Trì", type: "Trong nhà nước ấm gia nhiệt", pros: "Tổ hợp thể thao cao cấp, nước ấm quanh năm, an toàn tuyệt đối cho bé." },
+      { name: "Bể bơi Bốn Mùa Minh Phương", address: "Hồ sinh thái KĐT Minh Phương, TP. Việt Trì", type: "Trong nhà nước ấm gia nhiệt", pros: "Tổ hợp thể thao cao cấp, nước ấm quanh năm, đảm bảo an toàn tối đa cho bé." },
       { name: "Bể bơi Khu Liên hợp Thể thao tỉnh Phú Thọ", address: "Đường Hùng Vương, Thọ Sơn, Việt Trì", type: "Trong nhà & ngoài trời", pros: "Bể bơi đạt chuẩn quốc tế, không gian rộng rãi, khán đài thoáng đãng." },
       { name: "Bể bơi Bốn Mùa Fami Fitness Vĩnh Yên", address: "32A Nguyễn Chí Thanh, Đống Đa, Vĩnh Yên", type: "Trong nhà khử trùng OZONE", pros: "Bể bơi bốn mùa cao cấp nhất Vĩnh Phúc, khử trùng ozone không hóa chất." }
     ],
@@ -292,8 +292,8 @@ export const locations = [
     faqs: [
       { q: "Ninh Bình có bể bơi bốn mùa nước ấm và công nghệ điện phân muối nào?", a: "Tại TP. Ninh Bình có Bể bơi Bốn Mùa Lavender (đường Trịnh Tú) có hệ thống gia nhiệt tự động và Bể bơi Mai Thế Hệ (142 Nam Thành) ứng dụng công nghệ điện phân muối khoáng, giúp bơi lội quanh năm không lo thời tiết." },
       { q: "Ở Tam Điệp và Nam Định có những bể bơi nào đạt chuẩn thi đấu và sạch đẹp?", a: "Tại TP. Tam Điệp có Bể bơi Sắc Màu (tổ 1 Tây Sơn) đạt chuẩn thi đấu 50m. Tại TP. Nam Định có Bể bơi Khu sinh thái Lộc Vượng rộng 2.000m2 (107 Trần Thị Dung) và Trisport KĐT Hòa Vượng." },
-      { q: "Học bơi ở Ninh Bình có giáo viên dạy kèm riêng 1 kèm 1 không?", a: "Có. Trung tâm có đội ngũ giáo viên cử nhân TDTT chuyên kèm riêng 1-1 cho trẻ em và người lớn, theo sát học viên dưới nước đảm bảo an toàn tuyệt đối." },
-      { q: "Học phí học bơi tại Ninh Bình bao gồm những gì?", a: "Học phí bao gồm toàn bộ công dạy của HLV trong suốt khóa học kèm riêng cam kết 100% biết bơi thành thạo. Vé vào bể bơi học viên tự mua tại quầy vé." }
+      { q: "Học bơi ở Ninh Bình có giáo viên dạy kèm riêng 1 kèm 1 không?", a: "Có. Trung tâm có đội ngũ giáo viên cử nhân TDTT chuyên kèm riêng 1-1 cho trẻ em và người lớn, theo sát học viên dưới nước đảm bảo đảm bảo an toàn tối đa." },
+      { q: "Học phí học bơi tại Ninh Bình bao gồm những gì?", a: "Học phí bao gồm toàn bộ công dạy của HLV trong suốt khóa học kèm riêng đồng hành đến khi biết bơi thành thạo thành thạo. Vé vào bể bơi học viên tự mua tại quầy vé." }
     ]
   },
   {
@@ -303,7 +303,7 @@ export const locations = [
     isTW: false,
     color: "aqua",
     mergedFrom: "Thái Bình + Hưng Yên",
-    title: "Học Bơi Hưng Yên - Thái Bình: Lớp Dạy Bơi Uy Tín Số 1",
+    title: "Học Bơi Hưng Yên - Thái Bình: Lớp Dạy Bơi được nhiều học viên tin chọn",
     description: "Đăng ký khóa học bơi tại Hưng Yên và Thái Bình. Dạy bơi 1 kèm 1 chuyên nghiệp chất lượng cao từ Swim For Life. Cam kết bơi thành thạo.",
     headline: "Học Bơi Hưng Yên - Thái Bình: Lớp Học Bơi Chuyên Nghiệp",
     subtitle: "Giảng dạy tại Hưng Yên, khu đô thị Ecopark và tỉnh Thái Bình. Cam kết biết bơi, HLV chuyên nghiệp tận tâm.",
@@ -343,7 +343,7 @@ export const locations = [
     ],
     faqs: [
       { q: "Tại TP. Thanh Hóa có bể bơi nào đạt chuẩn thi đấu Olympic và bể bơi bốn mùa nước ấm không?", a: "Tại TP. Thanh Hóa có tổ hợp Sun Sport Complex (Mặt bằng 530 Đông Vệ) với hồ bơi 1.250m² 10 làn chuẩn Olympic. Ngoài ra, có 2 bể bốn mùa nước ấm trong nhà cao cấp: Bể bơi RACER CITY (Tầng 5 TTTM 27-29 Lê Lợi) và Bể bơi Vinhomes Star City." },
-      { q: "Chi phí học bơi kèm riêng tại Thanh Hóa khoảng bao nhiêu?", a: "Học phí khóa học bơi kèm riêng 1-1 dao động từ 2.500.000đ - 3.500.000đ/khóa tùy độ tuổi và kiểu bơi (chưa bao gồm vé vào bể bơi). Trung tâm cam kết 100% biết bơi thành thạo và đứng nước vững vàng." },
+      { q: "Chi phí học bơi kèm riêng tại Thanh Hóa khoảng bao nhiêu?", a: "Học phí khóa học bơi kèm riêng 1-1 dao động từ 2.500.000đ - 3.500.000đ/khóa tùy độ tuổi và kiểu bơi (chưa bao gồm vé vào bể bơi). Trung tâm đồng hành đến khi biết bơi thành thạo thành thạo và đứng nước vững vàng." },
       { q: "Trẻ em và người lớn chưa từng xuống nước học bao lâu thì bơi thành thạo?", a: "Thông thường khóa học kéo dài 10 đến 12 buổi. Sau 3-5 buổi đầu tiên học viên đã tự tin thả nổi và đạp nước; kết thúc khóa có thể tự tin bơi liên tục 50m - 100m." },
       { q: "Ở Sầm Sơn và Bỉm Sơn có những địa điểm học bơi nào an toàn cho bé?", a: "Tại Sầm Sơn có hệ thống hồ bơi FLC Sầm Sơn và khách sạn Dragon Sea; tại Bỉm Sơn có hồ bơi Trung tâm VHTT & Truyền thông Bỉm Sơn (đường Trần Phú) phục vụ phổ cập bơi hè an toàn." }
     ]
@@ -355,7 +355,7 @@ export const locations = [
     isTW: false,
     color: "teal",
     mergedFrom: "",
-    title: "Học Bơi Nghệ An: Lớp Dạy Bơi Thành Phố Vinh Uy Tín Nhất",
+    title: "Học Bơi Nghệ An: Lớp Dạy Bơi Thành Phố Vinh được đông đảo học viên lựa chọn",
     description: "Khóa học bơi Nghệ An uy tín chất lượng cao. Học bơi 1 kèm 1 tại thành phố Vinh cùng HLV Swim For Life Việt Nam, cam kết biết bơi an toàn.",
     headline: "Học Bơi Nghệ An: Lớp Học Bơi Sư Phạm Bài Bản",
     subtitle: "Dạy bơi uy tín tại thành phố Vinh và tỉnh Nghệ An. Đội ngũ giáo viên thể thao chuyên môn cao.",
@@ -371,7 +371,7 @@ export const locations = [
       { q: "Thành phố Vinh có những bể bơi bốn mùa nước ấm nào học được cả mùa đông?", a: "Tại TP. Vinh có 3 cơ sở bể bơi bốn mùa nước ấm trong nhà hàng đầu: Pool Plus tại VRC (01 Phan Bội Châu), Elite Fitness (01 Lê Hồng Phong) và Bể bơi Kình Ngư (KĐT Đồng Dâu, Hưng Dũng)." },
       { q: "Bể bơi Quân Khu 4 tại đường Lê Duẩn có nhận dạy bơi cho học sinh ngoài quân đội không?", a: "Có. Vào mỗi dịp hè, Bể bơi Quân khu 4 (124C Lê Duẩn) mở cửa đón học sinh dân sự và tổ chức các lớp phổ cập bơi phòng chống đuối nước rất bài bản." },
       { q: "Trung tâm có nhận dạy bơi cho người lớn sợ nước, nhát nước tại Vinh không?", a: "Có. Swim For Life có khóa kèm riêng 1-1 chuyên sâu cho người lớn sợ nước. HLV trực tiếp xuống nước cầm tay chỉ dẫn từ kỹ năng thở dưới nước đến khi học viên tự tin thả lỏng." },
-      { q: "Lộ trình và cam kết khi đăng ký lớp học bơi 1 kèm 1 ở Nghệ An như thế nào?", a: "Lộ trình 10-12 buổi, cam kết 100% biết bơi kiểu đã đăng ký (bơi ếch hoặc bơi sải), đứng nước tự tin tại vùng nước sâu và có kỹ năng sinh tồn tự cứu khi rơi xuống nước." }
+      { q: "Lộ trình và cam kết khi đăng ký lớp học bơi 1 kèm 1 ở Nghệ An như thế nào?", a: "Lộ trình 10-12 buổi, đồng hành đến khi biết bơi thành thạo kiểu đã đăng ký (bơi ếch hoặc bơi sải), đứng nước tự tin tại vùng nước sâu và có kỹ năng sinh tồn tự cứu khi rơi xuống nước." }
     ]
   },
   {
@@ -381,7 +381,7 @@ export const locations = [
     isTW: false,
     color: "teal",
     mergedFrom: "",
-    title: "Học Bơi Hà Tĩnh: Lớp Dạy Bơi Uy Tín Số 1 Tại Hà Tĩnh",
+    title: "Học Bơi Hà Tĩnh: Lớp Dạy Bơi được nhiều học viên tin chọn Tại Hà Tĩnh",
     description: "Đăng ký lớp học bơi tại Hà Tĩnh cùng Swim For Life Việt Nam. Dạy bơi 1 kèm 1 chuyên nghiệp, cam kết bơi tốt đứng nước vững vàng.",
     headline: "Học Bơi Hà Tĩnh: Học Bơi Sinh Tồn An Toàn Nhất",
     subtitle: "Khóa học bơi uy tín tại TP. Hà Tĩnh và Kỳ Anh. Giáo trình chuẩn sư phạm thể thao.",
@@ -394,7 +394,7 @@ export const locations = [
       { name: "Bể bơi Khách sạn Mường Thanh Grand Kỳ Anh", address: "Khu kinh tế Vũng Áng, P. Kỳ Trinh, Thị xã Kỳ Anh, Hà Tĩnh", type: "Hồ bơi khách sạn 4 sao", pros: "Không gian rộng rãi, sạch sẽ, chuẩn mực nước khách sạn cao cấp, phục vụ cư dân KKT Vũng Áng và thị xã Kỳ Anh." }
     ],
     faqs: [
-      { q: "Tại TP. Hà Tĩnh địa điểm học bơi nào phù hợp nhất cho trẻ em mới tập bơi?", a: "Địa điểm phù hợp nhất là Tổ hợp Bể bơi Hào Quang (số 01 đường Nam Ngạn) vì có hồ vầy 0.5m và hồ tập 0.85m có mái lưới che mát, độ sâu an toàn tuyệt đối cho bé mới làm quen nước." },
+      { q: "Tại TP. Hà Tĩnh địa điểm học bơi nào phù hợp nhất cho trẻ em mới tập bơi?", a: "Địa điểm phù hợp nhất là Tổ hợp Bể bơi Hào Quang (số 01 đường Nam Ngạn) vì có hồ vầy 0.5m và hồ tập 0.85m có mái lưới che mát, độ sâu đảm bảo an toàn tối đa cho bé mới làm quen nước." },
       { q: "Ở Hà Tĩnh có bể bơi bốn mùa nước ấm nào hoạt động quanh năm không?", a: "Tại Hà Tĩnh hiện có Bể bơi bốn mùa Meliá Vinpearl Hà Tĩnh (ngã tư Hàm Nghi - Hà Huy Tập) được vận hành hệ thống gia nhiệt nước ấm, cho phép bơi lội và học bơi quanh năm kể cả mùa đông." },
       { q: "Khu vực Thị xã Kỳ Anh và Hồng Lĩnh có giáo viên dạy kèm riêng không?", a: "Có. Trung tâm có HLV chuyên môn phụ trách các lớp kèm riêng 1-1 tại Bể bơi Khách sạn Mường Thanh Kỳ Anh, Trung tâm VHTT Kỳ Anh và Bể bơi Thể thao TX. Hồng Lĩnh." },
       { q: "Học phí khóa học bơi kèm riêng tại Hà Tĩnh đã bao gồm vé bể chưa?", a: "Học phí là chi phí đào tạo cam kết đầu ra trọn gói của HLV. Vé vào cổng bể bơi học viên tự mua vé ngày hoặc thẻ bơi tháng trực tiếp tại quầy vé của cơ sở bơi." }
@@ -420,10 +420,10 @@ export const locations = [
       { name: "Bể bơi Khách sạn Mường Thanh Grand Quảng Trị", address: "Số 68 Lê Duẩn, Phường 2, TP. Đông Hà, Quảng Trị", type: "Hồ bơi khách sạn 4 sao", pros: "Bể bơi ngoài trời sạch đẹp, nguồn nước kiểm định chặt chẽ mỗi ngày, không gian an ninh và yên tĩnh." }
     ],
     faqs: [
-      { q: "Phụ huynh tại Đồng Hới (Quảng Bình) nên cho con học bơi ở bể nào uy tín nhất?", a: "Tại TP. Đồng Hới, Bể bơi Nhà Thiếu Nhi Quảng Bình (số 1 Hùng Vương) là địa chỉ dạy bơi truyền thống uy tín nhất. Nếu muốn trải nghiệm chuẩn resort cao cấp, phụ huynh có thể chọn Regal Legend Pool tại Bảo Ninh." },
+      { q: "Phụ huynh tại Đồng Hới (Quảng Bình) nên cho con học bơi ở bể nào được đông đảo học viên lựa chọn?", a: "Tại TP. Đồng Hới, Bể bơi Nhà Thiếu Nhi Quảng Bình (số 1 Hùng Vương) là địa chỉ dạy bơi truyền thống được đông đảo học viên lựa chọn. Nếu muốn trải nghiệm chuẩn resort cao cấp, phụ huynh có thể chọn Regal Legend Pool tại Bảo Ninh." },
       { q: "Tại thành phố Đông Hà (Quảng Trị) có bể bơi bốn mùa nước ấm nào hiện đại nhất?", a: "Hiện đại nhất tại Đông Hà là Tổ hợp Bể bơi bốn mùa tại tầng mái Vincom Plaza Đông Hà với bể nước ấm trong nhà vách kính bơi được cả 4 mùa quanh năm." },
       { q: "Trung tâm có đào tạo kỹ năng bơi sinh tồn phòng chống bão lụt cho trẻ nhỏ không?", a: "Có. Do đặc thù địa phương thường chịu ảnh hưởng mùa bão lũ, Swim For Life đặc biệt chú trọng dạy kỹ năng sinh tồn tự cứu: cách nổi sấp nổi ngửa giữ sức, kỹ năng đứng nước lâu và cách xử lý khi bị ngã xuống nước." },
-      { q: "Hình thức dạy bơi 1 kèm 1 tại Đồng Hới và Đông Hà có những ưu điểm gì?", a: "HLV theo sát học viên 100% thời gian dưới nước, chỉnh từng nhịp thở và góc quạt tay, đảm bảo an toàn tuyệt đối và giúp học viên tiến bộ nhanh gấp 3 lần học lớp đông." }
+      { q: "Hình thức dạy bơi 1 kèm 1 tại Đồng Hới và Đông Hà có những ưu điểm gì?", a: "HLV theo sát học viên 100% thời gian dưới nước, chỉnh từng nhịp thở và góc quạt tay, đảm bảo đảm bảo an toàn tối đa và giúp học viên tiến bộ nhanh gấp 3 lần học lớp đông." }
     ]
   },
   {
@@ -433,7 +433,7 @@ export const locations = [
     isTW: false,
     color: "teal",
     mergedFrom: "Quảng Ngãi + Phú Yên",
-    title: "Học Bơi Quảng Ngãi - Phú Yên: Lớp Học Bơi Uy Tín Số 1",
+    title: "Học Bơi Quảng Ngãi - Phú Yên: Lớp Học Bơi được nhiều học viên tin chọn",
     description: "Tuyển sinh lớp học bơi tại Quảng Ngãi và Phú Yên. Dạy bơi 1 kèm 1 chất lượng cao, cam kết biết bơi, giáo viên tận tâm nhiều kinh nghiệm.",
     headline: "Học Bơi Quảng Ngãi - Phú Yên: Giáo Trình Chuẩn Khoa Học",
     subtitle: "Khóa học bơi chất lượng tại Quảng Ngãi và Tuy Hòa (Phú Yên). HLV chuyên nghiệp tận tâm cam kết kết quả.",
@@ -446,9 +446,9 @@ export const locations = [
       { name: "Hồ bơi Khu Dân Cư 577 Quảng Ngãi", address: "KĐT 577, P. Trương Quang Trọng, TP. Quảng Ngãi", type: "Hồ bơi cộng đồng hiện đại", pros: "Nằm ở bờ Bắc sông Trà Khúc, nước trong xanh sạch sẽ, không gian thoáng đãng thuận tiện cho cư dân vùng Bắc thành phố." }
     ],
     faqs: [
-      { q: "Tại TP. Quảng Ngãi địa chỉ học bơi nào uy tín và chất lượng nước sạch nhất?", a: "Hồ bơi Trung tâm Hoạt động Thanh thiếu nhi Diên Hồng (60-62 Hùng Vương) là địa chỉ dạy bơi uy tín nhất với đội ngũ giáo viên giàu kinh nghiệm và hệ thống lọc nước tuần hoàn bảo dưỡng thường xuyên." },
+      { q: "Tại TP. Quảng Ngãi địa chỉ học bơi nào uy tín và chất lượng nước sạch nhất?", a: "Hồ bơi Trung tâm Hoạt động Thanh thiếu nhi Diên Hồng (60-62 Hùng Vương) là địa chỉ dạy bơi được đông đảo học viên lựa chọn với đội ngũ giáo viên giàu kinh nghiệm và hệ thống lọc nước tuần hoàn bảo dưỡng thường xuyên." },
       { q: "Ở Tuy Hòa (Phú Yên) phụ huynh nên đăng ký học bơi cho bé ở hồ bơi nào?", a: "Tại TP. Tuy Hòa, cơ sở hiện đại nhất là Hồ bơi Trung tâm Thanh Thiếu Nhi Phú Yên cơ sở 2 (đường Trường Chinh) rộng 1.250m². Ngoài ra Hồ bơi Yết Kiêu (đường Trần Bình Trọng) cũng là điểm dạy bơi phong trào rất uy tín." },
-      { q: "Khóa học bơi mùa hè tại Quảng Ngãi và Phú Yên bao gồm mấy buổi và cam kết gì?", a: "Khóa học gồm 10 đến 12 buổi học kèm riêng (60 phút/buổi). Cam kết 100% học viên biết bơi chuẩn kỹ thuật, đứng nước tự tin và được cấp chứng chỉ hoàn thành khóa học." },
+      { q: "Khóa học bơi mùa hè tại Quảng Ngãi và Phú Yên bao gồm mấy buổi và cam kết gì?", a: "Khóa học gồm 10 đến 12 buổi học kèm riêng (60 phút/buổi). đồng hành cam kết đầu ra học viên biết bơi chuẩn kỹ thuật, đứng nước tự tin và được cấp chứng chỉ hoàn thành khóa học." },
       { q: "Người lớn tuổi hoặc người bị đau lưng, thoái hóa cột sống học bơi kiểu nào tốt nhất?", a: "Với học viên lớn tuổi đau lưng thoái hóa, HLV sẽ thiết kế giáo án bơi ngửa và bơi ếch thả lỏng nhẹ nhàng giúp giải phóng áp lực lên đĩa đệm và tăng cường tuần hoàn máu an toàn." }
     ]
   },
@@ -462,7 +462,7 @@ export const locations = [
     title: "Học Bơi Bình Định - Gia Lai: Lớp Học Bơi Uy Tín Tại Quy Nhơn & Pleiku",
     description: "Đăng ký học bơi tại Bình Định (Quy Nhơn) và Gia Lai (Pleiku). Lớp học bơi 1 kèm 1 cam kết biết bơi tốt đứng nước sâu tự tin.",
     headline: "Học Bơi Bình Định - Gia Lai: Học Bơi Sinh Tồn Chất Lượng",
-    subtitle: "Dạy bơi uy tín tại Quy Nhơn, Bình Định và TP. Pleiku, Gia Lai. Cam kết 100% biết bơi.",
+    subtitle: "Dạy bơi uy tín tại Quy Nhơn, Bình Định và TP. Pleiku, Gia Lai. đồng hành đến khi biết bơi thành thạo.",
     image: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg",
     intro: "Bình Định và Gia Lai có địa hình chuyển tiếp đa dạng. Lớp học bơi Swim For Life đem lại môi trường tập luyện thể thao lành mạnh và kỹ năng phòng vệ sông nước chắc chắn cho bé.",
     pools: [
@@ -473,7 +473,7 @@ export const locations = [
     faqs: [
       { q: "Học bơi ở Quy Nhơn Bình Định có những trung tâm dạy kèm riêng nào uy tín?", a: "Các địa chỉ nổi bật gồm Trung tâm Dạy bơi Quy Nhơn (231/9 Tây Sơn - dạy kèm riêng tại các hồ bơi FLC, TMS, Mường Thanh), Trung tâm Phổ cập Bơi lội Diên Hồng (282 Diên Hồng) và đội ngũ HLV kèm riêng của Swim For Life." },
       { q: "Bể bơi nào sạch đẹp và có bán vé bơi lẻ cho người dân tại trung tâm TP. Quy Nhơn?", a: "Khách lẻ có thể đến bơi tại Hồ bơi Khách sạn Sài Gòn Quy Nhơn (24 Nguyễn Huệ, liên hệ lễ tân: 0256 382 9922) hoặc mua gói Swimming Combo tại Anya Hotel Quy Nhơn (03 Nguyễn Trung Tín)." },
-      { q: "Trẻ em học bơi tại Quy Nhơn bao nhiêu buổi thì biết bơi và có cam kết không?", a: "Khóa bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi học. HLV cam kết 100% học viên nắm vững kỹ thuật bơi ếch, nổi ngửa thả lỏng và tự tin đứng nước sâu an toàn." },
+      { q: "Trẻ em học bơi tại Quy Nhơn bao nhiêu buổi thì biết bơi và có cam kết không?", a: "Khóa bơi kèm riêng tiêu chuẩn kéo dài 10–12 buổi học. HLV đồng hành cam kết đầu ra học viên nắm vững kỹ thuật bơi ếch, nổi ngửa thả lỏng và tự tin đứng nước sâu an toàn." },
       { q: "Có lớp học bơi ở Pleiku Gia Lai không?", a: "Có, Swim For Life có mạng lưới HLV bơi lội chuyên nghiệp tại TP. Pleiku, Gia Lai sẵn sàng giảng dạy kèm riêng tại các hồ bơi trung tâm Pleiku." }
     ]
   },
@@ -498,7 +498,7 @@ export const locations = [
     faqs: [
       { q: "Hồ bơi nào uy tín và lâu đời nhất tại TP. Nha Trang?", a: "Hồ bơi Yersin (10-12 Yersin, Trung tâm VHTT & Thể thao Nha Trang) và Hồ bơi Không Quân (75/1 Nguyễn Thị Minh Khai) là hai địa điểm bơi lội và học bơi truyền thống gắn bó lâu năm với người dân phố biển." },
       { q: "Địa chỉ học bơi kèm riêng uy tín cho trẻ em và người lớn tại Nha Trang ở đâu?", a: "Lớp dạy bơi Thầy Vinh Nha Trang (12 Thi Sách, thayvinh.edu.vn) có hơn 10 năm kinh nghiệm; Trung tâm Bơi lặn Yết Kiêu (10 Yersin) và đội ngũ HLV chuyên nghiệp của Swim For Life tại các hồ bơi trung tâm." },
-      { q: "Lớp bơi ở Nha Trang có dạy người lớn tuổi nhát nước không?", a: "Có. Chúng tôi có giáo án tâm lý học bơi riêng biệt cho người lớn tuổi sợ nước, hướng dẫn tỉ mỉ từng bước thở nước, nổi ngửa và quạt tay nhẹ nhàng, cam kết 100% biết bơi tự tin." },
+      { q: "Lớp bơi ở Nha Trang có dạy người lớn tuổi nhát nước không?", a: "Có. Chúng tôi có giáo án tâm lý học bơi riêng biệt cho người lớn tuổi sợ nước, hướng dẫn tỉ mỉ từng bước thở nước, nổi ngửa và quạt tay nhẹ nhàng, đồng hành đến khi biết bơi thành thạo tự tin." },
       { q: "Tại Cam Ranh và Diên Khánh có hồ bơi và lớp dạy bơi hè không?", a: "Có. Tại TP. Cam Ranh có Hồ bơi Trung tâm TDTT Cam Ranh (đường Phạm Văn Đồng) và tại huyện Diên Khánh có các hồ bơi thể thao tư nhân mở lớp phổ cập bơi hè thường xuyên." }
     ]
   },
@@ -516,14 +516,14 @@ export const locations = [
     image: "/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg",
     intro: "Khu vực Tây Nguyên (Đắk Lắk, Đắk Nông, Kon Tum) có địa hình đồi dốc nhiều khe suối hồ chứa. Trang bị kỹ năng bơi lội phòng chống tai nạn đuối nước là cực kỳ cấp bách tại khu vực này.",
     pools: [
-      { name: "Bể bơi Nước Nóng Victory School", address: "Số 01 Lê Hồng Phong, P. Tân Tiến, TP. Buôn Ma Thuột", type: "Trong nhà nước nóng gia nhiệt", pros: "Hồ bơi nước nóng trong nhà duy trì nhiệt độ ấm áp quanh năm, tránh gió lạnh cao nguyên, an toàn tuyệt đối cho trẻ nhỏ." },
+      { name: "Bể bơi Nước Nóng Victory School", address: "Số 01 Lê Hồng Phong, P. Tân Tiến, TP. Buôn Ma Thuột", type: "Trong nhà nước nóng gia nhiệt", pros: "Hồ bơi nước nóng trong nhà duy trì nhiệt độ ấm áp quanh năm, tránh gió lạnh cao nguyên, đảm bảo an toàn tối đa cho trẻ nhỏ." },
       { name: "Tổ hợp Hồ bơi Trường Quốc Tế Hoàng Việt", address: "Số 42 Phạm Hùng, P. Tân An, TP. Buôn Ma Thuột", type: "Tổ hợp 03 hồ trong nhà", pros: "Hệ thống 03 hồ bơi trong nhà khang trang đạt chuẩn quốc tế, phân khu mầm non - tiểu học riêng biệt, nước xử lý tuần hoàn." },
       { name: "Hồ bơi Khách Sạn Mường Thanh Luxury Buôn Ma Thuột", address: "Số 81 Nguyễn Tất Thành, P. Tân An, TP. Buôn Ma Thuột", type: "Ngoài trời chuẩn 5 sao", pros: "Hồ bơi ngoài trời 550m² sang trọng ngắm toàn cảnh thành phố, nguồn nước kiểm định nghiêm ngặt mỗi ngày." },
       { name: "Hồ bơi Nhà Văn Hóa Thanh Thiếu Nhi Đắk Lắk", address: "Số 04B Nguyễn Công Trứ, P. Tự An, TP. Buôn Ma Thuột", type: "Chuẩn quốc gia có mái che lưới", pros: "Cơ sở đào tạo bơi lội truyền thống lâu năm nhất tỉnh, mức học phí bình dân, đội ngũ HLV tận tâm chu đáo." }
     ],
     faqs: [
       { q: "Tại TP. Buôn Ma Thuột có bể bơi nước nóng trong nhà nào học bơi mùa lạnh an toàn?", a: "Tại Buôn Ma Thuột có Bể bơi Nước Nóng Victory School (01 Lê Hồng Phong) và Tổ hợp hồ bơi trong nhà Trường Quốc Tế Hoàng Việt (42 Phạm Hùng) với hệ thống làm ấm nước và che chắn kín gió, giúp bé học bơi quanh năm không lo thời tiết." },
-      { q: "Địa chỉ học bơi uy tín nhất cho học sinh và trẻ nhỏ tại Đắk Lắk ở đâu?", a: "Phụ huynh có thể đăng ký tại Hồ bơi Nhà Văn Hóa Thanh Thiếu Nhi (04B Nguyễn Công Trứ) hoặc học bơi kèm riêng chuẩn quốc tế tại Hoàng Việt School và Mường Thanh Luxury cùng HLV Swim For Life." },
+      { q: "Địa chỉ học bơi được đông đảo học viên lựa chọn cho học sinh và trẻ nhỏ tại Đắk Lắk ở đâu?", a: "Phụ huynh có thể đăng ký tại Hồ bơi Nhà Văn Hóa Thanh Thiếu Nhi (04B Nguyễn Công Trứ) hoặc học bơi kèm riêng chuẩn quốc tế tại Hoàng Việt School và Mường Thanh Luxury cùng HLV Swim For Life." },
       { q: "Tại Kon Tum và Gia Nghĩa (Đắk Nông) có giáo viên dạy bơi kèm riêng 1 kèm 1 không?", a: "Có. Swim For Life có mạng lưới HLV phụ trách giảng dạy tại Hồ bơi TDTT Kon Tum (đường Phan Chu Trinh), KS Indochine Kon Tum và Trung tâm VHTT TP. Gia Nghĩa (Đắk Nông)." },
       { q: "Khóa học bơi sinh tồn Tây Nguyên bao gồm những kỹ năng gì?", a: "Học viên được trang bị kỹ năng bơi ếch/bơi trườn sấp chuẩn, kỹ năng thả nổi ngửa khi kiệt sức, kỹ năng đứng nước sinh tồn và cách thoát hiểm an toàn khi gặp vùng nước sâu hoặc xoáy nước khe suối." }
     ]
@@ -548,7 +548,7 @@ export const locations = [
     ],
     faqs: [
       { q: "Mùa lạnh ở Đà Lạt học bơi có bị cảm lạnh không?", a: "Hoàn toàn không. Toàn bộ các lớp học bơi tại Đà Lạt đều được tổ chức tại các bể bơi trong nhà có hệ thống cấp nhiệt hiện đại (như Hồ bơi Phù Đổng, Dalat Wonder, Stillus Boutique) duy trì nhiệt độ nước ổn định 28–32°C, phòng kín gió tuyệt đối." },
-      { q: "Địa chỉ bể bơi nước ấm uy tín nhất cho trẻ em tại TP. Đà Lạt?", a: "Hồ bơi Phù Đổng (02 Trần Nhân Tông) và Hồ bơi nước ấm Dalat Wonder (111 Nguyễn Văn Trỗi) là hai địa chỉ uy tín hàng đầu với phân khu bể vầy nông cho bé và HLV kèm cặp chu đáo." },
+      { q: "Địa chỉ bể bơi nước ấm được đông đảo học viên lựa chọn cho trẻ em tại TP. Đà Lạt?", a: "Hồ bơi Phù Đổng (02 Trần Nhân Tông) và Hồ bơi nước ấm Dalat Wonder (111 Nguyễn Văn Trỗi) là hai địa chỉ uy tín hàng đầu với phân khu bể vầy nông cho bé và HLV kèm cặp chu đáo." },
       { q: "Tại Bảo Lộc và Đức Trọng có hồ bơi và lớp dạy bơi không?", a: "Có. Tại TP. Bảo Lộc có Hồ bơi Lộc Nga và Hồ bơi Yết Kiêu; tại huyện Đức Trọng có Hồ bơi Dona (thị trấn Liên Nghĩa). Đây là những địa điểm thường xuyên mở lớp dạy bơi hè cho học sinh." },
       { q: "Bé nhát nước ở Đà Lạt học bao nhiêu buổi thì biết bơi?", a: "Với giáo án kèm riêng 1 kèm 1 trong môi trường nước ấm thư giãn, các bé nhát nước thường làm quen và vượt qua nỗi sợ sau 2–3 buổi đầu, biết bơi ếch và đứng nước tự tin sau lộ trình 10–12 buổi học." }
     ]
@@ -560,7 +560,7 @@ export const locations = [
     isTW: false,
     color: "coral",
     mergedFrom: "Tây Ninh + Long An",
-    title: "Học Bơi Tây Ninh - Long An: Khóa Học Bơi 1 Kèm 1 Uy Tín Nhất",
+    title: "Học Bơi Tây Ninh - Long An: Khóa Học Bơi 1 Kèm 1 được đông đảo học viên lựa chọn",
     description: "Đăng ký học bơi Tây Ninh và Long An uy tín. Lớp dạy bơi 1 kèm 1 chuyên nghiệp cho trẻ em & người lớn nhát nước, cam kết biết bơi tốt.",
     headline: "Học Bơi Tây Ninh - Long An: Lớp Dạy Bơi Chuyên Nghiệp",
     subtitle: "Khóa học bơi uy tín chất lượng tại Tây Ninh và Tân An (Long An). Cam kết biết bơi 100%.",
@@ -576,7 +576,7 @@ export const locations = [
       { q: "Tại TP. Tây Ninh có hồ bơi bốn mùa trong nhà nào bơi được quanh năm?", a: "Tại TP. Tây Ninh có Hồ bơi bốn mùa Meliá Vinpearl Tây Ninh (90 Lê Duẩn) với hệ thống điều nhiệt nước ấm và phòng kính sang trọng, bơi lội thoải mái quanh năm mọi thời tiết." },
       { q: "Hồ bơi CANA tại thị xã Hòa Thành có mở lớp dạy bơi cho trẻ em không?", a: "Có. Hồ bơi CANA (22 Lý Thường Kiệt) thường xuyên chiêu sinh các lớp bơi phong trào hè và lớp kèm riêng chất lượng cao với công nghệ lọc nước Pháp sạch sẽ." },
       { q: "Ở Tân An (Long An) có hồ bơi nào có mái che mát mẻ không lo nắng gắt?", a: "Hồ bơi 175 Tỉnh đội Long An (175 QL62, Phường 6) là hồ bơi có mái che toàn phần kiên cố, giúp học viên học bơi mát mẻ giữa trưa nắng mà không sợ đen da hay say nắng." },
-      { q: "Học bơi kèm riêng 1-1 tại Tây Ninh và Long An có cam kết kết quả không?", a: "Swim For Life cam kết 100% học viên biết bơi kiểu đã đăng ký, thả nổi ngửa thư giãn và đứng nước sâu an toàn sau khóa học 10-12 buổi (hoàn tiền hoặc dạy tiếp miễn phí nếu chưa đạt)." }
+      { q: "Học bơi kèm riêng 1-1 tại Tây Ninh và Long An có cam kết kết quả không?", a: "Swim For Life đồng hành cam kết đầu ra học viên biết bơi kiểu đã đăng ký, thả nổi ngửa thư giãn và đứng nước sâu an toàn sau khóa học 10-12 buổi (hoàn tiền hoặc dạy tiếp miễn phí nếu chưa đạt)." }
     ]
   },
   {
@@ -594,7 +594,7 @@ export const locations = [
     intro: "Đồng Tháp và Tiền Giang thuộc vùng rốn lũ miền Tây. Việc trang bị cho con trẻ kỹ năng bơi lội và đứng nước tự cứu là trách nhiệm hàng đầu của gia đình để phòng tránh đuối nước.",
     pools: [
       { name: "Hồ bơi Khu Liên Hợp TDTT Đồng Tháp", address: "Số 2 đường Duy Tân, P. Mỹ Phú, TP. Cao Lãnh, Đồng Tháp", type: "Thể thao chuẩn thi đấu", pros: "Hồ bơi lớn tiêu chuẩn thi đấu tỉnh, nhiều làn bơi rộng rãi, nguồn nước kiểm định xử lý tuần hoàn nghiêm ngặt." },
-      { name: "Hồ bơi TT Hoạt Động Thanh Thiếu Nhi Đồng Tháp", address: "Số 38 đường Điện Biên Phủ, P. Mỹ Phú, TP. Cao Lãnh, Đồng Tháp", type: "Địa điểm phổ cập bơi số 1", pros: "Cơ sở chuyên trách đào tạo bơi lội trẻ em uy tín nhất tỉnh, thiết kế mực nước an toàn cho lứa tuổi mầm non và tiểu học." },
+      { name: "Hồ bơi TT Hoạt Động Thanh Thiếu Nhi Đồng Tháp", address: "Số 38 đường Điện Biên Phủ, P. Mỹ Phú, TP. Cao Lãnh, Đồng Tháp", type: "Địa điểm phổ cập bơi số 1", pros: "Cơ sở chuyên trách đào tạo bơi lội trẻ em được đông đảo học viên lựa chọn tỉnh, thiết kế mực nước an toàn cho lứa tuổi mầm non và tiểu học." },
       { name: "Hồ bơi Tỉnh Tiền Giang", address: "Số 1 đường Phan Lương Trực, Phường 6, TP. Mỹ Tho, Tiền Giang", type: "Bể bơi thể thao quy mô lớn", pros: "Hồ bơi hiện đại bậc nhất Tiền Giang, có phân khu bể người lớn và bể vầy trẻ em riêng biệt, cứu hộ thường trực." },
       { name: "Hồ bơi Thành phố Mỹ Tho", address: "Số 145-243 đường Tết Mậu Thân, Phường 4, TP. Mỹ Tho, Tiền Giang", type: "Hồ bơi công cộng dân sinh", pros: "Địa điểm bơi phong trào lâu năm, giá vé bình dân, thường xuyên tổ chức các giải bơi học sinh thành phố." }
     ],
@@ -612,15 +612,15 @@ export const locations = [
     isTW: false,
     color: "coral",
     mergedFrom: "Bến Tre + Vĩnh Long + Trà Vinh",
-    title: "Học Bơi Vĩnh Long - Bến Tre - Trà Vinh: Lớp Bơi Uy Tín Số 1",
+    title: "Học Bơi Vĩnh Long - Bến Tre - Trà Vinh: Lớp Bơi được nhiều học viên tin chọn",
     description: "Lớp dạy bơi tại Vĩnh Long, Bến Tre và Trà Vinh. Học bơi 1 kèm 1 cam kết bơi thành thạo đứng nước vững vàng, HLV thể thao chuyên nghiệp.",
     headline: "Học Bơi Vĩnh Long - Bến Tre - Trà Vinh: Bơi Tốt Tự Tin",
-    subtitle: "Đào tạo bơi lội chất lượng tại Vĩnh Long, Bến Tre và Trà Vinh. Cam kết 100% biết bơi.",
+    subtitle: "Đào tạo bơi lội chất lượng tại Vĩnh Long, Bến Tre và Trà Vinh. đồng hành đến khi biết bơi thành thạo.",
     image: "/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg",
     intro: "Các tỉnh Vĩnh Long, Bến Tre và Trà Vinh được bao bọc bởi mạng lưới sông ngòi chằng chịt. Lớp học bơi Swim For Life mang lại giáo án học bơi chuẩn khoa học phòng chống đuối nước an toàn.",
     pools: [
       { name: "Hồ bơi Minh Anh Vĩnh Long", address: "Số 3Y đường Nguyễn Văn Đáng, Phường 8, TP. Vĩnh Long", type: "Có mái che kiên cố", pros: "Hồ bơi có mái che kiên cố tránh nắng rát, nước trong sạch lọc tuần hoàn, phân làn bơi rõ ràng cho trẻ em và người lớn." },
-      { name: "Hồ bơi Muối Khoáng LPHOME Bến Tre", address: "Số 910/1 đường Võ Nguyên Giáp, Sơn Đông, TP. Bến Tre", type: "Hồ điện phân muối khoáng", pros: "Công nghệ điện phân muối khoáng tự nhiên không dùng hóa chất clo công nghiệp, an toàn tuyệt đối cho mắt và làn da nhạy cảm." },
+      { name: "Hồ bơi Muối Khoáng LPHOME Bến Tre", address: "Số 910/1 đường Võ Nguyên Giáp, Sơn Đông, TP. Bến Tre", type: "Hồ điện phân muối khoáng", pros: "Công nghệ điện phân muối khoáng tự nhiên không dùng hóa chất clo công nghiệp, đảm bảo an toàn tối đa cho mắt và làn da nhạy cảm." },
       { name: "Hồ bơi KDL Sinh Thái Huỳnh Kha Trà Vinh", address: "Đường Chu Văn An, Phường 4, TP. Trà Vinh", type: "Tổ hợp công viên nước & hồ tuần hoàn", pros: "Tổ hợp bơi lội quy mô lớn giữa không gian sinh thái xanh mát, nguồn nước lọc tuần hoàn hiện đại, có khu trò chơi thiếu nhi." },
       { name: "Hồ bơi Công viên Nước Hoàng Hảo Vĩnh Long", address: "Số 71A Quốc lộ 57, Huyện Long Hồ, Vĩnh Long", type: "Công viên nước mini", pros: "Công viên nước gia đình với máng trượt và khu vực hồ bơi nông an toàn cho trẻ mới làm quen với nước." }
     ],
@@ -651,7 +651,7 @@ export const locations = [
       { name: "Bể bơi TTTM Go! Rạch Giá", address: "Đường 3 Tháng 2, P. Vĩnh Bảo, TP. Rạch Giá, Kiên Giang", type: "Tổ hợp bơi TTTM hiện đại", pros: "Tổ hợp bơi lội và giải trí ngay trong khuôn viên siêu thị Go! Rạch Giá, tiện lợi cho phụ huynh kết hợp mua sắm đưa đón." }
     ],
     faqs: [
-      { q: "Tại TP. Long Xuyên (An Giang) địa chỉ nào dạy bơi uy tín cho học sinh hè?", a: "Tại Long Xuyên có Hồ bơi Thành phố Long Xuyên (đường Âu Cơ) và CLB Bơi lội Yết Kiêu (88 Nguyễn Xí) là hai địa chỉ quen thuộc và uy tín nhất với đội ngũ HLV cử nhân TDTT tận tâm." },
+      { q: "Tại TP. Long Xuyên (An Giang) địa chỉ nào dạy bơi uy tín cho học sinh hè?", a: "Tại Long Xuyên có Hồ bơi Thành phố Long Xuyên (đường Âu Cơ) và CLB Bơi lội Yết Kiêu (88 Nguyễn Xí) là hai địa chỉ quen thuộc và được đông đảo học viên lựa chọn với đội ngũ HLV cử nhân TDTT tận tâm." },
       { q: "Ở TP. Rạch Giá (Kiên Giang) hồ bơi nào sạch đẹp và hiện đại nhất để học bơi?", a: "Hiện đại và sạch đẹp nhất tại TP. Rạch Giá là Hồ bơi Phú Cường Park (KĐT Phú Cường, đường Nguyễn Thanh Nhàn) với thiết kế resort cao cấp và hệ thống lọc nước thông minh." },
       { q: "Bé nhút nhát sợ nước ở Long Xuyên học bơi 1 kèm 1 có hiệu quả không?", a: "Rất hiệu quả. Với hình thức 1 kèm 1, giáo viên trực tiếp xuống nước cầm tay hướng dẫn từ kỹ năng ngụp lặn thổi bọt khí, giúp trẻ hoàn toàn vượt qua nỗi sợ nước sau 2-3 buổi đầu." },
       { q: "Đăng ký học bơi tại TP. Phú Quốc (Kiên Giang) có giáo viên dạy kèm riêng không?", a: "Có. Swim For Life có mạng lưới HLV liên kết dạy bơi tại các hồ bơi resort và khu dân cư tại TP. Phú Quốc, sẵn sàng dạy kèm riêng tận nơi theo yêu cầu của gia đình." }
@@ -664,7 +664,7 @@ export const locations = [
     isTW: false,
     color: "coral",
     mergedFrom: "Bạc Liêu + Cà Mau",
-    title: "Học Bơi Cà Mau - Bạc Liêu: Lớp Học Bơi Đất Mũi Uy Tín Số 1",
+    title: "Học Bơi Cà Mau - Bạc Liêu: Lớp Học Bơi Đất Mũi được nhiều học viên tin chọn",
     description: "Khóa học bơi tại Cà Mau và Bạc Liêu. Dạy bơi 1 kèm 1 cam kết biết bơi hoàn toàn, HLV tận tâm chu đáo nhiệt huyết cùng Swim For Life.",
     headline: "Học Bơi Cà Mau - Bạc Liêu: Lớp Dạy Bơi Sinh Tồn Cốt Lõi",
     subtitle: "Dạy bơi an toàn vùng đất mũi Cà Mau và tỉnh Bạc Liêu. Cam kết biết bơi 100%.",
@@ -705,7 +705,7 @@ export const locations = [
       { q: "Ở TP. Cao Bằng mùa đông giá lạnh có học bơi được không?", a: "Có thể học tại Bể bơi trong nhà Khách sạn Mường Thanh Luxury Cao Bằng (phố Kim Đồng) có không gian kín gió nước ấm; mùa hè từ tháng 5 đến tháng 9 có thể học tại Bể TDTT tỉnh và Bể Tân Giang." },
       { q: "Trẻ em vùng cao sông suối Cao Bằng nên học kiểu bơi nào trước?", a: "Khuyến khích học bơi ếch sinh tồn kết hợp kỹ thuật đứng nước thả nổi ngửa mặt, giúp trẻ giữ sức và tự bảo vệ an toàn khi đối mặt với vùng nước sâu hoặc dòng chảy xiết." },
       { q: "Trung tâm Swim For Life có dạy kèm 1-1 tại bể bơi khách sạn Mường Thanh không?", a: "Có, HLV của trung tâm nhận dạy kèm 1 kèm 1 theo yêu cầu tại bể bơi Mường Thanh Luxury và các bể bơi công cộng trên địa bàn TP. Cao Bằng." },
-      { q: "Khóa học bơi 1 kèm 1 cam kết những tiêu chuẩn đầu ra nào?", a: "Cam kết 100% học viên bơi thành thạo tối thiểu 50m liên tục không nghỉ, tự tin đứng nước ở độ sâu trên 2m và biết kỹ năng tự xử lý chuột rút đuối nước." }
+      { q: "Khóa học bơi 1 kèm 1 cam kết những tiêu chuẩn đầu ra nào?", a: "đồng hành cam kết đầu ra học viên bơi thành thạo tối thiểu 50m liên tục không nghỉ, tự tin đứng nước ở độ sâu trên 2m và biết kỹ năng tự xử lý chuột rút đuối nước." }
     ]
   },
   {
@@ -743,7 +743,7 @@ export const locations = [
     title: "Học Bơi Điện Biên: Khóa Học Bơi Uy Tín Tại Điện Biên Phủ",
     description: "Đăng ký học bơi Điện Biên Phủ uy tín. Lớp dạy bơi 1 kèm 1 chất lượng cao, cam kết biết bơi hoàn toàn từ trung tâm Swim For Life.",
     headline: "Học Bơi Điện Biên: Trung Tâm Dạy Bơi Uy Tín Bài Bản",
-    subtitle: "Dạy bơi uy tín tại Điện Biên Phủ. HLV giàu kinh nghiệm sư phạm thể thao, an toàn tuyệt đối.",
+    subtitle: "Dạy bơi uy tín tại Điện Biên Phủ. HLV giàu kinh nghiệm sư phạm thể thao, đảm bảo an toàn tối đa.",
     image: "/images/classes/lop-hoc-boi-ha-noi.jpg",
     intro: "Điện Biên lịch sử hào hùng đang phát triển kinh tế xã hội mạnh mẽ. Học bơi giúp trẻ em nâng cao thể chất, phát triển chiều cao và thành thạo kỹ năng sinh tồn thiết yếu.",
     pools: [
@@ -807,7 +807,7 @@ export const locations = [
     faqs: [
       { q: "Mùa đông ở Lạng Sơn rất lạnh thì học bơi ở đâu an toàn không bị cảm lạnh?", a: "Học viên nên học tại Bể bơi Bốn Mùa Vincom Lạng Sơn (tầng 5 Vincom Plaza Chi Lăng) với hệ thống nước nóng gia nhiệt tự động 31°C, phòng tắm nước nóng kín gió tuyệt đối an toàn cho sức khỏe." },
       { q: "Trẻ em từ mấy tuổi ở Lạng Sơn nên cho đi học bơi?", a: "Trẻ từ 5 - 6 tuổi là giai đoạn vàng để học bơi sinh tồn, các bé đã nhận thức tốt chỉ dẫn của thầy cô và phát triển hệ xương khớp vượt trội." },
-      { q: "Khóa học bơi 1 kèm 1 tại Lạng Sơn có cam kết đầu ra không?", a: "Swim For Life cam kết 100% học viên biết bơi thành thạo, tự tin bơi cự ly 50m và đứng nước sâu từ 2m trở lên mới hoàn thành khóa học." },
+      { q: "Khóa học bơi 1 kèm 1 tại Lạng Sơn có cam kết đầu ra không?", a: "Swim For Life đồng hành cam kết đầu ra học viên biết bơi thành thạo, tự tin bơi cự ly 50m và đứng nước sâu từ 2m trở lên mới hoàn thành khóa học." },
       { q: "Học viên có thể tự chọn bể bơi gần nhà tại TP. Lạng Sơn không?", a: "Có, phụ huynh và học viên có thể chọn Bể Vincom Plaza, Mường Thanh Luxury, Cung Thiếu Nhi hoặc bất kỳ hồ bơi nào thuận tiện, HLV sẽ đến tận nơi kèm riêng." }
     ]
   },
@@ -834,7 +834,7 @@ export const locations = [
       { q: "Tại TP. Lào Cai có bể bơi nước nóng bốn mùa nào tốt nhất để học bơi mùa đông?", a: "Bể bơi Bốn Mùa Đức Huy Grand Hotel (Đại lộ Trần Hưng Đạo) là địa chỉ bể nước ấm thông minh chuẩn nhất TP. Lào Cai, nhiệt độ nước duy trì ổn định không lo gió rét." },
       { q: "Tại TP. Yên Bái học bơi bốn mùa ở đâu chất lượng cao?", a: "Bể bơi Bốn Mùa I Fitness & Yoga (số 02 Hoàng Hoa Thám, phường Yên Ninh) là cơ sở bơi lội nước ấm điện phân muối khoáng hiện đại hàng đầu TP. Yên Bái." },
       { q: "Lên Sa Pa du lịch có thể đăng ký học bơi cấp tốc không?", a: "Có, Swim For Life có HLV hỗ trợ dạy kỹ năng bơi sinh tồn và kỹ thuật chỉnh sửa sải bơi cấp tốc tại các bể bơi nước nóng như Pistachio Hotel hoặc Silk Path Sa Pa." },
-      { q: "Trung tâm có cam kết 100% biết bơi cho người lớn sợ nước không?", a: "Cam kết 100% học viên người lớn biết bơi, tự tin bơi ếch hoặc bơi trườn sấp và đứng nước sâu ít nhất 2 - 3 phút an toàn tuyệt đối." }
+      { q: "Trung tâm có đồng hành đến khi biết bơi thành thạo cho người lớn sợ nước không?", a: "đồng hành cam kết đầu ra học viên người lớn biết bơi, tự tin bơi ếch hoặc bơi trườn sấp và đứng nước sâu ít nhất 2 - 3 phút đảm bảo an toàn tối đa." }
     ]
   },
   {
@@ -857,7 +857,7 @@ export const locations = [
       { name: "Bể bơi Khách sạn Yên Biên Luxury Hà Giang", address: "Số 517 đường Nguyễn Trãi, phường Nguyễn Trãi, TP. Hà Giang", type: "Khách sạn 4 sao", pros: "Bể bơi sạch đẹp sang trọng ngay trung tâm thành phố Hà Giang, phục vụ bơi lội thư giãn và học bơi kèm riêng." }
     ],
     faqs: [
-      { q: "Ở TP. Tuyên Quang học bơi bốn mùa nước nóng ở đâu an toàn cho trẻ?", a: "Bể bơi 4 Mùa Spa2 Ngọc Hà (đường Nguyễn Trãi, Minh Xuân) là địa chỉ bơi nước ấm bốn mùa uy tín nhất TP. Tuyên Quang, nước ấm duy trì quanh năm không lo lạnh." },
+      { q: "Ở TP. Tuyên Quang học bơi bốn mùa nước nóng ở đâu an toàn cho trẻ?", a: "Bể bơi 4 Mùa Spa2 Ngọc Hà (đường Nguyễn Trãi, Minh Xuân) là địa chỉ bơi nước ấm bốn mùa được đông đảo học viên lựa chọn TP. Tuyên Quang, nước ấm duy trì quanh năm không lo lạnh." },
       { q: "Tại TP. Hà Giang mùa đông có học bơi được không?", a: "Có, học viên tại Hà Giang có thể tập luyện tại Bể bơi Bốn Mùa H2T (192 Lý Thường Kiệt, Trần Phú) với hệ thống nước nóng gia nhiệt tự động, rất an toàn cho cả trẻ nhỏ và người lớn." },
       { q: "Trẻ em vùng cao Tuyên Quang và Hà Giang nên trang bị kỹ năng bơi gì trước mùa mưa lũ?", a: "Ưu tiên rèn luyện kỹ năng đứng nước sinh tồn, kỹ thuật bơi ngửa thả nổi lấy hơi và khả năng định hướng dòng chảy để phòng chống tai nạn đuối nước trên sông suối thác ghềnh." },
       { q: "Một khóa học bơi kèm riêng tại Tuyên Quang - Hà Giang kéo dài bao lâu?", a: "Khóa học kéo dài từ 10 đến 12 buổi, mỗi buổi 60 - 75 phút kèm riêng 1 thầy 1 trò cho đến khi học viên bơi thành thạo cự ly tối thiểu 50m mới tốt nghiệp." }

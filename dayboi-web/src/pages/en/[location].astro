@@ -24,8 +24,16 @@ const enNames = {
   'Điện Biên': 'Dien Bien', 'Sơn La': 'Son La', 'Lạng Sơn': 'Lang Son', 'Lào Cai': 'Lao Cai', 'Tuyên Quang': 'Tuyen Quang',
 };
 const enName = enNames[loc.name] || loc.name;
+const customerCopy = (value = '') => String(value)
+  .replace(/cam kết 100%/gi, 'committed to steady progress')
+  .replace(/an toàn tuyệt đối/gi, 'high safety standards')
+  .replace(/uy tín nhất/gi, 'well-known locally')
+  .replace(/uy tín số 1/gi, 'popular local choice')
+  .replace(/hiện đại số 1/gi, 'modern standard facility')
+  .replace(/an toàn số 1/gi, 'high safety standard')
+  .replace(/hoàn hảo nhất/gi, 'suitable');
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-const poolDirectory = loc.pools.map((pool) => ({ ...pool, mapsUrl: mapsSearch(`${pool.name}, ${pool.address || loc.name}`) }));
+const poolDirectory = loc.pools.map((pool) => ({ ...pool, pros: customerCopy(pool.pros), mapsUrl: mapsSearch(`${pool.name}, ${pool.address || loc.name}`) }));
 const discoveryLinks = [
   { label: 'All publicly listed swimming pools', desc: 'Review current opening hours, websites, and public contact details.', url: mapsSearch(`swimming pools in ${loc.name}`), icon: 'pool' },
   { label: 'Swimming instructors and providers', desc: 'Find instructors or centers publicly offering lessons in the area.', url: mapsSearch(`swimming instructors in ${loc.name}`), icon: 'coach' },

@@ -8,11 +8,12 @@ const footerNav = lang === 'vi' ? {
   brand: 'Swim For Life Việt Nam',
   tagline: 'Đơn vị thiết kế và triển khai chương trình đào tạo bơi quy mô lớn cho doanh nghiệp, trường học và khu dân cư.',
   sections: [
-    { title: 'Cho Tổ Chức', links: [
-      { label: 'Đào tạo doanh nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' },
-      { label: 'Gửi yêu cầu chương trình', href: '/lien-he/' },
-      { label: 'Năng lực đội ngũ', href: '/doi-ngu-hlv/' },
-      { label: 'Giới thiệu đơn vị', href: '/gioi-thieu/' }
+    { title: 'Khóa Học Bơi', links: [
+      { label: 'Lớp bơi trẻ em', href: '/khoa-hoc-boi/tre-em/' },
+      { label: 'Lớp bơi người lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
+      { label: 'Học bơi 1 kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
+      { label: 'Bảng giá học phí', href: '/bang-gia/' },
+      { label: 'Lộ trình học 12 buổi', href: '/lo-trinh-hoc-boi/' }
     ]},
     { title: 'Kỹ Thuật Bơi', links: [
       { label: 'Bơi ếch', href: '/ky-thuat-boi/hoc-boi-ech/' },
@@ -21,13 +22,19 @@ const footerNav = lang === 'vi' ? {
       { label: 'Bơi bướm', href: '/ky-thuat-boi/hoc-boi-buom/' },
       { label: 'Kỹ năng đứng nước', href: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
     ]},
-    { title: 'Địa Điểm', links: [
+    { title: 'Địa Điểm Học Bơi', links: [
       { label: 'Tất cả địa điểm', href: '/hoc-boi-o-dau/' },
       { label: 'Hà Nội', href: '/hoc-boi-ha-noi/' },
-      { label: 'Gia Lâm, Hà Nội', href: '/hoc-boi-ha-noi/gia-lam/' },
-      { label: 'Long Biên, Hà Nội', href: '/hoc-boi-ha-noi/long-bien/' },
       { label: 'TP. Hồ Chí Minh', href: '/hoc-boi-tphcm/' },
       { label: 'Đà Nẵng', href: '/hoc-boi-da-nang/' },
+      { label: 'Hải Phòng', href: '/hoc-boi-hai-phong/' },
+      { label: 'Cần Thơ', href: '/hoc-boi-can-tho/' }
+    ]},
+    { title: 'Về Trung Tâm', links: [
+      { label: 'Giới thiệu đơn vị', href: '/gioi-thieu/' },
+      { label: 'Đội ngũ HLV', href: '/doi-ngu-hlv/' },
+      { label: 'Đào tạo doanh nghiệp', href: '/khoa-hoc-boi/doanh-nghiep/' },
+      { label: 'Gửi yêu cầu hợp tác', href: '/lien-he/' },
       { label: 'Blog kiến thức', href: '/tin-tuc/' }
     ]}
   ],
@@ -40,23 +47,31 @@ const footerNav = lang === 'vi' ? {
   brand: 'Swim For Life Vietnam',
   tagline: 'Large-scale swimming and water-safety programs for companies, schools and residential communities.',
   sections: [
-    { title: 'Organizations', links: [
-      { label: 'Organization enquiry', href: '/en/contact/' },
-      { label: 'Team expertise', href: '/en/coaches/' },
-      { label: 'About us', href: '/en/about/' },
-      { label: 'Program overview', href: '/khoa-hoc-boi/doanh-nghiep/' }
+    { title: 'Courses & Pricing', links: [
+      { label: 'All Courses', href: '/en/courses/' },
+      { label: 'Kids Swimming', href: '/en/courses/kids/' },
+      { label: 'Adults Swimming', href: '/en/courses/adults/' },
+      { label: 'Intensive Class', href: '/en/courses/intensive/' },
+      { label: 'Pricing & Fees', href: '/en/pricing/' },
+      { label: '12-Session Journey', href: '/en/swim-journey/' }
     ]},
     { title: 'Techniques', links: [
       { label: 'Breaststroke', href: '/en/swimming-techniques/breaststroke/' },
       { label: 'Front Crawl', href: '/en/swimming-techniques/front-crawl/' },
       { label: 'Backstroke', href: '/en/swimming-techniques/backstroke/' },
-      { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' }
+      { label: 'Butterfly', href: '/en/swimming-techniques/butterfly/' },
+      { label: 'Treading Water', href: '/en/swimming-techniques/treading-water/' }
     ]},
-    { title: 'Information', links: [
-      { label: 'About Us', href: '/en/about/' },
+    { title: 'Guides & Directory', links: [
+      { label: 'All Guides', href: '/en/guides/' },
+      { label: 'How to Swim', href: '/en/guides/how-to-swim/' },
+      { label: 'Local directory', href: '/hoc-boi-o-dau/' },
+      { label: 'Blog', href: '/en/blog/' }
+    ]},
+    { title: 'About Us', links: [
+      { label: 'About us', href: '/en/about/' },
       { label: 'Coaches', href: '/en/coaches/' },
-      { label: 'Blog', href: '/en/blog/' },
-      { label: 'Local directory', href: '/hoc-boi-o-dau/' }
+      { label: 'Organization enquiry', href: '/en/contact/' }
     ]}
   ],
   ctaEyebrow: 'For organizations and institutions',
@@ -141,7 +156,7 @@ const footerNav = lang === 'vi' ? {
   .footer-brand__proof { display: flex; align-items: center; gap: var(--space-3); }
   .footer-brand__proof span { color: var(--blue-400); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; }
   .footer-brand__proof small { max-width: 100px; color: color-mix(in srgb, var(--white) 60%, transparent); line-height: 1.35; }
-  .footer-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+  .footer-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); }
   .footer-links h3 { margin-bottom: var(--space-5); color: var(--white); font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
   .footer-links ul { display: grid; gap: .7rem; }
   .footer-links a { color: color-mix(in srgb, var(--white) 62%, transparent); font-size: .86rem; }
@@ -165,7 +180,8 @@ const footerNav = lang === 'vi' ? {
 
   @media (max-width: 1024px) {
     .footer-cta__content { align-items: flex-start; justify-content: flex-end; flex-direction: column; }
-    .footer-main__grid { grid-template-columns: 1fr 2fr; }
+    .footer-main__grid { grid-template-columns: 1fr; }
+    .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .footer-contact { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, auto); align-items: center; gap: var(--space-4); padding-top: var(--space-6); border-top: 1px solid color-mix(in srgb, var(--white) 10%, transparent); }
     .footer-contact__label { grid-column: 1 / -1; margin: 0; }
     .footer-contact__phone { margin: 0; }

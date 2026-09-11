@@ -5,79 +5,616 @@ import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 const currentYear = new Date().getFullYear();
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Chi phí & báo giá' },
+  { label: 'Chi phí & bảng giá học bơi' },
 ];
+
+const faqs = [
+  {
+    question: "Học phí học bơi đã bao gồm vé vào cổng bể bơi chưa?",
+    answer: "Thông thường, học phí niêm yết của HLV hoặc trung tâm là chi phí giảng dạy chuyên môn và chưa bao gồm vé vào bể bơi của học viên. Học viên sẽ mua vé theo lượt hoặc vé tháng trực tiếp tại quầy lễ tân của bể bơi được lựa chọn học."
+  },
+  {
+    question: "Người lớn sợ nước hoặc chưa từng bơi có học được không, mất bao lâu?",
+    answer: "Học viên sợ nước hoàn toàn có thể học được nếu theo phương pháp bơi thích ứng tâm lý và làm quen với nước từng bước. Với hình thức kèm riêng 1 kèm 1, hầu hết người lớn biết bơi cơ bản (bơi ếch hoặc bơi tự cứu) sau khoảng 8 đến 12 buổi học nghiêm túc."
+  },
+  {
+    question: "Lớp kèm riêng 1:1 và lớp học bơi theo nhóm nhỏ khác nhau như thế nào?",
+    answer: "Lớp kèm riêng 1 kèm 1 có HLV theo sát toàn bộ thời gian dưới nước, sửa động tác tức thì và linh động xếp lịch học theo cá nhân. Lớp nhóm nhỏ (2–4 học viên) có chi phí tiết kiệm hơn, thích hợp với bạn bè hoặc thành viên gia đình học cùng nhau tạo không khí thi đua."
+  },
+  {
+    question: "Nếu có việc bận đột xuất hoặc lý do sức khỏe có được bảo lưu buổi học không?",
+    answer: "Tại các trung tâm và câu lạc bộ chuyên nghiệp, học viên được hỗ trợ bảo lưu khóa học linh hoạt (thường từ 30 đến 60 ngày) khi thông báo trước cho ban quản lý hoặc HLV phụ trách trước giờ học theo quy định."
+  },
+  {
+    question: "Doanh nghiệp hoặc trường học muốn tổ chức khóa đào tạo bơi số lượng lớn thì thế nào?",
+    answer: "Đối với đoàn từ 10 học viên trở lên (doanh nghiệp, trường học, ban quản lý khu dân cư), Swim For Life hỗ trợ khảo sát mặt bằng bể bơi, thiết kế khung chương trình chuẩn hoá theo lứa tuổi và cung cấp báo giá dự án trọn gói minh bạch kèm hóa đơn hợp lệ."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
 
 <PageLayout
-  title={`Chi Phí Học Bơi & Báo Giá Đào Tạo Tổ Chức ${currentYear}`}
-  description="Người học cá nhân tự tham khảo học phí và liên hệ các đơn vị địa phương. Doanh nghiệp, trường học và tổ chức từ 10 người có thể yêu cầu báo giá riêng."
+  title={`Bảng Giá Học Bơi ${currentYear}: Chi Phí Kèm Riêng, Nhóm & Doanh Nghiệp`}
+  description="Tham khảo bảng giá học bơi mới nhất 2026: lớp kèm riêng 1 kèm 1, nhóm nhỏ 2-4 học viên, bơi sinh tồn trẻ em và báo giá đào tạo đoàn thể, trường học."
   canonical="https://dayboi.vip/bang-gia/"
   breadcrumbs={breadcrumbs}
   alternateUrl="/en/pricing/"
   alternateLang="en"
+  schema={faqSchema}
 >
-  <div class="pricing-router">
-    <section class="pricing-router__hero">
-      <div class="container pricing-router__hero-grid">
+  <div class="pricing-page">
+    <!-- Hero Section -->
+    <section class="pricing-page__hero">
+      <div class="container pricing-page__hero-grid">
         <div>
-          <span>Hai nhu cầu · hai cách tra cứu</span>
-          <h1>Chi phí học bơi được xác định theo <em>đơn vị cung cấp</em> và quy mô</h1>
-          <p>Swim For Life không nhận đăng ký học lẻ và không niêm yết giá thay cho các bể bơi hoặc giáo viên độc lập. Người học cá nhân liên hệ trực tiếp với đơn vị địa phương; tổ chức từ 10 người nhận đề xuất riêng theo phạm vi triển khai.</p>
+          <span class="pricing-badge">Cập nhật thị trường {currentYear}</span>
+          <h1>Bảng giá học bơi &amp; <em>hướng dẫn chi phí</em> chi tiết</h1>
+          <p>
+            Tìm hiểu mặt bằng học phí học bơi tại Việt Nam theo từng hình thức lớp học, 
+            cơ cấu các khoản chi phí thực tế và hướng dẫn chọn lộ trình học bơi an toàn, 
+            tiết kiệm và hiệu quả cao.
+          </p>
+          <div class="pricing-page__hero-actions">
+            <a href="#bang-gia-chi-tiet" class="btn btn--primary">Xem bảng giá tham khảo</a>
+            <a href="/hoc-boi-o-dau/" class="btn btn--outline">Tìm bể bơi gần bạn</a>
+          </div>
         </div>
-        <img src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" alt="Một lớp bơi theo nhóm được tổ chức bài bản" width="720" height="540" loading="eager" />
+        <div class="pricing-page__hero-media">
+          <img 
+            src="/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg" 
+            alt="Lớp học bơi được tổ chức bài bản chuyên nghiệp" 
+            width="720" 
+            height="540" 
+            loading="eager" 
+          />
+        </div>
       </div>
     </section>
 
+    <!-- Pricing Table Section -->
+    <section id="bang-gia-chi-tiet" class="section">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Khung học phí tham khảo</span>
+          <h2>Bảng giá các khóa học bơi phổ biến năm {currentYear}</h2>
+          <p class="section-desc">
+            Mức học phí trung bình trên thị trường bơi lội tại các đô thị lớn (Hà Nội, TP.HCM, Đà Nẵng, Hải Phòng...) 
+            dành cho khóa học cơ bản 10–12 buổi.
+          </p>
+        </div>
+
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Hình thức lớp học</th>
+                <th>Sĩ số &amp; Thời lượng</th>
+                <th>Mức học phí tham khảo</th>
+                <th>Mục tiêu &amp; Phù hợp nhất</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Lớp kèm riêng 1 kèm 1</strong>
+                  <span class="table-subtext">Hình thức học phổ biến &amp; hiệu quả cao</span>
+                </td>
+                <td>
+                  1 HLV kèm 1 học viên<br />
+                  10 – 12 buổi (60 phút/buổi)
+                </td>
+                <td>
+                  <span class="price-highlight">3.500.000đ – 4.500.000đ</span>
+                  <span class="table-subtext">chưa bao gồm vé bể</span>
+                </td>
+                <td>
+                  Người lớn sợ nước, trẻ nhỏ nhút nhát hoặc học viên cần tiến bộ nhanh và linh hoạt thời gian tập luyện.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Lớp nhóm nhỏ (2–4 học viên)</strong>
+                  <span class="table-subtext">Tiết kiệm chi phí, không khí sôi nổi</span>
+                </td>
+                <td>
+                  1 HLV kèm 2–4 học viên<br />
+                  10 – 12 buổi (60 phút/buổi)
+                </td>
+                <td>
+                  <span class="price-highlight">2.000.000đ – 2.800.000đ</span>
+                  <span class="table-subtext">mỗi học viên</span>
+                </td>
+                <td>
+                  Nhóm bạn thân, cặp phụ huynh - con cái hoặc các bé đã dạn nước muốn học cùng nhau để có thêm động lực.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Lớp bơi sinh tồn trẻ em</strong>
+                  <span class="table-subtext">Trang bị kỹ năng phòng chống đuối nước</span>
+                </td>
+                <td>
+                  1 HLV kèm 1–3 bé<br />
+                  12 buổi (45–60 phút/buổi)
+                </td>
+                <td>
+                  <span class="price-highlight">2.500.000đ – 3.800.000đ</span>
+                  <span class="table-subtext">tùy độ tuổi bé</span>
+                </td>
+                <td>
+                  Trẻ em từ 4–12 tuổi cần nắm vững kỹ năng ngụp thở, nổi ngửa tự cứu và xử lý khi vô tình ngã xuống nước.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Lớp chỉnh dáng &amp; Bơi nâng cao</strong>
+                  <span class="table-subtext">Bơi sải, bơi ngửa, bơi bướm chuẩn kỹ thuật</span>
+                </td>
+                <td>
+                  1 HLV kèm 1–2 học viên<br />
+                  10 – 12 buổi (60 phút/buổi)
+                </td>
+                <td>
+                  <span class="price-highlight">3.500.000đ – 5.000.000đ</span>
+                  <span class="table-subtext">giáo án cá nhân hóa</span>
+                </td>
+                <td>
+                  Học viên đã biết bơi ếch muốn học thêm bơi sải, nâng cao thể lực hoặc cải thiện tốc độ và sức bền đường dài.
+                </td>
+              </tr>
+              <tr class="table-row-highlight">
+                <td>
+                  <strong>Đào tạo doanh nghiệp &amp; Trường học</strong>
+                  <span class="table-subtext">Chương trình đào tạo tập thể quy mô lớn</span>
+                </td>
+                <td>
+                  Đoàn từ 10 người trở lên<br />
+                  Thiết kế theo yêu cầu tổ chức
+                </td>
+                <td>
+                  <span class="price-highlight">Báo giá theo dự án</span>
+                  <span class="table-subtext">chiết khấu đoàn thể</span>
+                </td>
+                <td>
+                  Doanh nghiệp tổ chức phúc lợi thể thao, trường học phổ cập bơi lội hoặc ban quản trị khu dân cư.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Breakdown Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Minh bạch tài chính</span>
+          <h2>Cơ cấu các khoản chi phí khi học bơi thực tế</h2>
+          <p class="section-desc">
+            Để tránh các chi phí phát sinh ngoài ý muốn, bạn nên hiểu rõ 3 khoản chi phí chính trong suốt quá trình học bơi.
+          </p>
+        </div>
+
+        <div class="cost-grid">
+          <div class="cost-card">
+            <div class="cost-card__icon">👨‍🏫</div>
+            <h3>1. Học phí giảng dạy của HLV</h3>
+            <p>
+              Khoản phí chi trả cho công tác đào tạo chuyên môn của huấn luyện viên: giáo án giảng dạy, 
+              sửa lỗi tư thế dưới nước, bảo đảm các tiêu chuẩn an toàn và đồng hành suốt khóa học.
+            </p>
+            <ul class="cost-card__list">
+              <li>Hình thức kèm riêng 1:1 hoặc nhóm nhỏ</li>
+              <li>Theo dõi tiến độ qua từng buổi tập</li>
+              <li>Hỗ trợ hướng dẫn bổ sung khi cần thiết</li>
+            </ul>
+          </div>
+
+          <div class="cost-card">
+            <div class="cost-card__icon">🏊‍♂️</div>
+            <h3>2. Vé vào cổng bể bơi</h3>
+            <p>
+              Vé bể do ban quản lý bể bơi thu trực tiếp và thường tách biệt với học phí HLV. 
+              Học viên tự mua vé theo nhu cầu cá nhân hoặc mua thẻ tháng để tiết kiệm chi phí.
+            </p>
+            <ul class="cost-card__list">
+              <li>Vé lượt: dao động 40.000đ – 150.000đ/lượt tùy bể</li>
+              <li>Bể bốn mùa trong nhà có mức vé cao hơn bể ngoài trời</li>
+              <li>Nên chọn bể bơi gần nhà để thuận tiện đi lại đều đặn</li>
+            </ul>
+          </div>
+
+          <div class="cost-card">
+            <div class="cost-card__icon">🥽</div>
+            <h3>3. Trang thiết bị &amp; Phụ kiện</h3>
+            <p>
+              Trang bị cá nhân ban đầu giúp bảo vệ mắt, tai, da và tóc trong môi trường nước hồ bơi, 
+              tạo sự thoải mái tối đa cho học viên khi tập luyện.
+            </p>
+            <ul class="cost-card__list">
+              <li>Kính bơi chống đọng sương: 150.000đ – 400.000đ</li>
+              <li>Mũ bơi silicon co giãn: 50.000đ – 150.000đ</li>
+              <li>Quần áo bơi co giãn thoải mái: 200.000đ – 600.000đ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two Paths Section -->
     <section class="section">
       <div class="container pricing-router__paths">
         <article>
           <span>01 · Cá nhân và gia đình</span>
           <h2>Tự hỏi giá tại địa phương</h2>
-          <p>Học phí khác nhau theo vé bể, hình thức 1 kèm 1 hoặc lớp nhóm, số buổi và kinh nghiệm HLV. Danh bạ giúp bạn mở listing công khai và liên hệ trực tiếp.</p>
+          <p>Học phí khác nhau theo vé bể, hình thức 1 kèm 1 hoặc lớp nhóm, số buổi và kinh nghiệm HLV. Danh bạ địa phương giúp bạn xem danh sách bể bơi và liên hệ trực tiếp đơn vị gần nhất.</p>
           <ul>
             <li>Hỏi rõ học phí đã bao gồm vé bể và dụng cụ chưa</li>
-            <li>Xác nhận sĩ số, thời lượng, lịch bù và hoàn phí bằng văn bản</li>
-            <li>Kiểm tra chứng chỉ HLV và nhân viên cứu hộ tại bể</li>
+            <li>Xác nhận sĩ số, thời lượng, lịch bù và bảo lưu bằng văn bản</li>
+            <li>Kiểm tra chứng chỉ HLV và nhân viên cứu hộ trực tại bể</li>
           </ul>
-          <a href="/hoc-boi-o-dau/">Mở danh bạ địa phương <b>→</b></a>
+          <a href="/hoc-boi-o-dau/">Mở danh bạ 63 tỉnh thành <b>→</b></a>
         </article>
         <article class="pricing-router__paths-enterprise">
           <span>02 · Doanh nghiệp và tổ chức</span>
           <h2>Nhận báo giá theo đề bài</h2>
-          <p>Chi phí phụ thuộc số người, độ tuổi, địa điểm, thời lượng, yêu cầu HLV/cứu hộ và tiêu chí đầu ra. Gửi thông tin để đội ngũ đánh giá và xây dựng phương án.</p>
+          <p>Chi phí phụ thuộc số lượng học viên, độ tuổi, địa điểm hồ bơi, thời lượng đào tạo và tiêu chí đầu ra. Gửi thông tin để đội ngũ Swim For Life tư vấn và xây dựng phương án tối ưu.</p>
           <ul>
-            <li>Phù hợp cho đoàn từ 10 người</li>
-            <li>Có thể triển khai cho doanh nghiệp, trường học, khu dân cư</li>
-            <li>Đề xuất lộ trình và nguồn lực theo quy mô thực tế</li>
+            <li>Phù hợp cho đoàn từ 10 người trở lên</li>
+            <li>Triển khai cho cơ quan, trường học, khu dân cư</li>
+            <li>Cung cấp hợp đồng đào tạo và hóa đơn VAT đầy đủ</li>
           </ul>
-          <a href="/lien-he/">Yêu cầu đề xuất & báo giá <b>→</b></a>
+          <a href="/lien-he/">Yêu cầu đề xuất &amp; báo giá <b>→</b></a>
         </article>
       </div>
     </section>
 
+    <!-- FAQ Section -->
     <section class="section section--alt">
-      <div class="container"><LocalDirectoryCTA /></div>
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Giải đáp thắc mắc</span>
+          <h2>Câu hỏi thường gặp về chi phí học bơi</h2>
+          <p class="section-desc">
+            Những điều người học thường quan tâm trước khi đăng ký khóa học bơi.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          {faqs.map(faq => (
+            <div class="faq-card">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Directory CTA -->
+    <section class="section">
+      <div class="container">
+        <LocalDirectoryCTA />
+      </div>
     </section>
   </div>
 </PageLayout>
 
 <style>
-  .pricing-router__hero { padding: clamp(4rem, 8vw, 7.5rem) 0; background: var(--blue-950); color: var(--white); }
-  .pricing-router__hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(390px, .85fr); gap: clamp(3rem, 7vw, 7rem); align-items: center; }
-  .pricing-router__hero span, .pricing-router__paths article > span { color: var(--blue-200); font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-  .pricing-router__hero h1 { margin: var(--space-4) 0 0; color: var(--white); font-size: clamp(2.7rem, 5.7vw, 5.6rem); line-height: 1; letter-spacing: -.06em; }
-  .pricing-router__hero h1 em { color: var(--orange-400); font-style: normal; }
-  .pricing-router__hero p { margin: var(--space-6) 0 0; color: color-mix(in srgb, var(--white) 72%, transparent); font-size: var(--text-lg); line-height: 1.75; }
-  .pricing-router__hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-xl); }
-  .pricing-router__paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
-  .pricing-router__paths article { display: flex; flex-direction: column; padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--color-border); border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-md); }
-  .pricing-router__paths article > span { color: var(--blue-700); }
-  .pricing-router__paths h2 { margin: var(--space-4) 0 0; color: var(--blue-950); font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.045em; }
-  .pricing-router__paths p { color: var(--ink-600); line-height: 1.75; }
-  .pricing-router__paths ul { display: grid; gap: var(--space-3); padding-left: 1.2rem; color: var(--ink-700); line-height: 1.55; }
-  .pricing-router__paths a { display: inline-flex; align-items: center; justify-content: space-between; min-height: 54px; margin-top: auto; padding: 0 var(--space-5); border-radius: var(--radius-md); background: var(--blue-900); color: var(--white); font-weight: 750; }
-  .pricing-router__paths-enterprise { background: var(--sand-50) !important; }
-  .pricing-router__paths-enterprise a { background: var(--orange-500); }
-  @media (max-width: 900px) { .pricing-router__hero-grid, .pricing-router__paths { grid-template-columns: 1fr; } .pricing-router__hero img { max-width: 680px; } }
+  .pricing-page__hero {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: var(--blue-950);
+    color: var(--white);
+  }
+  .pricing-page__hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+  .pricing-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--blue-200);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .pricing-page__hero h1 {
+    margin: var(--space-4) 0 0;
+    color: var(--white);
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+  .pricing-page__hero h1 em {
+    color: var(--orange-400);
+    font-style: normal;
+  }
+  .pricing-page__hero p {
+    margin: var(--space-5) 0 0;
+    color: color-mix(in srgb, var(--white) 80%, transparent);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    max-width: 620px;
+  }
+  .pricing-page__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+  .pricing-page__hero-media img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .section-heading {
+    max-width: 760px;
+    margin: 0 auto var(--space-10);
+  }
+  .section-tag {
+    display: inline-block;
+    margin-bottom: var(--space-2);
+    color: var(--blue-700);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .section-heading h2 {
+    color: var(--blue-950);
+    font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+  .section-desc {
+    margin-top: var(--space-3);
+    color: var(--ink-600);
+    font-size: var(--text-base);
+    line-height: 1.65;
+  }
+
+  /* Pricing Table */
+  .pricing-table-wrapper {
+    overflow-x: auto;
+    background: var(--white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+  }
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 700px;
+  }
+  .pricing-table th {
+    padding: var(--space-4) var(--space-5);
+    background: var(--blue-900);
+    color: var(--white);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .pricing-table td {
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    line-height: 1.55;
+    vertical-align: top;
+  }
+  .pricing-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .pricing-table tbody tr:hover {
+    background: var(--sand-50);
+  }
+  .table-subtext {
+    display: block;
+    margin-top: var(--space-1);
+    color: var(--ink-500);
+    font-size: 0.78rem;
+  }
+  .price-highlight {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--blue-900);
+  }
+  .table-row-highlight {
+    background: rgba(249, 115, 22, 0.05);
+  }
+
+  /* Cost Breakdown Grid */
+  .cost-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+  .cost-card {
+    padding: var(--space-6);
+    background: var(--white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .cost-card__icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-3);
+  }
+  .cost-card h3 {
+    color: var(--blue-950);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+  }
+  .cost-card p {
+    color: var(--ink-600);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+  .cost-card__list {
+    padding-left: 1.2rem;
+    display: grid;
+    gap: var(--space-2);
+    color: var(--ink-700);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Pricing Router Paths */
+  .pricing-router__paths {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+  .pricing-router__paths article {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+  }
+  .pricing-router__paths article > span {
+    color: var(--blue-700);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .pricing-router__paths h2 {
+    margin: var(--space-3) 0 0;
+    color: var(--blue-950);
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    letter-spacing: -0.03em;
+  }
+  .pricing-router__paths p {
+    margin: var(--space-3) 0 var(--space-4);
+    color: var(--ink-600);
+    line-height: 1.65;
+  }
+  .pricing-router__paths ul {
+    display: grid;
+    gap: var(--space-2);
+    padding-left: 1.2rem;
+    color: var(--ink-700);
+    line-height: 1.55;
+    margin-bottom: var(--space-6);
+  }
+  .pricing-router__paths a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 52px;
+    margin-top: auto;
+    padding: 0 var(--space-5);
+    border-radius: var(--radius-md);
+    background: var(--blue-900);
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .pricing-router__paths a:hover {
+    background: var(--blue-800);
+  }
+  .pricing-router__paths-enterprise {
+    background: var(--sand-50) !important;
+  }
+  .pricing-router__paths-enterprise a {
+    background: var(--orange-500);
+  }
+  .pricing-router__paths-enterprise a:hover {
+    background: var(--orange-600);
+  }
+
+  /* FAQ Grid */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+  .faq-card {
+    padding: var(--space-6);
+    background: var(--white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .faq-card h3 {
+    color: var(--blue-950);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-3);
+    line-height: 1.4;
+  }
+  .faq-card p {
+    color: var(--ink-600);
+    font-size: var(--text-sm);
+    line-height: 1.65;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.4rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn--primary {
+    background: var(--orange-500);
+    color: var(--white);
+  }
+  .btn--primary:hover {
+    background: var(--orange-600);
+  }
+  .btn--outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
+  .btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 960px) {
+    .pricing-page__hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .cost-grid {
+      grid-template-columns: 1fr;
+    }
+    .pricing-router__paths {
+      grid-template-columns: 1fr;
+    }
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

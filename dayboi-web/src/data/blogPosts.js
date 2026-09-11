@@ -13,8 +13,8 @@ export const blogPosts = [
   },
   {
     title: 'Học Bơi Ở Tân Bình: 5 Bể Bơi Và Nơi Dạy Bơi Tham Khảo',
-    slug: 'dia-diem/tphcm/hoc-boi-tan-binh',
-    excerpt: 'Bạn đang tìm địa điểm học bơi ở Tân Bình tốt nhất? Tổng hợp các lớp học bơi 1 kèm 1 và nhóm nhỏ tại quận Tân Bình, review bể bơi sạch sẽ, học phí hợp lý.',
+    slug: 'hoc-boi-tphcm/tan-binh',
+    excerpt: 'Bạn đang tìm địa điểm học bơi ở Tân Bình phù hợp? Tổng hợp các lớp học bơi 1 kèm 1 và nhóm nhỏ tại quận Tân Bình, review bể bơi sạch sẽ, học phí hợp lý.',
     image: '/images/classes/lop-hoc-boi-tre-em-tphcm.jpg',
     date: '25/05',
     category: 'Góc Tư Vấn',

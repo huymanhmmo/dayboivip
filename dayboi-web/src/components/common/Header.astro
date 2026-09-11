@@ -16,6 +16,8 @@ const navItems = lang === 'vi' ? [
       { label: 'Lớp người lớn', href: '/khoa-hoc-boi/nguoi-lon/' },
       { label: 'Học bơi 1 kèm 1', href: '/khoa-hoc-boi/1-kem-1/' },
       { label: 'Dành cho người sợ nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/' },
+      { label: 'Bảng giá học phí', href: '/bang-gia/' },
+      { label: 'Lộ trình học 12 buổi', href: '/lo-trinh-hoc-boi/' },
       { label: 'Đào tạo cho tổ chức', href: '/khoa-hoc-boi/doanh-nghiep/' }
     ]
   },
@@ -48,6 +50,16 @@ const navItems = lang === 'vi' ? [
   { label: 'Kiến thức', href: '/tin-tuc/' }
 ] : [
   { label: 'Home', href: '/en/' },
+  {
+    label: 'Courses', href: '/en/courses/', children: [
+      { label: 'All Courses', href: '/en/courses/' },
+      { label: 'Kids Swimming', href: '/en/courses/kids/' },
+      { label: 'Adults Swimming', href: '/en/courses/adults/' },
+      { label: 'Intensive Class', href: '/en/courses/intensive/' },
+      { label: 'Pricing & Fees', href: '/en/pricing/' },
+      { label: '12-Session Journey', href: '/en/swim-journey/' }
+    ]
+  },
   {
     label: 'Organizations', href: '/en/contact/', children: [
       { label: 'Organization programs', href: '/en/contact/' },

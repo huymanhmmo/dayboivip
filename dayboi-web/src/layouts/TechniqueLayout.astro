@@ -272,6 +272,25 @@ const themeStyles = (() => {
       `;
   }
 })();
+
+const enToViMap: Record<string, string> = {
+  'backstroke': '/ky-thuat-boi/hoc-boi-ngua/',
+  'breaststroke': '/ky-thuat-boi/hoc-boi-ech/',
+  'butterfly': '/ky-thuat-boi/hoc-boi-buom/',
+  'front-crawl': '/ky-thuat-boi/hoc-boi-sai/',
+  'treading-water': '/ky-thuat-boi/ky-nang-dung-nuoc/',
+};
+
+const viToEnMap: Record<string, string> = {
+  'hoc-boi-ngua': '/en/swimming-techniques/backstroke/',
+  'hoc-boi-ech': '/en/swimming-techniques/breaststroke/',
+  'hoc-boi-buom': '/en/swimming-techniques/butterfly/',
+  'hoc-boi-sai': '/en/swimming-techniques/front-crawl/',
+  'ky-nang-dung-nuoc': '/en/swimming-techniques/treading-water/',
+};
+
+const alternateUrl = isEn ? enToViMap[technique.slug] : viToEnMap[technique.slug];
+const alternateLang = isEn ? 'vi' : 'en';
 ---
 
 <PageLayout
@@ -282,6 +301,9 @@ const themeStyles = (() => {
   type="article"
   breadcrumbs={metadata.breadcrumbs}
   schema={metadata.articleSchema}
+  lang={lang}
+  alternateUrl={alternateUrl}
+  alternateLang={alternateLang}
 >
   {metadata.faqSchema && (
     <Fragment slot="head">

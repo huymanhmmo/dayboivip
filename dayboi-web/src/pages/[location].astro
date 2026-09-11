@@ -13,9 +13,12 @@ const { loc } = Astro.props;
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const googleSearch = (query) => `https://www.google.com/search?q=${encodeURIComponent(query)}`;
 const customerCopy = (value = '') => String(value)
-  .replace(/cam kết 100%/gi, 'đặt mục tiêu')
-  .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn')
+  .replace(/cam kết 100%/gi, 'đặt mục tiêu thành thạo')
+  .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn cao nhất')
   .replace(/uy tín nhất/gi, 'được nhiều người biết đến')
+  .replace(/uy tín số 1/gi, 'được nhiều học viên tin chọn')
+  .replace(/hiện đại số 1/gi, 'hiện đại đạt chuẩn')
+  .replace(/an toàn số 1/gi, 'tiêu chuẩn an toàn cao')
   .replace(/hoàn hảo nhất/gi, 'phù hợp');
 const research = getLocationResearch(loc.slug);
 const categories = research?.categories || [{
@@ -57,22 +60,65 @@ const breadcrumbs = [
   { label: loc.name },
 ];
 
+const locationFaqs = [
+  {
+    question: `Học bơi tại ${loc.name} học phí khoảng bao nhiêu?`,
+    answer: `Học phí học bơi tại ${loc.name} thường dao động từ 1.500.000đ - 3.500.000đ/khóa tùy hình thức học nhóm hay 1 kèm 1 và cơ sở vật chất bể bơi. Người học nên liên hệ trực tiếp đơn vị tại địa phương để xác nhận chi tiết vé bể và học phí.`,
+  },
+  {
+    question: `Lớp học bơi ở ${loc.name} nhận học viên từ mấy tuổi?`,
+    answer: `Đa số các bể bơi và trung tâm tại ${loc.name} nhận dạy học viên từ 5 tuổi trở lên đối với trẻ em và không giới hạn độ tuổi với người lớn. Trẻ dưới 5 tuổi nên tham gia các lớp làm quen nước cùng phụ huynh.`,
+  },
+  {
+    question: `Tại ${loc.name} có bể bơi bốn mùa nước ấm không?`,
+    answer: `Tại các khu vực đô thị của ${loc.name}, có các cơ sở bể bơi bốn mùa nước ấm trong nhà phục vụ tập luyện quanh năm kể cả mùa đông. Hãy tra cứu danh sách cơ sở chi tiết trong trang.`,
+  }
+];
+
 const directorySchema = {
   '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: `Danh bạ bể bơi và đơn vị dạy bơi tại ${loc.name}`,
-  description: `Danh sách tham khảo các bể bơi, câu lạc bộ và công cụ tìm giáo viên dạy bơi có thông tin công khai tại ${loc.name}.`,
-  url: `https://dayboi.vip/${loc.slug}/`,
-  mainEntity: {
-    '@type': 'ItemList',
-    numberOfItems: poolDirectory.length,
-    itemListElement: poolDirectory.map((pool, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: pool.name,
-      url: pool.mapsUrl,
-    })),
-  },
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `https://dayboi.vip/${loc.slug}/#page`,
+      name: `Danh bạ bể bơi và đơn vị dạy bơi tại ${loc.name}`,
+      description: `Danh sách tham khảo các bể bơi, câu lạc bộ và công cụ tìm giáo viên dạy bơi có thông tin công khai tại ${loc.name}.`,
+      url: `https://dayboi.vip/${loc.slug}/`,
+      mainEntity: { '@id': `https://dayboi.vip/${loc.slug}/#venues` },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `https://dayboi.vip/${loc.slug}/#venues`,
+      numberOfItems: poolDirectory.length,
+      itemListElement: poolDirectory.map((pool, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'SportsActivityLocation',
+          '@id': `https://dayboi.vip/${loc.slug}/#venue-${index + 1}`,
+          name: pool.name,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: pool.address || `${pool.name}, ${loc.name}`,
+            addressLocality: pool.area || loc.name,
+            addressRegion: loc.name,
+            addressCountry: 'VN',
+          },
+          telephone: pool.venueContact?.phone || (pool.instructors && pool.instructors[0]?.phone) || undefined,
+          url: `https://dayboi.vip/${loc.slug}/#venue-${index + 1}`,
+          description: pool.detail || pool.services || `Địa điểm học bơi và hồ bơi tại ${pool.name}, ${loc.name}.`,
+        },
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: locationFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
 };
 ---
 

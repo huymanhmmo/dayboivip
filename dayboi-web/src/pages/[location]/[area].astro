@@ -19,9 +19,12 @@ const instructors = venues.flatMap((venue) => venue.instructors || []);
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
 const customerCopy = (value = '') => String(value)
-  .replace(/cam kết 100%/gi, 'đặt mục tiêu')
-  .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn')
+  .replace(/cam kết 100%/gi, 'đặt mục tiêu thành thạo')
+  .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn cao nhất')
   .replace(/uy tín nhất/gi, 'được nhiều người biết đến')
+  .replace(/uy tín số 1/gi, 'được nhiều học viên tin chọn')
+  .replace(/hiện đại số 1/gi, 'hiện đại đạt chuẩn')
+  .replace(/an toàn số 1/gi, 'tiêu chuẩn an toàn cao')
   .replace(/hoàn hảo nhất/gi, 'phù hợp');
 const titleBase = `Học Bơi ${area.seoPlace}: Bể Bơi & Lớp Học`;
 const title = titleBase.length < 38
@@ -104,8 +107,21 @@ const schema = {
       itemListElement: venues.map((venue, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        name: venue.name,
-        url: `${canonicalUrl}#dia-diem-${index + 1}`,
+        item: {
+          '@type': 'SportsActivityLocation',
+          '@id': `${canonicalUrl}#dia-diem-${index + 1}`,
+          name: venue.name,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: venue.address || `${venue.name}, ${area.name}`,
+            addressLocality: area.name,
+            addressRegion: area.parentName,
+            addressCountry: 'VN',
+          },
+          telephone: venue.venueContact?.phone || (venue.instructors && venue.instructors[0]?.phone) || undefined,
+          url: `${canonicalUrl}#dia-diem-${index + 1}`,
+          description: venue.detail || venue.services || `Địa điểm học bơi và hồ bơi tại ${venue.name}, ${area.name}.`,
+        },
       })),
     },
     {
