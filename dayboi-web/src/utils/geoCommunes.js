@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
 
 export function deg2rad(deg) {
@@ -91,8 +91,8 @@ export function getCommunesByProvinceId(provinceId) {
   
   const slugCounts = new Map();
   for (const c of communes) {
-    const rawType = c.type === 'đặc khu' ? 'dac-khu' : (c.type === 'phường' ? 'phuong' : 'xa');
-    const baseSlug = `${rawType}-${slugify(c.name)}`;
+    // Clean slug without xa- or phuong- prefix (timeless URL design)
+    const baseSlug = slugify(c.name);
     const count = (slugCounts.get(baseSlug) || 0) + 1;
     slugCounts.set(baseSlug, count);
     c.slug = count > 1 ? `${baseSlug}-${c.communeCode || c.id}` : baseSlug;

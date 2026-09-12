@@ -5,31 +5,62 @@ const currentYear = 2026;
 let outOfBounds = 0;
 
 for (const c of pages) {
-  let title = `Học Bơi Tại ${c.fullName}: Lớp Kèm Riêng & Bể Bơi`;
-  if (title.length > 65) {
-    title = `Học Bơi ${c.fullName}: Lớp Kèm & Bể Bơi`;
+  let title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Riêng`;
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi ${c.fullName}: Lớp Kèm Riêng`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi ${c.fullName}: Lớp Kèm`;
   }
   if (title.length < 45) {
-    title = `${title} Gần Bạn`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Gần Bạn`;
+  }
+  if (title.length < 45) {
+    title = `Học Bơi, Dạy Bơi Ở ${c.fullName}: Lớp Kèm Riêng Gần Bạn`;
   }
 
   const prevSummary = (c.previous || [])
     .map(p => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
     .slice(0, 3)
     .join(', ');
-  const descLead = `Tìm lớp học bơi tại ${c.fullName}${prevSummary ? ` (gồm ${prevSummary})` : ''} tại ${c.parentName}.`;
-  const descTail = c.hasVenues
-    ? ` Xem danh sách ${c.directVenues.length} bể bơi, học phí HLV kèm riêng và liên hệ trực tiếp.`
-    : ` Tra cứu địa điểm học bơi, gợi ý 3 bể bơi lân cận gần nhất kèm khoảng cách chi tiết.`;
+  let descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${c.fullName}${prevSummary ? ` (gồm ${prevSummary})` : ''} ${c.parentName}.`;
+  let descTail = c.hasVenues
+    ? ` Danh sách ${c.directVenues.length} bể bơi, HLV dạy bơi giàu kinh nghiệm, học phí trọn gói rõ ràng.`
+    : ` Tra cứu bể bơi và lớp dạy bơi, gợi ý 3 cơ sở lân cận gần nhất kèm học phí HLV.`;
   let description = `${descLead}${descTail}`;
-  if (description.length < 140) description += ` Cập nhật thông tin mới nhất năm ${currentYear}.`;
-  if (description.length > 170) description = description.slice(0, 166).trim() + '...';
 
-  if (title.length < 45 || title.length > 65) {
+  if (description.length > 165) {
+    const shortPrev = (c.previous || [])
+      .map(p => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
+      .slice(0, 2)
+      .join(', ');
+    descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${c.fullName}${shortPrev ? ` (gồm ${shortPrev})` : ''} ${c.parentName}.`;
+    description = `${descLead}${descTail}`;
+  }
+  if (description.length > 165) {
+    const minPrev = (c.previous || [])
+      .map(p => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
+      .slice(0, 1)
+      .join(', ');
+    descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${c.fullName}${minPrev ? ` (gồm ${minPrev})` : ''} ${c.parentName}.`;
+    description = `${descLead}${descTail}`;
+  }
+  if (description.length > 165) {
+    descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${c.fullName}, ${c.parentName}.`;
+    description = `${descLead}${descTail}`;
+  }
+  if (description.length < 145) {
+    description += ` Cập nhật thông tin mới nhất năm ${currentYear}.`;
+  }
+  if (description.length > 165) {
+    description = description.slice(0, 162).trim() + '...';
+  }
+
+  if (title.length < 45 || title.length > 60) {
     console.log('Title error:', title.length, title);
     outOfBounds++;
   }
-  if (description.length < 140 || description.length > 170) {
+  if (description.length < 145 || description.length > 165) {
     console.log('Desc error:', description.length, description);
     outOfBounds++;
   }
@@ -41,22 +72,25 @@ let dupTitles = 0;
 let dupDescs = 0;
 
 for (const c of pages) {
-  let title = `Học Bơi Tại ${c.fullName}: Lớp Kèm Riêng & Bể Bơi`;
+  let title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Riêng`;
   if (title.length > 65) {
-    title = `Học Bơi ${c.fullName}: Lớp Kèm & Bể Bơi`;
+    title = `Học Bơi, Dạy Bơi ${c.fullName}: Lớp Kèm`;
   }
   if (title.length < 45) {
-    title = `${title} Gần Bạn`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Gần Bạn`;
+  }
+  if (title.length < 45) {
+    title = `Học Bơi, Dạy Bơi Ở ${c.fullName}: Lớp Kèm Riêng Gần Bạn`;
   }
 
   const prevSummary = (c.previous || [])
     .map(p => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
     .slice(0, 3)
     .join(', ');
-  const descLead = `Tìm lớp học bơi tại ${c.fullName}${prevSummary ? ` (gồm ${prevSummary})` : ''} tại ${c.parentName}.`;
+  const descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${c.fullName}${prevSummary ? ` (gồm ${prevSummary})` : ''} ${c.parentName}.`;
   const descTail = c.hasVenues
-    ? ` Xem danh sách ${c.directVenues.length} bể bơi, học phí HLV kèm riêng và liên hệ trực tiếp.`
-    : ` Tra cứu địa điểm học bơi, gợi ý 3 bể bơi lân cận gần nhất kèm khoảng cách chi tiết.`;
+    ? ` Danh sách ${c.directVenues.length} bể bơi, HLV dạy bơi giàu kinh nghiệm, học phí trọn gói rõ ràng.`
+    : ` Tra cứu bể bơi và lớp dạy bơi, gợi ý 3 cơ sở lân cận gần nhất kèm học phí HLV.`;
   let description = `${descLead}${descTail}`;
   if (description.length < 140) description += ` Cập nhật thông tin mới nhất năm ${currentYear}.`;
   if (description.length > 170) description = description.slice(0, 166).trim() + '...';
@@ -80,4 +114,5 @@ console.log('Total commune pages tested:', pages.length);
 console.log('Total out of bounds errors:', outOfBounds);
 console.log('Total duplicate titles:', dupTitles);
 console.log('Total duplicate descriptions:', dupDescs);
+
 
