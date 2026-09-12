@@ -1,0 +1,219 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import { locations } from '../../../data/locations.js';
+import { getLocationResearch } from '../../../data/locationResearch.js';
+import { getPublishedAreaUrl } from '../../../data/locationAreas.js';
+import '../../../styles/location-directory.css';
+
+const currentYear = new Date().getFullYear();
+
+const enNames = {
+  'Hà Nội': 'Hanoi', 'TP. Hồ Chí Minh': 'Ho Chi Minh City', 'Đà Nẵng': 'Da Nang', 'Hải Phòng': 'Hai Phong',
+  'Huế': 'Hue', 'Cần Thơ': 'Can Tho', 'Đồng Nai': 'Dong Nai', 'Quảng Ninh': 'Quang Ninh', 'Bắc Ninh': 'Bac Ninh',
+  'Thái Nguyên': 'Thai Nguyen', 'Phú Thọ': 'Phu Tho', 'Ninh Bình': 'Ninh Binh', 'Hưng Yên': 'Hung Yen',
+  'Thanh Hóa': 'Thanh Hoa', 'Nghệ An': 'Nghe An', 'Hà Tĩnh': 'Ha Tinh', 'Quảng Bình': 'Quang Binh',
+  'Quảng Ngãi': 'Quang Ngai', 'Bình Định': 'Binh Dinh', 'Khánh Hòa': 'Khanh Hoa', 'Đắk Lắk': 'Dak Lak',
+  'Lâm Đồng': 'Lam Dong', 'Tây Ninh': 'Tay Ninh', 'Đồng Tháp': 'Dong Thap', 'Vĩnh Long': 'Vinh Long',
+  'An Giang': 'An Giang', 'Cà Mau': 'Ca Mau', 'Cao Bằng': 'Cao Bang', 'Lai Châu': 'Lai Chau',
+  'Điện Biên': 'Dien Bien', 'Sơn La': 'Son La', 'Lạng Sơn': 'Lang Son', 'Lào Cai': 'Lao Cai', 'Tuyên Quang': 'Tuyen Quang',
+};
+
+const enRegionMap = {
+  'Miền Bắc': 'Northern Vietnam',
+  'Miền Trung': 'Central Vietnam',
+  'Tây Nguyên & Đông Nam Bộ': 'Highlands & Southeast',
+  'Miền Tây Nam Bộ': 'Mekong River Delta',
+};
+
+const normalizeSearch = (value = '') => value
+  .toLowerCase()
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/đ/g, 'd');
+
+const cleanAreaName = (label = '') => label.replace(/^Khu vực\s+/i, '');
+
+const viToEnSlug = (slug = '') => {
+  if (slug === 'hoc-boi-tphcm') return 'swimming-lessons-ho-chi-minh';
+  return slug.replace(/^hoc-boi-/, 'swimming-lessons-');
+};
+
+const directoryTree = locations.map((location) => {
+  const enName = enNames[location.name] || location.name;
+  const enSlug = viToEnSlug(location.slug);
+  const enRegion = enRegionMap[location.region] || location.region;
+  const research = getLocationResearch(location.slug);
+  const categories = research?.categories || [{
+    id: 'starter',
+    label: `Swimming venues in ${enName}`,
+    venues: location.pools,
+  }];
+
+  const areas = categories.map((category) => {
+    return {
+      name: cleanAreaName(category.label),
+      href: `/en/${enSlug}/#${category.id}`,
+      venueCount: category.venues.length,
+      isPublished: true,
+      searchText: normalizeSearch(`${category.label} ${category.venues.map((venue) => `${venue.name} ${venue.area || ''}`).join(' ')}`),
+    };
+  });
+
+  return {
+    ...location,
+    enName,
+    enSlug,
+    enRegion,
+    areas,
+    venueCount: areas.reduce((total, area) => total + area.venueCount, 0),
+    searchText: normalizeSearch(`${location.name} ${enName} ${enRegion} ${location.mergedFrom || ''}`),
+  };
+});
+
+const preferredRegionOrder = ['Northern Vietnam', 'Central Vietnam', 'Highlands & Southeast', 'Mekong River Delta'];
+const regions = preferredRegionOrder.filter((region) => directoryTree.some((loc) => loc.enRegion === region));
+const featuredSlugs = ['swimming-lessons-ha-noi', 'swimming-lessons-ho-chi-minh', 'swimming-lessons-da-nang', 'swimming-lessons-hai-phong', 'swimming-lessons-can-tho'];
+const featuredLocations = featuredSlugs.map((slug) => directoryTree.find((loc) => loc.enSlug === slug)).filter(Boolean);
+const totalAreas = directoryTree.reduce((total, location) => total + location.areas.length, 0);
+const totalVenues = directoryTree.reduce((total, location) => total + location.venueCount, 0);
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Locations' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Vietnam Swimming Pools & Lessons Directory',
+  description: 'Find public swimming pools, clubs, and lesson providers across 34 provinces in Vietnam. Compare locations, contact details, and facilities.',
+  url: 'https://dayboi.vip/en/swimming-locations/',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: directoryTree.length,
+    itemListElement: directoryTree.map((location, provinceIndex) => ({
+      '@type': 'ListItem',
+      position: provinceIndex + 1,
+      item: {
+        '@type': 'CollectionPage',
+        name: `Swimming Lessons in ${location.enName}`,
+        url: `https://dayboi.vip/en/${location.enSlug}/`,
+      },
+    })),
+  },
+};
+---
+
+<PageLayout
+  title={`Swimming Pools in Vietnam: Lessons & Locations Directory [${currentYear}]`}
+  description="Find swimming pools, clubs, and lesson providers across provinces in Vietnam. Compare locations, public contacts, facilities, and tips before enrolling."
+  canonical="https://dayboi.vip/en/swimming-locations/"
+  image="/images/classes/lop-hoc-boi-ha-noi.jpg"
+  type="website"
+  breadcrumbs={breadcrumbs}
+  schema={schema}
+  lang="en"
+  alternateUrl="/hoc-boi-o-dau/"
+  alternateLang="vi"
+>
+  <div class="directory-hub directory-hub--refined">
+    <section class="directory-hub__hero">
+      <div class="container directory-hub__hero-grid">
+        <div class="directory-hub__hero-content">
+          <span class="local-directory__eyebrow">National Directory in Vietnam</span>
+          <h1><span>Where to swim in Vietnam?</span> Find Pools & Lessons Near You</h1>
+          <p>Explore public swimming pools, sports centers, and certified swimming lessons by province, city, and district across Vietnam. Compare venues and contacts before signing up.</p>
+          <label class="directory-hub__search" for="directory-search">
+            <span class="directory-hub__search-label">Search a city, district, or facility</span>
+            <span class="directory-hub__search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+              <input type="search" id="directory-search" placeholder="e.g. Tay Ho, Hanoi, District 1, Da Nang..." autocomplete="off" aria-controls="directory-regions" />
+            </span>
+          </label>
+        </div>
+        <aside class="directory-hub__featured" aria-labelledby="featured-title">
+          <div class="directory-hub__featured-heading">
+            <span>Quick Select</span>
+            <h2 id="featured-title">Most Popular Expat Cities</h2>
+          </div>
+          <ul>
+            {featuredLocations.map((location) => (
+              <li>
+                <a href={`/en/${location.enSlug}/`}>
+                  <span>
+                    <strong>{location.enName} Swimming Pools</strong>
+                    <small>{location.areas.length} districts · {location.venueCount} verified venues</small>
+                  </span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container directory-hub__overview">
+      <div class="directory-hub__stats" aria-label="National Directory Summary">
+        <article class="directory-hub__stat">
+          <strong>34</strong>
+          <span>Provinces & Cities</span>
+        </article>
+        <article class="directory-hub__stat">
+          <strong>{totalAreas}+</strong>
+          <span>Covered Districts</span>
+        </article>
+        <article class="directory-hub__stat">
+          <strong>{totalVenues}+</strong>
+          <span>Swimming Facilities</span>
+        </article>
+        <article class="directory-hub__stat">
+          <strong>100%</strong>
+          <span>Transparent Information</span>
+        </article>
+      </div>
+
+      <div class="directory-hub__regions" id="directory-regions">
+        {regions.map((regionName) => {
+          const regionLocations = directoryTree.filter((loc) => loc.enRegion === regionName);
+          return (
+            <section class="directory-hub__region" data-region={regionName}>
+              <div class="directory-hub__region-header">
+                <h2>{regionName}</h2>
+                <span>{regionLocations.length} locations</span>
+              </div>
+              <div class="directory-hub__province-grid">
+                {regionLocations.map((location) => (
+                  <article class="directory-hub__province-card" data-province={location.enSlug} data-search={location.searchText}>
+                    <div class="directory-hub__province-head">
+                      <h3>
+                        <a href={`/en/${location.enSlug}/`}>
+                          <span>Swimming in {location.enName}</span>
+                          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 6 5-6 5"/></svg>
+                        </a>
+                      </h3>
+                      <p>{location.areas.length} local areas · {location.venueCount} pools</p>
+                    </div>
+                    {location.pools.length > 0 && (
+                      <ul class="directory-hub__preview-list">
+                        {location.pools.slice(0, 3).map((pool) => (
+                          <li>
+                            <span>{pool.name}</span>
+                            <small>{pool.area || location.enName}</small>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <a href={`/en/${location.enSlug}/`} class="directory-hub__province-link">
+                      View all venues in {location.enName} →
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</PageLayout>

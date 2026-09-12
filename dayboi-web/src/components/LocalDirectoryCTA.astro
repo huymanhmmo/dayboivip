@@ -15,7 +15,7 @@ const { lang = 'vi', compact = false } = Astro.props;
       ? 'Swim For Life không tiếp nhận đăng ký học bơi lẻ. Danh bạ địa phương giúp bạn tra cứu bể bơi, câu lạc bộ và giáo viên có thông tin công khai để liên hệ trực tiếp.'
       : 'Swim For Life no longer accepts individual lesson enquiries. Use the local directory to contact publicly listed pools, clubs and independent instructors directly.'}</p>
     <div class="directory-cta__actions">
-      <a href="/hoc-boi-o-dau/" class="directory-cta__primary">
+      <a href={lang === 'vi' ? '/hoc-boi-o-dau/' : '/en/swimming-locations/'} class="directory-cta__primary">
         {lang === 'vi' ? 'Mở danh bạ địa phương' : 'Open local directory'}
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>

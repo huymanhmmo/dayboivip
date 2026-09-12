@@ -1,5 +1,7 @@
 ---
 /** Global navigation rebuilt for the Aquatic Editorial design system. */
+import { getAlternateUrl } from '../../utils/i18nRouting.js';
+
 export interface Props {
   lang?: 'vi' | 'en';
   currentPath?: string;
@@ -53,18 +55,15 @@ const navItems = lang === 'vi' ? [
   {
     label: 'Courses', href: '/en/courses/', children: [
       { label: 'All Courses', href: '/en/courses/' },
+      { label: 'Private 1-on-1', href: '/en/courses/1-on-1/' },
       { label: 'Kids Swimming', href: '/en/courses/kids/' },
       { label: 'Adults Swimming', href: '/en/courses/adults/' },
-      { label: 'Intensive Class', href: '/en/courses/intensive/' },
+      { label: 'Small Group', href: '/en/courses/group/' },
+      { label: 'Fear of Water', href: '/en/courses/fear-of-water/' },
+      { label: 'Seniors Class', href: '/en/courses/seniors/' },
+      { label: 'Corporate & Schools', href: '/en/courses/corporate/' },
       { label: 'Pricing & Fees', href: '/en/pricing/' },
       { label: '12-Session Journey', href: '/en/swim-journey/' }
-    ]
-  },
-  {
-    label: 'Organizations', href: '/en/contact/', children: [
-      { label: 'Organization programs', href: '/en/contact/' },
-      { label: 'Team expertise', href: '/en/coaches/' },
-      { label: 'About Swim For Life', href: '/en/about/' }
     ]
   },
   {
@@ -78,11 +77,13 @@ const navItems = lang === 'vi' ? [
     ]
   },
   {
-    label: 'Guides', href: '/en/guides/', children: [
-      { label: 'All Guides', href: '/en/guides/' },
-      { label: 'How to Swim', href: '/en/guides/how-to-swim/' },
-      { label: 'Self-taught Swimming', href: '/en/guides/self-taught-swimming/' },
-      { label: 'Survival Swimming', href: '/en/guides/survival-swimming/' }
+    label: 'Locations', href: '/en/swimming-locations/', children: [
+      { label: 'All Locations in Vietnam', href: '/en/swimming-locations/' },
+      { label: 'Hanoi Pool Directory', href: '/en/swimming-lessons-ha-noi/' },
+      { label: 'Ho Chi Minh City Pools', href: '/en/swimming-lessons-ho-chi-minh/' },
+      { label: 'Da Nang Pool Directory', href: '/en/swimming-lessons-da-nang/' },
+      { label: 'Hai Phong Pool Directory', href: '/en/swimming-lessons-hai-phong/' },
+      { label: 'Can Tho Pool Directory', href: '/en/swimming-lessons-can-tho/' }
     ]
   },
   {
@@ -96,7 +97,7 @@ const navItems = lang === 'vi' ? [
 
 const ctaLabel = lang === 'vi' ? 'Yêu cầu hợp tác' : 'Organization enquiry';
 const ctaHref = lang === 'vi' ? '/lien-he/' : '/en/contact/';
-const langSwitchHref = lang === 'vi' ? '/en/' : '/';
+const langSwitchHref = getAlternateUrl(currentPath, lang);
 const langSwitchLabel = lang === 'vi' ? 'EN' : 'VI';
 const labels = lang === 'vi'
   ? { nav: 'Điều hướng chính', menu: 'Mở menu', eyebrow: 'Kiến thức bơi cho cộng đồng', locations: 'Đào tạo quy mô lớn toàn quốc' }

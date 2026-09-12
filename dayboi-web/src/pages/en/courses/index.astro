@@ -137,13 +137,21 @@ const enCourses = courses.map(c => {
     enDuration = "Tailored length";
   }
   
-  let link = "/en/contact";
+  let link = "/en/courses/1-on-1/";
   if (c.slug === 'tre-em') {
     link = "/en/courses/kids/";
   } else if (c.slug === 'nguoi-lon') {
     link = "/en/courses/adults/";
   } else if (c.slug === '1-kem-1') {
-    link = "/en/courses/intensive/";
+    link = "/en/courses/1-on-1/";
+  } else if (c.slug === 'nhom') {
+    link = "/en/courses/group/";
+  } else if (c.slug === 'nguoi-so-nuoc') {
+    link = "/en/courses/fear-of-water/";
+  } else if (c.slug === 'nguoi-cao-tuoi') {
+    link = "/en/courses/seniors/";
+  } else if (c.slug === 'doanh-nghiep') {
+    link = "/en/courses/corporate/";
   }
   
   return {

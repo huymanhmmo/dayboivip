@@ -651,4 +651,726 @@ export const intensive = {
   ]
 };
 
-export const courses = [kids, adults, intensive];
+export const private1on1 = {
+  ...intensive,
+  slug: "1-on-1",
+  title: "Private 1-on-1 Swimming Lessons in Vietnam [2026]",
+  shortTitle: "Private 1-on-1 Lessons",
+  subtitle: "Dedicated private coaching tailored for rapid progress, water confidence, and flexible scheduling.",
+  description: "Professional 1-on-1 private swimming lessons for adults & kids in Vietnam. Certified coaches, customized syllabus, flexible schedule, and guaranteed results.",
+};
+
+export const group = {
+  slug: "group",
+  title: "Small Group Swimming Classes: Size & Cost Guide [2026]",
+  shortTitle: "Small Group Classes",
+  subtitle: "Learn alongside friends or family with small class sizes of 3 to 5 students for optimal practice.",
+  description: "Explore small group swimming classes (3-5 students) for friends and families. High coach attention, interactive team dynamic, and cost savings up to 40%.",
+  icon: "👥",
+  targetAudience: "Friends, families, colleagues, or pooled learners of similar skill",
+  duration: "10-12 sessions",
+  sessionLength: "60 - 90 minutes/session",
+  classSize: "Small group: 3 - 5 students per coach",
+  heroImage: "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg",
+  priceFrom: "Contact for a quote",
+  stats: [
+    { number: 4000, suffix: "+", label: "Group students graduated" },
+    { number: 3, suffix: "-5", label: "Max students per class" },
+    { number: 40, suffix: "%", label: "Cost savings vs private" }
+  ],
+  problems: {
+    title: "Common Issues with Crowded Community Classes?",
+    subtitle: "Mass swimming classes with 15-20 students often lead to unsafe conditions, long wait times, and low progress.",
+    items: [
+      {
+        icon: "⚠️",
+        title: "Safety Concerns in Large Groups",
+        description: "Coaches cannot monitor 15+ swimmers simultaneously, increasing the danger of choking or panic in deep water."
+      },
+      {
+        icon: "⏳",
+        title: "Limited Practice Time",
+        description: "Students spend most of the class shivering on the poolside waiting for their turn instead of swimming."
+      },
+      {
+        icon: "😕",
+        title: "Falling Behind Without Feedback",
+        description: "One-size-fits-all instruction leaves anxious swimmers behind without personalized technical correction."
+      },
+      {
+        icon: "💸",
+        title: "Wasted Money and Effort",
+        description: "Completing a crowded class without independent swimming ability forces learners to start over elsewhere."
+      }
+    ]
+  },
+  benefits: [
+    {
+      icon: "🎉",
+      title: "Fun & Engaging Atmosphere",
+      description: "Learning with peers creates positive encouragement and reduces anxiety through friendly teamwork."
+    },
+    {
+      icon: "💰",
+      title: "Cost-Effective Pricing",
+      description: "Receive high-standard professional coaching at up to 40% lower cost compared to 1-on-1 private packages."
+    },
+    {
+      icon: "🤝",
+      title: "Great for Families & Friends",
+      description: "A wonderful weekend activity for families, couples, or coworkers to exercise and bond together."
+    },
+    {
+      icon: "🛡️",
+      title: "Strict Safety Ratios",
+      description: "Swim For Life caps group size strictly at 5 students to guarantee individual attention and safety."
+    }
+  ],
+  overview: [
+    { icon: "👥", label: "Class Size", value: "Strictly 3 to 5 students per instructor" },
+    { icon: "📅", label: "Schedule", value: "Fixed cohort dates or custom group booking" },
+    { icon: "⏱️", label: "Duration", value: "10 - 12 sessions (60 - 90 minutes each)" },
+    { icon: "🥇", label: "Commitment", value: "Every student supported to swim independently" },
+    { icon: "🏷️", label: "Tuition", value: "Competitive group pricing upon request" }
+  ],
+  curriculum: {
+    title: "Interactive, Motivating & Systematic Group Syllabus",
+    stages: [
+      {
+        phase: "Phase 1",
+        title: "Team Adaptation & Breathing Fundamentals",
+        sessions: "Sessions 1 - 3",
+        items: [
+          "Water familiarization games and rhythmic breath control in pairs",
+          "Underwater face submersion with goggles and eye-opening drills",
+          "Back floating circles and assisted buoyancy exercises",
+          "Wall-kick drills and streamlined gliding through water"
+        ]
+      },
+      {
+        phase: "Phase 2",
+        title: "Breaststroke Coordination & Partner Drills",
+        sessions: "Sessions 4 - 8",
+        items: [
+          "Whip kick practice with kickboards and peer feedback",
+          "Breaststroke pull mechanics coordinated with breathing rhythm",
+          "Stroke integration: kick, glide, pull, breathe over 10-15m distance",
+          "Individual error correction by the coach for each member"
+        ]
+      },
+      {
+        phase: "Phase 3",
+        title: "Deep Water Treading & Distance Endurance",
+        sessions: "Sessions 9 - 12",
+        items: [
+          "Deep-water vertical treading and upright breathing mastery",
+          "Continuous 25m - 50m lap swimming with smooth rhythm",
+          "Essential water survival and self-rescue techniques",
+          "Final assessment and group completion certification"
+        ]
+      }
+    ]
+  },
+  instructor: {
+    name: "Coach Nguyen Huy Manh",
+    title: "Training Director of Swim For Life",
+    experience: "12+ years organizing group swimming lessons and aquatic team building",
+    certifications: [
+      "Master of Physical Education - Aquatics Specialization",
+      "National Swimming Referee",
+      "Extensive experience with international school groups"
+    ],
+    quote: "Group swimming turns learning into a joyful shared experience. When learners see friends succeed, hesitation transforms into confidence."
+  },
+  pricing: {
+    note: "Pool entry tickets are paid directly to the pool. Custom group bookings enjoy flexible scheduling.",
+    tiers: [
+      {
+        name: "Private Group (Family / Friends)",
+        highlight: true,
+        badge: "Best Value",
+        price: "Contact for a quote",
+        period: "full course / student",
+        features: [
+          "Ideal for 3 - 5 friends or family members",
+          "Choose your own weekly schedule with coach",
+          "Dedicated coach accompanying the entire course",
+          "Progress tracking for each group participant",
+          "Flexible freezing policy for family travel",
+          "Guaranteed independent swimming outcomes"
+        ],
+        cta: "Book Private Group"
+      },
+      {
+        name: "Open Matched Cohort",
+        highlight: false,
+        price: "Contact for a quote",
+        period: "full course / student",
+        features: [
+          "Matched by center according to age & skill",
+          "Fixed cohort times: 2-3 sessions per week",
+          "Strict 3-5 students per certified coach",
+          "Meet new swimming partners in a fun setting",
+          "Structured syllabus completed in 4 weeks",
+          "Certificate awarded upon completion"
+        ],
+        cta: "Join Matched Cohort"
+      }
+    ]
+  },
+  testimonials: [
+    {
+      name: "Tuan Anh's Family",
+      detail: "Family of 4, Cau Giay, Hanoi",
+      rating: 5,
+      text: "My wife, two children and I took the private group course. Learning swimming together on weekends was our best decision. The coach tailored drills so both parents and kids learned effectively. Now the whole family swims confidently together!"
+    },
+    {
+      name: "Thu Trang",
+      detail: "Joined 3-student cohort, Binh Thanh, HCMC",
+      rating: 5,
+      text: "I joined an open matched group. With just 3 students, the coach spent plenty of 1-on-1 time correcting my kicks. Seeing the other girls swim motivated me so much. By session 8, I was swimming laps independently!"
+    }
+  ],
+  faqs: [
+    {
+      question: "What if students in the group learn at different speeds?",
+      answer: "Our coaches are trained to differentiate instruction within small groups. Faster learners receive endurance or technique-refining drills, while learners needing extra help get direct hands-on support, ensuring everyone achieves their goals."
+    },
+    {
+      question: "How do matched cohorts schedule their sessions?",
+      answer: "When registering for an open cohort, we collect your available time slots (e.g., weekday evenings or weekend mornings) and pair you with learners having matching schedules and skill levels."
+    },
+    {
+      question: "Can we reschedule if a member misses a group lesson?",
+      answer: "For private custom groups (friends/family), the entire group can reschedule with 24 hours notice. In open matched cohorts with fixed dates, missed sessions can be made up in parallel classes upon request."
+    }
+  ]
+};
+
+export const fearOfWater = {
+  slug: "fear-of-water",
+  title: "Swimming Lessons for People Afraid of Water [2026]",
+  shortTitle: "Fear of Water Class",
+  subtitle: "A patient, step-by-step psychological approach in safe shallow water to build lasting water confidence.",
+  description: "Specialized swimming lessons for adults and kids with fear of water (aquaphobia). Patient coaches, shallow water drills, and progressive confidence building.",
+  icon: "😰",
+  targetAudience: "Adults or children with severe water anxiety or aquaphobia",
+  duration: "12 sessions",
+  sessionLength: "45 - 60 minutes/session",
+  classSize: "Strictly VIP 1-on-1",
+  heroImage: "/images/classes/giao-vien-ho-tro-tan-tam.jpg",
+  priceFrom: "Contact for a quote",
+  stats: [
+    { number: 800, suffix: "+", label: "Phobia students learned to swim" },
+    { number: 4, suffix: " sessions", label: "To float calmly & comfortably" },
+    { number: 100, suffix: "%", label: "Patient coaches with zero pressure" }
+  ],
+  problems: {
+    title: "How Does Water Anxiety (Aquaphobia) Hold You Back?",
+    subtitle: "Fear of water is a natural defense reflex, but unmanaged panic prevents you from learning to swim and enjoying vacations.",
+    items: [
+      {
+        icon: "🌊",
+        title: "Panic When Water Touches Your Face",
+        description: "Even small water splashes trigger a suffocating sensation, rapid heartbeat, and immediate urge to tense up."
+      },
+      {
+        icon: "🙈",
+        title: "Trauma from Past Near-Drowning",
+        description: "Past negative experiences in childhood or observing pool accidents create lasting psychological blocks."
+      },
+      {
+        icon: "👣",
+        title: "Terror When Feet Leave the Floor",
+        description: "Extreme panic when floating or in water deeper than chest height, clinging desperately to pool edges."
+      },
+      {
+        icon: "❌",
+        title: "Negative Experiences with Harsh Teachers",
+        description: "Being forced underwater or thrown in by old-school instructors magnifies phobia and destroys trust."
+      }
+    ]
+  },
+  benefits: [
+    {
+      icon: "🧘",
+      title: "Compassionate Desensitization",
+      description: "Coaches discuss your psychological triggers first and use gradual immersion techniques so you never feel forced."
+    },
+    {
+      icon: "🛡️",
+      title: "100% Safety in Shallow Water",
+      description: "Instruction takes place in 1.1m - 1.2m shallow heated pools where you can stand up securely at any instant."
+    },
+    {
+      icon: "🎈",
+      title: "Effortless Natural Floating",
+      description: "Master the relaxed back float - the ultimate survival secret that proves human lungs make sinking impossible."
+    },
+    {
+      icon: "🔓",
+      title: "Empowering Personal Breakthrough",
+      description: "Conquering your biggest aquatic fear unlocks extraordinary confidence that positively impacts your everyday life."
+    }
+  ],
+  overview: [
+    { icon: "😰", label: "Target Learner", value: "Anyone with severe water anxiety, all ages" },
+    { icon: "🤝", label: "Coach Approach", value: "Double the patience, zero shouting, hands-on support" },
+    { icon: "⏱️", label: "Course Length", value: "12 sessions (paced gently around your comfort)" },
+    { icon: "📍", label: "Pool Venue", value: "Safe shallow heated indoor pool (1.1m - 1.2m depth)" },
+    { icon: "🏆", label: "Goal Achieved", value: "Complete fear freedom + Confident basic breaststroke" }
+  ],
+  curriculum: {
+    title: "Exclusive Psychological Phobia-Relief Swimming Syllabus",
+    stages: [
+      {
+        phase: "Phase 1",
+        title: "Trust Building & Shallow Breath Control",
+        sessions: "Sessions 1 - 4",
+        items: [
+          "Consultation to identify anxiety triggers; walking in warm shallow water holding coach's hand",
+          "Gentle breath control drills: blowing bubbles on water surface without submerging eyes",
+          "Submerging face for 1-2 seconds with goggles, opening eyes to see how calm water is",
+          "Assisted prone floating with coach gently supporting your torso and arms"
+        ]
+      },
+      {
+        phase: "Phase 2",
+        title: "Independent Back Floating & Effortless Gliding",
+        sessions: "Sessions 5 - 8",
+        items: [
+          "Relaxed back floating: looking up at ceiling, resting ears in water, breathing calmly",
+          "Standing up independently from floating positions without losing balance or splashing",
+          "Streamlined push-and-glide off the pool steps without kicking or straining",
+          "Gentle breaststroke kick mechanics to move smoothly across shallow lanes"
+        ]
+      },
+      {
+        phase: "Phase 3",
+        title: "Stroke Coordination & Deep Water Confidence",
+        sessions: "Sessions 9 - 12",
+        items: [
+          "Combining breaststroke arms, legs, and rhythmic breathing for 10-15m independently",
+          "Transitioning safely into deeper water with coach right beside you in arms reach",
+          "Vertical treading water basics to handle unexpected depth comfortably",
+          "Swimming a full 25m lap with calm confidence and receiving completion certificate"
+        ]
+      }
+    ]
+  },
+  instructor: {
+    name: "Coach Nguyen Huy Manh",
+    title: "Training Director of Swim For Life",
+    experience: "12+ years helping 800+ aquaphobia students conquer water fear",
+    certifications: [
+      "Degree in Sports Psychology & Pedagogy",
+      "National Level 1 Swimming Coach",
+      "Specialized in traumatic aquaphobia desensitization"
+    ],
+    quote: "Fear of water is not a flaw; it is a primal reflex. When we replace uncertainty with correct breathing and buoyancy mechanics, panic simply dissolves."
+  },
+  pricing: {
+    note: "Specialized class requiring high pedagogical empathy. Free introductory session available.",
+    tiers: [
+      {
+        name: "VIP Phobia Breakthrough Package",
+        highlight: true,
+        badge: "Specialized",
+        price: "Contact for a quote",
+        period: "12 sessions / student",
+        features: [
+          "Strict 1-on-1 private coaching throughout",
+          "Certified coach specialized in gentle psychology",
+          "Warm indoor four-season pool (1.1m depth)",
+          "Coach in the water supporting you at all times",
+          "Money-back guarantee if unable to float by session 4",
+          "Free initial evaluation session included",
+          "Extended 3-month freezing policy"
+        ],
+        cta: "Book Trial Session"
+      }
+    ]
+  },
+  testimonials: [
+    {
+      name: "Minh Tuyet",
+      detail: "32yo, Accountant, Tan Binh, HCMC",
+      rating: 5,
+      text: "I had a near-drowning experience at age 10 that left me terrified of water. Previous classes failed because teachers forced my head under. At Swim For Life, Coach Manh walked with me hand-in-hand during the first lesson. His incredible patience made me feel safe. By session 3 I put my face in, and by session 10 I was swimming breaststroke! I am forever grateful."
+    }
+  ],
+  faqs: [
+    {
+      question: "What if I still cannot submerge my face after 4 sessions?",
+      answer: "Swim For Life offers a full tuition refund or coach re-assignment if an earnest student is unable to achieve basic face submersion and floating after 4 sessions. Your peace of mind is our utmost priority."
+    },
+    {
+      question: "Is there an age limit for the fear-of-water class?",
+      answer: "No age limit. We teach learners from 5-year-old anxious toddlers to 70-year-old seniors who have avoided pools their entire lives. Coaches adapt pace specifically to your comfort level."
+    },
+    {
+      question: "How deep is the pool used for this course?",
+      answer: "Lessons take place exclusively in shallow training areas between 1.1m and 1.2m deep. You can stand firmly on both feet at any second, with water remaining comfortably around chest level."
+    }
+  ]
+};
+
+export const seniors = {
+  slug: "seniors",
+  title: "Swimming Lessons for Seniors: Gentle & Safe [2026]",
+  shortTitle: "Seniors Swimming",
+  subtitle: "Gentle low-impact water exercise tailored for joint relief, cardiovascular health, and safety.",
+  description: "Safe and gentle swimming lessons designed for seniors and older adults. Low-impact water movement, heated four-season pools, joint relief, and cardio health.",
+  icon: "👵",
+  targetAudience: "Middle-aged and senior learners aged 50 to 75+",
+  duration: "10-12 sessions",
+  sessionLength: "45 - 60 minutes/session",
+  classSize: "Strictly 1-on-1 private",
+  heroImage: "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
+  priceFrom: "Contact for a quote",
+  stats: [
+    { number: 500, suffix: "+", label: "Senior learners successfully swimming" },
+    { number: 1, suffix: "-on-1", label: "Dedicated coach for complete safety" },
+    { number: 90, suffix: "%", label: "Reported noticeable joint relief" }
+  ],
+  problems: {
+    title: "Common Health Struggles in Golden Age?",
+    subtitle: "High-impact land exercises like running or heavy gym workouts strain aging joints. Swimming is the doctor-recommended low-impact alternative.",
+    items: [
+      {
+        icon: "🦴",
+        title: "Arthritis & Chronic Joint Pain",
+        description: "Knee osteoarthritis and spinal wear cause pain while walking or standing, limiting daily mobility."
+      },
+      {
+        icon: "❤️",
+        title: "Hypertension & Cardiovascular Strain",
+        description: "Stiff blood vessels and poor circulation increase the risks of high blood pressure and insomnia."
+      },
+      {
+        icon: "🩺",
+        title: "Loss of Muscle Mass & Balance",
+        description: "Aging reduces core muscle stability, raising the dangerous risk of slips and falls on land."
+      },
+      {
+        icon: "😰",
+        title: "Fear of Cold Water & Cramps",
+        description: "Concerns about cold shock, sudden cramps, or instructors who lack patience with slower movement."
+      }
+    ]
+  },
+  benefits: [
+    {
+      icon: "🌊",
+      title: "Zero-Gravity Joint Freedom",
+      description: "Water buoyancy supports 90% of body weight, relieving pressure on knees, hips, and spine for pain-free exercise."
+    },
+    {
+      icon: "❤️",
+      title: "Gentle Cardiovascular Boost",
+      description: "Hydrostatic water pressure massages blood vessels gently, improving circulation and stabilizing blood pressure."
+    },
+    {
+      icon: "😴",
+      title: "Deep, Restorative Sleep",
+      description: "Gentle aquatic movement calms the nervous system and regulates breathing, effectively relieving chronic insomnia."
+    },
+    {
+      icon: "🛡️",
+      title: "Dedicated Health Supervision",
+      description: "Swim For Life coaches monitor condition and heart rate before and throughout each lesson in heated water."
+    }
+  ],
+  overview: [
+    { icon: "👵", label: "Target Age", value: "Adults aged 50 to 75+ years old" },
+    { icon: "📅", label: "Pool Standard", value: "Indoor heated pool (29-31°C), sheltered from wind" },
+    { icon: "⏱️", label: "Lesson Length", value: "45 - 60 minutes (paced moderately for vitality)" },
+    { icon: "👤", label: "Coach Ratio", value: "Strictly 1-on-1 private for full health monitoring" },
+    { icon: "🌡️", label: "Water Quality", value: "Clean, heated four-season water gentle on skin" }
+  ],
+  curriculum: {
+    title: "Gentle, Safe & Therapeutic Seniors Swimming Syllabus",
+    stages: [
+      {
+        phase: "Phase 1",
+        title: "Warm Water Acclimatization & Aquatic Breathing",
+        sessions: "Sessions 1 - 3",
+        items: [
+          "Pre-lesson wellness check and gentle warm-up on pool steps",
+          "Walking in warm water to loosen knee joints through hydrostatic massage",
+          "Rhythmic breathing drills to expand lung capacity without breath holding",
+          "Assisted back floating for deep spinal decompression and relaxation"
+        ]
+      },
+      {
+        phase: "Phase 2",
+        title: "Low-Impact Breaststroke Mechanics",
+        sessions: "Sessions 4 - 8",
+        items: [
+          "Gentle whip kick technique focusing on hip mobility rather than force",
+          "Soft breaststroke arm sweeps to open chest and shoulders smoothly",
+          "Synchronized kick-glide-breathe coordination without sudden jerks",
+          "Short 10-15m glides with coach walking right alongside"
+        ]
+      },
+      {
+        phase: "Phase 3",
+        title: "Independent Gliding & Gentle Lap Endurance",
+        sessions: "Sessions 9 - 12",
+        items: [
+          "Independent relaxed floating to rest and breathe whenever tired",
+          "Swimming 25m continuous breaststroke with steady, calm breathing",
+          "Basic water treading for upright self-recovery in deep sections",
+          "Post-course health assessment and lifelong aquatic fitness plan"
+        ]
+      }
+    ]
+  },
+  instructor: {
+    name: "Coach Nguyen Huy Manh",
+    title: "Training Director of Swim For Life",
+    experience: "12+ years coaching senior wellness swimming and hydrotherapy",
+    certifications: [
+      "National Swimming Master",
+      "Sports Medicine & Aquatic Rehabilitation Training",
+      "Over a decade of coaching retirees and older adults"
+    ],
+    quote: "Learning to swim in golden years is never about speed. It is about steady movement, deep breathing, and finding joy in weightless comfort."
+  },
+  pricing: {
+    note: "Senior classes take place exclusively at premium indoor heated four-season pools for optimal health.",
+    tiers: [
+      {
+        name: "Senior Wellness VIP 1-on-1",
+        highlight: true,
+        badge: "Specialized",
+        price: "Contact for a quote",
+        period: "12 sessions / student",
+        features: [
+          "Dedicated 1-on-1 coach throughout the course",
+          "Therapeutic syllabus paced gently for seniors",
+          "Indoor warm water pools (29-31°C year-round)",
+          "Health and pulse check before each lesson",
+          "Targeted relief for back, neck, and knee pain",
+          "Free initial trial session for parents",
+          "Flexible 3-month freezing policy for travel"
+        ],
+        cta: "Book Trial for Parents"
+      }
+    ]
+  },
+  testimonials: [
+    {
+      name: "Mr. Le Khac Nguyen",
+      detail: "65yo, Retired Officer, Hanoi",
+      rating: 5,
+      text: "I suffered from severe knee arthritis. Walking hurt my joints. My son enrolled me in Swim For Life's senior course. At first I worried my bones were too stiff. But the coach was incredibly patient, having me walk in warm water before teaching breaststroke slowly. Now I swim 25m easily, and my knee pain has reduced dramatically!"
+    },
+    {
+      name: "Mrs. Thanh Van",
+      detail: "58yo, District 3, HCMC",
+      rating: 5,
+      text: "I battled chronic insomnia for years. After taking 1-on-1 warm water lessons with Coach Manh, the gentle exercise helped me relax deeply. I sleep soundly through the night after every lesson. Thank you for the thoughtful care!"
+    }
+  ],
+  faqs: [
+    {
+      question: "Is the pool water warm enough for older adults in winter?",
+      answer: "Yes, absolutely. Senior classes are conducted exclusively in indoor heated four-season partner facilities maintaining a stable 29-31°C water temperature in an enclosed, wind-protected environment."
+    },
+    {
+      question: "Does the coach stay in the water with my parents?",
+      answer: "Yes. For senior learners, the coach is in the water right next to the student at all times, providing physical support, balance assistance, and continuous reassurance."
+    },
+    {
+      question: "Can someone with mild hypertension join swimming classes?",
+      answer: "Yes, swimming is often recommended by cardiologists. However, learners with cardiovascular conditions should consult their physician first, and we always verify blood pressure before entering the pool."
+    }
+  ]
+};
+
+export const corporate = {
+  slug: "corporate",
+  title: "Corporate Swimming Programs: Companies & Schools [2026]",
+  shortTitle: "Corporate Programs",
+  subtitle: "Tailored aquatic training, wellness workshops, and water safety programs for groups of 10 or more.",
+  description: "Comprehensive swimming and water safety training programs for companies, international schools, and organizations in Vietnam. Tailored proposals and team safety.",
+  icon: "🏢",
+  targetAudience: "Corporations, international schools, residential communities, institutions",
+  duration: "Tailored (typically 10-15 sessions)",
+  sessionLength: "60 - 90 minutes/session",
+  classSize: "Cohorts of 10 to 50+ participants",
+  heroImage: "/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg",
+  priceFrom: "Contact for a proposal",
+  stats: [
+    { number: 50, suffix: "+", label: "Partner organizations trained" },
+    { number: 1000, suffix: "+", label: "Employees & students certified" },
+    { number: 100, suffix: "%", label: "Boosted team bonding & wellness" }
+  ],
+  problems: {
+    title: "Sedentary Workplace Health & Safety Risks?",
+    subtitle: "Sitting 8-10 hours daily causes chronic spinal problems, fatigue, and lower team productivity.",
+    items: [
+      {
+        icon: "🩺",
+        title: "Cervical Spine & Lower Back Strain",
+        description: "Prolonged desk posture leads to chronic neck tension, disc issues, and frequent sick leaves."
+      },
+      {
+        icon: "💼",
+        title: "Workplace Burnout & Low Morale",
+        description: "High stress and lack of physical release reduce workplace energy, focus, and collaboration."
+      },
+      {
+        icon: "🏖️",
+        title: "Water Safety Hazards During Company Trips",
+        description: "Annual beach and resort retreats carry drowning risks if team members lack water safety awareness."
+      },
+      {
+        icon: "📉",
+        title: "Scattered, Ineffective Wellness Benefits",
+        description: "Traditional gym vouchers have low utilization rates compared to structured team swimming classes."
+      }
+    ]
+  },
+  benefits: [
+    {
+      icon: "🧘",
+      title: "Comprehensive Spinal Decompression",
+      description: "Swimming directly decompresses lumbar and cervical vertebrae, relieving desk-bound neck and back aches."
+    },
+    {
+      icon: "🤝",
+      title: "Meaningful Team Bonding",
+      description: "Learning swimming together creates genuine camaraderie, empathy, and positive team spirit outside office walls."
+    },
+    {
+      icon: "🛡️",
+      title: "Life-Saving Water Safety Skills",
+      description: "Equip employees and school children with deep-water survival and rescue skills for safe holiday trips."
+    },
+    {
+      icon: "📊",
+      title: "Turnkey Project Management",
+      description: "Full service: pool survey, certified coaches, lifeguards, attendance tracking, and official VAT invoicing."
+    }
+  ],
+  overview: [
+    { icon: "🏢", label: "Target Client", value: "Companies, international schools, residential boards" },
+    { icon: "👥", label: "Group Size", value: "Cohorts of 10, 20, 30 up to 100+ participants" },
+    { icon: "📍", label: "Pool Location", value: "Partner pools near your office or at your residential facility" },
+    { icon: "📋", label: "Compliance", value: "Official training contract, safety plan & VAT invoice" },
+    { icon: "⏱️", label: "Schedule", value: "Flexible lunch break, post-work (5:30 PM+), or weekends" }
+  ],
+  curriculum: {
+    title: "Tailored Corporate Health & Aquatics Curriculum",
+    stages: [
+      {
+        phase: "Phase 1",
+        title: "Spinal Rehabilitation & Water Adaptation",
+        sessions: "Sessions 1 - 3",
+        items: [
+          "Office posture assessment and targeted aquatic decompression drills",
+          "Breath control and relaxation exercises to relieve workplace tension",
+          "Buoyancy fundamentals and safe movement in warm water",
+          "Group water team-building drills to foster mutual support"
+        ]
+      },
+      {
+        phase: "Phase 2",
+        title: "Breaststroke / Freestyle Stroke Efficiency",
+        sessions: "Sessions 4 - 8",
+        items: [
+          "Technique drills designed for ergonomic efficiency and stamina",
+          "Shoulder girdle mobility exercises to eliminate neck stiffness",
+          "Breathing coordination and rhythmic stroke integration",
+          "Mini relay challenges to build collaborative team energy"
+        ]
+      },
+      {
+        phase: "Phase 3",
+        title: "Deep Water Self-Rescue & Safe Retreat Preparedness",
+        sessions: "Sessions 9 - 12",
+        items: [
+          "Deep-water vertical treading and floating survival protocols",
+          "Safe beach and open-water safety awareness for company retreats",
+          "Basic life support and reaching/throwing rescue demonstrations",
+          "Completion ceremony and certification of team swimming skills"
+        ]
+      }
+    ]
+  },
+  instructor: {
+    name: "Coach Nguyen Huy Manh",
+    title: "Training Director of Swim For Life",
+    experience: "12+ years deploying corporate wellness swimming programs across Vietnam",
+    certifications: [
+      "Master of Physical Education & Sports Pedagogy",
+      "Trainer of National Swimming Coaches",
+      "Official swimming contractor for Vinhomes and multi-national corporations"
+    ],
+    quote: "An active team is a resilient team. When employees share the achievement of mastering the water together, office collaboration reaches a completely new level."
+  },
+  pricing: {
+    note: "All corporate programs include safety plans, certified coaching staff, and official VAT invoices.",
+    tiers: [
+      {
+        name: "Corporate Wellness Package (10 - 20 Pax)",
+        highlight: true,
+        badge: "Most Popular",
+        price: "Contact for proposal",
+        period: "10-12 sessions / program",
+        features: [
+          "Designed for departments and company teams",
+          "Convenient pool selection near your corporate office",
+          "Certified senior coaching team and dedicated lifeguard",
+          "Flexible attendance tracking and make-up policy",
+          "Complimentary branded swimming caps for the team",
+          "Full service agreement and legal financial VAT invoice"
+        ],
+        cta: "Request Proposal"
+      },
+      {
+        name: "Enterprise & School Scale (30+ Pax)",
+        highlight: false,
+        price: "Contact for proposal",
+        period: "Custom timeline / program",
+        features: [
+          "Large scale training for corporations or school semesters",
+          "Dedicated pool lanes reserved exclusively for your group",
+          "Custom syllabus matched to corporate health KPIs",
+          "Inter-departmental swimming gala coordination",
+          "Comprehensive health & attendance progress reporting",
+          "Corporate discount terms for ongoing annual training"
+        ],
+        cta: "Schedule Consultation"
+      }
+    ]
+  },
+  testimonials: [
+    {
+      name: "Mr. Quoc Khanh",
+      detail: "HR Director, Tech Company F., Hanoi",
+      rating: 5,
+      text: "Our development team was suffering from chronic back pain from long desk hours. We contracted Swim For Life for a 15-person wellness swimming program. After 10 sessions, energy in the office shifted completely. Team members bonded, back pain reduced, and work productivity noticeably increased. Outstanding professional partner!"
+    }
+  ],
+  faqs: [
+    {
+      question: "Can the company choose a pool close to our office?",
+      answer: "Yes! Swim For Life surveys and partners with high-standard indoor heated four-season pools nearest to your office premises to ensure minimal commute time for your team."
+    },
+    {
+      question: "Do you provide official financial VAT invoices and contracts?",
+      answer: "Yes. Your Dreams JSC (the operating company of Swim For Life Vietnam) provides complete legal contracts, training proposals, and official VAT electronic invoices for company expense claims."
+    },
+    {
+      question: "What if employees have business travel during the course?",
+      answer: "We support flexible corporate attendance policies. Employees traveling for work can make up missed classes in other cohort time slots or during scheduled end-of-course review sessions."
+    }
+  ]
+};
+
+export const courses = [kids, adults, intensive, private1on1, group, fearOfWater, seniors, corporate];
+

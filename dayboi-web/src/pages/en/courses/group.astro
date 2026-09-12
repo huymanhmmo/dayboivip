@@ -1,0 +1,24 @@
+---
+const currentYear = new Date().getFullYear();
+import CourseLayout from '../../../layouts/CourseLayout.astro';
+import { group } from '../../../data/coursesEn.js';
+import { generateCourseSchema } from '../../../utils/courseSchema.js';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Courses', href: '/en/courses/' },
+  { label: 'Small Group Classes' },
+];
+
+const courseSchema = generateCourseSchema(group, 'https://dayboi.vip/en/courses/group/');
+const combinedSchema = [courseSchema];
+---
+
+<CourseLayout
+  course={group}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+  lang="en"
+  alternateUrl="/khoa-hoc-boi/nhom/"
+  alternateLang="vi"
+/>

@@ -1,0 +1,563 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import { publishedLocationAreas } from '../../../data/locationAreas.js';
+import { getAllCommunePages, getCommunesForLocation } from '../../../data/communePages.js';
+import '../../../styles/location-area.css';
+
+export function getStaticPaths() {
+  const communePages = getAllCommunePages();
+  const communeSlugSet = new Set(communePages.map((c) => `${c.parentSlug}/${c.slug}`));
+
+  const areaPaths = publishedLocationAreas
+    .filter((area) => !communeSlugSet.has(`${area.parentSlug}/${area.slug}`))
+    .map((area) => {
+      let enLocation = area.parentSlug.replace('hoc-boi-', 'swimming-lessons-');
+      if (area.parentSlug === 'hoc-boi-tphcm') enLocation = 'swimming-lessons-ho-chi-minh';
+      return {
+        params: { location: enLocation, area: area.slug },
+        props: { area, isCommune: false, viParentSlug: area.parentSlug, enLocationSlug: enLocation },
+      };
+    });
+
+  const communePaths = communePages.map((commune) => {
+    let enLocation = commune.parentSlug.replace('hoc-boi-', 'swimming-lessons-');
+    if (commune.parentSlug === 'hoc-boi-tphcm') enLocation = 'swimming-lessons-ho-chi-minh';
+    return {
+      params: { location: enLocation, area: commune.slug },
+      props: { commune, isCommune: true, viParentSlug: commune.parentSlug, enLocationSlug: enLocation },
+    };
+  });
+
+  return [...areaPaths, ...communePaths];
+}
+
+const { area, commune, isCommune = false, viParentSlug, enLocationSlug } = Astro.props;
+const currentYear = new Date().getFullYear();
+
+const enNames = {
+  'Hà Nội': 'Hanoi', 'TP. Hồ Chí Minh': 'Ho Chi Minh City', 'Đà Nẵng': 'Da Nang', 'Hải Phòng': 'Hai Phong',
+  'Huế': 'Hue', 'Cần Thơ': 'Can Tho', 'Đồng Nai': 'Dong Nai', 'Quảng Ninh': 'Quang Ninh', 'Bắc Ninh': 'Bac Ninh',
+  'Thái Nguyên': 'Thai Nguyen', 'Phú Thọ': 'Phu Tho', 'Ninh Bình': 'Ninh Binh', 'Hưng Yên': 'Hung Yen',
+  'Thanh Hóa': 'Thanh Hoa', 'Nghệ An': 'Nghe An', 'Hà Tĩnh': 'Ha Tinh', 'Quảng Bình': 'Quang Binh',
+  'Quảng Ngãi': 'Quang Ngai', 'Bình Định': 'Binh Dinh', 'Khánh Hòa': 'Khanh Hoa', 'Đắk Lắk': 'Dak Lak',
+  'Lâm Đồng': 'Lam Dong', 'Tây Ninh': 'Tay Ninh', 'Đồng Tháp': 'Dong Thap', 'Vĩnh Long': 'Vinh Long',
+  'An Giang': 'An Giang', 'Cà Mau': 'Ca Mau', 'Cao Bằng': 'Cao Bang', 'Lai Châu': 'Lai Chau',
+  'Điện Biên': 'Dien Bien', 'Sơn La': 'Son La', 'Lạng Sơn': 'Lang Son', 'Lào Cai': 'Lao Cai', 'Tuyên Quang': 'Tuyen Quang',
+};
+
+const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
+const customerCopy = (value = '') => String(value)
+  .replace(/cam kết 100%/gi, 'proven results')
+  .replace(/an toàn tuyệt đối/gi, 'high safety standards')
+  .replace(/uy tín nhất/gi, 'popular local choice')
+  .replace(/uy tín số 1/gi, 'well-known locally')
+  .replace(/hiện đại số 1/gi, 'modern standard facility')
+  .replace(/an toàn số 1/gi, 'high safety standard')
+  .replace(/hoàn hảo nhất/gi, 'suitable');
+
+const techniques = [
+  {
+    name: 'Breaststroke Technique',
+    href: '/en/swimming-techniques/breaststroke/',
+    level: 'Beginner Level',
+    description: 'Focus on water breathing, floating, gliding, and relaxed whip kicks before building distance.',
+  },
+  {
+    name: 'Front Crawl / Freestyle',
+    href: '/en/swimming-techniques/front-crawl/',
+    level: 'Stamina & Speed',
+    description: 'Ideal for swimmers seeking speed, cardiovascular endurance, and bilateral breathing rhythm.',
+  },
+  {
+    name: 'Backstroke Technique',
+    href: '/en/swimming-techniques/backstroke/',
+    level: 'Balance & Relaxation',
+    description: 'Master continuous flutter kicks, relaxed floating, and upward orientation in the water.',
+  },
+  {
+    name: 'Butterfly Stroke',
+    href: '/en/swimming-techniques/butterfly/',
+    level: 'Advanced Conditioning',
+    description: 'Coordinate dolphin kicks, undulating body waves, and dual-arm recovery power.',
+  },
+];
+
+let title = '';
+let description = '';
+let canonicalUrl = '';
+let viAlternateUrl = '';
+let pageImage = '';
+let breadcrumbs = [];
+let faqs = [];
+let venues = [];
+let instructors = [];
+let relatedItems = [];
+let schema = {};
+let targetName = '';
+let parentNameEn = '';
+
+if (isCommune) {
+  parentNameEn = enNames[commune.parentName] || commune.parentName;
+  targetName = commune.name;
+  canonicalUrl = `https://dayboi.vip/en/${enLocationSlug}/${commune.slug}/`;
+  viAlternateUrl = `/${commune.parentSlug}/${commune.slug}/`;
+  pageImage = commune.image;
+  venues = commune.hasVenues ? commune.directVenues : commune.nearbyVenues;
+  instructors = venues.flatMap((v) => v.instructors || []);
+
+  const baseTitle = `Swimming Lessons in ${commune.name}, ${parentNameEn} [${currentYear}]`;
+  if (baseTitle.length < 45) {
+    title = `Swimming Lessons & Pools in ${commune.name}, ${parentNameEn} [${currentYear}]`;
+  } else if (baseTitle.length > 65) {
+    title = `Swimming Lessons in ${commune.name}, ${parentNameEn}`;
+  } else {
+    title = baseTitle;
+  }
+
+  description = `Find verified swimming pools, coaches, and private swimming lessons in ${commune.name}, ${parentNameEn}. Compare venues, contacts, schedules, and tips before enrolling.`;
+  if (description.length < 140) {
+    description = `${description} Check reviews and book a trial lesson today.`;
+  }
+
+  breadcrumbs = [
+    { label: 'Home', href: '/en/' },
+    { label: 'Locations', href: '/en/swimming-locations/' },
+    { label: parentNameEn, href: `/en/${enLocationSlug}/` },
+    { label: commune.name },
+  ];
+
+  faqs = [
+    {
+      question: `Which swimming pools are suitable in ${commune.name}?`,
+      answer: `Look for clean water quality, safe lane depths, certified on-duty lifeguards, and location convenience. This guide compares ${venues.length} swimming facilities serving ${commune.name} with verified contacts and location maps.`,
+    },
+    {
+      question: `Are private swimming lessons available for kids and adults in ${commune.name}?`,
+      answer: `Yes. Certified coaches provide 1-on-1 private lessons and small group sessions for children (from age 4) and adult beginners. You can contact instructors directly to coordinate flexible schedules.`,
+    },
+    {
+      question: `Which stroke should beginners in ${commune.name} start with?`,
+      answer: `Breaststroke is highly recommended for beginners because its breathing mechanics and head elevation are natural, allowing fast mastery of water comfort and survival treading. After mastering breaststroke, you can advance to freestyle.`,
+    },
+  ];
+
+  const siblingCommunes = getCommunesForLocation(commune.parentSlug)
+    .filter((c) => c.slug !== commune.slug)
+    .slice(0, 9);
+  relatedItems = siblingCommunes.map((c) => ({
+    name: c.name,
+    url: `/en/${enLocationSlug}/${c.slug}/`,
+    tag: c.hasVenues ? `${c.directVenues.length} venues` : 'Nearby pools',
+  }));
+
+  schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${canonicalUrl}#page`,
+        name: title,
+        description,
+        url: canonicalUrl,
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonicalUrl}#venues`,
+        numberOfItems: venues.length,
+        itemListElement: venues.map((venue, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'SportsActivityLocation',
+            name: venue.name,
+            address: venue.address || `${venue.name}, ${commune.name}, ${parentNameEn}`,
+            telephone: venue.venueContact?.phone || (venue.instructors && venue.instructors[0]?.phone) || undefined,
+            url: `${canonicalUrl}#dia-diem-${index + 1}`,
+          },
+        })),
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      },
+    ],
+  };
+} else {
+  parentNameEn = enNames[area.parentName] || area.parentName;
+  targetName = area.name;
+  canonicalUrl = `https://dayboi.vip/en/${enLocationSlug}/${area.slug}/`;
+  viAlternateUrl = `/${area.parentSlug}/${area.slug}/`;
+  pageImage = area.parentImage;
+  venues = area.category.venues;
+  instructors = venues.flatMap((venue) => venue.instructors || []);
+
+  const baseTitle = `Swimming Lessons in ${area.name}, ${parentNameEn} [${currentYear}]`;
+  if (baseTitle.length < 45) {
+    title = `Swimming Lessons & Pools in ${area.name}, ${parentNameEn} [${currentYear}]`;
+  } else if (baseTitle.length > 65) {
+    title = `Swimming Lessons in ${area.name}, ${parentNameEn}`;
+  } else {
+    title = baseTitle;
+  }
+
+  description = `Find swimming pools, clubs, and lesson providers in ${area.name}, ${parentNameEn}. Compare venues, contacts, facilities, and tips before booking a trial.`;
+  if (description.length < 140) {
+    description = `${description} Connect with certified coaches today.`;
+  }
+
+  breadcrumbs = [
+    { label: 'Home', href: '/en/' },
+    { label: 'Locations', href: '/en/swimming-locations/' },
+    { label: parentNameEn, href: `/en/${enLocationSlug}/` },
+    { label: area.name },
+  ];
+
+  faqs = [
+    {
+      question: `How to choose a swimming venue in ${area.name}?`,
+      answer: `Select based on facility access, commute distance, lane depth, and instructor credentials. Compare ${venues.length} verified listings in ${area.name} before visiting.`,
+    },
+    {
+      question: `Do instructors in ${area.name} offer 1-on-1 private lessons?`,
+      answer: `Yes. Certified coaches provide private 1-on-1 lessons customized for individual pace, water confidence, and flexible weekly scheduling.`,
+    },
+  ];
+
+  const relatedAreas = (area.relatedSlugs || [])
+    .map((slug) => publishedLocationAreas.find((item) => item.parentSlug === area.parentSlug && item.slug === slug))
+    .filter(Boolean);
+  relatedItems = relatedAreas.map((item) => ({
+    name: item.name,
+    url: `/en/${enLocationSlug}/${item.slug}/`,
+    tag: `${item.category.venues.length} venues`,
+  }));
+
+  schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${canonicalUrl}#page`,
+        name: title,
+        description,
+        url: canonicalUrl,
+        inLanguage: 'en-US',
+      },
+    ],
+  };
+}
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  image={pageImage}
+  breadcrumbs={breadcrumbs}
+  schema={schema}
+  lang="en"
+  alternateUrl={viAlternateUrl}
+  alternateLang="vi"
+>
+  <article class="area-page">
+    {isCommune ? (
+      <header class="area-hero">
+        <div class="container area-hero__grid">
+          <div class="area-hero__content">
+            <nav class="area-tree-path" aria-label="Breadcrumb navigation">
+              <a href="/en/swimming-locations/">Vietnam Directory</a><span>›</span><a href={`/en/${enLocationSlug}/`}>{parentNameEn}</a><span>›</span><strong>{commune.fullName}</strong>
+            </nav>
+            <span class="area-eyebrow">Local Swimming Lessons · Updated {commune.reviewedAt}</span>
+            <h1>Swimming Lessons in <span>{commune.name}, {parentNameEn}</span>: Verified Pools & Classes</h1>
+            <p>Explore public swimming pools, sports centers, private 1-on-1 swim coaches, and small group classes in {commune.name}, {parentNameEn}. Verified local directory with direct contact channels, facilities, and location maps.</p>
+            <div class="area-hero__actions">
+              <a href="#dia-diem" class="area-button area-button--primary">{commune.hasVenues ? `View ${commune.directVenues.length} swimming venues` : 'View nearby pools'}</a>
+              <a href="#kieu-boi" class="area-button area-button--secondary">Choose stroke</a>
+            </div>
+          </div>
+          <aside class="area-hero__summary" aria-label="Course Overview">
+            <span>Course Information</span>
+            <dl>
+              <div><dt>Training Venues</dt><dd>{commune.hasVenues ? `${commune.directVenues.length} direct pools` : 'Standard nearby pools'}</dd></div>
+              <div><dt>Class Format</dt><dd>Private 1-on-1 / Small group</dd></div>
+              <div><dt>Duration</dt><dd>10 - 12 sessions (Proven results)</dd></div>
+              <div><dt>Target Learners</dt><dd>Kids from age 4 & Adults</dd></div>
+            </dl>
+            <p>Swim For Life provides transparent, objective information and connects learners with certified professional coaches.</p>
+          </aside>
+        </div>
+      </header>
+
+      <nav class="area-jump" aria-label="Page navigation">
+        <div class="container">
+          <a href="#dia-diem">Venues & Pools</a>
+          <a href="#kieu-boi">Stroke Options</a>
+          <a href="#cach-chon">How to Choose</a>
+          <a href="#khu-vuc">Service Scope</a>
+          <a href="#cau-hoi">FAQs</a>
+        </div>
+      </nav>
+
+      <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
+        <div class="container">
+          {commune.hasVenues ? (
+            <div>
+              <div class="area-section__heading">
+                <span>Swimming Pools & Coaching</span>
+                <h2 id="venue-title">Swimming Pools & Lessons in {commune.name}</h2>
+                <p>Explore verified swimming facilities and professional coaches operating in {commune.name} to select the most convenient option for your schedule.</p>
+              </div>
+              <div class="area-venue-list">
+                {commune.directVenues.map((venue, index) => (
+                  <article class="area-venue" id={`dia-diem-${index + 1}`}>
+                    <div class="area-venue__index">{String(index + 1).padStart(2, '0')}</div>
+                    <div class="area-venue__main">
+                      <div class="area-venue__tags">
+                        <span>{commune.name}</span>
+                        <span>{customerCopy(venue.access || 'Swimming Pool')}</span>
+                        {venue.environment && <span>{customerCopy(venue.environment)}</span>}
+                      </div>
+                      <h3>{venue.name}</h3>
+                      <p><strong>Address:</strong> {venue.address}</p>
+                      {venue.services && <p><strong>Amenities:</strong> {customerCopy(venue.services)}</p>}
+                      <p><strong>Highlights:</strong> {customerCopy(venue.detail)}</p>
+                    </div>
+                    <div class="area-venue__contacts">
+                      {venue.venueContact && (
+                        <section>
+                          <span>Management / Reception</span>
+                          <h4>{venue.venueContact.name}</h4>
+                          <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
+                        </section>
+                      )}
+                      {(venue.instructors || []).map((instructor) => (
+                        <section>
+                          <span>Coaching Inquiries</span>
+                          <h4>{instructor.unitName}</h4>
+                          <p>{instructor.contactPerson}</p>
+                          <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
+                        </section>
+                      ))}
+                      <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="area-map">Open in Google Maps ↗</a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div class="area-section__heading">
+                <span>Local Directory Transparency</span>
+                <h2 id="venue-title">Recommended Nearby Pools for Residents in {commune.name}</h2>
+                <p>Calculated GPS distance from the center of {commune.name} to the nearest standard indoor and outdoor swimming facilities.</p>
+              </div>
+              <div class="area-notice-banner">
+                <h3>⚠️ No direct public pool currently registered in {commune.name}</h3>
+                <p>Based on our latest survey in {currentYear}, there is no public commercial pool operating directly within {commune.name}. To ensure clean water treatment and certified lifeguards, we recommend checking the 3 nearest facilities below.</p>
+              </div>
+              <div class="area-nearby-grid">
+                {commune.nearbyVenues.map((venue, index) => (
+                  <article class="area-nearby-card" id={`dia-diem-${index + 1}`}>
+                    <span class="area-nearby-badge">📍 ~{venue.distanceKm} km from center</span>
+                    <h3>{venue.name}</h3>
+                    <p><strong>Address:</strong> {venue.address}</p>
+                    {venue.services && <p><strong>Amenities:</strong> {customerCopy(venue.services)}</p>}
+                    <p><strong>Features:</strong> {customerCopy(venue.detail)}</p>
+                    <div class="area-nearby-actions">
+                      {venue.venueContact && (
+                        <a href={phoneHref(venue.venueContact.phone)} class="btn-call">
+                          📞 Call Pool ({venue.venueContact.phone})
+                        </a>
+                      )}
+                      <a href={mapsSearch(`${venue.name}, ${venue.address}`)} target="_blank" rel="noopener noreferrer" class="btn-map">
+                        Open in Google Maps ↗
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section class="area-section area-section--dark" id="kieu-boi" aria-labelledby="technique-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Stroke Techniques</span>
+            <h2 id="technique-title">Breaststroke, Freestyle, Backstroke & Butterfly in {commune.name}</h2>
+            <p>Compare fundamental technical requirements and skill objectives before discussing lesson plans with your coach.</p>
+          </div>
+          <div class="area-techniques">
+            {techniques.map((technique, index) => (
+              <a href={technique.href}>
+                <span>0{index + 1} · {technique.level}</span>
+                <h3>{technique.name}</h3>
+                <p>{technique.description}</p>
+                <strong>View Stroke Guide →</strong>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section" id="cach-chon" aria-labelledby="choice-title">
+        <div class="container area-choice">
+          <div>
+            <span class="area-eyebrow">Preparation Checklist</span>
+            <h2 id="choice-title">Four Questions to Ask Before Booking Lessons in {commune.name}</h2>
+            <p class="area-choice__local"><strong>Note for learners in {commune.name}:</strong> Prioritize centers that emphasize certified coaching pedagogy, water safety protocols, and transparent fee policies.</p>
+            <div class="area-nearby" aria-label="Key priorities">
+              <span>Clean water</span>
+              <span>1-on-1 private coach</span>
+              <span>Water confidence</span>
+              <span>Flexible schedule</span>
+            </div>
+          </div>
+          <ol>
+            <li><span>01</span><div><strong>Pool Access Policy</strong><p>Confirm whether public, hotel, or residential pools allow outside guests.</p></div></li>
+            <li><span>02</span><div><strong>Learner Alignment</strong><p>Clarify age group, baseline water comfort, survival vs stroke goals.</p></div></li>
+            <li><span>03</span><div><strong>Safety & Coach Attention</strong><p>Ask about coach-to-student ratio, lifeguards, and shallow training lanes.</p></div></li>
+            <li><span>04</span><div><strong>Total Fee Structure</strong><p>Verify tuition, pool ticket costs, session count, and rescheduling policy.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="area-section area-section--soft" id="khu-vuc" aria-labelledby="scope-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Service Coverage</span>
+            <h2 id="scope-title">Local Service Coverage & Neighboring Areas in {commune.name}</h2>
+            <p>Swim For Life coaches arrange private lessons and flexible pool travel for residents across {commune.name} and neighboring communities.</p>
+          </div>
+          <div class="area-scope-card">
+            <div class="area-scope-content">
+              <h3>Service Coverage Across Local Neighborhoods</h3>
+              <p>To help residents easily locate lessons by familiar historical or local neighborhood names, our coaching team provides service across all areas:</p>
+              <div class="area-prev-tags">
+                {(commune.previous || []).map((prev) => (
+                  <span class="area-prev-tag">📍 Area: {prev}</span>
+                ))}
+                <span class="area-prev-tag">🏊 Entire {commune.name} Area</span>
+              </div>
+              <p class="area-scope-note">
+                Regardless of which local neighborhood you reside in, our instructors customize the coaching plan for your age, fitness, and goals.
+              </p>
+            </div>
+            <div class="area-scope-features">
+              <div class="area-scope-feature">
+                <strong>📍 Full Area Coverage</strong>
+                <p>Support enrolling at standard pools closest to your home in {commune.name}, minimizing commute times.</p>
+              </div>
+              <div class="area-scope-feature">
+                <strong>⏱️ Flexible Scheduling</strong>
+                <p>Students coordinate dates directly with coaches from 6:00 AM to 9:00 PM daily to match work and school.</p>
+              </div>
+              <div class="area-scope-feature">
+                <strong>🏊 Optimal Pool Selection</strong>
+                <p>Guidance on choosing heated four-season indoor pools or clean outdoor lanes meeting water safety standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section" id="cau-hoi" aria-labelledby="faq-title">
+        <div class="container area-faq">
+          <div class="area-section__heading">
+            <span>Frequently Asked Questions</span>
+            <h2 id="faq-title">Questions About Swimming Lessons in {commune.name}</h2>
+          </div>
+          <div class="area-faq__list">
+            {faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section area-related" aria-labelledby="related-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Nearby Areas</span>
+            <h2 id="related-title">Swimming in Other Areas of {parentNameEn}</h2>
+          </div>
+          <div class="area-related__grid">
+            {relatedItems.map((item) => (
+              <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>View Area →</b></a>
+            ))}
+            <a href={`/en/${enLocationSlug}/`}><span>Province Hub</span><strong>All Venues in {parentNameEn}</strong><b>Open Directory →</b></a>
+          </div>
+        </div>
+      </section>
+    ) : (
+      <header class="area-hero">
+        <div class="container area-hero__grid">
+          <div class="area-hero__content">
+            <nav class="area-tree-path" aria-label="Breadcrumb navigation">
+              <a href="/en/swimming-locations/">Vietnam Directory</a><span>›</span><a href={`/en/${enLocationSlug}/`}>{parentNameEn}</a><span>›</span><strong>{area.name}</strong>
+            </nav>
+            <span class="area-eyebrow">Local Swimming Lessons · Updated {area.reviewedAt}</span>
+            <h1>Swimming Lessons in <span>{area.name}</span>: Local Pools & Classes</h1>
+            <p>Find swimming pools, clubs, and lesson providers in {area.name}, {parentNameEn}. Compare venues, contacts, and key considerations before booking a lesson.</p>
+            <div class="area-hero__actions">
+              <a href="#dia-diem" class="area-button area-button--primary">Compare {venues.length} venues</a>
+              <a href="#kieu-boi" class="area-button area-button--secondary">Choose stroke</a>
+            </div>
+          </div>
+          <aside class="area-hero__summary" aria-label="Quick overview">
+            <span>Quick Info</span>
+            <dl>
+              <div><dt>Venues</dt><dd>{venues.length}</dd></div>
+              <div><dt>Class Contacts</dt><dd>{instructors.length}</dd></div>
+            </dl>
+            <p>Swim For Life provides transparent, objective information and connects learners with certified professional coaches.</p>
+          </aside>
+        </div>
+      </header>
+
+      <nav class="area-jump" aria-label="Page navigation">
+        <div class="container">
+          <a href="#dia-diem">Venues</a>
+          <a href="#kieu-boi">Strokes</a>
+          <a href="#cach-chon">How to Choose</a>
+          <a href="#cau-hoi">FAQs</a>
+        </div>
+      </nav>
+
+      <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Verified Facilities</span>
+            <h2 id="venue-title">Swimming Pools in {area.name}</h2>
+            <p>Compare locations, contact channels, and access notes before booking.</p>
+          </div>
+          <div class="area-venue-list">
+            {venues.map((venue, index) => (
+              <article class="area-venue" id={`dia-diem-${index + 1}`}>
+                <div class="area-venue__index">{String(index + 1).padStart(2, '0')}</div>
+                <div class="area-venue__main">
+                  <h3>{venue.name}</h3>
+                  <p><strong>Address:</strong> {venue.address || `${venue.name}, ${area.name}`}</p>
+                  <p>{customerCopy(venue.detail || venue.services || '')}</p>
+                </div>
+                <div class="area-venue__contacts">
+                  <a href={mapsSearch(`${venue.name}, ${venue.address || area.name}`)} target="_blank" rel="noopener noreferrer" class="area-map">Open in Google Maps ↗</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </article>
+</PageLayout>

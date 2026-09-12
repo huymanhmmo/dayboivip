@@ -1,0 +1,24 @@
+---
+const currentYear = new Date().getFullYear();
+import CourseLayout from '../../../layouts/CourseLayout.astro';
+import { corporate } from '../../../data/coursesEn.js';
+import { generateCourseSchema } from '../../../utils/courseSchema.js';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Swimming Courses', href: '/en/courses/' },
+  { label: 'Corporate & School Programs' },
+];
+
+const courseSchema = generateCourseSchema(corporate, 'https://dayboi.vip/en/courses/corporate/');
+const combinedSchema = [courseSchema];
+---
+
+<CourseLayout
+  course={corporate}
+  breadcrumbs={breadcrumbs}
+  schema={combinedSchema}
+  lang="en"
+  alternateUrl="/khoa-hoc-boi/doanh-nghiep/"
+  alternateLang="vi"
+/>
