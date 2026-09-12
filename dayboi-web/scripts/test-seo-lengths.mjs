@@ -5,18 +5,33 @@ const currentYear = 2026;
 let outOfBounds = 0;
 
 for (const c of pages) {
-  let title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Riêng`;
+  const city = c.parentSlug === 'hoc-boi-tphcm' ? 'TP.HCM' : (c.parentName || 'Hà Nội');
+  
+  // Format with commune name and province/city name
+  let title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm Riêng`;
   if (title.length > 60) {
-    title = `Học Bơi, Dạy Bơi ${c.fullName}: Lớp Kèm Riêng`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm`;
   }
   if (title.length > 60) {
-    title = `Học Bơi, Dạy Bơi ${c.fullName}: Lớp Kèm`;
+    title = `Học Bơi, Dạy Bơi ${c.fullName}, ${city}: Lớp Kèm`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi Tại ${c.name}, ${city}: Lớp Kèm Riêng`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi Tại ${c.name}, ${city}: Lớp Kèm`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi ${c.name}, ${city}: Lớp Kèm`;
   }
   if (title.length < 45) {
-    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Gần Bạn`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm Riêng`;
   }
   if (title.length < 45) {
-    title = `Học Bơi, Dạy Bơi Ở ${c.fullName}: Lớp Kèm Riêng Gần Bạn`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm Gần Bạn`;
+  }
+  if (title.length < 45) {
+    title = `Học Bơi, Dạy Bơi Ở ${c.fullName}, ${city}: Lớp Kèm Riêng Gần Bạn`;
   }
 
   const prevSummary = (c.previous || [])
@@ -72,15 +87,31 @@ let dupTitles = 0;
 let dupDescs = 0;
 
 for (const c of pages) {
-  let title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Riêng`;
-  if (title.length > 65) {
-    title = `Học Bơi, Dạy Bơi ${c.fullName}: Lớp Kèm`;
+  const city = c.parentSlug === 'hoc-boi-tphcm' ? 'TP.HCM' : (c.parentName || 'Hà Nội');
+  let title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm Riêng`;
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi ${c.fullName}, ${city}: Lớp Kèm`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi Tại ${c.name}, ${city}: Lớp Kèm Riêng`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi Tại ${c.name}, ${city}: Lớp Kèm`;
+  }
+  if (title.length > 60) {
+    title = `Học Bơi, Dạy Bơi ${c.name}, ${city}: Lớp Kèm`;
   }
   if (title.length < 45) {
-    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}: Lớp Kèm Gần Bạn`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm Riêng`;
   }
   if (title.length < 45) {
-    title = `Học Bơi, Dạy Bơi Ở ${c.fullName}: Lớp Kèm Riêng Gần Bạn`;
+    title = `Học Bơi, Dạy Bơi Tại ${c.fullName}, ${city}: Lớp Kèm Gần Bạn`;
+  }
+  if (title.length < 45) {
+    title = `Học Bơi, Dạy Bơi Ở ${c.fullName}, ${city}: Lớp Kèm Riêng Gần Bạn`;
   }
 
   const prevSummary = (c.previous || [])
@@ -114,5 +145,9 @@ console.log('Total commune pages tested:', pages.length);
 console.log('Total out of bounds errors:', outOfBounds);
 console.log('Total duplicate titles:', dupTitles);
 console.log('Total duplicate descriptions:', dupDescs);
+
+if (outOfBounds > 0 || dupTitles > 0 || dupDescs > 0) {
+  process.exit(1);
+}
 
 
