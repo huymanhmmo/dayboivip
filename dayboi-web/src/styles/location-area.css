@@ -177,51 +177,56 @@
   .area-related__grid { grid-template-columns: 1fr; }
 }
 
-/* Administrative Information Card */
-.area-admin-card {
+/* Service Scope & Subtle Boundary Card */
+.area-scope-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
   padding: clamp(1.5rem, 3vw, 2.5rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: var(--sand-50);
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   margin-top: 1.5rem;
 }
-.area-admin-stats {
-  display: grid;
-  gap: 1rem;
-}
-.area-admin-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--color-border);
-}
-.area-admin-stats dt {
-  font-size: 0.82rem;
-  color: var(--ink-500);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.area-admin-stats dd {
-  margin: 0;
-  color: var(--blue-950);
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-.area-admin-history h3 {
+.area-scope-content h3 {
   margin: 0 0 0.8rem;
   color: var(--blue-950);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
+  font-weight: 750;
 }
-.area-admin-history p {
+.area-scope-content p {
   color: var(--ink-600);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  line-height: 1.65;
   margin-bottom: 1rem;
+}
+.area-scope-note {
+  margin-top: 1.2rem;
+  font-size: 0.86rem !important;
+  color: var(--ink-500) !important;
+  border-left: 3px solid var(--area-cyan);
+  padding-left: 0.8rem;
+}
+.area-scope-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+  border-left: 1px solid var(--color-border);
+  padding-left: clamp(1rem, 2vw, 2rem);
+}
+.area-scope-feature strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--blue-900);
+  margin-bottom: 0.25rem;
+}
+.area-scope-feature p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-600);
+  line-height: 1.55;
 }
 .area-prev-tags {
   display: flex;
@@ -232,11 +237,22 @@
   display: inline-block;
   padding: 0.35rem 0.75rem;
   border-radius: 9999px;
-  background: var(--white);
+  background: var(--sand-50);
   border: 1px solid var(--color-border);
   color: var(--blue-900);
   font-size: 0.82rem;
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  .area-scope-card {
+    grid-template-columns: 1fr;
+  }
+  .area-scope-features {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: 1.2rem;
+  }
 }
 
 /* Zero Fabrication Notice */

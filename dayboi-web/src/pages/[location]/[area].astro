@@ -301,56 +301,27 @@ if (isCommune) {
             </div>
           </div>
           <aside class="area-hero__summary" aria-label="Thông tin nhanh">
-            <span>Thông tin hành chính & địa bàn</span>
+            <span>Thông tin khóa học bơi</span>
             <dl>
-              <div><dt>Trạng thái cơ sở</dt><dd>{commune.hasVenues ? `${commune.directVenues.length} bể trực tiếp` : '3 bể lân cận'}</dd></div>
-              <div><dt>Diện tích</dt><dd>{commune.areaKm2 ? `${commune.areaKm2} km²` : 'Đang cập nhật'}</dd></div>
-              <div><dt>Dân số quy chuẩn</dt><dd>{commune.population ? `${commune.population.toLocaleString('vi-VN')} người` : 'Đang cập nhật'}</dd></div>
+              <div><dt>Cơ sở tập luyện</dt><dd>{commune.hasVenues ? `${commune.directVenues.length} bể trực tiếp` : 'Bể bơi đạt chuẩn lân cận'}</dd></div>
+              <div><dt>Hình thức học</dt><dd>Kèm riêng 1-1 / Lớp kèm nhóm</dd></div>
+              <div><dt>Thời lượng</dt><dd>10 - 12 buổi (Cam kết chuẩn)</dd></div>
+              <div><dt>Đối tượng nhận học</dt><dd>Trẻ em từ 4 tuổi & Người lớn</dd></div>
             </dl>
-            <p>Swim For Life cung cấp thông tin trung thực, khách quan và không thu phí môi giới từ người học.</p>
+            <p>Swim For Life cung cấp thông tin trung thực, khách quan và hỗ trợ học viên chọn lớp kèm riêng phù hợp và an toàn.</p>
           </aside>
         </div>
       </header>
 
       <nav class="area-jump" aria-label="Mục lục trang">
         <div class="container">
-          <a href="#dia-gioi">Địa giới sáp nhập</a>
           <a href="#dia-diem">Địa điểm dạy bơi</a>
           <a href="#kieu-boi">Kiểu bơi</a>
           <a href="#cach-chon">Cách chọn lớp</a>
+          <a href="#khu-vuc">Khu vực phục vụ</a>
           <a href="#cau-hoi">Câu hỏi thường gặp</a>
         </div>
       </nav>
-
-      <section class="area-section" id="dia-gioi" aria-labelledby="admin-title">
-        <div class="container">
-          <div class="area-section__heading">
-            <span>Thông tin hành chính 2026</span>
-            <h2 id="admin-title">Địa giới hành chính & khu vực dạy bơi tại {commune.fullName}</h2>
-            <p>Dữ liệu đối chiếu chuẩn xác giữa tên xã/phường mới và các đơn vị hành chính cũ trước khi sáp nhập để phục vụ tìm kiếm lớp dạy bơi và học bơi.</p>
-          </div>
-          <div class="area-admin-card">
-            <dl class="area-admin-stats">
-              <div><dt>Tỉnh/Thành phố</dt><dd>{commune.parentName}</dd></div>
-              <div><dt>Loại hình đơn vị</dt><dd>{commune.type === 'phường' ? 'Phường đô thị' : (commune.type === 'xã' ? 'Xã nông thôn' : 'Đặc khu')}</dd></div>
-              <div><dt>Trung tâm hành chính</dt><dd>{commune.administrativeCenter || commune.name}</dd></div>
-              <div><dt>Tọa độ WGS84</dt><dd>{commune.latitude && commune.longitude ? `${commune.latitude.toFixed(4)}°B, ${commune.longitude.toFixed(4)}°Đ` : 'Đang cập nhật'}</dd></div>
-            </dl>
-            <div class="area-admin-history">
-              <h3>Các xã/phường cũ sáp nhập vào {commune.fullName}</h3>
-              <p>Nếu bạn đang tìm kiếm lớp học bơi hoặc giáo viên dạy bơi theo địa chỉ cũ, danh sách dưới đây là các đơn vị hành chính đã được hợp nhất thành {commune.fullName}:</p>
-              <div class="area-prev-tags">
-                {(commune.previous || []).map((prev) => (
-                  <span class="area-prev-tag">{prev}</span>
-                ))}
-              </div>
-              <p style="margin-top: 1rem; font-size: 0.86rem; color: var(--ink-600);">
-                Dù bạn sinh sống tại bất kỳ khu vực cũ nào kể trên, các cơ sở bơi lội và lớp học bơi được tổng hợp dưới đây đều nằm trong bán kính di chuyển thuận tiện hàng ngày.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
         <div class="container">
@@ -471,8 +442,11 @@ if (isCommune) {
             <span class="area-eyebrow">Kiểm tra trước khi đăng ký</span>
             <h2 id="choice-title">Bốn điều cần hỏi khi chọn lớp dạy bơi tại {commune.fullName}</h2>
             <p class="area-choice__local"><strong>Lưu ý khi học bơi tại {commune.fullName}:</strong> Ưu tiên lựa chọn các trung tâm dạy bơi có cam kết an toàn, giáo viên có chứng chỉ sư phạm, hồ bơi xử lý nước sạch và minh bạch học phí trọn gói trước khi bắt đầu.</p>
-            <div class="area-nearby" aria-label="Đơn vị hành chính cũ">
-              {(commune.previous || []).map((place) => <span>{place}</span>)}
+            <div class="area-nearby" aria-label="Tiêu chí chất lượng">
+              <span>Bể bơi sạch sẽ</span>
+              <span>Giáo viên kèm riêng</span>
+              <span>Cam kết biết bơi</span>
+              <span>Thời gian linh hoạt</span>
             </div>
           </div>
           <ol>
@@ -484,7 +458,46 @@ if (isCommune) {
         </div>
       </section>
 
-      <section class="area-section area-section--soft" id="cau-hoi" aria-labelledby="faq-title">
+      <section class="area-section area-section--soft" id="khu-vuc" aria-labelledby="scope-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Phạm vi phục vụ tại địa phương</span>
+            <h2 id="scope-title">Khu vực tiếp nhận học viên dạy bơi tại {commune.fullName}</h2>
+            <p>Swim For Life và đội ngũ huấn luyện viên hỗ trợ hướng dẫn bơi lội, đưa đón hoặc sắp xếp lịch học thuận tiện nhất cho cư dân trên toàn địa bàn {commune.fullName} và các khu vực lân cận.</p>
+          </div>
+          <div class="area-scope-card">
+            <div class="area-scope-content">
+              <h3>Địa bàn tiếp nhận học viên theo các đơn vị sáp nhập</h3>
+              <p>Nhằm tạo điều kiện thuận tiện nhất cho học viên tìm kiếm lớp học theo tên địa chỉ quen thuộc trước đây, đội ngũ giáo viên tiếp nhận dạy bơi cho cư dân sinh sống tại toàn bộ các khu vực:</p>
+              <div class="area-prev-tags">
+                {(commune.previous || []).map((prev) => (
+                  <span class="area-prev-tag">📍 Khu vực {prev}</span>
+                ))}
+                <span class="area-prev-tag">🏊 Toàn bộ địa bàn {commune.fullName}</span>
+              </div>
+              <p class="area-scope-note">
+                Dù bạn cư trú tại bất kỳ phường, xã hay tổ dân phố cũ nào thuộc diện sáp nhập, đội ngũ huấn luyện viên đều có giáo trình kèm riêng phù hợp với từng độ tuổi và thể lực, cam kết biết bơi vững vàng.
+              </p>
+            </div>
+            <div class="area-scope-features">
+              <div class="area-scope-feature">
+                <strong>📍 Phủ sóng toàn khu vực</strong>
+                <p>Hỗ trợ học viên đăng ký tập luyện tại các bể bơi gần nhà nhất trong khu vực {commune.fullName}, tiết kiệm tối đa thời gian di chuyển.</p>
+              </div>
+              <div class="area-scope-feature">
+                <strong>⏱️ Lịch học linh hoạt</strong>
+                <p>Học viên chủ động sắp xếp thời gian biểu phù hợp với công việc và lịch học văn hóa từ 6h00 đến 21h00 hàng ngày.</p>
+              </div>
+              <div class="area-scope-feature">
+                <strong>🏊 Chọn bể bơi tối ưu</strong>
+                <p>Tư vấn chọn bể bốn mùa nước ấm, có mái che hoặc bể ngoài trời sạch sẽ đạt tiêu chuẩn an toàn bơi lội.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section" id="cau-hoi" aria-labelledby="faq-title">
         <div class="container area-faq">
           <div class="area-section__heading">
             <span>Giải đáp theo khu vực</span>
