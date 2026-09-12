@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import { publishedLocationAreas } from '../../data/locationAreas.js';
 import { getAllCommunePages, getCommunesForLocation } from '../../data/communePages.js';
+import { getCommuneSeoMeta } from '../../utils/geoCommunes.js';
 import { locations } from '../../data/locations.js';
 import '../../styles/location-area.css';
 
@@ -76,79 +77,16 @@ let instructors = [];
 let faqs = [];
 let relatedItems = [];
 let schema = {};
+let communeSeo = null;
 
 if (isCommune) {
   canonicalUrl = `https://dayboi.vip/${commune.parentSlug}/${commune.slug}/`;
   const locMeta = locations.find((l) => l.slug === commune.parentSlug);
   pageImage = locMeta?.image || '/images/hero-swimming.webp';
 
-  // Optimized Title: Combines "Học Bơi, Dạy Bơi" + Commune Name + City/Province (45-60 chars strict)
-  const city = commune.parentSlug === 'hoc-boi-tphcm' ? 'TP.HCM' : (commune.parentName || 'Hà Nội');
-  let t = `Học Bơi, Dạy Bơi Tại ${commune.fullName}, ${city}: Lớp Kèm Riêng`;
-  if (t.length > 60) {
-    t = `Học Bơi, Dạy Bơi Tại ${commune.fullName}, ${city}: Lớp Kèm`;
-  }
-  if (t.length > 60) {
-    t = `Học Bơi, Dạy Bơi ${commune.fullName}, ${city}: Lớp Kèm`;
-  }
-  if (t.length > 60) {
-    t = `Học Bơi, Dạy Bơi Tại ${commune.name}, ${city}: Lớp Kèm Riêng`;
-  }
-  if (t.length > 60) {
-    t = `Học Bơi, Dạy Bơi Tại ${commune.name}, ${city}: Lớp Kèm`;
-  }
-  if (t.length > 60) {
-    t = `Học Bơi, Dạy Bơi ${commune.name}, ${city}: Lớp Kèm`;
-  }
-  if (t.length < 45) {
-    t = `Học Bơi, Dạy Bơi Tại ${commune.fullName}, ${city}: Lớp Kèm Riêng`;
-  }
-  if (t.length < 45) {
-    t = `Học Bơi, Dạy Bơi Tại ${commune.fullName}, ${city}: Lớp Kèm Gần Bạn`;
-  }
-  if (t.length < 45) {
-    t = `Học Bơi, Dạy Bơi Ở ${commune.fullName}, ${city}: Lớp Kèm Riêng Gần Bạn`;
-  }
-  title = t;
-
-  // Optimized Description: Combines target search queries (145-165 chars strict)
-  const prevSummary = (commune.previous || [])
-    .map((p) => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
-    .slice(0, 3)
-    .join(', ');
-  let descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${commune.fullName}${prevSummary ? ` (gồm ${prevSummary})` : ''} ${commune.parentName}.`;
-  let descTail = commune.hasVenues
-    ? ` Danh sách ${commune.directVenues.length} bể bơi, HLV dạy bơi giàu kinh nghiệm, học phí trọn gói rõ ràng.`
-    : ` Tra cứu bể bơi và lớp dạy bơi, gợi ý 3 cơ sở lân cận gần nhất kèm học phí HLV.`;
-  let d = `${descLead}${descTail}`;
-
-  if (d.length > 165) {
-    const shortPrev = (commune.previous || [])
-      .map((p) => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
-      .slice(0, 2)
-      .join(', ');
-    descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${commune.fullName}${shortPrev ? ` (gồm ${shortPrev})` : ''} ${commune.parentName}.`;
-    d = `${descLead}${descTail}`;
-  }
-  if (d.length > 165) {
-    const minPrev = (commune.previous || [])
-      .map((p) => p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim())
-      .slice(0, 1)
-      .join(', ');
-    descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${commune.fullName}${minPrev ? ` (gồm ${minPrev})` : ''} ${commune.parentName}.`;
-    d = `${descLead}${descTail}`;
-  }
-  if (d.length > 165) {
-    descLead = `Khóa học bơi, dạy bơi kèm riêng tại ${commune.fullName}, ${commune.parentName}.`;
-    d = `${descLead}${descTail}`;
-  }
-  if (d.length < 145) {
-    d += ` Cập nhật thông tin mới nhất năm ${currentYear}.`;
-  }
-  if (d.length > 165) {
-    d = d.slice(0, 162).trim() + '...';
-  }
-  description = d;
+  communeSeo = getCommuneSeoMeta(commune, currentYear);
+  title = communeSeo.title;
+  description = communeSeo.description;
 
   venues = commune.hasVenues ? commune.directVenues : commune.nearbyVenues;
   instructors = venues.flatMap((v) => v.instructors || []);
@@ -355,7 +293,7 @@ if (isCommune) {
               <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${commune.parentSlug}/`}>{commune.parentName}</a><span>›</span><strong>{commune.fullName}</strong>
             </nav>
             <span class="area-eyebrow">Khóa học bơi & Dạy bơi cấp xã/phường · Cập nhật {commune.reviewedAt}</span>
-            <h1>Học bơi & dạy bơi tại <span>{commune.fullName}, {commune.parentName}</span>: địa điểm và lớp học phù hợp</h1>
+            <h1>{communeSeo ? communeSeo.h1Prefix : 'Học bơi & dạy bơi tại'} <span>{commune.fullName}, {commune.parentName}</span>{communeSeo ? communeSeo.h1Suffix : ': địa điểm và lớp học phù hợp'}</h1>
             <p>Tra cứu danh sách hồ bơi, khóa học bơi, trung tâm dạy bơi và giáo viên dạy bơi kèm riêng tại {commune.fullName}, {commune.parentName}. Toàn bộ thông tin được cập nhật chính xác theo quy hoạch địa giới hành chính mới, hỗ trợ tối đa cho học viên tìm kiếm theo cả tên địa chỉ cũ và mới.</p>
             <div class="area-hero__actions">
               <a href="#dia-diem" class="area-button area-button--primary">{commune.hasVenues ? `Xem ${commune.directVenues.length} địa điểm dạy bơi` : 'Xem bể bơi lân cận'}</a>
