@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import { locations } from '../../data/locations.js';
+import { getCommunesForLocation } from '../../data/communePages.js';
 import '../../styles/location-directory.css';
 
 export function getStaticPaths() {
@@ -12,7 +13,9 @@ export function getStaticPaths() {
 }
 
 const { loc, viSlug } = Astro.props;
+const communes = getCommunesForLocation(loc.slug);
 const currentYear = new Date().getFullYear();
+
 const enNames = {
   'Hà Nội': 'Hanoi', 'TP. Hồ Chí Minh': 'Ho Chi Minh City', 'Đà Nẵng': 'Da Nang', 'Hải Phòng': 'Hai Phong',
   'Huế': 'Hue', 'Cần Thơ': 'Can Tho', 'Đồng Nai': 'Dong Nai', 'Quảng Ninh': 'Quang Ninh', 'Bắc Ninh': 'Bac Ninh',
@@ -81,7 +84,12 @@ const directorySchema = {
           <h1>Pools & swimming providers in <span>{enName}</span></h1>
           <p>This page helps individual learners find and directly contact pools, clubs, or instructors with public listings in {enName}. Swim For Life does not take bookings, collect fees, or represent the listed providers.</p>
           <div class="local-directory__hero-actions">
-            <a href="#directory-list">View starter list</a>
+            <a href="#directory-list">View starter list ({poolDirectory.length})</a>
+            {communes?.length > 0 && (
+              <a href="#wards-communes" class="local-directory__hero-btn-communes">
+                Browse {communes.length} Wards & Communes
+              </a>
+            )}
             <a href={mapsSearch(`swimming lessons in ${loc.name}`)} target="_blank" rel="noopener noreferrer">Search the live map</a>
           </div>
         </div>
@@ -91,6 +99,17 @@ const directorySchema = {
         </figure>
       </div>
     </section>
+
+    {communes?.length > 0 && (
+      <nav class="local-directory__quick-jump" aria-label="Directory quick navigation">
+        <div class="container">
+          <a href="#directory-list">🏊 Swimming Pools ({poolDirectory.length})</a>
+          <a href="#wards-communes">📍 Wards & Communes ({communes.length})</a>
+          <a href="#evaluate">✔️ Pre-booking Checklist</a>
+          <a href="/en/courses/1-on-1/">🎓 1-on-1 Lessons</a>
+        </div>
+      </nav>
+    )}
 
     <section class="local-directory__notice">
       <div class="container">
@@ -140,7 +159,76 @@ const directorySchema = {
       </div>
     </section>
 
-    <section class="section" aria-labelledby="check-title">
+    {communes?.length > 0 && (
+      <section class="section local-directory__communes" id="wards-communes" aria-labelledby="communes-title">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__badge">Administrative divisions 2026</span>
+            <h2 class="section__title" id="communes-title">Browse Swimming Locations by Ward & Commune in {enName}</h2>
+            <p class="section__desc">Explore swimming venues and lesson options across all {communes.length} wards and communes in {enName}. Search by new official names or historical districts.</p>
+          </div>
+
+          <div class="local-directory__commune-toolbar">
+            <div class="local-directory__commune-search-box">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                id="communeSearchInput"
+                placeholder={`Search across ${communes.length} wards in ${enName} (e.g., Cau Giay, District 1)...`}
+                aria-label={`Search wards in ${enName}`}
+              />
+              <button type="button" id="communeSearchClear" aria-label="Clear search" style="display: none;">✕</button>
+            </div>
+            <div class="local-directory__commune-filters" id="communeFilters">
+              <button type="button" class="filter-btn is-active" data-filter="all">
+                All ({communes.length})
+              </button>
+              <button type="button" class="filter-btn" data-filter="has-venue">
+                With Pools ({communes.filter(c => c.hasVenues).length})
+              </button>
+              <button type="button" class="filter-btn" data-filter="nearby">
+                Nearby Suggestions ({communes.filter(c => !c.hasVenues).length})
+              </button>
+            </div>
+          </div>
+
+          <div class="local-directory__commune-grid" id="communeGrid">
+            {communes.map((c) => {
+              const prevText = (c.previous || []).join(' ');
+              const searchTokens = `${c.fullName} ${c.name} ${prevText} ${c.administrativeCenter || ''}`.toLowerCase();
+              let enLocation = c.parentSlug.replace('hoc-boi-', 'swimming-lessons-');
+              if (c.parentSlug === 'hoc-boi-tphcm') enLocation = 'swimming-lessons-ho-chi-minh';
+              return (
+                <a
+                  href={`/en/${enLocation}/${c.slug}/`}
+                  class="local-directory__commune-card"
+                  data-has-venue={c.hasVenues ? 'true' : 'false'}
+                  data-search={searchTokens}
+                >
+                  <div class="commune-card__header">
+                    <strong>{c.fullName}</strong>
+                    <span class={`commune-card__badge ${c.hasVenues ? 'is-direct' : 'is-nearby'}`}>
+                      {c.hasVenues ? `${c.directVenues.length} pools` : 'Nearby'}
+                    </span>
+                  </div>
+                  {c.previous?.length > 0 && (
+                    <small class="commune-card__prev">
+                      Merged: {c.previous.slice(0, 3).map(p => p.replace(/^(phường|xã|thị trấn)\s+/i, '')).join(', ')}
+                    </small>
+                  )}
+                  <span class="commune-card__link">View swimming info →</span>
+                </a>
+              );
+            })}
+          </div>
+          <p id="communeEmptyMessage" class="local-directory__commune-empty" style="display: none;">
+            No wards or communes found matching your search. Try another keyword or browse the full list.
+          </p>
+        </div>
+      </section>
+    )}
+
+    <section class="section" id="evaluate" aria-labelledby="check-title">
       <div class="container local-directory__check-grid">
         <div><span class="section__badge">Evaluate before booking</span><h2 class="section__title" id="check-title">Five details to confirm</h2><p class="section__desc">Do not prepay for a long package until you have verified the provider and instructor.</p></div>
         <ol>
@@ -161,3 +249,64 @@ const directorySchema = {
     </section>
   </div>
 </PageLayout>
+
+<script>
+  const searchInput = document.getElementById('communeSearchInput') as HTMLInputElement;
+  const clearBtn = document.getElementById('communeSearchClear') as HTMLButtonElement;
+  const filterBtns = document.querySelectorAll('#communeFilters .filter-btn');
+  const cards = document.querySelectorAll('#communeGrid .local-directory__commune-card');
+  const emptyMsg = document.getElementById('communeEmptyMessage');
+
+  let currentFilter = 'all';
+  let currentQuery = '';
+
+  const updateDisplay = () => {
+    let visibleCount = 0;
+    cards.forEach((cardEl) => {
+      const card = cardEl as HTMLElement;
+      const searchData = card.dataset.search || '';
+      const hasVenue = card.dataset.hasVenue === 'true';
+
+      const matchesQuery = !currentQuery || searchData.includes(currentQuery);
+      let matchesFilter = true;
+      if (currentFilter === 'has-venue') matchesFilter = hasVenue;
+      if (currentFilter === 'nearby') matchesFilter = !hasVenue;
+
+      if (matchesQuery && matchesFilter) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (emptyMsg) {
+      emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+    if (clearBtn) {
+      clearBtn.style.display = currentQuery ? 'block' : 'none';
+    }
+  };
+
+  searchInput?.addEventListener('input', (e) => {
+    currentQuery = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    updateDisplay();
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    currentQuery = '';
+    updateDisplay();
+    searchInput?.focus();
+  });
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      currentFilter = (btn as HTMLElement).dataset.filter || 'all';
+      updateDisplay();
+    });
+  });
+</script>
+

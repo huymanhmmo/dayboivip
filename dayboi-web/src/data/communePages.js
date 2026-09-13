@@ -1,10 +1,10 @@
-﻿import { getProvinces, getCommunesByProvinceId, getNearbyVenues, PROVINCE_ID_TO_SLUG, SLUG_TO_PROVINCE_ID } from '../utils/geoCommunes.js';
+import { getProvinces, getCommunesByProvinceId, getNearbyVenues, PROVINCE_ID_TO_SLUG, SLUG_TO_PROVINCE_ID } from '../utils/geoCommunes.js';
 import { getLocationResearch } from './locationResearch.js';
 import { locations } from './locations.js';
 
 // Phase 1 active locations (Pilot: Hanoi 126 wards + HCM 168 wards = 294 wards)
 // Set to null or [] to enable all 34 provinces
-export const ACTIVE_LOCATIONS = ['hoc-boi-ha-noi', 'hoc-boi-tphcm'];
+export const ACTIVE_LOCATIONS = null;
 
 let cachedCommunePages = null;
 

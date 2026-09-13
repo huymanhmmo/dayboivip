@@ -43,7 +43,24 @@ const poolDirectory = categories.flatMap((category) => category.venues.map((venu
   mapsUrl: mapsSearch(`${venue.name}, ${venue.address || loc.name}`),
 })));
 const communes = getCommunesForLocation(loc.slug);
+
+function getCommunesForCategory(category, allCommunes) {
+  if (!category || !allCommunes || allCommunes.length === 0) return [];
+  const cleanId = category.id.toLowerCase();
+  const cleanLabel = category.label.replace(/^Khu\s+vực\s+/i, '').toLowerCase();
+
+  return allCommunes.filter((c) => {
+    if (c.slug === cleanId || c.name.toLowerCase() === cleanLabel) return true;
+    const combinedText = `${c.name} ${(c.previous || []).join(' ')} ${c.administrativeCenter || ''}`.toLowerCase();
+    if (combinedText.includes(cleanLabel) || combinedText.includes(cleanId.replace(/-/g, ' '))) return true;
+    const catVenueNames = new Set(category.venues.map((v) => v.name.toLowerCase()));
+    if (c.directVenues?.some((v) => catVenueNames.has(v.name.toLowerCase()))) return true;
+    return false;
+  });
+}
+
 const pageTitle = research?.providers
+
   ? `Học Bơi ${loc.name}: Bể Bơi & Lớp Học Theo Khu Vực`
   : `Học Bơi ${loc.name}: Danh Bạ Bể Bơi & Giáo Viên`;
 const pageDescription = research?.providers
@@ -145,8 +162,13 @@ const directorySchema = {
             <span>{research ? `${poolDirectory.length} địa điểm · cập nhật ${research.reviewedAt}` : 'Hãy xác minh lịch và giá trực tiếp với đơn vị'}</span>
           </div>
           <div class="local-directory__hero-actions">
-            <a href="#danh-sach">Xem bể bơi và lớp học</a>
-            <a href={mapsSearch(`học bơi tại ${loc.name}`)} target="_blank" rel="noopener noreferrer">Tìm toàn bộ trên bản đồ</a>
+            <a href="#danh-sach">Xem {poolDirectory.length} bể bơi & lớp học</a>
+            {communes?.length > 0 && (
+              <a href="#xa-phuong" class="local-directory__hero-btn-communes">
+                Tra cứu {communes.length} xã, phường
+              </a>
+            )}
+            <a href={mapsSearch(`học bơi tại ${loc.name}`)} target="_blank" rel="noopener noreferrer">Bản đồ toàn tỉnh ↗</a>
           </div>
         </div>
         <figure>
@@ -155,6 +177,21 @@ const directorySchema = {
         </figure>
       </div>
     </section>
+
+    {communes?.length > 0 && (
+      <nav class="local-directory__quick-jump" aria-label="Mục lục trang danh bạ">
+        <div class="container">
+          <a href="#danh-sach">🏊 Bể bơi theo khu vực ({poolDirectory.length})</a>
+          <a href="#xa-phuong">📍 Danh bạ {communes.length} xã/phường</a>
+          {research?.providers?.length > 0 && (
+            <a href="#provider-title">🏛️ Trung tâm dạy bơi</a>
+          )}
+          <a href="#faqs">❓ Câu hỏi thường gặp</a>
+          <a href="/khoa-hoc-boi/1-kem-1/">🎓 Khóa học bơi 1 kèm 1</a>
+        </div>
+      </nav>
+    )}
+
 
     <section class="local-directory__notice">
       <div class="container">
@@ -197,6 +234,12 @@ const directorySchema = {
           <p class="section__desc">{customerCopy(research?.summary || 'Danh sách giúp bạn tham khảo địa điểm bơi lội tại địa phương.')} Danh sách không phải bảng xếp hạng hoặc chứng nhận chất lượng.</p>
         </div>
         <nav class="local-directory__category-nav" aria-label="Các khu vực và loại địa điểm">
+          {communes?.length > 0 && (
+            <a href="#xa-phuong" class="has-communes-tab">
+              📍 Danh bạ {communes.length} xã/phường
+              <span>Mới 2026</span>
+            </a>
+          )}
           {categories.map((category) => {
             const areaUrl = getPublishedAreaUrl(loc.slug, category.id);
             return <a href={areaUrl || `#${category.id}`} class:list={{ 'has-area-page': areaUrl }}>
@@ -220,8 +263,31 @@ const directorySchema = {
                       Xem thông tin học bơi {category.label.replace('Khu vực ', '')} →
                     </a>
                   )}
+                  {(() => {
+                    const catCommunes = getCommunesForCategory(category, communes);
+                    if (catCommunes.length === 0) return null;
+                    return (
+                      <div class="local-directory__category-communes">
+                        <span class="local-directory__category-communes-label">Các xã/phường trong khu vực:</span>
+                        <div class="local-directory__category-communes-chips">
+                          {catCommunes.slice(0, 8).map((c) => (
+                            <a href={`/${c.parentSlug}/${c.slug}/`} class="local-directory__commune-chip">
+                              {c.fullName}
+                              {c.hasVenues && <small>{c.directVenues.length} bể</small>}
+                            </a>
+                          ))}
+                          {catCommunes.length > 8 && (
+                            <a href="#xa-phuong" class="local-directory__commune-chip-more">
+                              +{catCommunes.length - 8} xã/phường khác →
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })()}
                 </div>
               </header>
+
               <div class="local-directory__pool-grid">
                 {category.venues.map((pool, index) => (
                   <article class="local-directory__pool-card">
@@ -324,6 +390,73 @@ const directorySchema = {
       </section>
     )}
 
+    {communes?.length > 0 && (
+      <section class="section local-directory__communes" id="xa-phuong" aria-labelledby="communes-title">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__badge">Đơn vị hành chính mới 2026</span>
+            <h2 class="section__title" id="communes-title">Tra cứu học bơi theo xã, phường tại {loc.name}</h2>
+            <p class="section__desc">Hệ thống tổng hợp đầy đủ {communes.length} xã và phường trên toàn {loc.name}. Bạn có thể tìm kiếm theo cả tên mới sau sáp nhập hoặc tên xã/phường/quận cũ.</p>
+          </div>
+
+          <div class="local-directory__commune-toolbar">
+            <div class="local-directory__commune-search-box">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                id="communeSearchInput"
+                placeholder={`Tìm nhanh trong ${communes.length} xã/phường tại ${loc.name} (gõ tên mới hoặc cũ)...`}
+                aria-label={`Tìm xã phường tại ${loc.name}`}
+              />
+              <button type="button" id="communeSearchClear" aria-label="Xóa tìm kiếm" style="display: none;">✕</button>
+            </div>
+            <div class="local-directory__commune-filters" id="communeFilters">
+              <button type="button" class="filter-btn is-active" data-filter="all">
+                Tất cả ({communes.length})
+              </button>
+              <button type="button" class="filter-btn" data-filter="has-venue">
+                Có bể bơi ({communes.filter(c => c.hasVenues).length})
+              </button>
+              <button type="button" class="filter-btn" data-filter="nearby">
+                Gợi ý bể lân cận ({communes.filter(c => !c.hasVenues).length})
+              </button>
+            </div>
+          </div>
+
+          <div class="local-directory__commune-grid" id="communeGrid">
+            {communes.map((c) => {
+              const prevText = (c.previous || []).join(' ');
+              const searchTokens = `${c.fullName} ${c.name} ${prevText} ${c.administrativeCenter || ''}`.toLowerCase();
+              return (
+                <a
+                  href={`/${c.parentSlug}/${c.slug}/`}
+                  class="local-directory__commune-card"
+                  data-has-venue={c.hasVenues ? 'true' : 'false'}
+                  data-search={searchTokens}
+                >
+                  <div class="commune-card__header">
+                    <strong>{c.fullName}</strong>
+                    <span class={`commune-card__badge ${c.hasVenues ? 'is-direct' : 'is-nearby'}`}>
+                      {c.hasVenues ? `${c.directVenues.length} địa điểm bơi` : 'Gợi ý lân cận'}
+                    </span>
+                  </div>
+                  {c.previous?.length > 0 && (
+                    <small class="commune-card__prev">
+                      Gồm: {c.previous.slice(0, 3).map(p => p.replace(/^(phường|xã|thị trấn)\s+/i, '')).join(', ')}
+                    </small>
+                  )}
+                  <span class="commune-card__link">Xem lớp học bơi →</span>
+                </a>
+              );
+            })}
+          </div>
+          <p id="communeEmptyMessage" class="local-directory__commune-empty" style="display: none;">
+            Không tìm thấy xã hoặc phường phù hợp với từ khóa. Vui lòng thử lại với tên khác hoặc xem toàn bộ danh sách.
+          </p>
+        </div>
+      </section>
+    )}
+
     <section class="section local-directory__method" aria-labelledby="method-title">
       <div class="container local-directory__method-grid">
         <div>
@@ -337,27 +470,6 @@ const directorySchema = {
         </div>
       </div>
     </section>
-
-    {communes?.length > 0 && (
-      <section class="section local-directory__communes" id="xa-phuong" aria-labelledby="communes-title">
-        <div class="container">
-          <div class="section__header">
-            <span class="section__badge">Đơn vị hành chính mới 2026</span>
-            <h2 class="section__title" id="communes-title">Tra cứu học bơi theo xã, phường tại {loc.name}</h2>
-            <p class="section__desc">Chọn xã hoặc phường nơi bạn sinh sống để xem danh sách bể bơi trực tiếp hoặc địa điểm lân cận gần nhất kèm thông tin sáp nhập địa giới cũ.</p>
-          </div>
-          <div class="local-directory__commune-grid">
-            {communes.map((c) => (
-              <a href={`/${c.parentSlug}/${c.slug}/`} class="local-directory__commune-card">
-                <strong>{c.fullName}</strong>
-                <span>{c.hasVenues ? `${c.directVenues.length} địa điểm bơi` : 'Gợi ý bể gần nhất'}</span>
-                {c.previous?.length > 0 && <small>Gồm: {c.previous.slice(0, 2).join(', ')}</small>}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
 
     {research?.relatedPages?.length > 0 && (
       <section class="section local-directory__related" aria-labelledby="related-title">
@@ -376,7 +488,28 @@ const directorySchema = {
       </section>
     )}
 
-    <section class="section" aria-labelledby="check-title">
+    <section class="section" id="faqs" aria-labelledby="faq-title">
+      <div class="container local-directory__check-grid">
+        <div>
+          <span class="section__badge">Giải đáp thắc mắc</span>
+          <h2 class="section__title" id="faq-title">Câu hỏi thường gặp khi học bơi tại {loc.name}</h2>
+          <p class="section__desc">Những thắc mắc phổ biến nhất về học phí, độ tuổi nhận học và cơ sở vật chất bể bơi tại {loc.name}.</p>
+        </div>
+        <ol>
+          {locationFaqs.map((faq, index) => (
+            <li>
+              <span>0{index + 1}</span>
+              <div>
+                <strong>{faq.question}</strong>
+                <p>{faq.answer}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="check-title">
       <div class="container local-directory__check-grid">
         <div>
           <span class="section__badge">Tự đánh giá trước khi học</span>
@@ -405,3 +538,64 @@ const directorySchema = {
     </section>
   </div>
 </PageLayout>
+
+<script>
+  const searchInput = document.getElementById('communeSearchInput') as HTMLInputElement;
+  const clearBtn = document.getElementById('communeSearchClear') as HTMLButtonElement;
+  const filterBtns = document.querySelectorAll('#communeFilters .filter-btn');
+  const cards = document.querySelectorAll('#communeGrid .local-directory__commune-card');
+  const emptyMsg = document.getElementById('communeEmptyMessage');
+
+  let currentFilter = 'all';
+  let currentQuery = '';
+
+  const updateDisplay = () => {
+    let visibleCount = 0;
+    cards.forEach((cardEl) => {
+      const card = cardEl as HTMLElement;
+      const searchData = card.dataset.search || '';
+      const hasVenue = card.dataset.hasVenue === 'true';
+
+      const matchesQuery = !currentQuery || searchData.includes(currentQuery);
+      let matchesFilter = true;
+      if (currentFilter === 'has-venue') matchesFilter = hasVenue;
+      if (currentFilter === 'nearby') matchesFilter = !hasVenue;
+
+      if (matchesQuery && matchesFilter) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (emptyMsg) {
+      emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+    if (clearBtn) {
+      clearBtn.style.display = currentQuery ? 'block' : 'none';
+    }
+  };
+
+  searchInput?.addEventListener('input', (e) => {
+    currentQuery = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    updateDisplay();
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    currentQuery = '';
+    updateDisplay();
+    searchInput?.focus();
+  });
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      currentFilter = (btn as HTMLElement).dataset.filter || 'all';
+      updateDisplay();
+    });
+  });
+</script>
+

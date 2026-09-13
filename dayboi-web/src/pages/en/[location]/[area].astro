@@ -273,11 +273,16 @@ if (isCommune) {
             <nav class="area-tree-path" aria-label="Breadcrumb navigation">
               <a href="/en/swimming-locations/">Vietnam Directory</a><span>›</span><a href={`/en/${enLocationSlug}/`}>{parentNameEn}</a><span>›</span><strong>{commune.fullName}</strong>
             </nav>
+            <a href={`/en/${enLocationSlug}/`} class="area-hero__parent-badge">
+              <span class="parent-icon" aria-hidden="true">🏛️</span>
+              <span>Part of directory: <strong>Swimming in {parentNameEn}</strong> →</span>
+            </a>
             <span class="area-eyebrow">Local Swimming Lessons · Updated {commune.reviewedAt}</span>
             <h1>Swimming Lessons in <span>{commune.name}, {parentNameEn}</span>: Verified Pools & Classes</h1>
             <p>Explore public swimming pools, sports centers, private 1-on-1 swim coaches, and small group classes in {commune.name}, {parentNameEn}. Verified local directory with direct contact channels, facilities, and location maps.</p>
             <div class="area-hero__actions">
               <a href="#dia-diem" class="area-button area-button--primary">{commune.hasVenues ? `View ${commune.directVenues.length} swimming venues` : 'View nearby pools'}</a>
+              <a href={`/en/${enLocationSlug}/`} class="area-button area-button--parent">All {parentNameEn} Pools →</a>
               <a href="#kieu-boi" class="area-button area-button--secondary">Choose stroke</a>
             </div>
           </div>
@@ -296,6 +301,7 @@ if (isCommune) {
 
       <nav class="area-jump" aria-label="Page navigation">
         <div class="container">
+          <a href={`/en/${enLocationSlug}/`} class="area-jump__parent">← {parentNameEn} Directory</a>
           <a href="#dia-diem">Venues & Pools</a>
           <a href="#kieu-boi">Stroke Options</a>
           <a href="#cach-chon">How to Choose</a>
@@ -349,6 +355,12 @@ if (isCommune) {
                   </article>
                 ))}
               </div>
+              <div class="area-venues-more-banner">
+                <span>Looking for more swimming pools and facilities across {parentNameEn}?</span>
+                <a href={`/en/${enLocationSlug}/#directory-list`}>
+                  Explore all swimming pools in {parentNameEn} →
+                </a>
+              </div>
             </div>
           ) : (
             <div>
@@ -360,6 +372,12 @@ if (isCommune) {
               <div class="area-notice-banner">
                 <h3>⚠️ No direct public pool currently registered in {commune.name}</h3>
                 <p>Based on our latest survey in {currentYear}, there is no public commercial pool operating directly within {commune.name}. To ensure clean water treatment and certified lifeguards, we recommend checking the 3 nearest facilities below.</p>
+                <div class="area-notice-parent-cta">
+                  <p>Need more swimming options and coaching centers in neighboring areas?</p>
+                  <a href={`/en/${enLocationSlug}/#directory-list`} class="btn-parent-venues">
+                    Browse all pools in {parentNameEn} →
+                  </a>
+                </div>
               </div>
               <div class="area-nearby-grid">
                 {commune.nearbyVenues.map((venue, index) => (
@@ -485,6 +503,29 @@ if (isCommune) {
         </div>
       </section>
 
+      <section class="area-section area-parent-hub" aria-labelledby="parent-hub-title">
+        <div class="container">
+          <div class="area-parent-hub-card">
+            <div class="area-parent-hub-card__content">
+              <span class="area-parent-hub-card__badge">Provincial Directory Hub</span>
+              <h2 id="parent-hub-title">Swimming Facilities & Lessons Across {parentNameEn}</h2>
+              <p>
+                The {commune.name} directory is part of the comprehensive swimming information network for {parentNameEn}.
+                If you wish to broaden your training scope or find year-round heated pools near your workplace or school, explore our full provincial venue listings and private instructor network.
+              </p>
+            </div>
+            <div class="area-parent-hub-card__actions">
+              <a href={`/en/${enLocationSlug}/`} class="btn-parent-main">
+                Open Full {parentNameEn} Directory →
+              </a>
+              <a href={`/en/${enLocationSlug}/#wards-communes`} class="btn-parent-communes">
+                Browse all wards and communes in {parentNameEn}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="area-section area-related" aria-labelledby="related-title">
         <div class="container">
           <div class="area-section__heading">
@@ -501,6 +542,9 @@ if (isCommune) {
               <b>Open Directory →</b>
             </a>
           </div>
+          <a href={`/en/${enLocationSlug}/#wards-communes`} class="area-related-all-link">
+            Browse all wards and communes in {parentNameEn} →
+          </a>
 
           <div class="area-cross-silo">
             <a href="/en/courses/1-on-1/" class="area-cross-card">
@@ -536,11 +580,16 @@ if (isCommune) {
             <nav class="area-tree-path" aria-label="Breadcrumb navigation">
               <a href="/en/swimming-locations/">Vietnam Directory</a><span>›</span><a href={`/en/${enLocationSlug}/`}>{parentNameEn}</a><span>›</span><strong>{area.name}</strong>
             </nav>
+            <a href={`/en/${enLocationSlug}/`} class="area-hero__parent-badge">
+              <span class="parent-icon" aria-hidden="true">🏛️</span>
+              <span>Part of directory: <strong>Swimming in {parentNameEn}</strong> →</span>
+            </a>
             <span class="area-eyebrow">Local Swimming Lessons · Updated {area.reviewedAt}</span>
             <h1>Swimming Lessons in <span>{area.name}</span>: Local Pools & Classes</h1>
             <p>Find swimming pools, clubs, and lesson providers in {area.name}, {parentNameEn}. Compare venues, contacts, and key considerations before booking a lesson.</p>
             <div class="area-hero__actions">
               <a href="#dia-diem" class="area-button area-button--primary">Compare {venues.length} venues</a>
+              <a href={`/en/${enLocationSlug}/`} class="area-button area-button--parent">All {parentNameEn} Pools →</a>
               <a href="#kieu-boi" class="area-button area-button--secondary">Choose stroke</a>
             </div>
           </div>
@@ -557,6 +606,7 @@ if (isCommune) {
 
       <nav class="area-jump" aria-label="Page navigation">
         <div class="container">
+          <a href={`/en/${enLocationSlug}/`} class="area-jump__parent">← {parentNameEn} Directory</a>
           <a href="#dia-diem">Venues</a>
           <a href="#kieu-boi">Strokes</a>
           <a href="#cach-chon">How to Choose</a>
@@ -589,6 +639,29 @@ if (isCommune) {
         </div>
       </section>
 
+      <section class="area-section area-parent-hub" aria-labelledby="district-parent-hub-title">
+        <div class="container">
+          <div class="area-parent-hub-card">
+            <div class="area-parent-hub-card__content">
+              <span class="area-parent-hub-card__badge">Provincial Directory Hub</span>
+              <h2 id="district-parent-hub-title">Swimming Facilities & Lessons Across {parentNameEn}</h2>
+              <p>
+                The {area.name} directory is part of the comprehensive swimming network in {parentNameEn}.
+                If you wish to discover heated four-season pools, swimming clubs, or private coaches in other districts, explore the complete provincial hub.
+              </p>
+            </div>
+            <div class="area-parent-hub-card__actions">
+              <a href={`/en/${enLocationSlug}/`} class="btn-parent-main">
+                Open Full {parentNameEn} Directory →
+              </a>
+              <a href={`/en/${enLocationSlug}/#wards-communes`} class="btn-parent-communes">
+                Browse all wards and communes in {parentNameEn}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="area-section area-related" aria-labelledby="related-title">
         <div class="container">
           <div class="area-section__heading">
@@ -605,6 +678,9 @@ if (isCommune) {
               <b>Open Directory →</b>
             </a>
           </div>
+          <a href={`/en/${enLocationSlug}/#wards-communes`} class="area-related-all-link">
+            Browse all wards and communes in {parentNameEn} →
+          </a>
 
           <div class="area-cross-silo">
             <a href="/en/courses/1-on-1/" class="area-cross-card">

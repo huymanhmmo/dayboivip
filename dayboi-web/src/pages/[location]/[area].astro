@@ -292,11 +292,16 @@ if (isCommune) {
             <nav class="area-tree-path" aria-label="Vị trí trong danh bạ">
               <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${commune.parentSlug}/`}>{commune.parentName}</a><span>›</span><strong>{commune.fullName}</strong>
             </nav>
+            <a href={`/${commune.parentSlug}/`} class="area-hero__parent-badge">
+              <span class="parent-icon" aria-hidden="true">🏛️</span>
+              <span>Trực thuộc: <strong>Danh bạ học bơi tại {commune.parentName}</strong> →</span>
+            </a>
             <span class="area-eyebrow">Khóa học bơi & Dạy bơi cấp xã/phường · Cập nhật {commune.reviewedAt}</span>
             <h1>{communeSeo ? communeSeo.h1Prefix : 'Học bơi & dạy bơi tại'} <span>{commune.fullName}, {commune.parentName}</span>{communeSeo ? communeSeo.h1Suffix : ': địa điểm và lớp học phù hợp'}</h1>
             <p>Tra cứu danh sách hồ bơi, khóa học bơi, trung tâm dạy bơi và giáo viên dạy bơi kèm riêng tại {commune.fullName}, {commune.parentName}. Toàn bộ thông tin được cập nhật chính xác theo quy hoạch địa giới hành chính mới, hỗ trợ tối đa cho học viên tìm kiếm theo cả tên địa chỉ cũ và mới.</p>
             <div class="area-hero__actions">
               <a href="#dia-diem" class="area-button area-button--primary">{commune.hasVenues ? `Xem ${commune.directVenues.length} địa điểm dạy bơi` : 'Xem bể bơi lân cận'}</a>
+              <a href={`/${commune.parentSlug}/`} class="area-button area-button--parent">Danh bạ toàn {commune.parentName} →</a>
               <a href="#kieu-boi" class="area-button area-button--secondary">Chọn khóa học bơi</a>
             </div>
           </div>
@@ -315,6 +320,7 @@ if (isCommune) {
 
       <nav class="area-jump" aria-label="Mục lục trang">
         <div class="container">
+          <a href={`/${commune.parentSlug}/`} class="area-jump__parent">← Danh bạ {commune.parentName}</a>
           <a href="#dia-diem">Địa điểm dạy bơi</a>
           <a href="#kieu-boi">Kiểu bơi</a>
           <a href="#cach-chon">Cách chọn lớp</a>
@@ -322,6 +328,7 @@ if (isCommune) {
           <a href="#cau-hoi">Câu hỏi thường gặp</a>
         </div>
       </nav>
+
 
       <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
         <div class="container">
@@ -373,6 +380,12 @@ if (isCommune) {
                   </article>
                 ))}
               </div>
+              <div class="area-venues-more-banner">
+                <span>Bạn muốn tham khảo thêm các bể bơi tại các khu vực khác trên toàn {commune.parentName}?</span>
+                <a href={`/${commune.parentSlug}/#danh-sach`}>
+                  Khám phá toàn bộ bể bơi tại {commune.parentName} →
+                </a>
+              </div>
             </div>
           ) : (
             <div>
@@ -384,8 +397,15 @@ if (isCommune) {
               <div class="area-notice-banner">
                 <h3>⚠️ Chưa ghi nhận bể bơi đạt chuẩn trực tiếp tại {commune.fullName}</h3>
                 <p>Theo khảo sát dữ liệu thực tế năm {currentYear}, trên địa bàn {commune.fullName} hiện chưa có bể bơi thương mại hoặc trường học mở lớp bơi công khai. Để đảm bảo điều kiện xử lý nước đạt chuẩn, có cứu hộ thường trực và cơ sở vật chất an toàn, Swim For Life khuyến nghị bạn tham khảo 3 địa điểm bơi lội lân cận gần nhất dưới đây.</p>
+                <div class="area-notice-parent-cta">
+                  <p>Cần tìm thêm lựa chọn bể bơi và trung tâm dạy bơi tại các khu vực khác?</p>
+                  <a href={`/${commune.parentSlug}/#danh-sach`} class="btn-parent-venues">
+                    Xem tất cả bể bơi tại {commune.parentName} →
+                  </a>
+                </div>
               </div>
               <div class="area-nearby-grid">
+
                 {commune.nearbyVenues.map((venue, index) => (
                   <article class="area-nearby-card" id={`dia-diem-${index + 1}`}>
                     <span class="area-nearby-badge">📍 Cách trung tâm ~{venue.distanceKm} km</span>
@@ -514,6 +534,29 @@ if (isCommune) {
         </div>
       </section>
 
+      <section class="area-section area-parent-hub" aria-labelledby="parent-hub-title">
+        <div class="container">
+          <div class="area-parent-hub-card">
+            <div class="area-parent-hub-card__content">
+              <span class="area-parent-hub-card__badge">Danh bạ trung tâm cấp tỉnh</span>
+              <h2 id="parent-hub-title">Hệ Thống Dạy Bơi & Bể Bơi Trên Toàn Địa Bàn {commune.parentName}</h2>
+              <p>
+                Trang danh bạ {commune.fullName} là một phần trong mạng lưới thông tin bơi lội toàn diện tại {commune.parentName}.
+                Nếu bạn cần mở rộng phạm vi tập luyện hoặc tìm bể bơi bốn mùa nước ấm gần cơ quan, trường học, hãy khám phá toàn bộ danh sách bể bơi và đội ngũ huấn luyện viên kèm riêng trên khắp địa bàn {commune.parentName}.
+              </p>
+            </div>
+            <div class="area-parent-hub-card__actions">
+              <a href={`/${commune.parentSlug}/`} class="btn-parent-main">
+                Mở Danh Bạ Đầy Đủ Tại {commune.parentName} →
+              </a>
+              <a href={`/${commune.parentSlug}/#xa-phuong`} class="btn-parent-communes">
+                Tra cứu tất cả các xã, phường khác tại {commune.parentName}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="area-section area-related" aria-labelledby="related-title">
         <div class="container">
           <div class="area-section__heading">
@@ -530,6 +573,10 @@ if (isCommune) {
               <b>Mở danh bạ cấp tỉnh →</b>
             </a>
           </div>
+          <a href={`/${commune.parentSlug}/#xa-phuong`} class="area-related-all-link">
+            Xem tất cả các xã, phường tại {commune.parentName} →
+          </a>
+
 
           <div class="area-cross-silo">
             <a href="/khoa-hoc-boi/1-kem-1/" class="area-cross-card">
@@ -566,11 +613,16 @@ if (isCommune) {
             <nav class="area-tree-path" aria-label="Vị trí trong danh bạ">
               <a href="/hoc-boi-o-dau/">Toàn quốc</a><span>›</span><a href={`/${area.parentSlug}/`}>{area.parentName}</a><span>›</span><strong>{area.name}</strong>
             </nav>
+            <a href={`/${area.parentSlug}/`} class="area-hero__parent-badge">
+              <span class="parent-icon" aria-hidden="true">🏛️</span>
+              <span>Trực thuộc: <strong>Danh bạ học bơi tại {area.parentName}</strong> →</span>
+            </a>
             <span class="area-eyebrow">Thông tin học bơi tại {area.seoPlace} · cập nhật {area.reviewedAt}</span>
             <h1>Học bơi ở <span>{area.name}</span>: địa điểm và lớp học phù hợp</h1>
             <p>{customerCopy(area.category.description)} {customerCopy(area.audienceFocus)}</p>
             <div class="area-hero__actions">
               <a href="#dia-diem" class="area-button area-button--primary">So sánh {venues.length} địa điểm</a>
+              <a href={`/${area.parentSlug}/`} class="area-button area-button--parent">Danh bạ toàn {area.parentName} →</a>
               <a href="#kieu-boi" class="area-button area-button--secondary">Chọn kiểu bơi muốn học</a>
             </div>
           </div>
@@ -588,12 +640,14 @@ if (isCommune) {
 
       <nav class="area-jump" aria-label="Mục lục trang">
         <div class="container">
+          <a href={`/${area.parentSlug}/`} class="area-jump__parent">← Danh bạ {area.parentName}</a>
           <a href="#dia-diem">Địa điểm</a>
           <a href="#kieu-boi">Kiểu bơi</a>
           <a href="#cach-chon">Cách chọn lớp</a>
           <a href="#cau-hoi">Câu hỏi thường gặp</a>
         </div>
       </nav>
+
 
       <section class="area-section" id="dia-diem" aria-labelledby="venue-title">
         <div class="container">
@@ -702,6 +756,29 @@ if (isCommune) {
         </div>
       </section>
 
+      <section class="area-section area-parent-hub" aria-labelledby="district-parent-hub-title">
+        <div class="container">
+          <div class="area-parent-hub-card">
+            <div class="area-parent-hub-card__content">
+              <span class="area-parent-hub-card__badge">Danh bạ trung tâm cấp tỉnh</span>
+              <h2 id="district-parent-hub-title">Hệ Thống Dạy Bơi & Bể Bơi Trên Toàn Địa Bàn {area.parentName}</h2>
+              <p>
+                Trang danh bạ {area.name} là một phần trong mạng lưới bơi lội chuyên nghiệp tại {area.parentName}.
+                Nếu bạn cần tra cứu thêm các bể bơi bốn mùa nước ấm, câu lạc bộ hoặc giáo viên dạy bơi tại các khu vực khác, hãy khám phá toàn bộ danh bạ cấp tỉnh.
+              </p>
+            </div>
+            <div class="area-parent-hub-card__actions">
+              <a href={`/${area.parentSlug}/`} class="btn-parent-main">
+                Mở Danh Bạ Đầy Đủ Tại {area.parentName} →
+              </a>
+              <a href={`/${area.parentSlug}/#xa-phuong`} class="btn-parent-communes">
+                Tra cứu danh bạ xã, phường tại {area.parentName}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="area-section area-related" aria-labelledby="related-title">
         <div class="container">
           <div class="area-section__heading">
@@ -718,6 +795,10 @@ if (isCommune) {
               <b>Mở danh bạ cấp tỉnh →</b>
             </a>
           </div>
+          <a href={`/${area.parentSlug}/#xa-phuong`} class="area-related-all-link">
+            Xem tất cả các xã, phường tại {area.parentName} →
+          </a>
+
 
           <div class="area-cross-silo">
             <a href="/khoa-hoc-boi/1-kem-1/" class="area-cross-card">
