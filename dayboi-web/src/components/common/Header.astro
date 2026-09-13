@@ -198,18 +198,22 @@ const isActive = (item: any) => currentPath === item.href || item.children?.some
 </header>
 
 <style>
-  .site-header { position: sticky; inset-block-start: 0; z-index: var(--z-sticky); color: var(--color-text); }
-  .header-utility { height: 32px; background: var(--blue-950); color: color-mix(in srgb, var(--white) 76%, transparent); font-size: .72rem; font-weight: 600; letter-spacing: .04em; }
+  .site-header { position: sticky; inset-block-start: 0; z-index: var(--z-sticky); color: var(--color-text); transition: box-shadow 0.25s ease; }
+  .site-header.is-scrolled { box-shadow: 0 4px 20px -2px rgba(5, 44, 62, 0.12); }
+  .header-utility { height: 32px; background: var(--blue-950); color: color-mix(in srgb, var(--white) 76%, transparent); font-size: .72rem; font-weight: 600; letter-spacing: .04em; overflow: hidden; transition: height 0.25s ease, opacity 0.2s ease, transform 0.25s ease; }
+  .site-header.is-scrolled .header-utility { height: 0; opacity: 0; transform: translateY(-100%); pointer-events: none; }
   .header-utility__inner, .header-utility__meta, .header-utility__eyebrow { height: 100%; display: flex; align-items: center; }
   .header-utility__inner { justify-content: space-between; }
   .header-utility__meta, .header-utility__eyebrow { gap: var(--space-3); }
   .header-utility__eyebrow svg { width: 20px; fill: none; stroke: var(--blue-400); stroke-width: 1.7; }
   .header-utility__meta a { padding-inline-start: var(--space-4); border-inline-start: 1px solid color-mix(in srgb, var(--white) 20%, transparent); color: var(--white); }
 
-  .header-main { height: 76px; border-bottom: 1px solid var(--color-border-light); background: color-mix(in srgb, var(--white) 94%, transparent); backdrop-filter: blur(18px) saturate(140%); }
+  .header-main { height: 76px; border-bottom: 1px solid var(--color-border-light); background: color-mix(in srgb, var(--white) 94%, transparent); backdrop-filter: blur(18px) saturate(140%); transition: height 0.25s ease, background-color 0.25s ease; }
+  .site-header.is-scrolled .header-main { height: 60px; background: color-mix(in srgb, var(--white) 98%, transparent); }
   .header-main__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); }
   .header-logo { flex: 0 0 auto; display: flex; align-items: center; }
-  .header-logo img { width: auto; height: 43px; }
+  .header-logo img { width: auto; height: 43px; transition: height 0.25s ease; }
+  .site-header.is-scrolled .header-logo img { height: 36px; }
   .desktop-nav { align-self: stretch; margin-inline-start: auto; }
   .desktop-nav__list { height: 100%; display: flex; align-items: stretch; gap: .1rem; }
   .desktop-nav__item { position: relative; display: flex; align-items: stretch; }
@@ -297,6 +301,21 @@ const isActive = (item: any) => currentPath === item.href || item.children?.some
   });
   menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
   window.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+
+  // Smart Shrink Header on scroll
+  const siteHeader = document.getElementById('site-header');
+  const updateHeaderScroll = () => {
+    if (window.scrollY > 35) {
+      siteHeader?.classList.add('is-scrolled');
+      document.documentElement.style.setProperty('--header-height', '60px');
+    } else {
+      siteHeader?.classList.remove('is-scrolled');
+      document.documentElement.style.setProperty('--header-height', window.innerWidth > 1024 ? '108px' : '68px');
+    }
+  };
+  window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+  window.addEventListener('resize', updateHeaderScroll, { passive: true });
+  updateHeaderScroll();
 </script>
 
 <style is:global>

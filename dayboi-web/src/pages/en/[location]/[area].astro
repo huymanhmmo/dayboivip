@@ -495,7 +495,37 @@ if (isCommune) {
             {relatedItems.map((item) => (
               <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>View Area →</b></a>
             ))}
-            <a href={`/en/${enLocationSlug}/`}><span>Province Hub</span><strong>All Venues in {parentNameEn}</strong><b>Open Directory →</b></a>
+            <a href={`/en/${enLocationSlug}/`} class="area-related-parent">
+              <span>Province Hub</span>
+              <strong>All Venues in {parentNameEn}</strong>
+              <b>Open Directory →</b>
+            </a>
+          </div>
+
+          <div class="area-cross-silo">
+            <a href="/en/courses/1-on-1/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Private Instruction</small>
+                <strong>1-on-1 Private Swimming Lessons</strong>
+                <p>Personalized coaching directly in water at accredited pools across {parentNameEn}. Guaranteed stroke mastery.</p>
+              </div>
+              <span class="area-cross-card__arrow">View course →</span>
+            </a>
+
+            <a href="/en/swimming-techniques/breaststroke/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Fundamental Stroke</small>
+                <strong>Step-by-Step Breaststroke Guide</strong>
+                <p>Scientific breakdown of whip kick, arm recovery, and continuous breathing for beginners.</p>
+              </div>
+              <span class="area-cross-card__arrow">Read guide →</span>
+            </a>
           </div>
         </div>
       </section>
@@ -555,6 +585,51 @@ if (isCommune) {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="area-section area-related" aria-labelledby="related-title">
+        <div class="container">
+          <div class="area-section__heading">
+            <span>Nearby Areas</span>
+            <h2 id="related-title">Swimming in Other Areas of {parentNameEn}</h2>
+          </div>
+          <div class="area-related__grid">
+            {relatedItems.map((item) => (
+              <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>View Area →</b></a>
+            ))}
+            <a href={`/en/${enLocationSlug}/`} class="area-related-parent">
+              <span>Province Hub</span>
+              <strong>All Venues in {parentNameEn}</strong>
+              <b>Open Directory →</b>
+            </a>
+          </div>
+
+          <div class="area-cross-silo">
+            <a href="/en/courses/1-on-1/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Private Instruction</small>
+                <strong>1-on-1 Private Swimming Lessons</strong>
+                <p>Personalized coaching directly in water at accredited pools across {parentNameEn}. Guaranteed stroke mastery.</p>
+              </div>
+              <span class="area-cross-card__arrow">View course →</span>
+            </a>
+
+            <a href="/en/swimming-techniques/breaststroke/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Fundamental Stroke</small>
+                <strong>Step-by-Step Breaststroke Guide</strong>
+                <p>Scientific breakdown of whip kick, arm recovery, and continuous breathing for beginners.</p>
+              </div>
+              <span class="area-cross-card__arrow">Read guide →</span>
+            </a>
           </div>
         </div>
       </section>

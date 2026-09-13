@@ -66,11 +66,26 @@ const metadata = {
   schema: collectionSchema,
 };
 
+const strokeIcons = {
+  ech: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>',
+  sai: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><path d="M6 14l3.5-3.5L14 12l4-4M3 9l3 2 3-1.5M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  ngua: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="2"/><path d="M6 9.5l6 1.5 5-3 4 2M12 11l-3 4-4-1M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  buom: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v4M4 8l5 2 3-1 3 1 5-2M7 16c2.5-2 4-2 5 0 1-2 2.5-2 5 0M2 20c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  dungnuoc: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>'
+};
+
+const anatomyIcons = {
+  head: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M9 13v2a3 3 0 0 0 6 0v-2M12 17v4M8 21h8M17 8c1 0 2 .5 2 1.5s-1 1.5-2 1.5"/></svg>',
+  arms: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v7M10 10.5V6a2 2 0 0 0-4 0v8a6 6 0 0 0 12 0v-3a2 2 0 0 0-4 0"/></svg>',
+  core: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="16" rx="3"/><path d="M10 4v16M14 4v16M6 12h12"/></svg>',
+  legs: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v7l3 5 2 6M17 3v7l-3 5-2 6"/></svg>'
+};
+
 const techniques = [
   {
     slug: 'hoc-boi-ech',
     name: 'Bơi Ếch (Breaststroke)',
-    icon: '🐸',
+    iconSvg: strokeIcons.ech,
     badge: 'Kỹ thuật cơ bản',
     description: 'Kiểu bơi mô phỏng động tác ếch, là bài học vỡ lòng hoàn hảo cho người mới bắt đầu. Tập trung vào sự nhịp nhàng và khả năng sinh tồn tự nhiên.',
     difficulty: 'Cơ bản',
@@ -85,7 +100,7 @@ const techniques = [
   {
     slug: 'hoc-boi-sai',
     name: 'Bơi Sải (Freestyle)',
-    icon: '🏊',
+    iconSvg: strokeIcons.sai,
     badge: 'Phổ biến & Tốc độ',
     description: 'Kiểu bơi nhanh nhất, tối ưu lực cản nước thông qua xoay hông luân phiên và đập chân liên tục. Nền tảng phát triển sức bền vượt trội.',
     difficulty: 'Trung bình',
@@ -100,7 +115,7 @@ const techniques = [
   {
     slug: 'hoc-boi-ngua',
     name: 'Bơi Ngửa (Backstroke)',
-    icon: '🤽',
+    iconSvg: strokeIcons.ngua,
     badge: 'Thư giãn & Phục hồi',
     description: 'Kiểu bơi ngửa người thư giãn, giúp lấy hơi liên tục và rất tốt cho cột sống. Đòi hỏi cảm giác cân bằng ngửa tối ưu.',
     difficulty: 'Trung bình',
@@ -115,7 +130,7 @@ const techniques = [
   {
     slug: 'hoc-boi-buom',
     name: 'Bơi Bướm (Butterfly)',
-    icon: '🦋',
+    iconSvg: strokeIcons.buom,
     badge: 'Đẳng cấp & Thể lực',
     description: 'Kiểu bơi nghệ thuật và đòi hỏi thể lực cao nhất. Phối hợp nhịp uốn sóng cá heo toàn thân và quạt tay đối xứng mạnh mẽ.',
     difficulty: 'Nâng cao',
@@ -130,7 +145,7 @@ const techniques = [
   {
     slug: 'ky-nang-dung-nuoc',
     name: 'Kỹ Năng Đứng Nước',
-    icon: '🛟',
+    iconSvg: strokeIcons.dungnuoc,
     badge: 'Sinh tồn cốt lõi',
     description: 'Kỹ năng sinh tồn sống còn dưới nước, giúp giữ đầu nổi tại chỗ ổn định. Kết hợp động tác đạp chân luân phiên và chèo tay nhẹ nhàng.',
     difficulty: 'Sinh tồn',
@@ -150,25 +165,25 @@ const anatomyPillars = {
     title: 'Trụ Cột 1: Đầu & Nhịp Thở',
     subtitle: 'Nền tảng kiểm soát sức nổi',
     desc: 'Căn chỉnh trục thẳng cột sống cổ là chìa khóa vàng giúp cơ thể nổi cân bằng trên mặt nước. Hít vào nhanh bằng miệng khi nhô đầu và thở ra đều đặn bằng mũi dưới nước để giải tỏa khí CO2, ngăn ngừa chuột rút và hoảng sợ.',
-    icon: '🗣️'
+    iconSvg: anatomyIcons.head
   },
   arms: {
     title: 'Trụ Cột 2: Động Tác Tay',
     subtitle: 'Động cơ tạo lực đẩy chính',
     desc: 'Được thiết kế để vẽ nên các đường cong tỳ nước, kéo và đẩy tối ưu dưới lòng nước sâu. Sự phối hợp của cùi chỏ cao (High Elbow) giúp tăng tối đa diện tích cản đẩy nước ra sau, đồng thời thu tay hẹp để lướt tới trước mượt mà.',
-    icon: '👐'
+    iconSvg: anatomyIcons.arms
   },
   core: {
     title: 'Trụ Cột 3: Trọng Tâm & Hông',
     subtitle: 'Trục truyền động học cơ thể',
     desc: 'Vùng cơ trung tâm (Core) khỏe mạnh kết nối phần thân trên và thân dưới hoạt động đồng bộ. Khả năng xoay hông (Body Roll) nhịp nhàng giúp giảm tiết diện cản nước, đồng thời tăng tầm với của cánh tay để đạt đà lướt tối đa.',
-    icon: '🧍'
+    iconSvg: anatomyIcons.core
   },
   legs: {
     title: 'Trụ Cột 4: Động Tác Chân',
     subtitle: 'Giữ thăng bằng & Tăng tốc',
     desc: 'Lực đạp chân là bệ đỡ nâng đỡ phần hông luôn nổi sát mặt nước, giảm thiểu độ chìm của cơ thể. Một động tác vẩy chân hoặc đạp chân ếch đúng kỹ thuật giúp duy trì vận tốc ổn định giữa các chu kỳ kéo tay.',
-    icon: '🦵'
+    iconSvg: anatomyIcons.legs
   }
 };
 
@@ -220,7 +235,7 @@ const hotspotCoords = {
             </p>
             
             <div class="tl-hero__ctas">
-              <a href="#danh-sach-ky-thuat" class="tl-btn tl-btn--accent tl-btn--pulse">🏊 Xem Kỹ Thuật</a>
+              <a href="#danh-sach-ky-thuat" class="tl-btn tl-btn--accent tl-btn--pulse"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right: 6px;"><circle cx="12" cy="5" r="2"/><path d="M6 14l3.5-3.5L14 12l4-4M3 9l3 2 3-1.5M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>Xem Kỹ Thuật</a>
               <a href="/hoc-boi-o-dau/" class="tl-btn tl-btn--outline">Tìm Nơi Học Gần Bạn</a>
             </div>
           </div>
@@ -321,7 +336,7 @@ const hotspotCoords = {
           <div class="tl-anatomy__info">
             <div class="tl-anatomy__card">
               <div class="tl-anatomy__card-header">
-                <span class="tl-anatomy__card-icon" id="anatomy-icon">{anatomyPillars.head.icon}</span>
+                <span class="tl-anatomy__card-icon" id="anatomy-icon" set:html={anatomyPillars.head.iconSvg}></span>
                 <div class="tl-anatomy__card-title-group">
                   <h3 class="tl-anatomy__card-title" id="anatomy-title">{anatomyPillars.head.title}</h3>
                   <span class="tl-anatomy__card-subtitle" id="anatomy-subtitle">{anatomyPillars.head.subtitle}</span>
@@ -359,7 +374,7 @@ const hotspotCoords = {
             <div class="hub-card">
               <div>
                 <div class="hub-card-header">
-                  <span class="hub-card-icon">{tech.icon}</span>
+                  <span class="hub-card-icon" set:html={tech.iconSvg}></span>
                   <div class="hub-card-title-wrap">
                     <h3 class="hub-card-title">{tech.name}</h3>
                     <span class="hub-card-badge">{tech.badge}</span>
@@ -391,7 +406,9 @@ const hotspotCoords = {
                         <path class="mini-gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"/>
                         <path class="mini-gauge-fg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--theme-secondary)" stroke-width="3" stroke-linecap="round" stroke-dasharray={`${tech.speedPercent}, 100`}/>
                       </svg>
-                      <div class="mini-gauge-inner">⚡</div>
+                      <div class="mini-gauge-inner">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h8l-2 8 10-12h-8l2-8z"/></svg>
+                      </div>
                     </div>
                     <span class="hub-spec-label">Tốc độ</span>
                     <span class="hub-spec-value">{tech.speed}</span>
@@ -403,7 +420,9 @@ const hotspotCoords = {
                         <path class="mini-gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"/>
                         <path class="mini-gauge-fg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#FF8E53" stroke-width="3" stroke-linecap="round" stroke-dasharray={`${tech.calPercent}, 100`}/>
                       </svg>
-                      <div class="mini-gauge-inner">🔥</div>
+                      <div class="mini-gauge-inner">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8.5 14.5A3.5 3.5 0 0 0 12 18a3.5 3.5 0 0 0 3.5-3.5c0-1.8-1.5-3.5-2.5-4.5-.5.8-1 1-1.5 1-.6 0-1-.4-1-1 0-1.5 1-3 2-4-2.5.5-5 3.5-5 6.5z"/></svg>
+                      </div>
                     </div>
                     <span class="hub-spec-label">Calo</span>
                     <span class="hub-spec-value">{tech.calories}</span>
@@ -412,7 +431,7 @@ const hotspotCoords = {
 
                 <!-- Muscles Target -->
                 <div class="hub-muscles-wrap">
-                  <span class="hub-muscles-title">💪 Nhóm cơ chính tác động:</span>
+                  <span class="hub-muscles-title"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Nhóm cơ chính tác động:</span>
                   <div class="hub-muscles-tags">
                     {tech.muscles.map(m => (
                       <span class="hub-muscle-tag">{m}</span>
@@ -846,14 +865,14 @@ const hotspotCoords = {
       if (card) {
         card.classList.add('tl-updating');
         setTimeout(() => {
-          iconEl.textContent = partData.icon || '💡';
+          iconEl.innerHTML = partData.iconSvg || '';
           titleEl.textContent = partData.title || '';
           subtitleEl.textContent = partData.subtitle || '';
           descEl.textContent = partData.desc || '';
           card.classList.remove('tl-updating');
         }, 150);
       } else {
-        iconEl.textContent = partData.icon || '💡';
+        iconEl.innerHTML = partData.iconSvg || '';
         titleEl.textContent = partData.title || '';
         subtitleEl.textContent = partData.subtitle || '';
         descEl.textContent = partData.desc || '';

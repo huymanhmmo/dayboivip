@@ -3,6 +3,7 @@ import PageLayout from './PageLayout.astro';
 import YouTubeVideo from '../components/YouTubeVideo.astro';
 import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 import CoachesSection from '../components/CoachesSection.astro';
+import TechniqueSiloNav from '../components/technique/TechniqueSiloNav.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 import '../styles/technique-landing.css';
@@ -63,19 +64,27 @@ const relatedPosts = blogPosts.filter(post => {
 // Nếu không có bài viết liên quan, lấy 3 bài viết mặc định mới nhất
 const displayPosts = relatedPosts.length > 0 ? relatedPosts : blogPosts.slice(0, 3);
 
+const strokeIcons = {
+  breaststroke: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>',
+  freestyle: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><path d="M6 14l3.5-3.5L14 12l4-4M3 9l3 2 3-1.5M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  backstroke: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="2"/><path d="M6 9.5l6 1.5 5-3 4 2M12 11l-3 4-4-1M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  butterfly: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v4M4 8l5 2 3-1 3 1 5-2M7 16c2.5-2 4-2 5 0 1-2 2.5-2 5 0M2 20c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  treading: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>'
+};
+
 // Dữ liệu cho các kỹ thuật bơi lội khác để liên kết chéo
 const allTechniques = isEn ? [
-  { slug: 'breaststroke', name: 'Breaststroke', icon: '🐸', desc: 'The most basic stroke, easy to learn, top survival foundation.', link: '/en/swimming-techniques/breaststroke/' },
-  { slug: 'front-crawl', name: 'Freestyle', icon: '🏊', desc: 'The fastest swimming stroke, built for stamina and physical strength.', link: '/en/swimming-techniques/front-crawl/' },
-  { slug: 'backstroke', name: 'Backstroke', icon: '🤽', desc: 'The most relaxing stroke, easy to breathe, stretches the spine.', link: '/en/swimming-techniques/backstroke/' },
-  { slug: 'butterfly', name: 'Butterfly', icon: '🦋', desc: 'The most powerful, beautiful stroke with dolphin body waves.', link: '/en/swimming-techniques/butterfly/' },
-  { slug: 'treading-water', name: 'Treading Water', icon: '🛟', desc: 'The core survival skill to stay afloat at a single spot without fatigue.', link: '/en/swimming-techniques/treading-water/' }
+  { slug: 'breaststroke', name: 'Breaststroke', iconSvg: strokeIcons.breaststroke, desc: 'The most basic stroke, easy to learn, top survival foundation.', link: '/en/swimming-techniques/breaststroke/' },
+  { slug: 'front-crawl', name: 'Freestyle', iconSvg: strokeIcons.freestyle, desc: 'The fastest swimming stroke, built for stamina and physical strength.', link: '/en/swimming-techniques/front-crawl/' },
+  { slug: 'backstroke', name: 'Backstroke', iconSvg: strokeIcons.backstroke, desc: 'The most relaxing stroke, easy to breathe, stretches the spine.', link: '/en/swimming-techniques/backstroke/' },
+  { slug: 'butterfly', name: 'Butterfly', iconSvg: strokeIcons.butterfly, desc: 'The most powerful, beautiful stroke with dolphin body waves.', link: '/en/swimming-techniques/butterfly/' },
+  { slug: 'treading-water', name: 'Treading Water', iconSvg: strokeIcons.treading, desc: 'The core survival skill to stay afloat at a single spot without fatigue.', link: '/en/swimming-techniques/treading-water/' }
 ] : [
-  { slug: 'hoc-boi-ech', name: 'Học Bơi Ếch', icon: '🐸', desc: 'Kiểu bơi cơ bản nhất, dễ học, nền tảng sinh tồn hàng đầu.', link: '/ky-thuat-boi/hoc-boi-ech/' },
-  { slug: 'hoc-boi-sai', name: 'Học Bơi Sải', icon: '🏊', desc: 'Kiểu bơi nhanh nhất, tăng sức bền và phát triển thể lực toàn diện.', link: '/ky-thuat-boi/hoc-boi-sai/' },
-  { slug: 'hoc-boi-ngua', name: 'Học Bơi Ngửa', icon: '🤽', desc: 'Kiểu bơi thư giãn nhất, dễ thở, giúp kéo giãn cột sống tự nhiên.', link: '/ky-thuat-boi/hoc-boi-ngua/' },
-  { slug: 'hoc-boi-buom', name: 'Học Bơi Bướm', icon: '🦋', desc: 'Kiểu bơi đẹp mắt, mạnh mẽ nhất, uốn sóng cá heo độc đáo.', link: '/ky-thuat-boi/hoc-boi-buom/' },
-  { slug: 'ky-nang-dung-nuoc', name: 'Kỹ Năng Đứng Nước', icon: '🛟', desc: 'Kỹ năng sinh tồn cốt lõi giúp tự nổi tại chỗ không mất sức.', link: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
+  { slug: 'hoc-boi-ech', name: 'Học Bơi Ếch', iconSvg: strokeIcons.breaststroke, desc: 'Kiểu bơi cơ bản nhất, dễ học, nền tảng sinh tồn hàng đầu.', link: '/ky-thuat-boi/hoc-boi-ech/' },
+  { slug: 'hoc-boi-sai', name: 'Học Bơi Sải', iconSvg: strokeIcons.freestyle, desc: 'Kiểu bơi nhanh nhất, tăng sức bền và phát triển thể lực toàn diện.', link: '/ky-thuat-boi/hoc-boi-sai/' },
+  { slug: 'hoc-boi-ngua', name: 'Học Bơi Ngửa', iconSvg: strokeIcons.backstroke, desc: 'Kiểu bơi thư giãn nhất, dễ thở, giúp kéo giãn cột sống tự nhiên.', link: '/ky-thuat-boi/hoc-boi-ngua/' },
+  { slug: 'hoc-boi-buom', name: 'Học Bơi Bướm', iconSvg: strokeIcons.butterfly, desc: 'Kiểu bơi đẹp mắt, mạnh mẽ nhất, uốn sóng cá heo độc đáo.', link: '/ky-thuat-boi/hoc-boi-buom/' },
+  { slug: 'ky-nang-dung-nuoc', name: 'Kỹ Năng Đứng Nước', iconSvg: strokeIcons.treading, desc: 'Kỹ năng sinh tồn cốt lõi giúp tự nổi tại chỗ không mất sức.', link: '/ky-thuat-boi/ky-nang-dung-nuoc/' }
 ];
 
 const otherTechniques = allTechniques.filter(t => t.slug !== technique.slug && t.slug !== (technique.slug === 'breaststroke' ? 'hoc-boi-ech' : technique.slug === 'front-crawl' ? 'hoc-boi-sai' : technique.slug === 'backstroke' ? 'hoc-boi-ngua' : technique.slug === 'butterfly' ? 'hoc-boi-buom' : 'ky-nang-dung-nuoc'));
@@ -391,7 +400,9 @@ const alternateLang = isEn ? 'vi' : 'en';
                 <circle class="tl-gauge-fg" cx="40" cy="40" r="34" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset={speedOffset} stroke="var(--theme-secondary)"></circle>
               </svg>
               <div class="tl-gauge-text">
-                <span class="tl-gauge-icon">⚡</span>
+                <span class="tl-gauge-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h8l-2 8 10-12h-8l2-8z"/></svg>
+                </span>
               </div>
             </div>
             <div class="tl-gauge-info">
@@ -407,7 +418,9 @@ const alternateLang = isEn ? 'vi' : 'en';
                 <circle class="tl-gauge-fg tl-gauge-fg--energy" cx="40" cy="40" r="34" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset={calOffset} stroke="#FF8E53"></circle>
               </svg>
               <div class="tl-gauge-text">
-                <span class="tl-gauge-icon">🔥</span>
+                <span class="tl-gauge-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8.5 14.5A3.5 3.5 0 0 0 12 18a3.5 3.5 0 0 0 3.5-3.5c0-1.8-1.5-3.5-2.5-4.5-.5.8-1 1-1.5 1-.6 0-1-.4-1-1 0-1.5 1-3 2-4-2.5.5-5 3.5-5 6.5z"/></svg>
+                </span>
               </div>
             </div>
             <div class="tl-gauge-info">
@@ -418,7 +431,9 @@ const alternateLang = isEn ? 'vi' : 'en';
           
           <div class="tl-gauge-card tl-gauge-card--muscles">
             <div class="tl-muscles-hub">
-              <span class="tl-muscles-hub__icon">💪</span>
+              <span class="tl-muscles-hub__icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </span>
               <span class="tl-gauge-label">{isEn ? 'Target Muscles' : 'Cơ tác động chính'}</span>
             </div>
             <div class="tl-muscles-tags">
@@ -858,30 +873,8 @@ const alternateLang = isEn ? 'vi' : 'en';
       </section>
     )}
 
-    <!-- Cross-Linking / Other Techniques Section -->
-    <section class="tl-section tl-section--alt">
-      <div class="tl-section__container">
-        <div class="tl-section-title">
-          <span class="tl-section-title__badge">Liên kết kỹ thuật</span>
-          <h2 class="tl-section-title__heading">Khám Phá Các Kỹ Thuật Bơi Khác</h2>
-          <p class="tl-section-title__sub">
-            Nâng cao kỹ năng bơi lội của bạn bằng cách làm chủ các kiểu bơi thể thao và kỹ năng sinh tồn hữu ích khác.
-          </p>
-          <span class="tl-section-title__decoration"></span>
-        </div>
-
-        <div class="tl-cross-grid">
-          {otherTechniques.map(t => (
-            <a href={t.link} class="tl-cross-card">
-              <span class="tl-cross-card__icon">{t.icon}</span>
-              <h3 class="tl-cross-card__title">{t.name}</h3>
-              <p class="tl-cross-card__desc">{t.desc}</p>
-              <span class="tl-cross-card__link">Xem hướng dẫn →</span>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
+    <!-- SEO Silo Hub-and-Spoke Navigation -->
+    <TechniqueSiloNav currentSlug={technique.slug} lang={lang} />
 
   </div>
 </PageLayout>

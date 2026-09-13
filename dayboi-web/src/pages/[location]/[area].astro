@@ -524,7 +524,37 @@ if (isCommune) {
             {relatedItems.map((item) => (
               <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>Xem khu vực →</b></a>
             ))}
-            <a href={`/${commune.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {commune.parentName}</strong><b>Mở danh bạ →</b></a>
+            <a href={`/${commune.parentSlug}/`} class="area-related-parent">
+              <span>Trang cấp tỉnh/thành</span>
+              <strong>Toàn bộ địa điểm tại {commune.parentName}</strong>
+              <b>Mở danh bạ cấp tỉnh →</b>
+            </a>
+          </div>
+
+          <div class="area-cross-silo">
+            <a href="/khoa-hoc-boi/1-kem-1/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Khóa học kèm riêng</small>
+                <strong>Học bơi 1 kèm 1 có HLV kèm sát</strong>
+                <p>Giáo viên kèm riêng trực tiếp dưới nước tại các bể bơi khu vực {commune.parentName}, cam kết biết bơi sau 10 buổi.</p>
+              </div>
+              <span class="area-cross-card__arrow">Xem khóa học →</span>
+            </a>
+
+            <a href="/ky-thuat-boi/hoc-boi-ech/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Kỹ thuật tiêu chuẩn</small>
+                <strong>Hướng dẫn kỹ thuật bơi ếch chi tiết</strong>
+                <p>Phân tích động tác co-bẻ-đạp-khép chân và phối hợp thở chuẩn khoa học cho người mới bắt đầu.</p>
+              </div>
+              <span class="area-cross-card__arrow">Xem hướng dẫn →</span>
+            </a>
           </div>
         </div>
       </section>
@@ -682,7 +712,37 @@ if (isCommune) {
             {relatedItems.map((item) => (
               <a href={item.url}><span>{item.tag}</span><strong>{item.name}</strong><b>Xem khu vực →</b></a>
             ))}
-            <a href={`/${area.parentSlug}/`}><span>Trang cấp tỉnh/thành</span><strong>Toàn bộ địa điểm tại {area.parentName}</strong><b>Mở danh bạ →</b></a>
+            <a href={`/${area.parentSlug}/`} class="area-related-parent">
+              <span>Trang cấp tỉnh/thành</span>
+              <strong>Toàn bộ địa điểm tại {area.parentName}</strong>
+              <b>Mở danh bạ cấp tỉnh →</b>
+            </a>
+          </div>
+
+          <div class="area-cross-silo">
+            <a href="/khoa-hoc-boi/1-kem-1/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Khóa học kèm riêng</small>
+                <strong>Học bơi 1 kèm 1 có HLV kèm sát</strong>
+                <p>Giáo viên kèm riêng trực tiếp dưới nước tại các bể bơi khu vực {area.parentName}, cam kết biết bơi sau 10 buổi.</p>
+              </div>
+              <span class="area-cross-card__arrow">Xem khóa học →</span>
+            </a>
+
+            <a href="/ky-thuat-boi/hoc-boi-ech/" class="area-cross-card">
+              <div class="area-cross-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>
+              </div>
+              <div class="area-cross-card__content">
+                <small>Kỹ thuật tiêu chuẩn</small>
+                <strong>Hướng dẫn kỹ thuật bơi ếch chi tiết</strong>
+                <p>Phân tích động tác co-bẻ-đạp-khép chân và phối hợp thở chuẩn khoa học cho người mới bắt đầu.</p>
+              </div>
+              <span class="area-cross-card__arrow">Xem hướng dẫn →</span>
+            </a>
           </div>
         </div>
       </section>

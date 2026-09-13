@@ -1,0 +1,465 @@
+---
+export interface Props {
+  currentSlug?: string;
+  lang?: 'vi' | 'en';
+}
+
+const { currentSlug = '', lang = 'vi' } = Astro.props;
+const isEn = lang === 'en';
+
+const strokeIcons = {
+  breaststroke: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v5l-4 3-3-2M12 12.5l4 3 3-2M6 21c3-1.5 6-1.5 9 0 3-1.5 6-1.5 9 0"/></svg>',
+  treading: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>',
+  freestyle: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><path d="M6 14l3.5-3.5L14 12l4-4M3 9l3 2 3-1.5M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  backstroke: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="2"/><path d="M6 9.5l6 1.5 5-3 4 2M12 11l-3 4-4-1M2 19c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>',
+  butterfly: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v4M4 8l5 2 3-1 3 1 5-2M7 16c2.5-2 4-2 5 0 1-2 2.5-2 5 0M2 20c3.5-1.5 7-1.5 10.5 0 3.5-1.5 7-1.5 10.5 0"/></svg>'
+};
+
+const roadmapVi = [
+  {
+    step: '01',
+    slug: 'hoc-boi-ech',
+    name: 'Bơi Ếch (Breaststroke)',
+    role: 'Nền tảng sinh tồn',
+    desc: 'Bài học vỡ lòng dễ tiếp cận nhất. Động tác đối xứng, lấy hơi tự nhiên và nổi ổn định.',
+    href: '/ky-thuat-boi/hoc-boi-ech/',
+    iconSvg: strokeIcons.breaststroke
+  },
+  {
+    step: '02',
+    slug: 'ky-nang-dung-nuoc',
+    name: 'Kỹ Năng Đứng Nước',
+    role: 'Sinh tồn cốt lõi',
+    desc: 'Làm chủ lực đẩy thẳng đứng để tự giữ đầu nổi tại chỗ không mệt mỏi ở mọi độ sâu.',
+    href: '/ky-thuat-boi/ky-nang-dung-nuoc/',
+    iconSvg: strokeIcons.treading
+  },
+  {
+    step: '03',
+    slug: 'hoc-boi-sai',
+    name: 'Bơi Sải (Front Crawl)',
+    role: 'Tốc độ & Sức bền',
+    desc: 'Tối ưu hóa khí động học dưới nước, rèn luyện xoay hông và nâng cao thể lực bền bỉ.',
+    href: '/ky-thuat-boi/hoc-boi-sai/',
+    iconSvg: strokeIcons.freestyle
+  },
+  {
+    step: '04',
+    slug: 'hoc-boi-ngua',
+    name: 'Bơi Ngửa (Backstroke)',
+    role: 'Thư giãn & Phục hồi',
+    desc: 'Mặt hướng lên trời hít thở tự do, kéo giãn đốt sống lưng và thả lỏng cơ bắp tối đa.',
+    href: '/ky-thuat-boi/hoc-boi-ngua/',
+    iconSvg: strokeIcons.backstroke
+  },
+  {
+    step: '05',
+    slug: 'hoc-boi-buom',
+    name: 'Bơi Bướm (Butterfly)',
+    role: 'Thể lực nâng cao',
+    desc: 'Kỹ thuật uốn sóng cá heo nhịp nhàng đòi hỏi phối hợp toàn diện sức mạnh thân trên.',
+    href: '/ky-thuat-boi/hoc-boi-buom/',
+    iconSvg: strokeIcons.butterfly
+  }
+];
+
+const roadmapEn = [
+  {
+    step: '01',
+    slug: 'breaststroke',
+    name: 'Breaststroke',
+    role: 'Survival Baseline',
+    desc: 'The most intuitive starting stroke with symmetrical movements and rhythmic breathing.',
+    href: '/en/swimming-techniques/breaststroke/',
+    iconSvg: strokeIcons.breaststroke
+  },
+  {
+    step: '02',
+    slug: 'treading-water',
+    name: 'Treading Water',
+    role: 'Core Safety Skill',
+    desc: 'Master vertical buoyancy and eggbeater kick to stay afloat effortlessly at any depth.',
+    href: '/en/swimming-techniques/treading-water/',
+    iconSvg: strokeIcons.treading
+  },
+  {
+    slug: 'front-crawl',
+    step: '03',
+    name: 'Freestyle (Front Crawl)',
+    role: 'Speed & Endurance',
+    desc: 'The most efficient stroke, featuring alternating arm pulls, flutter kicks, and body roll.',
+    href: '/en/swimming-techniques/front-crawl/',
+    iconSvg: strokeIcons.freestyle
+  },
+  {
+    slug: 'backstroke',
+    step: '04',
+    name: 'Backstroke',
+    role: 'Spine & Recovery',
+    desc: 'Face-up stroke providing easy continuous breathing and gentle spine decompression.',
+    href: '/en/swimming-techniques/backstroke/',
+    iconSvg: strokeIcons.backstroke
+  },
+  {
+    slug: 'butterfly',
+    step: '05',
+    name: 'Butterfly',
+    role: 'Advanced Athleticism',
+    desc: 'Dynamic dolphin body wave synchronized with powerful double arm sweeps.',
+    href: '/en/swimming-techniques/butterfly/',
+    iconSvg: strokeIcons.butterfly
+  }
+];
+
+const roadmap = isEn ? roadmapEn : roadmapVi;
+---
+
+<section class="tl-section tl-section--alt technique-silo-nav" aria-labelledby="technique-silo-title">
+  <div class="tl-section__container">
+    <div class="tl-section-title">
+      <span class="tl-section-title__badge">
+        {isEn ? 'Progression Roadmap' : 'Lộ trình kỹ thuật'}
+      </span>
+      <h2 class="tl-section-title__heading" id="technique-silo-title">
+        {isEn ? 'Complete 5-Stroke Learning Pathway' : 'Lộ Trình Làm Chủ 5 Kỹ Thuật Bơi Tiêu Chuẩn'}
+      </h2>
+      <p class="tl-section-title__sub">
+        {isEn 
+          ? 'Follow the scientifically proven sequence from survival fundamentals to athletic conditioning.' 
+          : 'Học bơi khoa học theo đúng thứ tự: từ phản xạ sinh tồn vỡ lòng đến hoàn thiện thể lực chuyên sâu.'}
+      </p>
+      <span class="tl-section-title__decoration"></span>
+    </div>
+
+    <!-- Roadmap cards -->
+    <div class="technique-silo-grid">
+      {roadmap.map((item) => {
+        const isCurrent = item.slug === currentSlug;
+        return (
+          <article class:list={['technique-silo-card', { 'is-current': isCurrent }]}>
+            <div class="technique-silo-card__header">
+              <span class="technique-silo-card__step">{item.step}</span>
+              <div class="technique-silo-card__icon" set:html={item.iconSvg}></div>
+            </div>
+            <span class="technique-silo-card__role">{item.role}</span>
+            <h3 class="technique-silo-card__title">
+              {isCurrent ? (
+                <span>{item.name}</span>
+              ) : (
+                <a href={item.href}>{item.name}</a>
+              )}
+            </h3>
+            <p class="technique-silo-card__desc">{item.desc}</p>
+            <div class="technique-silo-card__action">
+              {isCurrent ? (
+                <span class="technique-silo-card__current">{isEn ? 'Current Guide' : 'Đang xem hướng dẫn'}</span>
+              ) : (
+                <a href={item.href} class="technique-silo-card__link">
+                  <span>{isEn ? 'Read Guide' : 'Xem kỹ thuật'}</span>
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/></svg>
+                </a>
+              )}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Hub Link & Cross-Silo Recommendations -->
+    <div class="technique-silo-bridges">
+      <div class="silo-hub-banner">
+        <div>
+          <span class="silo-hub-banner__eyebrow">{isEn ? 'Technique Manual' : 'Cẩm nang tổng hợp'}</span>
+          <h3>{isEn ? 'Explore All 5 Strokes in One Dashboard' : 'Xem Bảng Phân Tích Động Học 5 Kiểu Bơi'}</h3>
+          <p>{isEn ? 'Biomechanical comparison of calorie burn, muscle engagement, and difficulty.' : 'So sánh mức tiêu thụ calo, nhóm cơ tác động chính và thang độ khó chi tiết.'}</p>
+        </div>
+        <a href={isEn ? '/en/swimming-techniques/' : '/ky-thuat-boi/'} class="btn-silo-banner">
+          <span>{isEn ? 'All Techniques Hub' : 'Trang chủ kỹ thuật'}</span>
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/></svg>
+        </a>
+      </div>
+
+      <div class="silo-cross-cards">
+        <a href={isEn ? '/en/courses/1-on-1/' : '/khoa-hoc-boi/1-kem-1/'} class="silo-cross-item">
+          <div class="silo-cross-item__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <strong>{isEn ? 'Need 1-on-1 In-Water Coaching?' : 'Muốn Học Bơi Kèm Riêng 1-1?'}</strong>
+            <span>{isEn ? 'Accelerate progress with direct pedagogical guidance and guaranteed results.' : 'HLV trực tiếp xuống nước chỉnh sửa từng milimet động tác, cam kết biết bơi sau 10-12 buổi.'}</span>
+          </div>
+          <span class="silo-arrow">↗</span>
+        </a>
+
+        <a href={isEn ? '/en/swimming-locations/' : '/hoc-boi-o-dau/'} class="silo-cross-item">
+          <div class="silo-cross-item__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div>
+            <strong>{isEn ? 'Find a Pool Near You' : 'Tìm Bể Bơi & Điểm Học Bơi Gần Bạn'}</strong>
+            <span>{isEn ? 'Explore pool listings and coaches in your ward/district across Vietnam.' : 'Tra cứu địa chỉ hồ bơi 4 mùa, giá vé và số điện thoại liên hệ tại 34 tỉnh thành.'}</span>
+          </div>
+          <span class="silo-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .technique-silo-nav {
+    padding: var(--space-12) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .technique-silo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .technique-silo-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+  }
+
+  .technique-silo-card:hover {
+    border-color: var(--theme-secondary, #00BCD4);
+    box-shadow: 0 8px 24px rgba(10, 77, 140, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .technique-silo-card.is-current {
+    border-color: var(--theme-primary, #0A4D8C);
+    background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+    box-shadow: 0 4px 14px rgba(10, 77, 140, 0.08);
+  }
+
+  .technique-silo-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .technique-silo-card__step {
+    font-size: 0.85rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--theme-secondary, #00BCD4);
+  }
+
+  .technique-silo-card__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f0f7ff;
+    color: var(--theme-primary, #0A4D8C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .technique-silo-card__role {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--theme-primary, #0A4D8C);
+    margin-bottom: 4px;
+  }
+
+  .technique-silo-card__title {
+    font-size: 0.98rem;
+    line-height: 1.35;
+    margin: 0 0 var(--space-2);
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  .technique-silo-card__title a {
+    color: var(--color-dark, #0f172a);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .technique-silo-card__title a:hover {
+    color: var(--theme-primary, #0A4D8C);
+  }
+
+  .technique-silo-card__desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary, #64748b);
+    margin: 0 0 var(--space-4);
+    flex-grow: 1;
+  }
+
+  .technique-silo-card__action {
+    margin-top: auto;
+    padding-top: var(--space-3);
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .technique-silo-card__current {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--theme-primary, #0A4D8C);
+  }
+
+  .technique-silo-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--theme-primary, #0A4D8C);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .technique-silo-card__link:hover {
+    gap: 7px;
+    color: var(--theme-secondary, #00BCD4);
+  }
+
+  .technique-silo-bridges {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .silo-hub-banner {
+    background: linear-gradient(135deg, #052e56 0%, #0A4D8C 100%);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .silo-hub-banner__eyebrow {
+    color: var(--theme-secondary, #00BCD4);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .silo-hub-banner h3 {
+    font-size: 1.25rem;
+    margin: 0 0 8px;
+    color: #ffffff;
+  }
+
+  .silo-hub-banner p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 0 var(--space-4);
+  }
+
+  .btn-silo-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    background: var(--theme-secondary, #00BCD4);
+    color: #032b43;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-silo-banner:hover {
+    background: #ffffff;
+    color: var(--theme-primary, #0A4D8C);
+    transform: translateY(-1px);
+  }
+
+  .silo-cross-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .silo-cross-item {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    flex: 1;
+  }
+
+  .silo-cross-item:hover {
+    border-color: var(--theme-secondary, #00BCD4);
+    box-shadow: 0 6px 18px rgba(10, 77, 140, 0.06);
+    transform: translateX(3px);
+  }
+
+  .silo-cross-item__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #f0f7ff;
+    color: var(--theme-primary, #0A4D8C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .silo-cross-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-dark, #0f172a);
+    margin-bottom: 2px;
+  }
+
+  .silo-cross-item span {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--color-text-secondary, #64748b);
+  }
+
+  .silo-arrow {
+    font-size: 1.1rem;
+    color: var(--theme-secondary, #00BCD4);
+    font-weight: 700;
+    margin-left: auto;
+  }
+
+  @media (max-width: 1080px) {
+    .technique-silo-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .technique-silo-bridges {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .technique-silo-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

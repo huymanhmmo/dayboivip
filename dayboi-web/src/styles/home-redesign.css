@@ -377,16 +377,23 @@
 
 .course-card__badge {
   position: absolute;
-  inset-block-start: var(--space-4);
-  inset-inline-start: var(--space-4);
-  padding: 0.38rem 0.65rem;
-  border-radius: var(--radius-md);
+  top: var(--space-4);
+  left: var(--space-4);
+  right: auto;
+  width: fit-content;
+  max-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.75rem;
+  border-radius: var(--radius-full);
   background: var(--orange-500);
   color: var(--white);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .course-card__body {
@@ -791,7 +798,7 @@
 }
 
 @media (max-width: 860px) {
-  .hero__visual { min-height: 480px; }
+  .hero__visual { min-height: 480px; max-width: 100%; overflow: hidden; border-radius: var(--radius-2xl); }
   .hero__photo--main { inset-inline-end: 25%; }
   .about-grid, .cert-grid { grid-template-columns: 1fr; }
   .about-images { min-height: 540px; }

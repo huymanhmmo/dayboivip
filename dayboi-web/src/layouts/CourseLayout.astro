@@ -12,6 +12,7 @@ import CourseGallery from '../components/course/CourseGallery.astro';
 import CoursePricing from '../components/course/CoursePricing.astro';
 import CourseTrust from '../components/course/CourseTrust.astro';
 import CourseFAQ from '../components/course/CourseFAQ.astro';
+import CourseSiloNav from '../components/course/CourseSiloNav.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 import CoachesSection from '../components/CoachesSection.astro';
 import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
@@ -177,6 +178,9 @@ const isEnterprise = course.slug === 'doanh-nghiep';
       faqs={course.faqs}
       lang={lang}
     />
+
+    <!-- SEO Silo Hub-and-Spoke Navigation -->
+    <CourseSiloNav currentSlug={course.slug} lang={lang} />
 
     {isEnterprise ? (
     <section class="cl-section cl-section--alt" id="yeu-cau-hop-tac">
