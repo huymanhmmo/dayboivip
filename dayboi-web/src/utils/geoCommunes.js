@@ -85,7 +85,10 @@ export function getProvinces() {
 
 export function getCommunesByProvinceId(provinceId) {
   if (cachedCommunes.has(provinceId)) return cachedCommunes.get(provinceId);
-  const filePath = path.resolve(process.cwd(), `src/data/geo/communes/${provinceId}.json`);
+  const provinces = getProvinces();
+  const prov = provinces.find((p) => p.id === provinceId) || provinces.find((p) => p.provinceCode === provinceId);
+  const code = prov ? prov.provinceCode : provinceId;
+  const filePath = path.resolve(process.cwd(), `src/data/geo/communes/${code}.json`);
   if (!fs.existsSync(filePath)) return [];
   const communes = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   
@@ -113,23 +116,51 @@ export function matchVenuesToCommune(commune, allVenuesInProvince) {
   
   const matched = [];
   const cleanCommuneName = commune.name.toLowerCase();
-  const prevNames = (commune.previous || []).map((p) =>
-    p.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim().toLowerCase()
-  ).filter((p) => p.length >= 2);
 
   for (const venue of allVenuesInProvince) {
-    const textToSearch = `${venue.address || ''} ${venue.area || ''} ${venue.name || ''}`.toLowerCase();
-    
-    let hasMatch = false;
-    for (const prev of prevNames) {
-      if (textToSearch.includes(prev)) {
-        hasMatch = true;
-        break;
+    if (venue.targetCommune && venue.targetCommune === commune.slug) {
+      if (!matched.some((m) => m.name === venue.name)) {
+        matched.push(venue);
       }
+      continue;
     }
-    
-    if (!hasMatch && textToSearch.includes(cleanCommuneName)) {
+
+    const text = `${venue.address || ''} ${venue.area || ''} ${venue.name || ''}`.toLowerCase();
+    let hasMatch = false;
+
+    // Direct commune name match
+    if (cleanCommuneName.length >= 3 && text.includes(cleanCommuneName)) {
       hasMatch = true;
+    }
+
+    // Previous names match (including numbered wards like Phường 1..9)
+    if (!hasMatch) {
+      for (const prev of (commune.previous || [])) {
+        const numMatch = prev.match(/(?:phường|p\.?)\s*(\d+)/i);
+        if (numMatch) {
+          const num = numMatch[1];
+          const distMatch = prev.match(/\((quận\s*[^)]+|huyện\s*[^)]+|tp\s*[^)]+)\)/i);
+          const numRegex = new RegExp(`(?:phường|p\\.?)\\s*0*${num}(?!\\d)`, 'i');
+          if (numRegex.test(text)) {
+            if (distMatch) {
+              const dist = distMatch[1].toLowerCase();
+              if (text.includes(dist) || (!text.includes('quận') && !text.includes('huyện') && !text.includes('tp.'))) {
+                hasMatch = true;
+                break;
+              }
+            } else {
+              hasMatch = true;
+              break;
+            }
+          }
+        } else {
+          const cleanPrev = prev.replace(/^(phường|xã|thị trấn)\s+/i, '').replace(/\s*\(.*?\)/g, '').trim().toLowerCase();
+          if (cleanPrev.length >= 3 && text.includes(cleanPrev)) {
+            hasMatch = true;
+            break;
+          }
+        }
+      }
     }
 
     if (hasMatch && !matched.some((m) => m.name === venue.name)) {
@@ -139,6 +170,7 @@ export function matchVenuesToCommune(commune, allVenuesInProvince) {
 
   return matched;
 }
+
 
 export function getNearbyVenues(commune, allVenuesWithCoords, maxCount = 4) {
   if (!commune || !allVenuesWithCoords || allVenuesWithCoords.length === 0) return [];
