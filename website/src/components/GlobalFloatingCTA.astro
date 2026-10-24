@@ -1,0 +1,202 @@
+---
+// GlobalFloatingCTA.astro - Thanh liên hệ nổi đa kênh (Gọi, Zalo, Đăng ký) tối ưu CRO cho toàn trang
+---
+
+<div class="site-floating-cta" id="global-floating-cta" aria-label="Thanh liên hệ nhanh">
+  <div class="floating-cta-inner">
+    <!-- Nút Gọi Hotline -->
+    <a href="tel:0979121097" class="cta-action cta-action-call" aria-label="Gọi hotline 0979121097">
+      <div class="cta-icon-wrapper call-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </div>
+      <span class="cta-label">Gọi Hotline</span>
+    </a>
+
+    <!-- Nút Nhắn Zalo -->
+    <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cta-action cta-action-zalo" aria-label="Chat qua Zalo">
+      <div class="cta-icon-wrapper zalo-pulse">
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4C12.95 4 4 12.51 4 23.01C4 29.07 6.94 34.46 11.53 38.01C11.12 40.59 9.87 43.5 9.77 43.72C9.56 44.2 9.93 44.73 10.45 44.66C14.07 44.15 17.65 42.14 19.67 40.85C21.07 41.6 22.5 42.02 24 42.02C35.05 42.02 44 33.51 44 23.01C44 12.51 35.05 4 24 4Z" fill="#0068FF"/>
+          <path d="M17.5 28.5L24.5 17.5H17.5V15.5H27.5V17.5L20.5 28.5H27.5V30.5H17.5V28.5Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+      <span class="cta-label">Chat Zalo</span>
+    </a>
+
+    <!-- Nút Đăng Ký Học Thử -->
+    <a href="/lien-he/" class="cta-action cta-action-register" id="floating-register-btn" aria-label="Đăng ký học thử miễn phí">
+      <span class="register-badge-dot"></span>
+      <span class="register-text">Đăng Ký Học Thử</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<style>
+  .site-floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(0, 119, 182, 0.12);
+    box-shadow: 0 -4px 24px rgba(2, 48, 71, 0.08);
+    padding: 8px 12px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    transform: translateY(110%);
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .site-floating-cta.visible {
+    transform: translateY(0);
+  }
+
+  .floating-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .cta-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: var(--font-heading, sans-serif);
+    transition: all 200ms ease;
+    border-radius: 12px;
+  }
+
+  .cta-action:active {
+    transform: scale(0.96);
+  }
+
+  .cta-icon-wrapper {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    transition: all 200ms ease;
+  }
+
+  /* Hotline */
+  .cta-action-call {
+    flex: 1;
+    color: #0077B6;
+    padding: 4px;
+  }
+  .cta-action-call .cta-icon-wrapper {
+    background: rgba(0, 119, 182, 0.1);
+    color: #0077B6;
+  }
+
+  /* Zalo */
+  .cta-action-zalo {
+    flex: 1;
+    color: #0068FF;
+    padding: 4px;
+  }
+  .cta-action-zalo .cta-icon-wrapper {
+    background: rgba(0, 104, 255, 0.08);
+  }
+
+  .cta-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  /* Register CTA */
+  .cta-action-register {
+    flex: 2.2;
+    flex-direction: row;
+    gap: 6px;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%);
+    color: #FFFFFF;
+    padding: 10px 14px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(255, 107, 53, 0.35);
+    font-weight: 700;
+    font-size: 0.88rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-action-register:hover {
+    box-shadow: 0 6px 18px rgba(255, 107, 53, 0.45);
+    color: #FFFFFF;
+  }
+
+  .register-badge-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    animation: cta-pulse 1.8s infinite;
+  }
+
+  .cta-arrow {
+    transition: transform 200ms ease;
+  }
+  .cta-action-register:hover .cta-arrow {
+    transform: translateX(2px);
+  }
+
+  @keyframes cta-pulse {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.8; }
+  }
+
+  /* Desktop docking: Hiển thị dạng floating badge góc dưới phải */
+  @media (min-width: 769px) {
+    .site-floating-cta {
+      display: none; /* Trên desktop, Header CTA & Sidebar đã luôn hiển thị rõ ràng */
+    }
+  }
+</style>
+
+<script>
+  // Tự động hiển thị khi cuộn qua 250px
+  const floatingCta = document.getElementById('global-floating-cta');
+  if (floatingCta) {
+    // Nếu có form đăng ký trên trang, tự động link tới #dang-ky
+    const regForm = document.getElementById('dang-ky') || document.querySelector('.cl-registration-form');
+    const registerBtn = document.getElementById('floating-register-btn') as HTMLAnchorElement | null;
+    if (regForm && registerBtn) {
+      registerBtn.setAttribute('href', '#dang-ky');
+      registerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        regForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+
+    const onScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      if (scrollY > 250) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Run once on load
+    onScroll();
+  }
+</script>
