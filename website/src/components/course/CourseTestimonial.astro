@@ -11,17 +11,17 @@ export interface Props {
 const { testimonials } = Astro.props;
 ---
 
-<section class="cl-section cl-section--alt">
+<section class="cl-section cl-section--alt" id="danh-gia">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Đánh Giá Từ Học Viên
+        Đánh Giá Từ Phụ Huynh & Học Viên
       </span>
       <h2 class="cl-section-title__heading cl-section-title__heading--gradient">
-        Học Viên Nói Gì Về Chúng Tôi?
+        10,000+ Học Viên Đã Biết Bơi Thành Thạo
       </h2>
       <p class="cl-section-title__sub">
-        Hàng ngàn học viên ở mọi lứa tuổi đã vượt qua sợ hãi và bơi thành thạo nhờ Swim For Life.
+        Lắng nghe những chia sẻ chân thực từ các phụ huynh và học viên đã từng sợ nước và nay đã tự tin bơi lội an toàn.
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
@@ -29,20 +29,30 @@ const { testimonials } = Astro.props;
     <div class="cl-testimonials">
       <div class="cl-testimonials__track" id="testimonial-track">
         {testimonials.map((t, index) => {
-          // Get first letter of name for avatar
           const initial = t.name.charAt(0);
           return (
             <div class="cl-testimonials__card cl-animate">
-              <div class="cl-testimonials__stars">
-                {"★".repeat(t.rating)}
-                {"☆".repeat(5 - t.rating)}
+              <div class="cl-testimonials__card-header">
+                <div class="cl-testimonials__stars" aria-label={`Đánh giá ${t.rating} trên 5 sao`}>
+                  {[...Array(5)].map((_, i) => (
+                    <span class={i < t.rating ? "star-filled" : "star-empty"}>★</span>
+                  ))}
+                </div>
+                <span class="cl-verified-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Đã xác thực
+                </span>
               </div>
-              <p class="cl-testimonials__text">
+
+              <blockquote class="cl-testimonials__text">
                 "{t.text}"
-              </p>
+              </blockquote>
+
               <div class="cl-testimonials__author">
                 <div class="cl-testimonials__avatar">{initial}</div>
-                <div>
+                <div class="cl-testimonials__meta">
                   <h4 class="cl-testimonials__name">{t.name}</h4>
                   <p class="cl-testimonials__detail">{t.detail}</p>
                 </div>
@@ -58,7 +68,7 @@ const { testimonials } = Astro.props;
           <button 
             class={`cl-testimonials__dot ${index === 0 ? 'cl-testimonials__dot--active' : ''}`}
             data-index={index}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Xem đánh giá ${index + 1}`}
           ></button>
         ))}
       </div>
@@ -66,16 +76,172 @@ const { testimonials } = Astro.props;
   </div>
 </section>
 
+<style>
+  .cl-testimonials {
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .cl-testimonials__track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 6px 28px;
+    scrollbar-width: none;
+  }
+
+  .cl-testimonials__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cl-testimonials__card {
+    flex: 0 0 360px;
+    scroll-snap-align: start;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 32px 28px;
+    border: 1px solid rgba(0, 119, 182, 0.12);
+    box-shadow: 0 6px 24px rgba(0, 119, 182, 0.07), 0 1px 3px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .cl-testimonials__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 119, 182, 0.14);
+    border-color: rgba(0, 119, 182, 0.25);
+  }
+
+  .cl-testimonials__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .cl-testimonials__stars {
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  .star-filled {
+    color: #FFB703;
+  }
+
+  .star-empty {
+    color: #E2E8F0;
+  }
+
+  .cl-verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 9999px;
+  }
+
+  .cl-testimonials__text {
+    font-size: 0.96rem;
+    color: #374151;
+    line-height: 1.65;
+    margin: 0 0 24px 0;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .cl-testimonials__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .cl-testimonials__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 119, 182, 0.25);
+    flex-shrink: 0;
+  }
+
+  .cl-testimonials__meta {
+    text-align: left;
+  }
+
+  .cl-testimonials__name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #023047;
+    margin: 0 0 2px 0;
+  }
+
+  .cl-testimonials__detail {
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* Dots */
+  .cl-testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .cl-testimonials__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .cl-testimonials__dot--active {
+    width: 28px;
+    border-radius: 9999px;
+    background: #0077B6;
+  }
+
+  @media (max-width: 600px) {
+    .cl-testimonials__card {
+      flex: 0 0 88vw;
+      padding: 24px 20px;
+    }
+  }
+</style>
+
 <script>
-  // Simple JS to link dots with horizontal scrolling in testimonial carousel
   const track = document.getElementById('testimonial-track') as HTMLDivElement | null;
   const dots = document.querySelectorAll('#testimonial-dots .cl-testimonials__dot') as NodeListOf<HTMLButtonElement>;
 
   if (track && dots.length > 0) {
     const updateActiveDot = () => {
       const scrollPosition = track.scrollLeft;
-      const cardWidth = track.firstElementChild ? (track.firstElementChild as HTMLElement).offsetWidth + 24 : 344;
-      const activeIndex = Math.round(scrollPosition / cardWidth);
+      const cardWidth = track.firstElementChild ? (track.firstElementChild as HTMLElement).offsetWidth + 24 : 320;
+      const activeIndex = Math.min(Math.round(scrollPosition / cardWidth), dots.length - 1);
       
       dots.forEach((dot, index) => {
         if (index === activeIndex) {
@@ -86,12 +252,12 @@ const { testimonials } = Astro.props;
       });
     };
 
-    track.addEventListener('scroll', updateActiveDot);
+    track.addEventListener('scroll', updateActiveDot, { passive: true });
 
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
         const index = parseInt(dot.getAttribute('data-index') || '0', 10);
-        const cardWidth = track.firstElementChild ? (track.firstElementChild as HTMLElement).offsetWidth + 24 : 344;
+        const cardWidth = track.firstElementChild ? (track.firstElementChild as HTMLElement).offsetWidth + 24 : 320;
         track.scrollTo({
           left: index * cardWidth,
           behavior: 'smooth'

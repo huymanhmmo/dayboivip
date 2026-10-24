@@ -21,13 +21,13 @@ const { pricing } = Astro.props;
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Bảng Giá Khóa Học
+        Bảng Giá & Gói Lớp Học
       </span>
       <h2 class="cl-section-title__heading">
-        Học Phí Ưu Đãi & Gói Lớp Học
+        Học Phí Ưu Đãi Minh Bạch
       </h2>
       <p class="cl-section-title__sub">
-        Cam kết hiệu quả tối đa cho từng học viên với mức chi phí hợp lý nhất. Chọn gói học phù hợp với nhu cầu của bạn.
+        Cam kết hiệu quả tối đa cho từng học viên với chi phí hợp lý nhất. Chọn gói học phù hợp và nhận ưu đãi học thử miễn phí.
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
@@ -35,27 +35,77 @@ const { pricing } = Astro.props;
     <div class="cl-pricing">
       {pricing.tiers.map((tier, index) => (
         <div class={`cl-pricing__card ${tier.highlight ? 'cl-pricing__card--featured' : ''} cl-animate cl-animate--delay-${index + 1}`}>
-          {tier.badge && (
-            <span class="cl-pricing__badge">{tier.badge}</span>
+          {(tier.badge || tier.highlight) && (
+            <span class="cl-pricing__badge">
+              {tier.badge || "🔥 Đăng Ký Nhiều Nhất"}
+            </span>
           )}
           <h3 class="cl-pricing__name">{tier.name}</h3>
           
-          <div class="cl-pricing__price" style={tier.price === "Liên hệ báo giá" ? "font-size: 1.8rem; line-height: 1.2;" : ""}>
-            {tier.price}{tier.price !== "Liên hệ báo giá" && <sup>đ</sup>}
+          <div class="cl-pricing__price-wrapper">
+            <div class="cl-pricing__price" style={tier.price === "Liên hệ báo giá" ? "font-size: 1.85rem; line-height: 1.2;" : ""}>
+              {tier.price}{tier.price !== "Liên hệ báo giá" && <sup>đ</sup>}
+            </div>
+            <p class="cl-pricing__period">/{tier.period}</p>
           </div>
-          <p class="cl-pricing__period">/{tier.period}</p>
           
           <ul class="cl-pricing__features">
             {tier.features.map(feature => (
-              <li set:html={feature.replace(/\(([^)]+)\)/g, '<strong>($1)</strong>')}></li>
+              <li class="cl-pricing__feature-item">
+                <span class="cl-pricing__check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span set:html={feature.replace(/\(([^)]+)\)/g, '<strong>($1)</strong>')}></span>
+              </li>
             ))}
           </ul>
           
-          <a href="#dang-ky" class={`cl-btn ${tier.highlight ? 'cl-btn-primary' : 'cl-btn-secondary'} cl-btn-lg`} style="width: 100%;">
-            {tier.cta || "Đăng Ký Ngay"}
-          </a>
+          <div class="cl-pricing__actions">
+            <a href="#dang-ky" class={`cl-btn ${tier.highlight ? 'cl-btn-primary' : 'cl-btn-secondary'} cl-btn-lg cl-pricing__submit`}>
+              <span>{tier.cta || "🎯 Đăng Ký Học Thử"}</span>
+            </a>
+            <a href="tel:0979121097" class="cl-pricing__call-link" aria-label="Gọi hotline tư vấn">
+              <span>📞 Hoặc gọi: 0979.121.097</span>
+            </a>
+          </div>
         </div>
       ))}
+    </div>
+
+    <!-- Pricing Guarantee Reassurance Box -->
+    <div class="cl-pricing__guarantee cl-animate">
+      <div class="cl-guarantee-grid">
+        <div class="cl-guarantee-item">
+          <span class="cl-guarantee-icon">🛡️</span>
+          <div>
+            <strong>Cam kết đầu ra 100%</strong>
+            <span>Học lại hoàn toàn miễn phí nếu chưa biết bơi</span>
+          </div>
+        </div>
+        <div class="cl-guarantee-item">
+          <span class="cl-guarantee-icon">🔄</span>
+          <div>
+            <strong>Bảo lưu linh hoạt</strong>
+            <span>Hỗ trợ bảo lưu khóa học lên tới 2.5 tháng</span>
+          </div>
+        </div>
+        <div class="cl-guarantee-item">
+          <span class="cl-guarantee-icon">👨‍🏫</span>
+          <div>
+            <strong>HLV trực tiếp dưới nước</strong>
+            <span>Luôn theo sát 100% thời gian đảm bảo an toàn</span>
+          </div>
+        </div>
+        <div class="cl-guarantee-item">
+          <span class="cl-guarantee-icon">🎁</span>
+          <div>
+            <strong>01 Buổi học thử miễn phí</strong>
+            <span>Test nước & trải nghiệm trước khi đăng ký</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     {pricing.note && (
@@ -67,12 +117,233 @@ const { pricing } = Astro.props;
 </section>
 
 <style>
+  .cl-pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .cl-pricing__card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 20px rgba(0, 119, 182, 0.07), 0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 1.5px solid rgba(0, 119, 182, 0.12);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cl-pricing__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 119, 182, 0.14);
+    border-color: rgba(0, 119, 182, 0.3);
+  }
+
+  .cl-pricing__card--featured {
+    border-color: #0077B6;
+    border-width: 2px;
+    box-shadow: 0 8px 30px rgba(0, 119, 182, 0.16), 0 0 20px rgba(0, 180, 216, 0.1);
+    transform: scale(1.02);
+  }
+
+  .cl-pricing__card--featured:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 119, 182, 0.22);
+  }
+
+  .cl-pricing__badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%);
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 5px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 14px rgba(255, 107, 53, 0.4);
+    white-space: nowrap;
+  }
+
+  .cl-pricing__name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #023047;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .cl-pricing__price-wrapper {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .cl-pricing__price {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #0077B6;
+    line-height: 1.1;
+    font-family: var(--font-heading, sans-serif);
+  }
+
+  .cl-pricing__price sup {
+    font-size: 1.2rem;
+    font-weight: 700;
+    top: -0.6em;
+  }
+
+  .cl-pricing__period {
+    font-size: 0.88rem;
+    color: #6B7280;
+    margin-top: 4px;
+  }
+
+  .cl-pricing__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .cl-pricing__feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #374151;
+    line-height: 1.45;
+  }
+
+  .cl-pricing__check-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.12);
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cl-pricing__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .cl-pricing__submit {
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  .cl-pricing__call-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #0077B6;
+    text-decoration: none;
+    padding: 4px;
+    transition: color 150ms ease;
+  }
+
+  .cl-pricing__call-link:hover {
+    color: #FF6B35;
+    text-decoration: underline;
+  }
+
+  /* Guarantee Strip */
+  .cl-pricing__guarantee {
+    max-width: 960px;
+    margin: 48px auto 0;
+    background: #F0F8FF;
+    border: 1px solid rgba(0, 119, 182, 0.15);
+    border-radius: 20px;
+    padding: 24px 32px;
+  }
+
+  .cl-guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .cl-guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .cl-guarantee-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .cl-guarantee-item strong {
+    display: block;
+    font-size: 0.88rem;
+    color: #023047;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .cl-guarantee-item span {
+    display: block;
+    font-size: 0.75rem;
+    color: #555577;
+    line-height: 1.3;
+  }
+
   .cl-pricing__note {
     max-width: 800px;
-    margin: 32px auto 0;
+    margin: 24px auto 0;
     text-align: center;
-    font-size: 0.9rem;
-    color: var(--cl-text-light);
+    font-size: 0.88rem;
+    color: #6B7280;
     line-height: 1.5;
+  }
+
+  @media (max-width: 991px) {
+    .cl-guarantee-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cl-pricing__card {
+      padding: 32px 20px;
+    }
+    .cl-pricing__card--featured {
+      transform: none;
+    }
+    .cl-pricing__card--featured:hover {
+      transform: translateY(-4px);
+    }
+    .cl-guarantee-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
   }
 </style>
