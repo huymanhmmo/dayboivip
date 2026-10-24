@@ -14,17 +14,17 @@ export interface Props {
 const { curriculum } = Astro.props;
 ---
 
-<section class="cl-section">
+<section class="cl-section" id="lo-trinh-hoc">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
-        Lộ Trình Học
+        Lộ Trình Đào Tạo
       </span>
       <h2 class="cl-section-title__heading">
         {curriculum.title}
       </h2>
       <p class="cl-section-title__sub">
-        Lộ trình giảng dạy được chia thành từng giai đoạn khoa học, bám sát khả năng tiếp thu thực tế của học viên.
+        Lộ trình giảng dạy được chia thành từng giai đoạn khoa học, bám sát khả năng tiếp thu thực tế của từng học viên.
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
@@ -32,7 +32,6 @@ const { curriculum } = Astro.props;
     <div class="cl-curriculum__timeline-wrapper">
       <div class="cl-timeline">
         {curriculum.stages.map((stage, index) => {
-          // Add classes based on stage index to create visual progression
           let statusClass = "";
           if (index === 0) {
             statusClass = "cl-timeline__step--completed";
@@ -42,16 +41,27 @@ const { curriculum } = Astro.props;
           
           return (
             <div class={`cl-timeline__step ${statusClass} cl-animate`}>
-              <div class="cl-timeline__dot"></div>
+              <div class="cl-timeline__dot">
+                <span class="cl-dot-number">{index + 1}</span>
+              </div>
               <div class="cl-timeline__content">
-                <span class="cl-timeline__number">{index + 1}</span>
-                <span class="cl-timeline__sessions-badge">{stage.sessions}</span>
-                <h3 class="cl-timeline__title">{stage.phase}: {stage.title}</h3>
+                <div class="cl-timeline__header">
+                  <div>
+                    <span class="cl-timeline__phase-tag">{stage.phase}</span>
+                    <h3 class="cl-timeline__title">{stage.title}</h3>
+                  </div>
+                  <span class="cl-timeline__sessions-badge">⏱️ {stage.sessions}</span>
+                </div>
+                
                 <ul class="cl-timeline__list">
                   {stage.items.map(item => (
                     <li class="cl-timeline__item">
-                      <span class="cl-timeline__item-check">✓</span>
-                      {item}
+                      <span class="cl-timeline__item-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -60,59 +70,271 @@ const { curriculum } = Astro.props;
           );
         })}
       </div>
+
+      <!-- Graduation Outcome Box -->
+      <div class="cl-curriculum__outcome cl-animate">
+        <div class="cl-outcome-card">
+          <div class="cl-outcome-icon">🎓</div>
+          <div class="cl-outcome-content">
+            <h4 class="cl-outcome-title">Mục Tiêu & Chuẩn Đầu Ra Sau Khóa Học</h4>
+            <p class="cl-outcome-desc">
+              Học viên tự tin bơi được tối thiểu <strong>25m – 50m</strong> liên tục đúng kỹ thuật, thở nước nhịp nhàng không mệt, thuần thục <strong>kỹ năng đứng nước sinh tồn</strong> từ 1 – 3 phút và được cấp <strong>Chứng chỉ bơi Swim For Life</strong> có giá trị toàn quốc.
+            </p>
+          </div>
+          <a href="#dang-ky" class="cl-btn cl-btn-primary cl-outcome-btn">
+            <span>Đăng Ký Học Thử</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .cl-curriculum__timeline-wrapper {
-    max-width: 900px;
+    max-width: 920px;
     margin: 40px auto 0;
   }
 
-  .cl-timeline__sessions-badge {
-    float: right;
-    background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(10, 77, 140, 0.1));
-    color: var(--cl-primary);
-    padding: 4px 12px;
-    border-radius: var(--cl-radius-sm);
-    font-size: 0.8rem;
+  .cl-timeline {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .cl-timeline::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 42px;
+    width: 2px;
+    background: linear-gradient(180deg, #0077B6 0%, #00B4D8 50%, #48CAE4 100%);
+    opacity: 0.35;
+  }
+
+  .cl-timeline__step {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .cl-timeline__step:last-child {
+    margin-bottom: 0;
+  }
+
+  .cl-timeline__dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 3px solid #0077B6;
+    color: #0077B6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 14px rgba(0, 119, 182, 0.2);
+    flex-shrink: 0;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+
+  .cl-timeline__step--completed .cl-timeline__dot {
+    background: #0077B6;
+    color: #FFFFFF;
+  }
+
+  .cl-timeline__step--current .cl-timeline__dot {
+    background: #FF6B35;
+    border-color: #FF6B35;
+    color: #FFFFFF;
+    box-shadow: 0 4px 18px rgba(255, 107, 53, 0.4);
+    animation: cl-dot-pulse 2s infinite;
+  }
+
+  @keyframes cl-dot-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  .cl-timeline__content {
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 28px;
+    border: 1px solid rgba(0, 119, 182, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 119, 182, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+  }
+
+  .cl-timeline__content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 119, 182, 0.12);
+    border-color: rgba(0, 119, 182, 0.25);
+  }
+
+  .cl-timeline__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
+    padding-bottom: 12px;
+  }
+
+  .cl-timeline__phase-tag {
+    display: inline-block;
+    font-size: 0.75rem;
     font-weight: 700;
-    margin-top: -4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0077B6;
+    margin-bottom: 4px;
+  }
+
+  .cl-timeline__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #023047;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .cl-timeline__sessions-badge {
+    background: rgba(0, 119, 182, 0.08);
+    color: #0077B6;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid rgba(0, 119, 182, 0.15);
   }
 
   .cl-timeline__list {
     list-style: none;
     padding: 0;
-    margin: 12px 0 0 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .cl-timeline__item {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 10px;
     font-size: 0.95rem;
-    color: var(--cl-text);
-    margin-bottom: 8px;
+    color: #2D3748;
     line-height: 1.5;
   }
 
-  .cl-timeline__item:last-child {
-    margin-bottom: 0;
-  }
-
   .cl-timeline__item-check {
-    color: var(--cl-cyan);
-    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.12);
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    margin-top: 2px;
   }
 
-  @media (max-width: 480px) {
-    .cl-timeline__sessions-badge {
-      float: none;
-      display: inline-block;
-      margin-top: 8px;
-      margin-bottom: 8px;
+  /* Graduation Outcome Card */
+  .cl-curriculum__outcome {
+    margin-top: 48px;
+  }
+
+  .cl-outcome-card {
+    background: linear-gradient(135deg, #023047 0%, #005A8D 50%, #0077B6 100%);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: #FFFFFF;
+    box-shadow: 0 16px 36px rgba(2, 48, 71, 0.25);
+  }
+
+  .cl-outcome-icon {
+    font-size: 2.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.15);
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cl-outcome-content {
+    flex: 1;
+  }
+
+  .cl-outcome-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  .cl-outcome-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cl-outcome-desc strong {
+    color: #FFD166;
+  }
+
+  .cl-outcome-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8A5C 100%) !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+  }
+
+  @media (max-width: 768px) {
+    .cl-timeline {
+      padding-left: 0;
+    }
+    .cl-timeline::before {
+      display: none;
+    }
+    .cl-timeline__step {
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .cl-timeline__dot {
+      width: 36px;
+      height: 36px;
+      font-size: 0.95rem;
+    }
+    .cl-timeline__header {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cl-outcome-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 24px;
+      gap: 16px;
+    }
+    .cl-outcome-btn {
+      width: 100%;
     }
   }
 </style>

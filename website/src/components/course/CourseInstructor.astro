@@ -12,7 +12,7 @@ export interface Props {
 const { instructor } = Astro.props;
 ---
 
-<section class="cl-section">
+<section class="cl-section" id="doi-ngu-hlv">
   <div class="cl-section__container">
     <div class="cl-section-title">
       <span class="cl-section-title__badge">
@@ -22,41 +22,68 @@ const { instructor } = Astro.props;
         Giám Đốc Đào Tạo & Ban Huấn Luyện
       </h2>
       <p class="cl-section-title__sub">
-        Được dẫn dắt bởi chuyên gia nhiều năm kinh nghiệm, đội ngũ HLV tận tâm và có chứng chỉ cứu hộ quốc gia.
+        Được dẫn dắt trực tiếp bởi chuyên gia thể thao nhiều năm kinh nghiệm, đội ngũ HLV tận tâm, có chứng chỉ cứu hộ và tâm lý sư phạm.
       </p>
       <span class="cl-section-title__decoration"></span>
     </div>
 
     <div class="cl-instructor__container-inner">
-      <div class="cl-instructor cl-animate">
-        <img 
-          src="/images/team/thay-nguyen-huy-manh.jpg" 
-          alt={instructor.name} 
-          class="cl-instructor__photo" 
-          loading="lazy"
-          width="240"
-          height="320"
-        />
+      <div class="cl-instructor-card cl-animate">
+        <div class="cl-instructor__media">
+          <img 
+            src="/images/team/thay-nguyen-huy-manh.jpg" 
+            alt={instructor.name} 
+            class="cl-instructor__photo" 
+            loading="lazy"
+            width="280"
+            height="360"
+          />
+          <div class="cl-instructor__media-badge">
+            <span class="cl-media-badge-icon">🏅</span>
+            <div class="cl-media-badge-text">
+              <strong>10+ Năm</strong>
+              <span>Kinh nghiệm</span>
+            </div>
+          </div>
+        </div>
+
         <div class="cl-instructor__body">
-          <span class="cl-instructor__badge">Người Sáng Lập</span>
-          <h3 class="cl-instructor__name">{instructor.name}</h3>
-          <p class="cl-instructor__title">{instructor.title}</p>
-          
-          <div class="cl-instructor__experience">
-            <strong>Kinh nghiệm:</strong> {instructor.experience}
+          <div class="cl-instructor__header">
+            <span class="cl-instructor__role-pill">
+              <span class="role-dot"></span>
+              Người Sáng Lập & HLV Trưởng
+            </span>
+            <h3 class="cl-instructor__name">{instructor.name}</h3>
+            <p class="cl-instructor__title">{instructor.title}</p>
           </div>
           
-          <div class="cl-instructor__certs-title">Bằng cấp & Chứng chỉ:</div>
-          <ul class="cl-instructor__certs">
-            {instructor.certifications.map(cert => (
-              <li>{cert}</li>
-            ))}
-          </ul>
+          <div class="cl-instructor__experience-box">
+            <span class="exp-icon">🎯</span>
+            <div>
+              <strong>Kinh nghiệm giảng dạy:</strong> {instructor.experience}
+            </div>
+          </div>
           
-          <div class="cl-instructor__more">
+          <div class="cl-instructor__certs-section">
+            <h4 class="cl-instructor__certs-title">Bằng Cấp & Chứng Chỉ Chuyên Môn:</h4>
+            <div class="cl-instructor__certs-grid">
+              {instructor.certifications.map(cert => (
+                <div class="cl-cert-pill">
+                  <span class="cert-check">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span>{cert}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div class="cl-instructor__quote-wrapper">
             <blockquote class="cl-instructor__quote">
               <span class="cl-instructor__quote-mark">“</span>
-              {instructor.quote}
+              <p>{instructor.quote}</p>
             </blockquote>
           </div>
         </div>
@@ -67,67 +94,242 @@ const { instructor } = Astro.props;
 
 <style>
   .cl-instructor__container-inner {
-    max-width: 900px;
+    max-width: 960px;
     margin: 40px auto 0;
   }
 
-  .cl-instructor__experience {
+  .cl-instructor-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 36px;
+    border: 1px solid rgba(0, 119, 182, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cl-instructor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077B6 0%, #00B4D8 50%, #FF6B35 100%);
+  }
+
+  /* Media Column */
+  .cl-instructor__media {
+    position: relative;
+    flex-shrink: 0;
+    width: 260px;
+  }
+
+  .cl-instructor__photo {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid rgba(240, 248, 255, 0.9);
+    box-shadow: 0 8px 24px rgba(2, 48, 71, 0.12);
+  }
+
+  .cl-instructor__media-badge {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #023047;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(2, 48, 71, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+  }
+
+  .cl-media-badge-icon {
+    font-size: 1.2rem;
+  }
+
+  .cl-media-badge-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .cl-media-badge-text strong {
+    font-size: 0.85rem;
+    line-height: 1.1;
+    color: #FFD166;
+  }
+
+  .cl-media-badge-text span {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
+  }
+
+  /* Body Column */
+  .cl-instructor__body {
+    flex: 1;
+  }
+
+  .cl-instructor__role-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 119, 182, 0.08);
+    color: #0077B6;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+  }
+
+  .role-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #0077B6;
+  }
+
+  .cl-instructor__name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #023047;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .cl-instructor__title {
     font-size: 0.95rem;
-    color: var(--cl-text);
-    margin-bottom: 12px;
+    color: #0077B6;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+  }
+
+  .cl-instructor__experience-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F0F8FF;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    color: #2D3748;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 119, 182, 0.1);
+  }
+
+  .exp-icon {
+    font-size: 1.2rem;
   }
 
   .cl-instructor__certs-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    color: var(--cl-dark);
-    margin-bottom: 6px;
+    color: #023047;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin-bottom: 10px;
   }
 
-  .cl-instructor__certs {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
+  .cl-instructor__certs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
   }
 
-  .cl-instructor__certs li {
+  .cl-cert-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 119, 182, 0.16);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2D3748;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .cert-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cl-instructor__quote-wrapper {
     position: relative;
-    padding-left: 16px;
-    font-size: 0.9rem;
-    color: var(--cl-text-light);
-    margin-bottom: 4px;
-    line-height: 1.4;
-  }
-
-  .cl-instructor__certs li::before {
-    content: "•";
-    position: absolute;
-    left: 4px;
-    color: var(--cl-primary-light);
-    font-weight: bold;
   }
 
   .cl-instructor__quote {
-    margin: 16px 0 0 0;
-    padding: 12px 16px;
-    background: var(--cl-bg-alt);
-    border-left: 4px solid var(--cl-primary);
-    border-radius: 0 var(--cl-radius-sm) var(--cl-radius-sm) 0;
+    margin: 0;
+    padding: 16px 20px 16px 48px;
+    background: #F7FBFE;
+    border-left: 4px solid #0077B6;
+    border-radius: 0 14px 14px 0;
     font-style: italic;
-    font-size: 0.9rem;
-    color: var(--cl-text);
+    font-size: 0.95rem;
+    color: #4A5568;
     position: relative;
+    line-height: 1.6;
+  }
+
+  .cl-instructor__quote p {
+    margin: 0;
   }
 
   .cl-instructor__quote-mark {
-    font-size: 2rem;
+    font-size: 3rem;
     position: absolute;
-    top: -5px;
-    left: 4px;
-    opacity: 0.15;
+    top: 4px;
+    left: 12px;
+    color: #0077B6;
+    opacity: 0.3;
     font-family: Georgia, serif;
     line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    .cl-instructor-card {
+      flex-direction: column;
+      padding: 24px;
+      gap: 28px;
+      text-align: center;
+    }
+    .cl-instructor__media {
+      width: 200px;
+    }
+    .cl-instructor__photo {
+      height: 260px;
+    }
+    .cl-instructor__experience-box {
+      justify-content: center;
+    }
+    .cl-instructor__certs-grid {
+      justify-content: center;
+    }
+    .cl-instructor__quote {
+      text-align: left;
+    }
   }
 </style>
