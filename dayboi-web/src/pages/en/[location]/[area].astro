@@ -46,7 +46,7 @@ const enNames = {
 };
 
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
+const phoneHref = (phone) => phone ? `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}` : '#';
 const customerCopy = (value = '') => String(value)
   .replace(/cam kết 100%/gi, 'proven results')
   .replace(/an toàn tuyệt đối/gi, 'high safety standards')
@@ -339,7 +339,7 @@ if (isCommune) {
                         <section>
                           <span>Management / Reception</span>
                           <h4>{venue.venueContact.name}</h4>
-                          <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
+                          {venue.venueContact.phone ? <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a> : <span class="area-source">Contact at pool counter</span>}
                         </section>
                       )}
                       {(venue.instructors || []).map((instructor) => (

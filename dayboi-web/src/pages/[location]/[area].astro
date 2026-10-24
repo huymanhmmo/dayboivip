@@ -30,7 +30,7 @@ const { area, commune, isCommune = false } = Astro.props;
 const currentYear = new Date().getFullYear();
 
 const mapsSearch = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-const phoneHref = (phone) => `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}`;
+const phoneHref = (phone) => phone ? `tel:${phone.split('/')[0].replace(/[^0-9+]/g, '')}` : '#';
 const customerCopy = (value = '') => String(value)
   .replace(/cam kết 100%/gi, 'đặt mục tiêu thành thạo')
   .replace(/an toàn tuyệt đối/gi, 'ưu tiên an toàn cao nhất')
@@ -360,7 +360,7 @@ if (isCommune) {
                         <section>
                           <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
                           <h4>{venue.venueContact.name}</h4>
-                          <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
+                          {venue.venueContact.phone ? <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a> : <span class="area-source">Liên hệ trực tiếp tại bể</span>}
                           {venue.venueContact.note && <p>{customerCopy(venue.venueContact.note)}</p>}
                           <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin công khai: {venue.venueContact.sourceTitle} ↗</a>
                         </section>
@@ -370,7 +370,7 @@ if (isCommune) {
                           <span>Đăng ký lớp học bơi</span>
                           <h4>{instructor.unitName}</h4>
                           <p>{instructor.contactPerson}</p>
-                          <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
+                          {instructor.phone ? <a href={phoneHref(instructor.phone)}>{instructor.phone}</a> : null}
                           <p>{customerCopy(instructor.courseTypes)}</p>
                           <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin lớp: {instructor.sourceTitle} ↗</a>
                         </section>
@@ -677,7 +677,7 @@ if (isCommune) {
                     <section>
                       <span>{venue.venueContact.role || 'Ban quản lý / quầy vé'}</span>
                       <h4>{venue.venueContact.name}</h4>
-                      <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a>
+                      {venue.venueContact.phone ? <a href={phoneHref(venue.venueContact.phone)}>{venue.venueContact.phone}</a> : <span class="area-source">Liên hệ trực tiếp tại bể</span>}
                       {venue.venueContact.note && <p>{customerCopy(venue.venueContact.note)}</p>}
                       <a href={venue.venueContact.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin công khai: {venue.venueContact.sourceTitle} ↗</a>
                     </section>
@@ -687,7 +687,7 @@ if (isCommune) {
                       <span>Đăng ký lớp học bơi</span>
                       <h4>{instructor.unitName}</h4>
                       <p>{instructor.contactPerson}</p>
-                      <a href={phoneHref(instructor.phone)}>{instructor.phone}</a>
+                      {instructor.phone ? <a href={phoneHref(instructor.phone)}>{instructor.phone}</a> : null}
                       <p>{customerCopy(instructor.courseTypes)}</p>
                       <a href={instructor.exactSourceUrl} target="_blank" rel="noopener noreferrer" class="area-source">Xem thông tin lớp: {instructor.sourceTitle} ↗</a>
                     </section>

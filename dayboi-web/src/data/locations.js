@@ -21,7 +21,7 @@ export const locations = [
     ],
     faqs: [
       { q: "Swim For Life dạy bơi ở những bể bơi nào tại Hà Nội?", a: "Chúng tôi dạy tại nhiều bể bơi chất lượng cao như: Tăng Bạt Hổ, Bách Khoa, Times City, Bảo Sơn, Hapulico và các bể bơi khu đô thị Vinhomes Ocean Park, Smart City." },
-      { q: "Học bơi ở Hà Nội giá bao nhiêu?", a: "Chi phí tùy thuộc vào hình thức học (1 kèm 1 hoặc nhóm nhỏ) và địa điểm bể bơi. Tất cả mức giá đều được tối ưu và hỗ trợ học thử miễn phí. Vui lòng liên hệ hotline 0979.121.097 để nhận báo giá chi tiết." },
+      { q: "Học bơi ở Hà Nội giá bao nhiêu?", a: "Chi phí tùy thuộc vào hình thức học (1 kèm 1 hoặc nhóm nhỏ) và địa điểm bể bơi. Tất cả mức giá đều được tối ưu và hỗ trợ học thử miễn phí. Tham khảo trực tiếp giá vé và học phí tại các cơ sở bể bơi địa phương." },
       { q: "Học bơi ở Hà Nội mùa đông có được không?", a: "Hoàn toàn được! Chúng tôi có hệ thống bể bơi bốn mùa nước ấm trong nhà như Hapulico, Bảo Sơn, Times City giúp duy trì việc học bơi suốt mùa đông ấm áp." }
     ]
   },

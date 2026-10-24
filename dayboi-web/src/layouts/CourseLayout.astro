@@ -88,7 +88,7 @@ export interface Props {
 }
 
 const { course, breadcrumbs, schema, lang = 'vi', alternateUrl, alternateLang } = Astro.props;
-const isEnterprise = course.slug === 'doanh-nghiep';
+const isEnterprise = course.slug === 'doanh-nghiep' || course.slug === 'corporate';
 ---
 
 <PageLayout
@@ -200,9 +200,31 @@ const isEnterprise = course.slug === 'doanh-nghiep';
 
         <div class="cl-form-container">
           <div class="cl-form-info">
-            <h3 class="cl-form-info__title">{lang === 'vi' ? 'Thông tin cần chuẩn bị' : 'Information to prepare'}</h3>
+            <h3 class="cl-form-info__title">{lang === 'vi' ? 'Hotline & Zalo Tiếp Nhận Doanh Nghiệp' : 'Direct Enterprise Contact'}</h3>
             <p class="cl-form-info__text">
-              {lang === 'vi' ? 'Vui lòng cung cấp quy mô, đối tượng học viên, địa điểm và thời gian dự kiến để đội ngũ đánh giá tính khả thi.' : 'Please provide group size, audience, locations and expected timeline so the team can assess feasibility.'}
+              {lang === 'vi' ? 'Kênh tiếp nhận trực tiếp dành cho đại diện Doanh nghiệp, Đoàn thể, Trường học và Ban Quản trị Khu dân cư / Khu đô thị:' : 'Direct channel for Corporate Representatives, Institutions, Schools, and Residential Boards:'}
+            </p>
+            <div style="margin: 16px 0; padding: 18px; background: rgba(0, 119, 182, 0.08); border-left: 4px solid #0077b6; border-radius: 8px;">
+              <p style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: #0077b6;">
+                📞 Hotline / Zalo: <a href="tel:0979121097" style="color: #0077b6; text-decoration: underline;">0979.121.097</a>
+              </p>
+              <p style="margin: 0 0 6px 0; font-size: 0.95rem;">
+                <strong>Thầy Nguyễn Huy Mạnh</strong> - Giám đốc đào tạo Swim For Life
+              </p>
+              <div style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="tel:0979121097" class="cl-btn cl-btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+                  <span>📞 Gọi Trực Tiếp</span>
+                </a>
+                <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-btn cl-btn-zalo" style="padding: 8px 16px; font-size: 0.9rem;">
+                  <span>💬 Chat Zalo Hợp Tác</span>
+                </a>
+              </div>
+              <p style="margin: 12px 0 0 0; font-size: 0.82rem; color: #d90429; font-weight: 600; line-height: 1.4;">
+                ⚠️ {lang === 'vi' ? 'LƯU Ý: Số điện thoại này CHỈ tiếp nhận khách hàng Doanh nghiệp, Tập thể, Nhóm lớn, Ban quản lý Khu dân cư / Khu đô thị (từ 10 người trở lên). Trung tâm không tiếp nhận tư vấn khách hàng cá nhân qua số này.' : 'NOTE: This contact is EXCLUSIVELY for Corporate, Organization, and Large Group/Community contracts (10+ learners). We do not accept individual learner inquiries here.'}
+              </p>
+            </div>
+            <p class="cl-form-info__text" style="font-size: 0.88rem; color: var(--color-text-muted);">
+              {lang === 'vi' ? 'Hoặc điền biểu mẫu kế bên, chúng tôi sẽ liên hệ lại gửi báo giá và kế hoạch đào tạo chi tiết trong vòng 24h.' : 'Or fill out the form, and our training director will reach out with a detailed proposal within 24 hours.'}
             </p>
           </div>
           

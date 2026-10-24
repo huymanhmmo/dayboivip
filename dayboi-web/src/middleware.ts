@@ -69,10 +69,15 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const response = await next();
   if (!response.headers.get('content-type')?.includes('text/html')) return response;
 
+  const pathname = context.url.pathname;
+  // Keep phone & direct B2B contact on enterprise / corporate pages
+  const isEnterprisePage = pathname.includes('/doanh-nghiep') || pathname.includes('/corporate');
+  if (isEnterprisePage) return response;
+
   const headers = new Headers(response.headers);
   headers.delete('content-length');
 
-  return new Response(sanitizeLegacyRetailContact(await response.text(), context.url.pathname.startsWith('/en/')), {
+  return new Response(sanitizeLegacyRetailContact(await response.text(), pathname.startsWith('/en/')), {
     status: response.status,
     statusText: response.statusText,
     headers,

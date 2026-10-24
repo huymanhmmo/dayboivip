@@ -83,8 +83,8 @@ export function getAllCommunePages() {
       venueContact: {
         role: 'Ban quản lý & quầy vé bể bơi',
         name: pool.name,
-        phone: '0979.121.097',
-        note: 'Liên hệ mua vé bơi tự do hoặc đăng ký học bơi',
+        phone: '',
+        note: 'Liên hệ quầy vé bể bơi để biết giờ mở cửa và giá vé',
         exactSourceUrl: `https://dayboi.vip/${locSlug}/`,
         sourceTitle: `Thông tin chi tiết ${pool.name} tại ${locMeta.name}`,
       },
@@ -92,7 +92,7 @@ export function getAllCommunePages() {
         {
           unitName: `Trung tâm Dạy Bơi Swim For Life ${locMeta.name}`,
           contactPerson: 'Đội ngũ HLV Chuyên Nghiệp Swim For Life',
-          phone: '0979.121.097',
+          phone: '',
           courseTypes: 'Lớp dạy bơi 1 kèm 1 cho trẻ em & người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật',
           exactSourceUrl: `https://dayboi.vip/${locSlug}/`,
           sourceTitle: `Lớp học bơi kèm riêng tại ${pool.name} - Swim For Life`,

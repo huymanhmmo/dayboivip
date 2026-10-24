@@ -704,7 +704,7 @@ export const hungyenResearch = {
           venueContact: {
             role: 'Ban Quản trị Tiện ích Căn hộ Solforest Ecopark',
             name: 'Lễ tân Bể bơi Bốn Mùa Nước ấm Solforest',
-            phone: '024.6262.7799 / 0979.121.097',
+            phone: '024.6262.7799',
             note: 'Kiểm tra quyền sử dụng bể bơi nước ấm 28-30°C của cư dân và đăng ký lớp dạy bơi Swim For Life',
             exactSourceUrl: 'https://ecopark.com.vn/tien-ich/be-boi-bon-mua-nuoc-am-solforest-ecopark.html',
             sourceTitle: 'Tiện ích bể bơi bốn mùa nước ấm Solforest Ecopark - Ecopark',
@@ -713,7 +713,7 @@ export const hungyenResearch = {
             {
               unitName: 'Trung tâm Dạy Bơi Swim For Life Ecopark',
               contactPerson: 'Thầy Huy Mạnh (Chuyên gia Bơi Lội Swim For Life)',
-              phone: '0979.121.097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1, 1:2 chuẩn giáo trình Swim For Life, đồng hành đến khi biết bơi thành thạo đứng nước, đảm bảo an toàn tối đa',
               exactSourceUrl: 'https://dayboi.vip/khoa-hoc-boi/1-kem-1/',
               sourceTitle: 'Khóa học bơi kèm riêng 1 kèm 1 tại Ecopark - Swim For Life',
@@ -733,7 +733,7 @@ export const hungyenResearch = {
           venueContact: {
             role: 'Ban Quản lý Dịch vụ Đô thị EcoPM',
             name: 'Văn phòng Điều hành Bể bơi Nội khu WestBay & Rừng Cọ Ecopark',
-            phone: '024.6262.7788 / 0979.121.097',
+            phone: '024.6262.7788',
             note: 'Vé bơi cư dân các phân khu sinh thái và hỗ trợ lịch ca học bơi ngoài trời mùa hè',
             exactSourceUrl: 'https://ecopark.com.vn/tien-ich/he-thong-ho-boi-resort-sinh-thai-ecopark.html',
             sourceTitle: 'Hệ thống hồ bơi phong cách resort sinh thái tại Ecopark - Ecopark',
@@ -742,7 +742,7 @@ export const hungyenResearch = {
             {
               unitName: 'CLB Bơi Lội Cư Dân Nhí Ecopark',
               contactPerson: 'Thầy Huy Mạnh & Đội ngũ HLV Swim For Life',
-              phone: '0979.121.097',
+              phone: '',
               courseTypes: 'Khóa bơi hè sinh thái cho cư dân nhí, kỹ năng sinh tồn dưới nước, chỉnh sửa dáng bơi sải dài sức',
               exactSourceUrl: 'https://dayboi.vip/khoa-hoc-boi/tre-em/',
               sourceTitle: 'Khóa học bơi trẻ em tại Ecopark - Dayboi.vip',
@@ -957,7 +957,7 @@ export const hungyenResearch = {
       areas: 'Các bể bơi Solforest, WestBay, Rừng Cọ KĐT Ecopark',
       audiences: 'Cư dân Ecopark, trẻ em từ 4 tuổi và người lớn',
       formats: 'Kèm riêng 1:1 · nhóm nhỏ gia đình · đồng hành đến khi biết bơi thành thạo thành thạo',
-      contact: '0979 121 097 (Liên hệ Swim For Life đối tác Ecopark)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/',
       verification: 'Hoạt động lâu năm tại Ecopark và Vinhomes, giáo viên giàu kinh nghiệm sư phạm.',
       missing: 'Cần đặt lịch trước để khớp ca học tại bể bơi nội khu.',

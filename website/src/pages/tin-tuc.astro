@@ -279,7 +279,7 @@ const tagsList = Array.from(tagsMap.values());
         }).catch(err => console.error('Error submitting to Google Form:', err));
 
         // Open Zalo in a new tab immediately (prevents browser popup blocker)
-        window.open('https://zalo.me/0979121097', '_blank');
+        window.location.href = '/hoc-boi-o-dau/';
 
         modal.classList.add('active');
         form.reset();

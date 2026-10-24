@@ -7,9 +7,7 @@ const { lang = 'vi' } = Astro.props;
 ---
 
 <div class="cl-floating-cta" id="mobile-floating-cta">
-  <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-btn cl-btn-zalo">
-    <span>💬 Zalo</span>
-  </a>
+  <a href={lang === 'vi' ? '/hoc-boi-o-dau/' : '/en/swimming-locations/'} class="cl-btn cl-btn-zalo"><span>{lang === 'vi' ? '📍 Bể Bơi' : '📍 Pools'}</span></a>
   <a href="#dang-ky" class="cl-btn cl-btn-primary">
     <span>{lang === 'vi' ? '🚀 Đăng Ký Lớp' : '🚀 Register Now'}</span>
   </a>

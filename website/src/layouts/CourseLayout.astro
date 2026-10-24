@@ -182,20 +182,8 @@ const { course, breadcrumbs, schema } = Astro.props;
               Bạn có thể gọi điện trực tiếp hoặc chat qua Zalo để được giải đáp thắc mắc ngay lập tức:
             </p>
             <div class="cl-form-info__links">
-              <a href="tel:0979121097" class="cl-form-info__link cl-form-info__link--phone">
-                <span class="cl-form-info__icon">📞</span>
-                <div>
-                  <span class="cl-form-info__label">Hotline tư vấn</span>
-                  <span class="cl-form-info__value">0979.121.097</span>
-                </div>
-              </a>
-              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="cl-form-info__link cl-form-info__link--zalo">
-                <span class="cl-form-info__icon">💬</span>
-                <div>
-                  <span class="cl-form-info__label">Trò chuyện Zalo</span>
-                  <span class="cl-form-info__value">Mr.Mạnh (0979.121.097)</span>
-                </div>
-              </a>
+              <a href="/hoc-boi-o-dau/" class="cl-form-info__link cl-form-info__link--phone"><span class="cl-form-info__icon">📍</span><div><span class="cl-form-info__label">Địa điểm bơi</span><span class="cl-form-info__value">Xem danh bạ bể bơi</span></div></a>
+              <a href="/khoa-hoc-boi/doanh-nghiep/" class="cl-form-info__link cl-form-info__link--zalo"><span class="cl-form-info__icon">🏢</span><div><span class="cl-form-info__label">Hợp đồng đào tạo</span><span class="cl-form-info__value">Dành cho Doanh Nghiệp</span></div></a>
             </div>
           </div>
           
@@ -206,7 +194,13 @@ const { course, breadcrumbs, schema } = Astro.props;
       </div>
     </section>
 
-    <!-- Floating Mobile CTA -->
+    {course.slug === 'doanh-nghiep' && (
+    <div style="max-width: 800px; margin: 0 auto 30px; padding: 16px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 6px;">
+      <p style="margin: 0 0 6px 0; font-size: 1.1rem; font-weight: 700; color: #0369a1;">📞 Hotline Doanh Nghiệp: <a href="tel:0979121097">0979.121.097</a> (Thầy Nguyễn Huy Mạnh)</p>
+      <p style="margin: 0; font-size: 0.85rem; color: #b91c1c; font-weight: 600;">⚠️ Lưu ý: Kênh liên hệ này CHỈ tiếp nhận doanh nghiệp, trường học, ban quản trị khu dân cư từ 10 học viên trở lên. Không tiếp nhận học viên cá nhân.</p>
+    </div>
+  )}
+  <!-- Floating Mobile CTA -->
     <FloatingCTA />
   </div>
 </PageLayout>

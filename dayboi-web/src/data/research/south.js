@@ -30,7 +30,7 @@ export const dongnaiResearch = {
             {
               unitName: 'Trung tâm Dạy Bơi SwimGroup Đồng Nai (Swim For Life)',
               contactPerson: 'Thầy Mạnh (Điều phối chuyên môn)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1, bơi sinh tồn trẻ em 4.5 tuổi, chỉnh kỹ thuật 4 kiểu bơi thể thao, đồng hành đến khi biết bơi thành thạo',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-dong-nai/',
               sourceTitle: 'Dayboi.vip: Khóa học bơi kèm riêng tại Hồ bơi Sông Phố Biên Hòa',
@@ -315,7 +315,7 @@ export const lamdongResearch = {
             {
               unitName: 'Trung tâm Dạy bơi Nước ấm Phù Đổng (Swim For Life Đà Lạt)',
               contactPerson: 'Thầy Mạnh (Điều phối chuyên môn)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1 trong nước ấm 30°C quanh năm, đồng hành đến khi biết bơi thành thạo, không sợ cảm lạnh',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-lam-dong/',
               sourceTitle: 'Dayboi.vip: Khóa học bơi nước ấm kèm riêng tại Đà Lạt',
@@ -658,7 +658,7 @@ export const daklakResearch = {
             {
               unitName: 'Trung tâm Dạy Bơi Kèm Riêng Tây Nguyên (Swim For Life BMT)',
               contactPerson: 'Thầy Mạnh (Điều phối chuyên môn)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1 cao cấp, bơi sinh tồn an toàn, đồng hành đến khi biết bơi thành thạo sau khóa học',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-dak-lak/',
               sourceTitle: 'Dayboi.vip: Khóa học bơi kèm riêng tại Mường Thanh Luxury Buôn Ma Thuột',
@@ -856,7 +856,7 @@ export const daklakResearch = {
       areas: 'Hồ bơi Hoàng Việt, Victory School, Mường Thanh Luxury Buôn Ma Thuột',
       audiences: 'Trẻ nhỏ từ 5 tuổi, học sinh cần chứng chỉ bơi học đường, người lớn chưa biết bơi',
       formats: 'Dạy bơi 1 kèm 1 · kèm nhóm nhỏ 2 bạn · đồng hành đến khi biết bơi thành thạo sau 10-12 buổi',
-      contact: '0979 121 097 (Hotline HLV phụ trách Tây Nguyên)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/hoc-boi-dak-lak/',
       verification: 'Đội ngũ giáo viên TDTT chuyên ngành bơi lội, theo sát học viên dưới nước, giáo án sinh tồn Tây Nguyên.',
       missing: 'Cần đặt lịch trước để chọn bể bơi nước nóng phù hợp trong mùa lạnh.',
@@ -920,7 +920,7 @@ export const tayninhResearch = {
             {
               unitName: 'Trung tâm Dạy Bơi Kèm Riêng Tây Ninh (Swim For Life)',
               contactPerson: 'Thầy Mạnh (Điều phối chuyên môn)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1 trong nước ấm, bơi sinh tồn an toàn, đồng hành đến khi biết bơi thành thạo sau khóa học',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-tay-ninh/',
               sourceTitle: 'Dayboi.vip: Khóa học bơi kèm riêng tại Meliá Vinpearl Tây Ninh',
@@ -1144,7 +1144,7 @@ export const tayninhResearch = {
       areas: 'Meliá Vinpearl Tây Ninh, Hồ bơi CANA (Hòa Thành), TT Thanh Thiếu Nhi 30/4',
       audiences: 'Trẻ em từ 5 tuổi, người lớn chưa biết bơi, người sợ độ sâu',
       formats: 'Dạy bơi kèm riêng 1:1 · nhóm nhỏ gia đình · đồng hành đến khi biết bơi thành thạo sau khóa học',
-      contact: '0979 121 097 (Hotline HLV chuyên môn Tây Ninh)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/hoc-boi-tay-ninh/',
       verification: 'Đội ngũ giáo viên cử nhân TDTT, giáo án kèm riêng khoa học, hỗ trợ tận tình dưới nước.',
       missing: 'Cần đặt trước giờ học vào các khung giờ vàng 17h00 - 19h00.',

@@ -17,21 +17,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Sapphire - Vinhomes Smart City",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Sapphire - Vinhomes Smart City tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Sapphire - Vinhomes Smart City - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -45,21 +36,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa An Hưng - Dương Nội",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa An Hưng - Dương Nội tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa An Hưng - Dương Nội - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -73,21 +55,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa 33C Phạm Ngũ Lão",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa 33C Phạm Ngũ Lão tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa 33C Phạm Ngũ Lão - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -101,21 +74,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Cung Thiếu Nhi Đông Anh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Cung Thiếu Nhi Đông Anh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Cung Thiếu Nhi Đông Anh - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -129,21 +93,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Hinode Royal Park",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Hinode Royal Park tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Hinode Royal Park - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -157,21 +112,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi KĐT Tân Tây Đô",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi KĐT Tân Tây Đô tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi KĐT Tân Tây Đô - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -185,21 +131,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Văn hóa & Thể thao Chương Mỹ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Văn hóa & Thể thao Chương Mỹ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Văn hóa & Thể thao Chương Mỹ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -213,21 +150,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Mê Linh Plaza",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Mê Linh Plaza tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Mê Linh Plaza - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -241,21 +169,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Thể thao ĐH FPT Hòa Lạc",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Thể thao ĐH FPT Hòa Lạc tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Thể thao ĐH FPT Hòa Lạc - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -269,21 +188,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa KĐT Thanh Hà",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa KĐT Thanh Hà tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa KĐT Thanh Hà - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -297,21 +207,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Sóc Sơn",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Sóc Sơn tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Sóc Sơn - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -325,21 +226,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Sinh Thái Bát Tràng",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Sinh Thái Bát Tràng tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Sinh Thái Bát Tràng - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -353,21 +245,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Thể thao Thị xã Sơn Tây",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Thể thao Thị xã Sơn Tây tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Thể thao Thị xã Sơn Tây - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -381,21 +264,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Quốc Oai",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Quốc Oai tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Quốc Oai - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -409,21 +283,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Nhà Thi Đấu Thạch Thất",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Nhà Thi Đấu Thạch Thất tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Nhà Thi Đấu Thạch Thất - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -437,21 +302,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Thường Tín",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Thường Tín tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Thường Tín - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -465,21 +321,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Phú Xuyên",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Phú Xuyên tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Phú Xuyên - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -493,21 +340,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Vân Đình",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Vân Đình tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Vân Đình - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -521,21 +359,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Mỹ Đức",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Mỹ Đức tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Mỹ Đức - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -549,21 +378,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Quảng Oai",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Quảng Oai tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Quảng Oai - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -577,21 +397,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Phúc Thọ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Phúc Thọ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Phúc Thọ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -605,21 +416,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Nghĩa Tân",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Nghĩa Tân tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Nghĩa Tân - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -633,21 +435,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Vườn Nhật Zen Park Smart City",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Vườn Nhật Zen Park Smart City tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Vườn Nhật Zen Park Smart City - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -661,21 +454,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi KĐT FLC Premier Parc Đại Mỗ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi KĐT FLC Premier Parc Đại Mỗ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi KĐT FLC Premier Parc Đại Mỗ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -689,21 +473,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi ĐH Công Nghiệp Hà Nội",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi ĐH Công Nghiệp Hà Nội tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi ĐH Công Nghiệp Hà Nội - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-ha-noi",
@@ -717,21 +492,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Ecohome",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Ecohome tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-ha-noi/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Ecohome - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -745,21 +511,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Cung Văn Hóa Lao Động TP.HCM",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Cung Văn Hóa Lao Động TP.HCM tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Cung Văn Hóa Lao Động TP.HCM - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -773,21 +530,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Khách sạn Pullman Saigon Centre",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Khách sạn Pullman Saigon Centre tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Khách sạn Pullman Saigon Centre - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -801,21 +549,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Hồ Xuân Hương",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Hồ Xuân Hương tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Hồ Xuân Hương - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -829,21 +568,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm TDTT Quận 5",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm TDTT Quận 5 tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm TDTT Quận 5 - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -857,21 +587,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Chung cư Lê Thành",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Chung cư Lê Thành tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Chung cư Lê Thành - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -885,21 +606,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Celadon Sports & Resort Club",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Celadon Sports & Resort Club tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Celadon Sports & Resort Club - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -913,21 +625,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Tân Tạo",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Tân Tạo tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Tân Tạo - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -941,21 +644,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Phú Lâm Quận 6",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Phú Lâm Quận 6 tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Phú Lâm Quận 6 - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -969,21 +663,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Quận 6",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Văn hóa Thể thao Quận 6 tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Văn hóa Thể thao Quận 6 - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -997,21 +682,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Samland Giai Việt",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Samland Giai Việt tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Samland Giai Việt - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1025,21 +701,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Khu căn hộ Vista Verde",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Khu căn hộ Vista Verde tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Khu căn hộ Vista Verde - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1053,21 +720,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Củ Tỏi Hóc Môn",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Củ Tỏi Hóc Môn tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Củ Tỏi Hóc Môn - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1081,21 +739,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Khu phức hợp Canary Ehome",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Khu phức hợp Canary Ehome tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Khu phức hợp Canary Ehome - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1109,21 +758,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm TDTT Thị xã Bến Cát",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm TDTT Thị xã Bến Cát tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm TDTT Thị xã Bến Cát - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1137,21 +777,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Masteri An Phú",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Masteri An Phú tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Masteri An Phú - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1165,21 +796,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Sunrise Riverside Nhà Bè",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Sunrise Riverside Nhà Bè tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Sunrise Riverside Nhà Bè - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1193,21 +815,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Củ Chi",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Văn hóa Thể thao Củ Chi tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Văn hóa Thể thao Củ Chi - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1221,21 +834,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm TDTT Cần Giờ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm TDTT Cần Giờ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm TDTT Cần Giờ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1249,21 +853,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi The Imperial Hotel Vũng Tàu",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi The Imperial Hotel Vũng Tàu tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi The Imperial Hotel Vũng Tàu - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1277,21 +872,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể dục Thể thao Bà Rịa",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể dục Thể thao Bà Rịa tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể dục Thể thao Bà Rịa - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-tphcm",
@@ -1305,21 +891,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Thị xã Phú Mỹ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Thị xã Phú Mỹ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-tphcm/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Thị xã Phú Mỹ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1333,21 +910,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa KĐT Bắc Sông Cấm Thủy Nguyên",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa KĐT Bắc Sông Cấm Thủy Nguyên tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa KĐT Bắc Sông Cấm Thủy Nguyên - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1361,21 +929,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Văn hóa & Thể thao An Dương",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Văn hóa & Thể thao An Dương tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Văn hóa & Thể thao An Dương - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1389,21 +948,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Quốc Tế Đồi Rồng Dragon Ocean",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Quốc Tế Đồi Rồng Dragon Ocean tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Quốc Tế Đồi Rồng Dragon Ocean - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1417,21 +967,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Flamingo Cát Bà Beach Resort",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Flamingo Cát Bà Beach Resort tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Flamingo Cát Bà Beach Resort - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1445,21 +986,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trường Đại học Hải Phòng",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Trường Đại học Hải Phòng tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trường Đại học Hải Phòng - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1473,21 +1005,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Tiên Lãng",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Tiên Lãng tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Tiên Lãng - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hai-phong",
@@ -1501,21 +1024,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Vĩnh Bảo",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Vĩnh Bảo tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hai-phong/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Vĩnh Bảo - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-da-nang",
@@ -1529,21 +1043,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Almanity Hoi An Wellness Resort",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
       "sourceTitle": "Thông tin Hồ bơi Almanity Hoi An Wellness Resort tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Almanity Hoi An Wellness Resort - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-da-nang",
@@ -1557,21 +1062,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Tỉnh Quảng Nam",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Tỉnh Quảng Nam tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Tỉnh Quảng Nam - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-da-nang",
@@ -1585,21 +1081,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Điện Bàn",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Văn hóa Thể thao Điện Bàn tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Văn hóa Thể thao Điện Bàn - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-da-nang",
@@ -1613,21 +1100,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Hòa Vang",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Hòa Vang tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Hòa Vang - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-da-nang",
@@ -1641,21 +1119,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Quận Cẩm Lệ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Quận Cẩm Lệ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Quận Cẩm Lệ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-da-nang",
@@ -1669,21 +1138,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trường Đại học Bách Khoa Đà Nẵng",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
       "sourceTitle": "Thông tin Hồ bơi Trường Đại học Bách Khoa Đà Nẵng tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-da-nang/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trường Đại học Bách Khoa Đà Nẵng - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-can-tho",
@@ -1697,21 +1157,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi KĐT Nam Long Cái Răng",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
       "sourceTitle": "Thông tin Hồ bơi KĐT Nam Long Cái Răng tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi KĐT Nam Long Cái Răng - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-can-tho",
@@ -1725,21 +1176,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Quân Khu 9",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Quân Khu 9 tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Quân Khu 9 - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-can-tho",
@@ -1753,21 +1195,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Ô Môn",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Văn hóa Thể thao Ô Môn tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Văn hóa Thể thao Ô Môn - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-can-tho",
@@ -1781,21 +1214,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Thốt Nốt",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Thốt Nốt tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Thốt Nốt - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-can-tho",
@@ -1809,21 +1233,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Làng Du Lịch Sinh Thái Mỹ Khánh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
       "sourceTitle": "Thông tin Hồ bơi Làng Du Lịch Sinh Thái Mỹ Khánh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-can-tho/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Làng Du Lịch Sinh Thái Mỹ Khánh - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -1837,21 +1252,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Cung Quy hoạch & Hội chợ Triển lãm Quảng Ninh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Cung Quy hoạch & Hội chợ Triển lãm Quảng Ninh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Cung Quy hoạch & Hội chợ Triển lãm Quảng Ninh - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -1865,21 +1271,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Than Cẩm Phả",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Than Cẩm Phả tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Than Cẩm Phả - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -1893,21 +1290,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Than Nam Mẫu Uông Bí",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Than Nam Mẫu Uông Bí tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Than Nam Mẫu Uông Bí - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -1921,21 +1309,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Sonasea Vân Đồn Harbor City",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Sonasea Vân Đồn Harbor City tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Sonasea Vân Đồn Harbor City - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -1949,21 +1328,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Thị xã Quảng Yên",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Thị xã Quảng Yên tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Thị xã Quảng Yên - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -1977,21 +1347,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Thị xã Đông Triều",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Thị xã Đông Triều tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Thị xã Đông Triều - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-quang-ninh",
@@ -2005,21 +1366,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bến Du Thuyền Tuần Châu",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
       "sourceTitle": "Thông tin Bể bơi Bến Du Thuyền Tuần Châu tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-quang-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bến Du Thuyền Tuần Châu - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2033,21 +1385,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Nhà Thi Đấu Bắc Giang",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Nhà Thi Đấu Bắc Giang tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Nhà Thi Đấu Bắc Giang - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2061,21 +1404,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa ĐH Thể Dục Thể Thao Bắc Ninh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa ĐH Thể Dục Thể Thao Bắc Ninh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa ĐH Thể Dục Thể Thao Bắc Ninh - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2089,21 +1423,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Đào tạo VĐV Bắc Ninh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Đào tạo VĐV Bắc Ninh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Đào tạo VĐV Bắc Ninh - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2117,21 +1442,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa Quế Võ",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa Quế Võ tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa Quế Võ - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2145,21 +1461,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi KCN Yên Phong Viglacera",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi KCN Yên Phong Viglacera tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi KCN Yên Phong Viglacera - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2173,21 +1480,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Thuận Thành",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Thuận Thành tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Thuận Thành - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-bac-ninh",
@@ -2201,21 +1499,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bốn Mùa KĐT Đình Trám Việt Yên",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
       "sourceTitle": "Thông tin Bể bơi Bốn Mùa KĐT Đình Trám Việt Yên tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-bac-ninh/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bốn Mùa KĐT Đình Trám Việt Yên - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hue",
@@ -2229,21 +1518,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Thừa Thiên Huế",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Thừa Thiên Huế tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Thừa Thiên Huế - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hue",
@@ -2257,21 +1537,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Cung An Định",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
       "sourceTitle": "Thông tin Bể bơi Cung An Định tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Cung An Định - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hue",
@@ -2285,21 +1556,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm TDTT Thị xã Hương Thủy",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm TDTT Thị xã Hương Thủy tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm TDTT Thị xã Hương Thủy - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hue",
@@ -2313,21 +1575,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Trung tâm Thể thao Hương Trà",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
       "sourceTitle": "Thông tin Bể bơi Trung tâm Thể thao Hương Trà tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Trung tâm Thể thao Hương Trà - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-hue",
@@ -2341,21 +1594,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Bể bơi Bãi Biển Thuận An",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
       "sourceTitle": "Thông tin Bể bơi Bãi Biển Thuận An tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-hue/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Bể bơi Bãi Biển Thuận An - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-khanh-hoa",
@@ -2369,21 +1613,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Yersin Nha Trang",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
       "sourceTitle": "Thông tin Hồ bơi Yersin Nha Trang tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Yersin Nha Trang - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-khanh-hoa",
@@ -2397,21 +1632,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Mường Thanh Luxury Viễn Triều",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
       "sourceTitle": "Thông tin Hồ bơi Mường Thanh Luxury Viễn Triều tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Mường Thanh Luxury Viễn Triều - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-khanh-hoa",
@@ -2425,21 +1651,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Cam Ranh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Cam Ranh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Cam Ranh - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-khanh-hoa",
@@ -2453,21 +1670,12 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm TDTT Ninh Hòa",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm TDTT Ninh Hòa tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm TDTT Ninh Hòa - Swim For Life"
-      }
-    ]
+    "instructors": []
   },
   {
     "provinceSlug": "hoc-boi-khanh-hoa",
@@ -2481,20 +1689,11 @@ export const communePools = [
     "venueContact": {
       "role": "Ban quản lý & quầy vé bể bơi",
       "name": "Hồ bơi Trung tâm Thể thao Diên Khánh",
-      "phone": "0979.121.097",
+      "phone": "",
       "note": "Liên hệ mua vé bơi tự do hoặc đăng ký học bơi",
       "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
       "sourceTitle": "Thông tin Hồ bơi Trung tâm Thể thao Diên Khánh tại địa phương"
     },
-    "instructors": [
-      {
-        "unitName": "Trung tâm Dạy Bơi Swim For Life",
-        "contactPerson": "HLV Trưởng Swim For Life",
-        "phone": "0979.121.097",
-        "courseTypes": "Lớp dạy bơi 1 kèm 1 cho trẻ em từ 4 tuổi và người lớn; bơi ếch, bơi sải, bơi sinh tồn cam kết chuẩn kỹ thuật",
-        "exactSourceUrl": "https://dayboi.vip/hoc-boi-khanh-hoa/",
-        "sourceTitle": "Khóa học bơi kèm riêng tại Hồ bơi Trung tâm Thể thao Diên Khánh - Swim For Life"
-      }
-    ]
+    "instructors": []
   }
 ];

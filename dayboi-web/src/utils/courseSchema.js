@@ -25,7 +25,7 @@ export function generateCourseSchema(course, url) {
       "priceCurrency": "VND",
       "availability": "https://schema.org/InStock",
       "url": url,
-      "description": "Liên hệ hotline 0979.121.097 để nhận báo giá chi tiết"
+      "description": "Liên hệ ban tổ chức để nhận biểu phí theo quy mô khóa học"
     },
     "hasCourseInstance": {
       "@type": "CourseInstance",

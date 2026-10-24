@@ -67,7 +67,7 @@
 ### 4.1 Header & Sticky Navbar
 * Giữ cố định trên cùng (`position: sticky; top: 0; z-index: 1000`).
 * Nền kính mờ: `backdrop-filter: blur(12px); background: rgba(255,255,255,0.92); border-bottom: 1px solid rgba(0,119,182,0.08)`.
-* Hotline gọi nhanh luôn hiển thị với icon rung nhẹ: `0979.121.097`.
+* Hotline gọi nhanh luôn hiển thị với icon rung nhẹ: `[Hotline Doanh nghiệp]`.
 * Nút CTA "Đăng Ký Học Thử" thu hút ánh nhìn bằng viền glow cam.
 
 ### 4.2 Hero Section (Vùng trên nếp gấp - Above the fold)
@@ -95,7 +95,7 @@
 
 ### 4.6 Floating CTA trên Điện thoại (Mobile Floating Bar)
 * Thanh dính đáy màn hình gồm 2 nút bấm thao tác nhanh:
-  * Nút Gọi Hotline `0979.121.097` (Màu xanh nước biển).
+  * Nút Gọi Hotline `[Hotline Doanh nghiệp]` (Màu xanh nước biển).
   * Nút Đăng Ký Học Thử / Zalo (Màu cam nổi bật).
 
 ---

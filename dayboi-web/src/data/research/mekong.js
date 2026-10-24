@@ -371,7 +371,7 @@ export const dongthapResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Cao Lãnh (Swim For Life)',
               contactPerson: 'Thầy Hưng (Cử nhân ĐH TDTT TP.HCM)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1, chỉnh sửa quạt tay đạp chân chuẩn xác, bảo đảm biết bơi sau 10 buổi',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-dong-thap/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng cam kết chất lượng tại TP. Cao Lãnh'
@@ -433,7 +433,7 @@ export const dongthapResearch = {
             {
               unitName: 'Lớp Học Bơi Người Lớn & Doanh Nhân Cao Lãnh',
               contactPerson: 'Thầy Hưng (HLV Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1 bảo mật, thời gian linh hoạt, học bơi ếch và bơi sải dưỡng sinh',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-dong-thap/',
               sourceTitle: 'Swim For Life: Khóa học bơi người lớn kèm riêng tại trung tâm Cao Lãnh'
@@ -502,7 +502,7 @@ export const dongthapResearch = {
             {
               unitName: 'Lớp Bơi Kèm Riêng Chất Lượng Cao Mỹ Tho (Swim For Life)',
               contactPerson: 'Thầy Minh (HLV Chuyên môn)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1, bơi sinh tồn tự cứu, đứng nước sông hồ, đồng hành đến khi biết bơi thành thạo',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-dong-thap/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng chuẩn sư phạm tại TP. Mỹ Tho'
@@ -573,7 +573,7 @@ export const dongthapResearch = {
       areas: 'TT Thanh Thiếu Nhi Đồng Tháp (Điện Biên Phủ), Hồ bơi Tỉnh Tiền Giang (Phan Lương Trực)',
       audiences: 'Trẻ em từ 5 tuổi, người lớn chưa biết bơi, học viên vùng sông nước',
       formats: 'Kèm riêng 1:1 · nhóm nhỏ 2 bạn · đồng hành đến khi biết bơi thành thạo đứng nước vững',
-      contact: '0979 121 097 (Hotline phụ trách chuyên môn Đồng Tháp - Tiền Giang)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/hoc-boi-dong-thap/',
       verification: 'HLV cử nhân Đại học TDTT TP.HCM, giáo án sinh tồn sông lũ bài bản.',
       missing: 'Cần đặt trước lịch học ca chiều để tránh trùng giờ hồ bơi cao điểm.',
@@ -645,7 +645,7 @@ export const vinhlongResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng TP. Vĩnh Long (Swim For Life)',
               contactPerson: 'Thầy Trí (Cử nhân TDTT Chuyên sâu Bơi lội)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1, kỹ năng đứng nước sông ngòi, cứu đuối gián tiếp, đồng hành đến khi biết bơi thành thạo',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-vinh-long/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng sinh tồn tại Vĩnh Long'
@@ -741,7 +741,7 @@ export const vinhlongResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Bến Tre (Swim For Life)',
               contactPerson: 'Thầy Trí (HLV Chuyên sâu Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1 kèm cặp từng buổi, dạy bơi sinh tồn vùng sông ngập mặn',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-vinh-long/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Bến Tre'
@@ -810,7 +810,7 @@ export const vinhlongResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng TP. Trà Vinh (Swim For Life)',
               contactPerson: 'Thầy Trí (HLV Chuyên môn Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1 chất lượng cao tại Huỳnh Kha, kèm sát dưới nước, 100% biết bơi',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-vinh-long/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Trà Vinh'
@@ -854,7 +854,7 @@ export const vinhlongResearch = {
       areas: 'Hồ bơi Minh Anh (Vĩnh Long), LPHOME (Bến Tre), Huỳnh Kha (Trà Vinh)',
       audiences: 'Trẻ nhỏ từ 4.5 tuổi, người lớn chưa biết bơi, người sợ nước vùng cù lao',
       formats: 'Dạy bơi 1 kèm 1 · kèm nhóm nhỏ 2-3 bạn · đồng hành đến khi biết bơi thành thạo đứng nước sâu',
-      contact: '0979 121 097 (Hotline HLV phụ trách 3 tỉnh cù lao)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/hoc-boi-vinh-long/',
       verification: 'Đội ngũ giáo viên TDTT giàu kinh nghiệm, kỹ năng sư phạm nhẹ nhàng, theo sát dưới nước.',
       missing: 'Cần đặt trước lịch học để chọn bể bơi gần nhà nhất.',
@@ -926,7 +926,7 @@ export const angiangResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Long Xuyên (Swim For Life)',
               contactPerson: 'Thầy Nghĩa (HLV Cử nhân ĐH TDTT)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy kèm 1:1, học bơi sinh tồn sông sâu, đứng nước thả nổi tự cứu vững vàng',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-an-giang/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Long Xuyên'
@@ -1022,7 +1022,7 @@ export const angiangResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Rạch Giá (Swim For Life)',
               contactPerson: 'Thầy Nghĩa (HLV Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy kèm 1:1, bơi sinh tồn thoát hiểm sóng biển, đồng hành đến khi biết bơi thành thạo sau 10 buổi',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-an-giang/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Rạch Giá'
@@ -1076,7 +1076,7 @@ export const angiangResearch = {
             {
               unitName: 'Lớp Bơi Kèm Riêng Doanh Nhân Rạch Giá',
               contactPerson: 'Thầy Nghĩa (HLV Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi người lớn 1 kèm 1 kín đáo, chỉnh dáng bơi sải dài sức, học bơi thư giãn',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-an-giang/',
               sourceTitle: 'Swim For Life: Khóa học bơi người lớn kèm riêng tại TP. Rạch Giá'
@@ -1093,7 +1093,7 @@ export const angiangResearch = {
       areas: 'Hồ bơi Yết Kiêu (Long Xuyên), Phú Cường Park (Rạch Giá), Hồ bơi Go! Rạch Giá',
       audiences: 'Trẻ em từ 5 tuổi, người lớn chưa biết bơi, người sợ độ sâu',
       formats: 'Dạy bơi 1 kèm 1 · kèm nhóm nhỏ 2 bạn · đồng hành đến khi biết bơi thành thạo sau khóa',
-      contact: '0979 121 097 (Hotline HLV chuyên môn Tứ Giác Long Xuyên)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/hoc-boi-an-giang/',
       verification: 'HLV tốt nghiệp cử nhân TDTT, giáo án sinh tồn sông nước chuyên biệt đảm bảo an toàn tối đa.',
       missing: 'Học phí chưa bao gồm vé vào bể bơi (học viên tự thanh toán tại quầy).',
@@ -1157,7 +1157,7 @@ export const camauResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Đất Mũi (Swim For Life Cà Mau)',
               contactPerson: 'Thầy Lâm (HLV Cử nhân ĐH TDTT)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy kèm 1:1 tận tâm, bơi sinh tồn rừng ngập mặn, nổi sấp ngửa và đứng nước tự cứu',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-ca-mau/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại Mường Thanh Luxury Cà Mau'
@@ -1184,7 +1184,7 @@ export const camauResearch = {
             {
               unitName: 'Lớp Bơi Doanh Nhân & Thư Giãn Cà Mau',
               contactPerson: 'Thầy Lâm (HLV Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi kèm riêng 1:1 bảo mật cho người lớn, chỉnh sửa động tác bơi thanh thoát',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-ca-mau/',
               sourceTitle: 'Swim For Life: Khóa học bơi người lớn tại TP. Cà Mau'
@@ -1280,7 +1280,7 @@ export const camauResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Bạc Liêu (Swim For Life)',
               contactPerson: 'Thầy Lâm (HLV Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1 kèm cặp từng buổi, kèm bơi sải dài sức và bơi ếch chuẩn kỹ thuật',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-ca-mau/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Bạc Liêu'
@@ -1349,7 +1349,7 @@ export const camauResearch = {
             {
               unitName: 'Lớp Học Bơi Kèm Riêng Sóc Trăng (Swim For Life)',
               contactPerson: 'Thầy Lâm (HLV Chuyên môn Swim For Life)',
-              phone: '0979 121 097',
+              phone: '',
               courseTypes: 'Dạy bơi 1 kèm 1 chất lượng cao, đồng hành đến khi biết bơi thành thạo đứng nước sâu vững vàng',
               exactSourceUrl: 'https://dayboi.vip/hoc-boi-ca-mau/',
               sourceTitle: 'Swim For Life: Khóa học bơi kèm riêng tại TP. Sóc Trăng'
@@ -1393,7 +1393,7 @@ export const camauResearch = {
       areas: 'Mường Thanh Luxury Cà Mau, Nhà Thiếu Nhi Cà Mau, ĐH Bạc Liêu, TANK CLUB Sóc Trăng',
       audiences: 'Trẻ nhỏ từ 4 tuổi, người lớn chưa biết bơi, học viên vùng sông rạch ngập mặn',
       formats: 'Dạy bơi 1 kèm 1 · kèm nhóm nhỏ 2 bạn · đồng hành đến khi biết bơi thành thạo và đứng nước tự tin',
-      contact: '0979 121 097 (Hotline HLV chuyên môn vùng Bán đảo Cà Mau)',
+      contact: 'Ban quản lý / quầy vé cơ sở',
       website: 'https://dayboi.vip/hoc-boi-ca-mau/',
       verification: 'Đội ngũ cử nhân sư phạm TDTT chuyên ngành bơi lội, giáo án sinh tồn sông nước chuyên sâu.',
       missing: 'Cần đăng ký sớm vào các khung giờ cuối tuần để được sắp xếp bể bơi thuận tiện.',
