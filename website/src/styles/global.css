@@ -2,9 +2,7 @@
    SWIM FOR LIFE - DESIGN SYSTEM
    ============================================ */
 
-/* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
-
+/* Google Fonts loaded asynchronously in <head> for zero render-blocking */
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
   /* Colors - Ocean Theme */

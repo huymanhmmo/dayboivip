@@ -8,19 +8,8 @@ const breadcrumbs = [
   { label: 'Khóa nhóm 3-5 người' },
 ];
 
-const courseSchema = {
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Khóa Học Bơi Nhóm 3-5 Người",
-  "description": "Khóa học bơi nhóm 3-5 người tại Swim For Life. Học cùng bạn bè, gia đình, tiết kiệm chi phí. Cam kết biết bơi sau 10-12 buổi.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
-    "url": "https://dayboi.vip"
-  },
-  "courseMode": "onsite",
-  "maximumAttendeeCapacity": 5
-};
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(nhom, 'https://dayboi.vip/khoa-hoc-boi/nhom/');
 
 const faqSchema = {
   "@context": "https://schema.org",

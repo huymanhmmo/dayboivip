@@ -8,20 +8,8 @@ const breadcrumbs = [
   { label: 'Khóa cá nhân 1 kèm 1' },
 ];
 
-const courseSchema = {
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Khóa Học Bơi 1 Kèm 1 - Dạy Bơi Cá Nhân",
-  "description": "Khóa học bơi cá nhân 1 kèm 1, HLV riêng, linh hoạt lịch và địa điểm. Cam kết biết bơi 100% sau 10-12 buổi tại Swim For Life.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
-    "url": "https://dayboi.vip"
-  },
-  "courseMode": "onsite",
-  "numberOfCredits": "10-12 buổi",
-  "occupationalCategory": "Swimming Instruction"
-};
+import { generateCourseSchema } from '../../utils/courseSchema.js';
+const courseSchema = generateCourseSchema(caNhan, 'https://dayboi.vip/khoa-hoc-boi/ca-nhan/');
 
 const faqSchema = {
   "@context": "https://schema.org",
