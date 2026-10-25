@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
     <div class="footer-grid">
       <!-- Brand Column -->
       <div class="footer-brand">
-        <a href="/" class="logo">
+        <a href="/" class="logo" aria-label="Trang chủ Swim For Life">
           <img
             src="/images/logo/swim-for-life-logo.png"
             alt="Logo Swim For Life Việt Nam"
@@ -16,81 +16,109 @@ const currentYear = new Date().getFullYear();
             loading="lazy"
           />
         </a>
-        <p>
-          Trung tâm dạy bơi chuyên nghiệp hàng đầu Việt Nam. Cam kết biết bơi sau 10-12 buổi với đội ngũ HLV chuyên nghiệp, tận tâm.
+        <p class="brand-desc">
+          <strong>Swim For Life Việt Nam</strong> - Hệ thống trung tâm đào tạo bơi lội chuyên nghiệp, phổ cập kỹ năng an toàn dưới nước và phòng chống đuối nước hàng đầu Việt Nam.
         </p>
-        <p style="margin-top: var(--space-4);">
-          <strong style="color: var(--color-secondary-light);">Trực thuộc:</strong><br/>
-          Công ty Cổ phần Your Dreams<br/>
-          MST: 0108879900
-        </p>
+        
+        <div class="footer-partner-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="partner-icon">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span>Đối tác huấn luyện bơi lội tại hệ sinh thái khu đô thị Vinhomes & Masterise Homes toàn quốc</span>
+        </div>
+
+        <div class="company-legal">
+          <p>
+            <strong>Đơn vị chủ quản:</strong> Công ty Cổ phần Your Dreams<br/>
+            <strong>Mã số doanh nghiệp:</strong> 0108879900 do Sở KH&ĐT TP. Hà Nội cấp
+          </p>
+        </div>
       </div>
 
       <!-- Courses Column -->
       <div class="footer-col-courses">
-        <h3 class="footer-title">Khóa Học</h3>
-        <nav class="footer-links" aria-label="Khóa học">
-          <a href="/khoa-hoc-boi/" class="footer-link">Tổng quan khóa học</a>
-          <a href="/khoa-hoc-boi/ca-nhan/" class="footer-link">Khóa 1 kèm 1</a>
-          <a href="/khoa-hoc-boi/nhom/" class="footer-link">Khóa nhóm 3-5 người</a>
-          <a href="/khoa-hoc-boi/doanh-nghiep/" class="footer-link">Doanh nghiệp & Vinhomes</a>
-          <a href="/khoa-hoc-boi/tre-em/" class="footer-link">Học bơi trẻ em</a>
-          <a href="/khoa-hoc-boi/nguoi-lon/" class="footer-link">Học bơi người lớn</a>
-          <a href="/khoa-hoc-boi/nguoi-cao-tuoi/" class="footer-link">Học bơi người cao tuổi</a>
-          <a href="/khoa-hoc-boi/nguoi-so-nuoc/" class="footer-link">Học bơi người sợ nước</a>
+        <h3 class="footer-title">Khóa Học Bơi</h3>
+        <nav class="footer-links" aria-label="Khóa học bơi">
+          <a href="/khoa-hoc-boi/" class="footer-link">Tổng quan các khóa học</a>
+          <a href="/khoa-hoc-boi/ca-nhan/" class="footer-link">Khóa kèm riêng 1 kèm 1</a>
+          <a href="/khoa-hoc-boi/nhom/" class="footer-link">Khóa nhóm 3 - 5 người</a>
+          <a href="/khoa-hoc-boi/doanh-nghiep/" class="footer-link">Khóa Doanh nghiệp & Đoàn thể</a>
+          <a href="/khoa-hoc-boi/tre-em/" class="footer-link">Dạy bơi cho trẻ em (từ 4 tuổi)</a>
+          <a href="/khoa-hoc-boi/nguoi-lon/" class="footer-link">Dạy bơi cho người lớn</a>
+          <a href="/khoa-hoc-boi/nguoi-cao-tuoi/" class="footer-link">Khóa bơi dưỡng sinh người cao tuổi</a>
+          <a href="/khoa-hoc-boi/nguoi-so-nuoc/" class="footer-link">Lớp trị liệu cho người sợ nước</a>
+          <a href="/chung-chi-hoc-boi/" class="footer-link">Chứng chỉ bơi lội & Cam kết đầu ra</a>
         </nav>
       </div>
 
-      <!-- Techniques Column -->
+      <!-- Techniques & Locations Column -->
       <div class="footer-col-techniques">
-        <h3 class="footer-title">Kỹ Thuật Bơi</h3>
-        <nav class="footer-links" aria-label="Kỹ thuật bơi">
-          <a href="/ky-thuat-boi/hoc-boi-ech/" class="footer-link">Kỹ thuật bơi ếch</a>
-          <a href="/ky-thuat-boi/hoc-boi-sai/" class="footer-link">Kỹ thuật bơi sải</a>
-          <a href="/ky-thuat-boi/hoc-boi-ngua/" class="footer-link">Kỹ thuật bơi ngửa</a>
-          <a href="/ky-thuat-boi/hoc-boi-buom/" class="footer-link">Kỹ thuật bơi bướm</a>
-          <a href="/ky-thuat-boi/ky-nang-dung-nuoc/" class="footer-link">Kỹ năng đứng nước</a>
-          <a href="/cach-hoc-boi/" class="footer-link">Cách học bơi</a>
-          <a href="/tu-hoc-boi/" class="footer-link">Tự học bơi</a>
-          <a href="/cach-hoc-boi-nhanh-nhat/" class="footer-link">Cách học bơi nhanh nhất</a>
-          <a href="/tre-may-tuoi-hoc-boi/" class="footer-link">Trẻ mấy tuổi học bơi?</a>
+        <h3 class="footer-title">Kỹ Thuật & Địa Điểm</h3>
+        <nav class="footer-links" aria-label="Kỹ thuật bơi và địa điểm">
+          <a href="/ky-thuat-boi/hoc-boi-ech/" class="footer-link">Kỹ thuật bơi ếch cơ bản & nâng cao</a>
+          <a href="/ky-thuat-boi/hoc-boi-sai/" class="footer-link">Kỹ thuật bơi sải (bơi trườn sấp)</a>
+          <a href="/ky-thuat-boi/hoc-boi-ngua/" class="footer-link">Kỹ thuật bơi ngửa chuẩn thi đấu</a>
+          <a href="/ky-thuat-boi/hoc-boi-buom/" class="footer-link">Kỹ thuật bơi bướm dẻo dai</a>
+          <a href="/ky-thuat-boi/ky-nang-dung-nuoc/" class="footer-link">Kỹ năng đứng nước & an toàn</a>
+          <a href="/hoc-boi-o-dau/" class="footer-link">Tra cứu hồ bơi gần bạn</a>
+          <a href="/dia-diem/ha-noi/" class="footer-link">Học bơi tại Hà Nội (Smart City, Times City...)</a>
+          <a href="/dia-diem/tphcm/" class="footer-link">Học bơi tại TP.HCM (Grand Park, Landmark...)</a>
+          <a href="/tu-hoc-boi/" class="footer-link">Cẩm nang tự học bơi an toàn</a>
         </nav>
       </div>
 
       <!-- Contact Column -->
       <div class="footer-col-contact">
-        <h3 class="footer-title">Liên Hệ</h3>
+        <h3 class="footer-title">Liên Hệ & Đặt Lịch</h3>
+        
         <div class="footer-contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
           <div>
-            <strong>Hotline Doanh Nghiệp (từ 10 người):</strong> <a href="/khoa-hoc-boi/doanh-nghiep/">Xem thông tin hợp tác</a><br/>
-            <strong>Cá nhân:</strong> Tra cứu danh bạ hồ bơi địa phương
+            <strong>Hotline Tư Vấn 24/7:</strong><br/>
+            <a href="tel:0979121097" class="contact-highlight">0979.121.097</a> (HLV Trưởng)
           </div>
         </div>
+
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <div>
+            <strong>Zalo Hỗ Trợ Nhanh:</strong><br/>
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="contact-highlight">0979.121.097 (Swim For Life)</a>
+          </div>
+        </div>
+
         <div class="footer-contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
           <div>
-            <strong>Email:</strong> <a href="mailto:dayboivip@gmail.com">dayboivip@gmail.com</a>
+            <strong>Email Tiếp Nhận:</strong><br/>
+            <a href="mailto:dayboivip@gmail.com">dayboivip@gmail.com</a>
           </div>
         </div>
+
         <div class="footer-contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
           <div>
-            Thời gian hoạt động:<br/>
-            6:00 - 21:00 (Thứ 2 - Chủ nhật)
+            <strong>Giờ Huấn Luyện & Tư Vấn:</strong><br/>
+            06:00 - 21:00 (Thứ 2 - Chủ Nhật cả ngày lễ)
           </div>
         </div>
-        <div style="margin-top: var(--space-4);">
+
+        <div class="footer-cta-buttons">
           <a href="/lien-he/" class="btn btn-accent btn-sm">
-            Đăng Ký Ngay
+            Đăng Ký Học Thử
+          </a>
+          <a href="/hoc-boi-o-dau/" class="btn btn-outline-light btn-sm">
+            Tìm Bể Bơi
           </a>
         </div>
       </div>
@@ -98,22 +126,115 @@ const currentYear = new Date().getFullYear();
 
     <!-- Bottom Bar -->
     <div class="footer-bottom">
-      <p class="footer-copyright">
-        © {currentYear} Swim For Life Việt Nam - Công ty CP Your Dreams. Tất cả quyền được bảo lưu.
-      </p>
-      <nav style="display: flex; gap: var(--space-4);">
-        <a href="/gioi-thieu/" class="footer-link" style="transform: none;">Giới thiệu</a>
-        <a href="/lien-he/" class="footer-link" style="transform: none;">Liên hệ</a>
-        <a href="/tin-tuc/" class="footer-link" style="transform: none;">Blog</a>
+      <div class="footer-copyright">
+        © {currentYear} <strong>Swim For Life Việt Nam</strong>. Bản quyền thuộc Công ty Cổ phần Your Dreams. Cam kết chuẩn đầu ra 100%.
+      </div>
+      <nav class="footer-legal-links" aria-label="Liên kết pháp lý và thông tin">
+        <a href="/gioi-thieu/" class="footer-link">Về Chúng Tôi</a>
+        <a href="/lien-he/" class="footer-link">Liên Hệ & Tuyển Dụng</a>
+        <a href="/tin-tuc/" class="footer-link">Tin Tức & Kiến Thức</a>
+        <a href="/chung-chi-hoc-boi/" class="footer-link">Cam Kết Đầu Ra & Chứng Chỉ</a>
+        <a href="/hoc-boi-o-dau/" class="footer-link">Bản Đồ Hồ Bơi</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<!-- Floating CTA (Mobile) -->
-<div class="floating-cta" id="floating-cta">
-  <div class="floating-cta-inner container">
-    <a href="/khoa-hoc-boi/doanh-nghiep/" class="btn btn-primary btn-sm">🏢 Khóa Học Doanh Nghiệp</a>
-    <a href="/hoc-boi-o-dau/" class="btn btn-accent btn-sm">📍 Danh Bạ Bể Bơi</a>
-  </div>
-</div>
+<style>
+  .brand-desc {
+    margin-top: var(--space-3);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .footer-partner-badge {
+    margin-top: var(--space-4);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.25);
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    line-height: 1.4;
+    color: #caf0f8;
+  }
+
+  .partner-icon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    margin-top: 1px;
+  }
+
+  .company-legal {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+  }
+
+  .contact-highlight {
+    color: #caf0f8 !important;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contact-highlight:hover {
+    color: var(--color-accent) !important;
+  }
+
+  .footer-cta-buttons {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    background: transparent;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .footer-cta-buttons {
+      width: 100%;
+    }
+    .footer-cta-buttons .btn {
+      flex: 1;
+      text-align: center;
+    }
+    .footer-legal-links {
+      justify-content: center;
+      gap: var(--space-3);
+    }
+  }
+</style>
