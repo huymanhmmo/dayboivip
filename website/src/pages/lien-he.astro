@@ -2,8 +2,8 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 
-const title = 'Liên Hệ & Đăng Ký Học Bơi Thử Miễn Phí Tại Swim For Life Việt Nam';
-const description = 'Liên hệ đăng ký khóa học bơi thử miễn phí. Hotline/Zalo: Hotline Doanh Nghiệp. Hỗ trợ tư vấn 24/7.';
+const title = 'Liên Hệ & Đăng Ký Học Bơi Thử Miễn Phí | Swim For Life Việt Nam';
+const description = 'Liên hệ đăng ký khóa học bơi thử miễn phí 1 kèm 1 tại Swim For Life Việt Nam. Hotline/Zalo: 0979.121.097. Tư vấn xếp lịch học gần nhà 24/7 tại Hà Nội & TP.HCM.';
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
@@ -14,16 +14,28 @@ const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Liên hệ Swim For Life Việt Nam",
-  "description": "Trang liên hệ đăng ký học bơi thử miễn phí và thông tin hotline hỗ trợ khách hàng của Swim For Life Việt Nam.",
+  "description": description,
   "url": "https://dayboi.vip/lien-he/",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+84979121097",
-      "contactType": "customer service",
-      "availableLanguage": "Vietnamese"
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Trung tâm dạy bơi Swim For Life Việt Nam",
+    "telephone": "+84979121097",
+    "email": "dayboivip@gmail.com",
+    "url": "https://dayboi.vip",
+    "priceRange": "Liên hệ báo giá",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vinhomes Ocean Park, Đa Tốn",
+      "addressLocality": "Gia Lâm, Hà Nội",
+      "addressCountry": "VN"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "06:00",
+      "closes": "21:00"
     }
-  ]
+  }
 };
 ---
 
@@ -34,93 +46,506 @@ const contactSchema = {
   breadcrumbs={breadcrumbs}
   schema={contactSchema}
 >
-
-  <section class="section" style="padding-top: var(--space-8); background: var(--color-bg-alt); padding-bottom: var(--space-12);">
+  <!-- Page Header -->
+  <section class="contact-hero-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">📞 Kết nối ngay</span>
+      <div class="section-header reveal">
+        <span class="section-badge">📞 Hỗ Trợ 24/7 & Học Thử Miễn Phí</span>
         <h1 class="section-title">Liên Hệ & Đăng Ký Học Bơi</h1>
         <p class="section-subtitle">
-          Hãy để lại thông tin của bạn, bộ phận tư vấn của Swim For Life sẽ liên hệ ngay trong vòng 15 phút để sắp xếp lịch học thử MIỄN PHÍ.
+          Để lại thông tin hoặc gọi điện trực tiếp, đội ngũ HLV của Swim For Life sẽ liên hệ lại trong vòng <strong>15 phút</strong> để tư vấn lộ trình và sắp xếp lịch học thử 1 kèm 1 hoàn toàn miễn phí.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Main Content Grid -->
+  <section class="section" style="padding-top: var(--space-8);">
     <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-12); align-items: start;">
+      <div class="grid grid-2 contact-main-grid" style="gap: var(--space-12); align-items: start;">
         
-        <!-- Contact Form Column -->
-        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-lg); background: #ffffff; border-radius: 16px;">
-          <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2); color: var(--color-primary); font-weight: 700;">Đăng Ký Học Thử Miễn Phí</h2>
-          <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); line-height: 1.6;">Học viên được trải nghiệm 1 buổi học thử 1 kèm 1 hoàn toàn miễn phí cùng Huấn luyện viên trước khi quyết định đăng ký.</p>
+        <!-- Left Column: Registration Form -->
+        <div class="card contact-form-card reveal">
+          <div class="form-header-badge">
+            <span class="badge-dot"></span>
+            <span>Trải Nghiệm Miễn Phí 01 Buổi</span>
+          </div>
+          <h2 class="form-heading">Đăng Ký Học Thử 1 Kèm 1</h2>
+          <p class="form-subheading">
+            Học viên được kiểm tra thể lực dưới nước và trải nghiệm phương pháp sư phạm của HLV trước khi quyết định đăng ký chính thức.
+          </p>
           
-          <RegistrationForm id="contact-form" isFullForm={true} flat={true} />
+          <RegistrationForm id="contact-page-form" isFullForm={true} flat={true} />
+
+          <div class="form-trust-footer">
+            <span>🛡️ Cam kết bảo mật thông tin 100%</span>
+            <span>⏱️ Phản hồi nhanh trong 15 - 30 phút</span>
+          </div>
         </div>
 
-        <!-- Info Column -->
-        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
-          <div>
-            <h2 style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--space-4);">Thông Tin Liên Hệ Tư Vấn 24/7</h2>
-            <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">Quý phụ huynh và học viên có thể gọi điện trực tiếp hoặc nhắn tin Zalo qua đường dây nóng dưới đây để được hỗ trợ sắp xếp lớp nhanh nhất:</p>
-            
-            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
-              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
-                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">📞</div>
-                <div>
-                  <strong style="font-size: var(--text-lg); display: block;">Hotline Tư Vấn:</strong>
-                  <a href="/hoc-boi-o-dau/" class="btn btn-white btn-lg">📍 Xem Danh Bạ Bể Bơi Gần Bạn</a>
+        <!-- Right Column: Quick Contact & Swimming Hubs -->
+        <div class="contact-info-column reveal reveal-delay-1">
+          
+          <!-- Direct Hotline & Zalo Cards -->
+          <div class="contact-quick-actions">
+            <h2 class="info-block-title">Kênh Liên Hệ Khẩn Cấp</h2>
+            <p class="info-block-desc">
+              Cần kiểm tra lịch học trống ngay hôm nay? Vui lòng liên hệ trực tiếp qua Hotline hoặc Zalo:
+            </p>
+
+            <div class="contact-cards-group">
+              <!-- Hotline Card -->
+              <a href="tel:0979121097" class="direct-contact-card hotline-card">
+                <div class="contact-card-icon">📞</div>
+                <div class="contact-card-info">
+                  <span class="contact-card-label">Hotline Tư Vấn (24/7):</span>
+                  <strong class="contact-card-value">0979.121.097</strong>
+                  <span class="contact-card-hint">Chạm để gọi ngay • Miễn phí cước tư vấn</span>
                 </div>
-              </div>
-              
-              <div class="card" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);">
-                <div style="font-size: 24px; color: var(--color-primary); background: rgba(0,119,182,0.08); padding: var(--space-3); border-radius: 50%;">💬</div>
-                <div>
-                  <strong style="font-size: var(--text-lg); display: block;">Zalo Chat:</strong>
-                  <a href="/hoc-boi-o-dau/" class="btn btn-outline">📍 Xem Danh Bạ Bể Bơi</a>
+              </a>
+
+              <!-- Zalo Card -->
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="direct-contact-card zalo-card">
+                <div class="contact-card-icon">💬</div>
+                <div class="contact-card-info">
+                  <span class="contact-card-label">Chat Zalo Trực Tiếp:</span>
+                  <strong class="contact-card-value">0979.121.097 (Thầy Mạnh)</strong>
+                  <span class="contact-card-hint">Gửi ảnh/video hồ bơi & nhận lịch học thử</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
-          <div style="background: var(--color-bg-alt); padding: var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--color-gray-200); display: flex; flex-direction: column; gap: var(--space-4);">
-            <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;">
+          <!-- Major Swimming Locations Hub -->
+          <div class="card location-hub-card">
+            <div class="hub-header">
+              <span class="hub-icon">🏊</span>
+              <div>
+                <h3 class="hub-title">Hệ Thống Bể Bơi Đào Tạo Trọng Điểm</h3>
+                <span class="hub-subtitle">Bể nước ấm 4 mùa tiêu chuẩn cao cấp</span>
+              </div>
+            </div>
+
+            <div class="hub-cities-list">
+              <!-- Hanoi Hubs -->
+              <div class="city-hub-group">
+                <h4 class="city-hub-title">📍 Khu vực Hà Nội:</h4>
+                <ul class="hub-pool-list">
+                  <li><strong>Vinhomes Times City:</strong> Bể bơi 4 mùa nước ấm, Minh Khai, Hai Bà Trưng</li>
+                  <li><strong>Vinhomes Ocean Park:</strong> Hệ thống bể bơi phong cách resort, Gia Lâm</li>
+                  <li><strong>Vinhomes Smart City:</strong> Bể bơi chuẩn quốc tế, Tây Mỗ, Nam Từ Liêm</li>
+                  <li><strong>Khu vực Trung tâm:</strong> Bể bơi Tăng Bạt Hổ, Bể bơi Cầu Giấy, Bể bơi Đống Đa</li>
+                </ul>
+              </div>
+
+              <!-- HCMC Hubs -->
+              <div class="city-hub-group">
+                <h4 class="city-hub-title">📍 Khu vực TP. Hồ Chí Minh:</h4>
+                <ul class="hub-pool-list">
+                  <li><strong>Khu vực Nam Sài Gòn:</strong> Hệ thống bể bơi cao cấp Quận 7, Nhà Bè</li>
+                  <li><strong>Khu vực Trung tâm:</strong> Bể bơi Quận Tân Bình, Phú Nhuận, Bình Thạnh</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="/hoc-boi-o-dau/" class="btn btn-outline hub-more-btn">
+              📍 Xem Danh Bạ 50+ Bể Bơi Chi Tiết Toàn Quốc →
+            </a>
+          </div>
+
+          <!-- Legal & Entity Information -->
+          <div class="card legal-entity-card">
+            <div class="legal-brand-row">
               <img
                 src="/images/logo/swim-for-life-logo.png"
-                alt="Logo Swim For Life Việt Nam"
-                style="max-height: 45px; width: auto; object-fit: contain;"
+                alt="Logo Trung tâm dạy bơi Swim For Life Việt Nam"
+                width="45"
+                height="45"
                 loading="lazy"
               />
-              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 600; text-transform: lowercase;">trực thuộc</span>
+              <span class="legal-subtext">Trực thuộc</span>
               <img
                 src="/images/logo/your-dreams-logo.png"
                 alt="Logo Công ty Cổ phần Your Dreams"
-                style="max-height: 45px; width: auto; object-fit: contain;"
+                width="45"
+                height="45"
                 loading="lazy"
               />
             </div>
-            <div style="border-top: 1px solid var(--color-gray-200); padding-top: var(--space-3);">
-              <h3 style="font-size: var(--text-base); color: var(--color-primary); margin-bottom: var(--space-1); margin-top: 0;">Thông Tin Pháp Nhân</h3>
-              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: var(--text-sm);">
+            <div class="legal-details">
+              <h4 class="legal-title">Thông Tin Pháp Nhân Doanh Nghiệp</h4>
+              <p>
                 <strong>Trung tâm dạy bơi Swim For Life Việt Nam</strong><br/>
                 Đơn vị chủ quản: <strong>Công ty Cổ phần Your Dreams</strong><br/>
-                Mã số thuế: 0108879900<br/>
-                Email: dayboivip@gmail.com
+                Mã số thuế: <code>0108879900</code><br/>
+                Email tiếp nhận: <a href="mailto:dayboivip@gmail.com">dayboivip@gmail.com</a><br/>
+                Thời gian làm việc: <strong>06:00 – 21:00</strong> tất cả các ngày trong tuần (kể cả Thứ 7, Chủ Nhật & ngày lễ)
               </p>
             </div>
           </div>
 
-          <div>
-            <h3 style="font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-2);">Thời Gian Làm Việc</h3>
-            <p style="color: var(--color-text-secondary);">
-              Chúng tôi làm việc liên tục từ <strong>06:00 - 21:00</strong> tất cả các ngày trong tuần (kể cả Thứ 7, Chủ Nhật và ngày lễ).
-            </p>
-          </div>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- Quick FAQ on Contact Page -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header reveal">
+        <span class="section-badge">❓ Câu hỏi thường gặp</span>
+        <h2 class="section-title">Thắc Mắc Trước Khi Đăng Ký Học Thử</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item active">
+          <button class="faq-question" type="button" aria-expanded="true">
+            <span>Buổi học thử miễn phí diễn ra như thế nào?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Buổi học thử kéo dài 45 – 60 phút hoàn toàn 1 kèm 1 cùng Huấn luyện viên chuyên môn. Thầy sẽ kiểm tra khả năng dạn nước, cơ địa nổi của học viên và hướng dẫn kỹ năng thở nước cơ bản. Sau buổi học, bạn và gia đình hoàn toàn tự do quyết định có đăng ký khóa học chính thức hay không mà không có bất kỳ ràng buộc nào.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Tôi cần chuẩn bị những gì cho buổi học thử?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Bạn chỉ cần chuẩn bị đồ bơi vừa vặn, kính bơi và khăn tắm. Tất cả dụng cụ phao hỗ trợ chuyên dụng sẽ do Swim For Life trang bị sẵn tại hồ bơi.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Sau khi gửi thông tin, bao lâu tôi sẽ được xếp lớp?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Chuyên viên tư vấn của Swim For Life sẽ liên hệ lại với bạn qua số điện thoại hoặc Zalo trong vòng 15 – 30 phút để xác nhận địa điểm bể bơi gần nhà nhất và sắp xếp khung giờ học thuận tiện theo lịch rảnh của bạn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </PageLayout>
+
+<style>
+  .contact-hero-section {
+    padding-top: var(--space-8);
+    background: var(--color-bg-alt);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .contact-form-card {
+    padding: 36px 32px;
+    box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1.5px solid rgba(0, 119, 182, 0.14);
+  }
+
+  .form-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 107, 53, 0.1);
+    color: #FF6B35;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #FF6B35;
+  }
+
+  .form-heading {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #023047;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .form-subheading {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .form-trust-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed rgba(0, 119, 182, 0.15);
+    font-size: 0.78rem;
+    color: #718096;
+    font-weight: 600;
+  }
+
+  /* Right column info */
+  .contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .info-block-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #023047;
+    margin-bottom: 8px;
+  }
+
+  .info-block-desc {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .contact-cards-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .direct-contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1.5px solid transparent;
+  }
+
+  .direct-contact-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .hotline-card {
+    background: linear-gradient(135deg, rgba(0, 119, 182, 0.08) 0%, rgba(0, 180, 216, 0.05) 100%);
+    border-color: rgba(0, 119, 182, 0.2);
+  }
+  .hotline-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 119, 182, 0.15);
+    border-color: #0077B6;
+  }
+
+  .zalo-card {
+    background: linear-gradient(135deg, rgba(0, 104, 255, 0.08) 0%, rgba(72, 202, 228, 0.05) 100%);
+    border-color: rgba(0, 104, 255, 0.2);
+  }
+  .zalo-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 104, 255, 0.15);
+    border-color: #0068FF;
+  }
+
+  .contact-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+  }
+
+  .contact-card-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .contact-card-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4A5568;
+    letter-spacing: 0.04em;
+  }
+
+  .contact-card-value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0077B6;
+    line-height: 1.2;
+    margin: 2px 0;
+  }
+
+  .zalo-card .contact-card-value {
+    color: #0068FF;
+  }
+
+  .contact-card-hint {
+    font-size: 0.75rem;
+    color: #718096;
+  }
+
+  /* Location Hub Card */
+  .location-hub-card {
+    padding: 24px 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 119, 182, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 119, 182, 0.06);
+  }
+
+  .hub-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .hub-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .hub-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #023047;
+    margin: 0;
+  }
+
+  .hub-subtitle {
+    font-size: 0.82rem;
+    color: #0077B6;
+    font-weight: 600;
+  }
+
+  .city-hub-group {
+    margin-bottom: 16px;
+  }
+
+  .city-hub-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #023047;
+    margin-bottom: 6px;
+  }
+
+  .hub-pool-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hub-pool-list li {
+    font-size: 0.88rem;
+    color: #4A5568;
+    line-height: 1.45;
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .hub-pool-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #0077B6;
+    font-weight: bold;
+  }
+
+  .hub-more-btn {
+    width: 100%;
+    margin-top: 14px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 10px 16px;
+    text-align: center;
+    display: block;
+  }
+
+  /* Legal Entity Card */
+  .legal-entity-card {
+    padding: 20px 24px;
+    background: #F7FBFE;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 119, 182, 0.1);
+  }
+
+  .legal-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .legal-subtext {
+    font-size: 0.8rem;
+    color: #718096;
+    font-weight: 600;
+    text-transform: lowercase;
+  }
+
+  .legal-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0077B6;
+    margin-bottom: 6px;
+  }
+
+  .legal-details p {
+    font-size: 0.85rem;
+    color: #4A5568;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .legal-details code {
+    background: rgba(0, 119, 182, 0.08);
+    color: #0077B6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 991px) {
+    .contact-main-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact-form-card {
+      padding: 24px 18px;
+    }
+    .form-trust-footer {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+</style>
