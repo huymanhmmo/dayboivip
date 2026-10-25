@@ -2,6 +2,7 @@
 import { generateHowToSchema } from '../../utils/howToSchema.js';
 const currentYear = new Date().getFullYear();
 import TechniqueLayout from '../../layouts/TechniqueLayout.astro';
+import MotionSteps from '../../components/technique/MotionSteps.astro';
 
 const breadcrumbs = [
   { label: 'Trang chủ', href: '/' },
@@ -162,6 +163,163 @@ const errors = [
   }
 ];
 
+
+const freestyleKickSteps = [
+  {
+    number: 1,
+    phase: "Nguyên tắc 1",
+    name: "PHÁT LỰC TỪ KHỚP HÁNG",
+    rhythm: "Nhịp nhàng & Ổn định",
+    rhythmType: "steady",
+    icon: "🦵",
+    description: "Động tác đập chân sải bắt nguồn từ chuyển động xoay của khớp hông và cơ đùi, tuyệt đối không gập đầu gối.",
+    keyPoints: [
+      "Đầu gối chỉ hơi cong tự nhiên góc nhỏ (<15 độ) khi hạ xuống",
+      "Dùng sức mạnh nhóm cơ core, cơ đùi trước và cơ mông để đập nước",
+      "Tránh lỗi 'đạp xe đạp' khiến chân chìm sâu và tạo lực hãm phanh"
+    ],
+    coachTip: "Hãy tưởng tượng bạn đang giữ một thanh nẹp nhẹ ở đầu gối, chuyển động phải mượt mà từ hông."
+  },
+  {
+    number: 2,
+    phase: "Nguyên tắc 2",
+    name: "THẢ LỎNG CỔ CHÂN (Vẩy mu bàn chân)",
+    rhythm: "Mềm dẻo như đuôi cá",
+    rhythmType: "fast",
+    icon: "🐟",
+    description: "Cổ chân phải hoàn toàn thả lỏng, mu bàn chân duỗi tự nhiên để vẩy nước tạo lực đẩy tiến liên tục.",
+    keyPoints: [
+      "Ngón chân hơi hướng vào trong một chút (chân chim bồ câu)",
+      "Mu bàn chân đẩy nước xuống dưới và hất nước lên trên",
+      "Tạo bọt trắng nhẹ sủi tăm lăn tăn sau gót chân trên mặt nước"
+    ],
+    coachTip: "Cổ chân càng dẻo thì lực đẩy càng mạnh. Học viên mới có thể tập vẩy chân với chân vịt ngắn (fins)."
+  },
+  {
+    number: 3,
+    phase: "Nguyên tắc 3",
+    name: "BIÊN ĐỘ ĐẬP CHÂN LÝ TƯỞNG (30 - 40CM)",
+    rhythm: "Gọn gàng trong trục nước",
+    rhythmType: "steady",
+    icon: "📐",
+    description: "Giữ hai chân đập so le nhịp nhàng trong phạm vi khoảng cách từ 30 đến 40cm, không văng quá rộng.",
+    keyPoints: [
+      "Không đập chân quá sâu xuống đáy bể làm chìm thân người",
+      "Không đá chân quá cao văng khỏi mặt nước làm mất lực tiếp xúc",
+      "Duy trì nhịp đập 6 nhịp chân hoặc 2 nhịp chân trên mỗi chu kỳ tay"
+    ],
+    coachTip: "Đập chân sải không chỉ để tiến tới mà vai trò chính là giữ thăng bằng và nâng hông phẳng trên mặt nước."
+  }
+];
+
+const freestyleArmSteps = [
+  {
+    number: 1,
+    phase: "Pha 1",
+    name: "VÀO NƯỚC & TÌ NƯỚC (Entry & Catch)",
+    rhythm: "Mũi tên xuyên nước",
+    rhythmType: "glide",
+    icon: "🎯",
+    description: "Bàn tay vào nước nghiêng góc 45 độ, ngón tay vào trước ở vị trí thẳng hàng giữa vai và đầu.",
+    keyPoints: [
+      "Ngón tay khép tự nhiên, cổ tay thẳng, đầu ngón tay chúc nhẹ xuống",
+      "Duỗi với sải tay tối đa về phía trước để bắt đầu tì vào khối nước",
+      "Giữ khuỷu tay cao hơn cổ tay trong suốt giai đoạn ôm nước"
+    ],
+    coachTip: "Đừng vào nước vắt chéo qua trục giữa đầu! Hãy vào nước thẳng hàng với khớp vai."
+  },
+  {
+    number: 2,
+    phase: "Pha 2",
+    name: "KÉO NƯỚC (Pull - High Elbow)",
+    rhythm: "Tạo lực kéo cực đại",
+    rhythmType: "fast",
+    icon: "💪",
+    description: "Gập khuỷu tay góc 90-100 độ, dùng cả bàn tay và cẳng trong như một mái chèo kéo khối nước dưới ngực.",
+    keyPoints: [
+      "Khuỷu tay luôn hướng ra ngoài và giữ ở vị trí cao (High Elbow Catch)",
+      "Kéo nước theo đường cong nhẹ chữ S dưới trục bụng",
+      "Cảm nhận lực tì nước nặng rõ rệt trên toàn bộ cẳng tay"
+    ],
+    coachTip: "Khuỷu tay cao là bí quyết số 1 của các vận động viên bơi sải đẳng cấp thế giới."
+  },
+  {
+    number: 3,
+    phase: "Pha 3",
+    name: "ĐẨY NƯỚC (Push - Bứt Tốc)",
+    rhythm: "Bùng nổ gia tốc",
+    rhythmType: "fast",
+    icon: "⚡",
+    description: "Từ dưới bụng, đẩy mạnh khối nước thẳng ra sau qua đùi, tận dụng tối đa lực cổ tay và cơ tam đầu.",
+    keyPoints: [
+      "Đẩy dứt khoát tới khi ngón tay cái quét nhẹ sát bên hông đùi",
+      "Đây là pha tạo tốc độ tiến nhanh nhất trong toàn bộ sải tay",
+      "Giải phóng hoàn toàn lực đẩy trước khi đưa tay lên khỏi mặt nước"
+    ],
+    coachTip: "Nhiều người rút tay lên quá sớm ở ngang hông! Hãy đẩy hết tay qua đùi để không lãng phí 30% sải nước."
+  },
+  {
+    number: 4,
+    phase: "Pha 4",
+    name: "VUNG TAY TRÊN KHÔNG (Recovery)",
+    rhythm: "Thả lỏng cơ vai",
+    rhythmType: "slow",
+    icon: "🕊️",
+    description: "Khuỷu tay nhấc lên khỏi mặt nước trước, đưa tay về phía trước một cách thư giãn để chuẩn bị nhịp mới.",
+    keyPoints: [
+      "Khuỷu tay dẫn đường, cổ tay và các ngón tay thả lỏng buông lơi",
+      "Vung tay sát mặt nước, tránh vung quá cao gây mỏi khớp vai",
+      "Kết hợp xoay nhẹ thân người theo trục dọc (Body Roll) góc 30-40 độ"
+    ],
+    coachTip: "Pha vung tay là thời gian nghỉ ngơi của nhóm cơ tay! Hãy thả lỏng bàn tay như đang xách một chiếc túi."
+  }
+];
+
+const freestyleBreathingSteps = [
+  {
+    number: 1,
+    phase: "Bước 1",
+    name: "ÚP MẶT THỞ RA DƯỚI NƯỚC",
+    rhythm: "Đều đặn & Thư thái",
+    rhythmType: "slow",
+    icon: "🫧",
+    description: "Mặt úp nhìn xuống đáy bể góc chếch 45 độ, thở ra liên tục bằng mũi tạo dòng bọt khí mịn màng.",
+    keyPoints: [
+      "Không nín thở! Thở ra từ từ để giải phóng hết khí CO2 trong phổi",
+      "Giữ đỉnh đầu chìm nhẹ dưới mặt nước, cổ thẳng với cột sống",
+      "Khi tay chuẩn bị pha đẩy nước, phổi đã sẵn sàng trống để hít khí mới"
+    ]
+  },
+  {
+    number: 2,
+    phase: "Bước 2",
+    name: "XOAY THÂN VÀ THỞ NGHIÊNG 1 MẮT",
+    rhythm: "Chớp nhoáng 0.5s",
+    rhythmType: "fast",
+    icon: "👁️",
+    description: "Khi tay đẩy nước ra sau đùi, thân người xoay nghiêng theo trục, đầu xoay theo thân để miệng nhô vào hốc sóng.",
+    keyPoints: [
+      "Quy tắc 1 mắt: 1 mắt dưới nước, 1 mắt trên không – TUYỆT ĐỐI không ngẩng đầu lên trời",
+      "Miệng hít nhanh luồng không khí sạch ở góc mép nước (trong hốc bow wave)",
+      "Tai đối diện vẫn áp sát vai và chìm hoàn toàn trong nước"
+    ]
+  },
+  {
+    number: 3,
+    phase: "Bước 3",
+    name: "XOAY ĐẦU ÚP VỀ LẠI VỊ TRÍ CŨ",
+    rhythm: "Đồng bộ sải tay",
+    rhythmType: "steady",
+    icon: "🔄",
+    description: "Khi tay vung qua vai chạm nước, đầu lập tức xoay úp về vị trí trung tâm và tiếp tục thở bọt khí.",
+    keyPoints: [
+      "Đầu úp về trước hoặc đồng thời khi bàn tay chạm vào nước",
+      "Giữ trục cơ thể ổn định, không để chân bị chìm hay ngoằn ngoèo",
+      "Thực hiện thở luân phiên 2 hoặc 3 nhịp quạt tay (Bilateral Breathing)"
+    ]
+  }
+];
+
 const relatedKeywords = ['bơi sải', 'trườn sấp', 'tự học bơi'];
 ---
 
@@ -244,6 +402,8 @@ const relatedKeywords = ['bơi sải', 'trườn sấp', 'tự học bơi'];
 
     <p>Chân trong bơi sải có vai trò giữ thăng bằng, nâng chân lên gần mặt nước và hỗ trợ lực đẩy (chiếm khoảng 10-15% lực đẩy tổng). Kỹ thuật đập chân bơi sải gọi là <strong>Flutter Kick</strong>:</p>
 
+    <MotionSteps title="Kỹ Thuật Đập Chân Bơi Sải (Flutter Kick)" subtitle="3 nguyên tắc cơ sinh học giúp giữ hông nổi phẳng và duy trì độ lướt bền bỉ." steps={freestyleKickSteps} mantra="ĐẬP từ hông – GỐI cong nhẹ – CỔ CHÂN mềm dẻo – TẠO BỌT mịn" />
+
     <h3>Nguyên tắc đập chân đúng</h3>
     <ul>
       <li><strong>Đập từ hông, không phải từ đầu gối:</strong> Đây là nguyên tắc quan trọng nhất. Toàn bộ chuyển động bắt đầu từ hông, truyền qua đùi → đầu gối (gập nhẹ tự nhiên) → cổ chân → bàn chân. Nếu đập từ đầu gối (giống đạp xe), chân sẽ tạo lực cản lớn.</li>
@@ -309,6 +469,8 @@ const relatedKeywords = ['bơi sải', 'trườn sấp', 'tự học bơi'];
 
     <p>Động tác tay chiếm <strong>80-90% lực đẩy</strong> trong bơi sải, là yếu tố quan trọng nhất quyết định tốc độ bơi. Mỗi nhịp tay gồm hai phần: pha dưới nước (tạo lực đẩy) và pha trên nước (recovery).</p>
 
+    <MotionSteps title="Chu Kỳ Tay Bơi Sải: 4 Pha Liên Hoàn Đỉnh Cao" subtitle="Tạo 85-90% lực đẩy tiến. Kỹ thuật cùi chỏ cao (High-Elbow) tối đa hóa khối nước ôm bắt." steps={freestyleArmSteps} mantra="VÀO thẳng vai – TÌ cùi chỏ cao – KÉO chữ S – ĐẨY hết đùi – VUNG thả lỏng" />
+
     <h3>Pha dưới nước – Tạo lực đẩy chính</h3>
 
     <h4>1. Tỳ nước (Catch)</h4>
@@ -372,6 +534,8 @@ const relatedKeywords = ['bơi sải', 'trườn sấp', 'tự học bơi'];
     <h2>Kỹ Thuật Thở Nghiêng Trong Bơi Sải</h2>
 
     <p>Thở nghiêng (side breathing) là kỹ thuật khó nhất khi học bơi sải, cũng là điểm khác biệt lớn nhất so với <a href="/ky-thuat-boi/hoc-boi-ech/">bơi ếch</a>. Thành thạo kỹ thuật thở sẽ quyết định bạn có bơi sải bền bỉ và thoải mái hay không.</p>
+
+    <MotionSteps title="Kỹ Thuật Thở Nghiêng Bơi Sải: 1 Mắt Dưới Nước - 1 Mắt Trên Không" subtitle="Bí quyết hít thở không bị sặc nước, tận dụng trọn vẹn hốc sóng Bow Wave bên má." steps={freestyleBreathingSteps} mantra="ÚP mặt thở mũi – XOAY thân mở miệng – HÍT nhanh 0.5s – ÚP đầu bơi tiếp" />
 
     <h3>Nguyên tắc thở đúng</h3>
     <ul>
@@ -539,5 +703,21 @@ const relatedKeywords = ['bơi sải', 'trườn sấp', 'tự học bơi'];
       <li><strong>Buổi 7-9:</strong> Phối hợp tay-chân-thở, bơi nguyên chu kỳ.</li>
       <li><strong>Buổi 10-12:</strong> Hoàn thiện kỹ thuật, tăng tốc độ và quãng đường.</li>
     </ol>
+
+    <div style="margin-top: var(--space-6); padding: var(--space-5); background: linear-gradient(135deg, rgba(0, 119, 182, 0.06) 0%, rgba(255, 255, 255, 0.9) 100%); border: 1px solid rgba(0, 119, 182, 0.2); border-radius: var(--radius-xl);">
+      <h3 style="margin-top: 0; font-size: var(--text-base); color: var(--color-navy);">Đăng Ký Khóa Học Bơi Sải Chuẩn 1 Kèm 1:</h3>
+      <p style="font-size: var(--text-sm); margin-bottom: var(--space-4); color: var(--color-text-secondary);">Trải nghiệm phương pháp huấn luyện bơi sải hiện đại từ đội ngũ Giảng viên Thể dục Thể thao, cam kết bơi chuẩn sải lướt êm ái sau 10-12 buổi.</p>
+      <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+        <a href="tel:0979121097" class="btn btn-accent btn-md">
+          📞 Hotline 0979.121.097
+        </a>
+        <a href="https://zalo.me/0979121097" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md">
+          💬 Zalo Học Thử Miễn Phí
+        </a>
+        <a href="/hoc-boi-o-dau/" class="btn btn-outline btn-md">
+          📍 Xem Điểm Học Gần Bạn
+        </a>
+      </div>
+    </div>
   </section>
 </TechniqueLayout>
