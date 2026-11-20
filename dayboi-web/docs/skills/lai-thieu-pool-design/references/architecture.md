@@ -50,3 +50,10 @@ IDs menu lớp: `lop-tre-em`, `lop-nguoi-lon`, `lop-kem-rieng`, `lop-nhom-nho`. 
 ## Kiểm tra tác động
 
 Sửa data hồ: kiểm tra trang hồ, hub, menu, nearby. Sửa template/CSS: ít nhất public + residential ở desktop/mobile. Sửa header: kiểm tra dropdown/drawer, khóa cuộn, Escape, focus, link/anchor và kích thước 360–1920. Chỉ sửa kiểu có scope, không đưa CSS trang địa điểm vào toàn site.
+
+## Ảnh đại diện và kiểm tra trình duyệt
+
+- `laiThieuIllustrations.js` ánh xạ ảnh concept theo ID hồ, dùng chung cho hub, hero và gallery dự phòng. Ảnh minh họa dùng nhãn rõ; không đưa nó vào schema như bằng chứng ảnh thực tế.
+- Thẻ hồ dùng WebP 760×428; hero dùng 1600×900 và crop mobile riêng. Giữ ảnh nguồn và ảnh gallery lớn; manifest `lai-thieu-representative-images.json` lưu prompt, `lai-thieu-card-images.json` lưu derivative.
+- `scripts/audit-responsive-pages.mjs` chạy bằng Playwright/Chromium cục bộ, có thể dùng biến `DAYBOI_PLAYWRIGHT_MODULE` trỏ bản cài sẵn. Chạy trên Astro preview sau build, không ghi nhận thao tác trên dev server là bằng chứng production. Chờ ảnh decode trước screenshot, kể cả sau khi điều hướng lại hoặc mở vùng cuộn.
+- Matrix kiểm tra gồm hub, 20 hồ và các mẫu trang chính ở 360–1920px; menu, lọc không dấu, trạng thái rỗng/reset, vùng bấm toàn thẻ, gallery, FAQ, Escape và focus. Phân biệt điều kiện đo với lỗi thật; không sửa giao diện chỉ để vượt một assertion sai.

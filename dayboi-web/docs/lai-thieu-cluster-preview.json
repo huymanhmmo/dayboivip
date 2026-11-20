@@ -1,17 +1,20 @@
 {
-  "versionId": "033f7aa4-e60d-4da0-8aae-2f42e6af027d",
-  "previewBase": "https://033f7aa4-dayboivip.huymanh.workers.dev",
+  "versionId": "a944d08a-c594-4394-b18a-167e5a0a00d9",
+  "previewBase": "https://a944d08a-dayboivip.huymanh.workers.dev",
   "alias": "https://lai-thieu-pool-cluster-dayboivip.huymanh.workers.dev",
   "worker": "dayboivip",
   "productionUpdated": true,
-  "productionVersionVerified": "033f7aa4-e60d-4da0-8aae-2f42e6af027d",
+  "productionVersionVerified": "a944d08a-c594-4394-b18a-167e5a0a00d9",
   "poolPages": 20,
   "hubCards": 20,
   "draftNoindexPages": 19,
   "futureProjectsNotPublished": 7,
-  "httpChecksPassed": 64,
+  "httpChecksPassed": 163,
   "githubPushed": false,
-  "productionDeploymentId": "cabfcf50-0fab-478e-956c-a0cfa6b4dd6f",
+  "productionDeploymentId": "30e1f4a7-88c9-45e4-abde-cbd3b61441d9",
   "productionAuthorization": "User explicitly requested deployment to dayboi.vip",
-  "productionVerifiedAt": "2026-11-20T13:28:23.486Z"
+  "productionVerifiedAt": "2026-11-20T13:28:23.486Z",
+  "previousVersionId": "033f7aa4-e60d-4da0-8aae-2f42e6af027d",
+  "latestValidation": "docs/lai-thieu-polish-validation.md",
+  "productionCheckedAt": "2026-11-20T13:58:42.234Z"
 }

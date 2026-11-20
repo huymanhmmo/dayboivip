@@ -35,3 +35,9 @@ Header/footer được áp dụng cho cả hub và các trang hồ bằng cùng 
 Public: vé hồ, đơn vị vận hành, điều kiện tiếp nhận lớp. Residential: quyền vào hồ, khách đi cùng/HLV, khu tiện ích và quy định BQL. Resort: phân biệt giờ dịch vụ hồ với giờ toàn khu; không khẳng định khách ngoài được dùng mọi tiện ích.
 
 Giữ cấu trúc nhận diện nhưng ẩn section thiếu dữ liệu. Ưu tiên sự thật hơn ép đủ số ảnh, review hoặc thông số trong mockup.
+
+## Lưới ngang và độ tương phản
+
+Header, hub, trang hồ và footer dùng chung tokens trong `lai-thieu-layout.css`: max 1510px; gutter 36/24/20/16px theo breakpoint. Không đặt lại max-width riêng cho từng template. So sánh mép trái/phải của các hộp có layout thực; `display:contents` không có hộp để đo. Header sticky dùng nền trắng đặc để chữ của nội dung phía dưới không xuyên qua.
+
+CTA và nhãn nhỏ dùng màu nền bảo đảm tương phản chữ trắng tối thiểu 4.5:1. Giữ cyan sáng làm màu trang trí, không dùng nó làm nền cho chữ trắng nhỏ.

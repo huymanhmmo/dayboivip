@@ -2,6 +2,7 @@
 import Icon from './ui/Icon.astro';
 import { getLaiThieuNavigation, laiThieuHub } from '../../data/laiThieuNavigation';
 import '../../styles/lai-thieu-header.css';
+import '../../styles/lai-thieu-layout.css';
 export interface Props { hotline?: string; phoneHref?: string; zaloHref?: string; currentPath?: string; courseBaseHref?: string; enrollmentHref?: string; }
 const {hotline='0986.456.678',phoneHref='tel:0986456678',zaloHref='https://zalo.me/0986456678',currentPath=Astro.url.pathname,courseBaseHref='/hoc-boi-nhat-an-lai-thieu/',enrollmentHref='#dang-ky'}=Astro.props;
 const items=getLaiThieuNavigation(courseBaseHref);

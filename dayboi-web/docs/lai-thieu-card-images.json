@@ -1,0 +1,93 @@
+{
+  "createdAt": "2026-11-20T13:50:17.274Z",
+  "records": [
+    {
+      "id": "emerald-golf-view",
+      "source": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-ho-boi-vo-cuc-tang-6.webp",
+      "src": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-ho-boi-vo-cuc-tang-6-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 28448
+    },
+    {
+      "id": "opal-skyline",
+      "source": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-tien-ich-ho-boi.webp",
+      "src": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-tien-ich-ho-boi-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 67984
+    },
+    {
+      "id": "the-rivana",
+      "source": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-nguoi-lon.webp",
+      "src": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-nguoi-lon-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 59244
+    },
+    {
+      "id": "duy-anh",
+      "source": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-02.webp",
+      "src": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-02-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 59738
+    },
+    {
+      "id": "din-ky",
+      "source": "/images/pool-detail/venues/ho-boi-din-ky/ho-boi-din-ky-binh-nham.webp",
+      "src": "/images/pool-detail/venues/ho-boi-din-ky/ho-boi-din-ky-binh-nham-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 42282
+    },
+    {
+      "id": "emerald-68",
+      "source": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-ho-boi-vo-cuc-tang-3.webp",
+      "src": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-ho-boi-vo-cuc-tang-3-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 64280
+    },
+    {
+      "id": "ecoxuan",
+      "source": "/images/pool-detail/venues/ecoxuan-lai-thieu/ecoxuan-lai-thieu-ho-boi-tien-ich.webp",
+      "src": "/images/pool-detail/venues/ecoxuan-lai-thieu/ecoxuan-lai-thieu-ho-boi-tien-ich-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 53262
+    },
+    {
+      "id": "roxana-plaza",
+      "source": "/images/pool-detail/venues/roxana-plaza/roxana-plaza-toan-canh.webp",
+      "src": "/images/pool-detail/venues/roxana-plaza/roxana-plaza-toan-canh-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 84834
+    },
+    {
+      "id": "the-habitat",
+      "source": "/images/pool-detail/venues/the-habitat-binh-duong/the-habitat-tien-ich-01.webp",
+      "src": "/images/pool-detail/venues/the-habitat-binh-duong/the-habitat-tien-ich-01-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 67420
+    },
+    {
+      "id": "tien-phong",
+      "source": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-01.webp",
+      "src": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-01-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 65684
+    },
+    {
+      "id": "nhat-an",
+      "source": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "src": "/images/pool-detail/outdoor-pool-illustration-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 76772
+    }
+  ]
+}

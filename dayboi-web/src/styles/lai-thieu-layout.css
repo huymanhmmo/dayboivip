@@ -1,0 +1,19 @@
+/* One horizontal grid for the local header, hub, venue pages and footer. */
+.sfl-landing {
+  --lt-content-max: 1510px;
+  --lt-page-gutter: 36px;
+}
+.sfl-landing :is(.sfl-container, .lt-header-inner, .lt-footer-inner, .lt-footer-neighbors, .lt-footer-bottom) {
+  width: calc(100% - 2 * var(--lt-page-gutter));
+  max-width: var(--lt-content-max);
+  margin-inline: auto;
+}
+@media (max-width: 1500px) {
+  .sfl-landing { --lt-page-gutter: 24px; }
+}
+@media (max-width: 1180px) {
+  .sfl-landing { --lt-page-gutter: 20px; }
+}
+@media (max-width: 700px) {
+  .sfl-landing { --lt-page-gutter: 16px; }
+}

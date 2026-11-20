@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-20T13:04:59.843Z",
+  "checkedAt": "2026-11-20T13:54:52.581Z",
   "pages": 21,
   "inventory": 20,
   "futureProjectsExcluded": 7,
@@ -12,7 +12,7 @@
       "robots": "index, follow",
       "indexable": true,
       "inSitemap": true,
-      "references": 83,
+      "references": 86,
       "broken": [],
       "duplicateIds": [],
       "missingImageAttributes": [],
@@ -27,6 +27,8 @@
       "unsupportedSchemaClaims": false,
       "poolCards": 20,
       "fullCardTargets": 20,
+      "cardTargetsCorrect": true,
+      "allCardsHaveImages": true,
       "nhatAnImage": true
     },
     {

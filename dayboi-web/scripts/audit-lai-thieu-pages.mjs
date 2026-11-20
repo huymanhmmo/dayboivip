@@ -49,11 +49,24 @@ for(const urlPath of [hub,...laiThieuVenueCatalog.map(v=>v.detailHref)]){
   const wrongClaims=schemaNodes.some(n=>n.aggregateRating||n.review||n.geo||n.openingHours||n.priceRange);
   const indexable=!robots?.includes('noindex');
   const report={path:urlPath,h1,canonical,robots,indexable,inSitemap:sitemap.includes(`<loc>${canonicalBase+urlPath}</loc>`),references:references.length,broken,duplicateIds,missingImageAttributes,brandHome:attr(home,'href'),brandArea:attr(area,'href'),header:!!nodes.find(n=>classHas(n,'lt-header')),footer:!!nodes.find(n=>classHas(n,'lt-footer')),phoneLinks:anchors.filter(n=>attr(n,'href')==='tel:0986456678').length,zaloLinks:anchors.filter(n=>attr(n,'href')==='https://zalo.me/0986456678').length,courseAnchors:['lop-tre-em','lop-nguoi-lon','lop-kem-rieng','lop-nhom-nho'].every(id=>ids.has(id)),removedCaption:!html.includes('Tư liệu hồ sơ HLV · Swim For Life'),unsupportedSchemaClaims:wrongClaims};
-  if(isHub){report.poolCards=nodes.filter(n=>classHas(n,'sfl-pool-card')).length;report.fullCardTargets=nodes.filter(n=>classHas(n,'sfl-pool-card-action')).length;report.nhatAnImage=html.includes('/images/pool-detail/outdoor-pool-illustration.webp');}
+  if(isHub){
+    const cards=nodes.filter(n=>classHas(n,'sfl-pool-card'));
+    report.poolCards=cards.length;
+    report.fullCardTargets=nodes.filter(n=>classHas(n,'sfl-pool-card-action')).length;
+    const descendants=node=>[node,...(node.childNodes||[]).flatMap(descendants)];
+    report.cardTargetsCorrect=cards.every(card=>{
+      const venue=laiThieuVenueCatalog.find(v=>v.id===attr(card,'id'));
+      const target=descendants(card).find(n=>classHas(n,'sfl-pool-card-action'));
+      return venue&&attr(target,'href')===venue.detailHref;
+    });
+    report.allCardsHaveImages=cards.every(card=>descendants(card).some(n=>n.tagName==='img'&&attr(n,'src')&&attr(n,'alt')));
+    const nhatAn=cards.find(n=>attr(n,'id')==='nhat-an');
+    report.nhatAnImage=!!nhatAn&&descendants(nhatAn).some(n=>n.tagName==='img'&&/minh họa/i.test(attr(n,'alt')||''))&&descendants(nhatAn).some(n=>classHas(n,'sfl-pool-image-note'));
+  }
   if(h1!==1||canonical!==canonicalBase+urlPath||broken.length||duplicateIds.length||missingImageAttributes.length||report.brandHome!=='/'||report.brandArea!==hub||!report.header||!report.footer||!report.phoneLinks||!report.zaloLinks||!report.courseAnchors||!report.removedCaption||wrongClaims)fail.push(urlPath);
   if(!isHub&&venue&&!venue.indexable&&(indexable||report.inSitemap))fail.push(urlPath+' draft index policy');
   reports.push(report);
-  if(isHub&&(report.poolCards!==laiThieuVenueCatalog.length||report.fullCardTargets!==laiThieuVenueCatalog.length||!report.nhatAnImage))fail.push(urlPath+' — hub card targets');
+  if(isHub&&(report.poolCards!==laiThieuVenueCatalog.length||report.fullCardTargets!==laiThieuVenueCatalog.length||!report.nhatAnImage||!report.allCardsHaveImages||!report.cardTargetsCorrect))fail.push(urlPath+' — hub card targets/images');
 }
 const result={checkedAt:new Date().toISOString(),pages:reports.length,inventory:laiThieuVenueCatalog.length,futureProjectsExcluded:futureLaiThieuProjects.length,failures:fail,reports};
 await fs.writeFile('docs/lai-thieu-cluster-integrity.json',JSON.stringify(result,null,2)+'\n');

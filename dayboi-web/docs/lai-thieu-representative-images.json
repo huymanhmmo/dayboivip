@@ -1,0 +1,76 @@
+{
+  "createdAt": "2026-11-20T13:43:56.994Z",
+  "tool": "Built-in image_gen",
+  "kind": "illustration",
+  "note": "Generic shared concepts, never factual venue photography.",
+  "assets": [
+    {
+      "src": "/images/pool-detail/illustrations/community-pool.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 314204
+    },
+    {
+      "src": "/images/pool-detail/illustrations/community-pool-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 94946
+    },
+    {
+      "src": "/images/pool-detail/illustrations/community-pool-mobile.webp",
+      "width": 800,
+      "height": 800,
+      "bytes": 146066
+    },
+    {
+      "src": "/images/pool-detail/illustrations/garden-pool.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 352226
+    },
+    {
+      "src": "/images/pool-detail/illustrations/garden-pool-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 104994
+    },
+    {
+      "src": "/images/pool-detail/illustrations/garden-pool-mobile.webp",
+      "width": 800,
+      "height": 800,
+      "bytes": 174368
+    },
+    {
+      "src": "/images/pool-detail/illustrations/residential-pool.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 328678
+    },
+    {
+      "src": "/images/pool-detail/illustrations/residential-pool-card.webp",
+      "width": 760,
+      "height": 428,
+      "bytes": 96684
+    },
+    {
+      "src": "/images/pool-detail/illustrations/residential-pool-mobile.webp",
+      "width": 800,
+      "height": 800,
+      "bytes": 147314
+    }
+  ],
+  "prompts": [
+    [
+      "public-pool",
+      "Create a beautiful photorealistic editorial illustration for a Vietnamese swimming lessons website: a clean approachable outdoor community lap swimming pool in tropical southern Vietnam, turquoise blue clear water and natural caustics, blue white lane ropes, modest low-rise poolside facilities, leafy palms and flowering plants, practical safe deck with ladders, warm morning sunlight. Human eye level wide angle from the pool corner, inviting composition, water foreground, no people, no text or signage, no logos, no invented real venue identity. Refined realistic architectural visualization, aquatic cyan/navy color palette, not an extravagant luxury hotel. Landscape 16:9 image, pool is main subject and stays within central 80% so it crops well into wide cards."
+    ],
+    [
+      "garden-pool",
+      "Create a beautiful photorealistic editorial illustration for a Vietnamese swimming lessons website: a serene tropical garden swimming pool, inviting clear turquoise water, simple pale stone deck, mature palms, lush frangipani and dense greenery surrounding low tasteful Vietnamese resort pavilions. Golden morning side light, believable modest resort in southern Vietnam, fresh blue and green colors, detailed water caustics, elegant calm composition. Wide landscape 16:9 from the pool corner, no people, no words, no signage, no logos, no recognizable real property. This is a generic concept illustration, not a factual depiction of any named resort. Pool foreground and center dominant, beautiful professional architectural photography style."
+    ],
+    [
+      "residential-pool",
+      "Create a beautiful photorealistic architectural editorial illustration of a contemporary residential courtyard swimming pool in tropical southern Vietnam for a swimming lessons website. Large clear azure/turquoise rectangular pool surrounded by tasteful cream mid-rise apartment towers with balconies, lush palms and planted deck, blue sky and soft cloud reflections, cheerful bright daylight, clean realistic paving and pool ladders. View diagonally along pool at human eye level, show inviting spacious water as primary foreground and central subject, buildings frame upper corners. Landscape 16:9 composition, no people, no words, signage, logos, brand names, watermarks or identifiable existing buildings. A generic architectural concept illustration rather than a factual depiction of any real named condominium."
+    ]
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-11-20T13:57:05.709Z",
+  "base": "https://dayboi.vip",
+  "report": [
+    {
+      "width": 390,
+      "overflow": 0,
+      "header": {
+        "left": 16,
+        "right": 374,
+        "width": 358
+      },
+      "content": {
+        "left": 16,
+        "right": 374,
+        "width": 358
+      },
+      "cards": 20,
+      "placeholders": 0,
+      "missing": 0,
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "width": 1920,
+      "overflow": 0,
+      "header": {
+        "left": 205,
+        "right": 1715,
+        "width": 1510
+      },
+      "content": {
+        "left": 205,
+        "right": 1715,
+        "width": 1510
+      },
+      "cards": 20,
+      "placeholders": 0,
+      "missing": 0,
+      "background": "rgb(255, 255, 255)"
+    }
+  ]
+}

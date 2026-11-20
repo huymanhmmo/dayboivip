@@ -1,0 +1,2482 @@
+{
+  "base": "http://127.0.0.1:4331",
+  "checkedAt": "2026-11-20T13:54:49.390Z",
+  "pages": 33,
+  "viewports": 102,
+  "interactions": [
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 360
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 360
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 360
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 360
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 360
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 360
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 360,
+      "menu": {
+        "width": 360,
+        "scroll": 359,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 360
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 390,
+      "menu": {
+        "width": 390,
+        "scroll": 389,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 390
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 430
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 430
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 430
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 430
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 430
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 430
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 430,
+      "menu": {
+        "width": 430,
+        "scroll": 429,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 430
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 768
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 768
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 768
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 768
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 768
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 768
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 768,
+      "menu": {
+        "width": 440,
+        "scroll": 439,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 768
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 1024
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 1024
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 1024
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 1024
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 1024
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 1024
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1024,
+      "menu": {
+        "width": 440,
+        "scroll": 439,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1024
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 1280
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 1280
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 1280
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 1280
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 1280
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 1280
+    },
+    {
+      "label": "Desktop pool menu fits viewport",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1280
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Desktop pool menu fits viewport",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1440
+    },
+    {
+      "label": "All 20 pool cards have images",
+      "ok": true,
+      "width": 1920
+    },
+    {
+      "label": "Brand and local hub links remain separate",
+      "ok": true,
+      "width": 1920
+    },
+    {
+      "label": "Accent-insensitive pool search",
+      "ok": true,
+      "width": 1920
+    },
+    {
+      "label": "No-results reset restores all cards",
+      "ok": true,
+      "width": 1920
+    },
+    {
+      "label": "Residential filter",
+      "ok": true,
+      "width": 1920
+    },
+    {
+      "label": "Pool card is clickable away from the icon",
+      "ok": true,
+      "width": 1920
+    },
+    {
+      "label": "Desktop pool menu fits viewport",
+      "ok": true,
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1920
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 360,
+      "menu": {
+        "width": 360,
+        "scroll": 359,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 360
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 390,
+      "menu": {
+        "width": 390,
+        "scroll": 389,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 390
+    },
+    {
+      "label": "Gallery next keeps one dialog open",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Gallery restores trigger focus",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "FAQ expands",
+      "ok": true,
+      "width": 390
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 430,
+      "menu": {
+        "width": 430,
+        "scroll": 429,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 430
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 768,
+      "menu": {
+        "width": 440,
+        "scroll": 439,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 768
+    },
+    {
+      "label": "Mobile drawer fits, locks scroll and lists venues",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1024,
+      "menu": {
+        "width": 440,
+        "scroll": 439,
+        "links": 31,
+        "locked": true
+      }
+    },
+    {
+      "label": "Drawer returns keyboard focus",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1024
+    },
+    {
+      "label": "Desktop pool menu fits viewport",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1280
+    },
+    {
+      "label": "Desktop pool menu fits viewport",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1440
+    },
+    {
+      "label": "Gallery next keeps one dialog open",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Gallery restores trigger focus",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "FAQ expands",
+      "ok": true,
+      "width": 1440
+    },
+    {
+      "label": "Desktop pool menu fits viewport",
+      "ok": true,
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1920
+    },
+    {
+      "label": "Global home mobile menu closes with Escape",
+      "ok": true,
+      "width": 390
+    }
+  ],
+  "failures": [],
+  "results": [
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 360,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 344,
+          "width": 328
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 430,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 414,
+          "width": 398
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 768,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 748,
+          "width": 728
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1024,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 1004,
+          "width": 984
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1280,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1256,
+          "width": 1232
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1920,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 205,
+          "right": 1715,
+          "width": 1510
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 360,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 344,
+          "width": 328
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 430,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 414,
+          "width": 398
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 768,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 748,
+          "width": 728
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1024,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 1004,
+          "width": 984
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1280,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1256,
+          "width": 1232
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1920,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 205,
+          "right": 1715,
+          "width": 1510
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-emerald-golf-view-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Emerald Golf View | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-emerald-golf-view-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Emerald Golf View | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-opal-skyline-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Opal Skyline | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-opal-skyline-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Opal Skyline | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 360,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 344,
+          "width": 328
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 430,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 414,
+          "width": 398
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 768,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 748,
+          "width": 728
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 1024,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 1004,
+          "width": 984
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 1280,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1256,
+          "width": 1232
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-rivana-lai-thieu/",
+      "width": 1920,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Rivana | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 205,
+          "right": 1715,
+          "width": 1510
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-duy-anh-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Duy Anh | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-duy-anh-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Duy Anh | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tt-vhtt-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi TT VHTT Lái Thiêu | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tt-vhtt-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi TT VHTT Lái Thiêu | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 360,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 344,
+          "width": 328
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 430,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 414,
+          "width": 398
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 768,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 748,
+          "width": 728
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 1024,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 20,
+          "right": 1004,
+          "width": 984
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 1280,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1256,
+          "width": 1232
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "width": 1920,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Phương Nam Resort | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 205,
+          "right": 1715,
+          "width": 1510
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-din-ky-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi KDL Dìn Ký | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-din-ky-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi KDL Dìn Ký | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-emerald-68-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Emerald 68 | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-emerald-68-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Emerald 68 | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-ecoxuan-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi EcoXuân | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-ecoxuan-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi EcoXuân | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-vista-riverside-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Vista Riverside | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-vista-riverside-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Vista Riverside | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-roxana-plaza-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Roxana Plaza | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-roxana-plaza-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Roxana Plaza | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-marina-tower-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Marina Tower | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-marina-tower-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Marina Tower | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-ehome-4-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Ehome 4 | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-ehome-4-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Ehome 4 | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-habitat-binh-hoa/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Habitat | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-the-habitat-binh-hoa/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi The Habitat | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-canary-heights-binh-hoa/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Canary Heights | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-canary-heights-binh-hoa/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Canary Heights | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-parkview-apartment-binh-hoa/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi ParkView Apartment | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-parkview-apartment-binh-hoa/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi ParkView Apartment | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-71-binh-hoa/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi 71 | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-71-binh-hoa/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Hồ bơi 71 | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tien-phong-thuan-an/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Tiên Phong | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tien-phong-thuan-an/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Tiên Phong | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-minh-quan-thuan-giao/",
+      "width": 390,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Minh Quân | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-minh-quan-thuan-giao/",
+      "width": 1440,
+      "status": 200,
+      "local": true,
+      "title": "Học bơi Minh Quân | Lớp kèm riêng & thông tin hồ",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "alignment": {
+        "header": {
+          "left": 24,
+          "right": 1416,
+          "width": 1392
+        },
+        "offenders": []
+      },
+      "brand": [
+        "/",
+        "/hoc-boi-tphcm/lai-thieu/"
+      ],
+      "placeholders": 0,
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi, Dạy Bơi & Tìm Lớp Gần Bạn | Swim For Life",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi, Dạy Bơi & Tìm Lớp Gần Bạn | Swim For Life",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi, Dạy Bơi & Tìm Lớp Gần Bạn | Swim For Life",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Swimming Lessons and Local Pool Directory in Vietnam",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Swimming Lessons and Local Pool Directory in Vietnam",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Swimming Lessons and Local Pool Directory in Vietnam",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi TP. Hồ Chí Minh: Bể Bơi & Lớp Học Theo Khu Vực",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi TP. Hồ Chí Minh: Bể Bơi & Lớp Học Theo Khu Vực",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi TP. Hồ Chí Minh: Bể Bơi & Lớp Học Theo Khu Vực",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/binh-hoa/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi Tại Phường Bình Hòa, TP.HCM: Lớp Kèm Riêng 1-1",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/binh-hoa/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi Tại Phường Bình Hòa, TP.HCM: Lớp Kèm Riêng 1-1",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/binh-hoa/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi Tại Phường Bình Hòa, TP.HCM: Lớp Kèm Riêng 1-1",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/khoa-hoc-boi/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Khóa Học Bơi Cho Trẻ Em & Người Lớn | Swim For Life",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/khoa-hoc-boi/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Khóa Học Bơi Cho Trẻ Em & Người Lớn | Swim For Life",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/khoa-hoc-boi/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Khóa Học Bơi Cho Trẻ Em & Người Lớn | Swim For Life",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/khoa-hoc-boi/tre-em/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Khóa Học Bơi Trẻ Em: Lộ Trình Theo Từng Độ Tuổi",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/khoa-hoc-boi/tre-em/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Khóa Học Bơi Trẻ Em: Lộ Trình Theo Từng Độ Tuổi",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/khoa-hoc-boi/tre-em/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Khóa Học Bơi Trẻ Em: Lộ Trình Theo Từng Độ Tuổi",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/ky-thuat-boi/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Kỹ Thuật Bơi: Hướng Dẫn Bơi Ếch, Sải, Ngửa, Bướm",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/ky-thuat-boi/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Kỹ Thuật Bơi: Hướng Dẫn Bơi Ếch, Sải, Ngửa, Bướm",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/ky-thuat-boi/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Kỹ Thuật Bơi: Hướng Dẫn Bơi Ếch, Sải, Ngửa, Bướm",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/ky-thuat-boi/hoc-boi-ech/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi Ếch: Hướng Dẫn Kỹ Thuật Bơi Ếch Chi Tiết Từ A-Z [2026]",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/ky-thuat-boi/hoc-boi-ech/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi Ếch: Hướng Dẫn Kỹ Thuật Bơi Ếch Chi Tiết Từ A-Z [2026]",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/ky-thuat-boi/hoc-boi-ech/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Học Bơi Ếch: Hướng Dẫn Kỹ Thuật Bơi Ếch Chi Tiết Từ A-Z [2026]",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/bang-gia/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Bảng Giá Học Bơi 2026: Chi Phí Kèm Riêng, Nhóm & Doanh Nghiệp",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/bang-gia/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Bảng Giá Học Bơi 2026: Chi Phí Kèm Riêng, Nhóm & Doanh Nghiệp",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/bang-gia/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Bảng Giá Học Bơi 2026: Chi Phí Kèm Riêng, Nhóm & Doanh Nghiệp",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/doi-ngu-hlv/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Đội Ngũ Huấn Luyện Viên Dạy Bơi Chuyên Nghiệp",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/doi-ngu-hlv/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Đội Ngũ Huấn Luyện Viên Dạy Bơi Chuyên Nghiệp",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/doi-ngu-hlv/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Đội Ngũ Huấn Luyện Viên Dạy Bơi Chuyên Nghiệp",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/lien-he/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Hợp Tác Đào Tạo Bơi Cho Doanh Nghiệp & Tổ Chức",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/lien-he/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Hợp Tác Đào Tạo Bơi Cho Doanh Nghiệp & Tổ Chức",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/lien-he/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Hợp Tác Đào Tạo Bơi Cho Doanh Nghiệp & Tổ Chức",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/tin-tuc/",
+      "width": 390,
+      "status": 200,
+      "local": false,
+      "title": "Blog Dạy Bơi | Kiến Thức & Kinh Nghiệm Học Bơi",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/tin-tuc/",
+      "width": 768,
+      "status": 200,
+      "local": false,
+      "title": "Blog Dạy Bơi | Kiến Thức & Kinh Nghiệm Học Bơi",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    },
+    {
+      "route": "/tin-tuc/",
+      "width": 1440,
+      "status": 200,
+      "local": false,
+      "title": "Blog Dạy Bơi | Kiến Thức & Kinh Nghiệm Học Bơi",
+      "h1": 1,
+      "overflow": 0,
+      "missingImages": [],
+      "errors": []
+    }
+  ]
+}

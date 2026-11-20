@@ -6,11 +6,12 @@ import {laiThieuVenueCatalog} from '../src/data/laiThieuVenueCatalog.js';
 
 const base=process.argv[2];
 if(!base||!/^https:\/\//.test(base))throw new Error('Pass the HTTPS preview base URL.');
-const pages=['/hoc-boi-tphcm/lai-thieu/',...laiThieuVenueCatalog.map(v=>v.detailHref)];
+const pages=['/hoc-boi-tphcm/lai-thieu/',...laiThieuVenueCatalog.map(v=>v.detailHref),'/','/en/','/hoc-boi-tphcm/','/hoc-boi-tphcm/binh-hoa/','/khoa-hoc-boi/','/khoa-hoc-boi/tre-em/','/ky-thuat-boi/','/ky-thuat-boi/hoc-boi-ech/','/bang-gia/','/doi-ngu-hlv/','/lien-he/','/tin-tuc/'];
 const refs=new Set(pages);
 for(const page of pages){
   const html=await fs.readFile(path.join('dist',page,'index.html'),'utf8');
   for(const image of html.matchAll(/<img[^>]*src="([^"]+)"/g)){if(image[1].startsWith('/'))refs.add(image[1]);}
+  for(const asset of html.matchAll(/<(?:script|link|source)\b[^>]*(?:src|href|srcset)="([^" ,]+)"/g)){if(asset[1].startsWith('/')&&!asset[1].endsWith('/'))refs.add(asset[1]);}
 }
 const results=[];
 const pending=[...refs];
@@ -23,6 +24,6 @@ for(let i=0;i<pending.length;i+=6){
   })));
 }
 const report={base,checkedAt:new Date().toISOString(),paths:results.length,failures:results.filter(r=>r.status!==200||!r.matchesBuild),results};
-await fs.writeFile('docs/lai-thieu-cluster-http.json',JSON.stringify(report,null,2)+'\n');
+await fs.writeFile(process.argv[3]||'docs/lai-thieu-cluster-http.json',JSON.stringify(report,null,2)+'\n');
 console.log({verified:results.length,failures:report.failures.length});
 if(report.failures.length)process.exitCode=1;

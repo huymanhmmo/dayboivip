@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-11-20T13:57:51.933Z",
+  "production": "https://dayboi.vip",
+  "worker": "dayboivip",
+  "version": "a944d08a-c594-4394-b18a-167e5a0a00d9",
+  "deployment": "30e1f4a7-88c9-45e4-abde-cbd3b61441d9",
+  "previousVersion": "033f7aa4-e60d-4da0-8aae-2f42e6af027d",
+  "productionCreatedAt": "2026-11-20T13:55:53.570173Z",
+  "productionVerified": true,
+  "githubPushed": false,
+  "buildPages": 6837,
+  "seoHTML": 6838,
+  "seoErrors": 0,
+  "browserPages": 33,
+  "viewportCases": 102,
+  "interactionChecks": 81,
+  "browserFailures": 0,
+  "httpChecks": 163,
+  "httpFailures": 0,
+  "poolCards": 20,
+  "poolsWithNewIllustrations": 9,
+  "illustrationConcepts": 3,
+  "optimizedExistingCovers": 11,
+  "illustrationNote": "Shared generic concepts, labeled as illustration; not factual photos of named venues.",
+  "cardImageBytes": {
+    "original": 2142686,
+    "optimized": 669948,
+    "reductionPercent": 69
+  }
+}

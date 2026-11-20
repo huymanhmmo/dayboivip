@@ -1,5 +1,6 @@
 import type { PoolDetailData, PoolPhoto } from '../poolDetailTypes';
 import { laiThieuVenueCatalog } from '../laiThieuVenueCatalog.js';
+import { getLaiThieuIllustration } from '../laiThieuIllustrations.js';
 import mediaDimensions from './mediaDimensions.json';
 import {localContact,sharedStyles,sharedInstructor,fallbackPoolImage,makeCourses,sharedPreparation,sharedTuition} from './shared';
 type Venue=(typeof laiThieuVenueCatalog)[number];
@@ -11,8 +12,9 @@ export function buildPoolDetail(venue:Venue):PoolDetailData {
   const areaName=venue.commune?areas[venue.commune]:'Lái Thiêu & giáp ranh';
   const areaHref=venue.commune?`/hoc-boi-tphcm/${venue.commune}/`:'/hoc-boi-tphcm/lai-thieu/';
   const photos:PoolPhoto[]=venue.media.map(m=>({src:m.src,alt:m.caption,caption:m.caption,...(mediaDimensions as Record<string,{width:number;height:number}>)[m.src],kind:m.kind,label:mediaLabels[m.kind]}));
-  const heroPhoto=photos.find(p=>p.kind==='photo'||p.kind==='documented')||photos.find(p=>p.kind!=='plan')||fallbackPoolImage;
-  const hero={...heroPhoto,mobileSrc:heroPhoto===fallbackPoolImage?fallbackPoolImage.mobileSrc:heroPhoto.src};
+  const illustration=getLaiThieuIllustration(venue.id)||fallbackPoolImage;
+  const heroPhoto=photos.find(p=>p.kind==='photo'||p.kind==='documented')||photos.find(p=>p.kind!=='plan')||illustration;
+  const hero={...heroPhoto,mobileSrc:heroPhoto.illustration?illustration.mobileSrc:heroPhoto.src};
   const access=residential?'Chỉ tổ chức khi học viên có quyền sử dụng hồ và BQL đồng ý tiếp nhận HLV. Không coi đây là hồ bán vé công cộng.':'Cần xác nhận giá vé, khung giờ và khả năng tiếp nhận HLV/lớp học với đơn vị vận hành trước khi hẹn buổi đầu.';
   const nearby=venue.nearby.map(id=>laiThieuVenueCatalog.find(v=>v.id===id)).filter(Boolean).map(v=>({name:v!.name,href:v!.detailHref,description:v!.summary}));
   const title=`Học bơi ${venue.shortName} | Lớp kèm riêng & thông tin hồ`;
@@ -29,7 +31,7 @@ export function buildPoolDetail(venue:Venue):PoolDetailData {
       {icon:residential?'building':'swim',label:'Loại địa điểm',value:venue.category},
       {icon:'people',label:'Nhu cầu tư vấn',value:'Trẻ em, người lớn',note:'Xác nhận lịch trước khi đến'},
     ],
-    photos,galleryIllustrations:[fallbackPoolImage],galleryTitle:`Hình ảnh & tư liệu ${venue.shortName}`,
+    photos,galleryIllustrations:[illustration],galleryTitle:`Hình ảnh & tư liệu ${venue.shortName}`,
     galleryNote:photos.length?'Tư liệu theo bộ ảnh được cung cấp; caption phân biệt ảnh hồ, phối cảnh, mặt bằng và ngoại thất. Không thay thế khảo sát hiện trạng vận hành.':'Chưa có ảnh hồ phù hợp trong bộ tư liệu. Ảnh bên dưới chỉ minh họa không gian bơi, không phải ảnh địa điểm.',
     facilities:[...venue.facts.map(label=>({label,status:'documented' as const,note:'Theo tài liệu dự án, cần đối chiếu hiện trạng'})),
       {label:'Khu vực tập và độ sâu',status:'unverified',note:'Cần xác nhận trước khi xếp lớp'},

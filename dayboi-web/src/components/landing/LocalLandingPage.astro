@@ -25,7 +25,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {'@type':'CollectionPage','@id':`${data.canonical}#page`,name:data.title,description:data.description,url:data.canonical,dateModified:data.updatedAt,mainEntity:{'@id':`${data.canonical}#venues`},about:{'@id':`${data.canonical}#instructor`}},
-    {'@type':'ItemList','@id':`${data.canonical}#venues`,numberOfItems:data.pools.length,itemListElement:data.pools.map((pool,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'SportsActivityLocation',name:pool.name,url:`${data.canonical}#${pool.id}`,image:pool.image && !pool.imageNote ? `https://dayboi.vip${pool.image}` : undefined,address:{'@type':'PostalAddress',streetAddress:pool.address,addressRegion:'TP.HCM',addressCountry:'VN'},description:pool.detail}}))},
+    {'@type':'ItemList','@id':`${data.canonical}#venues`,numberOfItems:data.pools.length,itemListElement:data.pools.map((pool,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'SportsActivityLocation',name:pool.name,url:pool.detailHref?`https://dayboi.vip${pool.detailHref}`:`${data.canonical}#${pool.id}`,image:pool.image && !pool.imageNote ? `https://dayboi.vip${pool.image}` : undefined,address:{'@type':'PostalAddress',streetAddress:pool.address,addressRegion:'TP.HCM',addressCountry:'VN'},description:pool.detail}}))},
     {'@type':'Person','@id':`${data.canonical}#instructor`,name:data.instructor.name.replace('Thầy ',''),jobTitle:`${data.instructor.qualification} – HLV phụ trách khu vực ${data.name}`,telephone:data.hotline},
     {'@type':'BreadcrumbList',itemListElement:breadcrumbs.map((item,index)=>({'@type':'ListItem',position:index+1,name:item.name,item:item.url}))},
   ],
