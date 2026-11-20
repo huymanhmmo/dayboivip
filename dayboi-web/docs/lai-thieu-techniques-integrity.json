@@ -1,48 +1,50 @@
 {
+  "checkedAt": "2026-11-20T09:26:11.592Z",
   "h1": 1,
+  "canonical": "https://dayboi.vip/hoc-boi-tphcm/lai-thieu/",
   "logoCount": 2,
   "cards": [
     {
       "href": "/ky-thuat-boi/hoc-boi-ech/",
-      "text": "   Nền tảng cho người mới    Dạy bơi ếch Tập đạp chân, quạt tay và phối hợp nhịp thở cho người mới bắt đầu. Tìm hiểu kỹ thuật  "
+      "text": "Nền tảng cho người mới Dạy bơi ếch Tập đạp chân, quạt tay và phối hợp nhịp thở cho người mới bắt đầu. Tìm hiểu kỹ thuật"
     },
     {
       "href": "/ky-thuat-boi/hoc-boi-sai/",
-      "text": "   Thể lực & nhịp thở    Dạy bơi sải Rèn tư thế thẳng, nhịp tay liên tục và cách lấy hơi nghiêng. Tìm hiểu kỹ thuật  "
+      "text": "Thể lực & nhịp thở Dạy bơi sải Rèn tư thế thẳng, nhịp tay liên tục và cách lấy hơi nghiêng. Tìm hiểu kỹ thuật"
     },
     {
       "href": "/ky-thuat-boi/hoc-boi-ngua/",
-      "text": "   Thăng bằng & thả lỏng    Dạy bơi ngửa Làm quen tư thế nổi ngửa, giữ thăng bằng và phối hợp tay chân. Tìm hiểu kỹ thuật  "
+      "text": "Thăng bằng & thả lỏng Dạy bơi ngửa Làm quen tư thế nổi ngửa, giữ thăng bằng và phối hợp tay chân. Tìm hiểu kỹ thuật"
     },
     {
       "href": "/ky-thuat-boi/hoc-boi-buom/",
-      "text": "   Phối hợp nâng cao    Dạy bơi bướm Tập nhịp sóng thân, chân dolphin và động tác tay đồng thời. Tìm hiểu kỹ thuật  "
+      "text": "Phối hợp nâng cao Dạy bơi bướm Tập nhịp sóng thân, chân dolphin và động tác tay đồng thời. Tìm hiểu kỹ thuật"
     },
     {
       "href": "/ky-thuat-boi/ky-nang-dung-nuoc/",
-      "text": "   An toàn dưới nước    Kỹ năng sinh tồn, đứng nước Tập giữ nổi, đứng nước, bình tĩnh và gọi hỗ trợ khi cần. Tìm hiểu kỹ thuật  "
+      "text": "An toàn dưới nước Kỹ năng sinh tồn, đứng nước Tập giữ nổi, đứng nước, bình tĩnh và gọi hỗ trợ khi cần. Tìm hiểu kỹ thuật"
     }
   ],
   "images": [
     {
-      "src": "/images/landing/lai-thieu/technique-breaststroke-reference.webp",
-      "alt": "Vận động viên bơi ếch nhìn nghiêng trong pha lấy hơi, hai tay thu khép về phía trước",
+      "src": "/images/landing/lai-thieu/technique-breaststroke-side-breathing.webp",
+      "alt": "Minh họa bơi ếch nhìn nghiêng trong pha lấy hơi, thân chồm về trước và hai tay thu khép sát mặt nước",
       "width": "600",
       "height": "450",
       "loading": "lazy",
       "decoding": "async"
     },
     {
-      "src": "/images/landing/lai-thieu/technique-front-crawl.webp",
-      "alt": "Ảnh minh họa động tác bơi sải với tay vươn về phía trước",
+      "src": "/images/landing/lai-thieu/technique-front-crawl-underwater.webp",
+      "alt": "Minh họa bơi sải dưới nước, một tay vươn trước và tay còn lại quạt về hông, hai chân đập luân phiên",
       "width": "600",
       "height": "450",
       "loading": "lazy",
       "decoding": "async"
     },
     {
-      "src": "/images/landing/lai-thieu/technique-backstroke.webp",
-      "alt": "Ảnh minh họa người bơi ngửa trên mặt nước",
+      "src": "/images/landing/lai-thieu/technique-backstroke-surface-full-body.webp",
+      "alt": "Minh họa toàn thân bơi ngửa trên mặt nước, một tay vung qua đầu và hai chân đập luân phiên, không mang chân vịt",
       "width": "600",
       "height": "450",
       "loading": "lazy",
@@ -64,5 +66,8 @@
       "loading": "lazy",
       "decoding": "async"
     }
-  ]
+  ],
+  "missingInternalReferences": [],
+  "laiThieuInSitemap": true,
+  "redirectRuleCount": 88
 }

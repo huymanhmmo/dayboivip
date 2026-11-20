@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-11-20T09:26:12.959Z",
+  "base": "https://79e51b29-dayboivip.huymanh.workers.dev",
+  "checks": [
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/hoc-boi-tphcm/lai-thieu/",
+      "status": 200,
+      "bytes": 82218,
+      "matchesBuild": true,
+      "sha256": "7d9359269daedb34d8daf03f9ae0922ab5b51f83d259e6276e494de45a1b4d01"
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/images/brand/logo.png",
+      "status": 200,
+      "bytes": 102092,
+      "matchesBuild": true,
+      "sha256": "16e7b1f8d01f105467d92f68de78709c867ea3acf2223b85810dec103ccd8c3b"
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/images/landing/lai-thieu/technique-breaststroke-side-breathing.webp",
+      "status": 200,
+      "bytes": 75794,
+      "matchesBuild": true,
+      "sha256": "f54164f3802846302f7a580ff7be01401c92901540afa8313a4a3f166ea1d0b9"
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/images/landing/lai-thieu/technique-front-crawl-underwater.webp",
+      "status": 200,
+      "bytes": 101064,
+      "matchesBuild": true,
+      "sha256": "8545d047977e5e91059f3b2ed5b7f3caf35979976fd7f3e280cc86b4772627c2"
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/images/landing/lai-thieu/technique-backstroke-surface-full-body.webp",
+      "status": 200,
+      "bytes": 85142,
+      "matchesBuild": true,
+      "sha256": "79af35ea04cfe908bddaa510462ffcc2bbd03d7d60c6a584a2dddfc698b8be5d"
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/images/landing/lai-thieu/technique-butterfly-underwater.webp",
+      "status": 200,
+      "bytes": 124750,
+      "matchesBuild": true,
+      "sha256": "14c961d14abe4bf7bf67588481d8d98507238f5e6ebe441ff055049baeb54bfc"
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/images/landing/lai-thieu/technique-treading-water.webp",
+      "status": 200,
+      "bytes": 77068,
+      "matchesBuild": true,
+      "sha256": "b6170ad809a3ad6dd7b2be8efe68a76c23759b5ae933000bb35e65e2b9cc45de"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/ky-thuat-boi/hoc-boi-ech/",
+      "status": 200
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/ky-thuat-boi/hoc-boi-sai/",
+      "status": 200
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/ky-thuat-boi/hoc-boi-ngua/",
+      "status": 200
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/ky-thuat-boi/hoc-boi-buom/",
+      "status": 200
+    },
+    {
+      "url": "https://79e51b29-dayboivip.huymanh.workers.dev/ky-thuat-boi/ky-nang-dung-nuoc/",
+      "status": 200
+    }
+  ]
+}

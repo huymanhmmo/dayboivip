@@ -1,0 +1,23 @@
+{
+  "tool": "image_gen built-in",
+  "purpose": "Final redraws from user references; backstroke uses latest surface view with complete limbs and bare feet",
+  "requests": [
+    {
+      "key": "breaststroke-final",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\codex-clipboard-3af403f7-83e7-4c53-8cfd-a7db121b4fb5.png",
+      "prompt": "Redraw this breaststroke photograph as one new polished photorealistic sports image for a swim-school website. The reference is the EXACT POSE AND CAMERA ANGLE to follow. Retain the side/three-quarter SIDE view of a fictional adult Vietnamese female swimmer facing to the RIGHT, wearing a plain white swim cap and blue goggles, a plain navy athletic one-piece swimsuit. Capture exactly the breaststroke BREATHING / INSWEEP to forward recovery phase as in the reference: head and shoulders have risen diagonally forward out of the water, body leaning FORWARD over the water and trailing horizontally to the left, not standing upright. Both elbows are folded inward CLOSE to the ribs, low under the shoulders; the forearms come forward and BOTH HANDS meet CLOSE TOGETHER in front of the chest just at the WATER SURFACE, preparing to shoot forward. Hands are low and forward, not prayer hands held upright high against the sternum. Small white splash wraps across the front of the chest, forearms and wrists like the reference, mouth just clear of water to breathe, neck in line with a forward leaning torso. Do not spread both arms sideways and do not turn athlete to face the camera. Bright turquoise pool, soft pool lanes in background, natural sunlight, clean crisp premium swim-school photography, authentic water and anatomy. Preserve the reference's breaststroke movement, side orientation, upper body proportions and phase while improving clarity and matching aqua/navy palette. Composition landscape 4:3 with entire head, both hands and both elbows in the safe center area and generous margin. No words, logos, watermark, UI, diagram, collage or borders. Do not reproduce a named athlete's identity.",
+      "output": "/images/landing/lai-thieu/technique-breaststroke-side-breathing.webp"
+    },
+    {
+      "key": "front-crawl-final",
+      "path": "C:/Users/Admin/AppData/Local/Temp/codex-clipboard-4dea864e-7be3-49c1-a4a9-c368f5c0927d.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: a new swimming-technique card photograph for Swim For Life's Lái Thiêu website.\nInput image: reference for front crawl body position, underwater camera angle, pool environment and swimming movement. Redraw as a new polished natural sports photograph, not an exact copy of the person.\nPrimary request: show correct front crawl / freestyle / bơi sải, matching the supplied reference. One adult male swimmer with navy cap and blue goggles, bare torso and dark navy swimming briefs. He is prone, chest facing the pool floor, body long and nearly horizontal near the surface. Front three-quarter underwater view: his right arm reaches straight forwards toward the upper left of the composition, palm facing slightly down, fingers naturally together; his left arm is completing the underwater pull beside his hip. The arms are alternating, not simultaneous butterfly. Head aligned with spine, looking down and slightly ahead through goggles, not lifting forward for breaststroke. Hips and legs trail back to the right with a modest alternating flutter kick from hips, relaxed ankles and bare feet. Exactly two arms and two legs, anatomically credible hands.\nScene: luminous clean turquoise swimming pool with blue and yellow lane ropes, subtle tile floor, realistic small bubbles behind shoulders and feet, rippled sunlight reflections. Swimmer clearly legible without bubbles obscuring face or torso.\nComposition: landscape 4:3, comfortably fit the reaching hand, head, body and feet inside the frame with margin for a website card crop. Camera underwater slightly in front and below chest level, dynamic diagonal from reaching hand upper left to feet lower right.\nStyle: realistic editorial sports photography, crisp swimmer with natural water texture, bright aqua and navy matching an elegant swimming-school website. No text, no watermark, no logos, no fins or training equipment.",
+      "output": "/images/landing/lai-thieu/technique-front-crawl-underwater.webp"
+    },
+    {
+      "key": "backstroke-surface-final",
+      "path": "C:/Users/Admin/AppData/Local/Temp/codex-clipboard-434e1b96-70a8-4a1b-9326-65d6a1c5cee2.png",
+      "output": "/images/landing/lai-thieu/technique-backstroke-surface-full-body.webp"
+    }
+  ]
+}

@@ -13,30 +13,30 @@ Yêu cầu ngày 20/11/2026: dùng logo chung, sửa phần trang trí ảnh b�
 
 ## Asset mới
 
-Ảnh minh họa độc lập, tạo bằng built-in imagegen; không trình bày như ảnh lớp thực tế hoặc HLV đã xác minh. Riêng ảnh bơi ếch dùng ảnh do người dùng cung cấp trong phản hồi cuối. Prompt ảnh tạo mới lưu trong `lai-thieu-technique-prompts.json` và `lai-thieu-butterfly-reference-prompt.json`.
+Ảnh minh họa độc lập, tạo bằng built-in imagegen; không trình bày như ảnh lớp thực tế hoặc HLV đã xác minh. Ảnh bơi ếch, sải, ngửa và bướm được vẽ mới theo các mẫu người dùng gửi. Prompt bản cuối lưu trong `lai-thieu-final-technique-prompts.json` và `lai-thieu-butterfly-reference-prompt.json`; `lai-thieu-technique-prompts.json` ghi lại vòng tạo ảnh ban đầu.
 
 | Asset | Kích thước | Dung lượng |
 | --- | --- | --- |
-| `technique-breaststroke-reference.webp` | 730 × 463 | 52 KB; ảnh mẫu bơi ếch người dùng cung cấp |
-| `technique-front-crawl.webp` | 680 × 510 | 63 KB; bản 4:3 từ ảnh bơi sải có sẵn |
-| `technique-backstroke.webp` | 680 × 510 | 84 KB |
+| `technique-breaststroke-side-breathing.webp` | 680 × 510 | 74 KB; vẽ mới theo mẫu lấy hơi nhìn nghiêng |
+| `technique-front-crawl-underwater.webp` | 680 × 510 | 99 KB; vẽ mới theo mẫu bơi sải dưới nước |
+| `technique-backstroke-surface-full-body.webp` | 680 × 510 | 83 KB; toàn thân bơi ngửa trên mặt nước, không chân vịt |
 | `technique-butterfly-underwater.webp` | 680 × 510 | 122 KB; vẽ mới theo ảnh tham chiếu dưới nước của người dùng |
 | `technique-treading-water.webp` | 680 × 510 | 75 KB |
 
-Thẻ bơi sải dùng bản 4:3 từ `journey.webp`. Logo giữ nguyên file dùng chung, không tạo biến thể vẽ lại. Theo phản hồi cuối của người dùng, thẻ bơi ếch sử dụng chính ảnh mẫu: góc nghiêng trong pha lấy hơi. Thẻ bơi bướm dùng ảnh vẽ mới theo góc dưới nước, toàn thân duỗi dài với hai tay phía trước và chân khép trong nhịp dolphin.
+Logo giữ nguyên file dùng chung, không tạo biến thể vẽ lại. Bơi ếch nhìn nghiêng trong pha lấy hơi, hai tay thu khép trước ngực sát mặt nước. Bơi sải nhìn từ dưới nước, một tay vươn trước và tay còn lại kéo về hông, chân đập luân phiên. Bơi bướm nhìn dưới nước, hai tay cùng vươn phía trước và hai chân khép trong nhịp dolphin. Bơi ngửa theo mẫu mặt nước mới nhất của người dùng: nữ vận động viên đang bơi, một tay vung qua đầu và tay kia kéo về hông, toàn bộ hai tay và hai chân nằm trong khung, chân trần đập luân phiên; mặt ở trên nước. Các ảnh dùng tên file mới để trình duyệt tải đúng bản đã chỉnh.
 
 ## Kiểm tra
 
 - Build Astro: thành công, 6.817 trang.
 - Audit SEO strict: không lỗi trong các nhóm kiểm tra của script.
 - HTML đã build: 1 H1; đúng 5 thẻ kỹ thuật và 5 đường dẫn đích; 2 logo dùng chung ở header/footer; không phát hiện liên kết nội bộ bị thiếu.
-- Kiểm tra trực quan qua Cloudflare Browser Rendering: section desktop 1440px có 5 thẻ cùng hàng, đủ 5 ảnh và đúng ảnh mẫu cuối; phần lợi ích không còn ảnh người bơi bị cắt. Ảnh lưu tại `docs/previews/lai-thieu/techniques-desktop-1440.jpg`, `techniques-mobile-390.jpg` và `benefits-after-1440.jpg`.
-- Đối chiếu HTTP trên bản xem thử: HTML Lái Thiêu, ảnh bơi ếch mẫu và ảnh bơi bướm dưới nước đều HTTP 200 và khớp byte với build local.
+- Kiểm tra trực quan qua Cloudflare Browser Rendering: section desktop 1440px có 5 thẻ cùng hàng, mobile 390px có 2 cột và thẻ an toàn trải ngang; phần lợi ích không còn ảnh người bơi bị cắt. Ảnh lưu tại `docs/previews/lai-thieu/techniques-desktop-1440.jpg`, `techniques-mobile-390.jpg` và `benefits-after-1440.jpg`.
+- Đối chiếu HTTP trên bản xem thử và production: HTML Lái Thiêu cùng 5 ảnh kỹ thuật phải HTTP 200 và khớp byte với build local.
 - Kết quả cấu trúc cuối: `docs/lai-thieu-techniques-integrity.json`.
 
 ## Phiên bản Cloudflare
 
-Bản cuối đã upload để kiểm tra: `0483119e-edb8-4206-ae10-6d874bcea80e`. Khi triển khai, chỉ chuyển traffic sang đúng phiên bản này; không thay đổi domain hoặc các thiết lập bảo mật. Mã vẫn được giữ local, không push GitHub.
+Bản kiểm tra trước lần sửa ảnh ngửa: `0483119e-edb8-4206-ae10-6d874bcea80e`. Trong lúc thực hiện có thêm commit SEO `b3ae839` và deployment mới từ luồng khác; đã ghép commit đó vào nhánh giao diện và fast-forward main local để giữ toàn bộ thay đổi. Build và audit sau ghép thành công (823 URL indexable theo chính sách mới). Bản cập nhật gồm cả thay đổi SEO và các ảnh sửa theo mẫu; mã vẫn được giữ local, không push GitHub. Thông tin bản triển khai cuối được ghi trong `lai-thieu-techniques-deployment.json`.
 
 ## Vị trí mã nguồn
 

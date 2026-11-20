@@ -1,0 +1,23 @@
+{
+  "website": "https://dayboi.vip/hoc-boi-tphcm/lai-thieu/",
+  "worker": "dayboivip",
+  "versionId": "79e51b29-263f-4ea7-a6e7-1c25747d6493",
+  "deploymentId": "0ab66af0-8071-4ba5-9f54-9b4ac3b57b2e",
+  "previousVersionId": "83c87ec5-25a2-4831-88a6-a212a7933b56",
+  "trafficPercentage": 100,
+  "preview": "https://79e51b29-dayboivip.huymanh.workers.dev",
+  "verifiedDate": "2026-11-20",
+  "verification": {
+    "astroBuildPages": 6817,
+    "seoAuditHtmlFiles": 6818,
+    "indexableUrls": 823,
+    "strictSeoAuditPassed": true,
+    "desktopViewport": 1440,
+    "mobileViewport": 390,
+    "htmlLogoAndFiveImagesMatchLocalBuild": true,
+    "fiveTechniqueLinksHttp200": true,
+    "preservedRedirectRules": 88,
+    "preservedSeoCommit": "b3ae83951469e04c0780d87b338eb729bb5c4053"
+  },
+  "githubPushed": false
+}
