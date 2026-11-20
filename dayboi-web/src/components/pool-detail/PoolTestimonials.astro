@@ -1,0 +1,6 @@
+---
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { items: PoolDetailData['testimonials']; }
+const {items}=Astro.props;
+---
+{items.length>0&&<section class="pd-testimonials" aria-label="Phản hồi học viên có nguồn"><h2>Trải nghiệm học viên</h2><div>{items.map(item=><figure>{item.image&&<img src={item.image} alt={item.name} width="72" height="72" loading="lazy" />}<blockquote>{item.quote}</blockquote><figcaption><strong>{item.name}</strong><span>{item.source}</span>{item.date&&<time>{item.date}</time>}{item.rating&&<span aria-label={`${item.rating} trên 5 sao`}>{item.rating}/5</span>}</figcaption></figure>)}</div></section>}

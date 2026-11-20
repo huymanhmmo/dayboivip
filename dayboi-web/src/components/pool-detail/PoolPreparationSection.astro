@@ -1,0 +1,8 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { items: PoolDetailData['preparation']; image: string; }
+const {items,image}=Astro.props;
+---
+<section class="pd-preparation pd-panel" aria-labelledby="preparation-heading"><SectionHeading id="preparation-heading" title="Kinh nghiệm khi đi học" icon="people" /><ul>{items.map(item=><li><Icon name="check" /><div><strong>{item.title}</strong><span>{item.description}</span></div></li>)}</ul><img src={image} alt="Minh họa kính bơi, mũ, khăn và nước uống chuẩn bị cho buổi học" width="600" height="600" loading="lazy" decoding="async" /></section>

@@ -1,0 +1,10 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { facts: PoolDetailData['quickFacts']; }
+const { facts } = Astro.props;
+---
+<section class="sfl-container pd-facts" aria-label="Thông tin nhanh về hồ bơi">
+  <h2 class="pd-mobile-title"><Icon name="drop" />Thông tin nhanh</h2>
+  <dl>{facts.map(fact=><div><span class="pd-fact-icon"><Icon name={fact.icon} /></span><div><dt>{fact.label}</dt><dd>{fact.value}{fact.note&&<small>{fact.note}</small>}</dd></div></div>)}</dl>
+</section>

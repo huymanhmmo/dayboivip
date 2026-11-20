@@ -1,0 +1,7 @@
+---
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { name: string; rows: PoolDetailData['tuition']; note: string; }
+const {name,rows,note}=Astro.props;
+---
+<section id="hoc-phi" class="pd-tuition" aria-labelledby="tuition-heading"><SectionHeading id="tuition-heading" title={`Học phí & chính sách tại ${name}`} icon="chat" /><div class="pd-table-wrap"><table><caption class="sfl-sr-only">Các khoản học phí, vé hồ và điều kiện cần xác nhận</caption><thead><tr><th scope="col">Nội dung</th><th scope="col">Thông tin tư vấn</th></tr></thead><tbody>{rows.map(row=><tr><th scope="row">{row.label}</th><td><strong>{row.value}</strong>{row.note&&<small>{row.note}</small>}</td></tr>)}</tbody></table></div><p class="pd-caption">{note}</p></section>

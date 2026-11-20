@@ -5,7 +5,10 @@ import SectionHeading from './ui/SectionHeading.astro';
 import type { Pool } from '../../data/localLandingPages';
 export interface Props { pools: Pool[]; name: string; phoneHref: string; instructorLabel: string; }
 const { pools, name, phoneHref, instructorLabel } = Astro.props;
-const zones = Array.from(new Map(pools.map(pool => [pool.zone, pool.area || pool.zone])).entries());
+const zoneLabels:Record<string,string>={'trung-tam':'Trung tâm Lái Thiêu','quoc-lo-13':'Trục Quốc lộ 13','vinh-phu':'Vĩnh Phú cũ · cần đối chiếu ranh giới','binh-nham':'Bình Nhâm cũ','ven-song':'Khu ven sông','binh-hoa':'Bình Hòa · lân cận','thuan-an':'Thuận An · lân cận','thuan-giao':'Thuận Giao · lân cận'};
+const zones = Array.from(new Set(pools.map(pool=>pool.zone))).map(zone=>[zone,zoneLabels[zone]||zone]);
+const corePools=pools.filter(pool=>!pool.neighbor);
+const nearbyPools=pools.filter(pool=>pool.neighbor);
 ---
 <section class="sfl-pool-section" id="dia-diem" aria-labelledby="sfl-pools-title">
   <div class="sfl-container">
@@ -17,7 +20,8 @@ const zones = Array.from(new Map(pools.map(pool => [pool.zone, pool.area || pool
       <button type="submit" class="sfl-button sfl-button--blue">Tìm hồ bơi</button>
     </form>
     <p class="sfl-filter-status sfl-sr-only" role="status" aria-live="polite" data-pool-status>Hiển thị {pools.length} hồ bơi.</p>
-    <div class="sfl-pool-grid">{pools.map(pool => <PoolCard pool={pool} phoneHref={phoneHref} instructorLabel={instructorLabel} />)}</div>
+    <div class="sfl-pool-group" data-pool-group><h3 class="sfl-pool-group-title">Lái Thiêu & khu vực Vĩnh Phú cũ <span>{corePools.length} địa điểm</span></h3><p class="sfl-pool-group-note">Các địa điểm giáp ranh Vĩnh Phú cũ cần đối chiếu phường hiện tại và quyền sử dụng hồ trước khi học.</p><div class="sfl-pool-grid">{corePools.map(pool => <PoolCard pool={pool} phoneHref={phoneHref} instructorLabel={instructorLabel} />)}</div></div>
+    {nearbyPools.length>0&&<div class="sfl-pool-group" data-pool-group><h3 class="sfl-pool-group-title">Bình Hòa, Thuận An & Thuận Giao <span>{nearbyPools.length} địa điểm lân cận</span></h3><p class="sfl-pool-group-note">Các hồ dưới đây thuộc phường lân cận, được liên kết để bạn có thêm lựa chọn phù hợp.</p><div class="sfl-pool-grid">{nearbyPools.map(pool => <PoolCard pool={pool} phoneHref={phoneHref} instructorLabel={instructorLabel} />)}</div></div>}
     <div class="sfl-empty" data-pool-empty hidden><Icon name="search" /><p>Chưa tìm thấy hồ bơi phù hợp. Hãy thử tên khác hoặc bỏ bớt bộ lọc.</p><button type="button" class="sfl-button sfl-button--blue" data-reset-filters>Xem tất cả hồ bơi</button></div>
     <div class="sfl-pool-notices"><div><Icon name="swim" /><p><strong>Hồ dịch vụ, công cộng</strong><span>Học phí giảng dạy chưa gồm vé vào hồ.</span></p></div><div><Icon name="building" /><p><strong>Dành cho cư dân nội khu</strong><span>Cần quyền sử dụng hồ và BQL chấp thuận HLV.</span></p></div></div>
   </div>
@@ -42,6 +46,7 @@ const zones = Array.from(new Map(pools.map(pool => [pool.zone, pool.area || pool
     if (status) { status.textContent = `Hiển thị ${count} trên ${cards.length} hồ bơi.`; status.classList.remove('sfl-sr-only'); }
     const empty = document.querySelector<HTMLElement>('[data-pool-empty]');
     if (empty) empty.hidden = count > 0;
+    document.querySelectorAll<HTMLElement>('[data-pool-group]').forEach(group=>{group.hidden=!Array.from(group.querySelectorAll<HTMLElement>('[data-pool]')).some(card=>!card.hidden);});
   };
   form?.addEventListener('submit', event => { event.preventDefault(); filter(); });
   form?.addEventListener('input', filter);

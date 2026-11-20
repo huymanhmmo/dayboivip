@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import LandingHeader from './LandingHeader.astro';
+import LaiThieuHeader from './LaiThieuHeader.astro';
 import SwimmingHero from './SwimmingHero.astro';
 import SwimmingAudienceGrid from './SwimmingAudienceGrid.astro';
 import PoolFinderSection from './PoolFinderSection.astro';
@@ -12,7 +12,7 @@ import BenefitsSection from './BenefitsSection.astro';
 import LocalAreaInfoSection from './LocalAreaInfoSection.astro';
 import TestimonialsSection from './TestimonialsSection.astro';
 import EnrollmentCTA from './EnrollmentCTA.astro';
-import LandingFooter from './LandingFooter.astro';
+import LaiThieuFooter from './LaiThieuFooter.astro';
 import type { LocalLandingData } from '../../data/localLandingPages';
 import '../../styles/local-swimming-landing.css';
 import '../../styles/local-swimming-techniques.css';
@@ -25,21 +25,21 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {'@type':'CollectionPage','@id':`${data.canonical}#page`,name:data.title,description:data.description,url:data.canonical,dateModified:data.updatedAt,mainEntity:{'@id':`${data.canonical}#venues`},about:{'@id':`${data.canonical}#instructor`}},
-    {'@type':'ItemList','@id':`${data.canonical}#venues`,numberOfItems:data.pools.length,itemListElement:data.pools.map((pool,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'SportsActivityLocation',name:pool.name,url:`${data.canonical}#${pool.id}`,image:pool.image ? `https://dayboi.vip${pool.image}` : undefined,address:{'@type':'PostalAddress',streetAddress:pool.address,addressRegion:'TP.HCM',addressCountry:'VN'},description:pool.detail}}))},
+    {'@type':'ItemList','@id':`${data.canonical}#venues`,numberOfItems:data.pools.length,itemListElement:data.pools.map((pool,index)=>({'@type':'ListItem',position:index+1,item:{'@type':'SportsActivityLocation',name:pool.name,url:`${data.canonical}#${pool.id}`,image:pool.image && !pool.imageNote ? `https://dayboi.vip${pool.image}` : undefined,address:{'@type':'PostalAddress',streetAddress:pool.address,addressRegion:'TP.HCM',addressCountry:'VN'},description:pool.detail}}))},
     {'@type':'Person','@id':`${data.canonical}#instructor`,name:data.instructor.name.replace('Thầy ',''),jobTitle:`${data.instructor.qualification} – HLV phụ trách khu vực ${data.name}`,telephone:data.hotline},
     {'@type':'BreadcrumbList',itemListElement:breadcrumbs.map((item,index)=>({'@type':'ListItem',position:index+1,name:item.name,item:item.url}))},
   ],
 };
 ---
 <MainLayout title={data.title} description={data.description} canonicalUrl={data.canonical} ogImage={data.heroImage} schema={schema}>
-  <div slot="header" class="sfl-landing"><LandingHeader hotline={data.hotline} phoneHref={data.phoneHref} /></div>
+  <div slot="header" class="sfl-landing lt-hub-header"><LaiThieuHeader hotline={data.hotline} phoneHref={data.phoneHref} zaloHref={data.zaloHref} courseBaseHref="/hoc-boi-tphcm/lai-thieu/" /></div>
   <article class="sfl-landing sfl-page">
     <SwimmingHero data={data} />
     <SwimmingAudienceGrid cards={data.audiences} />
     <PoolFinderSection pools={data.pools} name={data.name} phoneHref={data.phoneHref} instructorLabel={instructorLabel} />
     <FeaturedCoursesSection courses={data.courses} />
     <SwimmingTechniquesSection techniques={data.techniques} />
-    <LearningJourneySection steps={data.journey} image={data.courses[2].image} />
+    <LearningJourneySection steps={data.journey} image="/images/landing/lai-thieu/journey.webp" />
     <InstructorSection instructor={data.instructor} />
     <BenefitsSection benefits={data.benefits} />
     <LocalAreaInfoSection local={data.local} name={data.name} />
@@ -47,5 +47,5 @@ const schema = {
     <EnrollmentCTA name={data.name} hotline={data.hotline} phoneHref={data.phoneHref} instructorLabel={instructorLabel} />
     <nav class="sfl-container sfl-breadcrumb" aria-label="Đường dẫn trang"><a href="/">Trang chủ</a><span aria-hidden="true">/</span><a href="/hoc-boi-tphcm/">Học bơi TP.HCM</a><span aria-hidden="true">/</span><span aria-current="page">{data.name}</span></nav>
   </article>
-  <div slot="footer" class="sfl-landing"><LandingFooter name={data.name} hotline={data.hotline} phoneHref={data.phoneHref} zaloHref={data.zaloHref} instructorName={data.instructor.name} /></div>
+  <div slot="footer" class="sfl-landing"><LaiThieuFooter hotline={data.hotline} phoneHref={data.phoneHref} zaloHref={data.zaloHref} courseBaseHref="/hoc-boi-tphcm/lai-thieu/" /></div>
 </MainLayout>

@@ -1,0 +1,7 @@
+---
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { items: PoolDetailData['faqs']; }
+const {items}=Astro.props;
+---
+<section class="pd-faq" id="cau-hoi" aria-labelledby="faq-heading"><SectionHeading id="faq-heading" title="Câu hỏi thường gặp" icon="chat" /><div>{items.map(item=><details><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></section>

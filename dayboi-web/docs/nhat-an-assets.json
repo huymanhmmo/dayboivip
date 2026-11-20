@@ -1,0 +1,80 @@
+{
+  "createdAt": "2026-11-20",
+  "tool": "image_gen built-in",
+  "mockupUsedAsImageAsset": false,
+  "actualVenuePhotos": [],
+  "generated": [
+    {
+      "key": "nhatAnHero",
+      "prompt": "Use case: photorealistic-natural. Asset type: independent illustrative outdoor swimming pool photograph for a Vietnamese swimming school website hero, landscape 16:9, no text or typography. Create a beautiful realistic outdoor swimming pool on a bright tropical morning. Rich clear aqua-blue water with sun caustics, professional blue and white lane lines extending diagonally toward the back right, clean light-tiled pool edge. Elegant but believable modest single-storey white poolside building on the upper right, open airy blue fabric partial shade canopy along part of the far side, mature palm trees and green tropical planting behind, a couple of white loungers and one small orange parasol. Camera near pool water height, wide architectural editorial photography. Deep turquoise water in foreground and left half, clear beautiful architectural detail concentrated right of frame, useful darker left water area for a blue CSS text scrim. Premium crisp natural photography, bright sunny cyan/navy palette, realistic proportions and reflections. This is an illustrative fictional pool, not a photograph of a real venue. Do not add any pool name, signage, people, logos, text, watermark or UI. No mockup or screenshot. Make a single coherent independent photograph with the full pool environment.",
+      "files": [
+        "/images/pool-detail/outdoor-pool-illustration.webp",
+        "/images/pool-detail/outdoor-pool-illustration-mobile.webp"
+      ],
+      "status": "illustration"
+    },
+    {
+      "key": "nhatAnGear",
+      "prompt": "Use case: product-mockup. Asset type: independent swimming equipment still-life for a swim-school preparation checklist. Square photograph, neatly arranged bright aqua-blue swimming goggles with clear lenses, navy silicone swim cap, clean folded white towel and a simple clear reusable water bottle on a pale aqua poolside tile surface. A few realistic water droplets, sunlight ripples softly on background, elegant studio/editorial photography, fresh blue and white palette with no text, no watermark, no logos. Items in lower right and center, adequate pale aqua margin, clean natural proportions.",
+      "files": [
+        "/images/pool-detail/swimming-gear.webp"
+      ],
+      "status": "illustration"
+    }
+  ],
+  "instructor": {
+    "path": "/images/pool-detail/instructor-le-van-thong.webp",
+    "sourcePage": "https://ocean-park.dayboi.vip/",
+    "sourceElement": "IMAGE1582 adjacent to Thầy Lê Văn Thông profile",
+    "sourceImage": "https://w.ladicdn.com/s700x600/5a5dd9d67e436883623dcb00/day-boi-chuyen-nghiep-ha-noi-20200428161804.png",
+    "use": "Existing Swim For Life teaching photo from instructor profile; not a Nhat An venue photo and not an AI portrait"
+  },
+  "reused": {
+    "brand": "/images/brand/logo.png",
+    "courses": [
+      "/images/landing/lai-thieu/children.webp",
+      "/images/landing/lai-thieu/adults.webp",
+      "/images/landing/lai-thieu/hero.webp",
+      "/images/pool-detail/small-group-swimming.webp"
+    ],
+    "techniques": "Five approved image paths imported from laiThieuLanding.techniques; no copies"
+  },
+  "missing": [
+    "Verified Nhat An venue photos",
+    "On-site facilities survey",
+    "Verified exact map coordinates"
+  ],
+  "note": "Outdoor illustration and all non-local class imagery are clearly labelled on the page.",
+  "files": [
+    {
+      "src": "/images/pool-detail/instructor-le-van-thong.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 65188
+    },
+    {
+      "src": "/images/pool-detail/outdoor-pool-illustration-mobile.webp",
+      "width": 800,
+      "height": 800,
+      "bytes": 156600
+    },
+    {
+      "src": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "width": 1800,
+      "height": 1000,
+      "bytes": 375740
+    },
+    {
+      "src": "/images/pool-detail/small-group-swimming.webp",
+      "width": 640,
+      "height": 400,
+      "bytes": 79712
+    },
+    {
+      "src": "/images/pool-detail/swimming-gear.webp",
+      "width": 600,
+      "height": 600,
+      "bytes": 37952
+    }
+  ]
+}

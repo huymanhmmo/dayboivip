@@ -1,5 +1,17 @@
 export const blogPosts = [
   {
+    title: 'Học bơi tại Hồ bơi Nhật An, Lái Thiêu, TP.HCM',
+    slug: 'hoc-boi-nhat-an-lai-thieu',
+    excerpt: 'Địa chỉ A86 KP Bình Đức, chương trình trẻ em, người lớn và kèm riêng. Tìm hiểu lộ trình, chi phí cần xác nhận và tư vấn cùng thầy Lê Văn Thông.',
+    image: '/images/pool-detail/outdoor-pool-illustration.webp',
+    date: '20/11',
+    category: 'Góc Tư Vấn',
+    categorySlug: 'goc-tu-van',
+    tags: ['Học bơi tphcm', 'Địa điểm học bơi'],
+    tagSlugs: ['hoc-boi-tphcm', 'dia-diem-hoc-boi'],
+    readTime: '12 phút đọc',
+  },
+  {
     title: 'Đồ Bơi Học Sinh: Cách Chọn Theo Độ Tuổi Và Mục Đích',
     slug: 'do-boi-hoc-sinh',
     excerpt: 'Kinh nghiệm lựa chọn đồ bơi học sinh tiểu học, THCS và THPT. Hướng dẫn chọn chất liệu thun co giãn 4 chiều tốt, kiểu dáng kín đáo và đúng quy định học đường.',

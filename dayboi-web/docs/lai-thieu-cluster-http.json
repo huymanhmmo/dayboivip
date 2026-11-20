@@ -1,0 +1,456 @@
+{
+  "base": "https://033f7aa4-dayboivip.huymanh.workers.dev",
+  "checkedAt": "2026-11-20T13:06:54.101Z",
+  "paths": 64,
+  "failures": [],
+  "results": [
+    {
+      "path": "/hoc-boi-tphcm/lai-thieu/",
+      "status": 200,
+      "bytes": 144412,
+      "matchesBuild": true,
+      "sha256": "7d52c6a6644c96e95f3137aea7a392b35c42d43b1bd2d5804c9cca7588f2cf61"
+    },
+    {
+      "path": "/hoc-boi-nhat-an-lai-thieu/",
+      "status": 200,
+      "bytes": 110910,
+      "matchesBuild": true,
+      "sha256": "743a864b909997140a521b078afd5afa2a3067e198fc9329f53218f400bc4d5e"
+    },
+    {
+      "path": "/hoc-boi-emerald-golf-view-lai-thieu/",
+      "status": 200,
+      "bytes": 106434,
+      "matchesBuild": true,
+      "sha256": "30c048488055d9e8f135cdce35afb1291665f366e4851cca193942128caa7778"
+    },
+    {
+      "path": "/hoc-boi-opal-skyline-lai-thieu/",
+      "status": 200,
+      "bytes": 107032,
+      "matchesBuild": true,
+      "sha256": "8bb7aac3fea278239bf65b893bdf1fb3d23bb993fb7c28fa07e97d7b5c22748d"
+    },
+    {
+      "path": "/hoc-boi-the-rivana-lai-thieu/",
+      "status": 200,
+      "bytes": 108251,
+      "matchesBuild": true,
+      "sha256": "9b93e31dca4825952e72ee3301bd9c2283ab6c66346c073935fd57c3f998e7fe"
+    },
+    {
+      "path": "/hoc-boi-duy-anh-lai-thieu/",
+      "status": 200,
+      "bytes": 104238,
+      "matchesBuild": true,
+      "sha256": "960ba33e6f62a8694f36c4b136425fc68fd8dbceab860c0c098e23b0d66ee792"
+    },
+    {
+      "path": "/hoc-boi-tt-vhtt-lai-thieu/",
+      "status": 200,
+      "bytes": 101789,
+      "matchesBuild": true,
+      "sha256": "fb33c341ed9f15be15a901ef9161cd426d03a1b55bb8cb9b9061044019b4fed4"
+    },
+    {
+      "path": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "status": 200,
+      "bytes": 102688,
+      "matchesBuild": true,
+      "sha256": "01d47b8cc91d620bd4ce2d0399f2bca1f0bf560d0815d01f98fc58ff81080be0"
+    },
+    {
+      "path": "/hoc-boi-din-ky-lai-thieu/",
+      "status": 200,
+      "bytes": 101543,
+      "matchesBuild": true,
+      "sha256": "82ca37d77a8ec105b1be553a91056ddfe3cd3987342752c338842ae90c02e202"
+    },
+    {
+      "path": "/hoc-boi-emerald-68-lai-thieu/",
+      "status": 200,
+      "bytes": 104229,
+      "matchesBuild": true,
+      "sha256": "cfbee9a8cdfb6d330bb0af4f28903e22baff3cf79a42b0bf9e5cdc287004002a"
+    },
+    {
+      "path": "/hoc-boi-ecoxuan-lai-thieu/",
+      "status": 200,
+      "bytes": 102056,
+      "matchesBuild": true,
+      "sha256": "c16c584757d11b2a8d9b21c4e235f0a8dda3ebe0c884d47fcc7a4bfd7df91035"
+    },
+    {
+      "path": "/hoc-boi-vista-riverside-lai-thieu/",
+      "status": 200,
+      "bytes": 101862,
+      "matchesBuild": true,
+      "sha256": "7ed1397f1fc69093f7dfa6e7880a76e43ec5211d98066d73f203dbe6d50bf1ab"
+    },
+    {
+      "path": "/hoc-boi-roxana-plaza-lai-thieu/",
+      "status": 200,
+      "bytes": 102113,
+      "matchesBuild": true,
+      "sha256": "d23e2cac489e19246b3dea0ad14c0bfa4a4c5a650b89947f0eab2a6a91b26738"
+    },
+    {
+      "path": "/hoc-boi-marina-tower-lai-thieu/",
+      "status": 200,
+      "bytes": 101477,
+      "matchesBuild": true,
+      "sha256": "858a68bc0b4c0663f57e084b8735c10c848085740abe0d33f9e1d6adf82aacdf"
+    },
+    {
+      "path": "/hoc-boi-ehome-4-lai-thieu/",
+      "status": 200,
+      "bytes": 101459,
+      "matchesBuild": true,
+      "sha256": "bb866f019b7023d48b205375102e67e7606326685edaeb82af7e2e7e2167c8e8"
+    },
+    {
+      "path": "/hoc-boi-the-habitat-binh-hoa/",
+      "status": 200,
+      "bytes": 102132,
+      "matchesBuild": true,
+      "sha256": "d2c20bc856c16544546dd6911d019751a47615a37f76a52025af4c107a64e704"
+    },
+    {
+      "path": "/hoc-boi-canary-heights-binh-hoa/",
+      "status": 200,
+      "bytes": 101487,
+      "matchesBuild": true,
+      "sha256": "8db54e93bd56f2424d73faf42c3969a302bd7237994e814dbcdf059f2293afd3"
+    },
+    {
+      "path": "/hoc-boi-parkview-apartment-binh-hoa/",
+      "status": 200,
+      "bytes": 101917,
+      "matchesBuild": true,
+      "sha256": "0e9c5e9fcbaaf45b26db43b4fabf22943e2cb77364eb9857394e311d326f35dd"
+    },
+    {
+      "path": "/hoc-boi-71-binh-hoa/",
+      "status": 200,
+      "bytes": 101037,
+      "matchesBuild": true,
+      "sha256": "0bf9b73d3259b5bc4cca4312c5797e750d8c0fdceb932960a2649d25189d1b09"
+    },
+    {
+      "path": "/hoc-boi-tien-phong-thuan-an/",
+      "status": 200,
+      "bytes": 104413,
+      "matchesBuild": true,
+      "sha256": "3b8e9236293bcba9249726a7171e6c2c85093edebc3cf713dd9add6850ab74b3"
+    },
+    {
+      "path": "/hoc-boi-minh-quan-thuan-giao/",
+      "status": 200,
+      "bytes": 101040,
+      "matchesBuild": true,
+      "sha256": "c637ce007abb589685b2967260d39a7558d331738aa4e4707ae39672cf02e3f7"
+    },
+    {
+      "path": "/images/brand/logo.png",
+      "status": 200,
+      "bytes": 102092,
+      "matchesBuild": true,
+      "sha256": "16e7b1f8d01f105467d92f68de78709c867ea3acf2223b85810dec103ccd8c3b"
+    },
+    {
+      "path": "/images/landing/lai-thieu/hero.webp",
+      "status": 200,
+      "bytes": 173864,
+      "matchesBuild": true,
+      "sha256": "3fb867979017b04ed850f6393f108cc9d15a42d5c2d7b0ecca7a43bfa676c765"
+    },
+    {
+      "path": "/images/landing/lai-thieu/children.webp",
+      "status": 200,
+      "bytes": 74786,
+      "matchesBuild": true,
+      "sha256": "81ba1cbeda40ee0b16da100fd8f87f8a9ceb49a9eeb0322cab8a1f7ad644db41"
+    },
+    {
+      "path": "/images/landing/lai-thieu/adults.webp",
+      "status": 200,
+      "bytes": 48920,
+      "matchesBuild": true,
+      "sha256": "e4e9ceeb17cfd0a3b93f9c78168f197e959371f4a3b6cfe329b14323aaa425a9"
+    },
+    {
+      "path": "/images/landing/lai-thieu/confidence.webp",
+      "status": 200,
+      "bytes": 33532,
+      "matchesBuild": true,
+      "sha256": "fee5ec5c1ae0cd2392d2007996aafa5b0d703c63fd869c93faa7624d96042bb5"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-ho-boi-vo-cuc-tang-6.webp",
+      "status": 200,
+      "bytes": 169078,
+      "matchesBuild": true,
+      "sha256": "d48f14a6a09f6c46845ebec37072844e92150b4023673a13ef99861b3b8a05c5"
+    },
+    {
+      "path": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "status": 200,
+      "bytes": 375740,
+      "matchesBuild": true,
+      "sha256": "10b5b155ede763f59a5a7ebbfa4aa0e3b5561d5dbbe52ad18441a426d314b5a5"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-tien-ich-ho-boi.webp",
+      "status": 200,
+      "bytes": 169558,
+      "matchesBuild": true,
+      "sha256": "aa796b3a4b85849bd263befb9067e97fc9c3a8bfd423a4ec0ee9a57f4193476c"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-nguoi-lon.webp",
+      "status": 200,
+      "bytes": 106500,
+      "matchesBuild": true,
+      "sha256": "b80f6bdda93b0d2575f4e4f09fbe7e24eb23d4b6b44147ccd57813b1803805c6"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-02.webp",
+      "status": 200,
+      "bytes": 167200,
+      "matchesBuild": true,
+      "sha256": "69d0dfbd9f5808c6bc7066eb05649dcf0c6e95cdc1ebd2bcf4aa85d44318890e"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-din-ky/ho-boi-din-ky-binh-nham.webp",
+      "status": 200,
+      "bytes": 53666,
+      "matchesBuild": true,
+      "sha256": "d8c9c8fb5a7df51bf73be4dc4dd14bc219e610eaa6edd2392f449685512126df"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-ho-boi-vo-cuc-tang-3.webp",
+      "status": 200,
+      "bytes": 211820,
+      "matchesBuild": true,
+      "sha256": "dc03eded4fd1ac8a93d9f4d2d667c616dfe94983d5fffa8abb9f7d5990a618bd"
+    },
+    {
+      "path": "/images/pool-detail/venues/ecoxuan-lai-thieu/ecoxuan-lai-thieu-ho-boi-tien-ich.webp",
+      "status": 200,
+      "bytes": 253190,
+      "matchesBuild": true,
+      "sha256": "c16aaa2750a552478be137de3bdb1bd3a32a64b7e13539015097b62c7f211959"
+    },
+    {
+      "path": "/images/pool-detail/venues/roxana-plaza/roxana-plaza-toan-canh.webp",
+      "status": 200,
+      "bytes": 355650,
+      "matchesBuild": true,
+      "sha256": "752112c3debbd93b29e736f9cc9a5336cce3357df09ff6881f0a2c353fd03e87"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-habitat-binh-duong/the-habitat-tien-ich-01.webp",
+      "status": 200,
+      "bytes": 181936,
+      "matchesBuild": true,
+      "sha256": "93619ebe4d067dc052ede55a731cd5ad5a429bcc8f9a8ed864ffefc715ba80dc"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-01.webp",
+      "status": 200,
+      "bytes": 98348,
+      "matchesBuild": true,
+      "sha256": "bccc60c5d8efe5404d9e2af14abf3a190c313b836b8fdad64cf37dbfc9a316dc"
+    },
+    {
+      "path": "/images/pool-detail/small-group-swimming.webp",
+      "status": 200,
+      "bytes": 79712,
+      "matchesBuild": true,
+      "sha256": "21983e3739823ba1c394d07e7f24989a3d9f38fec181de585bf6b3bfadd12eca"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-breaststroke-side-breathing.webp",
+      "status": 200,
+      "bytes": 75794,
+      "matchesBuild": true,
+      "sha256": "f54164f3802846302f7a580ff7be01401c92901540afa8313a4a3f166ea1d0b9"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-front-crawl-underwater.webp",
+      "status": 200,
+      "bytes": 101064,
+      "matchesBuild": true,
+      "sha256": "8545d047977e5e91059f3b2ed5b7f3caf35979976fd7f3e280cc86b4772627c2"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-backstroke-surface-full-body.webp",
+      "status": 200,
+      "bytes": 85142,
+      "matchesBuild": true,
+      "sha256": "79af35ea04cfe908bddaa510462ffcc2bbd03d7d60c6a584a2dddfc698b8be5d"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-butterfly-underwater.webp",
+      "status": 200,
+      "bytes": 124750,
+      "matchesBuild": true,
+      "sha256": "14c961d14abe4bf7bf67588481d8d98507238f5e6ebe441ff055049baeb54bfc"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-treading-water.webp",
+      "status": 200,
+      "bytes": 77068,
+      "matchesBuild": true,
+      "sha256": "b6170ad809a3ad6dd7b2be8efe68a76c23759b5ae933000bb35e65e2b9cc45de"
+    },
+    {
+      "path": "/images/landing/lai-thieu/journey.webp",
+      "status": 200,
+      "bytes": 183960,
+      "matchesBuild": true,
+      "sha256": "f92cb3d913737f7180de766e993a0c6d4d1fd83a78ac6536a48051fb1aefb7e8"
+    },
+    {
+      "path": "/images/landing/lai-thieu/local.webp",
+      "status": 200,
+      "bytes": 164714,
+      "matchesBuild": true,
+      "sha256": "593a6d20c2e8527924e2eb11884e83f6b31a50b52a226c48be81364fafd5b12a"
+    },
+    {
+      "path": "/images/testimonials/huyen-reu.jpg",
+      "status": 200,
+      "bytes": 50608,
+      "matchesBuild": true,
+      "sha256": "dd71ed38275d1d496907708fd41033e1a2d4f1c3c19f3a6111cfc8eeb4387f74"
+    },
+    {
+      "path": "/images/testimonials/huong-giang.jpg",
+      "status": 200,
+      "bytes": 32263,
+      "matchesBuild": true,
+      "sha256": "37766a950e53595aaa995a2e2d118dbe8755d42a0094a8b6db2abfb87df1f94c"
+    },
+    {
+      "path": "/images/testimonials/duyen-duong.jpg",
+      "status": 200,
+      "bytes": 13480,
+      "matchesBuild": true,
+      "sha256": "0b097095de3e236ca7d6554855e32e57c34cfe62ca502739642904ce4388aec2"
+    },
+    {
+      "path": "/images/pool-detail/instructor-le-van-thong.webp",
+      "status": 200,
+      "bytes": 65188,
+      "matchesBuild": true,
+      "sha256": "32bd7eda8fd2655e147d2078ca5aebbac80066af08daa9912b4b5a2182b7c72b"
+    },
+    {
+      "path": "/images/pool-detail/swimming-gear.webp",
+      "status": 200,
+      "bytes": 37952,
+      "matchesBuild": true,
+      "sha256": "bf74c9405bb2a7ebd237d78ba14b869a9a2c1e3d8e1372e2bd8f22d95a2d587c"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-toan-canh-flycam.webp",
+      "status": 200,
+      "bytes": 356272,
+      "matchesBuild": true,
+      "sha256": "c06d3b878c5a6c32cb4979d0d13b01effe7ffbbd1928d243515e77ad1bb84a6f"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-mat-bang-tien-ich.webp",
+      "status": 200,
+      "bytes": 230484,
+      "matchesBuild": true,
+      "sha256": "252c8af830489ed059a3bc7b9154668d75b5d6f738dd1501193493f4be5c8236"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-hinh-thuc-te-01.webp",
+      "status": 200,
+      "bytes": 255464,
+      "matchesBuild": true,
+      "sha256": "24a69bb01f7256b96c1412b2bce305ddc8af8b3dcf52cd59015a7ff1dbea2c4a"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-hinh-thuc-te-02.webp",
+      "status": 200,
+      "bytes": 227744,
+      "matchesBuild": true,
+      "sha256": "203a1d04b30de3a683a1bfa3731d5862d9d8605779033a2aa6ec1becb3f387b3"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-mat-bang-tien-ich-tang-4.webp",
+      "status": 200,
+      "bytes": 146300,
+      "matchesBuild": true,
+      "sha256": "62a58f542c5cc0420526382fb644893326d8cb5c2cad5611661cca3ffe410988"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-tre-em.webp",
+      "status": 200,
+      "bytes": 111578,
+      "matchesBuild": true,
+      "sha256": "125671aba3bf63c989f653ee12bc4aee71f5565dd01e36f41b9a217309d6c5db"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-tien-ich-thuc-te-01.webp",
+      "status": 200,
+      "bytes": 179510,
+      "matchesBuild": true,
+      "sha256": "793b4277e3604b0477c184ab057594ace64a74884fd01f5fb8c84d770adb9fd9"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-thuc-te-01.webp",
+      "status": 200,
+      "bytes": 263364,
+      "matchesBuild": true,
+      "sha256": "7d0e577a90d719ae25fdb3aa3caa5350d4048f80010142c06c84122dfb85e443"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-tran-bo.webp",
+      "status": 200,
+      "bytes": 248116,
+      "matchesBuild": true,
+      "sha256": "d90ae81b8a0def8a8abe59e30ce183b512233d404a3368344729af822ef04d6a"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-01.webp",
+      "status": 200,
+      "bytes": 122456,
+      "matchesBuild": true,
+      "sha256": "40c943ad90ee7ae8cbab5ffa7d0f89dee86957a89201f42f44c5494c7844960b"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-03.webp",
+      "status": 200,
+      "bytes": 127746,
+      "matchesBuild": true,
+      "sha256": "07189f8d69945793f707ce519e75f2408cdd5569294b89de52246651336dc19a"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-toan-canh.webp",
+      "status": 200,
+      "bytes": 163196,
+      "matchesBuild": true,
+      "sha256": "78958d89d486deb1254342ec7b5cb4f57aaade5c6bb665686892b74fd8c97ef3"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-03.webp",
+      "status": 200,
+      "bytes": 79612,
+      "matchesBuild": true,
+      "sha256": "d6eedfac8fed67e759afe1bb6bddda0c801f924b85775db7141973ebcde3bd6e"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-02.webp",
+      "status": 200,
+      "bytes": 55226,
+      "matchesBuild": true,
+      "sha256": "fcafb3162e69241745d5a6cddc0a950a33ed751146555f3ee5096d21b835df81"
+    }
+  ]
+}

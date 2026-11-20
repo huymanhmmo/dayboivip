@@ -1,0 +1,7 @@
+---
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import type { PoolStyle } from '../../data/poolDetailTypes';
+export interface Props { styles: PoolStyle[]; }
+const {styles}=Astro.props;
+---
+<section id="ky-thuat-boi" class="pd-styles" aria-labelledby="styles-heading"><SectionHeading id="styles-heading" title="Học các kiểu bơi phổ biến" icon="wave" /><div class="pd-style-grid">{styles.map(style=><a href={style.href}><img src={style.image} alt={style.imageAlt} width="400" height="300" loading="lazy" decoding="async" /><h3>{style.title}</h3></a>)}</div><p class="pd-caption">Tìm hiểu từng kỹ thuật. Bài tập thực hành được HLV điều chỉnh theo trình độ.</p></section>

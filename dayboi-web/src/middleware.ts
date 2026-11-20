@@ -1,6 +1,8 @@
 import { defineMiddleware } from 'astro:middleware';
+import { laiThieuVenueCatalog } from './data/laiThieuVenueCatalog.js';
 
 const DIRECTORY_URL = '/hoc-boi-o-dau/';
+const localPoolPaths = new Set(laiThieuVenueCatalog.map(pool => pool.detailHref));
 
 const sanitizeLegacyRetailContact = (html: string, isEnglish: boolean) => {
   const directoryLabel = isEnglish ? 'Open local directory' : 'Mở danh bạ địa phương';
@@ -74,7 +76,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const isEnterprisePage = pathname.includes('/doanh-nghiep') || pathname.includes('/corporate');
   // This landing has an explicitly supplied local instructor and verified contact.
   // Keep the legacy retail sanitizer on other routes; it would relabel Zalo/hotline here.
-  const isVerifiedLocalLanding = /^\/hoc-boi-tphcm\/lai-thieu\/?$/.test(pathname);
+  const normalizedPath = `${pathname.replace(/\/+$/, '')}/`;
+  const isVerifiedLocalLanding = normalizedPath === '/hoc-boi-tphcm/lai-thieu/'
+    || localPoolPaths.has(normalizedPath);
   if (isEnterprisePage || isVerifiedLocalLanding) return response;
 
   const headers = new Headers(response.headers);

@@ -7,7 +7,7 @@
 import { laiThieuPools } from './laiThieuPools.js';
 
 export const communePools = [
-  ...laiThieuPools,
+  ...laiThieuPools.filter(pool => pool.targetCommune),
   {
     "provinceSlug": "hoc-boi-ha-noi",
     "targetCommune": "an-khanh",

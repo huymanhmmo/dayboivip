@@ -1,0 +1,187 @@
+/** Project-document inventory. These are not confirmations of current operating conditions.
+ * Original photos are preserved; optimized derivatives are listed in docs/lai-thieu-venue-assets.json.
+ */
+const media = (folder, files) => files.map(([file,kind,caption])=>({
+  source:`${folder}/${file}.jpg`,src:`/images/pool-detail/venues/${folder}/${file}.webp`,kind,caption,
+}));
+const venues = [
+  {
+    id:'nhat-an',name:'Hồ bơi Nhật An',shortName:'Nhật An',slug:'hoc-boi-nhat-an-lai-thieu',type:'public',zone:'trung-tam',commune:'lai-thieu',area:'Trung tâm Lái Thiêu',indexable:true,
+    address:'A86, KP Bình Đức, phường Lái Thiêu, TP.HCM',oldAddress:'A86, KP Bình Đức, P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Địa điểm trong khu phố Bình Đức, tư vấn lớp trẻ em, người lớn và học kèm riêng.',
+    context:'Theo kế hoạch khu vực, Nhật An nằm tại A86 khu phố Bình Đức. Ảnh thực tế và các thông tin vận hành đang chờ bổ sung.',
+    landmarks:['Khu dân cư Bình Đức','Chợ Lái Thiêu','Quốc lộ 13'],facts:[],needs:['Ảnh hồ thực tế','Giờ mở cửa, vé hồ và độ sâu'],nearby:['duy-anh','tt-vhtt','vista-riverside'],
+  },
+  {
+    id:'emerald-golf-view',name:'The Emerald Golf View',shortName:'Emerald Golf View',slug:'hoc-boi-emerald-golf-view-lai-thieu',type:'residential',zone:'quoc-lo-13',commune:'lai-thieu',area:'Trục Quốc lộ 13',
+    address:'Mặt tiền Quốc lộ 13, phường Lái Thiêu, TP.HCM',oldAddress:'Đại lộ Bình Dương, P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',
+    media:media('the-emerald-golf-view-le-phong',[
+      ['the-emerald-golf-view-ho-boi-vo-cuc-tang-6','documented','Tư liệu tiện ích hồ bơi The Emerald Golf View; loại ảnh và hiện trạng cần đối chiếu với BQL.'],
+      ['the-emerald-golf-view-toan-canh-flycam','exterior','Toàn cảnh The Emerald Golf View trên trục Quốc lộ 13.'],
+      ['the-emerald-golf-view-mat-bang-tien-ich','plan','Mặt bằng tiện ích dự án; không phải ảnh khảo sát vận hành hồ.'],
+    ]),
+    summary:'Tham khảo lớp cho cư dân tại hồ nội khu trên trục Quốc lộ 13.',
+    context:'The Emerald Golf View là dự án thường được người dân nhận diện là chung cư Lê Phong trên Quốc lộ 13. Kế hoạch ghi tiện ích hồ ở tầng 6; trước khi học cần xác nhận lối lên và điều kiện sử dụng với BQL.',
+    landmarks:['Quốc lộ 13','KCN VSIP 1','AEON Mall Bình Dương'],facts:['Tài liệu dự án ghi hồ bơi ở tầng 6','Tài liệu có mặt bằng khu người lớn, trẻ em và Jacuzzi'],needs:['Quyền sử dụng của học viên','Quy định tiếp nhận HLV','Hiện trạng tiện ích'],nearby:['opal-skyline','ecoxuan','nhat-an'],
+  },
+  {
+    id:'opal-skyline',name:'Opal Skyline',shortName:'Opal Skyline',slug:'hoc-boi-opal-skyline-lai-thieu',type:'residential',zone:'trung-tam',commune:'lai-thieu',area:'Nguyễn Văn Tiết',
+    address:'Đường Nguyễn Văn Tiết, phường Lái Thiêu, TP.HCM',oldAddress:'Nguyễn Văn Tiết, P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',
+    media:media('opal-skyline-dat-xanh',[
+      ['opal-skyline-tien-ich-ho-boi','documented','Tư liệu khu tiện ích hồ bơi Opal Skyline trong bộ ảnh dự án.'],
+      ['opal-skyline-hinh-thuc-te-01','exterior','Ngoại thất và lối tiếp cận tòa nhà Opal Skyline.'],
+      ['opal-skyline-hinh-thuc-te-02','exterior','Toàn cảnh các tòa nhà Opal Skyline.'],
+      ['opal-skyline-mat-bang-tien-ich-tang-4','plan','Mặt bằng tầng tiện ích; không dùng để xác nhận điều kiện hồ hiện tại.'],
+    ]),
+    summary:'Tư vấn học kèm cho cư dân tại khu vực đường Nguyễn Văn Tiết.',
+    context:'Opal Skyline nằm trên đường Nguyễn Văn Tiết. Tài liệu kế hoạch ghi hồ ở tầng tiện ích 4. Việc vào tập, đưa HLV vào nội khu và sử dụng khu trẻ em phải được xác nhận theo quy định tòa nhà.',
+    landmarks:['Nguyễn Văn Tiết','Khu trung tâm Lái Thiêu','Lotte Mart Bình Dương'],facts:['Tài liệu ghi tầng tiện ích 4','Có tư liệu mặt bằng khu hồ và sân vườn'],needs:['Quy định khách đi cùng và HLV','Giờ sử dụng hồ','Xác minh hiện trạng'],nearby:['emerald-golf-view','nhat-an','duy-anh'],
+  },
+  {
+    id:'the-rivana',name:'The Rivana',shortName:'The Rivana',slug:'hoc-boi-the-rivana-lai-thieu',type:'residential',zone:'vinh-phu',commune:null,area:'Vĩnh Phú cũ · Giáp ranh',
+    address:'Quốc lộ 13 giao Vĩnh Phú 29, khu vực giáp ranh Lái Thiêu – Bình Hòa, TP.HCM',oldAddress:'P. Vĩnh Phú, TP. Thuận An, Bình Dương (cũ)',
+    media:media('the-rivana-hkk',[
+      ['the-rivana-ho-boi-nguoi-lon','photo','Tư liệu khu hồ người lớn tại The Rivana.'],
+      ['the-rivana-ho-boi-tre-em','photo','Tư liệu khu hồ có thiết bị phun nước; độ sâu cần hỏi BQL.'],
+      ['the-rivana-tien-ich-thuc-te-01','photo','Không gian tiện ích hồ bơi trong tư liệu The Rivana.'],
+      ['the-rivana-thuc-te-01','exterior','Toàn cảnh dự án The Rivana.'],
+      ['the-rivana-ho-boi-tran-bo','promotional','Tư liệu giới thiệu tiện ích có chữ quảng bá của dự án.'],
+    ]),
+    summary:'Hồ nội khu trên trục Quốc lộ 13, khu vực Vĩnh Phú cũ.',
+    context:'The Rivana được nhận diện tại Quốc lộ 13 giao Vĩnh Phú 29. Bộ ảnh có tư liệu hồ người lớn và khu trẻ em. Địa chỉ hành chính hiện tại và quyền tiếp nhận học viên ngoài nội khu cần đối chiếu trước khi xếp lớp.',
+    landmarks:['Quốc lộ 13','Vĩnh Phú 29','Cầu Vĩnh Bình'],facts:['Bộ ảnh có khu hồ người lớn và trẻ em','Địa chỉ mới đang cần đối chiếu ranh giới'],needs:['Địa chỉ hành chính hiện tại','Quyền sử dụng hồ và sự đồng ý của BQL'],nearby:['roxana-plaza','emerald-68','marina-tower'],
+  },
+  {
+    id:'duy-anh',name:'Hồ bơi Duy Anh',shortName:'Duy Anh',slug:'hoc-boi-duy-anh-lai-thieu',type:'public',zone:'trung-tam',commune:'lai-thieu',area:'Nguyễn Trãi · Trung tâm',
+    address:'249, KP Nguyễn Trãi, phường Lái Thiêu, TP.HCM',oldAddress:'P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',
+    media:media('ho-boi-duy-anh',[
+      ['ho-boi-duy-anh-02','photo','Tư liệu không gian hồ bơi Duy Anh với khu vực che nắng.'],
+      ['ho-boi-duy-anh-01','photo','Tư liệu hoạt động tại hồ bơi Duy Anh; không đại diện cho mật độ mọi khung giờ.'],
+      ['ho-boi-duy-anh-03','photo','Một góc khu vực ven hồ trong bộ tư liệu Duy Anh.'],
+    ]),
+    summary:'Tham khảo lớp cơ bản và kèm riêng tại khu phố Nguyễn Trãi.',
+    context:'Kế hoạch ghi Duy Anh tại 249 KP Nguyễn Trãi và nhắc thêm cơ sở 505/3B KP Thạnh Bình, phường Thuận An. Cần xác nhận đúng cơ sở trước khi dùng thông tin giờ, vé hoặc hẹn HLV; không gộp điều kiện của hai địa điểm.',
+    landmarks:['Nguyễn Trãi','Quốc lộ 13','Khu hành chính Lái Thiêu'],facts:['Tài liệu có hai địa chỉ cơ sở cần phân biệt'],needs:['Xác nhận cơ sở 249 Nguyễn Trãi','Nguồn giá vé và giờ hiện hành'],nearby:['nhat-an','tt-vhtt','opal-skyline'],
+  },
+  {
+    id:'tt-vhtt',name:'Hồ bơi TT VHTT Lái Thiêu',shortName:'TT VHTT Lái Thiêu',slug:'hoc-boi-tt-vhtt-lai-thieu',type:'public',zone:'trung-tam',commune:'lai-thieu',area:'Nguyễn Trãi · Trung tâm',
+    address:'Đường Nguyễn Trãi, phường Lái Thiêu, TP.HCM',oldAddress:'Đường Nguyễn Trãi, P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Lựa chọn hồ công cộng trong khu vực trung tâm Lái Thiêu.',
+    context:'TT VHTT Lái Thiêu được ghi nhận trên đường Nguyễn Trãi. Tài liệu có hai cách mô tả khung giờ, nên chưa thể công bố một lịch mở cửa chắc chắn. Học phí giảng dạy cần được tư vấn riêng với vé hồ.',
+    landmarks:['Nguyễn Trãi','Chợ Lái Thiêu','Khu hành chính phường'],facts:['Giờ trong tài liệu chưa thống nhất'],needs:['Ảnh đúng địa điểm','Xác nhận giờ mở cửa và vé hồ'],nearby:['duy-anh','nhat-an','vista-riverside'],
+  },
+  {
+    id:'phuong-nam-resort',name:'Hồ bơi Phương Nam Resort',shortName:'Phương Nam Resort',slug:'hoc-boi-phuong-nam-resort-lai-thieu',type:'public',category:'Hồ bơi trong khu nghỉ dưỡng',zone:'vinh-phu',commune:null,area:'Vĩnh Phú 21 · Giáp ranh',
+    address:'15/12 Vĩnh Phú 21, khu vực Vĩnh Phú cũ, TP.HCM; cần đối chiếu phường hiện tại',oldAddress:'15/12 Vĩnh Phú 21, KP Trung, P. Vĩnh Phú, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Tìm hiểu điều kiện học bơi trong khu nghỉ dưỡng ở Vĩnh Phú 21.',
+    context:'Phương Nam Resort được tài liệu ghi tại 15/12 Vĩnh Phú 21. Giờ hoạt động toàn resort không đồng nghĩa với giờ mở hồ hoặc lịch nhận lớp. Hai ảnh được cung cấp hiện là phòng nghỉ, vì vậy không dùng làm ảnh hồ bơi.',
+    landmarks:['Vĩnh Phú 21','Quốc lộ 13','Hướng Cầu Vĩnh Bình'],facts:['Cần phân biệt dịch vụ hồ với dịch vụ toàn resort'],needs:['Ảnh hồ bơi','Điều kiện khách ngoài và HLV','Địa chỉ mới'],nearby:['the-rivana','emerald-68','marina-tower'],
+  },
+  {
+    id:'din-ky',name:'Hồ bơi KDL Dìn Ký',shortName:'KDL Dìn Ký',slug:'hoc-boi-din-ky-lai-thieu',type:'public',zone:'binh-nham',commune:'lai-thieu',area:'Bình Nhâm cũ',
+    address:'2/94 Bình Nhâm 02, phường Lái Thiêu, TP.HCM',oldAddress:'2/94 Bình Nhâm 02, P. Bình Nhâm, TP. Thuận An, Bình Dương (cũ)',
+    media:media('ho-boi-din-ky',[['ho-boi-din-ky-binh-nham','photo','Tư liệu không gian hồ tại cơ sở Dìn Ký Bình Nhâm trong bộ ảnh dự án.']]),
+    summary:'Tham khảo học bơi tại cơ sở Dìn Ký ở khu Bình Nhâm cũ.',
+    context:'Trang này nói tới cơ sở 2/94 Bình Nhâm 02, không gộp thông tin với các cơ sở Dìn Ký khác. Bộ ảnh hiện có một hình; điều kiện vào hồ, lịch dạy và các khoản vé cần xác nhận tại đúng cơ sở.',
+    landmarks:['Bình Nhâm 02','Hướng Cầu Ngang','Sông Sài Gòn'],facts:['Bộ ảnh hiện có 1 ảnh đúng cơ sở theo tài liệu'],needs:['Lịch tiếp nhận lớp','Vé hồ và quy định dịch vụ'],nearby:['nhat-an','vista-riverside','tien-phong'],
+  },
+  {
+    id:'emerald-68',name:'The Emerald 68',shortName:'The Emerald 68',slug:'hoc-boi-emerald-68-lai-thieu',type:'residential',zone:'vinh-phu',commune:null,area:'Vĩnh Phú 16 · Giáp ranh',
+    address:'68 Vĩnh Phú 16, kết nối Quốc lộ 13, khu vực Vĩnh Phú cũ, TP.HCM',oldAddress:'P. Vĩnh Phú, TP. Thuận An, Bình Dương (cũ)',
+    media:media('the-emerald-68-le-phong',[
+      ['the-emerald-68-ho-boi-vo-cuc-tang-3','render','Phối cảnh tiện ích The Emerald 68, không phải ảnh khảo sát hồ đang vận hành.'],
+      ['the-emerald-68-toan-canh','render','Phối cảnh toàn dự án The Emerald 68.'],
+    ]),
+    summary:'Thông tin tư vấn cho cư dân tại dự án ở trục Vĩnh Phú 16.',
+    context:'The Emerald 68 cần được phân biệt với The Emerald Golf View. Tư liệu hiện có thể hiện phối cảnh và thông tin tiện ích trong kế hoạch; chưa dùng để xác nhận hồ đang tiếp nhận lớp hay khách ngoài.',
+    landmarks:['Vĩnh Phú 16','Quốc lộ 13','Khu vực Bệnh viện Hạnh Phúc'],facts:['Tài liệu giới thiệu hồ ở tầng 3','Ảnh hiện có là phối cảnh'],needs:['Xác nhận vận hành','Ảnh hiện trạng','Quy định cư dân và HLV'],nearby:['the-rivana','roxana-plaza','phuong-nam-resort'],
+  },
+  {
+    id:'ecoxuan',name:'EcoXuân Lái Thiêu',shortName:'EcoXuân',slug:'hoc-boi-ecoxuan-lai-thieu',type:'residential',zone:'quoc-lo-13',commune:'lai-thieu',area:'Quốc lộ 13 · Đông Nhì',
+    address:'Quốc lộ 13, KP Đông Nhì, phường Lái Thiêu, TP.HCM',oldAddress:'P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',
+    media:media('ecoxuan-lai-thieu',[['ecoxuan-lai-thieu-ho-boi-tien-ich','documented','Tư liệu giới thiệu tiện ích EcoXuân; cần đối chiếu loại ảnh và hiện trạng với BQL.']]),
+    summary:'Tìm hiểu học kèm cho cư dân EcoXuân trên trục Quốc lộ 13.',
+    context:'EcoXuân được nhận diện tại khu Đông Nhì trên Quốc lộ 13. Bộ tư liệu mới có một ảnh tiện ích. Người học cần xác nhận khu hồ được sử dụng, quyền vào nội khu và thủ tục cho HLV trước buổi đầu.',
+    landmarks:['Quốc lộ 13','Lotte Mart Bình Dương','Khu Đông Nhì'],facts:['Có 1 ảnh tư liệu giới thiệu tiện ích'],needs:['Nguồn và loại ảnh','Quy định BQL','Điểm tập cụ thể'],nearby:['emerald-golf-view','opal-skyline','nhat-an'],
+  },
+  {
+    id:'vista-riverside',name:'Vista Riverside',shortName:'Vista Riverside',slug:'hoc-boi-vista-riverside-lai-thieu',type:'residential',zone:'ven-song',commune:'lai-thieu',area:'Đường 3/2 · Ven sông',
+    address:'Đường 3/2 và Bờ Bao Sông Sài Gòn, phường Lái Thiêu, TP.HCM',oldAddress:'P. Lái Thiêu, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Tư vấn điều kiện học tại hồ nội khu gần trục đường 3/2.',
+    context:'Vista Riverside được kế hoạch nhận diện tại giao khu vực đường 3/2 và Bờ Bao Sông Sài Gòn. Chưa có ảnh hồ trong bộ tư liệu hiện tại. Không dùng tầm nhìn ven sông làm căn cứ khẳng định đặc điểm hoặc độ an toàn của khu tập.',
+    landmarks:['Đường 3/2','Bờ Bao Sông Sài Gòn','Chợ Lái Thiêu'],facts:[],needs:['Ảnh hồ','Lối vào và quy định cư dân','Điều kiện tiếp nhận HLV'],nearby:['nhat-an','tt-vhtt','din-ky'],
+  },
+  {
+    id:'roxana-plaza',name:'Roxana Plaza',shortName:'Roxana Plaza',slug:'hoc-boi-roxana-plaza-lai-thieu',type:'residential',zone:'vinh-phu',commune:null,area:'Quốc lộ 13 · Vĩnh Phú cũ',
+    address:'9/14 KP Đông, Quốc lộ 13, khu vực Vĩnh Phú cũ, TP.HCM',oldAddress:'P. Vĩnh Phú, TP. Thuận An, Bình Dương (cũ)',
+    media:media('roxana-plaza',[['roxana-plaza-toan-canh','render','Phối cảnh toàn dự án Roxana Plaza, không phải ảnh hồ hiện trạng.']]),
+    summary:'Tra cứu điều kiện học bơi tại dự án thuộc khu vực Vĩnh Phú cũ.',
+    context:'Roxana Plaza được tài liệu ghi ở Quốc lộ 13, khu phố Đông. Ảnh hiện có là toàn cảnh phối cảnh nên chưa xác nhận tiện ích hồ, tầng hồ hoặc khả năng nhận lớp. Cần làm rõ hiện trạng vận hành và quyền sử dụng trước khi tư vấn lịch cụ thể.',
+    landmarks:['Quốc lộ 13','Khu vực Vĩnh Phú 29','Bệnh viện Hạnh Phúc'],facts:['Ảnh hiện có là phối cảnh toàn dự án'],needs:['Hiện trạng vận hành hồ','Ảnh hồ thực tế','Địa chỉ và quyền dùng'],nearby:['the-rivana','emerald-68','marina-tower'],
+  },
+  {
+    id:'marina-tower',name:'Marina Tower',shortName:'Marina Tower',slug:'hoc-boi-marina-tower-lai-thieu',type:'residential',zone:'vinh-phu',commune:null,area:'Vĩnh Phú 10 · Giáp ranh',
+    address:'Đường Vĩnh Phú 10, khu vực Vĩnh Phú cũ, TP.HCM',oldAddress:'P. Vĩnh Phú, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Tham khảo điều kiện học kèm nội khu tại khu vực Vĩnh Phú 10.',
+    context:'Marina Tower, còn được tìm theo tên Marina Riverside, nằm trong nhóm địa điểm Vĩnh Phú cũ của kế hoạch. Cần xác nhận đúng tòa nhà, hồ được phép sử dụng và điểm tiếp nhận HLV; chưa có ảnh hồ riêng trong thư mục.',
+    landmarks:['Vĩnh Phú 10','Quốc lộ 13','Khu ven sông Sài Gòn'],facts:[],needs:['Địa chỉ hành chính mới','Ảnh và vận hành hồ','Quyền tiếp nhận HLV'],nearby:['phuong-nam-resort','the-rivana','ehome-4'],
+  },
+  {
+    id:'ehome-4',name:'Ehome 4 Bắc Sài Gòn',shortName:'Ehome 4',slug:'hoc-boi-ehome-4-lai-thieu',type:'residential',zone:'vinh-phu',commune:null,area:'Vĩnh Phú 41 · Giáp ranh',
+    address:'Đường Vĩnh Phú 41, KDC Vĩnh Phú 1, khu vực Vĩnh Phú cũ, TP.HCM',oldAddress:'P. Vĩnh Phú, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Tìm hiểu điều kiện học bơi trong khu dân cư tại Vĩnh Phú 41.',
+    context:'Kế hoạch gắn Ehome 4 với KDC Vĩnh Phú 1. Cần xác minh hồ cụ thể phục vụ cư dân, đơn vị quản lý và thủ tục đưa HLV vào. Không mặc định mọi cư dân hoặc khách đi cùng đều được dùng hồ miễn phí.',
+    landmarks:['Vĩnh Phú 41','KDC Vĩnh Phú 1','Quốc lộ 13'],facts:[],needs:['Xác định đúng hồ','Ảnh thực tế','Quy định tiếp cận và BQL'],nearby:['marina-tower','the-rivana','phuong-nam-resort'],
+  },
+  {
+    id:'the-habitat',name:'The Habitat Bình Dương',shortName:'The Habitat',slug:'hoc-boi-the-habitat-binh-hoa',type:'residential',zone:'binh-hoa',commune:'binh-hoa',area:'Bình Hòa · Giáp ranh',
+    address:'08 Đại lộ Hữu Nghị, VSIP 1, phường Bình Hòa, TP.HCM',oldAddress:'P. Bình Hòa, TP. Thuận An, Bình Dương (cũ)',
+    media:media('the-habitat-binh-duong',[['the-habitat-tien-ich-01','exterior','Ngoại thất tòa nhà The Habitat; không phải ảnh hồ bơi.']]),
+    summary:'Địa điểm nội khu tại Bình Hòa, trong cụm tham khảo lân cận Lái Thiêu.',
+    context:'The Habitat nằm trên Đại lộ Hữu Nghị trong khu VSIP 1, thuộc Bình Hòa. Kế hoạch nhắc nhiều giai đoạn dự án, vì vậy cần xác nhận đúng khu tiện ích mà học viên có quyền dùng. Ảnh được cung cấp hiện chỉ thể hiện ngoại thất.',
+    landmarks:['Đại lộ Hữu Nghị','VSIP 1','Khu vực AEON Mall Bình Dương'],facts:['Cần phân biệt khu tiện ích theo giai đoạn'],needs:['Ảnh hồ đúng giai đoạn','Thẻ/quyền dùng hồ','Sự đồng ý cho HLV'],nearby:['canary-heights','parkview','emerald-golf-view'],
+  },
+  {
+    id:'canary-heights',name:'Canary Heights',shortName:'Canary Heights',slug:'hoc-boi-canary-heights-binh-hoa',type:'residential',zone:'binh-hoa',commune:'binh-hoa',area:'Bình Hòa · Giáp ranh',
+    address:'Khu phức hợp Canary, phường Bình Hòa, TP.HCM',oldAddress:'P. Bình Hòa, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Tư vấn học kèm cho người có quyền dùng tiện ích nội khu Canary.',
+    context:'Canary Heights được kế hoạch nhận diện gần AEON Mall Bình Dương. Đây là nhóm hồ nội khu, cần xác nhận đơn vị quản lý và quyền tiếp cận. Chưa có ảnh hồ trong bộ ảnh được bàn giao nên không mô tả cơ sở vật chất như đã khảo sát.',
+    landmarks:['Khu Canary','AEON Mall Bình Dương','Quốc lộ 13'],facts:[],needs:['Địa chỉ chi tiết','Ảnh hồ','Quy định khách đi cùng và HLV'],nearby:['the-habitat','parkview','emerald-golf-view'],
+  },
+  {
+    id:'parkview',name:'ParkView Apartment',shortName:'ParkView Apartment',slug:'hoc-boi-parkview-apartment-binh-hoa',type:'residential',zone:'binh-hoa',commune:'binh-hoa',area:'Bình Hòa · Giáp ranh',
+    address:'Đường Nguyễn Du, KDC Bình Đáng, phường Bình Hòa, TP.HCM',oldAddress:'P. Bình Hòa, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Điểm tham khảo cho cư dân quanh Nguyễn Du và khu Bình Đáng.',
+    context:'ParkView Apartment trong kế hoạch nằm ở khu dân cư Bình Đáng trên trục Nguyễn Du. Cần đối chiếu đúng dự án trước khi hẹn học, vì tên ParkView có thể được dùng ở các địa điểm khác. Ảnh hồ và điều kiện tổ chức lớp đang cần bổ sung.',
+    landmarks:['Nguyễn Du','KDC Bình Đáng','Hướng ĐT743'],facts:[],needs:['Nhận diện đúng dự án','Ảnh và hiện trạng hồ','Quyền đưa HLV vào'],nearby:['the-habitat','canary-heights','ho-boi-71'],
+  },
+  {
+    id:'ho-boi-71',name:'Hồ bơi 71',shortName:'Hồ bơi 71',slug:'hoc-boi-71-binh-hoa',type:'public',zone:'binh-hoa',commune:'binh-hoa',area:'Bình Hòa · Đồng An',
+    address:'18A/7 KP Đồng An 1, phường Bình Hòa, TP.HCM',oldAddress:'P. Bình Hòa, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Hồ dịch vụ trong nhóm tham khảo khu Đồng An, Bình Hòa.',
+    context:'Kế hoạch nhắc Hồ bơi 71 tại khu Đồng An. Khung giờ tối chưa thống nhất trong tài liệu, nên cần hỏi đơn vị vận hành trước khi tới. Không dùng tên khu sân bóng lân cận thay cho xác nhận lối vào hồ.',
+    landmarks:['Khu Đồng An','Hướng VSIP 1','ĐT743'],facts:['Giờ đóng cửa trong tài liệu cần đối chiếu'],needs:['Đúng vị trí/lối vào','Giờ và vé hiện hành','Ảnh hồ'],nearby:['parkview','the-habitat','minh-quan'],
+  },
+  {
+    id:'tien-phong',name:'Hồ bơi Tiên Phong',shortName:'Tiên Phong',slug:'hoc-boi-tien-phong-thuan-an',type:'public',zone:'thuan-an',commune:'thuan-an',area:'Thuận An · An Thạnh cũ',
+    address:'99E/2 An Thạnh 15, phường Thuận An, TP.HCM',oldAddress:'An Thạnh 15, P. An Thạnh, TP. Thuận An, Bình Dương (cũ)',
+    media:media('ho-boi-tien-phong',[
+      ['ho-boi-tien-phong-01','photo','Tư liệu toàn cảnh mặt nước hồ bơi Tiên Phong.'],
+      ['ho-boi-tien-phong-03','photo','Góc nhìn mặt nước và khu vực ven hồ trong bộ tư liệu Tiên Phong.'],
+      ['ho-boi-tien-phong-02','photo','Tư liệu hồ vào buổi tối, không xác nhận giờ mở cửa hiện tại.'],
+    ]),
+    summary:'Hồ dịch vụ ở An Thạnh cũ, nay thuộc phường Thuận An.',
+    context:'Tiên Phong được ghi tại 99E/2 An Thạnh 15. Bộ tư liệu có ảnh ban ngày và buổi tối, nhưng ảnh tối không chứng minh hồ hiện mở ca tối. Cần phân biệt vé bơi với các gói dịch vụ có thể đi kèm.',
+    landmarks:['An Thạnh 15','Hướng Cách Mạng Tháng Tám','Khu An Thạnh cũ'],facts:['Có tư liệu hồ ban ngày và ban đêm'],needs:['Khung giờ hiện hành','Vé bơi/gói dịch vụ','Lịch tiếp nhận lớp'],nearby:['din-ky','duy-anh','tt-vhtt'],
+  },
+  {
+    id:'minh-quan',name:'Hồ bơi Minh Quân',shortName:'Minh Quân',slug:'hoc-boi-minh-quan-thuan-giao',type:'public',zone:'thuan-giao',commune:'thuan-giao',area:'Thuận Giao · Bình Chuẩn cũ',
+    address:'Đường Bình Chuẩn 63, phường Thuận Giao, TP.HCM',oldAddress:'P. Bình Chuẩn, TP. Thuận An, Bình Dương (cũ)',media:[],
+    summary:'Điểm tham khảo thuộc Bình Chuẩn cũ, trong vùng lân cận Lái Thiêu.',
+    context:'Minh Quân được kế hoạch nhắc trên đường Bình Chuẩn 63, nay thuộc Thuận Giao. Nếu cần ca học sau giờ làm, phải xác nhận giờ thực tế và lịch HLV thay vì dựa vào mốc giờ tối trong tài liệu cũ.',
+    landmarks:['Bình Chuẩn 63','Thủ Khoa Huân','Hướng ĐT743'],facts:[],needs:['Vị trí tiếp nhận hiện tại','Giờ học phù hợp','Ảnh hồ và vé'],nearby:['ho-boi-71','parkview','the-habitat'],
+  },
+];
+
+export const laiThieuVenueCatalog = venues.map(v=>({...v,status:'candidate',indexable:v.indexable===true,detailHref:`/${v.slug}/`,category:v.category||(v.type==='residential'?'Hồ nội khu cư dân':'Hồ bơi dịch vụ / công cộng')}));
+export const futureLaiThieuProjects = ['Astral City','Lavita Thuận An','Anderson Park','Diamond Boulevard','Legacy Prime','A&T Sky Garden','KĐT Hồ Gươm Xanh'].map(name=>({name,status:'future',indexable:false,note:'Cần xác nhận vận hành hồ và điều kiện tổ chức lớp trước khi tạo trang tuyển sinh.'}));

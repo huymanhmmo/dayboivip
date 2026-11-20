@@ -1,0 +1,8 @@
+---
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import PoolCourseCard from './PoolCourseCard.astro';
+import type { PoolCourse } from '../../data/poolDetailTypes';
+export interface Props { name: string; courses: PoolCourse[]; intro: string; }
+const {name,courses,intro}=Astro.props;
+---
+<section id="khoa-hoc" class="pd-courses" aria-labelledby="courses-heading"><SectionHeading id="courses-heading" title={`Các khóa học tại ${name}`} icon="wave" description={intro} /><div class="pd-course-grid">{courses.map(course=><PoolCourseCard course={course} />)}</div><p class="pd-caption">Ảnh minh họa chương trình và tư liệu lớp chung, không phải ảnh lớp tại địa điểm.</p></section>

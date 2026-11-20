@@ -1,0 +1,22 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import WaveDivider from '../landing/ui/WaveDivider.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { pool: PoolDetailData; }
+const { pool } = Astro.props;
+---
+<section class="pd-hero" aria-labelledby="pool-title">
+  <picture class="pd-hero-image"><source media="(max-width: 700px)" srcset={pool.hero.mobileSrc} /><img src={pool.hero.src} alt={pool.hero.alt} width={pool.hero.width} height={pool.hero.height} fetchpriority="high" decoding="async" /></picture>
+  <div class="pd-hero-shade"></div>
+  <div class="sfl-container pd-hero-inner">
+    <nav class="pd-breadcrumb" aria-label="Đường dẫn trang"><a href="/">Trang chủ</a><span>/</span><a href="/hoc-boi-tphcm/">Học bơi TP.HCM</a><span>/</span><a href={pool.areaHref||"/hoc-boi-tphcm/lai-thieu/"}>{pool.areaName}</a><span>/</span><span aria-current="page">{pool.name}</span></nav>
+    <div class="pd-hero-copy"><span class="pd-eyebrow">Địa điểm học bơi tại {pool.areaName}</span>
+      <h1 id="pool-title">Học bơi tại<br /><em>{pool.name}</em></h1>
+      <p>{pool.heroDescription}</p>
+      <div class="pd-hero-badges">{pool.badges.map(badge=><div><Icon name={badge.icon} /><span>{badge.label}</span></div>)}</div>
+      <div class="pd-actions"><a href="#dang-ky" class="sfl-button sfl-button--orange">Đăng ký học ngay<Icon name="arrow" /></a><a href={pool.phoneHref} class="sfl-button sfl-button--light"><Icon name="phone" />Gọi {pool.hotline}</a></div>
+    </div>
+  </div>
+  {(pool.hero.illustration||pool.hero.label) && <span class="pd-image-label">{pool.hero.label||'Ảnh bể bơi minh họa'}</span>}
+  <WaveDivider class="pd-hero-wave" />
+</section>

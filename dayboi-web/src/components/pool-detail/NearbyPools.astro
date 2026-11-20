@@ -1,0 +1,8 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { pools: PoolDetailData['nearby']; }
+const {pools}=Astro.props;
+---
+<section class="pd-nearby" aria-labelledby="nearby-heading"><SectionHeading id="nearby-heading" title="Tham khảo hồ bơi lân cận" icon="pin" /><div>{pools.map(pool=><a href={pool.href}><Icon name="swim" /><div><h3>{pool.name}</h3><p>{pool.description}</p></div><Icon name="chevron" /></a>)}</div></section>

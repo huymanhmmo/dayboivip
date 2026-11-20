@@ -1,0 +1,29 @@
+---
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import Icon from '../landing/ui/Icon.astro';
+import type { PoolPhoto } from '../../data/poolDetailTypes';
+export interface Props { name: string; photos: PoolPhoto[]; illustrations: PoolPhoto[]; note: string; title?: string; }
+const {name,photos,illustrations,note,title}=Astro.props;
+const items=photos.length?photos:illustrations;
+---
+<section class="pd-gallery" id="hinh-anh" aria-labelledby="gallery-heading">
+  <SectionHeading id="gallery-heading" title={title||(photos.length?`Hình ảnh & tư liệu ${name}`:'Hình ảnh & không gian bơi')} icon="camera" />
+  <div class="pd-gallery-grid" data-count={items.length}>{items.map((photo,index)=><button class:list={['pd-gallery-item',{'pd-gallery-item--main':index===0}]} type="button" data-gallery-index={index} aria-label={`Xem ảnh ${index+1}: ${photo.alt}`}><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" /><span>{index===0?<><Icon name="search" />Xem {items.length} ảnh{!photos.length?' minh họa':''}</>:photo.label||(photo.illustration?'Ảnh minh họa':'Xem ảnh')}</span></button>)}</div>
+  <p class="pd-caption">{note}</p>
+  {items.map((photo,index)=><dialog class="pd-lightbox" id={`pool-photo-${index}`} aria-labelledby={`pool-photo-caption-${index}`}><button type="button" class="pd-lightbox-close" data-close-gallery aria-label="Đóng ảnh"><Icon name="close" /></button><figure><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" /><figcaption id={`pool-photo-caption-${index}`}>{photo.caption}</figcaption></figure><div class="pd-lightbox-controls"><button type="button" data-gallery-previous={index} aria-label="Ảnh trước">Ảnh trước</button><span>{index+1} / {items.length}</span><button type="button" data-gallery-next={index} aria-label="Ảnh tiếp theo">Ảnh tiếp</button></div></dialog>)}
+</section>
+<script>
+  const dialogs=Array.from(document.querySelectorAll<HTMLDialogElement>('.pd-lightbox'));
+  let galleryTrigger:HTMLElement|null=null;
+  const openPhoto=(index:number)=>{dialogs.forEach(d=>{if(d.open)d.close();});dialogs[(index+dialogs.length)%dialogs.length]?.showModal();};
+  document.querySelectorAll<HTMLButtonElement>('[data-gallery-index]').forEach(button=>button.addEventListener('click',()=>{galleryTrigger=button;openPhoto(Number(button.dataset.galleryIndex));}));
+  dialogs.forEach((dialog,index)=>{
+    const close=()=>{dialog.close();galleryTrigger?.focus();};
+    dialog.querySelector('[data-close-gallery]')?.addEventListener('click',close);
+    dialog.querySelector('[data-gallery-previous]')?.addEventListener('click',()=>openPhoto(index-1));
+    dialog.querySelector('[data-gallery-next]')?.addEventListener('click',()=>openPhoto(index+1));
+    dialog.addEventListener('click',event=>{if(event.target===dialog)close();});
+    dialog.addEventListener('cancel',()=>galleryTrigger?.focus());
+    dialog.addEventListener('keydown',event=>{if(event.key==='ArrowRight'){event.preventDefault();openPhoto(index+1);}if(event.key==='ArrowLeft'){event.preventDefault();openPhoto(index-1);}});
+  });
+</script>

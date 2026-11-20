@@ -94,6 +94,10 @@
 .sfl-pool-image {height:170px;position:relative;overflow:hidden;border-radius:18px 18px 23px 23px}
 .sfl-pool-image>img {height:100%;width:100%;object-fit:cover;transition:transform .3s}
 .sfl-pool-card:hover .sfl-pool-image>img {transform:scale(1.035)}
+.sfl-pool-card-action {position:absolute;inset:0;z-index:3;display:block;border:0;border-radius:inherit;padding:0;background:transparent;cursor:pointer;width:100%;height:100%}
+.sfl-landing .sfl-pool-card-action:focus-visible {outline:3px solid #007cac;outline-offset:-5px}
+.sfl-pool-card:focus-within {box-shadow:0 0 0 2px #24b7dd,0 6px 18px #008dbc25}
+.sfl-pool-image-note {position:absolute;top:10px;right:10px;background:#034f78df;color:#fff;border:1px solid #ffffff8c;border-radius:20px;padding:4px 9px;font-size:11px;line-height:1.4}
 .sfl-pool-tag {position:absolute;left:13px;bottom:10px;border:1px solid #b6f2ff;border-radius:999px;padding:3px 12px;background:linear-gradient(110deg,#008af2,#00bbf0);font-size:12px;font-weight:700;color:white;box-shadow:0 2px 3px #005eb14d}
 .sfl-pool-tag--private {background:linear-gradient(110deg,#6847ca,#8b64d8)}
 .sfl-pool-content {padding:12px 54px 15px 20px;position:relative;min-height:101px}
@@ -300,3 +304,8 @@
 }
 @media(max-width:380px) {.sfl-hero-actions .sfl-button {font-size:11px;padding-inline:9px}}
 @media(prefers-reduced-motion:reduce) {.sfl-landing *, .sfl-landing *::before,.sfl-landing *::after {scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+.sfl-pool-group+.sfl-pool-group{margin-top:35px}.sfl-landing .sfl-pool-group-title{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:23px;margin:0 0 9px}.sfl-pool-group-title span{font-size:12px;font-weight:600;color:#356b81;border:1px solid #b5e0ed;background:#e9faff;border-radius:99px;padding:5px 10px}.sfl-landing .sfl-pool-group-note{font-size:13px;color:#3a6075;margin-bottom:19px;line-height:1.7}@media(max-width:700px){.sfl-landing .sfl-pool-group-title{font-size:21px;gap:9px}.sfl-landing .sfl-pool-group-note{font-size:12px}.sfl-pool-group-title span{font-size:11px}.sfl-pool-group+.sfl-pool-group{margin-top:27px}}
+
+/* Shared local header stays visible; destination cards must clear it. */
+.sfl-landing section[id],.sfl-landing article[id],.sfl-landing [id^="lop-"],.sfl-landing #hoc-phi{scroll-margin-top:108px}

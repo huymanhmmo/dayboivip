@@ -9,12 +9,14 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
   <div class="sfl-pool-image">
     {pool.image ? <img src={pool.image} alt={pool.imageAlt} width="640" height="360" loading="lazy" decoding="async" /> : <div class="sfl-pool-placeholder"><Icon name="swim" /><span>Ảnh đang cập nhật</span></div>}
     <span class:list={['sfl-pool-tag', {'sfl-pool-tag--private':pool.type === 'residential'}]}>{pool.tag}</span>
+    {pool.imageNote&&<span class="sfl-pool-image-note">{pool.imageNote}</span>}
   </div>
   <div class="sfl-pool-content"><h3>{pool.name}</h3><p><Icon name="pin" />{pool.address}</p>
-    <button type="button" class="sfl-pool-details" data-open-dialog={`detail-${pool.id}`} aria-label={`Xem chi tiết ${pool.name}`}><Icon name="chevron" /></button>
+    <span class="sfl-pool-details" aria-hidden="true"><Icon name="chevron" /></span>
   </div>
+  {pool.detailHref ? <a href={pool.detailHref} class="sfl-pool-card-action" aria-label={`Xem trang chi tiết ${pool.name}`}></a> : <button type="button" class="sfl-pool-card-action" data-open-dialog={`detail-${pool.id}`} aria-label={`Xem thông tin ${pool.name}`} aria-haspopup="dialog" aria-controls={`detail-${pool.id}`}></button>}
 </article>
-<dialog class="sfl-pool-dialog" id={`detail-${pool.id}`} aria-labelledby={`detail-title-${pool.id}`}>
+{!pool.detailHref&&<dialog class="sfl-pool-dialog" id={`detail-${pool.id}`} aria-labelledby={`detail-title-${pool.id}`}>
   <div class="sfl-dialog-inner">
     <button type="button" class="sfl-dialog-close" data-close-dialog aria-label="Đóng chi tiết hồ bơi"><Icon name="close" /></button>
     {pool.image && <img class="sfl-dialog-image" src={pool.image} alt={pool.imageAlt} width="640" height="360" loading="lazy" />}
@@ -25,4 +27,4 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
     <p>HLV tư vấn khu vực: <strong>{instructorLabel}.</strong> Hotline xếp lớp tách biệt với quầy vé hoặc BQL hồ.</p>
     <div class="sfl-dialog-actions"><a href={phoneHref} class="sfl-button sfl-button--orange"><Icon name="phone" />Tư vấn xếp lớp</a><a href={mapsUrl} class="sfl-button sfl-button--light" target="_blank" rel="noopener noreferrer"><Icon name="pin" />Xem bản đồ</a></div>
   </div>
-</dialog>
+</dialog>}

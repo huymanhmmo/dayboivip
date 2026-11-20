@@ -1,0 +1,181 @@
+{
+  "canonical": "https://dayboi.vip/hoc-boi-nhat-an-lai-thieu/",
+  "h1": 1,
+  "words": 2945,
+  "internalReferences": 48,
+  "missing": [],
+  "duplicateIds": [],
+  "images": [
+    {
+      "src": "/images/brand/logo.png",
+      "alt": "Swim For Life Việt Nam",
+      "width": "3268",
+      "height": "1206",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "alt": "Ảnh minh họa bể bơi ngoài trời với nước xanh, hàng cây và khu vực che nắng",
+      "width": "1800",
+      "height": "1000",
+      "fetchpriority": "high",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "alt": "Ảnh minh họa bể bơi ngoài trời với nước xanh, hàng cây và khu vực che nắng",
+      "width": "1800",
+      "height": "1000",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/children.webp",
+      "alt": "Minh họa trẻ em làm quen với nước và tập bơi",
+      "width": "1200",
+      "height": "800",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/hero.webp",
+      "alt": "Minh họa huấn luyện viên hướng dẫn một học viên ở hồ bơi",
+      "width": "1800",
+      "height": "1000",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "alt": "Ảnh minh họa bể bơi ngoài trời với nước xanh, hàng cây và khu vực che nắng",
+      "width": "1800",
+      "height": "1000",
+      "loading": "lazy"
+    },
+    {
+      "src": "/images/landing/lai-thieu/children.webp",
+      "alt": "Minh họa trẻ em làm quen với nước và tập bơi",
+      "width": "1200",
+      "height": "800",
+      "loading": "lazy"
+    },
+    {
+      "src": "/images/landing/lai-thieu/hero.webp",
+      "alt": "Minh họa huấn luyện viên hướng dẫn một học viên ở hồ bơi",
+      "width": "1800",
+      "height": "1000",
+      "loading": "lazy"
+    },
+    {
+      "src": "/images/landing/lai-thieu/children.webp",
+      "alt": "Minh họa khóa học bơi dành cho trẻ em",
+      "width": "480",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/adults.webp",
+      "alt": "Minh họa học bơi dành cho người lớn",
+      "width": "480",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/hero.webp",
+      "alt": "Minh họa huấn luyện viên kèm một học viên",
+      "width": "480",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async",
+      "style": "object-position:80% center"
+    },
+    {
+      "src": "/images/pool-detail/small-group-swimming.webp",
+      "alt": "Ảnh lớp học trong tư liệu chung của Swim For Life, không phải ảnh tại Nhật An",
+      "width": "480",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-breaststroke-side-breathing.webp",
+      "alt": "Minh họa bơi ếch nhìn nghiêng trong pha lấy hơi, thân chồm về trước và hai tay thu khép sát mặt nước",
+      "width": "400",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-front-crawl-underwater.webp",
+      "alt": "Minh họa bơi sải dưới nước, một tay vươn trước và tay còn lại quạt về hông, hai chân đập luân phiên",
+      "width": "400",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-backstroke-surface-full-body.webp",
+      "alt": "Minh họa toàn thân bơi ngửa trên mặt nước, một tay vung qua đầu và hai chân đập luân phiên, không mang chân vịt",
+      "width": "400",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-butterfly-underwater.webp",
+      "alt": "Minh họa bơi bướm nhìn nghiêng dưới nước, hai tay vươn về trước và hai chân khép trong nhịp dolphin",
+      "width": "400",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-treading-water.webp",
+      "alt": "Ảnh minh họa học viên tập giữ cơ thể thẳng và đứng nước",
+      "width": "400",
+      "height": "300",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/pool-detail/instructor-le-van-thong.webp",
+      "alt": "Ảnh hướng dẫn bơi trong hồ sơ thầy Lê Văn Thông trên website Swim For Life",
+      "width": "900",
+      "height": "600",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/pool-detail/swimming-gear.webp",
+      "alt": "Minh họa kính bơi, mũ, khăn và nước uống chuẩn bị cho buổi học",
+      "width": "600",
+      "height": "600",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/brand/logo.png",
+      "alt": "Swim For Life Việt Nam",
+      "width": "3268",
+      "height": "1206",
+      "loading": "lazy",
+      "decoding": "async"
+    }
+  ],
+  "courseCards": 4,
+  "faqCount": 6,
+  "schemaTypes": [
+    "WebPage",
+    "SportsActivityLocation",
+    "Person",
+    "Service",
+    "BreadcrumbList",
+    "FAQPage"
+  ],
+  "captionRemoved": true,
+  "directPhoneLinks": 8,
+  "zaloLinks": 5,
+  "inSitemap": true
+}

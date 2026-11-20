@@ -1,0 +1,25 @@
+
+> squealing-shell@0.0.1 audit:seo:strict
+> node scripts/audit-seo.mjs --strict
+
+SEO AUDIT: 6838 HTML, 826 URL indexable, 0 redirect.
+
+Title ngoài ngưỡng 45-65: 0
+
+Description ngoài ngưỡng 140-170: 0
+
+H1 thiếu hoặc trùng: 0
+
+Heading nhảy cấp: 0
+
+Nội dung dưới 300 từ: 0
+
+Ảnh thiếu alt: 0
+
+Ảnh thiếu width/height: 0
+
+Cụm từ máy móc hoặc phóng đại: 0
+
+Title trùng: 0 nhóm.
+
+Description trùng: 0 nhóm.

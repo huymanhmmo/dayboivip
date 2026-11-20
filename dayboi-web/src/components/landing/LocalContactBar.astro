@@ -1,0 +1,6 @@
+---
+import Icon from './ui/Icon.astro';
+export interface Props { phoneHref: string; zaloHref: string; }
+const {phoneHref,zaloHref}=Astro.props;
+---
+<nav class="lt-contact-bar" aria-label="Liên hệ tư vấn học bơi Lái Thiêu"><a href={phoneHref}><Icon name="phone" />Gọi tư vấn</a><a href={zaloHref} target="_blank" rel="noopener noreferrer"><Icon name="chat" />Tư vấn qua Zalo</a></nav>

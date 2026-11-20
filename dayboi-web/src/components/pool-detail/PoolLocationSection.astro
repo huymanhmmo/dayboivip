@@ -1,0 +1,8 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import type { PoolDetailData } from '../../data/poolDetailTypes';
+export interface Props { pool: Pick<PoolDetailData,'name'|'address'|'oldAddress'|'location'|'variant'|'accessNote'>; }
+const {pool}=Astro.props;
+---
+<section id="dia-diem" class="pd-location" aria-labelledby="location-heading"><SectionHeading id="location-heading" title="Bản đồ & hướng dẫn đường đi" icon="pin" /><div class="pd-location-grid"><div class="pd-map"><div class="pd-map-fallback"><Icon name="pin" /><strong>Tra cứu khu vực</strong><p>{pool.address}</p><a href={pool.location.mapsSearchUrl} target="_blank" rel="noopener noreferrer">Mở Google Maps</a></div>{pool.location.regionEmbedUrl&&<iframe src={pool.location.regionEmbedUrl} title="Bản đồ khu vực tham khảo, không phải vị trí hồ đã xác minh" width="500" height="360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>}<span>Bản đồ khu vực tham khảo</span></div><div><h3>{pool.name}</h3><p>{pool.address}</p><p class="pd-old-address">Địa chỉ cũ: {pool.oldAddress}</p><h3>Gợi ý di chuyển</h3><ul>{pool.location.directions.map(d=><li><strong>{d.label}:</strong> {d.text}</li>)}</ul><a href={pool.location.mapsSearchUrl} class="pd-outline-link" target="_blank" rel="noopener noreferrer">Tìm trên Google Maps<Icon name="pin" /></a></div></div><p class="pd-caption">{pool.location.note}</p>{pool.variant==='residential'&&pool.accessNote&&<p class="pd-access-note">{pool.accessNote}</p>}</section>

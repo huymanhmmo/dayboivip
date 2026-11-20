@@ -1,0 +1,6 @@
+---
+import PoolDetailPage from '../components/pool-detail/PoolDetailPage.astro';
+import { getPoolDetail } from '../data/poolDetailPages';
+const pool = getPoolDetail('ecoxuan');
+---
+<PoolDetailPage pool={pool} />

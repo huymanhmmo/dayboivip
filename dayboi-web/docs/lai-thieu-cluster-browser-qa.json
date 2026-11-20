@@ -1,0 +1,114 @@
+{
+  "testedAt": "2026-11-20",
+  "service": "Cloudflare Browser Rendering",
+  "versionTested": "705ee329-43a4-44f5-8366-f01727f58919",
+  "laterChanges": "Map loading fallback and sticky-header anchor offset; templates and menu behavior unchanged.",
+  "viewports": [
+    {
+      "width": 360,
+      "overflowPixels": 0,
+      "menuMode": "drawer",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "backgroundScrollLocked": true,
+      "focusRestored": true
+    },
+    {
+      "width": 390,
+      "overflowPixels": 0,
+      "menuMode": "drawer",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "backgroundScrollLocked": true,
+      "focusRestored": true
+    },
+    {
+      "width": 430,
+      "overflowPixels": 0,
+      "menuMode": "drawer",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "backgroundScrollLocked": true,
+      "focusRestored": true
+    },
+    {
+      "width": 768,
+      "overflowPixels": 0,
+      "menuMode": "drawer",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "backgroundScrollLocked": true,
+      "focusRestored": true
+    },
+    {
+      "width": 1024,
+      "overflowPixels": 0,
+      "menuMode": "drawer",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "backgroundScrollLocked": true,
+      "focusRestored": true
+    },
+    {
+      "width": 1280,
+      "overflowPixels": 0,
+      "menuMode": "dropdown",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "singleDropdownOpen": true,
+      "escapeClosed": true
+    },
+    {
+      "width": 1440,
+      "overflowPixels": 0,
+      "menuMode": "dropdown",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "singleDropdownOpen": true,
+      "escapeClosed": true
+    },
+    {
+      "width": 1920,
+      "overflowPixels": 0,
+      "menuMode": "dropdown",
+      "menuOpened": true,
+      "menuFitsViewport": true,
+      "menuClosed": true,
+      "singleDropdownOpen": true,
+      "escapeClosed": true
+    }
+  ],
+  "hubFilter": {
+    "testedWidths": [
+      390,
+      1280
+    ],
+    "resetCount": 20,
+    "fullCardTargets": 20
+  },
+  "interactions": {
+    "mobileMenu": "open / grouped disclosure / close / focus and scroll restore",
+    "desktopMenu": "open / switch group / Escape",
+    "gallery": "Existing verified implementation opens, changes photo, closes and restores trigger focus",
+    "faq": "Native disclosure opens and closes"
+  },
+  "screenshots": {
+    "nhatAnDesktop": "docs/previews/lai-thieu-cluster/nhat-an-desktop-1440.webp",
+    "nhatAnMobile": "docs/previews/lai-thieu-cluster/nhat-an-mobile-390.webp",
+    "hubDesktop": "docs/previews/lai-thieu-cluster/hub-desktop-1440.webp",
+    "residentialDesktop": "docs/previews/lai-thieu-cluster/rivana-desktop-1440.webp",
+    "mobileMenu": "docs/previews/lai-thieu-cluster/mobile-menu-390.webp"
+  },
+  "limits": [
+    "Full-page captures can position sticky/fixed elements at the capture scroll location; viewport captures show actual menu layout.",
+    "Additional screenshot attempt was stopped after Cloudflare returned HTTP 429 and a long retry interval; no retries were sent.",
+    "Core Web Vitals field or lab scores were not measured; no LCP/CLS/INP target attainment is claimed."
+  ]
+}

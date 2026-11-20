@@ -1,0 +1,7 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import type { PoolCourse } from '../../data/poolDetailTypes';
+export interface Props { course: PoolCourse; }
+const {course}=Astro.props;
+---
+<a href={course.href} id={course.id} class="pd-course-card"><img src={course.image} alt={course.imageAlt} width="480" height="300" loading="lazy" decoding="async" class:list={{'pd-image-focus-right':!!course.imagePosition}} /><div><h3>{course.title}</h3><p>{course.audience}</p><span class="pd-card-more" aria-label="Xem chi tiết"><Icon name="chevron" /></span></div><span class="pd-course-description">{course.description}</span></a>

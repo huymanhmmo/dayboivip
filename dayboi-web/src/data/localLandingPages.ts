@@ -2,6 +2,7 @@ import { laiThieuPools } from './laiThieuPools.js';
 
 export interface Link { label: string; href: string; }
 export interface ImageCardData {
+  id?: string;
   title: string; description: string; image: string; imageAlt: string;
   href: string; icon: string; imagePosition?: string;
 }
@@ -10,8 +11,8 @@ export interface TechniqueCardData extends ImageCardData {
   safety?: boolean;
 }
 export interface Pool {
-  id: string; name: string; type: string; zone: string; area?: string; address: string; oldAddress: string;
-  image: string | null; imageAlt: string; tag: string; services: string; detail: string;
+  id: string; name: string; type: string; zone: string; area?: string; neighbor?: boolean; address: string; oldAddress: string;
+  image: string | null; imageAlt: string; imageNote?: string; tag: string; services: string; detail: string; detailHref?: string;
 }
 export interface LocalLandingData {
   name: string; province: string; canonical: string; title: string; description: string; updatedAt: string;
@@ -27,7 +28,7 @@ const asset = '/images/landing/lai-thieu';
 export const laiThieuLanding: LocalLandingData = {
   name: 'Lái Thiêu', province: 'TP.HCM', canonical: 'https://dayboi.vip/hoc-boi-tphcm/lai-thieu/', updatedAt: '2026-11-20',
   title: 'Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn',
-  description: 'Học bơi tại Lái Thiêu, TP.HCM cho trẻ em, người lớn và người sợ nước. Tham khảo 6 hồ bơi, lộ trình 8–12 buổi; tư vấn cùng thầy Lê Văn Thông: 0986.456.678.',
+  description: 'Học bơi tại Lái Thiêu và vùng lân cận, TP.HCM. Tham khảo 20 hồ bơi, chương trình trẻ em, người lớn và kèm riêng. Tư vấn thầy Lê Văn Thông: 0986.456.678.',
   hotline: '0986.456.678', phoneHref: 'tel:0986456678', zaloHref: 'https://zalo.me/0986456678',
   heroImage: `${asset}/hero.webp`, heroMobile: `${asset}/hero-mobile.webp`,
   heroTitle: 'Học bơi tại', subtitle: 'An toàn – Đúng kỹ thuật – Phù hợp từng người học',
@@ -36,13 +37,13 @@ export const laiThieuLanding: LocalLandingData = {
     { title: 'Trẻ em', description: 'Học bơi đúng cách, an toàn từ bước đầu.', image: `${asset}/children.webp`, imageAlt: 'Minh họa trẻ em đeo kính và tập với ván bơi', href: '/khoa-hoc-boi/tre-em/', icon: 'child' },
     { title: 'Người lớn', description: 'Bắt đầu từ cơ bản, rèn luyện thể lực.', image: `${asset}/adults.webp`, imageAlt: 'Minh họa người lớn tập luyện tại hồ bơi', href: '/khoa-hoc-boi/nguoi-lon/', icon: 'person' },
     { title: 'Người sợ nước', description: 'Làm quen với nước, từng bước tự tin.', image: `${asset}/confidence.webp`, imageAlt: 'Minh họa học viên thoải mái làm quen với nước', href: '/khoa-hoc-boi/nguoi-so-nuoc/', icon: 'drop' },
-    { title: 'Cư dân chung cư', description: 'Kèm riêng tại hồ nội khu được phép.', image: laiThieuPools[2].image!, imageAlt: 'Hồ bơi nội khu The Emerald Golf View', href: '#dia-diem', icon: 'building' },
+    { title: 'Cư dân chung cư', description: 'Kèm riêng tại hồ nội khu được phép.', image: laiThieuPools.find(pool=>pool.id==='emerald-golf-view')!.image!, imageAlt: 'Tư liệu hồ bơi nội khu The Emerald Golf View', href: '#dia-diem', icon: 'building' },
   ],
   courses: [
-    { title: 'Học bơi cơ bản', description: 'Cho người mới bắt đầu, nắm vững kỹ năng an toàn.', image: `${asset}/adults.webp`, imageAlt: 'Minh họa học bơi cơ bản cho người lớn', href: '/khoa-hoc-boi/nguoi-lon/', icon: 'swim' },
-    { title: 'Học bơi trẻ em', description: 'Kỹ năng bơi đúng cách, phát triển sự tự tin.', image: `${asset}/children.webp`, imageAlt: 'Minh họa chương trình học bơi trẻ em', href: '/khoa-hoc-boi/tre-em/', icon: 'child' },
-    { title: 'Học bơi nâng cao', description: 'Cải thiện kỹ thuật, hoàn thiện từng kiểu bơi.', image: `${asset}/journey.webp`, imageAlt: 'Minh họa người bơi sải rèn luyện kỹ thuật', href: '/ky-thuat-boi/', icon: 'swim', imagePosition: '80% center' },
-    { title: 'Học bơi kèm riêng', description: 'HLV kèm sát, điều chỉnh theo tiến độ của bạn.', image: `${asset}/hero.webp`, imageAlt: 'Minh họa huấn luyện viên hướng dẫn một học viên', href: '/khoa-hoc-boi/1-kem-1/', icon: 'people', imagePosition: '82% center' },
+    { id:'lop-tre-em', title:'Học bơi trẻ em', description:'Làm quen nước, rèn nền tảng và kỹ năng an toàn.', image:`${asset}/children.webp`, imageAlt:'Minh họa chương trình học bơi trẻ em', href:'/khoa-hoc-boi/tre-em/', icon:'child' },
+    { id:'lop-nguoi-lon', title:'Học bơi người lớn', description:'Bắt đầu từ cơ bản, từng bước tự tin với nước.', image:`${asset}/adults.webp`, imageAlt:'Minh họa học bơi cho người lớn', href:'/khoa-hoc-boi/nguoi-lon/', icon:'person' },
+    { id:'lop-kem-rieng', title:'Học bơi kèm riêng', description:'HLV theo sát và điều chỉnh theo tiến độ của bạn.', image:`${asset}/hero.webp`, imageAlt:'Minh họa huấn luyện viên hướng dẫn một học viên', href:'/khoa-hoc-boi/1-kem-1/', icon:'people', imagePosition:'82% center' },
+    { id:'lop-nhom-nho', title:'Học bơi nhóm nhỏ', description:'Tư vấn lớp phù hợp cho gia đình, bạn bè cùng học.', image:'/images/pool-detail/small-group-swimming.webp', imageAlt:'Tư liệu lớp học chung, không phải ảnh lớp tại một hồ Lái Thiêu cụ thể', href:'#dang-ky', icon:'people' },
   ],
   techniques: [
     {
