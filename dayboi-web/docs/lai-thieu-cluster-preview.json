@@ -3,12 +3,15 @@
   "previewBase": "https://033f7aa4-dayboivip.huymanh.workers.dev",
   "alias": "https://lai-thieu-pool-cluster-dayboivip.huymanh.workers.dev",
   "worker": "dayboivip",
-  "productionUpdated": false,
-  "productionVersionVerified": "79e51b29-263f-4ea7-a6e7-1c25747d6493",
+  "productionUpdated": true,
+  "productionVersionVerified": "033f7aa4-e60d-4da0-8aae-2f42e6af027d",
   "poolPages": 20,
   "hubCards": 20,
   "draftNoindexPages": 19,
   "futureProjectsNotPublished": 7,
   "httpChecksPassed": 64,
-  "githubPushed": false
+  "githubPushed": false,
+  "productionDeploymentId": "cabfcf50-0fab-478e-956c-a0cfa6b4dd6f",
+  "productionAuthorization": "User explicitly requested deployment to dayboi.vip",
+  "productionVerifiedAt": "2026-11-20T13:28:23.486Z"
 }

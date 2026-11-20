@@ -61,3 +61,9 @@ Nhật An và hub giữ chính sách index hiện tại. Giá/giờ/độ sâu t
 - Kiểm kê ảnh gốc: `docs/lai-thieu-location-inventory.json` và contact sheet.
 - Ảnh derivative/loại trừ: `docs/lai-thieu-venue-assets.json`.
 - Báo cáo cấu trúc, HTTP và UI: `lai-thieu-cluster-integrity.json`, `lai-thieu-cluster-http.json`, `lai-thieu-cluster-browser-qa.json`.
+
+## Cập nhật triển khai production
+
+Sau yêu cầu trực tiếp của người dùng “deploy thẳng vào trang dayboi.vip”, đã chuyển 100% traffic Worker `dayboivip` sang version `033f7aa4-e60d-4da0-8aae-2f42e6af027d`, deployment `cabfcf50-0fab-478e-956c-a0cfa6b4dd6f`. Đã đối chiếu 64 trang/tài nguyên trên domain chính: HTTP 200, khớp byte với build, không còn lỗi. Báo cáo: `docs/lai-thieu-cluster-http-production.json`.
+
+Giữ nguyên chính sách noindex cho 19 trang cần bổ sung xác minh và danh sách 7 dự án tương lai chưa xuất bản. Không push GitHub.
