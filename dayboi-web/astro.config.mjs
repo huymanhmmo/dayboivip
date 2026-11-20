@@ -2,27 +2,51 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { publishedLocationAreas } from './src/data/locationAreas.js';
+import { getAllCommunePages } from './src/data/communePages.js';
+import { viProvinceToEn } from './src/utils/i18nRouting.js';
 
-const areaRedirects = Object.fromEntries(
-  publishedLocationAreas.map((area) => [`/hoc-boi-${area.slug}`, area.url]),
-);
+const EN_INDEXABLE_PROVINCES = new Set([
+  'hoc-boi-ha-noi',
+  'hoc-boi-tphcm',
+  'hoc-boi-da-nang',
+  'hoc-boi-khanh-hoa',
+  'hoc-boi-hai-phong',
+  'hoc-boi-hue',
+  'hoc-boi-can-tho',
+]);
+
+const areaSlugSet = new Set(publishedLocationAreas.map((area) => `${area.parentSlug}/${area.slug}`));
+const noIndexUrlPaths = new Set();
+
+for (const commune of getAllCommunePages()) {
+  const key = `${commune.parentSlug}/${commune.slug}`;
+  if (areaSlugSet.has(key)) continue;
+
+  if (!commune.hasVenues) {
+    noIndexUrlPaths.add(`/${commune.parentSlug}/${commune.slug}/`);
+  }
+
+  if (!commune.hasVenues || !EN_INDEXABLE_PROVINCES.has(commune.parentSlug)) {
+    const enLoc = viProvinceToEn(commune.parentSlug);
+    noIndexUrlPaths.add(`/en/${enLoc}/${commune.slug}/`);
+  }
+}
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dayboi.vip',
-  redirects: {
-    '/dia-diem/ha-noi': '/hoc-boi-ha-noi',
-    '/dia-diem/tphcm': '/hoc-boi-tphcm',
-    '/dia-diem/tphcm/hoc-boi-tan-binh': '/hoc-boi-tphcm/tan-binh',
-    '/blog': '/tin-tuc',
-    ...areaRedirects,
-  },
   integrations: [
     sitemap({
        changefreq: 'weekly',
        priority: 0.7,
        lastmod: new Date(),
-       filter: (page) => !page.includes('/the/') && !page.includes('/en/blog/the/') && !page.includes('/dia-diem/'),
+       filter: (page) => {
+         if (page.includes('/the/') || page.includes('/en/blog/the/') || page.includes('/dia-diem/')) {
+           return false;
+         }
+         const pathname = new URL(page).pathname;
+         return !noIndexUrlPaths.has(pathname);
+       },
      }),
    ],
   build: {

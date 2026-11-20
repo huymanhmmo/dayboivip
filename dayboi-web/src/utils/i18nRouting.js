@@ -151,3 +151,47 @@ export const getAlternateUrl = (currentPath = '/', currentLang = 'vi') => {
     return '/';
   }
 };
+
+/**
+ * Strictly returns a 1:1 reciprocal alternate URL for hreflang tags, or null if none exists.
+ * @param {string} currentPath
+ * @param {'vi' | 'en'} currentLang
+ * @returns {string | null}
+ */
+export const getReciprocalAlternateUrl = (currentPath = '/', currentLang = 'vi') => {
+  const norm = normalizePath(currentPath);
+
+  if (currentLang === 'vi') {
+    if (PRIMARY_MAPPING_VI_TO_EN[norm]) {
+      return PRIMARY_MAPPING_VI_TO_EN[norm];
+    }
+
+    const provinceMatch = norm.match(/^\/(hoc-boi-[a-z0-9-]+)\/$/);
+    if (provinceMatch && VALID_PROVINCE_SLUGS.has(provinceMatch[1])) {
+      return `/en/${viProvinceToEn(provinceMatch[1])}/`;
+    }
+
+    const areaMatch = norm.match(/^\/(hoc-boi-[a-z0-9-]+)\/([a-z0-9-]+)\/$/);
+    if (areaMatch && VALID_PROVINCE_SLUGS.has(areaMatch[1])) {
+      return `/en/${viProvinceToEn(areaMatch[1])}/${areaMatch[2]}/`;
+    }
+
+    return null;
+  }
+
+  if (URL_MAPPING_EN_TO_VI[norm]) {
+    return URL_MAPPING_EN_TO_VI[norm];
+  }
+
+  const enProvinceMatch = norm.match(/^\/en\/(swimming-lessons-[a-z0-9-]+)\/$/);
+  if (enProvinceMatch && VALID_EN_PROVINCE_SLUGS.has(enProvinceMatch[1])) {
+    return `/${enProvinceToVi(enProvinceMatch[1])}/`;
+  }
+
+  const enAreaMatch = norm.match(/^\/en\/(swimming-lessons-[a-z0-9-]+)\/([a-z0-9-]+)\/$/);
+  if (enAreaMatch && VALID_EN_PROVINCE_SLUGS.has(enAreaMatch[1])) {
+    return `/${enProvinceToVi(enAreaMatch[1])}/${enAreaMatch[2]}/`;
+  }
+
+  return null;
+};
