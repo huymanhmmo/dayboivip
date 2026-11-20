@@ -72,7 +72,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const pathname = context.url.pathname;
   // Keep phone & direct B2B contact on enterprise / corporate pages
   const isEnterprisePage = pathname.includes('/doanh-nghiep') || pathname.includes('/corporate');
-  if (isEnterprisePage) return response;
+  // This landing has an explicitly supplied local instructor and verified contact.
+  // Keep the legacy retail sanitizer on other routes; it would relabel Zalo/hotline here.
+  const isVerifiedLocalLanding = /^\/hoc-boi-tphcm\/lai-thieu\/?$/.test(pathname);
+  if (isEnterprisePage || isVerifiedLocalLanding) return response;
 
   const headers = new Headers(response.headers);
   headers.delete('content-length');

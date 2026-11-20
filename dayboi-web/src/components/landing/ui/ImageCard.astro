@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import type { ImageCardData } from '../../../data/localLandingPages';
+export interface Props { card: ImageCardData; variant?: 'audience' | 'course'; }
+const { card, variant = 'audience' } = Astro.props;
+---
+<a class:list={['sfl-image-card', `sfl-image-card--${variant}`]} href={card.href}>
+  <img src={card.image} alt={card.imageAlt} width="600" height="450" loading="lazy" decoding="async" style={card.imagePosition ? `object-position:${card.imagePosition}` : undefined} />
+  <div class="sfl-image-card-content">
+    <span class="sfl-card-icon"><Icon name={card.icon} /></span>
+    <h3>{card.title}</h3><p>{card.description}</p>
+    <span class="sfl-circle-arrow"><Icon name="chevron" /><span class="sfl-sr-only">Xem {card.title.toLowerCase()}</span></span>
+  </div>
+</a>

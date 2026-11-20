@@ -1,0 +1,14 @@
+---
+import Icon from './ui/Icon.astro';
+import type { LocalLandingData } from '../../data/localLandingPages';
+export interface Props { instructor: LocalLandingData['instructor']; }
+const { instructor } = Astro.props;
+---
+<section class="sfl-instructor sfl-container" id="huan-luyen-vien" aria-labelledby="sfl-instructor-title">
+  <div class="sfl-instructor-visual">
+    {instructor.image ? <img src={instructor.image} alt={instructor.name} width="450" height="500" loading="lazy" /> : <div class="sfl-instructor-identity"><span class="sfl-instructor-medal"><Icon name="medal" /></span><span>HUẤN LUYỆN VIÊN</span><strong>{instructor.name.replace('Thầy ', '')}</strong><small>{instructor.qualification}</small><Icon name="wave" /></div>}
+  </div>
+  <div class="sfl-instructor-copy"><h2 id="sfl-instructor-title"><Icon name="medal" />Đồng hành cùng {instructor.name}</h2><p><strong>{instructor.qualification}</strong> · {instructor.description}</p>
+    <div class="sfl-instructor-badges">{instructor.badges.map(badge => <div><Icon name={badge.icon} /><span><strong>{badge.title}</strong><small>{badge.text}</small></span></div>)}</div>
+  </div>
+</section>

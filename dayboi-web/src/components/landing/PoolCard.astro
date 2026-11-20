@@ -1,0 +1,28 @@
+---
+import Icon from './ui/Icon.astro';
+import type { Pool } from '../../data/localLandingPages';
+export interface Props { pool: Pool; phoneHref: string; instructorLabel: string; }
+const { pool, phoneHref, instructorLabel } = Astro.props;
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pool.name}, ${pool.address}`)}`;
+---
+<article class="sfl-pool-card" id={pool.id} data-pool data-name={`${pool.name} ${pool.address} ${pool.oldAddress}`} data-zone={pool.zone} data-type={pool.type}>
+  <div class="sfl-pool-image">
+    {pool.image ? <img src={pool.image} alt={pool.imageAlt} width="640" height="360" loading="lazy" decoding="async" /> : <div class="sfl-pool-placeholder"><Icon name="swim" /><span>Ảnh đang cập nhật</span></div>}
+    <span class:list={['sfl-pool-tag', {'sfl-pool-tag--private':pool.type === 'residential'}]}>{pool.tag}</span>
+  </div>
+  <div class="sfl-pool-content"><h3>{pool.name}</h3><p><Icon name="pin" />{pool.address}</p>
+    <button type="button" class="sfl-pool-details" data-open-dialog={`detail-${pool.id}`} aria-label={`Xem chi tiết ${pool.name}`}><Icon name="chevron" /></button>
+  </div>
+</article>
+<dialog class="sfl-pool-dialog" id={`detail-${pool.id}`} aria-labelledby={`detail-title-${pool.id}`}>
+  <div class="sfl-dialog-inner">
+    <button type="button" class="sfl-dialog-close" data-close-dialog aria-label="Đóng chi tiết hồ bơi"><Icon name="close" /></button>
+    {pool.image && <img class="sfl-dialog-image" src={pool.image} alt={pool.imageAlt} width="640" height="360" loading="lazy" />}
+    <span class="sfl-dialog-type">{pool.type === 'residential' ? 'HỒ NỘI KHU CHUNG CƯ' : 'HỒ DỊCH VỤ / CÔNG CỘNG'}</span>
+    <h2 id={`detail-title-${pool.id}`}>{pool.name}</h2>
+    <p><strong>Địa chỉ:</strong> {pool.address}</p><p><strong>Địa chỉ cũ:</strong> {pool.oldAddress}</p>
+    <p>{pool.services}</p><p class="sfl-dialog-notice">{pool.detail}</p>
+    <p>HLV tư vấn khu vực: <strong>{instructorLabel}.</strong> Hotline xếp lớp tách biệt với quầy vé hoặc BQL hồ.</p>
+    <div class="sfl-dialog-actions"><a href={phoneHref} class="sfl-button sfl-button--orange"><Icon name="phone" />Tư vấn xếp lớp</a><a href={mapsUrl} class="sfl-button sfl-button--light" target="_blank" rel="noopener noreferrer"><Icon name="pin" />Xem bản đồ</a></div>
+  </div>
+</dialog>

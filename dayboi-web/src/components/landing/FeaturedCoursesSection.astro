@@ -1,0 +1,12 @@
+---
+import SectionHeading from './ui/SectionHeading.astro';
+import ImageCard from './ui/ImageCard.astro';
+import Icon from './ui/Icon.astro';
+import type { ImageCardData } from '../../data/localLandingPages';
+export interface Props { courses: ImageCardData[]; }
+const { courses } = Astro.props;
+---
+<section class="sfl-courses sfl-container" id="khoa-hoc" aria-labelledby="sfl-courses-title">
+  <div class="sfl-courses-top"><SectionHeading title="Các khóa học nổi bật" id="sfl-courses-title" /><a href="#dang-ky" class="sfl-tuition"><Icon name="headset" /><span><strong>Học phí rõ ràng, lộ trình phù hợp</strong><small>Liên hệ nhận báo giá · Vé hồ tính riêng</small></span></a></div>
+  <div class="sfl-grid-four">{courses.map(card => <ImageCard card={card} variant="course" />)}</div>
+</section>

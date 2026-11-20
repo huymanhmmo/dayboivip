@@ -1,0 +1,7 @@
+---
+import Icon from './ui/Icon.astro';
+import type { LocalLandingData } from '../../data/localLandingPages';
+export interface Props { local: LocalLandingData['local']; name: string; }
+const { local, name } = Astro.props;
+---
+<section class="sfl-local sfl-container" id="khu-vuc" aria-labelledby="sfl-local-title"><div class="sfl-local-panel"><h2 id="sfl-local-title"><Icon name="pin" /><span>Thông tin nhanh<br/>khu vực {name}</span></h2><div><ul>{local.points.map(point => <li><Icon name="check" />{point}</li>)}</ul><nav aria-label="Phường lân cận" class="sfl-neighbors"><span>Lân cận:</span>{local.neighbors.map(link => <a href={link.href}>{link.label}</a>)}</nav></div><figure><img src={local.image} alt={local.imageAlt} width="600" height="400" loading="lazy" /><figcaption>The Emerald Golf View · Quốc lộ 13</figcaption></figure></div></section>

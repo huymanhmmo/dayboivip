@@ -1,0 +1,11 @@
+---
+import SectionHeading from './ui/SectionHeading.astro';
+import ImageCard from './ui/ImageCard.astro';
+import type { ImageCardData } from '../../data/localLandingPages';
+export interface Props { cards: ImageCardData[]; }
+const { cards } = Astro.props;
+---
+<section class="sfl-audiences sfl-container" aria-labelledby="sfl-audiences-title">
+  <SectionHeading title="Chọn lớp theo nhu cầu" id="sfl-audiences-title" center />
+  <div class="sfl-grid-four">{cards.map(card => <ImageCard card={card} />)}</div>
+</section>

@@ -1,0 +1,28 @@
+---
+import Icon from './ui/Icon.astro';
+import WaveDivider from './ui/WaveDivider.astro';
+import type { LocalLandingData } from '../../data/localLandingPages';
+export interface Props { data: LocalLandingData; }
+const { data } = Astro.props;
+---
+<section class="sfl-hero" aria-labelledby="sfl-page-title">
+  <picture class="sfl-hero-picture">
+    <source media="(max-width: 700px)" srcset={data.heroMobile} />
+    <img src={data.heroImage} srcset={`${data.heroImage.replace('.webp','-960.webp')} 960w, ${data.heroImage} 1680w`} sizes="100vw" alt="Ảnh minh họa huấn luyện viên hướng dẫn trẻ tập với ván bơi" width="1680" height="945" fetchpriority="high" decoding="async" />
+  </picture>
+  <div class="sfl-container sfl-hero-inner">
+    <div class="sfl-hero-copy">
+      <p class="sfl-eyebrow">HỆ THỐNG HỌC BƠI CHUYÊN NGHIỆP</p>
+      <h1 id="sfl-page-title">{data.heroTitle}<br/><em>{data.name}, {data.province}</em></h1>
+      <p class="sfl-hero-subtitle">{data.subtitle}</p>
+      <p class="sfl-hero-description">Lớp bơi cho trẻ em, người lớn và người sợ nước. {data.instructor.name} – {data.instructor.qualification} đồng hành cùng bạn, từ bước làm quen đến tự tin bơi đúng kỹ thuật.</p>
+      <div class="sfl-hero-badges"><div><Icon name="medal" /><span>Huấn luyện viên<br/><strong>chuyên môn cao</strong></span></div><div><Icon name="route" /><span>Lộ trình 8–12 buổi<br/><strong>theo trình độ thực tế</strong></span></div></div>
+      <div class="sfl-hero-actions">
+        <a href="#dang-ky" class="sfl-button sfl-button--orange">Đăng ký học ngay <Icon name="arrow" /></a>
+        <a href="#khoa-hoc" class="sfl-button sfl-button--light"><Icon name="search" />Xem khóa học</a>
+        <a href={data.zaloHref} class="sfl-button sfl-button--light sfl-button--zalo" target="_blank" rel="noopener noreferrer"><Icon name="chat" />Liên hệ Zalo</a>
+      </div>
+    </div>
+  </div>
+  <WaveDivider />
+</section>

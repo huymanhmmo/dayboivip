@@ -1,0 +1,58 @@
+---
+import PoolCard from './PoolCard.astro';
+import Icon from './ui/Icon.astro';
+import SectionHeading from './ui/SectionHeading.astro';
+import type { Pool } from '../../data/localLandingPages';
+export interface Props { pools: Pool[]; name: string; phoneHref: string; instructorLabel: string; }
+const { pools, name, phoneHref, instructorLabel } = Astro.props;
+const zones = Array.from(new Map(pools.map(pool => [pool.zone, pool.area || pool.zone])).entries());
+---
+<section class="sfl-pool-section" id="dia-diem" aria-labelledby="sfl-pools-title">
+  <div class="sfl-container">
+    <SectionHeading title="Tìm hồ bơi gần bạn" id="sfl-pools-title" icon="pin" description={`Tham khảo các hồ bơi tại ${name} và khu vực giáp ranh TP.HCM.`} />
+    <form class="sfl-pool-filters" role="search" aria-label="Tìm hồ bơi" data-pool-filters>
+      <label class="sfl-filter sfl-filter--search"><Icon name="search" /><span class="sfl-sr-only">Tên hồ bơi hoặc địa chỉ</span><input type="search" name="query" placeholder="Tìm theo tên hồ bơi, đường…" autocomplete="off" /></label>
+      <label class="sfl-filter"><Icon name="pin" /><span class="sfl-sr-only">Khu vực</span><select name="zone" aria-label="Khu vực"><option value="">Khu vực: {name}</option>{zones.map(([value,label]) => <option value={value}>{label}</option>)}</select></label>
+      <label class="sfl-filter"><Icon name="swim" /><span class="sfl-sr-only">Loại hồ bơi</span><select name="type" aria-label="Loại hồ bơi"><option value="">Loại hồ bơi: Tất cả</option><option value="public">Dịch vụ / Công cộng</option><option value="residential">Nội khu chung cư</option></select></label>
+      <button type="submit" class="sfl-button sfl-button--blue">Tìm hồ bơi</button>
+    </form>
+    <p class="sfl-filter-status sfl-sr-only" role="status" aria-live="polite" data-pool-status>Hiển thị {pools.length} hồ bơi.</p>
+    <div class="sfl-pool-grid">{pools.map(pool => <PoolCard pool={pool} phoneHref={phoneHref} instructorLabel={instructorLabel} />)}</div>
+    <div class="sfl-empty" data-pool-empty hidden><Icon name="search" /><p>Chưa tìm thấy hồ bơi phù hợp. Hãy thử tên khác hoặc bỏ bớt bộ lọc.</p><button type="button" class="sfl-button sfl-button--blue" data-reset-filters>Xem tất cả hồ bơi</button></div>
+    <div class="sfl-pool-notices"><div><Icon name="swim" /><p><strong>Hồ dịch vụ, công cộng</strong><span>Học phí giảng dạy chưa gồm vé vào hồ.</span></p></div><div><Icon name="building" /><p><strong>Dành cho cư dân nội khu</strong><span>Cần quyền sử dụng hồ và BQL chấp thuận HLV.</span></p></div></div>
+  </div>
+</section>
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-pool-filters]');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-pool]'));
+  const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase().trim();
+  const filter = () => {
+    if (!form) return;
+    const data = new FormData(form);
+    const query = normalize(String(data.get('query') || ''));
+    const zone = String(data.get('zone') || '');
+    const type = String(data.get('type') || '');
+    let count = 0;
+    cards.forEach(card => {
+      const match = query.split(/\s+/).every(word => normalize(card.dataset.name || '').includes(word)) && (!zone || card.dataset.zone === zone) && (!type || card.dataset.type === type);
+      card.hidden = !match;
+      if (match) count++;
+    });
+    const status = document.querySelector<HTMLElement>('[data-pool-status]');
+    if (status) { status.textContent = `Hiển thị ${count} trên ${cards.length} hồ bơi.`; status.classList.remove('sfl-sr-only'); }
+    const empty = document.querySelector<HTMLElement>('[data-pool-empty]');
+    if (empty) empty.hidden = count > 0;
+  };
+  form?.addEventListener('submit', event => { event.preventDefault(); filter(); });
+  form?.addEventListener('input', filter);
+  form?.addEventListener('change', filter);
+  document.querySelector('[data-reset-filters]')?.addEventListener('click', () => { form?.reset(); filter(); form?.querySelector('input')?.focus(); });
+  document.querySelectorAll<HTMLButtonElement>('[data-open-dialog]').forEach(button => button.addEventListener('click', () => {
+    const dialog = document.getElementById(button.dataset.openDialog || '') as HTMLDialogElement | null;
+    dialog?.showModal();
+  }));
+  document.querySelectorAll<HTMLDialogElement>('.sfl-pool-dialog').forEach(dialog => {
+    dialog.querySelector('[data-close-dialog]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+  });
+</script>

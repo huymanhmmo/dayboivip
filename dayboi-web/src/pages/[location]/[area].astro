@@ -1,5 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import LocalLandingPage from '../../components/landing/LocalLandingPage.astro';
+import { laiThieuLanding } from '../../data/localLandingPages';
 import { publishedLocationAreas } from '../../data/locationAreas.js';
 import { getAllCommunePages, getCommunesForLocation } from '../../data/communePages.js';
 import { getCommuneSeoMeta } from '../../utils/geoCommunes.js';
@@ -275,7 +277,7 @@ if (isCommune) {
 }
 ---
 
-<PageLayout
+{isCommune && commune.parentSlug === 'hoc-boi-tphcm' && commune.slug === 'lai-thieu' ? <LocalLandingPage data={laiThieuLanding} /> : <PageLayout
   title={title}
   description={description}
   canonical={canonicalUrl}
@@ -829,4 +831,4 @@ if (isCommune) {
       </section>
     )}
   </article>
-</PageLayout>
+</PageLayout>}

@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+export interface Props { title: string; id?: string; icon?: string; center?: boolean; description?: string; }
+const { title, id, icon, center = false, description } = Astro.props;
+---
+<div class:list={['sfl-heading', { 'sfl-heading--center': center }]}>
+  <h2 id={id}>{icon && <Icon name={icon} />}<span>{title}</span><Icon name="wave" class="sfl-heading-wave" /></h2>
+  {description && <p>{description}</p>}
+</div>

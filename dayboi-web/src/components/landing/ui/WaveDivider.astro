@@ -1,0 +1,9 @@
+---
+export interface Props { class?: string; }
+const { class: className = '' } = Astro.props;
+---
+<svg class:list={['sfl-wave', className]} viewBox="0 0 1440 140" width="1440" height="140" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="currentColor" opacity=".22" d="M0 12C190 210 400-28 706 72s426-67 734-25v93H0Z" />
+  <path fill="currentColor" opacity=".48" d="M0 54C260 193 443-7 727 75s457 23 713-47v112H0Z" />
+  <path fill="currentColor" d="M0 103C259 112 365 7 690 95s543-73 750-16v61H0Z" />
+</svg>

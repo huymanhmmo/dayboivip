@@ -4,7 +4,10 @@
  * Generated for Timeless pSEO Architecture (DayBoi.vip).
  */
 
+import { laiThieuPools } from './laiThieuPools.js';
+
 export const communePools = [
+  ...laiThieuPools,
   {
     "provinceSlug": "hoc-boi-ha-noi",
     "targetCommune": "an-khanh",

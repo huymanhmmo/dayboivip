@@ -1,0 +1,12 @@
+---
+import Icon from './ui/Icon.astro';
+import type { LocalLandingData } from '../../data/localLandingPages';
+export interface Props { steps: LocalLandingData['journey']; image: string; }
+const { steps, image } = Astro.props;
+---
+<section class="sfl-journey" id="lo-trinh" aria-labelledby="sfl-journey-title">
+  <img class="sfl-journey-photo" src={image} alt="Minh họa người bơi rèn luyện kỹ thuật dưới nước" loading="lazy" width="1680" height="945" />
+  <div class="sfl-container"><div class="sfl-journey-intro"><h2 id="sfl-journey-title">Lộ trình học 8–12 buổi</h2><p>Từng bước vững vàng, từ làm quen đến bơi đúng kỹ thuật.<br/>45–60 phút/buổi · Điều chỉnh theo khả năng thực tế.</p></div>
+    <ol class="sfl-journey-steps">{steps.map(step => <li><span class="sfl-step-icon"><Icon name={step.icon} /></span><Icon name="swim" /><strong>{step.period}</strong><h3>{step.title}</h3><p>{step.description}</p><Icon name="chevron" class="sfl-step-arrow" /></li>)}</ol>
+  </div>
+</section>

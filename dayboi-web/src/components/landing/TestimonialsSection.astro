@@ -1,0 +1,7 @@
+---
+import Icon from './ui/Icon.astro';
+import type { LocalLandingData } from '../../data/localLandingPages';
+export interface Props { testimonials: LocalLandingData['testimonials']; areaName: string; }
+const { testimonials, areaName } = Astro.props;
+---
+<section class="sfl-testimonials sfl-container" aria-labelledby="sfl-testimonials-title"><h2 id="sfl-testimonials-title"><Icon name="chat" />Học viên nói gì về chúng tôi?</h2><p class="sfl-testimonial-source">Chia sẻ trên <a href="/gioi-thieu/#cam-nhan-hoc-vien">trang giới thiệu Swim For Life</a>, không riêng lớp tại {areaName}.</p><div class="sfl-testimonial-grid">{testimonials.map(item => <figure><img src={item.image} alt={item.name} width="72" height="72" loading="lazy" /><div><blockquote>“{item.quote}”</blockquote><figcaption><strong>{item.name}</strong><span>{item.role}</span></figcaption></div></figure>)}</div></section>

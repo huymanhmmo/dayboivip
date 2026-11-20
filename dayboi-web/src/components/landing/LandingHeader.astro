@@ -1,0 +1,32 @@
+---
+import Icon from './ui/Icon.astro';
+export interface Props { hotline: string; phoneHref: string; }
+const { hotline, phoneHref } = Astro.props;
+const links = [{label:'Trang chủ',href:'/'},{label:'Khóa học',href:'#khoa-hoc'},{label:'Lớp bơi',href:'#dia-diem'},{label:'Về chúng tôi',href:'/gioi-thieu/'},{label:'Tin tức',href:'/tin-tuc/'}];
+---
+<header class="sfl-header">
+  <div class="sfl-container sfl-header-inner">
+    <a href="/" class="sfl-brand" aria-label="Swim For Life Việt Nam – Trang chủ"><Icon name="wave" /><span><strong>Swim For Life Việt Nam</strong><small>Học bơi an toàn – Kỹ năng trọn đời</small></span></a>
+    <nav class="sfl-navigation" aria-label="Điều hướng chính" id="sfl-navigation">
+      {links.map(link => <a href={link.href} aria-current={link.href === '#dia-diem' ? 'location' : undefined}>{link.label}</a>)}
+    </nav>
+    <a href={phoneHref} class="sfl-header-phone" aria-label={`Gọi tư vấn ${hotline}`}><Icon name="phone" /><span>{hotline}</span></a>
+    <a href="#dang-ky" class="sfl-button sfl-button--orange sfl-header-cta"><Icon name="headset" />Tư vấn & đăng ký</a>
+    <button class="sfl-menu-toggle" type="button" aria-label="Mở menu" aria-controls="sfl-navigation" aria-expanded="false"><Icon name="menu" /></button>
+  </div>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.sfl-menu-toggle');
+  const nav = document.querySelector<HTMLElement>('.sfl-navigation');
+  const closeMenu = () => { toggle?.setAttribute('aria-expanded', 'false'); toggle?.setAttribute('aria-label', 'Mở menu'); nav?.classList.remove('is-open'); };
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+    nav?.classList.toggle('is-open', open);
+  });
+  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && nav?.classList.contains('is-open')) { closeMenu(); toggle?.focus(); } });
+  document.addEventListener('click', event => { if (!(event.target as HTMLElement).closest('.sfl-header')) closeMenu(); });
+  matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
+</script>

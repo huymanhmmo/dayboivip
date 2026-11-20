@@ -1,0 +1,27 @@
+{
+  "page": "dist/hoc-boi-tphcm/lai-thieu/index.html",
+  "h1": 1,
+  "canonical": "https://dayboi.vip/hoc-boi-tphcm/lai-thieu/",
+  "links": 28,
+  "images": 22,
+  "errors": [],
+  "phoneLinks": [
+    "tel:0986456678"
+  ],
+  "zaloLinks": [
+    "https://zalo.me/0986456678"
+  ],
+  "mockupAssets": [],
+  "schemaTypes": [
+    "CollectionPage",
+    "ItemList",
+    "Person",
+    "BreadcrumbList"
+  ],
+  "unchangedTemplates": {
+    "hoc-boi-tphcm/binh-hoa": true,
+    "hoc-boi-tphcm/thuan-an": true,
+    "hoc-boi-tphcm/thuan-giao": true,
+    "khoa-hoc-boi/tre-em": true
+  }
+}

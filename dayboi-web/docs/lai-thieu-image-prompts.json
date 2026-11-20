@@ -1,0 +1,26 @@
+{
+  "tool": "image_gen built-in",
+  "purpose": "Illustrative assets, not documentary photographs or the named instructor",
+  "prompts": [
+    [
+      "hero",
+      "Use case: photorealistic-natural. Create ONE standalone photographic website hero asset, landscape 16:9. In a beautiful brilliant turquoise outdoor swimming pool in Vietnam, a friendly young Vietnamese male swimming coach in plain navy rashguard is safely guiding a happy Vietnamese boy aged 7 wearing blue swim goggles, both hands of boy resting on a blue kickboard. Eye-level water surface, realistic sunlit splashes. Boy in center-right, coach on far right behind him. Leave leftmost 40 percent as calm softly defocused deep blue pool water and soft foliage, for HTML headline overlay. Rich vivid aqua/cyan water, navy clothing, daylight, premium family swimming class advertising photography. Medium wide view, torsos at water level, ample safe margins for responsive crop. NO text, logos, watermark, UI, collage or borders. These are fictional illustrative people, not portraits of any real named instructor."
+    ],
+    [
+      "children",
+      "Use case: photorealistic-natural. ONE standalone landscape 4:3 photographic asset for a swim school card. A happy Vietnamese boy age 7 wearing blue swimming goggles smiling in a crystal clear turquoise outdoor swimming pool, holding a blue kickboard with both hands, head and shoulders, eye-level, vivid aqua water and sparkling sunlit ripples, natural high quality commercial sports photography. Face centered in top-middle with safe margins, matched bright cyan/navy palette. No text, logos, watermark, UI, borders or collage. Fictional illustrative student."
+    ],
+    [
+      "adults",
+      "Use case: photorealistic-natural. ONE standalone landscape 4:3 photographic asset for a swim school card. Young adult Vietnamese man aged 28 with short black hair and dark blue goggles at water surface in a clean brilliant turquoise outdoor lap pool, head and shoulders in profile looking toward the right and upward, relaxed and confident after swimming. Natural sunshine, sparkling aqua water foreground, softly defocused pool background. Premium family swimming sports photography, face centered, safe margins. No text, logos, watermark, UI, borders or collage. Fictional illustrative adult."
+    ],
+    [
+      "confidence",
+      "Use case: photorealistic-natural. ONE standalone landscape 4:3 photographic asset for a swim school card. Young adult Vietnamese woman aged 30 with dark wet hair swept back in a clear turquoise outdoor swimming pool, shoulders at water level, eyes closed with a peaceful relieved smile, leaning head slightly back as she grows comfortable in water, safe shallow pool setting. Brilliant cyan aqua water, soft natural sunshine, authentic photographic detail. Upper half face with generous safe margins, premium swim school advertising photograph. No text, logos, watermark, UI, borders or collage. Fictional illustrative adult."
+    ],
+    [
+      "journey",
+      "Use case: photorealistic-natural. ONE standalone wide landscape 16:9 photographic background asset for a swimming lesson timeline. A Vietnamese adult recreational swimmer with blue goggles performing freestyle in crystal clear turquoise swimming pool, captured at waterline and slightly underwater, stretching one arm forward toward right, natural bubbles and light caustics. Swimmer entirely on right half with ample margin around hand and head. Left half is open turquoise water with soft blue underwater light and no people to allow separate HTML overlay. Brilliant aqua and cyan, realistic dynamic sports photography. No text, logos, watermark, UI, borders or collage."
+    ]
+  ]
+}

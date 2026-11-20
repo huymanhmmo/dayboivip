@@ -1,0 +1,8 @@
+---
+import SectionHeading from './ui/SectionHeading.astro';
+import Icon from './ui/Icon.astro';
+import type { LocalLandingData } from '../../data/localLandingPages';
+export interface Props { benefits: LocalLandingData['benefits']; }
+const { benefits } = Astro.props;
+---
+<section class="sfl-benefits sfl-container" aria-labelledby="sfl-benefits-title"><SectionHeading title="Vì sao chọn Swim For Life?" id="sfl-benefits-title" /><div class="sfl-benefit-grid">{benefits.map(benefit => <article><Icon name={benefit.icon} /><h3>{benefit.title}</h3><p>{benefit.description}</p></article>)}</div></section>

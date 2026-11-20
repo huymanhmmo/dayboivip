@@ -1,0 +1,7 @@
+---
+import Icon from './ui/Icon.astro';
+import WaveDivider from './ui/WaveDivider.astro';
+export interface Props { name: string; hotline: string; phoneHref: string; instructorLabel: string; }
+const { name, hotline, phoneHref, instructorLabel } = Astro.props;
+---
+<section class="sfl-enrollment" id="dang-ky" aria-labelledby="sfl-enrollment-title"><WaveDivider class="sfl-cta-wave-top" /><div class="sfl-container sfl-enrollment-inner"><div><h2 id="sfl-enrollment-title">Đăng ký tư vấn lớp học bơi<br/><em>tại {name} hôm nay</em></h2><p>{instructorLabel}</p></div><ul>{['Tư vấn lộ trình phù hợp','Hỗ trợ chọn hồ và lịch học','Báo rõ học phí và vé hồ'].map(text => <li><Icon name="check" />{text}</li>)}</ul><a href={phoneHref} class="sfl-button sfl-button--orange sfl-enrollment-phone"><Icon name="phone" /><span><small>Hotline tư vấn</small><strong>{hotline}</strong></span></a></div><WaveDivider class="sfl-cta-wave-bottom" /></section>
