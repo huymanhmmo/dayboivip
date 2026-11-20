@@ -275,6 +275,17 @@ if (isCommune) {
     ],
   };
 }
+const shouldNoIndex = isCommune && !commune.hasVenues;
+const EN_INDEXABLE_PROVINCES = new Set([
+  'hoc-boi-ha-noi',
+  'hoc-boi-tphcm',
+  'hoc-boi-da-nang',
+  'hoc-boi-khanh-hoa',
+  'hoc-boi-hai-phong',
+  'hoc-boi-hue',
+  'hoc-boi-can-tho',
+]);
+const hasIndexableEnAlternate = !isCommune || (commune.hasVenues && EN_INDEXABLE_PROVINCES.has(commune.parentSlug));
 ---
 
 {isCommune && commune.parentSlug === 'hoc-boi-tphcm' && commune.slug === 'lai-thieu' ? <LocalLandingPage data={laiThieuLanding} /> : <PageLayout
@@ -284,6 +295,8 @@ if (isCommune) {
   image={pageImage}
   breadcrumbs={breadcrumbs}
   schema={schema}
+  noindex={shouldNoIndex}
+  alternateUrl={hasIndexableEnAlternate ? undefined : ''}
 >
   <article class="area-page">
     {isCommune ? (

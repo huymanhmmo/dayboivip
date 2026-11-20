@@ -5,7 +5,7 @@
  */
 import '../styles/global.css';
 import '../styles/design-system.css';
-import { getAlternateUrl } from '../utils/i18nRouting.js';
+import { getReciprocalAlternateUrl } from '../utils/i18nRouting.js';
 
 export interface Props {
   title: string;
@@ -43,7 +43,9 @@ const fullTitle = titleAlreadyHasBrand || titleWithoutRepeatedBrand.length > 43
   : `${titleWithoutRepeatedBrand} | ${shortBrand}`;
 const siteUrl = 'https://dayboi.vip';
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
-const effectiveAlternateUrl = alternateUrl || getAlternateUrl(Astro.url.pathname, lang);
+const effectiveAlternateUrl = noIndex
+  ? null
+  : (alternateUrl !== undefined ? (alternateUrl || null) : getReciprocalAlternateUrl(Astro.url.pathname, lang));
 ---
 
 <!DOCTYPE html>
@@ -70,18 +72,18 @@ const effectiveAlternateUrl = alternateUrl || getAlternateUrl(Astro.url.pathname
   <link rel="canonical" href={currentUrl} />
   
   <!-- Hreflang Tags for Multilingual SEO -->
-  {lang === 'vi' && (
+  {!noIndex && lang === 'vi' && (
     <>
       <link rel="alternate" hreflang="vi" href={currentUrl} />
       {effectiveAlternateUrl && <link rel="alternate" hreflang="en" href={new URL(effectiveAlternateUrl, siteUrl).href} />}
       <link rel="alternate" hreflang="x-default" href={currentUrl} />
     </>
   )}
-  {lang === 'en' && (
+  {!noIndex && lang === 'en' && (
     <>
       <link rel="alternate" hreflang="en" href={currentUrl} />
       {effectiveAlternateUrl && <link rel="alternate" hreflang="vi" href={new URL(effectiveAlternateUrl, siteUrl).href} />}
-      <link rel="alternate" hreflang="x-default" href={new URL(effectiveAlternateUrl || '/', siteUrl).href} />
+      {effectiveAlternateUrl && <link rel="alternate" hreflang="x-default" href={new URL(effectiveAlternateUrl, siteUrl).href} />}
     </>
   )}
   
