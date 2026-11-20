@@ -18,7 +18,7 @@ export function buildPoolDetail(venue:Venue):PoolDetailData {
   const access=residential?'Chỉ tổ chức khi học viên có quyền sử dụng hồ và BQL đồng ý tiếp nhận HLV. Không coi đây là hồ bán vé công cộng.':'Cần xác nhận giá vé, khung giờ và khả năng tiếp nhận HLV/lớp học với đơn vị vận hành trước khi hẹn buổi đầu.';
   const nearby=venue.nearby.map(id=>laiThieuVenueCatalog.find(v=>v.id===id)).filter(Boolean).map(v=>({name:v!.name,href:v!.detailHref,description:v!.summary}));
   const title=`Học bơi ${venue.shortName} | Lớp kèm riêng & thông tin hồ`;
-  const description=`Tìm hiểu học bơi tại ${venue.shortName}: địa chỉ, tư liệu, điều kiện sử dụng hồ và lớp trẻ em, người lớn. Tư vấn cùng thầy Lê Văn Thông: 0986.456.678.`;
+  const description=`Tìm hiểu học bơi tại ${venue.shortName}: địa chỉ, tư liệu, điều kiện sử dụng hồ và lớp cho trẻ em, người lớn. Tư vấn cùng thầy Lê Văn Thông: 0986.456.678.`;
   return {
     id:venue.id,slug:venue.slug,name:venue.name,shortName:venue.shortName,areaName,areaHref,
     variant:residential?'residential':'public',canonical:`https://dayboi.vip${venue.detailHref}`,title,description,updatedAt:'2026-11-20',noIndex:!venue.indexable,

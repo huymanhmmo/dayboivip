@@ -183,5 +183,5 @@ const venues = [
   },
 ];
 
-export const laiThieuVenueCatalog = venues.map(v=>({...v,status:'candidate',indexable:v.indexable===true,detailHref:`/${v.slug}/`,category:v.category||(v.type==='residential'?'Hồ nội khu cư dân':'Hồ bơi dịch vụ / công cộng')}));
+export const laiThieuVenueCatalog = venues.map(v=>({...v,status:'candidate',indexable:v.indexable!==false,detailHref:`/${v.slug}/`,category:v.category||(v.type==='residential'?'Hồ nội khu cư dân':'Hồ bơi dịch vụ / công cộng')}));
 export const futureLaiThieuProjects = ['Astral City','Lavita Thuận An','Anderson Park','Diamond Boulevard','Legacy Prime','A&T Sky Garden','KĐT Hồ Gươm Xanh'].map(name=>({name,status:'future',indexable:false,note:'Cần xác nhận vận hành hồ và điều kiện tổ chức lớp trước khi tạo trang tuyển sinh.'}));
