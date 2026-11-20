@@ -1,8 +1,10 @@
 # Tái sử dụng Pool Detail Template
 
+Quy trình áp dụng cho mọi xã/phường và địa điểm được tổng hợp tại [dayboi-local-page-design](skills/dayboi-local-page-design/SKILL.md). Các tên file Lái Thiêu dưới đây mô tả triển khai hiện có; header/footer, factory và registry vẫn cần tham số hóa trước khi dùng cho khu khác.
+
 ## Tạo trang hồ tiếp theo
 
-1. Tạo một `PoolDetailData` độc lập trong `src/data/laiThieuVenueCatalog.js` và file dữ liệu riêng khi hồ có nội dung chuyên sâu; import kiểu từ `poolDetailTypes.ts`.
+1. Thêm bản ghi vào catalog của đúng khu vực; `src/data/laiThieuVenueCatalog.js` chỉ phục vụ cụm Lái Thiêu. Catalog giữ thông tin gốc, adapter/factory dựng `PoolDetailData` theo `poolDetailTypes.ts`; nội dung chuyên sâu có thể dùng module riêng theo ID.
 2. Điền tên, slug, canonical, metadata, địa chỉ, liên hệ, nguồn thông tin và dữ liệu từng section. Kiểm tra lại nội dung guide/FAQ theo hồ mới, không đổi tên trên một bộ nội dung cũ rồi coi là đã khảo sát.
 3. Tạo route Astro mỏng:
 
@@ -14,13 +16,13 @@ import { anotherPool } from '../data/poolDetailPages';
 <PoolDetailPage pool={anotherPool} />
 ```
 
-4. Bổ sung `detailHref` cho hồ trong `laiThieuPools.js`. Hub và menu địa phương dùng nguồn này nên sẽ có liên kết chính xác tới trang mới.
+4. Đồng bộ slug/detailHref từ catalog qua registry và adapter, tránh khai báo thêm một URL độc lập trong markup. Với Lái Thiêu, `laiThieuPools.js` cấp danh sách này cho hub/menu; khu mới cần cấu hình và adapter của chính khu đó.
 5. Đăng ký bài vào `blogPosts.js` nếu cần xuất hiện trong thư mục tư vấn. Chạy build và audit trước khi xuất bản.
 
 ## Dữ liệu và trạng thái
 
 - `variant: 'public'`: hồ dịch vụ/công cộng. `variant: 'residential'`: hồ nội khu; cần `accessNote` giải thích quyền sử dụng và quy định tiếp nhận HLV đã được xác nhận.
-- `photos` chỉ chứa ảnh thực tế đúng địa điểm. Mỗi ảnh có src, alt, caption, width, height. Khi rỗng, component dùng `galleryIllustrations` với nhãn minh họa và ghi chú chờ ảnh khảo sát.
+- `photos` chứa tư liệu đúng địa điểm, có kind/caption phân biệt ảnh hồ, tư liệu tiện ích, phối cảnh, mặt bằng hoặc ngoại thất. Mỗi ảnh có src, alt, caption, width, height; không gọi mọi loại là ảnh thực tế hồ. Khi rỗng, component dùng `galleryIllustrations` có nhãn minh họa và ghi chú phù hợp.
 - `facilities.status`: verified, unverified, unavailable, updating. Chỉ verified mới có dấu kiểm xác nhận.
 - Chỉ đưa tọa độ hoặc vị trí hồ lên bản đồ khi đã xác minh. Nhật An hiện dùng bản đồ khu vực, không ghim hồ suy đoán.
 - Học phí, vé hồ và chính sách là dữ liệu riêng. Không điền giá hoặc cam kết khi chưa có nguồn.

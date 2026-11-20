@@ -1,4 +1,4 @@
 interface:
-  display_name: "Thiết kế hồ bơi Lái Thiêu"
-  short_description: "Thiết kế trang hồ bơi theo mẫu Nhật An và dữ liệu riêng"
+  display_name: "Lái Thiêu — hồ sơ thiết kế"
+  short_description: "Áp dụng các quyết định riêng của cụm Lái Thiêu"
   default_prompt: "Dùng $lai-thieu-pool-design để tạo hoặc cập nhật trang hồ bơi trong cụm Lái Thiêu theo mẫu Nhật An."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thiết kế trang địa phương Swim For Life"
+  short_description: "Thiết kế trang xã/phường và địa điểm dạy bơi"
+  default_prompt: "Dùng $dayboi-local-page-design để thiết kế trang xã/phường và các địa điểm dạy bơi trong khu vực được yêu cầu, tái sử dụng mẫu đã duyệt và dữ liệu riêng."
