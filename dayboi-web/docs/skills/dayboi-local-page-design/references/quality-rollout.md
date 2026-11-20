@@ -14,7 +14,9 @@
 
 Với thay đổi website: dùng script build hiện có (`npm run build`) và audit SEO (`npm run audit:seo:strict`) trong đúng app/checkout. Chạy preview từ build hoàn tất rồi kiểm tra trình duyệt. Build thành công không chứng minh menu, gallery, form hay bản production hoạt động.
 
-Hai script `scripts/audit-lai-thieu-pages.mjs` và `scripts/audit-responsive-pages.mjs` hiện còn phụ thuộc catalog/route Lái Thiêu. Khi mở vùng khác, tham số hóa hoặc tạo cấu hình kiểm tra theo region/catalog thực rồi chạy; không dùng kết quả Lái Thiêu để tuyên bố khu mới đạt.
+Hệ đa vùng có `scripts/audit-locality-integrity.mjs` để đối chiếu địa điểm/liên hệ với nguồn và kiểm tra link/anchor/ảnh, cùng `scripts/audit-locality-browser.mjs` cho các mẫu tỉnh/xã/VI/EN. Baseline route/index phải được chụp trước khi refactor, không lấy output đã thay đổi làm baseline.
+
+Hai script `scripts/audit-lai-thieu-pages.mjs` và `scripts/audit-responsive-pages.mjs` vẫn phục vụ hồi quy riêng Lái Thiêu. Không dùng kết quả của cụm này để tuyên bố khu mới đạt.
 
 `scripts/verify-lai-thieu-preview.mjs` cũng có danh sách route cố định. Đối chiếu HTTP sau upload/deploy phải bao phủ các route/ảnh/CSS/JS thực của lần triển khai mới. Ghi base URL, thời gian, phiên bản và phạm vi; giữ báo cáo lịch sử đúng bản của nó.
 

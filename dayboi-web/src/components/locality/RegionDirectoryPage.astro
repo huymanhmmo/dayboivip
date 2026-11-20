@@ -1,0 +1,33 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LocalSiteHeader from './LocalSiteHeader.astro';
+import LocalSiteFooter from './LocalSiteFooter.astro';
+import RegionHero from './RegionHero.astro';
+import LearningNeeds from './LearningNeeds.astro';
+import CommuneDirectory from './CommuneDirectory.astro';
+import RegionVenueFinder from './RegionVenueFinder.astro';
+import RegionProviders from './RegionProviders.astro';
+import RegionSkills from './RegionSkills.astro';
+import RegionPracticalGuide from './RegionPracticalGuide.astro';
+import RegionFAQ from './RegionFAQ.astro';
+import RelatedRegions from './RelatedRegions.astro';
+import type {RegionPageData} from '../../data/locality/types';
+import '../../styles/local-swimming-landing.css';
+import '../../styles/region-directory.css';
+const {page}=Astro.props as {page:RegionPageData};
+---
+<MainLayout title={page.title} description={page.description} canonicalUrl={page.canonical} ogImage={page.image} schema={page.schema} noIndex={page.noindex} lang={page.lang} alternateUrl={page.alternateUrl} alternateLang={page.lang==='en'?'vi':'en'}>
+  <div slot="header" class="sfl-landing lt-hub-header rd-header-shell"><LocalSiteHeader site={page.site} /></div>
+  <article class="sfl-landing rd-page" data-region-directory data-region-id={page.id} data-level={page.level}>
+    <RegionHero page={page} />
+    <LearningNeeds lang={page.lang} />
+    <RegionVenueFinder page={page} />
+    <CommuneDirectory page={page} />
+    <RegionProviders providers={page.providers} lang={page.lang} />
+    <RegionSkills lang={page.lang} />
+    <RegionPracticalGuide page={page} />
+    <RegionFAQ items={page.faqs} lang={page.lang} />
+    <RelatedRegions links={page.related} lang={page.lang} />
+  </article>
+  <div slot="footer" class="sfl-landing rd-footer-shell"><LocalSiteFooter site={page.site} /></div>
+</MainLayout>

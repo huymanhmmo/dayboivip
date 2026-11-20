@@ -1,0 +1,383 @@
+{
+  "base": "https://dayboi.vip",
+  "checkedAt": "2026-11-20T15:28:22.009Z",
+  "reports": [
+    {
+      "route": "/hoc-boi-ha-noi/",
+      "width": 390,
+      "status": 200,
+      "title": "Học Bơi Hà Nội: Bể Bơi & Lớp Học Theo Khu Vực",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Ban quản lý Bể bơi 73 Vạn Bảo (Thầy Quang Anh)",
+          "role": "operator",
+          "numbers": [
+            "tel:0988369929"
+          ]
+        },
+        {
+          "name": "Trung tâm Dạy Bơi Cấp Tốc",
+          "role": "teacher",
+          "numbers": [
+            "tel:0943427995",
+            "tel:0942758388"
+          ]
+        },
+        {
+          "name": "Trung tâm Học Bơi Goswim Hà Nội",
+          "role": "teacher",
+          "numbers": [
+            "tel:0948492662"
+          ]
+        },
+        {
+          "name": "Lễ tân & Quản lý Nhà khách La Thành",
+          "role": "operator",
+          "numbers": [
+            "tel:02438325123",
+            "tel:0932210210"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-ha-noi/",
+      "width": 1440,
+      "status": 200,
+      "title": "Học Bơi Hà Nội: Bể Bơi & Lớp Học Theo Khu Vực",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Ban quản lý Bể bơi 73 Vạn Bảo (Thầy Quang Anh)",
+          "role": "operator",
+          "numbers": [
+            "tel:0988369929"
+          ]
+        },
+        {
+          "name": "Trung tâm Dạy Bơi Cấp Tốc",
+          "role": "teacher",
+          "numbers": [
+            "tel:0943427995",
+            "tel:0942758388"
+          ]
+        },
+        {
+          "name": "Trung tâm Học Bơi Goswim Hà Nội",
+          "role": "teacher",
+          "numbers": [
+            "tel:0948492662"
+          ]
+        },
+        {
+          "name": "Lễ tân & Quản lý Nhà khách La Thành",
+          "role": "operator",
+          "numbers": [
+            "tel:02438325123",
+            "tel:0932210210"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-ha-noi/ba-dinh/",
+      "width": 390,
+      "status": 200,
+      "title": "Học Bơi, Dạy Bơi Tại Phường Ba Đình, Hà Nội: Lớp Kèm Riêng",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Ban quản lý Bể bơi 73 Vạn Bảo (Thầy Quang Anh)",
+          "role": "operator",
+          "numbers": [
+            "tel:0988369929"
+          ]
+        },
+        {
+          "name": "Trung tâm Dạy Bơi Cấp Tốc",
+          "role": "teacher",
+          "numbers": [
+            "tel:0943427995",
+            "tel:0942758388"
+          ]
+        },
+        {
+          "name": "Trung tâm Học Bơi Goswim Hà Nội",
+          "role": "teacher",
+          "numbers": [
+            "tel:0948492662"
+          ]
+        },
+        {
+          "name": "Lễ tân & Quản lý Nhà khách La Thành",
+          "role": "operator",
+          "numbers": [
+            "tel:02438325123",
+            "tel:0932210210"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-ha-noi/ba-dinh/",
+      "width": 1440,
+      "status": 200,
+      "title": "Học Bơi, Dạy Bơi Tại Phường Ba Đình, Hà Nội: Lớp Kèm Riêng",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Ban quản lý Bể bơi 73 Vạn Bảo (Thầy Quang Anh)",
+          "role": "operator",
+          "numbers": [
+            "tel:0988369929"
+          ]
+        },
+        {
+          "name": "Trung tâm Dạy Bơi Cấp Tốc",
+          "role": "teacher",
+          "numbers": [
+            "tel:0943427995",
+            "tel:0942758388"
+          ]
+        },
+        {
+          "name": "Trung tâm Học Bơi Goswim Hà Nội",
+          "role": "teacher",
+          "numbers": [
+            "tel:0948492662"
+          ]
+        },
+        {
+          "name": "Lễ tân & Quản lý Nhà khách La Thành",
+          "role": "operator",
+          "numbers": [
+            "tel:02438325123",
+            "tel:0932210210"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-an-giang/an-bien/",
+      "width": 390,
+      "status": 200,
+      "title": "Học Bơi Tại Xã An Biên, An Giang: Lớp Kèm Riêng 1-1",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Quầy Bán vé & Hỗ trợ Bể bơi Go!",
+          "role": "operator",
+          "numbers": [
+            "tel:02973926789"
+          ]
+        },
+        {
+          "name": "Lớp Bơi Trẻ Em Go! Rạch Giá",
+          "role": "teacher",
+          "numbers": [
+            "tel:0908234567"
+          ]
+        },
+        {
+          "name": "Hotline Quầy vé & Chăm sóc Khách hàng Sao Vàng",
+          "role": "operator",
+          "numbers": [
+            "tel:02963835678"
+          ]
+        },
+        {
+          "name": "Lớp Bơi Làm Quen Nước Trẻ Em Sao Vàng",
+          "role": "teacher",
+          "numbers": [
+            "tel:0939123890"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-an-giang/an-bien/",
+      "width": 1440,
+      "status": 200,
+      "title": "Học Bơi Tại Xã An Biên, An Giang: Lớp Kèm Riêng 1-1",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Quầy Bán vé & Hỗ trợ Bể bơi Go!",
+          "role": "operator",
+          "numbers": [
+            "tel:02973926789"
+          ]
+        },
+        {
+          "name": "Lớp Bơi Trẻ Em Go! Rạch Giá",
+          "role": "teacher",
+          "numbers": [
+            "tel:0908234567"
+          ]
+        },
+        {
+          "name": "Hotline Quầy vé & Chăm sóc Khách hàng Sao Vàng",
+          "role": "operator",
+          "numbers": [
+            "tel:02963835678"
+          ]
+        },
+        {
+          "name": "Lớp Bơi Làm Quen Nước Trẻ Em Sao Vàng",
+          "role": "teacher",
+          "numbers": [
+            "tel:0939123890"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/en/swimming-lessons-ha-noi/",
+      "width": 390,
+      "status": 200,
+      "title": "Swimming Pools & Lesson Providers in Hanoi [2026]",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Ban quản lý Bể bơi 73 Vạn Bảo (Thầy Quang Anh)",
+          "role": "operator",
+          "numbers": [
+            "tel:0988369929"
+          ]
+        },
+        {
+          "name": "Trung tâm Dạy Bơi Cấp Tốc",
+          "role": "teacher",
+          "numbers": [
+            "tel:0943427995",
+            "tel:0942758388"
+          ]
+        },
+        {
+          "name": "Trung tâm Học Bơi Goswim Hà Nội",
+          "role": "teacher",
+          "numbers": [
+            "tel:0948492662"
+          ]
+        },
+        {
+          "name": "Lễ tân & Quản lý Nhà khách La Thành",
+          "role": "operator",
+          "numbers": [
+            "tel:02438325123",
+            "tel:0932210210"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/en/swimming-lessons-ha-noi/",
+      "width": 1440,
+      "status": 200,
+      "title": "Swimming Pools & Lesson Providers in Hanoi [2026]",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": 0,
+      "phones": [
+        {
+          "name": "Ban quản lý Bể bơi 73 Vạn Bảo (Thầy Quang Anh)",
+          "role": "operator",
+          "numbers": [
+            "tel:0988369929"
+          ]
+        },
+        {
+          "name": "Trung tâm Dạy Bơi Cấp Tốc",
+          "role": "teacher",
+          "numbers": [
+            "tel:0943427995",
+            "tel:0942758388"
+          ]
+        },
+        {
+          "name": "Trung tâm Học Bơi Goswim Hà Nội",
+          "role": "teacher",
+          "numbers": [
+            "tel:0948492662"
+          ]
+        },
+        {
+          "name": "Lễ tân & Quản lý Nhà khách La Thành",
+          "role": "operator",
+          "numbers": [
+            "tel:02438325123",
+            "tel:0932210210"
+          ]
+        }
+      ],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": null,
+      "phones": [],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-tphcm/lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "title": "Học bơi tại Lái Thiêu, TP.HCM | Lớp trẻ em & người lớn",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": null,
+      "phones": [],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 390,
+      "status": 200,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": null,
+      "phones": [],
+      "brokenImages": []
+    },
+    {
+      "route": "/hoc-boi-nhat-an-lai-thieu/",
+      "width": 1440,
+      "status": 200,
+      "title": "Học bơi Hồ bơi Nhật An Lái Thiêu | Lớp trẻ em & người lớn",
+      "overflow": 0,
+      "h1": 1,
+      "regionalDefaultPhone": null,
+      "phones": [],
+      "brokenImages": []
+    }
+  ],
+  "errors": []
+}

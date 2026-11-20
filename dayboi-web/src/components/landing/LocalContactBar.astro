@@ -1,6 +1,6 @@
 ---
-import Icon from './ui/Icon.astro';
-export interface Props { phoneHref: string; zaloHref: string; }
-const {phoneHref,zaloHref}=Astro.props;
+import LocalSiteContactBar from '../locality/LocalSiteContactBar.astro';
+export interface Props {phoneHref:string;zaloHref:string;label?:string;}
+const {phoneHref,zaloHref,label='Liên hệ học bơi'}=Astro.props;
 ---
-<nav class="lt-contact-bar" aria-label="Liên hệ tư vấn học bơi Lái Thiêu"><a href={phoneHref}><Icon name="phone" />Gọi tư vấn</a><a href={zaloHref} target="_blank" rel="noopener noreferrer"><Icon name="chat" />Tư vấn qua Zalo</a></nav>
+<LocalSiteContactBar primary={{href:phoneHref,label:'Gọi tư vấn',icon:'phone'}} secondary={{href:zaloHref,label:'Tư vấn qua Zalo',icon:'chat',external:true}} label={label} />

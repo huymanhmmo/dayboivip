@@ -1,0 +1,6 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import type {RegionVenue} from '../../data/locality/types';
+const {venue,lang}=Astro.props as {venue:RegionVenue;lang:'vi'|'en'};const en=lang==='en';
+---
+<figure class="rd-venue-image"><img src={venue.image} alt={venue.imageAlt} width="760" height="428" loading="lazy" decoding="async" />{venue.imageNote&&<span class="rd-image-note">{venue.imageNote}</span>}<span class="rd-venue-tag">{venue.access||(en?'Pool listing':'Địa điểm bơi lội')}</span></figure><div class="rd-venue-copy"><span class="rd-venue-area">{venue.area}</span><h3>{venue.name}</h3><p><Icon name="pin" />{venue.address||(en?'Confirm the address with the provider':'Cần xác nhận địa chỉ với đơn vị')}</p><div class="rd-venue-hint"><span>{venue.detailHref?(en?'View venue details':'Xem trang địa điểm'):(en?'Details & named contacts':'Thông tin & người phụ trách')}</span><span class="rd-round-arrow" aria-hidden="true"><Icon name={venue.detailHref?'arrow':'plus'} /></span></div></div>

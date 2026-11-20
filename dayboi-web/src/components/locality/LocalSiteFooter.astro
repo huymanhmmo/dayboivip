@@ -1,0 +1,22 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import LocalSiteContactBar from './LocalSiteContactBar.astro';
+import {languageHref} from '../../data/locality/common';
+import type {LocalSiteConfig} from '../../data/locality/types';
+import '../../styles/lai-thieu-footer.css';
+export interface Props {site:LocalSiteConfig;}
+const {site}=Astro.props;const en=site.lang==='en',contact=site.contact;
+const primary=contact?{href:contact.phoneHref,label:en?'Call the advisor':'Gọi tư vấn',icon:'phone'}:{href:site.listingHref,label:en?'Pools & teachers':'Hồ bơi & giáo viên',icon:'search'};
+const secondary=contact?.zaloHref?{href:contact.zaloHref,label:'Zalo',icon:'chat',external:true}:{href:site.mapsHref,label:en?'Area map':'Bản đồ khu vực',icon:'pin',external:true};
+---
+<footer class="lt-footer" data-local-footer data-region={site.id}>
+  <div class="lt-footer-inner">
+    <div class="lt-footer-brand"><a href={en?'/en/':'/'} aria-label={en?'Swim For Life — Home':'Swim For Life Việt Nam — Trang chủ'}><img src="/images/brand/logo.png" alt="Swim For Life Việt Nam" width="3268" height="1206" loading="lazy" decoding="async" /></a><a class="lt-footer-area" href={site.hubHref}><Icon name="pin" />{en?'Swimming in':'Học bơi tại'} {site.name}</a><p>{en?'Find a suitable place to learn, understand access conditions and contact the named teacher directly.':'Tìm nơi học phù hợp, hiểu rõ điều kiện sử dụng hồ và liên hệ trực tiếp với người phụ trách.'}</p><div class="lt-footer-social">{contact&&<a href={contact.phoneHref} aria-label={`${en?'Call':'Gọi'} ${contact.name}`}><Icon name="phone" /></a>}<a href={site.mapsHref} target="_blank" rel="noopener noreferrer" aria-label={en?'Area map':'Bản đồ khu vực'}><Icon name="pin" /></a><a href={languageHref('/gioi-thieu/',site.lang)} aria-label={en?'About Swim For Life':'Giới thiệu Swim For Life'}><Icon name="wave" /></a></div></div>
+    <div><h2>{en?'Pools & places':'Địa điểm học bơi'}</h2><ul>{site.venueLinks.slice(0,6).map(link=><li><a href={link.href}>{link.label}</a></li>)}</ul><a class="lt-footer-all" href={site.listingHref}>{en?'View all places':'Xem tất cả địa điểm'}<Icon name="arrow" /></a></div>
+    <div><h2>{en?'Lessons & guidance':'Chương trình & hướng dẫn'}</h2><ul>{site.courseLinks.map(link=><li><a href={link.href}>{link.label}</a></li>)}<li><a href={languageHref('/ky-thuat-boi/',site.lang)}>{en?'Swimming techniques':'Các kỹ thuật bơi'}</a></li><li><a href={languageHref('/lo-trinh-hoc-boi/',site.lang)}>{en?'Learning journey':'Lộ trình học'}</a></li></ul></div>
+    <div class="lt-footer-consult"><h2>{contact?(en?'Local advisor':'Tư vấn chuyên môn'):(en?'Contact the right person':'Liên hệ đúng người')}</h2>{contact?<><div class="lt-footer-coach">{contact.name}</div>{contact.qualification&&<p>{contact.qualification}</p>}<a class="lt-footer-phone" href={contact.phoneHref}><Icon name="phone" />{contact.hotline}</a>{contact.zaloHref&&<a class="lt-footer-zalo" href={contact.zaloHref} target="_blank" rel="noopener noreferrer"><Icon name="chat" />Zalo</a>}<small>{en?'This contact is for the named advisor, not every pool’s ticket office.':'Liên hệ người phụ trách nêu trên; đây không phải số quầy vé của mọi hồ.'}</>:<><div class="lt-footer-coach">{en?'Each pool, each teacher':'Đúng hồ, đúng giáo viên'}</div><p>{en?'Admission and opening hours: ask the pool operator. Lessons and tuition: ask the teacher named in the listing.':'Vé và giờ bơi: hỏi quầy vé/BQL. Lịch lớp và học phí: trao đổi với giáo viên được ghi tại từng địa điểm.'}</p><a class="lt-footer-zalo" href={site.listingHref}><Icon name="people" />{en?'View names & contacts':'Xem giáo viên & liên hệ'}</a><small>{en?'Confirm current information before making arrangements.':'Xác nhận thông tin hiện tại trước khi hẹn học hoặc thanh toán.'}</small></>}</div>
+  </div>
+  <nav class="lt-footer-neighbors" aria-label={en?'Related areas':'Khu vực liên quan'}><span>{en?'Explore nearby':'Tham khảo khu vực'}</span><a href={site.parentHref}>{site.parentName}</a>{site.nearby.slice(0,6).map(link=><a href={link.href}>{link.label}</a>)}</nav>
+  <div class="lt-footer-bottom"><span>© {new Date().getFullYear()} Swim For Life Việt Nam</span><span>{en?'Pool access and lesson availability must be confirmed with each provider.':'Quyền sử dụng hồ và khả năng tổ chức lớp cần xác nhận với từng đơn vị.'}</span></div>
+</footer>
+<LocalSiteContactBar primary={primary} secondary={secondary} label={en?'Local swimming shortcuts':'Tra cứu và liên hệ học bơi địa phương'} />

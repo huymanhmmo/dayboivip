@@ -1,0 +1,6 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import {swimmingTechniques} from '../../data/swimmingResources';
+const {lang='vi'}=Astro.props;const en=lang==='en';
+---
+<section class="rd-section rd-skills" id="kieu-boi" aria-labelledby="skills-title"><div class="sfl-container"><div class="rd-section-heading"><span class="rd-kicker">{en?'BUILD YOUR SWIMMING FOUNDATION':'XÂY NỀN TẢNG, BƠI ĐÚNG KỸ THUẬT'}</span><h2 id="skills-title">{en?'Five essential swimming skills':'5 kỹ thuật & kỹ năng bơi cơ bản'}</h2><p>{en?'Learn what each skill involves, then discuss a suitable progression with your teacher.':'Hiểu đặc điểm từng kỹ thuật, sau đó trao đổi với giáo viên để chọn cách học phù hợp.'}</p></div><div class="rd-skill-grid">{swimmingTechniques(lang).map((s,i)=><a href={s.href}><div><img src={s.image} alt={s.imageAlt} width="640" height="400" loading="lazy" decoding="async" /><span>0{i+1}</span></div><section><h3>{s.title}</h3><p>{s.description}</p><span class="rd-skill-link">{en?'Explore the technique':'Tìm hiểu kỹ thuật'}<Icon name="arrow" /></span></section></a>)}</div></div></section>

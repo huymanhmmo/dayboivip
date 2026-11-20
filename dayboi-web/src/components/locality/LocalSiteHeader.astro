@@ -1,0 +1,71 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import type {LocalSiteConfig} from '../../data/locality/types';
+import '../../styles/lai-thieu-header.css';
+import '../../styles/lai-thieu-layout.css';
+export interface Props {site:LocalSiteConfig;currentPath?:string;}
+const {site,currentPath=Astro.url.pathname}=Astro.props;
+const en=site.lang==='en',items=site.navigation,contact=site.contact;
+const active=(href:string)=>!href.includes('#')&&currentPath===href;
+---
+<header class="lt-header" data-local-header data-region={site.id}>
+  <div class="lt-header-inner">
+    <div class="lt-brand">
+      <a class="lt-brand-home" href={en?'/en/':'/'} aria-label={en?'Swim For Life — Home':'Swim For Life Việt Nam — Trang chủ'}><img src="/images/brand/logo.png" alt="Swim For Life Việt Nam" width="3268" height="1206" decoding="async" /></a>
+      <a class="lt-brand-location" href={site.hubHref} aria-label={`${en?'Swimming in':'Trang học bơi'} ${site.name}, ${site.parentName}`}><strong>{site.name}</strong><small>{site.parentName}</small></a>
+    </div>
+    <nav class="lt-desktop-nav" aria-label={en?'Local swimming navigation':'Hồ bơi và lớp học trong khu vực'}><ul>
+      {items.map((item,index)=><li>{item.sections?
+        <details class="lt-nav-group" data-desktop-group>
+          <summary aria-controls={`lt-mega-${index}`}><span>{item.label}</span><Icon name="chevron" /></summary>
+          <div class="lt-mega" id={`lt-mega-${index}`}>
+            <div class="lt-mega-top"><strong>{item.label}</strong><span>{site.name}</span></div>
+            <div class="lt-mega-sections">{item.sections.map(section=><section><h2>{section.title}</h2><div class="lt-mega-links">
+              {section.links.map(link=><a href={link.href} aria-current={active(link.href)?'page':undefined}><span class="lt-link-icon"><Icon name={link.icon||item.icon||'swim'} /></span><span><strong>{link.label}</strong>{link.description&&<small>{link.description}</small>}</span><Icon name="chevron" /></a>)}
+            </div></section>)}</div>
+            {item.more&&<a href={item.more.href} class="lt-mega-more">{item.more.label}<Icon name="arrow" /></a>}
+          </div>
+        </details>:<a class="lt-nav-link" href={item.href} aria-current={active(item.href)?'page':undefined}>{item.label}</a>}</li>)}
+    </ul></nav>
+    <div class="lt-header-actions">
+      {contact&&<a href={contact.phoneHref} class="lt-header-phone"><span class="lt-phone-icon"><Icon name="phone" /></span><span><small>{contact.name}</small><strong>{contact.hotline}</strong></span></a>}
+      <a href={site.actionHref} class="lt-header-register">{site.actionLabel}<Icon name="arrow" /></a>
+      <button type="button" class="lt-menu-trigger" aria-controls="lt-mobile-menu" aria-expanded="false" aria-label={en?'Open local menu':'Mở menu địa phương'}><span>Menu</span><Icon name="menu" /></button>
+    </div>
+  </div>
+  <dialog id="lt-mobile-menu" class="lt-drawer" aria-labelledby="lt-drawer-title">
+    <div class="lt-drawer-header"><div><span>SWIM FOR LIFE</span><h2 id="lt-drawer-title">{site.name}</h2></div><button type="button" class="lt-drawer-close" aria-label={en?'Close menu':'Đóng menu'}><Icon name="close" /></button></div>
+    <nav class="lt-mobile-nav" aria-label={en?'Local mobile menu':'Menu địa phương trên điện thoại'}>
+      <a href={site.hubHref} class="lt-mobile-home"><Icon name="pin" /><span>{site.name}<small>{en?'Pools, lessons & local information':'Địa điểm, lớp học & thông tin khu vực'}</small></span><Icon name="arrow" /></a>
+      {items.filter(item=>item.href!==site.hubHref).map(item=>item.sections?
+        <details class="lt-mobile-group" name="lt-mobile-groups"><summary><span class="lt-mobile-nav-icon"><Icon name={item.icon||'swim'} /></span><span>{item.label}{item.description&&<small>{item.description}</small>}</span><Icon name="chevron" /></summary><div>
+          {item.sections.map(section=><section><h3>{section.title}</h3>{section.links.map(link=><a href={link.href}><span>{link.label}{link.description&&<small>{link.description}</small>}</span><Icon name="chevron" /></a>)}</section>)}
+          {item.more&&<a class="lt-mobile-more" href={item.more.href}>{item.more.label}<Icon name="arrow" /></a>}
+        </div></details>:<a class="lt-mobile-direct" href={item.href}><span class="lt-mobile-nav-icon"><Icon name={item.icon||'arrow'} /></span><span>{item.label}</span><Icon name="chevron" /></a>)}
+    </nav>
+    <div class="lt-drawer-contact"><div><span class="lt-phone-icon"><Icon name={contact?'headset':'people'} /></span><span><strong>{contact?contact.name:(en?'Find the right contact':'Liên hệ đúng người phụ trách')}</strong><small>{contact?contact.hotline:(en?'Each pool and teacher has separate details':'Mỗi hồ và giáo viên có thông tin riêng')}</small></span></div><div>
+      <a href={contact?.phoneHref||site.listingHref}><Icon name={contact?'phone':'search'} />{contact?(en?'Call':'Gọi tư vấn'):(en?'Pools & teachers':'Hồ bơi & giáo viên')}</a>
+      <a href={contact?.zaloHref||site.mapsHref} target="_blank" rel="noopener noreferrer"><Icon name={contact?.zaloHref?'chat':'pin'} />{contact?.zaloHref?'Zalo':(en?'Area map':'Bản đồ khu vực')}</a>
+    </div></div>
+  </dialog>
+</header>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-local-header]').forEach(header=>{
+    const trigger=header.querySelector<HTMLButtonElement>('.lt-menu-trigger');
+    const dialog=header.querySelector<HTMLDialogElement>('.lt-drawer');
+    const groups=Array.from(header.querySelectorAll<HTMLDetailsElement>('[data-desktop-group]'));
+    const closeDesktop=()=>groups.forEach(group=>group.open=false);
+    let previousOverflow='';
+    const closeMobile=()=>{if(!dialog?.open)return;dialog.close();document.body.style.overflow=previousOverflow;trigger?.setAttribute('aria-expanded','false');trigger?.focus();};
+    trigger?.addEventListener('click',()=>{if(dialog?.open){closeMobile();return;}closeDesktop();previousOverflow=document.body.style.overflow;dialog?.showModal();document.body.style.overflow='hidden';trigger.setAttribute('aria-expanded','true');});
+    dialog?.querySelector('.lt-drawer-close')?.addEventListener('click',closeMobile);
+    dialog?.addEventListener('cancel',event=>{event.preventDefault();closeMobile();});
+    dialog?.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)closeMobile();}});
+    dialog?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMobile));
+    groups.forEach(group=>{group.querySelector('summary')?.addEventListener('click',()=>groups.forEach(other=>{if(other!==group)other.open=false;}));group.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDesktop));});
+    document.addEventListener('click',event=>{if(event.target instanceof Node&&!header.contains(event.target))closeDesktop();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'){const opened=groups.find(g=>g.open);closeDesktop();opened?.querySelector('summary')?.focus();}});
+    header.addEventListener('focusout',()=>setTimeout(()=>{if(!header.contains(document.activeElement))closeDesktop();},0));
+    matchMedia('(min-width: 1181px)').addEventListener('change',event=>{closeDesktop();if(event.matches)closeMobile();});
+  });
+</script>

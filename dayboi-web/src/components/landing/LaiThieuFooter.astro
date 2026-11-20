@@ -1,21 +1,6 @@
 ---
-import Icon from './ui/Icon.astro';
-import LocalContactBar from './LocalContactBar.astro';
-import { laiThieuPools } from '../../data/laiThieuPools.js';
-import { laiThieuHub, getLaiThieuNavigation } from '../../data/laiThieuNavigation';
-import '../../styles/lai-thieu-footer.css';
-export interface Props { hotline: string; phoneHref: string; zaloHref: string; courseBaseHref?: string; }
-const {hotline,phoneHref,zaloHref,courseBaseHref=laiThieuHub}=Astro.props;
-const courses=getLaiThieuNavigation(courseBaseHref).find(item=>item.label==='Lớp học')?.sections?.flatMap(section=>section.links)||[];
+import LocalSiteFooter from '../locality/LocalSiteFooter.astro';
+import {getLaiThieuSite} from '../../data/locality/laiThieuSite';
+export interface Props {hotline:string;phoneHref:string;zaloHref:string;courseBaseHref?:string;}
 ---
-<footer class="lt-footer">
-  <div class="lt-footer-inner">
-    <div class="lt-footer-brand"><a href="/" aria-label="Swim For Life Việt Nam — Trang chủ"><img src="/images/brand/logo.png" alt="Swim For Life Việt Nam" width="3268" height="1206" loading="lazy" decoding="async" /></a><a class="lt-footer-area" href={laiThieuHub}><Icon name="pin" />Học bơi tại Lái Thiêu, TP.HCM</a><p>Đồng hành cùng trẻ em, người lớn và gia đình trên hành trình học bơi an toàn, đúng kỹ thuật.</p><div class="lt-footer-social"><a href={phoneHref} aria-label={`Gọi HLV tư vấn ${hotline}`}><Icon name="phone" /></a><a href={zaloHref} aria-label="Nhắn Zalo tư vấn khu vực" target="_blank" rel="noopener noreferrer"><Icon name="chat" /></a><a href="/gioi-thieu/" aria-label="Giới thiệu Swim For Life"><Icon name="wave" /></a></div></div>
-    <div><h2>Địa điểm học bơi</h2><ul>{laiThieuPools.slice(0,6).map(pool=><li><a href={pool.detailHref||`${laiThieuHub}#${pool.id}`}>{pool.name}</a></li>)}</ul><a class="lt-footer-all" href={`${laiThieuHub}#dia-diem`}>Xem tất cả địa điểm<Icon name="arrow" /></a></div>
-    <div><h2>Chương trình & hướng dẫn</h2><ul>{courses.map(course=><li><a href={course.href}>{course.label}</a></li>)}<li><a href={`${courseBaseHref}#ky-thuat-boi`}>Các kỹ thuật bơi</a></li><li><a href={`${courseBaseHref}#lo-trinh`}>Lộ trình học</a></li><li><a href={`${courseBaseHref}#hoc-phi`}>Học phí & điều kiện học</a></li></ul></div>
-    <div class="lt-footer-consult"><h2>Tư vấn khu vực Lái Thiêu</h2><span class="lt-footer-coach">Thầy Lê Văn Thông</span><p>Kiện tướng Bơi lội<br/>Tư vấn chuyên môn và xếp lớp</p><a class="lt-footer-phone" href={phoneHref}><Icon name="phone" />{hotline}</a><a class="lt-footer-zalo" href={zaloHref} target="_blank" rel="noopener noreferrer"><Icon name="chat" />Nhắn Zalo tư vấn</a><small>Liên hệ HLV để chọn lớp. Giá vé và quyền vào hồ xác nhận với quầy vé hoặc BQL.</small></div>
-  </div>
-  <div class="lt-footer-neighbors"><span>Khu vực lân cận</span><a href="/hoc-boi-tphcm/binh-hoa/">Bình Hòa</a><a href="/hoc-boi-tphcm/thuan-an/">Thuận An</a><a href="/hoc-boi-tphcm/thuan-giao/">Thuận Giao</a><a href="/hoc-boi-tphcm/">Học bơi TP.HCM</a></div>
-  <div class="lt-footer-bottom"><span>© {new Date().getFullYear()} Swim For Life Việt Nam · Công ty CP Your Dreams.</span><span>Ảnh minh họa, phối cảnh và tư liệu được chú thích theo từng địa điểm.</span></div>
-</footer>
-<LocalContactBar phoneHref={phoneHref} zaloHref={zaloHref} />
+<LocalSiteFooter site={getLaiThieuSite(Astro.props)} />

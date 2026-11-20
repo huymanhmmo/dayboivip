@@ -16,7 +16,7 @@ Một địa điểm giữ một ID và một canonical dù xuất hiện ở nh
 
 ## Hợp đồng dữ liệu cần có
 
-Bảng dưới là **thiết kế để tham số hóa**, chưa phải tên trường đã triển khai đầy đủ trong repo. Đối chiếu `LocalLandingData`, `PoolDetailData` và catalog hiện hành trước khi bổ sung; không truyền object mới vào template cũ rồi giả định nó hiểu.
+Bảng dưới là hợp đồng vai trò dữ liệu. Triển khai đa vùng hiện có `RegionPageData`, `RegionVenue`, `LocalSiteConfig` trong `data/locality/types.ts`; đối chiếu các kiểu này cùng `LocalLandingData` và `PoolDetailData` trước khi bổ sung. Không truyền object mới vào template cũ rồi giả định nó hiểu.
 
 | Đối tượng | Nội dung |
 | --- | --- |
@@ -32,11 +32,13 @@ Bảng dưới là **thiết kế để tham số hóa**, chưa phải tên trư
 
 Không dùng một cờ `verified` cho cả hồ. Tài liệu dự án ghi có hồ bơi không xác nhận hồ đang vận hành, khách ngoài được vào hoặc HLV được phép mở lớp. Ngày biên tập không phải ngày khảo sát.
 
+Phân loại hồ và ghi chú quyền sử dụng là hai trường khác nhau. Bộ lọc ưu tiên `type`/loại hồ từ nguồn, không chỉ dò chữ “nội khu” trong câu ghi chú. Một ghi chú “cần quyền sử dụng và BQL chấp thuận” không được làm mất phân loại residential vốn đã có; phân loại cũng không xác nhận khách được vào.
+
 Một địa điểm có thể xuất hiện trên nhiều hub lân cận nhưng giữ một ID, địa chỉ và canonical chi tiết. Phạm vi tuyển sinh không thay thế đơn vị hành chính của hồ. Không tạo các bản trang gần giống nhau chỉ đổi tên phường trong slug.
 
 ## Cấu hình vùng khi tổng quát hóa
 
-Đây là **contract đề xuất khi triển khai vùng mới**, chưa phải export có sẵn trong repo. Có thể điều chỉnh tên field theo kiến trúc hiện tại nhưng giữ tách biệt các vai trò:
+Ví dụ dưới là cấu hình danh tính/tham chiếu cho vùng khi cần registry nhiều cụm tuyển sinh; không phải export bắt buộc đã có sẵn. Các danh bạ hiện tại được adapter `province.ts`/`area.ts` dựng thành RegionPageData và LocalSiteConfig. Giữ tách biệt các vai trò khi mở rộng:
 
 ```ts
 type RegionDesignConfig = {
@@ -58,6 +60,10 @@ type RegionDesignConfig = {
 Brand assets, kỹ thuật bơi và tokens thuộc thư viện chung; vùng tham chiếu chúng. Contact/instructor lưu riêng theo ID, có chủ thể và phạm vi phụ trách; null không được tự thay bằng đầu mối vùng cũ. Menu/filter/nearby được dựng từ cấu hình này cùng catalog và section thực có, tránh lưu thêm danh sách URL độc lập.
 
 Mô hình vai trò tối thiểu tách: **quầy vé/BQL hồ**, **HLV/đơn vị dạy**, **đầu mối vùng**. Không tự suy ra số điện thoại có tài khoản Zalo. Nếu contract bắt buộc số nhưng không có, sửa render để ẩn/đổi CTA phù hợp thay vì gán liên hệ của nơi khác.
+
+Yêu cầu người dùng khi nhân rộng toàn site: hiển thị các giáo viên và số liên hệ riêng gắn với từng hồ theo dữ liệu hiện có. Không rút mảng instructors thành người đầu tiên để làm hotline cả vùng. Một chuỗi có nhiều số phải tách thành các link gọi hợp lệ; không nối tất cả chữ số vào một tel. Không có số thì hiển thị kênh nguồn/đơn vị để đối chiếu, không tạo nút gọi rỗng. Kiểm tra HTML sau middleware để chắc chắn link gọi của BQL/giáo viên không bị thay thành danh bạ chung.
+
+Các khối ContactBlock/RegionProviders có marker server-rendered `data-directory-contact-block` để giữ nguyên tên/số/nguồn khi đi qua sanitizer cũ; từng link gọi có `data-directory-contact`. Cần kiểm tra cả nhãn người liên hệ có chữ “Hotline” hoặc “Zalo”, không chỉ kiểm tra href: bộ thay thế văn bản cũ có thể làm sai chủ thể dù số vẫn còn. Không đánh dấu bảo toàn cho cả HTML không liên quan hoặc lấy marker từ nội dung người dùng chưa kiểm soát.
 
 ## Quy tắc component
 

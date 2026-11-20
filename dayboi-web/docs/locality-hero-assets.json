@@ -1,0 +1,62 @@
+{
+  "createdAt": "2026-11-20T15:05:41.580Z",
+  "note": "Optimized derivatives of existing illustrative activity images. Originals unchanged.",
+  "assets": {
+    "/images/classes/lop-hoc-boi-ha-noi.jpg": {
+      "src": "/images/locality/hero/lop-hoc-boi-ha-noi.webp",
+      "width": 1600,
+      "height": 866,
+      "sourceBytes": 432162,
+      "bytes": 334380
+    },
+    "/images/classes/lop-hoc-boi-tre-em-tphcm.jpg": {
+      "src": "/images/locality/hero/lop-hoc-boi-tre-em-tphcm.webp",
+      "width": 1600,
+      "height": 900,
+      "sourceBytes": 434769,
+      "bytes": 274394
+    },
+    "/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg": {
+      "src": "/images/locality/hero/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.webp",
+      "width": 1600,
+      "height": 866,
+      "sourceBytes": 414021,
+      "bytes": 315122
+    },
+    "/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg": {
+      "src": "/images/locality/hero/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.webp",
+      "width": 1600,
+      "height": 900,
+      "sourceBytes": 377094,
+      "bytes": 232758
+    },
+    "/images/classes/lop-hoc-boi-vui-ve-ky-luat.jpg": {
+      "src": "/images/locality/hero/lop-hoc-boi-vui-ve-ky-luat.webp",
+      "width": 1600,
+      "height": 900,
+      "sourceBytes": 592133,
+      "bytes": 337660
+    },
+    "/images/classes/giang-vien-huong-dan-ky-thuat.jpg": {
+      "src": "/images/locality/hero/giang-vien-huong-dan-ky-thuat.webp",
+      "width": 1600,
+      "height": 900,
+      "sourceBytes": 140836,
+      "bytes": 54890
+    },
+    "/images/classes/lop-boi-cu-dan-nhi-vinhomes.jpg": {
+      "src": "/images/locality/hero/lop-boi-cu-dan-nhi-vinhomes.webp",
+      "width": 1600,
+      "height": 900,
+      "sourceBytes": 226958,
+      "bytes": 99394
+    },
+    "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg": {
+      "src": "/images/locality/hero/lop-boi-tran-ngap-tieng-cuoi.webp",
+      "width": 1600,
+      "height": 900,
+      "sourceBytes": 377094,
+      "bytes": 232758
+    }
+  }
+}

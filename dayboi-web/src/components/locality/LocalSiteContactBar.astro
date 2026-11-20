@@ -1,0 +1,7 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+export interface Action {href:string;label:string;icon:string;external?:boolean;}
+export interface Props {primary:Action;secondary:Action;label:string;}
+const {primary,secondary,label}=Astro.props;
+---
+<nav class="lt-contact-bar" aria-label={label}>{[primary,secondary].map(action=><a href={action.href} target={action.external?'_blank':undefined} rel={action.external?'noopener noreferrer':undefined}><Icon name={action.icon} />{action.label}</a>)}</nav>

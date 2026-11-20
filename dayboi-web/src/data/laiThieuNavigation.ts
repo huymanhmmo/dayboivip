@@ -1,7 +1,6 @@
 import { laiThieuPools } from './laiThieuPools.js';
-export interface LocalNavLink { label: string; href: string; description?: string; icon?: string; }
-export interface LocalNavSection { title: string; links: LocalNavLink[]; }
-export interface LocalNavItem extends LocalNavLink { sections?: LocalNavSection[]; more?: LocalNavLink; }
+import type {LocalNavItem} from './locality/types';
+export type {LocalNavLink,LocalNavSection,LocalNavItem} from './locality/types';
 export const laiThieuHub = '/hoc-boi-tphcm/lai-thieu/';
 
 /** Navigation for Lai Thieu pool/class pages. Unbuilt venue pages use real hub anchors. */

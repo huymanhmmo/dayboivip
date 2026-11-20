@@ -1,0 +1,8 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import {courseLinks} from '../../data/locality/common';
+import {learningImages} from '../../data/swimmingResources';
+const {lang='vi'}=Astro.props;const en=lang==='en';
+const copy=en?['Water confidence from the first steps.','Build a foundation at your own pace.','A programme shaped around you.','Take time to feel comfortable in water.']:['Làm quen nước, xây nền tảng từ đầu.','Bắt đầu cơ bản, tiến bộ theo khả năng.','Trao đổi lộ trình theo mục tiêu riêng.','Từng bước thả lỏng và tự tin với nước.'];
+---
+<section class="rd-section rd-needs"><div class="sfl-container"><div class="rd-section-heading rd-section-heading--center"><span class="rd-kicker">{en?'A START THAT SUITS YOU':'BẮT ĐẦU THEO CÁCH PHÙ HỢP'}</span><h2>{en?'Choose your learning needs':'Chọn lớp theo nhu cầu'}</h2><p>{en?'Explore the programmes, then discuss local arrangements with the teacher you choose.':'Tìm hiểu chương trình, sau đó trao đổi với giáo viên tại địa điểm bạn lựa chọn.'}</p></div><div class="rd-needs-grid">{courseLinks(lang).map((c,i)=><a class="rd-need-card" href={c.href}><img src={learningImages[i]} alt={en?'Illustration of a swimming learner':'Minh họa người học bơi'} width="640" height="360" loading="lazy" /><div><span class="rd-need-icon"><Icon name={c.icon} /></span><h3>{c.label}</h3><p>{copy[i]}</p><span class="rd-round-arrow" aria-hidden="true"><Icon name="chevron" /></span></div></a>)}</div></div></section>

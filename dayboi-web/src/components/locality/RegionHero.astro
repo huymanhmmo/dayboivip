@@ -1,0 +1,18 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import WaveDivider from '../landing/ui/WaveDivider.astro';
+import type {RegionPageData} from '../../data/locality/types';
+import heroImages from '../../data/locality/heroImages.json';
+const {page}=Astro.props as {page:RegionPageData};
+const en=page.lang==='en';
+const teacherCount=page.venues.reduce((n,v)=>n+v.instructors.length,0);
+const hero=heroImages[page.image as keyof typeof heroImages]||{src:page.image,width:1600,height:900};
+---
+<nav class="rd-breadcrumb" aria-label={en?'Breadcrumb':'Đường dẫn trang'}><ol class="sfl-container">{page.breadcrumbs.map((b,i)=><li>{i>0&&<span aria-hidden="true">/</span>}{b.href?<a href={b.href}>{b.label}</a>:<span aria-current="page">{b.label}</span>}</li>)}</ol></nav>
+<section class="rd-hero" aria-labelledby="region-title">
+  <img class="rd-hero-image" src={hero.src} alt={en?'Illustrative swimming activity; not a photo of a specific local facility':'Minh họa hoạt động bơi lội, không đại diện một cơ sở cụ thể trong khu vực'} width={hero.width} height={hero.height} fetchpriority="high" decoding="async" />
+  <div class="rd-hero-shade"></div>
+  <div class="sfl-container rd-hero-inner"><div class="rd-hero-copy"><span class="rd-eyebrow"><Icon name="wave" />{page.eyebrow}</span><h1 id="region-title">{en?'Find your place to swim in':'Học bơi tại'}<em>{page.name}</em></h1><p>{page.lead}</p><div class="rd-actions"><a class="rd-button rd-button--primary" href="#dia-diem">{page.nearbyOnly?(en?'Explore nearby pools':'Tham khảo hồ lân cận'):(en?'Explore pools & teachers':'Xem hồ bơi & giáo viên')}<Icon name="arrow" /></a><a class="rd-button rd-button--white" href={page.level==='province'?'#xa-phuong':'#kieu-boi'}>{page.level==='province'?(en?'Find your ward':'Tìm theo xã, phường'):(en?'Explore swimming skills':'Tìm hiểu kỹ thuật bơi')}</a></div></div></div>
+  <span class="rd-image-label">{en?'Illustration':'Ảnh minh họa'}</span><WaveDivider />
+</section>
+<div class="sfl-container rd-facts"><div><Icon name="pin" /><p><strong>{page.venues.length}</strong><span>{page.nearbyOnly?(en?'nearby options':'địa điểm tham khảo lân cận'):(en?'pool listings':'địa điểm trong dữ liệu')}</span></p></div><div><Icon name="people" /><p><strong>{teacherCount}</strong><span>{en?'teaching contacts':'đầu mối dạy bơi theo hồ'}</span></p></div><div><Icon name={page.level==='province'?'building':'route'} /><p><strong>{page.level==='province'?page.communes.length:page.parentName}</strong><span>{page.level==='province'?(en?'wards & communes':'xã, phường để tra cứu'):(en?'parent directory':'danh bạ tỉnh, thành')}</span></p></div><a href={page.site.mapsHref} target="_blank" rel="noopener noreferrer"><Icon name="pin" /><span>{en?'View the area map':'Xem bản đồ khu vực'}<small>{en?'Check your journey':'Đối chiếu trước khi đi'}</small></span><Icon name="arrow" /></a></div>

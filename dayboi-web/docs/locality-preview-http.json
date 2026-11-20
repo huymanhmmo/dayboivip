@@ -1,0 +1,1668 @@
+{
+  "base": "https://91f75220-dayboivip.huymanh.workers.dev",
+  "checkedAt": "2026-11-20T15:27:45.263Z",
+  "pages": 113,
+  "paths": 237,
+  "failures": [],
+  "results": [
+    {
+      "path": "/hoc-boi-ha-noi/",
+      "status": 200,
+      "bytes": 585903,
+      "matchesBuild": true,
+      "sha256": "48253bbbf0055aa8a838bdad0e8c3aa0e3757ecd506e03df8f619acb6a0570ef"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-noi/",
+      "status": 200,
+      "bytes": 576370,
+      "matchesBuild": true,
+      "sha256": "081d62d1e7f167830d37fe61a412ac679f6cd6dfb179109ef5f351cdde0a0438"
+    },
+    {
+      "path": "/hoc-boi-tphcm/",
+      "status": 200,
+      "bytes": 707465,
+      "matchesBuild": true,
+      "sha256": "8f78735df23fb360a1d2d31031ceca7b254653022fe2cc46175e0e132535f830"
+    },
+    {
+      "path": "/en/swimming-lessons-ho-chi-minh/",
+      "status": 200,
+      "bytes": 698379,
+      "matchesBuild": true,
+      "sha256": "21136eadf9eaaa09be46e68b6e251cdfc4088a442141485782e8336f09f2ebee"
+    },
+    {
+      "path": "/hoc-boi-da-nang/",
+      "status": 200,
+      "bytes": 254563,
+      "matchesBuild": true,
+      "sha256": "b998f3118c750dec201071a5f5fe12defa5163b409c4fc3b8ce60e021474d3eb"
+    },
+    {
+      "path": "/en/swimming-lessons-da-nang/",
+      "status": 200,
+      "bytes": 250242,
+      "matchesBuild": true,
+      "sha256": "651b6624e085394972ef9cce115259ba38fbedaa77b4ac748d2fe2718df43500"
+    },
+    {
+      "path": "/hoc-boi-hai-phong/",
+      "status": 200,
+      "bytes": 301253,
+      "matchesBuild": true,
+      "sha256": "1b769463be3222a21971e951db1bf04bc78df269a7473700d58aa81a3811c48a"
+    },
+    {
+      "path": "/en/swimming-lessons-hai-phong/",
+      "status": 200,
+      "bytes": 296429,
+      "matchesBuild": true,
+      "sha256": "1ea8f3e3d18336d527b76a10185627bd22821508229faf67c10ebf803db70105"
+    },
+    {
+      "path": "/hoc-boi-hue/",
+      "status": 200,
+      "bytes": 228181,
+      "matchesBuild": true,
+      "sha256": "807423b4559fef336988998dab0384198ce3773ab42675f181b4da12d62ea5d0"
+    },
+    {
+      "path": "/en/swimming-lessons-hue/",
+      "status": 200,
+      "bytes": 223501,
+      "matchesBuild": true,
+      "sha256": "2c75d2990fe2aea616f6da6abb8d0384770bbf44ac5cd0177156d087d6f149bd"
+    },
+    {
+      "path": "/hoc-boi-can-tho/",
+      "status": 200,
+      "bytes": 244432,
+      "matchesBuild": true,
+      "sha256": "ccb37d01e7949a6f8b46100ad5f7590e42715f9d39cafae4aab02eb0cfc225da"
+    },
+    {
+      "path": "/en/swimming-lessons-can-tho/",
+      "status": 200,
+      "bytes": 240331,
+      "matchesBuild": true,
+      "sha256": "e54a486fb6027923e7251de4ccd259e89f7b29e1fd885345cdfe198417e016ee"
+    },
+    {
+      "path": "/hoc-boi-dong-nai/",
+      "status": 200,
+      "bytes": 203653,
+      "matchesBuild": true,
+      "sha256": "e5252b9aa8106c417ebe6707a061b62935592dd3c1b041c762a62c99632366bf"
+    },
+    {
+      "path": "/en/swimming-lessons-dong-nai/",
+      "status": 200,
+      "bytes": 200552,
+      "matchesBuild": true,
+      "sha256": "b9d574c0aa181c1ba8cb458e5ff4f06e82df0e815f170055dc7fd13e44b12100"
+    },
+    {
+      "path": "/hoc-boi-quang-ninh/",
+      "status": 200,
+      "bytes": 211412,
+      "matchesBuild": true,
+      "sha256": "41ad756229713638bb8663302d3faf2577bf7d4982db3536f91e54b2488d1bef"
+    },
+    {
+      "path": "/en/swimming-lessons-quang-ninh/",
+      "status": 200,
+      "bytes": 206937,
+      "matchesBuild": true,
+      "sha256": "b2ea73f1d33b020636cedc71cb58ee096f177c05708dd3e950233f8567edcb2a"
+    },
+    {
+      "path": "/hoc-boi-bac-ninh/",
+      "status": 200,
+      "bytes": 220756,
+      "matchesBuild": true,
+      "sha256": "fc77493bd7b09e978d4acf09e40de85b8976f9557bfd4bd307d4921f65b38ed5"
+    },
+    {
+      "path": "/en/swimming-lessons-bac-ninh/",
+      "status": 200,
+      "bytes": 216804,
+      "matchesBuild": true,
+      "sha256": "e4d4f270b94c2b342de8b8330dde67f8f0450e7b986705c2398c2292e490afc2"
+    },
+    {
+      "path": "/hoc-boi-thai-nguyen/",
+      "status": 200,
+      "bytes": 198870,
+      "matchesBuild": true,
+      "sha256": "e3b951f8877c9fb6832a1cc7badf336f99ce6bc61060b4898e5b13686a5ead65"
+    },
+    {
+      "path": "/en/swimming-lessons-thai-nguyen/",
+      "status": 200,
+      "bytes": 195927,
+      "matchesBuild": true,
+      "sha256": "2033ddb16bff1e8e966b86380c1380c648f3f92c9f1d3164ae228445951b33e5"
+    },
+    {
+      "path": "/hoc-boi-phu-tho/",
+      "status": 200,
+      "bytes": 221932,
+      "matchesBuild": true,
+      "sha256": "206fb6f6fd3b5d73c08046c7a9c68bba708a17db131aaf20e4990a0092001348"
+    },
+    {
+      "path": "/en/swimming-lessons-phu-tho/",
+      "status": 200,
+      "bytes": 219451,
+      "matchesBuild": true,
+      "sha256": "d96902730a6b13d66274174cd08696ab6b092de12f6a37e2eff13aa6178ede57"
+    },
+    {
+      "path": "/hoc-boi-ninh-binh/",
+      "status": 200,
+      "bytes": 236094,
+      "matchesBuild": true,
+      "sha256": "ce764898673c271e484dab209ee22a6d338be1fd800e770c5498af5e86eace62"
+    },
+    {
+      "path": "/en/swimming-lessons-ninh-binh/",
+      "status": 200,
+      "bytes": 233101,
+      "matchesBuild": true,
+      "sha256": "d1ce1560385005bec072c42a1a89bdb5cabb31c52a8df11caf4b09167133c048"
+    },
+    {
+      "path": "/hoc-boi-hung-yen/",
+      "status": 200,
+      "bytes": 212310,
+      "matchesBuild": true,
+      "sha256": "f955356440850dea52918f667fb31870a8e1ee7c97c71426c1179476b23de2d2"
+    },
+    {
+      "path": "/en/swimming-lessons-hung-yen/",
+      "status": 200,
+      "bytes": 209533,
+      "matchesBuild": true,
+      "sha256": "b9bc552edecda9d71fc544e73651a8b6b52c3fda93245d318576c7b19d8049ca"
+    },
+    {
+      "path": "/hoc-boi-thanh-hoa/",
+      "status": 200,
+      "bytes": 266802,
+      "matchesBuild": true,
+      "sha256": "97cd5281d3201f15b492aaf04963b6dc639e3b209625010f1feab23308850a52"
+    },
+    {
+      "path": "/en/swimming-lessons-thanh-hoa/",
+      "status": 200,
+      "bytes": 264173,
+      "matchesBuild": true,
+      "sha256": "6159251b31c20ad68a5d2ed2cbbb8e654f423fbf72b4f278d8693e892154ef4f"
+    },
+    {
+      "path": "/hoc-boi-nghe-an/",
+      "status": 200,
+      "bytes": 237405,
+      "matchesBuild": true,
+      "sha256": "e5e7f5febd1d93c447b9c29800a26627fd69da98dfc80d2ee0d3846a54378baa"
+    },
+    {
+      "path": "/en/swimming-lessons-nghe-an/",
+      "status": 200,
+      "bytes": 234622,
+      "matchesBuild": true,
+      "sha256": "26ebf725f0edfad9d408794b5ba7c325423d69e87ac7cbc7084d72c4590bebc7"
+    },
+    {
+      "path": "/hoc-boi-ha-tinh/",
+      "status": 200,
+      "bytes": 185705,
+      "matchesBuild": true,
+      "sha256": "6f297609aadd47b1f06ebf2a2036ecdec72fcf4cad7d1114e39d06a70119791e"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-tinh/",
+      "status": 200,
+      "bytes": 182656,
+      "matchesBuild": true,
+      "sha256": "c9d2e12423a3c5104cc815a1ff720dae85cad5e91bd5d7d8ac177cfe29b4f410"
+    },
+    {
+      "path": "/hoc-boi-quang-binh/",
+      "status": 200,
+      "bytes": 192287,
+      "matchesBuild": true,
+      "sha256": "bab59cf573ec0e9af769323c5bd1338e268e30bd8fce5ea996dc1e0ee0900537"
+    },
+    {
+      "path": "/en/swimming-lessons-quang-binh/",
+      "status": 200,
+      "bytes": 189420,
+      "matchesBuild": true,
+      "sha256": "d5cedc004abb11398b350e7c2d5256a805245b5e241d7b601375d960cfe14d59"
+    },
+    {
+      "path": "/hoc-boi-quang-ngai/",
+      "status": 200,
+      "bytes": 205384,
+      "matchesBuild": true,
+      "sha256": "0befc1cb266c165472c2a2cf6dabb2ef1f540f66189c3ecc7350bd0d4713f838"
+    },
+    {
+      "path": "/en/swimming-lessons-quang-ngai/",
+      "status": 200,
+      "bytes": 202455,
+      "matchesBuild": true,
+      "sha256": "650af2152eb24f34ee51716e495d5029f1a7e9a1a5e3fbed243d889826fa091b"
+    },
+    {
+      "path": "/hoc-boi-binh-dinh/",
+      "status": 200,
+      "bytes": 242071,
+      "matchesBuild": true,
+      "sha256": "cf5a3f89086d78dcba1eb398e7e54b3ef2bb027e425974f727450b6161f3a3ae"
+    },
+    {
+      "path": "/en/swimming-lessons-binh-dinh/",
+      "status": 200,
+      "bytes": 239224,
+      "matchesBuild": true,
+      "sha256": "e0963bdc5a3ff2dd737b88eece6f2154d11db3e634f33a402b2024c8c5ca4548"
+    },
+    {
+      "path": "/hoc-boi-khanh-hoa/",
+      "status": 200,
+      "bytes": 224204,
+      "matchesBuild": true,
+      "sha256": "285154b5ba0b7c8ed5517d50dbc91e90bba61abf92c9c23e852d5b732839ded4"
+    },
+    {
+      "path": "/en/swimming-lessons-khanh-hoa/",
+      "status": 200,
+      "bytes": 220166,
+      "matchesBuild": true,
+      "sha256": "fa82492146f83ed7fb903742f850adb712636aed27f91b5af6837e7c68fb7dfd"
+    },
+    {
+      "path": "/hoc-boi-dak-lak/",
+      "status": 200,
+      "bytes": 217037,
+      "matchesBuild": true,
+      "sha256": "f1c70f40767066c44fd5738ce906b85f337008f8d71ef59d6a4361985923680d"
+    },
+    {
+      "path": "/en/swimming-lessons-dak-lak/",
+      "status": 200,
+      "bytes": 213833,
+      "matchesBuild": true,
+      "sha256": "e77cc4e9f2f011901f32a61efd04c1da2d7d00e11348abec722b85630a098757"
+    },
+    {
+      "path": "/hoc-boi-lam-dong/",
+      "status": 200,
+      "bytes": 227590,
+      "matchesBuild": true,
+      "sha256": "255689741b720d4f76261bf2fc016520cb17098f7889363d17bbca6bbff142ec"
+    },
+    {
+      "path": "/en/swimming-lessons-lam-dong/",
+      "status": 200,
+      "bytes": 224585,
+      "matchesBuild": true,
+      "sha256": "8ff266f4f0c4e6c274fd2bbcd5ccf6eb62494a413607c363868e28a7edf155d5"
+    },
+    {
+      "path": "/hoc-boi-tay-ninh/",
+      "status": 200,
+      "bytes": 204770,
+      "matchesBuild": true,
+      "sha256": "88cb0f7249ad6768c740e4f096a28777cc50c3d0182d814d0603f3aa0e029d64"
+    },
+    {
+      "path": "/en/swimming-lessons-tay-ninh/",
+      "status": 200,
+      "bytes": 201866,
+      "matchesBuild": true,
+      "sha256": "6309bc5293040b11321649545459a8e1be733a5d06f8d7cb1c2e6085cfb0f762"
+    },
+    {
+      "path": "/hoc-boi-dong-thap/",
+      "status": 200,
+      "bytes": 206285,
+      "matchesBuild": true,
+      "sha256": "657542d757e201d5a6966e606066e3fda4f1ab24cce92cf61745ba155cd6ec05"
+    },
+    {
+      "path": "/en/swimming-lessons-dong-thap/",
+      "status": 200,
+      "bytes": 203219,
+      "matchesBuild": true,
+      "sha256": "080440bc6b0f99a9c71a76e9b669c5117a763bf2553f7ca2a1c75c534a2a3ce0"
+    },
+    {
+      "path": "/hoc-boi-vinh-long/",
+      "status": 200,
+      "bytes": 221350,
+      "matchesBuild": true,
+      "sha256": "a17356f058d8f8cffe0c83fcb1ead8967ab4a6e66cdec425f4463d5b656d7665"
+    },
+    {
+      "path": "/en/swimming-lessons-vinh-long/",
+      "status": 200,
+      "bytes": 218603,
+      "matchesBuild": true,
+      "sha256": "461ab42a8289fd1a987d18bcffb5b8006a841be6fadfc97077435e420835e40a"
+    },
+    {
+      "path": "/hoc-boi-an-giang/",
+      "status": 200,
+      "bytes": 194749,
+      "matchesBuild": true,
+      "sha256": "183a399d21bfbdab017d7de70720b92e4f06542eb821f9c2e1a1defec046b96a"
+    },
+    {
+      "path": "/en/swimming-lessons-an-giang/",
+      "status": 200,
+      "bytes": 192094,
+      "matchesBuild": true,
+      "sha256": "5f168d9b0cb4905339258c360692640498c6aa3cdbfc3b0251cb17b84199e34c"
+    },
+    {
+      "path": "/hoc-boi-ca-mau/",
+      "status": 200,
+      "bytes": 182081,
+      "matchesBuild": true,
+      "sha256": "53eb778e422cad3f3e1836ae5c03e93fb0b8d2063640c4ea1b1e8b63bc665df7"
+    },
+    {
+      "path": "/en/swimming-lessons-ca-mau/",
+      "status": 200,
+      "bytes": 178978,
+      "matchesBuild": true,
+      "sha256": "4eeef85fd3910cdffceb4819e21f74da4196ba666ec79db42e933e806ede46f3"
+    },
+    {
+      "path": "/hoc-boi-cao-bang/",
+      "status": 200,
+      "bytes": 133383,
+      "matchesBuild": true,
+      "sha256": "ce0a7a68d9e2fca42e436539919e4753ffda4c6905d41ce807dcbcaf9f6ffa12"
+    },
+    {
+      "path": "/en/swimming-lessons-cao-bang/",
+      "status": 200,
+      "bytes": 130758,
+      "matchesBuild": true,
+      "sha256": "12e877185540025e97c02713a35a2209ca7d4d83e500bb60865f05c4198858f2"
+    },
+    {
+      "path": "/hoc-boi-lai-chau/",
+      "status": 200,
+      "bytes": 119594,
+      "matchesBuild": true,
+      "sha256": "21a7475ff6d8a4626ab3e672eb1b3c8c49de8c4ff1dc53c463918c9adaa8d478"
+    },
+    {
+      "path": "/en/swimming-lessons-lai-chau/",
+      "status": 200,
+      "bytes": 116928,
+      "matchesBuild": true,
+      "sha256": "75f76cf51b3dcf6efea58731cb31f3a59e921723da73ca1bb6628c6a769eea68"
+    },
+    {
+      "path": "/hoc-boi-dien-bien/",
+      "status": 200,
+      "bytes": 133722,
+      "matchesBuild": true,
+      "sha256": "939417683b3f2ec1058a8934bba8dbdd23eb4e0f89efc866dcb415f96e5e03d2"
+    },
+    {
+      "path": "/en/swimming-lessons-dien-bien/",
+      "status": 200,
+      "bytes": 130852,
+      "matchesBuild": true,
+      "sha256": "264893006b76b1904656c84280b50e5d449c1c69b6fbb4c433d1c8910626a3e8"
+    },
+    {
+      "path": "/hoc-boi-son-la/",
+      "status": 200,
+      "bytes": 181739,
+      "matchesBuild": true,
+      "sha256": "236661b0fbbf7f481c1bb0974fe4c6f726f3f453cc9a253140420f0b6af0af7c"
+    },
+    {
+      "path": "/en/swimming-lessons-son-la/",
+      "status": 200,
+      "bytes": 178842,
+      "matchesBuild": true,
+      "sha256": "6d8b93d1a95a889fe2df6e2913e17c88af835603e5fe37afdafd9d90e73ec4a4"
+    },
+    {
+      "path": "/hoc-boi-lang-son/",
+      "status": 200,
+      "bytes": 148766,
+      "matchesBuild": true,
+      "sha256": "47c59e4e087a131d8cd732f7282b269609aa768e492928c2fc8c853cb11e6372"
+    },
+    {
+      "path": "/en/swimming-lessons-lang-son/",
+      "status": 200,
+      "bytes": 146066,
+      "matchesBuild": true,
+      "sha256": "549126ee903c5ba0d9d387e17dde7ba1bb35bd0328cc0aec2cad0ba92e77853e"
+    },
+    {
+      "path": "/hoc-boi-lao-cai/",
+      "status": 200,
+      "bytes": 199677,
+      "matchesBuild": true,
+      "sha256": "bebdd41cfea13b52ffdbe14df64461c943a810726301c2d507b4ffc4372be99a"
+    },
+    {
+      "path": "/en/swimming-lessons-lao-cai/",
+      "status": 200,
+      "bytes": 196883,
+      "matchesBuild": true,
+      "sha256": "96b1086083f92d5922feeaaed3cb3c195d500a2dc2ffddce47d275a2847d73bc"
+    },
+    {
+      "path": "/hoc-boi-tuyen-quang/",
+      "status": 200,
+      "bytes": 203238,
+      "matchesBuild": true,
+      "sha256": "875f3f78d9fa28c73a4b1616264037cd75d9c16c23bae25dd1699c3e4b73ffe0"
+    },
+    {
+      "path": "/en/swimming-lessons-tuyen-quang/",
+      "status": 200,
+      "bytes": 200799,
+      "matchesBuild": true,
+      "sha256": "a72278b6c0de3277726bad09bc856a0b4371d1c55ed1326db7d90b5f521fa1ff"
+    },
+    {
+      "path": "/hoc-boi-ha-noi/ba-dinh/",
+      "status": 200,
+      "bytes": 118797,
+      "matchesBuild": true,
+      "sha256": "544671e1064e5c8ae61e6521fadfdac17e7d2fd1a5e7819f3723a5ca18885487"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-noi/ba-dinh/",
+      "status": 200,
+      "bytes": 115137,
+      "matchesBuild": true,
+      "sha256": "4b5a47c24d0471941940f5e9200b4966c94ec1e3b2c0d7caf99daede1c312673"
+    },
+    {
+      "path": "/hoc-boi-ha-noi/bat-bat/",
+      "status": 200,
+      "bytes": 84134,
+      "matchesBuild": true,
+      "sha256": "3e5669280a87a3f890c8c0bad098be04be7c170ca757e0beb3b6b6dae2bbf4d2"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-noi/bat-bat/",
+      "status": 200,
+      "bytes": 80772,
+      "matchesBuild": true,
+      "sha256": "a1576d2c0ad40f97f598597c2bea60ce4ed52fec415605f34c37d9a577e0da52"
+    },
+    {
+      "path": "/hoc-boi-tphcm/binh-hoa/",
+      "status": 200,
+      "bytes": 107438,
+      "matchesBuild": true,
+      "sha256": "7f4ef99bd38d4489cf7a36ff835f839b202338660eeb844241fdfa89af7fb492"
+    },
+    {
+      "path": "/en/swimming-lessons-ho-chi-minh/binh-hoa/",
+      "status": 200,
+      "bytes": 104292,
+      "matchesBuild": true,
+      "sha256": "a7d549685386f11ddf40b6ae9ccaa54ee54f02933ebe0c9e50e0d47f139eaf94"
+    },
+    {
+      "path": "/hoc-boi-lam-dong/xuan-huong-da-lat/",
+      "status": 200,
+      "bytes": 108032,
+      "matchesBuild": true,
+      "sha256": "aa06cab6a621bc72beeffc837ad12b023ca3d879e1acec61380d54a05516a32e"
+    },
+    {
+      "path": "/en/swimming-lessons-lam-dong/xuan-huong-da-lat/",
+      "status": 200,
+      "bytes": 104372,
+      "matchesBuild": true,
+      "sha256": "ae03f3665d8f13452f9735658db9ee22cddc851c5a71fa8aa8bb56cab5e47c31"
+    },
+    {
+      "path": "/hoc-boi-ha-noi/van-mieu-quoc-tu-giam/",
+      "status": 200,
+      "bytes": 95857,
+      "matchesBuild": true,
+      "sha256": "81e512125fa94175d4a92d5a1780e2d9d872b94fc36b3c4a624d5dfae3928924"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-noi/van-mieu-quoc-tu-giam/",
+      "status": 200,
+      "bytes": 92358,
+      "matchesBuild": true,
+      "sha256": "fd35cabe13c84c92e2545728c17be2cca67996000f137c98d572ebcd099bd3c7"
+    },
+    {
+      "path": "/hoc-boi-ha-noi/nam-tu-liem/",
+      "status": 200,
+      "bytes": 78847,
+      "matchesBuild": true,
+      "sha256": "aa9f763e17dd4b5060c2e0619b96b32155bf3e7cac941f8ca29b3966b75c2a5a"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-noi/nam-tu-liem/",
+      "status": 200,
+      "bytes": 75778,
+      "matchesBuild": true,
+      "sha256": "6d285c3f70ceb34417d192887c366bd7205fdf5484ca04e53ed2926a61117426"
+    },
+    {
+      "path": "/hoc-boi-ha-noi/bac-tu-liem/",
+      "status": 200,
+      "bytes": 87706,
+      "matchesBuild": true,
+      "sha256": "66597b948cb4495bb0ffe7286d4c7767c8e70fba433d4dd295151e7edc00cf34"
+    },
+    {
+      "path": "/en/swimming-lessons-ha-noi/bac-tu-liem/",
+      "status": 200,
+      "bytes": 84566,
+      "matchesBuild": true,
+      "sha256": "8b5b8670a9cf10783c9af27f039512c5f6c552e441f685e624c77f35b23205a7"
+    },
+    {
+      "path": "/hoc-boi-tphcm/quan-1/",
+      "status": 200,
+      "bytes": 80989,
+      "matchesBuild": true,
+      "sha256": "27ce251df6fb592c1ec84ce53febe001cb70a6998f9b18c38380c0e1330d745d"
+    },
+    {
+      "path": "/en/swimming-lessons-ho-chi-minh/quan-1/",
+      "status": 200,
+      "bytes": 78315,
+      "matchesBuild": true,
+      "sha256": "7972e270cf1f1f7bafb6c38d85d7859e3f4d197aa0ca26b2f6ca44ca39c3a0ff"
+    },
+    {
+      "path": "/hoc-boi-tphcm/lai-thieu/",
+      "status": 200,
+      "bytes": 142702,
+      "matchesBuild": true,
+      "sha256": "399d29ddd2d1913821d7c031095453aa740dd9f90afc8f8b1b7e2f63dedb4edb"
+    },
+    {
+      "path": "/hoc-boi-nhat-an-lai-thieu/",
+      "status": 200,
+      "bytes": 110407,
+      "matchesBuild": true,
+      "sha256": "84a6fc4e92a783327c3ef56d136fe3845157fc9a0efa33f215474e692b852129"
+    },
+    {
+      "path": "/hoc-boi-the-rivana-lai-thieu/",
+      "status": 200,
+      "bytes": 107944,
+      "matchesBuild": true,
+      "sha256": "620193dedefe2d9e67779a30b5713ca4a5da7dc70a28a12706863a00b746427f"
+    },
+    {
+      "path": "/hoc-boi-emerald-golf-view-lai-thieu/",
+      "status": 200,
+      "bytes": 106120,
+      "matchesBuild": true,
+      "sha256": "e710061ef66899ef738c4fb5d61fabe1e684d2f63826f2bc09afb075335fceea"
+    },
+    {
+      "path": "/hoc-boi-opal-skyline-lai-thieu/",
+      "status": 200,
+      "bytes": 106723,
+      "matchesBuild": true,
+      "sha256": "f7215472ad1a61a4c08a7adc15fd58eb26ad07399e4171df0656c6ad0e3cb4eb"
+    },
+    {
+      "path": "/hoc-boi-duy-anh-lai-thieu/",
+      "status": 200,
+      "bytes": 103934,
+      "matchesBuild": true,
+      "sha256": "fdcd14b378c16aded25d589ca76a97a9b0ea1ada67346d041440769ed3fe0eb2"
+    },
+    {
+      "path": "/hoc-boi-tt-vhtt-lai-thieu/",
+      "status": 200,
+      "bytes": 101525,
+      "matchesBuild": true,
+      "sha256": "a27250a260065c2c597e7910410a02ff83c7fbacb88c969fc0a578285da183ce"
+    },
+    {
+      "path": "/hoc-boi-phuong-nam-resort-lai-thieu/",
+      "status": 200,
+      "bytes": 102388,
+      "matchesBuild": true,
+      "sha256": "9b30530d8036b7ae107156cf29b7d5fa61b4b051def3f6e2eddf91a793b647ee"
+    },
+    {
+      "path": "/hoc-boi-din-ky-lai-thieu/",
+      "status": 200,
+      "bytes": 101240,
+      "matchesBuild": true,
+      "sha256": "17702e3a2cfe85aaedc62b803f44ab4f86e772ba7d542a506c03e5262caa0dc7"
+    },
+    {
+      "path": "/hoc-boi-emerald-68-lai-thieu/",
+      "status": 200,
+      "bytes": 103922,
+      "matchesBuild": true,
+      "sha256": "0a392ba0ded57817ad755f73d63f1869b627aff47d7ad461017d135c35f45fd2"
+    },
+    {
+      "path": "/hoc-boi-ecoxuan-lai-thieu/",
+      "status": 200,
+      "bytes": 101752,
+      "matchesBuild": true,
+      "sha256": "5ff5cf3254bf6c7ea7629f660d167ed5178105054fdf454e355ad0c18997909a"
+    },
+    {
+      "path": "/hoc-boi-vista-riverside-lai-thieu/",
+      "status": 200,
+      "bytes": 101578,
+      "matchesBuild": true,
+      "sha256": "115913bc0f268e6acc012536c862e4d31eb62cbf04aa3f36f059d7d6b23a3b7d"
+    },
+    {
+      "path": "/hoc-boi-roxana-plaza-lai-thieu/",
+      "status": 200,
+      "bytes": 101804,
+      "matchesBuild": true,
+      "sha256": "fe547984e12e618659ad10a1ee3ccda0b70fc84b68465bec9b5b707b23f193f5"
+    },
+    {
+      "path": "/hoc-boi-marina-tower-lai-thieu/",
+      "status": 200,
+      "bytes": 101196,
+      "matchesBuild": true,
+      "sha256": "071772415ef571babb1133bc334a981e3135a1266af52ff397465108734b10e0"
+    },
+    {
+      "path": "/hoc-boi-ehome-4-lai-thieu/",
+      "status": 200,
+      "bytes": 101183,
+      "matchesBuild": true,
+      "sha256": "0f60daa2f08da47ed3fe3d2862eaf6cf0d50850a3ab8f625b96af73bcc4050c3"
+    },
+    {
+      "path": "/hoc-boi-the-habitat-binh-hoa/",
+      "status": 200,
+      "bytes": 101825,
+      "matchesBuild": true,
+      "sha256": "b1d541e0e455a50c24891b296478299b04841a2b079e21c652fe56d553f72d5c"
+    },
+    {
+      "path": "/hoc-boi-canary-heights-binh-hoa/",
+      "status": 200,
+      "bytes": 101205,
+      "matchesBuild": true,
+      "sha256": "d162912f54276c4edeb7d17cbbb267bce1c8e74addc24ea0708d9bfa7ba306ef"
+    },
+    {
+      "path": "/hoc-boi-parkview-apartment-binh-hoa/",
+      "status": 200,
+      "bytes": 101631,
+      "matchesBuild": true,
+      "sha256": "c58cbe662a1197a721c34a3b3331d16de81b25aea6ab372af62320613c07adca"
+    },
+    {
+      "path": "/hoc-boi-71-binh-hoa/",
+      "status": 200,
+      "bytes": 100779,
+      "matchesBuild": true,
+      "sha256": "e453d2b165893b15cdb76343815748cc2d9beb7cba177ee791eacc30febfae69"
+    },
+    {
+      "path": "/hoc-boi-tien-phong-thuan-an/",
+      "status": 200,
+      "bytes": 104107,
+      "matchesBuild": true,
+      "sha256": "edb803d4f90419a4225f5575700046715012a7ff56b7dbffc04bae830bc3202d"
+    },
+    {
+      "path": "/hoc-boi-minh-quan-thuan-giao/",
+      "status": 200,
+      "bytes": 100773,
+      "matchesBuild": true,
+      "sha256": "38fbb5d1185e6b5427e70a512192831b3bbed6b6eac08fef4277b1a681e26109"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 81431,
+      "matchesBuild": true,
+      "sha256": "3895c50331c0df45b4bf063cdfc8b117cfb859321072918d825c24134bcc9177"
+    },
+    {
+      "path": "/en/",
+      "status": 200,
+      "bytes": 71111,
+      "matchesBuild": true,
+      "sha256": "9e027206ea0b18276c0d15152a01d7c4cda36e0c7b11cafb8cbdd8e7e3472433"
+    },
+    {
+      "path": "/hoc-boi-o-dau/",
+      "status": 200,
+      "bytes": 140085,
+      "matchesBuild": true,
+      "sha256": "1ba29b020b164d03bf5cc45c263048cc733fbe8dd8c541444cdef94c985a98e6"
+    },
+    {
+      "path": "/en/swimming-locations/",
+      "status": 200,
+      "bytes": 68717,
+      "matchesBuild": true,
+      "sha256": "d58afa6f8bed9e2d8121d006f9c9635010e53b0ce6470830e99ff92c1932fe06"
+    },
+    {
+      "path": "/khoa-hoc-boi/",
+      "status": 200,
+      "bytes": 77666,
+      "matchesBuild": true,
+      "sha256": "708dcfac8f0c18aa8688cb86775936383387b47a651fdafb091c31c72ed8f30a"
+    },
+    {
+      "path": "/ky-thuat-boi/",
+      "status": 200,
+      "bytes": 81896,
+      "matchesBuild": true,
+      "sha256": "83b9ffa69008104813de0b807c5afdc9f141eb9e7f2e533d86ea8ea1ebf33769"
+    },
+    {
+      "path": "/bang-gia/",
+      "status": 200,
+      "bytes": 50338,
+      "matchesBuild": true,
+      "sha256": "97bac208f386c9dd1b159edc396cfcdfa60630b422cb4d65b0b4cc8f18871a03"
+    },
+    {
+      "path": "/lien-he/",
+      "status": 200,
+      "bytes": 46508,
+      "matchesBuild": true,
+      "sha256": "5374a0b9c5913cc056fd9371ef6c170b28e6224046669c89ec60cd9f4f54dbd7"
+    },
+    {
+      "path": "/favicon.png",
+      "status": 200,
+      "bytes": 218043,
+      "matchesBuild": true,
+      "sha256": "1bc73a72b64548603986c33bdc7cbf0aa119bfc0e57db27bb679241e09c39d8d"
+    },
+    {
+      "path": "/_assets/MainLayout.Tz6GVI2R.css",
+      "status": 200,
+      "bytes": 46779,
+      "matchesBuild": true,
+      "sha256": "3a36b6f39b8b8c00f976866f80a928b397c0dfda4b03bf03e3ab0aca1a8390e7"
+    },
+    {
+      "path": "/_assets/laiThieuPools.B8n58KQ0.css",
+      "status": 200,
+      "bytes": 60632,
+      "matchesBuild": true,
+      "sha256": "3332221e6615a274ef6a6f76435de62830876cae67e45ca30977916bde6d6e5d"
+    },
+    {
+      "path": "/_assets/schema.BTVlbji4.css",
+      "status": 200,
+      "bytes": 29973,
+      "matchesBuild": true,
+      "sha256": "b4af410cd55ccd76443552608a0c98a0b2cdb39ae8725149095bb7a5cbe848bc"
+    },
+    {
+      "path": "/images/brand/logo.png",
+      "status": 200,
+      "bytes": 102092,
+      "matchesBuild": true,
+      "sha256": "16e7b1f8d01f105467d92f68de78709c867ea3acf2223b85810dec103ccd8c3b"
+    },
+    {
+      "path": "/images/locality/hero/lop-hoc-boi-ha-noi.webp",
+      "status": 200,
+      "bytes": 334380,
+      "matchesBuild": true,
+      "sha256": "93de777a00b5834ec02bb17520d59c176f950bc4246139ee9e7e1fc110f00125"
+    },
+    {
+      "path": "/images/landing/lai-thieu/children.webp",
+      "status": 200,
+      "bytes": 74786,
+      "matchesBuild": true,
+      "sha256": "81ba1cbeda40ee0b16da100fd8f87f8a9ceb49a9eeb0322cab8a1f7ad644db41"
+    },
+    {
+      "path": "/images/landing/lai-thieu/adults.webp",
+      "status": 200,
+      "bytes": 48920,
+      "matchesBuild": true,
+      "sha256": "e4e9ceeb17cfd0a3b93f9c78168f197e959371f4a3b6cfe329b14323aaa425a9"
+    },
+    {
+      "path": "/images/landing/lai-thieu/hero.webp",
+      "status": 200,
+      "bytes": 173864,
+      "matchesBuild": true,
+      "sha256": "3fb867979017b04ed850f6393f108cc9d15a42d5c2d7b0ecca7a43bfa676c765"
+    },
+    {
+      "path": "/images/landing/lai-thieu/confidence.webp",
+      "status": 200,
+      "bytes": 33532,
+      "matchesBuild": true,
+      "sha256": "fee5ec5c1ae0cd2392d2007996aafa5b0d703c63fd869c93faa7624d96042bb5"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/community-pool-card.webp",
+      "status": 200,
+      "bytes": 94946,
+      "matchesBuild": true,
+      "sha256": "c98a6bdd1336b3cbcc98df0fad29b4dce3f1f00140e1601463ca33554616c7c7"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/garden-pool-card.webp",
+      "status": 200,
+      "bytes": 104994,
+      "matchesBuild": true,
+      "sha256": "602ea52467fab0c78ac418b5bab39ebeb897fb054c7ee90b4da042e06fd6a21b"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/residential-pool-card.webp",
+      "status": 200,
+      "bytes": 96684,
+      "matchesBuild": true,
+      "sha256": "b0246cfd3671f18ded511fb5a3493d434f8d4f6d29e15af27118f7885748d508"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-breaststroke-side-breathing.webp",
+      "status": 200,
+      "bytes": 75794,
+      "matchesBuild": true,
+      "sha256": "f54164f3802846302f7a580ff7be01401c92901540afa8313a4a3f166ea1d0b9"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-front-crawl-underwater.webp",
+      "status": 200,
+      "bytes": 101064,
+      "matchesBuild": true,
+      "sha256": "8545d047977e5e91059f3b2ed5b7f3caf35979976fd7f3e280cc86b4772627c2"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-backstroke-surface-full-body.webp",
+      "status": 200,
+      "bytes": 85142,
+      "matchesBuild": true,
+      "sha256": "79af35ea04cfe908bddaa510462ffcc2bbd03d7d60c6a584a2dddfc698b8be5d"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-butterfly-underwater.webp",
+      "status": 200,
+      "bytes": 124750,
+      "matchesBuild": true,
+      "sha256": "14c961d14abe4bf7bf67588481d8d98507238f5e6ebe441ff055049baeb54bfc"
+    },
+    {
+      "path": "/images/landing/lai-thieu/technique-treading-water.webp",
+      "status": 200,
+      "bytes": 77068,
+      "matchesBuild": true,
+      "sha256": "b6170ad809a3ad6dd7b2be8efe68a76c23759b5ae933000bb35e65e2b9cc45de"
+    },
+    {
+      "path": "/images/locality/hero/lop-hoc-boi-tre-em-tphcm.webp",
+      "status": 200,
+      "bytes": 274394,
+      "matchesBuild": true,
+      "sha256": "fefd3279b9343e717accda25a1b67f4ebfe1720c13896a8529869375f63f1511"
+    },
+    {
+      "path": "/images/pool-detail/outdoor-pool-illustration-card.webp",
+      "status": 200,
+      "bytes": 76772,
+      "matchesBuild": true,
+      "sha256": "5d38cd5fe6f44e41da7ff39e60d8d7ab97709ad5fa26d0ebce9ac62032f9b1e7"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-ho-boi-vo-cuc-tang-6-card.webp",
+      "status": 200,
+      "bytes": 28448,
+      "matchesBuild": true,
+      "sha256": "842a9b523a6160c5f3a8efd6ae352e71f7a671a6ea6e427896affebbfb65d4c6"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-tien-ich-ho-boi-card.webp",
+      "status": 200,
+      "bytes": 67984,
+      "matchesBuild": true,
+      "sha256": "9dbcb70b48b8b4f24febf73600e16fa2a630bf6a5e1d7dce0d1ea6ef5f410247"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-02-card.webp",
+      "status": 200,
+      "bytes": 59738,
+      "matchesBuild": true,
+      "sha256": "29811fc32aa8c009a937e17971267478dd42315c3a9102252660ad4b6061b952"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-din-ky/ho-boi-din-ky-binh-nham-card.webp",
+      "status": 200,
+      "bytes": 42282,
+      "matchesBuild": true,
+      "sha256": "81946f1c69621039bf0b76f6081f2d971b82059a1668c85a18e8703d3cc84872"
+    },
+    {
+      "path": "/images/pool-detail/venues/ecoxuan-lai-thieu/ecoxuan-lai-thieu-ho-boi-tien-ich-card.webp",
+      "status": 200,
+      "bytes": 53262,
+      "matchesBuild": true,
+      "sha256": "c831c51a07d06be3292259f022fe6f07474bdf9905b6ccb35c0dd742ef2d8b66"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-habitat-binh-duong/the-habitat-tien-ich-01-card.webp",
+      "status": 200,
+      "bytes": 67420,
+      "matchesBuild": true,
+      "sha256": "56ab3423da58f41ffc3230bbdb577b1738aaed7ddb29a65e0fac2adc15a8dc3d"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-01-card.webp",
+      "status": 200,
+      "bytes": 65684,
+      "matchesBuild": true,
+      "sha256": "facfbf52c26a76c572fc80d20b83e6378ec979e5205b1e87d5228ec4bef976a9"
+    },
+    {
+      "path": "/images/locality/hero/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.webp",
+      "status": 200,
+      "bytes": 315122,
+      "matchesBuild": true,
+      "sha256": "17aad4f5b99a3e2fcd1176d2ff6b6bd05238afb93b5dbf1b6be53ab33cefcc99"
+    },
+    {
+      "path": "/images/locality/hero/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.webp",
+      "status": 200,
+      "bytes": 232758,
+      "matchesBuild": true,
+      "sha256": "2ffe40b2131c9c0a660c825756594ae0c0d147878873ea462c6c62bb02bcee8a"
+    },
+    {
+      "path": "/images/locality/hero/lop-hoc-boi-vui-ve-ky-luat.webp",
+      "status": 200,
+      "bytes": 337660,
+      "matchesBuild": true,
+      "sha256": "e092656349af75bb6c0c266e3554c30ac616588ccf3a0ddb6f83ad0e5b56abbf"
+    },
+    {
+      "path": "/images/locality/hero/giang-vien-huong-dan-ky-thuat.webp",
+      "status": 200,
+      "bytes": 54890,
+      "matchesBuild": true,
+      "sha256": "1f8c33a71eb86cfa23b3186ea0f1136150e361d4da9875e7076150ac2ff344b7"
+    },
+    {
+      "path": "/images/locality/hero/lop-boi-cu-dan-nhi-vinhomes.webp",
+      "status": 200,
+      "bytes": 99394,
+      "matchesBuild": true,
+      "sha256": "6490143c56373e96a073540f36eec5031f7d826655436c768ef2de49ab299e1c"
+    },
+    {
+      "path": "/images/locality/hero/lop-boi-tran-ngap-tieng-cuoi.webp",
+      "status": 200,
+      "bytes": 232758,
+      "matchesBuild": true,
+      "sha256": "2ffe40b2131c9c0a660c825756594ae0c0d147878873ea462c6c62bb02bcee8a"
+    },
+    {
+      "path": "/_assets/localLandingPages.BrM1idEt.css",
+      "status": 200,
+      "bytes": 5297,
+      "matchesBuild": true,
+      "sha256": "2d2b58e89a2d10bc9b18411c7b9b8eb1215b788a9fe0cd0ae1f58bb1e9ed76a5"
+    },
+    {
+      "path": "/images/landing/lai-thieu/hero-mobile.webp",
+      "status": 200,
+      "bytes": 89804,
+      "matchesBuild": true,
+      "sha256": "a1cd86965d617493e1f6589a912e997c81bb12a2097d1b83fbde8053fe13b381"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-nguoi-lon-card.webp",
+      "status": 200,
+      "bytes": 59244,
+      "matchesBuild": true,
+      "sha256": "d06f3719e3935ccf369983a97999f173c19256cbc469d148aef3e671bec16228"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-ho-boi-vo-cuc-tang-3-card.webp",
+      "status": 200,
+      "bytes": 64280,
+      "matchesBuild": true,
+      "sha256": "b36a2ecfadb77962c70c593fa044874106e77f77afc9dca3dcb3016afc5e1a26"
+    },
+    {
+      "path": "/images/pool-detail/venues/roxana-plaza/roxana-plaza-toan-canh-card.webp",
+      "status": 200,
+      "bytes": 84834,
+      "matchesBuild": true,
+      "sha256": "e0df2695589b69d450c0cc2961a8aa426b64c99fa45c713f569652f040bcc66a"
+    },
+    {
+      "path": "/images/pool-detail/small-group-swimming.webp",
+      "status": 200,
+      "bytes": 79712,
+      "matchesBuild": true,
+      "sha256": "21983e3739823ba1c394d07e7f24989a3d9f38fec181de585bf6b3bfadd12eca"
+    },
+    {
+      "path": "/images/landing/lai-thieu/journey.webp",
+      "status": 200,
+      "bytes": 183960,
+      "matchesBuild": true,
+      "sha256": "f92cb3d913737f7180de766e993a0c6d4d1fd83a78ac6536a48051fb1aefb7e8"
+    },
+    {
+      "path": "/images/landing/lai-thieu/local.webp",
+      "status": 200,
+      "bytes": 164714,
+      "matchesBuild": true,
+      "sha256": "593a6d20c2e8527924e2eb11884e83f6b31a50b52a226c48be81364fafd5b12a"
+    },
+    {
+      "path": "/images/testimonials/huyen-reu.jpg",
+      "status": 200,
+      "bytes": 50608,
+      "matchesBuild": true,
+      "sha256": "dd71ed38275d1d496907708fd41033e1a2d4f1c3c19f3a6111cfc8eeb4387f74"
+    },
+    {
+      "path": "/images/testimonials/huong-giang.jpg",
+      "status": 200,
+      "bytes": 32263,
+      "matchesBuild": true,
+      "sha256": "37766a950e53595aaa995a2e2d118dbe8755d42a0094a8b6db2abfb87df1f94c"
+    },
+    {
+      "path": "/images/testimonials/duyen-duong.jpg",
+      "status": 200,
+      "bytes": 13480,
+      "matchesBuild": true,
+      "sha256": "0b097095de3e236ca7d6554855e32e57c34cfe62ca502739642904ce4388aec2"
+    },
+    {
+      "path": "/_assets/poolDetailPages.C6dXkqJK.css",
+      "status": 200,
+      "bytes": 32869,
+      "matchesBuild": true,
+      "sha256": "9410a7e611b06be3c656bfdc9d96fed1b4b3138ec213a0a0e93a9b76820d5184"
+    },
+    {
+      "path": "/images/pool-detail/outdoor-pool-illustration-mobile.webp",
+      "status": 200,
+      "bytes": 156600,
+      "matchesBuild": true,
+      "sha256": "7b952fef23b3ba25be1e42abe832be2b0863d966b8d8594e0b3b83ab62696da9"
+    },
+    {
+      "path": "/images/pool-detail/outdoor-pool-illustration.webp",
+      "status": 200,
+      "bytes": 375740,
+      "matchesBuild": true,
+      "sha256": "10b5b155ede763f59a5a7ebbfa4aa0e3b5561d5dbbe52ad18441a426d314b5a5"
+    },
+    {
+      "path": "/images/pool-detail/instructor-le-van-thong.webp",
+      "status": 200,
+      "bytes": 65188,
+      "matchesBuild": true,
+      "sha256": "32bd7eda8fd2655e147d2078ca5aebbac80066af08daa9912b4b5a2182b7c72b"
+    },
+    {
+      "path": "/images/pool-detail/swimming-gear.webp",
+      "status": 200,
+      "bytes": 37952,
+      "matchesBuild": true,
+      "sha256": "bf74c9405bb2a7ebd237d78ba14b869a9a2c1e3d8e1372e2bd8f22d95a2d587c"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-nguoi-lon.webp",
+      "status": 200,
+      "bytes": 106500,
+      "matchesBuild": true,
+      "sha256": "b80f6bdda93b0d2575f4e4f09fbe7e24eb23d4b6b44147ccd57813b1803805c6"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-tre-em.webp",
+      "status": 200,
+      "bytes": 111578,
+      "matchesBuild": true,
+      "sha256": "125671aba3bf63c989f653ee12bc4aee71f5565dd01e36f41b9a217309d6c5db"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-tien-ich-thuc-te-01.webp",
+      "status": 200,
+      "bytes": 179510,
+      "matchesBuild": true,
+      "sha256": "793b4277e3604b0477c184ab057594ace64a74884fd01f5fb8c84d770adb9fd9"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-thuc-te-01.webp",
+      "status": 200,
+      "bytes": 263364,
+      "matchesBuild": true,
+      "sha256": "7d0e577a90d719ae25fdb3aa3caa5350d4048f80010142c06c84122dfb85e443"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-rivana-hkk/the-rivana-ho-boi-tran-bo.webp",
+      "status": 200,
+      "bytes": 248116,
+      "matchesBuild": true,
+      "sha256": "d90ae81b8a0def8a8abe59e30ce183b512233d404a3368344729af822ef04d6a"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-ho-boi-vo-cuc-tang-6.webp",
+      "status": 200,
+      "bytes": 169078,
+      "matchesBuild": true,
+      "sha256": "d48f14a6a09f6c46845ebec37072844e92150b4023673a13ef99861b3b8a05c5"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-toan-canh-flycam.webp",
+      "status": 200,
+      "bytes": 356272,
+      "matchesBuild": true,
+      "sha256": "c06d3b878c5a6c32cb4979d0d13b01effe7ffbbd1928d243515e77ad1bb84a6f"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-golf-view-le-phong/the-emerald-golf-view-mat-bang-tien-ich.webp",
+      "status": 200,
+      "bytes": 230484,
+      "matchesBuild": true,
+      "sha256": "252c8af830489ed059a3bc7b9154668d75b5d6f738dd1501193493f4be5c8236"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-tien-ich-ho-boi.webp",
+      "status": 200,
+      "bytes": 169558,
+      "matchesBuild": true,
+      "sha256": "aa796b3a4b85849bd263befb9067e97fc9c3a8bfd423a4ec0ee9a57f4193476c"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-hinh-thuc-te-01.webp",
+      "status": 200,
+      "bytes": 255464,
+      "matchesBuild": true,
+      "sha256": "24a69bb01f7256b96c1412b2bce305ddc8af8b3dcf52cd59015a7ff1dbea2c4a"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-hinh-thuc-te-02.webp",
+      "status": 200,
+      "bytes": 227744,
+      "matchesBuild": true,
+      "sha256": "203a1d04b30de3a683a1bfa3731d5862d9d8605779033a2aa6ec1becb3f387b3"
+    },
+    {
+      "path": "/images/pool-detail/venues/opal-skyline-dat-xanh/opal-skyline-mat-bang-tien-ich-tang-4.webp",
+      "status": 200,
+      "bytes": 146300,
+      "matchesBuild": true,
+      "sha256": "62a58f542c5cc0420526382fb644893326d8cb5c2cad5611661cca3ffe410988"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-02.webp",
+      "status": 200,
+      "bytes": 167200,
+      "matchesBuild": true,
+      "sha256": "69d0dfbd9f5808c6bc7066eb05649dcf0c6e95cdc1ebd2bcf4aa85d44318890e"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-01.webp",
+      "status": 200,
+      "bytes": 122456,
+      "matchesBuild": true,
+      "sha256": "40c943ad90ee7ae8cbab5ffa7d0f89dee86957a89201f42f44c5494c7844960b"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-duy-anh/ho-boi-duy-anh-03.webp",
+      "status": 200,
+      "bytes": 127746,
+      "matchesBuild": true,
+      "sha256": "07189f8d69945793f707ce519e75f2408cdd5569294b89de52246651336dc19a"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/community-pool-mobile.webp",
+      "status": 200,
+      "bytes": 146066,
+      "matchesBuild": true,
+      "sha256": "51be4c85bbbda2267e43f33a1e40f8fc78d9cba4c7582ec2dfeff90f87f489dc"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/community-pool.webp",
+      "status": 200,
+      "bytes": 314204,
+      "matchesBuild": true,
+      "sha256": "e5835fe86a2ba04a5dc669003bc3a37b1eb4b0cc5d9692d4927bedcc434c7008"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/garden-pool-mobile.webp",
+      "status": 200,
+      "bytes": 174368,
+      "matchesBuild": true,
+      "sha256": "8e3b6b7e7270b7d899f9ed096f7e088aca7749d00a80a0c2f92b8a015109671e"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/garden-pool.webp",
+      "status": 200,
+      "bytes": 352226,
+      "matchesBuild": true,
+      "sha256": "312b992eeedb863cd8db6d26b9120d7e596617bfa089d84886ff02f503993e26"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-din-ky/ho-boi-din-ky-binh-nham.webp",
+      "status": 200,
+      "bytes": 53666,
+      "matchesBuild": true,
+      "sha256": "d8c9c8fb5a7df51bf73be4dc4dd14bc219e610eaa6edd2392f449685512126df"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-ho-boi-vo-cuc-tang-3.webp",
+      "status": 200,
+      "bytes": 211820,
+      "matchesBuild": true,
+      "sha256": "dc03eded4fd1ac8a93d9f4d2d667c616dfe94983d5fffa8abb9f7d5990a618bd"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-emerald-68-le-phong/the-emerald-68-toan-canh.webp",
+      "status": 200,
+      "bytes": 163196,
+      "matchesBuild": true,
+      "sha256": "78958d89d486deb1254342ec7b5cb4f57aaade5c6bb665686892b74fd8c97ef3"
+    },
+    {
+      "path": "/images/pool-detail/venues/ecoxuan-lai-thieu/ecoxuan-lai-thieu-ho-boi-tien-ich.webp",
+      "status": 200,
+      "bytes": 253190,
+      "matchesBuild": true,
+      "sha256": "c16aaa2750a552478be137de3bdb1bd3a32a64b7e13539015097b62c7f211959"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/residential-pool-mobile.webp",
+      "status": 200,
+      "bytes": 147314,
+      "matchesBuild": true,
+      "sha256": "a28bb7fd4defa8cd4bfa2cf4d0075881e582859b58c4af8389e9e02850e83d2c"
+    },
+    {
+      "path": "/images/pool-detail/illustrations/residential-pool.webp",
+      "status": 200,
+      "bytes": 328678,
+      "matchesBuild": true,
+      "sha256": "7f4e85ac0e485cf6e31caaaeb7f71c6ea480b3dad52591f19b1aba1336b83832"
+    },
+    {
+      "path": "/images/pool-detail/venues/roxana-plaza/roxana-plaza-toan-canh.webp",
+      "status": 200,
+      "bytes": 355650,
+      "matchesBuild": true,
+      "sha256": "752112c3debbd93b29e736f9cc9a5336cce3357df09ff6881f0a2c353fd03e87"
+    },
+    {
+      "path": "/images/pool-detail/venues/the-habitat-binh-duong/the-habitat-tien-ich-01.webp",
+      "status": 200,
+      "bytes": 181936,
+      "matchesBuild": true,
+      "sha256": "93619ebe4d067dc052ede55a731cd5ad5a429bcc8f9a8ed864ffefc715ba80dc"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-01.webp",
+      "status": 200,
+      "bytes": 98348,
+      "matchesBuild": true,
+      "sha256": "bccc60c5d8efe5404d9e2af14abf3a190c313b836b8fdad64cf37dbfc9a316dc"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-03.webp",
+      "status": 200,
+      "bytes": 79612,
+      "matchesBuild": true,
+      "sha256": "d6eedfac8fed67e759afe1bb6bddda0c801f924b85775db7141973ebcde3bd6e"
+    },
+    {
+      "path": "/images/pool-detail/venues/ho-boi-tien-phong/ho-boi-tien-phong-02.webp",
+      "status": 200,
+      "bytes": 55226,
+      "matchesBuild": true,
+      "sha256": "fcafb3162e69241745d5a6cddc0a950a33ed751146555f3ee5096d21b835df81"
+    },
+    {
+      "path": "/_assets/Footer.D64gznev.css",
+      "status": 200,
+      "bytes": 19175,
+      "matchesBuild": true,
+      "sha256": "0110809b09aae8d92dcc940cf860a1a61c09053e2c0c402c692731a340a32a35"
+    },
+    {
+      "path": "/_assets/CoachesSection.D5dr7eUS.css",
+      "status": 200,
+      "bytes": 5920,
+      "matchesBuild": true,
+      "sha256": "780d53d04a539e37cb92c414f6c58b6491173f5ac32232ac3148e6bb2e97ad1d"
+    },
+    {
+      "path": "/_assets/index.IW6SJcNx.css",
+      "status": 200,
+      "bytes": 41689,
+      "matchesBuild": true,
+      "sha256": "f5d0581a8e69be9284d29da95a4dd6a4012422af111cce9f9e134dbc77393b68"
+    },
+    {
+      "path": "/images/team/thay-nguyen-huy-manh.png",
+      "status": 200,
+      "bytes": 1588121,
+      "matchesBuild": true,
+      "sha256": "bf1f9f1ee72da9564c7e4e1765e95ee8807a959d9a8f6a06d30b7fcfda76f9b7"
+    },
+    {
+      "path": "/images/team/thay-vu-van-thinh.jpg",
+      "status": 200,
+      "bytes": 54823,
+      "matchesBuild": true,
+      "sha256": "d426de13c62fea51d4fc159701d4f84c29497f9f69254692475d0574fbe05a81"
+    },
+    {
+      "path": "/images/team/co-le-thi-giang.jpg",
+      "status": 200,
+      "bytes": 94193,
+      "matchesBuild": true,
+      "sha256": "f2ef77778d96d003374356e14551d9476336fce9cfac6cbcd50e6dcedcd23452"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-mien-phi-cu-dan-nhi-vinhomes.jpg",
+      "status": 200,
+      "bytes": 226958,
+      "matchesBuild": true,
+      "sha256": "10175ed3e534163188b3ba1508946a84e457046c102bee98ab25d5a04ce6054f"
+    },
+    {
+      "path": "/images/coaches/giao-vien-chinh-sua-ky-thuat.jpg",
+      "status": 200,
+      "bytes": 197048,
+      "matchesBuild": true,
+      "sha256": "ccd1e478b70ae3d73143030d50aa5a9f579bf560a19b29eee0761604868056f6"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-tre-em-bai-ban-chuyen-nghiep.jpg",
+      "status": 200,
+      "bytes": 403723,
+      "matchesBuild": true,
+      "sha256": "becfbc2180cf4b663458e9059fca2f47be9ef45c1e10cc7cc0fc47b38007b156"
+    },
+    {
+      "path": "/images/safety/hoc-vien-duoc-huong-dan-trong-nuoc.jpg",
+      "status": 200,
+      "bytes": 353601,
+      "matchesBuild": true,
+      "sha256": "3bef4ccc1cffa9a0eac935530f5adb4d00af22e240e63e86139feabf9e2b7b12"
+    },
+    {
+      "path": "/images/classes/to-chuc-tap-luyen-bai-ban-chuyen-nghiep.jpg",
+      "status": 200,
+      "bytes": 414021,
+      "matchesBuild": true,
+      "sha256": "5fee208e3648c833fb38c894fd6448a11a3480afde309b62ecc50500abb2a38f"
+    },
+    {
+      "path": "/images/coaches/giam-doc-nguyen-huy-manh-vtc9.png",
+      "status": 200,
+      "bytes": 2583920,
+      "matchesBuild": true,
+      "sha256": "4ad376c4dc095006d69883ef6afda9976d54880c5fac7ecc10a9bca4c50d4741"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-mien-phi-vinhomes-times-city.jpg",
+      "status": 200,
+      "bytes": 541613,
+      "matchesBuild": true,
+      "sha256": "186c1c8185256d1c3b9c9d04d9908648021c4c33c64ceb7bd96e77d17865df62"
+    },
+    {
+      "path": "/images/coaches/giao-vien-vui-ve-tam-ly.jpeg",
+      "status": 200,
+      "bytes": 415769,
+      "matchesBuild": true,
+      "sha256": "8a2e307cb2c467d428bfdbcd02e6f88b4647feef47c767c6b60ea044f3a8569b"
+    },
+    {
+      "path": "/images/safety/hoc-sinh-trang-bi-phao-boi-an-toan.jpg",
+      "status": 200,
+      "bytes": 484917,
+      "matchesBuild": true,
+      "sha256": "0efd8526ec4101183c460ed08d86f65f14b59c581128f86d530cac1793a91cf3"
+    },
+    {
+      "path": "/images/techniques/thi-pham-dong-tac-tay-boi-ech.jpg",
+      "status": 200,
+      "bytes": 227175,
+      "matchesBuild": true,
+      "sha256": "861a16bb73c68bae221a3e636ac512dc68d9968076dae01e48e3532d5d7df915"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-ha-noi.jpg",
+      "status": 200,
+      "bytes": 432162,
+      "matchesBuild": true,
+      "sha256": "c2276151a5addb1cfbe1a9d9635fad2d65ed6e54ed03618e7e7255a5af2a0618"
+    },
+    {
+      "path": "/images/coaches/giao-vien-tan-tam-ho-tro.jpg",
+      "status": 200,
+      "bytes": 354582,
+      "matchesBuild": true,
+      "sha256": "03cb30bf7e8377f683c42f3881b1d5388c3d90a8089fdf95d984acc11ed779e2"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-vui-ve-tran-ngap-tieng-cuoi.jpg",
+      "status": 200,
+      "bytes": 377094,
+      "matchesBuild": true,
+      "sha256": "e90b20be53aa7a357c83076031c2c13d3ffd321bb92a106159dfe5bbc16eafe0"
+    },
+    {
+      "path": "/images/safety/hoc-sinh-lang-nghe-nguyen-tac-an-toan.jpg",
+      "status": 200,
+      "bytes": 507332,
+      "matchesBuild": true,
+      "sha256": "0d6e6f8fb0418b724ab893849b6ee184ad2a353f20f3bb687f9ba162269040d1"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-tre-em-tphcm.jpg",
+      "status": 200,
+      "bytes": 434769,
+      "matchesBuild": true,
+      "sha256": "ff830580c00f6d1fd5a8ea63a08261da989adf0deb208d76ba7f520053ca080f"
+    },
+    {
+      "path": "/images/coaches/hlv-chuyen-mon-cao-tam-ly-vui-ve.jpeg",
+      "status": 200,
+      "bytes": 381626,
+      "matchesBuild": true,
+      "sha256": "b5b42427ea30206ac83ded28779680405d681e16ecd740355c9bf4a7b4e80092"
+    },
+    {
+      "path": "/images/classes/lop-hoc-boi-mien-phi-vinhomes.jpg",
+      "status": 200,
+      "bytes": 439149,
+      "matchesBuild": true,
+      "sha256": "c800ded9e4f253ba1c7cd3099397a22f90f4b9b33b46529dbfaa976c0092739e"
+    },
+    {
+      "path": "/images/events/giai-boi-kinh-ngu-ocean-city-2023.jpg",
+      "status": 200,
+      "bytes": 460255,
+      "matchesBuild": true,
+      "sha256": "3b1a5cbf84b6678bcc7682f1cdc15c626df5801c65c27fe9c9a392dbbde6827f"
+    },
+    {
+      "path": "/images/techniques/huong-dan-tap-tho-boi-ech.jpg",
+      "status": 200,
+      "bytes": 627863,
+      "matchesBuild": true,
+      "sha256": "f429a85e9f8307c0d5893288e7c011c5c154861ee86d8e1dff09c9af22fe7415"
+    },
+    {
+      "path": "/images/techniques/tap-dong-tac-tay-boi-sai-tren-can.jpg",
+      "status": 200,
+      "bytes": 320115,
+      "matchesBuild": true,
+      "sha256": "e0385e3e5c5d8dfb43836f5546de5664465a55ca418b5a4f241108dca49aa655"
+    },
+    {
+      "path": "/images/safety/khoi-dong-tren-can.jpg",
+      "status": 200,
+      "bytes": 231902,
+      "matchesBuild": true,
+      "sha256": "90036dae021a35eaa12e46092941612921d864283f5301c2588492bc515676a6"
+    },
+    {
+      "path": "/images/safety/khoi-dong-lam-nong-co-the.jpg",
+      "status": 200,
+      "bytes": 458355,
+      "matchesBuild": true,
+      "sha256": "83f7fd592d7cd510d19ac3e5ed7a89b3c661c95b5bb614fd6c44ce2320d9403f"
+    },
+    {
+      "path": "/images/events/giay-chung-nhan-hoan-thanh-khoa-hoc.jpg",
+      "status": 200,
+      "bytes": 194444,
+      "matchesBuild": true,
+      "sha256": "6e4223497eae77999421b5a3540f266d01617ca1fde9d2a7f7b03ecdf852120f"
+    },
+    {
+      "path": "/images/team/thay-bui-van-can.jpg",
+      "status": 200,
+      "bytes": 65537,
+      "matchesBuild": true,
+      "sha256": "439fde8806fab21f609e3df53e5711113b236e7e064abdc8c24ad7b3b9b851e6"
+    },
+    {
+      "path": "/images/team/thay-tran-trung-hieu.jpg",
+      "status": 200,
+      "bytes": 102761,
+      "matchesBuild": true,
+      "sha256": "96d90450735826b19627a995da65e0836dd8751a447063c6b507aa73d25da5cf"
+    },
+    {
+      "path": "/_assets/index.D_3vyYyE.css",
+      "status": 200,
+      "bytes": 25267,
+      "matchesBuild": true,
+      "sha256": "d868550b206119757ea4e9d389ae6c1db4de63b3396719c195e30711926c593a"
+    },
+    {
+      "path": "/_assets/location-directory.jKu8UJZk.css",
+      "status": 200,
+      "bytes": 45635,
+      "matchesBuild": true,
+      "sha256": "c8a1950f8184dfb7e614b9645a20983676fbdee2a99461a05a0db80ba142f884"
+    },
+    {
+      "path": "/_assets/course-landing.ChNJnEOA.css",
+      "status": 200,
+      "bytes": 38749,
+      "matchesBuild": true,
+      "sha256": "8d8a4e035fdee1534ce4f4e7310a8ce594a7bf908704d8be6ba67159e1b8c313"
+    },
+    {
+      "path": "/images/classes/giang-vien-huong-dan-ky-thuat.jpg",
+      "status": 200,
+      "bytes": 140836,
+      "matchesBuild": true,
+      "sha256": "1161a042efff4590c12e02f4fdfe00ddef5d6cb9f45aecc095e18475c669d67a"
+    },
+    {
+      "path": "/images/classes/lop-boi-tre-em-bai-ban.jpg",
+      "status": 200,
+      "bytes": 403723,
+      "matchesBuild": true,
+      "sha256": "becfbc2180cf4b663458e9059fca2f47be9ef45c1e10cc7cc0fc47b38007b156"
+    },
+    {
+      "path": "/images/classes/hoc-vien-khoi-dong.jpg",
+      "status": 200,
+      "bytes": 153192,
+      "matchesBuild": true,
+      "sha256": "c3a1de99c6b0abc8cf4df8914c7c6065f55502e660ac7b16cad1b307d01e9228"
+    },
+    {
+      "path": "/images/classes/giao-vien-ho-tro-tan-tam.jpg",
+      "status": 200,
+      "bytes": 354582,
+      "matchesBuild": true,
+      "sha256": "03cb30bf7e8377f683c42f3881b1d5388c3d90a8089fdf95d984acc11ed779e2"
+    },
+    {
+      "path": "/images/classes/lop-boi-tran-ngap-tieng-cuoi.jpg",
+      "status": 200,
+      "bytes": 377094,
+      "matchesBuild": true,
+      "sha256": "e90b20be53aa7a357c83076031c2c13d3ffd321bb92a106159dfe5bbc16eafe0"
+    },
+    {
+      "path": "/images/classes/to-chuc-bai-ban-chuyen-nghiep.jpg",
+      "status": 200,
+      "bytes": 414021,
+      "matchesBuild": true,
+      "sha256": "5fee208e3648c833fb38c894fd6448a11a3480afde309b62ecc50500abb2a38f"
+    },
+    {
+      "path": "/_assets/technique-landing.C_5SbpzY.css",
+      "status": 200,
+      "bytes": 34739,
+      "matchesBuild": true,
+      "sha256": "36c7e9ef8d9f19a3fc31ceb76ac6d61c759a8ac70e3a896305589a6409d4ecf4"
+    },
+    {
+      "path": "/_assets/index.B3T_SxXj.css",
+      "status": 200,
+      "bytes": 5903,
+      "matchesBuild": true,
+      "sha256": "1552cbe20b9470b51ad92e761493f23707155bccb5f9e6209e51e833cab7f7e0"
+    },
+    {
+      "path": "/_assets/bang-gia.ewcRZjHJ.css",
+      "status": 200,
+      "bytes": 7344,
+      "matchesBuild": true,
+      "sha256": "b49e28a59ae1cbe27ba68c371ad3118179cfed4948a42f8489ba12e5836bf88f"
+    },
+    {
+      "path": "/sitemap-index.xml",
+      "status": 200,
+      "bytes": 224,
+      "matchesBuild": true,
+      "sha256": "c3558889bb1ef1feb0fc984abab2623029762db5ec7d83da75279eb1f53f1b98"
+    },
+    {
+      "path": "/sitemap-0.xml",
+      "status": 200,
+      "bytes": 142058,
+      "matchesBuild": true,
+      "sha256": "b4831e0bd7abcfac7977668c14ada7973c30a03a76b589d9a7aa89f69dfff051"
+    }
+  ]
+}

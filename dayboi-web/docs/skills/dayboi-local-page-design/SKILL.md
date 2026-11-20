@@ -11,7 +11,7 @@ description: Thiết kế và mở rộng trang xã/phường cùng trang hồ b
 
 - Làm trong repo hiện có; dự án gốc là `D:/04_dayboivip/dayboi-web`. Kiểm tra checkout, thay đổi đang có, route và dữ liệu liên quan trước khi sửa.
 - Ưu tiên yêu cầu mới nhất và mockup người dùng đã duyệt. Nếu người dùng yêu cầu theo mẫu Swim For Life hiện có, dùng hub `/hoc-boi-tphcm/lai-thieu/` và chi tiết `/hoc-boi-nhat-an-lai-thieu/` làm chuẩn.
-- Đọc [bản đồ mã nguồn](references/codebase-map.md) trước khi chọn phần tái sử dụng: template hiện tại còn các import và nhãn gắn với Lái Thiêu, chưa phải bộ đa khu vực cắm dữ liệu là chạy.
+- Đọc [bản đồ mã nguồn](references/codebase-map.md) trước khi chọn phần tái sử dụng: tỉnh/xã/khu vực đã có template, adapter và header/footer đa vùng; factory nội dung chi tiết hồ của cụm Lái Thiêu vẫn cần đúng ngữ cảnh khi mở hồ ngoài cụm.
 - Xác định xã/phường hành chính, vùng tuyển sinh và địa điểm thực tế. Một cụm có thể giới thiệu hồ giáp ranh nhưng không đổi địa chỉ của chúng sang phường của hub.
 
 | Công việc | Tài liệu cần đọc |
@@ -28,7 +28,7 @@ description: Thiết kế và mở rộng trang xã/phường cùng trang hồ b
 3. **Component nhỏ, dữ liệu độc lập:** route mỏng gọi template; section nhận props; header/footer/widget dùng chung theo cấu hình khu vực. Không dồn cả nội dung, dữ liệu, CSS và tương tác vào một file trang.
 4. **Cùng một lưới ngang:** header, hero, nội dung, CTA cuối và footer dùng chung max-width/gutter. Giữ phong cách aquatic, chữ Việt dễ đọc, điểm nhấn cam/vàng của mẫu đã duyệt. Scope CSS trong họ trang địa phương.
 5. **Thẻ dễ bấm:** cả cụm ảnh/tên/địa chỉ dẫn tới cùng đích, icon chỉ hỗ trợ thị giác. Không lồng link/nút; không dùng link rỗng hoặc tạo trang chưa có để lấp menu.
-6. **Thông tin liên hệ có chủ thể:** HLV, đơn vị dạy và quầy vé/BQL là các vai trò khác nhau. Không mang số `0986.456.678`, tên thầy Lê Văn Thông hay quyền dạy tại hồ từ Lái Thiêu sang khu khác nếu chưa có thông tin tương ứng.
+6. **Liên hệ theo từng địa điểm và giáo viên:** lấy tên, số điện thoại và nguồn của từng BQL/HLV/đơn vị trong dữ liệu địa phương. Một hồ có nhiều giáo viên thì trình bày từng người và số riêng; không gộp thành một hotline. Không lấy số `0986.456.678` hoặc một giáo viên đầu danh sách làm mặc định cho khu khác hay mọi hồ. Header/footer khu chưa có đầu mối được chỉ định dẫn tới danh sách người phụ trách, không tự chọn một số đại diện.
 7. **Ảnh đúng vai trò:** ảnh thực tế, tư liệu tiện ích, phối cảnh, mặt bằng, ngoại thất và minh họa có nhãn phù hợp. Xem nội dung ảnh trước khi dùng. Không gán ảnh hồ khác cho hồ đang viết, giả ảnh khảo sát hoặc dùng chân dung AI làm HLV thật.
 8. **Nội dung theo bằng chứng:** không suy ra giá vé, giờ mở cửa, độ sâu, quyền vào hồ, lịch lớp, ưu đãi hay lời chứng thực từ mockup/ảnh. Hồ nội khu phải làm rõ quyền sử dụng và điều kiện tiếp nhận HLV. Thiếu dữ liệu thì ghi điều cần xác nhận hoặc ẩn phần đó.
 9. **Tái sử dụng các ảnh kỹ thuật đã duyệt:** ếch, sải, ngửa, bướm và đứng nước. Đổi khu vực không phải lý do vẽ lại kỹ thuật hoặc sao chép ảnh hồ/HLV của khu cũ.

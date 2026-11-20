@@ -1,0 +1,6 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import type {RegionLink} from '../../data/locality/types';
+const {links=[],lang='vi'}=Astro.props as {links:RegionLink[];lang:'vi'|'en'};const en=lang==='en';
+---
+{links.length>0&&<section class="rd-section rd-related"><div class="sfl-container"><div class="rd-section-heading"><span class="rd-kicker">{en?'KEEP EXPLORING':'THÊM LỰA CHỌN ĐỂ THAM KHẢO'}</span><h2>{en?'Other areas in the directory':'Các khu vực trong danh bạ'}</h2></div><div class="rd-related-grid">{links.map(link=><a href={link.href}><Icon name="pin" /><span><strong>{link.label}</strong>{link.description&&<small>{link.description}</small>}</span><Icon name="arrow" /></a>)}</div></div></section>}

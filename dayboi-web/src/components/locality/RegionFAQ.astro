@@ -1,0 +1,5 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+const {items=[],lang='vi'}=Astro.props;const en=lang==='en';
+---
+<section class="rd-section rd-faq" id="cau-hoi" aria-labelledby="region-faq-title"><div class="sfl-container rd-faq-grid"><span id="faqs" class="rd-anchor-alias"></span><div class="rd-section-heading"><span class="rd-kicker">{en?'BEFORE YOU GET STARTED':'TRƯỚC KHI BẮT ĐẦU'}</span><h2 id="region-faq-title">{en?'A few useful answers':'Giải đáp trước khi chọn lớp'}</h2><p>{en?'Information to help you speak to the right operator or teacher.':'Những thông tin giúp bạn trao đổi đúng với hồ bơi và người dạy.'}</p><Icon name="chat" /></div><div class="rd-faq-items">{items.map(f=><details><summary>{f.question}<span aria-hidden="true">+</span></summary><p>{f.answer}</p></details>)}</div></div></section>

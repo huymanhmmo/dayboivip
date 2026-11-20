@@ -1,0 +1,7 @@
+{
+  "capturedAt": "2026-11-20T15:16:01.092Z",
+  "sourceCommit": "448bb9feaae7fdbe0e0c03cd6c9b6b79411816f6",
+  "productionVersion": "682e0eb9-9523-4df1-ad31-67a6825ff0a8",
+  "pages": 6838,
+  "note": "Baseline refreshed from the concurrently deployed main checkout to preserve its explicit 20-pool index update."
+}

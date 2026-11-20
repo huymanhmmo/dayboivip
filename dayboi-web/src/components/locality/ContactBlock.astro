@@ -1,0 +1,8 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import {contactPhones,cleanCopy} from '../../data/locality/common';
+export interface Props {contact:Record<string,any>;teacher?:boolean;lang:'vi'|'en';}
+const {contact,teacher=false,lang}=Astro.props;const en=lang==='en';
+const phones=contactPhones(contact.phone);
+---
+<section class:list={['rd-contact',{'rd-contact--teacher':teacher}]} data-directory-contact-block="true" data-contact-role={teacher?'teacher':'operator'}><span class="rd-contact-role"><Icon name={teacher?'people':'ticket'} />{teacher?(en?'Teacher / lesson provider':'Giáo viên / đơn vị dạy bơi'):(en?'Pool operator / admission':'Ban quản lý / quầy vé')}</span><h4>{teacher?contact.unitName:contact.name}</h4>{teacher&&contact.contactPerson&&<p class="rd-contact-person">{contact.contactPerson}</p>}{!teacher&&contact.role&&<p class="rd-contact-person">{contact.role}</p>}<div class="rd-phone-links">{phones.map(p=><a href={p.href} data-directory-contact="true" aria-label={`${en?'Call':'Gọi'} ${teacher?contact.unitName:contact.name}: ${p.label}`}><Icon name="phone" />{p.label}</a>)}{!phones.length&&<span>{en?'Confirm contact details with the provider':'Chưa có số liên hệ phù hợp trong dữ liệu'}</span>}</div>{(contact.note||contact.courseTypes)&&<p>{cleanCopy(contact.note||contact.courseTypes)}</p>}{contact.exactSourceUrl&&<a class="rd-source" href={contact.exactSourceUrl} target="_blank" rel="noopener noreferrer">{en?'Public source':'Nguồn thông tin'}: {contact.sourceTitle||(en?'View listing':'Xem thông tin')}<Icon name="arrow" /></a>}</section>

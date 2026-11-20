@@ -5,7 +5,8 @@
 - App: `dayboi-web/`, Astro static, `MainLayout.astro` lo document, metadata, canonical, font và JSON-LD.
 - Nhật An: `src/pages/hoc-boi-nhat-an-lai-thieu.astro` chỉ import dữ liệu và gọi `PoolDetailPage`.
 - Contract: `src/data/poolDetailTypes.ts`; dữ liệu mẫu: `src/data/poolDetailPages.ts`.
-- Template/sections: `src/components/pool-detail/`. Header/footer địa phương: `components/landing/LaiThieuHeader.astro`, `LaiThieuFooter.astro`; widget liên hệ là `LocalContactBar.astro`. Icon, SectionHeading, WaveDivider dùng lại từ landing/ui. Hub Lái Thiêu cũng dùng các component địa phương này.
+- Header/footer hiện là wrapper cấp cấu hình từ `data/locality/laiThieuSite.ts` cho `components/locality/LocalSiteHeader.astro` và `LocalSiteFooter.astro`; không sao chép markup khi sửa cụm. Thanh liên hệ dùng `LocalSiteContactBar.astro`; dữ liệu vùng khác không nhận hotline mặc định.
+- Template/sections: `src/components/pool-detail/`. Header/footer địa phương: `components/landing/LaiThieuHeader.astro`, `LaiThieuFooter.astro`; widget liên hệ thật là `locality/LocalSiteContactBar.astro` (`LocalContactBar.astro` chỉ giữ tương thích). Icon, SectionHeading, WaveDivider dùng lại từ landing/ui. Hub Lái Thiêu cũng dùng các component địa phương này.
 - Hub: `[location]/[area].astro` gọi landing Lái Thiêu; danh sách `laiThieuPools.js` được import vào `communePoolsData.js`.
 - `middleware.ts` có bộ đổi liên hệ cũ. Route địa phương có thông tin HLV được cấp cần ngoại lệ đúng route để tel/Zalo và nhãn không bị đổi thành danh bạ. Không tắt sanitizer toàn site hoặc cho mọi route ngoại lệ.
 - Metadata bài có thể đăng ký ở `blogPosts.js`; tránh một slug có nhiều canonical.

@@ -5,12 +5,21 @@ const DIRECTORY_URL = '/hoc-boi-o-dau/';
 const localPoolPaths = new Set(laiThieuVenueCatalog.map(pool => pool.detailHref));
 
 const sanitizeLegacyRetailContact = (html: string, isEnglish: boolean) => {
+  // These server-rendered blocks contain named, source-backed directory contacts.
+  // Preserve both their links and their original labels (some contain “Hotline”).
+  const contactBlocks: string[] = [];
+  const protectedHtml = html.replace(/<(section|article)\b[^>]*\bdata-directory-contact-block(?:="[^"]*")?[^>]*>[\s\S]*?<\/\1>/gi, block => {
+    contactBlocks.push(block);
+    return `<!--SFL_DIRECTORY_CONTACT_${contactBlocks.length - 1}-->`;
+  });
   const directoryLabel = isEnglish ? 'Open local directory' : 'Mở danh bạ địa phương';
   const enterpriseLabel = isEnglish ? 'Organization enquiry' : 'Yêu cầu hợp tác';
-  let output = html
+  let output = protectedHtml
     .replace(
       /<a\b([^>]*?)href=(["'])(?:tel:[^"']+|https?:\/\/zalo\.me\/[^"']+)\2([^>]*)>[\s\S]*?<\/a>/gi,
-      `<a$1href="${DIRECTORY_URL}"$3>${directoryLabel}</a>`,
+      (match, before, quote, after) => /\bdata-directory-contact(?:\s|=|$)/.test(`${before} ${after}`)
+        ? match
+        : `<a${before}href="${DIRECTORY_URL}"${after}>${directoryLabel}</a>`,
     )
     .replace(
       /<a\b([^>]*?)href=(["'])mailto:dayboivip@gmail\.com\2([^>]*)>[\s\S]*?<\/a>/gi,
@@ -27,7 +36,7 @@ const sanitizeLegacyRetailContact = (html: string, isEnglish: boolean) => {
 
   output = directLinkReplacements.reduce(
     (result, [legacyValue, replacement]) => result.replaceAll(legacyValue, replacement),
-    html,
+    protectedHtml,
   );
 
   output = output
@@ -64,7 +73,7 @@ const sanitizeLegacyRetailContact = (html: string, isEnglish: boolean) => {
         .replaceAll('Gọi Ngay', 'Xem Danh Bạ')
         .replaceAll('Gọi ngay', 'Xem danh bạ');
 
-  return output;
+  return output.replace(/<!--SFL_DIRECTORY_CONTACT_(\d+)-->/g, (_, index) => contactBlocks[Number(index)] || '');
 };
 
 export const onRequest = defineMiddleware(async (context, next) => {

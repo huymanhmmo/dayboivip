@@ -1,0 +1,19 @@
+---
+import Icon from '../landing/ui/Icon.astro';
+import ContactBlock from './ContactBlock.astro';
+import VenueCardCover from './VenueCardCover.astro';
+import type {RegionVenue} from '../../data/locality/types';
+const {venue,lang}=Astro.props as {venue:RegionVenue;lang:'vi'|'en'};const en=lang==='en';
+const access=venue.accessType;
+---
+<article class="rd-venue" id={venue.id} data-region-venue data-search={venue.searchText} data-group={venue.category} data-access={access}>
+  {venue.detailHref&&<a class="rd-venue-main-link" href={venue.detailHref}><VenueCardCover venue={venue} lang={lang} /></a>}
+  <details class="rd-venue-disclosure"><summary class:list={[{'rd-venue-contact-toggle':!!venue.detailHref}]}>{venue.detailHref?<><Icon name="people" />{en?'Teachers & contact details':'Giáo viên & thông tin liên hệ'}<Icon name="chevron" /></>:<VenueCardCover venue={venue} lang={lang} />}</summary><div class="rd-venue-body">
+    {venue.environment&&<p><strong>{en?'Environment':'Không gian theo tư liệu'}:</strong> {venue.environment}</p>}{venue.services&&<p><strong>{en?'Facilities & services':'Tiện ích & dịch vụ theo tư liệu'}:</strong> {venue.services}</p>}{venue.detail&&<p>{venue.detail}</p>}
+    {venue.venueContact&&<ContactBlock contact={venue.venueContact} lang={lang} />}
+    {venue.instructors.map(contact=><ContactBlock contact={contact} teacher lang={lang} />)}
+    {!venue.instructors.length&&<p class="rd-venue-note">{en?'No named lesson contact is currently attached to this listing. Ask the operator about available teachers and access arrangements.':'Dữ liệu chưa có đầu mối dạy bơi riêng phù hợp cho hồ này. Hãy hỏi đơn vị vận hành về giáo viên và điều kiện tổ chức lớp.'}</p>}
+    {venue.missing&&<p class="rd-venue-note"><strong>{en?'Check before visiting':'Cần xác nhận'}:</strong> {venue.missing}</p>}
+    <div class="rd-venue-actions"><a class="rd-button rd-button--blue" href={venue.mapsHref} target="_blank" rel="noopener noreferrer"><Icon name="pin" />{en?'Map & directions':'Bản đồ & chỉ đường'}</a>{venue.sourceHref&&<a class="rd-source" href={venue.sourceHref} target="_blank" rel="noopener noreferrer">{venue.sourceLabel||(en?'Public listing':'Thông tin công khai')}<Icon name="arrow" /></a>}</div>
+  </div></details>
+</article>
