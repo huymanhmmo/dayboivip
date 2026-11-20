@@ -1,0 +1,19 @@
+---
+import Icon from './ui/Icon.astro';
+import type { TechniqueCardData } from '../../data/localLandingPages';
+
+export interface Props { technique: TechniqueCardData; }
+const { technique } = Astro.props;
+---
+<a href={technique.href} class:list={['sfl-technique-card', { 'sfl-technique-card--safety': technique.safety }]}>
+  <div class="sfl-technique-photo">
+    <img src={technique.image} alt={technique.imageAlt} width="600" height="450" loading="lazy" decoding="async" style={technique.imagePosition ? `object-position:${technique.imagePosition}` : undefined} />
+    <span class="sfl-technique-focus">{technique.focus}</span>
+  </div>
+  <div class="sfl-technique-content">
+    <span class="sfl-technique-icon"><Icon name={technique.icon} /></span>
+    <h3>{technique.title}</h3>
+    <p>{technique.description}</p>
+    <span class="sfl-technique-link">Tìm hiểu kỹ thuật<Icon name="chevron" /></span>
+  </div>
+</a>

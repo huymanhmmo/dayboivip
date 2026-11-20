@@ -1,0 +1,20 @@
+---
+import SectionHeading from './ui/SectionHeading.astro';
+import TechniqueCard from './TechniqueCard.astro';
+import Icon from './ui/Icon.astro';
+import type { TechniqueCardData } from '../../data/localLandingPages';
+
+export interface Props { techniques: TechniqueCardData[]; }
+const { techniques } = Astro.props;
+---
+<section class="sfl-techniques sfl-container" id="ky-thuat-boi" aria-labelledby="sfl-techniques-title">
+  <SectionHeading
+    title="5 kỹ thuật bơi lội cơ bản"
+    id="sfl-techniques-title"
+    description="Từ những nhịp bơi đầu tiên đến kỹ năng an toàn dưới nước. Chọn nội dung bạn muốn học để xem hướng dẫn chi tiết."
+  />
+  <div class="sfl-technique-grid">
+    {techniques.map(technique => <TechniqueCard technique={technique} />)}
+  </div>
+  <p class="sfl-technique-note"><Icon name="shield" /><span>Học theo trình độ thực tế. Kỹ năng sinh tồn cần được luyện tập cùng HLV; trẻ em luôn cần người lớn giám sát.</span></p>
+</section>

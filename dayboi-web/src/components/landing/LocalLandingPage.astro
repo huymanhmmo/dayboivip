@@ -5,6 +5,7 @@ import SwimmingHero from './SwimmingHero.astro';
 import SwimmingAudienceGrid from './SwimmingAudienceGrid.astro';
 import PoolFinderSection from './PoolFinderSection.astro';
 import FeaturedCoursesSection from './FeaturedCoursesSection.astro';
+import SwimmingTechniquesSection from './SwimmingTechniquesSection.astro';
 import LearningJourneySection from './LearningJourneySection.astro';
 import InstructorSection from './InstructorSection.astro';
 import BenefitsSection from './BenefitsSection.astro';
@@ -14,6 +15,7 @@ import EnrollmentCTA from './EnrollmentCTA.astro';
 import LandingFooter from './LandingFooter.astro';
 import type { LocalLandingData } from '../../data/localLandingPages';
 import '../../styles/local-swimming-landing.css';
+import '../../styles/local-swimming-techniques.css';
 
 export interface Props { data: LocalLandingData; }
 const { data } = Astro.props;
@@ -36,6 +38,7 @@ const schema = {
     <SwimmingAudienceGrid cards={data.audiences} />
     <PoolFinderSection pools={data.pools} name={data.name} phoneHref={data.phoneHref} instructorLabel={instructorLabel} />
     <FeaturedCoursesSection courses={data.courses} />
+    <SwimmingTechniquesSection techniques={data.techniques} />
     <LearningJourneySection steps={data.journey} image={data.courses[2].image} />
     <InstructorSection instructor={data.instructor} />
     <BenefitsSection benefits={data.benefits} />

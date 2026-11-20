@@ -1,0 +1,15 @@
+---
+/** Use the exact logo file used by components/common/Header.astro. */
+export interface Props { footer?: boolean; }
+const { footer = false } = Astro.props;
+---
+<a href="/" class="sfl-brand sfl-brand--shared" aria-label="Swim For Life Việt Nam – Trang chủ">
+  <img
+    src="/images/brand/logo.png"
+    alt="Swim For Life Việt Nam"
+    width="3268"
+    height="1206"
+    loading={footer ? 'lazy' : 'eager'}
+    decoding="async"
+  />
+</a>

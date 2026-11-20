@@ -1,0 +1,68 @@
+{
+  "h1": 1,
+  "logoCount": 2,
+  "cards": [
+    {
+      "href": "/ky-thuat-boi/hoc-boi-ech/",
+      "text": "   Nền tảng cho người mới    Dạy bơi ếch Tập đạp chân, quạt tay và phối hợp nhịp thở cho người mới bắt đầu. Tìm hiểu kỹ thuật  "
+    },
+    {
+      "href": "/ky-thuat-boi/hoc-boi-sai/",
+      "text": "   Thể lực & nhịp thở    Dạy bơi sải Rèn tư thế thẳng, nhịp tay liên tục và cách lấy hơi nghiêng. Tìm hiểu kỹ thuật  "
+    },
+    {
+      "href": "/ky-thuat-boi/hoc-boi-ngua/",
+      "text": "   Thăng bằng & thả lỏng    Dạy bơi ngửa Làm quen tư thế nổi ngửa, giữ thăng bằng và phối hợp tay chân. Tìm hiểu kỹ thuật  "
+    },
+    {
+      "href": "/ky-thuat-boi/hoc-boi-buom/",
+      "text": "   Phối hợp nâng cao    Dạy bơi bướm Tập nhịp sóng thân, chân dolphin và động tác tay đồng thời. Tìm hiểu kỹ thuật  "
+    },
+    {
+      "href": "/ky-thuat-boi/ky-nang-dung-nuoc/",
+      "text": "   An toàn dưới nước    Kỹ năng sinh tồn, đứng nước Tập giữ nổi, đứng nước, bình tĩnh và gọi hỗ trợ khi cần. Tìm hiểu kỹ thuật  "
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/landing/lai-thieu/technique-breaststroke-reference.webp",
+      "alt": "Vận động viên bơi ếch nhìn nghiêng trong pha lấy hơi, hai tay thu khép về phía trước",
+      "width": "600",
+      "height": "450",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-front-crawl.webp",
+      "alt": "Ảnh minh họa động tác bơi sải với tay vươn về phía trước",
+      "width": "600",
+      "height": "450",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-backstroke.webp",
+      "alt": "Ảnh minh họa người bơi ngửa trên mặt nước",
+      "width": "600",
+      "height": "450",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-butterfly-underwater.webp",
+      "alt": "Minh họa bơi bướm nhìn nghiêng dưới nước, hai tay vươn về trước và hai chân khép trong nhịp dolphin",
+      "width": "600",
+      "height": "450",
+      "loading": "lazy",
+      "decoding": "async"
+    },
+    {
+      "src": "/images/landing/lai-thieu/technique-treading-water.webp",
+      "alt": "Ảnh minh họa học viên tập giữ cơ thể thẳng và đứng nước",
+      "width": "600",
+      "height": "450",
+      "loading": "lazy",
+      "decoding": "async"
+    }
+  ]
+}

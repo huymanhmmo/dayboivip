@@ -1,12 +1,13 @@
 ---
 import Icon from './ui/Icon.astro';
+import LandingBrand from './ui/LandingBrand.astro';
 export interface Props { hotline: string; phoneHref: string; }
 const { hotline, phoneHref } = Astro.props;
-const links = [{label:'Trang chủ',href:'/'},{label:'Khóa học',href:'#khoa-hoc'},{label:'Lớp bơi',href:'#dia-diem'},{label:'Về chúng tôi',href:'/gioi-thieu/'},{label:'Tin tức',href:'/tin-tuc/'}];
+const links = [{label:'Trang chủ',href:'/'},{label:'Khóa học',href:'#khoa-hoc'},{label:'Kỹ thuật bơi',href:'#ky-thuat-boi'},{label:'Lớp bơi',href:'#dia-diem'},{label:'Về chúng tôi',href:'/gioi-thieu/'},{label:'Tin tức',href:'/tin-tuc/'}];
 ---
 <header class="sfl-header">
   <div class="sfl-container sfl-header-inner">
-    <a href="/" class="sfl-brand" aria-label="Swim For Life Việt Nam – Trang chủ"><Icon name="wave" /><span><strong>Swim For Life Việt Nam</strong><small>Học bơi an toàn – Kỹ năng trọn đời</small></span></a>
+    <LandingBrand />
     <nav class="sfl-navigation" aria-label="Điều hướng chính" id="sfl-navigation">
       {links.map(link => <a href={link.href} aria-current={link.href === '#dia-diem' ? 'location' : undefined}>{link.label}</a>)}
     </nav>

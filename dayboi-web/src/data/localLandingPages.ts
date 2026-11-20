@@ -5,6 +5,10 @@ export interface ImageCardData {
   title: string; description: string; image: string; imageAlt: string;
   href: string; icon: string; imagePosition?: string;
 }
+export interface TechniqueCardData extends ImageCardData {
+  focus: string;
+  safety?: boolean;
+}
 export interface Pool {
   id: string; name: string; type: string; zone: string; area?: string; address: string; oldAddress: string;
   image: string | null; imageAlt: string; tag: string; services: string; detail: string;
@@ -12,7 +16,7 @@ export interface Pool {
 export interface LocalLandingData {
   name: string; province: string; canonical: string; title: string; description: string; updatedAt: string;
   hotline: string; phoneHref: string; zaloHref: string; heroImage: string; heroMobile: string;
-  heroTitle: string; subtitle: string; pools: Pool[]; audiences: ImageCardData[]; courses: ImageCardData[];
+  heroTitle: string; subtitle: string; pools: Pool[]; audiences: ImageCardData[]; courses: ImageCardData[]; techniques: TechniqueCardData[];
   instructor: { name: string; qualification: string; description: string; image?: string; badges: {icon: string; title: string; text: string}[] };
   journey: { period: string; title: string; description: string; icon: string }[];
   benefits: {icon: string; title: string; description: string}[];
@@ -39,6 +43,48 @@ export const laiThieuLanding: LocalLandingData = {
     { title: 'Học bơi trẻ em', description: 'Kỹ năng bơi đúng cách, phát triển sự tự tin.', image: `${asset}/children.webp`, imageAlt: 'Minh họa chương trình học bơi trẻ em', href: '/khoa-hoc-boi/tre-em/', icon: 'child' },
     { title: 'Học bơi nâng cao', description: 'Cải thiện kỹ thuật, hoàn thiện từng kiểu bơi.', image: `${asset}/journey.webp`, imageAlt: 'Minh họa người bơi sải rèn luyện kỹ thuật', href: '/ky-thuat-boi/', icon: 'swim', imagePosition: '80% center' },
     { title: 'Học bơi kèm riêng', description: 'HLV kèm sát, điều chỉnh theo tiến độ của bạn.', image: `${asset}/hero.webp`, imageAlt: 'Minh họa huấn luyện viên hướng dẫn một học viên', href: '/khoa-hoc-boi/1-kem-1/', icon: 'people', imagePosition: '82% center' },
+  ],
+  techniques: [
+    {
+      title: 'Dạy bơi ếch',
+      description: 'Tập đạp chân, quạt tay và phối hợp nhịp thở cho người mới bắt đầu.',
+      focus: 'Nền tảng cho người mới',
+      image: `${asset}/technique-breaststroke-reference.webp`,
+      imageAlt: 'Vận động viên bơi ếch nhìn nghiêng trong pha lấy hơi, hai tay thu khép về phía trước',
+      href: '/ky-thuat-boi/hoc-boi-ech/', icon: 'breaststroke',
+    },
+    {
+      title: 'Dạy bơi sải',
+      description: 'Rèn tư thế thẳng, nhịp tay liên tục và cách lấy hơi nghiêng.',
+      focus: 'Thể lực & nhịp thở',
+      image: `${asset}/technique-front-crawl.webp`,
+      imageAlt: 'Ảnh minh họa động tác bơi sải với tay vươn về phía trước',
+      href: '/ky-thuat-boi/hoc-boi-sai/', icon: 'swim',
+    },
+    {
+      title: 'Dạy bơi ngửa',
+      description: 'Làm quen tư thế nổi ngửa, giữ thăng bằng và phối hợp tay chân.',
+      focus: 'Thăng bằng & thả lỏng',
+      image: `${asset}/technique-backstroke.webp`,
+      imageAlt: 'Ảnh minh họa người bơi ngửa trên mặt nước',
+      href: '/ky-thuat-boi/hoc-boi-ngua/', icon: 'backstroke',
+    },
+    {
+      title: 'Dạy bơi bướm',
+      description: 'Tập nhịp sóng thân, chân dolphin và động tác tay đồng thời.',
+      focus: 'Phối hợp nâng cao',
+      image: `${asset}/technique-butterfly-underwater.webp`,
+      imageAlt: 'Minh họa bơi bướm nhìn nghiêng dưới nước, hai tay vươn về trước và hai chân khép trong nhịp dolphin',
+      href: '/ky-thuat-boi/hoc-boi-buom/', icon: 'butterfly',
+    },
+    {
+      title: 'Kỹ năng sinh tồn, đứng nước',
+      description: 'Tập giữ nổi, đứng nước, bình tĩnh và gọi hỗ trợ khi cần.',
+      focus: 'An toàn dưới nước',
+      image: `${asset}/technique-treading-water.webp`,
+      imageAlt: 'Ảnh minh họa học viên tập giữ cơ thể thẳng và đứng nước',
+      href: '/ky-thuat-boi/ky-nang-dung-nuoc/', icon: 'shield', safety: true,
+    },
   ],
   instructor: {
     name: 'Thầy Lê Văn Thông', qualification: 'Kiện tướng Bơi lội',

@@ -1,0 +1,229 @@
+/* Shared branding and the five-technique section, within the local landing world. */
+.sfl-brand--shared {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding-block: 6px;
+}
+
+.sfl-brand--shared img {
+  display: block;
+  width: 184px;
+  height: auto;
+  object-fit: contain;
+}
+
+.sfl-footer .sfl-brand--shared img { width: 206px; }
+.sfl-navigation { gap: 24px; }
+
+.sfl-techniques {
+  padding-block: 20px 36px;
+}
+
+.sfl-techniques .sfl-heading p {
+  max-width: 900px;
+  margin-top: 12px;
+  line-height: 1.7;
+  color: #31536c;
+}
+
+.sfl-technique-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.sfl-technique-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 21px;
+  background: linear-gradient(140deg, #fff 35%, #e0f6fd);
+  box-shadow: var(--sfl-shadow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.sfl-technique-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px #097da324;
+  border-color: #9ee9f4;
+}
+
+.sfl-technique-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px 18px 23px 23px;
+  overflow: hidden;
+  background: #98e1ec;
+}
+
+.sfl-technique-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #034a6a26, transparent 45%, #00a3bd17);
+}
+
+.sfl-technique-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sfl-technique-focus {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  z-index: 1;
+  max-width: calc(100% - 20px);
+  padding: 5px 9px;
+  border: 1px solid #ffffffd9;
+  border-radius: 20px;
+  background: #edfaffed;
+  color: #006387;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sfl-technique-content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 33px 17px 17px;
+}
+
+.sfl-technique-icon {
+  position: absolute;
+  top: -25px;
+  left: 15px;
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  border: 3px solid #f3fdff;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #bceff9);
+  box-shadow: 0 3px 8px #087ca823;
+  color: #00a4c4;
+}
+
+.sfl-technique-icon .sfl-icon { width: 28px; height: 28px; }
+
+.sfl-landing .sfl-technique-card h3 {
+  min-height: 1.3em;
+  margin-bottom: 9px;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.sfl-technique-card p {
+  margin-bottom: 19px;
+  color: #24435f;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.sfl-technique-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #c3e5ed;
+  color: #00759e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sfl-technique-link .sfl-icon {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: 1px solid #b4e4ee;
+  border-radius: 50%;
+  background: #f7fdff;
+}
+
+.sfl-technique-card--safety { background: linear-gradient(145deg, #fff, #fff5e9); }
+.sfl-technique-card--safety .sfl-technique-focus { background: #fff7e9f5; color: #884704; }
+.sfl-technique-card--safety .sfl-technique-icon { background: linear-gradient(135deg, #fff, #ffe4b7); color: #dc7a00; }
+
+.sfl-landing .sfl-technique-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  color: #31576e;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.sfl-technique-note .sfl-icon { width: 21px; height: 21px; margin-top: 1px; color: #0098aa; }
+
+@media (min-width: 1600px) {
+  .sfl-brand--shared img { width: 200px; }
+  .sfl-header-inner { min-height: 86px; }
+  .sfl-navigation { gap: 24px; }
+}
+
+@media (max-width: 1200px) {
+  .sfl-navigation { gap: 18px; }
+  .sfl-technique-content { padding-inline: 13px; }
+  .sfl-landing .sfl-technique-card h3 { font-size: 19px; }
+}
+
+@media (max-width: 1000px) {
+  .sfl-technique-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .sfl-technique-card { grid-column: span 2; }
+  .sfl-technique-card:nth-last-child(-n + 2) { grid-column: span 3; }
+  .sfl-landing .sfl-technique-card h3 { min-height: 1.3em; font-size: 21px; }
+  .sfl-technique-content { padding-inline: 18px; }
+}
+
+@media (max-width: 700px) {
+  .sfl-brand--shared img { width: 147px; }
+  .sfl-footer .sfl-brand--shared img { width: 200px; }
+  .sfl-techniques { padding-block: 20px 27px; }
+  .sfl-techniques .sfl-heading h2 { align-items: flex-start; }
+  .sfl-techniques .sfl-heading-wave { display: none; }
+  .sfl-techniques .sfl-heading p { margin-top: 11px; font-size: 14px; }
+  .sfl-technique-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .sfl-technique-card, .sfl-technique-card:nth-last-child(-n + 2) { grid-column: auto; }
+  .sfl-technique-card--safety { grid-column: 1 / -1 !important; display: grid; grid-template-columns: .85fr 1fr; }
+  .sfl-technique-card--safety .sfl-technique-photo { height: 100%; aspect-ratio: auto; border-radius: 18px 23px 23px 18px; }
+  .sfl-technique-content { padding: 29px 12px 14px; }
+  .sfl-technique-icon { width: 42px; height: 42px; top: -23px; left: 10px; }
+  .sfl-technique-icon .sfl-icon { width: 25px; height: 25px; }
+  .sfl-landing .sfl-technique-card h3 { font-size: 18px; min-height: 1.3em; }
+  .sfl-technique-card p { font-size: 13px; line-height: 1.6; margin-bottom: 15px; }
+  .sfl-technique-focus { font-size: 10px; padding: 4px 7px; top: 8px; left: 7px; max-width: calc(100% - 14px); }
+  .sfl-technique-link { font-size: 12px; gap: 4px; }
+  .sfl-technique-link .sfl-icon { width: 21px; height: 21px; }
+  .sfl-technique-card--safety .sfl-technique-content { padding-top: 18px; }
+  .sfl-technique-card--safety .sfl-technique-icon { position: static; margin-bottom: 10px; width: 38px; height: 38px; }
+  .sfl-technique-card--safety h3 { min-height: 0; }
+  .sfl-landing .sfl-technique-note { font-size: 12px; gap: 8px; margin-top: 16px; }
+  .sfl-benefits::before { inset-inline: -8px; border-radius: 25px; }
+}
+
+@media (max-width: 380px) {
+  .sfl-brand--shared img { width: 135px; }
+  .sfl-landing .sfl-technique-card h3 { font-size: 17px; }
+  .sfl-technique-content { padding-inline: 10px; }
+  .sfl-technique-link { font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sfl-technique-card { transition: none; }
+}

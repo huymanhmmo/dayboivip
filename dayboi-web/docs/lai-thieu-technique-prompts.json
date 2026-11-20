@@ -1,0 +1,22 @@
+{
+  "tool": "image_gen built-in",
+  "purpose": "Illustrative technique card photos, not verified real course or instructor photography",
+  "prompts": [
+    [
+      "breaststroke",
+      "Use case: photorealistic-natural. Create ONE standalone landscape 4:3 sports photograph for a Vietnamese swim school website card. Brilliant clear turquoise outdoor pool water, bright natural sunlight, navy and blue swimwear, realistic anatomy and water splashes, clean professional family-friendly photography matching aqua/navy swim school advertising. Show the swimmer's whole upper body with head and arms safely inside the frame, moderately wide composition, generous margins, landscape 4:3. The swimmer is an illustrative fictional adult Vietnamese person. No words, branding, logos, watermark, borders, UI, diagram or collage. A male swimmer in blue goggles performing breaststroke, viewed at water level from a slightly elevated three-quarter front angle. Face lifted to breathe naturally, both arms sweeping symmetrically outward just under the water surface, calm focused expression, blue pool lane marker softly behind. Clearly distinguishable symmetrical breaststroke pose."
+    ],
+    [
+      "backstroke",
+      "Use case: photorealistic-natural. Create ONE standalone landscape 4:3 sports photograph for a Vietnamese swim school website card. Brilliant clear turquoise outdoor pool water, bright natural sunlight, navy and blue swimwear, realistic anatomy and water splashes, clean professional family-friendly photography matching aqua/navy swim school advertising. Show the swimmer's whole upper body with head and arms safely inside the frame, moderately wide composition, generous margins, landscape 4:3. The swimmer is an illustrative fictional adult Vietnamese person. No words, branding, logos, watermark, borders, UI, diagram or collage. A male swimmer in blue goggles doing backstroke, lying flat face up on the water with a relaxed head looking toward the sky, one arm extending straight behind his head into the water and the other by his side. Three-quarter side view from slightly above water level, natural flutter kick ripples, body horizontal, no ground visible."
+    ],
+    [
+      "butterfly",
+      "Use case: photorealistic-natural. Create ONE standalone landscape 4:3 sports photograph for a Vietnamese swim school website card. Brilliant clear turquoise outdoor pool water, bright natural sunlight, navy and blue swimwear, realistic anatomy and water splashes, clean professional family-friendly photography matching aqua/navy swim school advertising. Show the swimmer's whole upper body with head and arms safely inside the frame, moderately wide composition, generous margins, landscape 4:3. The swimmer is an illustrative fictional adult Vietnamese person. No words, branding, logos, watermark, borders, UI, diagram or collage. A male swimmer wearing blue goggles doing butterfly stroke in a pool, symmetrical front view just above water level, both arms recovering out of water wide to the sides with softly bent elbows and hands close to surface, shoulders above water and splash trails on both sides, torso horizontal with head forward to breathe, wingspan fits frame."
+    ],
+    [
+      "treading-water",
+      "Use case: photorealistic-natural. Create ONE standalone landscape 4:3 sports photograph for a Vietnamese swim school website card. Brilliant clear turquoise outdoor pool water, bright natural sunlight, navy and blue swimwear, realistic anatomy and water splashes, clean professional family-friendly photography matching aqua/navy swim school advertising. Show the swimmer's whole upper body with head and arms safely inside the frame, moderately wide composition, generous margins, landscape 4:3. The swimmer is an illustrative fictional adult Vietnamese person. No words, branding, logos, watermark, borders, UI, diagram or collage. A Vietnamese adult woman wearing blue swim goggles and navy swimming rashguard practicing calmly treading water in a deep swimming pool, upright vertical torso, chin comfortably above water, both forearms gently sculling at the water surface to each side, friendly focused expression, three-quarter eye-level angle. Show her upper body at waterline surrounded by sparkling cyan water, supportive safe learning mood."
+    ]
+  ]
+}
