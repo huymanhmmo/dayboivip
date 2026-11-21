@@ -1,7 +1,7 @@
 ---
 import Icon from '../landing/ui/Icon.astro';
 import type { PoolDetailData } from '../../data/poolDetailTypes';
-export interface Props { instructor: PoolDetailData['instructor']; phoneHref: string; }
+export interface Props { instructor: NonNullable<PoolDetailData['instructor']>; phoneHref: string; }
 const {instructor,phoneHref}=Astro.props;
 ---
 <section class="pd-instructor" id="huan-luyen-vien" aria-labelledby="instructor-heading"><div class="pd-instructor-photo">{instructor.image?<figure><img src={instructor.image} alt={instructor.imageAlt} width="900" height="600" loading="lazy" decoding="async" /></figure>:<div class="pd-instructor-empty"><Icon name="medal" /><span>{instructor.qualification}</span></div>}</div><div class="pd-instructor-copy"><h2 id="instructor-heading"><small>Đồng hành cùng</small>{instructor.name}</h2><span class="pd-instructor-badge">{instructor.qualification}</span><p>{instructor.description}</p><ul>{instructor.points.map(point=><li><Icon name="check" />{point}</li>)}</ul><a href={phoneHref} class="pd-text-link">Tư vấn cùng HLV<Icon name="phone" /></a></div></section>

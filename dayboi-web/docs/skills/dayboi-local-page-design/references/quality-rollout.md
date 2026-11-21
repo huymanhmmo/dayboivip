@@ -54,3 +54,9 @@ Upload đúng output đã kiểm tra. Trước khi chuyển production, đọc d
 Sau deploy: kiểm tra domain chính, route đại diện, ảnh/CSS/JS và các hành vi bị ảnh hưởng. Phân biệt sự lan truyền edge ngắn với lỗi thật; khi công cụ báo rate limit, tôn trọng thời gian chờ và dùng các phép kiểm tra độc lập phù hợp, không lặp request để vượt hạn mức.
 
 Bàn giao link production/preview, thay đổi chính, kết quả đã xác minh, nguồn/manifest/screenshot và hạn chế kiểm tra thực tế. Không gọi là đạt Core Web Vitals, SEO toàn diện hoặc WCAG toàn site nếu chưa có phép đo tương ứng. Tuân thủ quyền push/deploy của phiên; cập nhật skill không tự cấp quyền xuất bản website.
+
+## Ca kiểm tra khi mở hàng trăm trang hồ
+
+Đối chiếu tất cả route và từng số với nguồn; kiểm tra tỉnh có backlink đến mỗi hồ. Ma trận trình duyệt chọn đại diện mỗi tỉnh và các trường hợp tên dài, nhiều giáo viên, thiếu liên hệ, hồ nội khu, nhiều biến thể địa chỉ. Tên dài không chỉ nằm ở H1: nhãn phường trong header phải được co/xuống dòng để menu vẫn nằm trong viewport. Ảnh nằm trong thanh kỹ thuật cuộn ngang không tự là tràn trang; đo document scrollWidth và tìm phần tử thực sự gây tràn.
+
+Chờ build hoàn tất trước khi audit/preview/upload; không chạy build xóa dist trong lúc script khác đang đọc output. Khi sửa CSS header chung, kiểm tra lại cả mẫu Nhật An và nhãn địa phương dài. Kết quả bản đầu có lỗi được giữ riêng, bản kiểm tra sau sửa cần ghi rõ phạm vi.

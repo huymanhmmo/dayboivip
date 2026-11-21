@@ -1,3 +1,4 @@
+import type {LocalSiteConfig} from './locality/types';
 export type PoolVariant = 'public' | 'residential';
 export type VerificationState = 'verified' | 'unverified' | 'unavailable' | 'updating' | 'documented';
 export interface PoolPhoto {
@@ -14,6 +15,9 @@ export interface PoolStyle {
   title: string; href: string; image: string; imageAlt: string;
 }
 export interface PoolDetailData {
+  site?: LocalSiteConfig;
+  province?: {name:string;href:string};
+  contacts?: {operators:Record<string,any>[];instructors:Record<string,any>[]};
   id: string; slug: string; name: string; shortName: string; areaName: string; areaHref?: string;
   variant: PoolVariant; canonical: string; title: string; description: string; updatedAt: string;
   address: string; oldAddress: string; category: string;
@@ -32,7 +36,7 @@ export interface PoolDetailData {
   courses: PoolCourse[];
   courseIntro: string;
   styles: PoolStyle[];
-  instructor: {
+  instructor?: {
     name: string; qualification: string; description: string; image?: string; imageAlt?: string;
     sourceUrl?: string; points: string[];
   };

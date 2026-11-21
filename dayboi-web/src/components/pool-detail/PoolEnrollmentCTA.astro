@@ -1,7 +1,7 @@
 ---
 import Icon from '../landing/ui/Icon.astro';
 import WaveDivider from '../landing/ui/WaveDivider.astro';
-export interface Props { name: string; hotline: string; phoneHref: string; zaloHref: string; }
-const {name,hotline,phoneHref,zaloHref}=Astro.props;
+export interface Props { name: string; hotline: string; phoneHref: string; zaloHref: string; mapsHref?:string; }
+const {name,hotline,phoneHref,zaloHref,mapsHref}=Astro.props;
 ---
-<section class="pd-enrollment" id="dang-ky" aria-labelledby="enrollment-heading"><WaveDivider /><div class="sfl-container pd-enrollment-inner"><Icon name="swim" /><div><h2 id="enrollment-heading">Đăng ký học bơi tại {name} ngay hôm nay!</h2><p>Tư vấn lộ trình phù hợp, xếp lớp theo trình độ và hỗ trợ chọn lịch học thuận tiện.</p></div><div class="pd-actions"><a href={phoneHref} class="sfl-button sfl-button--light"><Icon name="phone" />{hotline}</a><a href={zaloHref} class="sfl-button sfl-button--orange" target="_blank" rel="noopener noreferrer"><Icon name="chat" />Đăng ký tư vấn</a></div></div></section>
+<section class="pd-enrollment" id="dang-ky" aria-labelledby="enrollment-heading"><WaveDivider /><div class="sfl-container pd-enrollment-inner"><Icon name="swim" /><div><h2 id="enrollment-heading">{phoneHref?`Đăng ký học bơi tại ${name} ngay hôm nay!`:`Chọn cách học phù hợp tại ${name}`}</h2><p>{phoneHref?'Tư vấn lộ trình phù hợp, xếp lớp theo trình độ và hỗ trợ chọn lịch học thuận tiện.':'Trao đổi đúng người phụ trách, kiểm tra quyền vào hồ và thống nhất chi phí trước khi hẹn học.'}</p></div><div class="pd-actions"><a href={phoneHref||'#lien-he-dia-diem'} class="sfl-button sfl-button--light"><Icon name={phoneHref?'phone':'people'} />{hotline||'Xem giáo viên & liên hệ'}</a><a href={zaloHref||mapsHref} class="sfl-button sfl-button--orange" target="_blank" rel="noopener noreferrer"><Icon name={zaloHref?'chat':'pin'} />{zaloHref?'Đăng ký tư vấn':'Tra cứu đường đi'}</a></div></div></section>

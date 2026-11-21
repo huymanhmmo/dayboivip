@@ -11,7 +11,7 @@ description: Thiết kế và mở rộng trang xã/phường cùng trang hồ b
 
 - Làm trong repo hiện có; dự án gốc là `D:/04_dayboivip/dayboi-web`. Kiểm tra checkout, thay đổi đang có, route và dữ liệu liên quan trước khi sửa.
 - Ưu tiên yêu cầu mới nhất và mockup người dùng đã duyệt. Nếu người dùng yêu cầu theo mẫu Swim For Life hiện có, dùng hub `/hoc-boi-tphcm/lai-thieu/` và chi tiết `/hoc-boi-nhat-an-lai-thieu/` làm chuẩn.
-- Đọc [bản đồ mã nguồn](references/codebase-map.md) trước khi chọn phần tái sử dụng: tỉnh/xã/khu vực đã có template, adapter và header/footer đa vùng; factory nội dung chi tiết hồ của cụm Lái Thiêu vẫn cần đúng ngữ cảnh khi mở hồ ngoài cụm.
+- Đọc [bản đồ mã nguồn](references/codebase-map.md) trước khi chọn phần tái sử dụng: tỉnh/xã/khu vực đã có template, adapter và header/footer đa vùng; trang hồ ngoài Lái Thiêu dùng registry và factory đa vùng trong `data/venues/`; factory cũ chỉ dành cho cụm Lái Thiêu.
 - Xác định xã/phường hành chính, vùng tuyển sinh và địa điểm thực tế. Một cụm có thể giới thiệu hồ giáp ranh nhưng không đổi địa chỉ của chúng sang phường của hub.
 
 | Công việc | Tài liệu cần đọc |

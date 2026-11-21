@@ -8,6 +8,7 @@ import {makeRegionSite,globalDirectory} from './navigation';
 import {makeRegionSchema} from './schema';
 import {regionFaqs} from './faq';
 import type {RegionPageData} from './types';
+import {venueCatalog,findVenue} from '../venues/catalog.js';
 export const provincePaths=(lang:'vi'|'en')=>locations.map(loc=>({params:{location:localPath(loc.slug,undefined,lang).split('/').filter(Boolean).at(-1)},props:{loc}}));
 export function buildProvincePage(loc:any,lang:'vi'|'en'='vi'):RegionPageData {
   const en=lang==='en',name=en?(englishNames[loc.name]||loc.name):loc.name;
@@ -16,8 +17,11 @@ export function buildProvincePage(loc:any,lang:'vi'|'en'='vi'):RegionPageData {
   const known=new Set(categories.flatMap(c=>c.venues.map(v=>fold(v.name))));
   const additional=communePools.filter(v=>{if(v.provinceSlug!==loc.slug||known.has(fold(v.name)))return false;known.add(fold(v.name));return true;});
   if(additional.length)categories.push({id:'additional-local',label:en?'Additional local listings':'Địa điểm địa phương bổ sung',venues:additional});
+  const linkedIds=new Set(categories.flatMap(c=>c.venues.map(v=>findVenue(v.name,loc.slug)?.id)).filter(Boolean));
+  const unlisted=venueCatalog.filter(v=>v.provinceSlug===loc.slug&&!linkedIds.has(v.id));
+  if(unlisted.length)categories.push({id:'additional-catalog',label:en?'More places in the directory':'Các địa điểm khác trong danh bạ',venues:unlisted});
   let index=0;
-  const venues=categories.flatMap(c=>c.venues.map(v=>makeVenue({...v,category:c.id},index++,loc.name,lang,'venue')));
+  const venues=categories.flatMap(c=>c.venues.map(v=>makeVenue({...v,provinceSlug:loc.slug,category:c.id},index++,loc.name,lang,'venue')));
   const communes=getCommunesForLocation(loc.slug).map(c=>({label:en?`${c.name} ${c.type==='xã'?'Commune':c.type==='phường'?'Ward':'Special Zone'}`:c.fullName,href:localPath(loc.slug,c.slug,lang),description:c.previous?.join(', '),hasVenues:c.hasVenues,icon:'pin'}));
   const page:Omit<RegionPageData,'site'|'schema'>={lang,level:'province',id:loc.slug,name,shortName:name,parentName:en?'Vietnam':'Việt Nam',
     title:en?`Swimming Pools & Lesson Providers in ${name} [${new Date().getFullYear()}]`:(research?.providers?`Học Bơi ${loc.name}: Bể Bơi & Lớp Học Theo Khu Vực`:`Học Bơi ${loc.name}: Danh Bạ Bể Bơi & Giáo Viên`),

@@ -38,14 +38,14 @@ export const blogPosts = [
   {
     title: 'Học Bơi Tăng Bạt Hổ: Bể Bơi, Lớp Học & Học Phí',
     slug: 'hoc-boi-tang-bat-ho',
-    excerpt: 'Thông tin chi tiết về các lớp học bơi tại bể bơi Tăng Bạt Hổ (Hai Bà Trưng, Hà Nội). Đánh giá chất lượng nước, HLV chuyên nghiệp, học phí và lịch học mới nhất.',
+    excerpt: 'Tìm hiểu địa chỉ bể bơi Tăng Bạt Hổ, liên hệ giáo viên và ban quản lý theo dữ liệu hiện có; các khoản chi phí và điều kiện sử dụng cần xác nhận trước khi học.',
     image: '/images/classes/lop-hoc-boi-ha-noi.jpg',
     date: '25/05',
     category: 'Góc Tư Vấn',
     categorySlug: 'goc-tu-van',
     tags: ['Học bơi hà nội', 'Địa điểm học bơi'],
     tagSlugs: ['hoc-boi-ha-noi', 'dia-diem-hoc-boi'],
-    readTime: '19 phút đọc',
+    readTime: '8 phút đọc',
   },
   {
     title: 'Hướng Dẫn Học Bơi Cho Người Mới: 6 Bước Cơ Bản',

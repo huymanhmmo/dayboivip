@@ -1,0 +1,3774 @@
+{
+  "checkedAt": "2026-11-21T02:27:54.896Z",
+  "catalog": 438,
+  "detailPages": 418,
+  "newPages": 417,
+  "baselineChecked": 6838,
+  "contactLinks": 792,
+  "internalReferences": 17287,
+  "failures": [],
+  "pages": [
+    {
+      "name": "Bể bơi bốn mùa 73 Vạn Bảo",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-73-van-bao-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 4,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Khách sạn La Thành",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-khach-san-la-thanh-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 6,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi 115 Quán Thánh",
+      "path": "/dia-diem-hoc-boi/be-boi-115-quan-thanh-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 3,
+      "operators": 1,
+      "phones": 5,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Khăn Quàng Đỏ",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-khan-quang-do-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Tăng Bạt Hổ",
+      "path": "/hoc-boi-tang-bat-ho/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 4,
+      "noindex": false
+    },
+    {
+      "name": "Bể bơi Đại học Bách Khoa Hà Nội",
+      "path": "/dia-diem-hoc-boi/be-boi-dai-hoc-bach-khoa-ha-noi-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Vinhomes Times City",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-vinhomes-times-city-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Aqua-Tots Hoàng Cầu",
+      "path": "/dia-diem-hoc-boi/aqua-tots-hoang-cau-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Khách sạn Bảo Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-khach-san-bao-son-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 4,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Đặng Tiến Đông (Thái Thịnh)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-dang-tien-dong-thai-thinh-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hapu Swimming Pool - Bể bơi nước mặn Hapulico",
+      "path": "/dia-diem-hoc-boi/hapu-swimming-pool-be-boi-nuoc-man-hapulico-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 3,
+      "operators": 1,
+      "phones": 5,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Việt Đức Complex",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-viet-duc-complex-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 4,
+      "noindex": true
+    },
+    {
+      "name": "Aqua-Tots Cầu Giấy",
+      "path": "/dia-diem-hoc-boi/aqua-tots-cau-giay-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa số 7 Tôn Thất Thuyết",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-so-7-ton-that-thuyet-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Green Pool 24 Nguyễn Cơ Thạch",
+      "path": "/dia-diem-hoc-boi/green-pool-24-nguyen-co-thach-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Cung Thể thao Dưới nước Mỹ Đình",
+      "path": "/dia-diem-hoc-boi/cung-the-thao-duoi-nuoc-my-dinh-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 4,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Thắng Lợi",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-thang-loi-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Green Pool Thụy Khuê",
+      "path": "/dia-diem-hoc-boi/green-pool-thuy-khue-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Aqua-Tots Tây Hồ",
+      "path": "/dia-diem-hoc-boi/aqua-tots-tay-ho-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Từ Liêm (Đức Diễn)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-tu-liem-duc-dien-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Green Stars",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-green-stars-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Green Pool Hoàng Mai",
+      "path": "/dia-diem-hoc-boi/green-pool-hoang-mai-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nước Mặn Bốn Mùa Định Công",
+      "path": "/dia-diem-hoc-boi/be-boi-nuoc-man-bon-mua-dinh-cong-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Rainbow Linh Đàm",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-rainbow-linh-dam-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Green Pool Thanh Trì",
+      "path": "/dia-diem-hoc-boi/green-pool-thanh-tri-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Housinco Tân Triều",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-housinco-tan-trieu-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hồ Gươm Plaza",
+      "path": "/dia-diem-hoc-boi/be-boi-ho-guom-plaza-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Thanh Hà (KĐT Thanh Hà Cienco 5)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-thanh-ha-kdt-thanh-ha-cienco-5-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Học viện An Ninh Nhân Dân C500",
+      "path": "/dia-diem-hoc-boi/be-boi-hoc-vien-an-ninh-nhan-dan-c500-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Mai Phúc (Long Biên)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-mai-phuc-long-bien-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Olympia Việt Hưng",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-olympia-viet-hung-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Green House CT17 Việt Hưng",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-green-house-ct17-viet-hung-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Aqua-Tots Gia Lâm (Vinhomes Ocean Park)",
+      "path": "/dia-diem-hoc-boi/aqua-tots-gia-lam-vinhomes-ocean-park-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Mái Kính Sapphire 2 (Vinhomes Ocean Park 1)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-mai-kinh-sapphire-2-vinhomes-ocean-park-1-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Khu Đô Thị Đặng Xá (Gia Lâm)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-khu-do-thi-dang-xa-gia-lam-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Sapphire - Vinhomes Smart City",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-sapphire-vinhomes-smart-city-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa An Hưng - Dương Nội",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-an-hung-duong-noi-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa 33C Phạm Ngũ Lão",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-33c-pham-ngu-lao-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Cung Thiếu Nhi Đông Anh",
+      "path": "/dia-diem-hoc-boi/be-boi-cung-thieu-nhi-dong-anh-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Hinode Royal Park",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-hinode-royal-park-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi KĐT Tân Tây Đô",
+      "path": "/dia-diem-hoc-boi/be-boi-kdt-tan-tay-do-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Văn hóa & Thể thao Chương Mỹ",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-van-hoa-the-thao-chuong-my-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Mê Linh Plaza",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-me-linh-plaza-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao ĐH FPT Hòa Lạc",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-dh-fpt-hoa-lac-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa KĐT Thanh Hà",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-kdt-thanh-ha-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Sóc Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-soc-son-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Sinh Thái Bát Tràng",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-sinh-thai-bat-trang-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Thị xã Sơn Tây",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-thi-xa-son-tay-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Quốc Oai",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-quoc-oai-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nhà Thi Đấu Thạch Thất",
+      "path": "/dia-diem-hoc-boi/be-boi-nha-thi-dau-thach-that-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Thường Tín",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-thuong-tin-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Phú Xuyên",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-phu-xuyen-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Vân Đình",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-van-dinh-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Mỹ Đức",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-my-duc-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Quảng Oai",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-quang-oai-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Phúc Thọ",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-phuc-tho-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Nghĩa Tân",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-nghia-tan-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Vườn Nhật Zen Park Smart City",
+      "path": "/dia-diem-hoc-boi/be-boi-vuon-nhat-zen-park-smart-city-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi KĐT FLC Premier Parc Đại Mỗ",
+      "path": "/dia-diem-hoc-boi/be-boi-kdt-flc-premier-parc-dai-mo-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi ĐH Công Nghiệp Hà Nội",
+      "path": "/dia-diem-hoc-boi/be-boi-dh-cong-nghiep-ha-noi-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Ecohome",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-ecohome-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hapulico",
+      "path": "/dia-diem-hoc-boi/be-boi-hapulico-ha-noi/",
+      "province": "Hà Nội",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Yết Kiêu (Trung tâm Thể thao Dưới nước Yết Kiêu)",
+      "path": "/dia-diem-hoc-boi/ho-boi-yet-kieu-trung-tam-the-thao-duoi-nuoc-yet-kieu-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi CLB Thể thao Nguyễn Bỉnh Khiêm",
+      "path": "/dia-diem-hoc-boi/ho-boi-clb-the-thao-nguyen-binh-khiem-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Kỳ Đồng",
+      "path": "/dia-diem-hoc-boi/ho-boi-ky-dong-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Victory",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-victory-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi FOSCO",
+      "path": "/dia-diem-hoc-boi/ho-boi-fosco-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Lam Sơn (CLB Thể thao Dưới nước Lam Sơn)",
+      "path": "/dia-diem-hoc-boi/ho-boi-lam-son-clb-the-thao-duoi-nuoc-lam-son-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Tản Đà",
+      "path": "/dia-diem-hoc-boi/ho-boi-tan-da-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nguyễn Tri Phương",
+      "path": "/dia-diem-hoc-boi/ho-boi-nguyen-tri-phuong-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Công viên Văn hóa Lê Thị Riêng",
+      "path": "/dia-diem-hoc-boi/ho-boi-cong-vien-van-hoa-le-thi-rieng-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi nội khu Chung cư Res 11",
+      "path": "/dia-diem-hoc-boi/ho-boi-noi-khu-chung-cu-res-11-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Phú Thọ (Trung tâm TDTT Phú Thọ)",
+      "path": "/dia-diem-hoc-boi/ho-boi-phu-tho-trung-tam-tdtt-phu-tho-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Rạch Miễu (Trung tâm TDTT Rạch Miễu)",
+      "path": "/dia-diem-hoc-boi/ho-boi-rach-mieu-trung-tam-tdtt-rach-mieu-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT Quân khu 7",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-quan-khu-7-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Cộng Hòa (Trung tâm Triển lãm Tân Bình)",
+      "path": "/dia-diem-hoc-boi/ho-boi-cong-hoa-trung-tam-trien-lam-tan-binh-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Triển lãm Tân Bình (Trung tâm VHTT Quận Tân Bình)",
+      "path": "/dia-diem-hoc-boi/ho-boi-trien-lam-tan-binh-trung-tam-vhtt-quan-tan-binh-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Hải Quân (Trường Hải quân)",
+      "path": "/dia-diem-hoc-boi/ho-boi-hai-quan-truong-hai-quan-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Đại Đồng (Trung tâm TDTT Quận Bình Thạnh)",
+      "path": "/dia-diem-hoc-boi/ho-boi-dai-dong-trung-tam-tdtt-quan-binh-thanh-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Đạt Đức",
+      "path": "/dia-diem-hoc-boi/ho-boi-dat-duc-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Làng Hoa",
+      "path": "/dia-diem-hoc-boi/ho-boi-lang-hoa-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Ánh Viên Swim Club",
+      "path": "/dia-diem-hoc-boi/anh-vien-swim-club-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Baby Fish Swim Academy Thảo Điền",
+      "path": "/dia-diem-hoc-boi/baby-fish-swim-academy-thao-dien-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Australia Swim School Thảo Điền",
+      "path": "/dia-diem-hoc-boi/australia-swim-school-thao-dien-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Vân Đồn (Trung tâm TDTT Quận 4)",
+      "path": "/dia-diem-hoc-boi/ho-boi-van-don-trung-tam-tdtt-quan-4-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khánh Hội (Hồ bơi Vân Đồn 2)",
+      "path": "/dia-diem-hoc-boi/ho-boi-khanh-hoi-ho-boi-van-don-2-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Jamona City",
+      "path": "/dia-diem-hoc-boi/ho-boi-jamona-city-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Chung cư Golden Star",
+      "path": "/dia-diem-hoc-boi/ho-boi-chung-cu-golden-star-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Terra Mia",
+      "path": "/dia-diem-hoc-boi/ho-boi-terra-mia-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Hòa Bình",
+      "path": "/dia-diem-hoc-boi/ho-boi-hoa-binh-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu Du lịch Bến Xưa",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-du-lich-ben-xua-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Tô Ký",
+      "path": "/dia-diem-hoc-boi/ho-boi-to-ky-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nhà Thiếu nhi Huyện Hóc Môn",
+      "path": "/dia-diem-hoc-boi/ho-boi-nha-thieu-nhi-huyen-hoc-mon-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Sư Đoàn 317",
+      "path": "/dia-diem-hoc-boi/ho-boi-su-doan-317-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Bảo Vân (CLB Bơi lội Bảo Vân)",
+      "path": "/dia-diem-hoc-boi/ho-boi-bao-van-clb-boi-loi-bao-van-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Maxim Vũng Tàu",
+      "path": "/dia-diem-hoc-boi/ho-boi-maxim-vung-tau-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Chung cư Gateway Chí Linh (Luxury Pool)",
+      "path": "/dia-diem-hoc-boi/ho-boi-chung-cu-gateway-chi-linh-luxury-pool-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Cung Văn Hóa Lao Động TP.HCM",
+      "path": "/dia-diem-hoc-boi/ho-boi-cung-van-hoa-lao-dong-tp-hcm-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Pullman Saigon Centre",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-pullman-saigon-centre-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Hồ Xuân Hương",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-ho-xuan-huong-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT Quận 5",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-quan-5-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Chung cư Lê Thành",
+      "path": "/dia-diem-hoc-boi/ho-boi-chung-cu-le-thanh-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Celadon Sports & Resort Club",
+      "path": "/dia-diem-hoc-boi/ho-boi-celadon-sports-resort-club-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Tân Tạo",
+      "path": "/dia-diem-hoc-boi/ho-boi-tan-tao-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Phú Lâm Quận 6",
+      "path": "/dia-diem-hoc-boi/ho-boi-phu-lam-quan-6-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Văn hóa Thể thao Quận 6",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-van-hoa-the-thao-quan-6-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Samland Giai Việt",
+      "path": "/dia-diem-hoc-boi/ho-boi-samland-giai-viet-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu căn hộ Vista Verde",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-can-ho-vista-verde-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Củ Tỏi Hóc Môn",
+      "path": "/dia-diem-hoc-boi/ho-boi-cu-toi-hoc-mon-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu phức hợp Canary Ehome",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-phuc-hop-canary-ehome-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT Thị xã Bến Cát",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-thi-xa-ben-cat-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Masteri An Phú",
+      "path": "/dia-diem-hoc-boi/ho-boi-masteri-an-phu-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Sunrise Riverside Nhà Bè",
+      "path": "/dia-diem-hoc-boi/ho-boi-sunrise-riverside-nha-be-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Văn hóa Thể thao Củ Chi",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-van-hoa-the-thao-cu-chi-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT Cần Giờ",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-can-gio-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi The Imperial Hotel Vũng Tàu",
+      "path": "/dia-diem-hoc-boi/ho-boi-the-imperial-hotel-vung-tau-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể dục Thể thao Bà Rịa",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-duc-the-thao-ba-ria-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Thị xã Phú Mỹ",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-thi-xa-phu-my-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Vinhomes Central Park",
+      "path": "/dia-diem-hoc-boi/be-boi-vinhomes-central-park-tphcm/",
+      "province": "TP. Hồ Chí Minh",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa 30/4",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-30-4-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Quân khu 5",
+      "path": "/dia-diem-hoc-boi/be-boi-quan-khu-5-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thành tích cao Đà Nẵng",
+      "path": "/dia-diem-hoc-boi/be-boi-thanh-tich-cao-da-nang-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Fuji Swimming Club – FHOME",
+      "path": "/dia-diem-hoc-boi/fuji-swimming-club-fhome-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trường Đại học Thể dục Thể thao Đà Nẵng",
+      "path": "/dia-diem-hoc-boi/ho-boi-truong-dai-hoc-the-duc-the-thao-da-nang-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thanh Khê",
+      "path": "/dia-diem-hoc-boi/ho-boi-thanh-khe-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Cen Skills – Khách sạn Mường Thanh Grand",
+      "path": "/dia-diem-hoc-boi/be-boi-cen-skills-khach-san-muong-thanh-grand-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi nước ấm Meliã Vinpearl Danang Riverfront",
+      "path": "/dia-diem-hoc-boi/be-boi-nuoc-am-melia-vinpearl-danang-riverfront-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Caribe Hòa Xuân",
+      "path": "/dia-diem-hoc-boi/ho-boi-caribe-hoa-xuan-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Bệnh viện Y học Cổ truyền Đà Nẵng",
+      "path": "/dia-diem-hoc-boi/ho-boi-benh-vien-y-hoc-co-truyen-da-nang-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Almanity Hoi An Wellness Resort",
+      "path": "/dia-diem-hoc-boi/ho-boi-almanity-hoi-an-wellness-resort-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Tỉnh Quảng Nam",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-tinh-quang-nam-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Văn hóa Thể thao Điện Bàn",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-van-hoa-the-thao-dien-ban-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Hòa Vang",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-hoa-vang-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Quận Cẩm Lệ",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-quan-cam-le-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trường Đại học Bách Khoa Đà Nẵng",
+      "path": "/dia-diem-hoc-boi/ho-boi-truong-dai-hoc-bach-khoa-da-nang-da-nang/",
+      "province": "Đà Nẵng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bến Bính (Trung tâm Đua thuyền & Bơi lặn Hải Phòng)",
+      "path": "/dia-diem-hoc-boi/be-boi-ben-binh-trung-tam-dua-thuyen-boi-lan-hai-phong-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hạ Lý",
+      "path": "/dia-diem-hoc-boi/be-boi-ha-ly-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Aqua Dreams (Vinhomes Imperia)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-aqua-dreams-vinhomes-imperia-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Cung Văn hóa Lao động Hữu nghị Việt – Tiệp",
+      "path": "/dia-diem-hoc-boi/be-boi-cung-van-hoa-lao-dong-huu-nghi-viet-tiep-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Paradise Pool",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-paradise-pool-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Hồ Sen (Trung tâm Thể thao Hồ Sen)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-ho-sen-trung-tam-the-thao-ho-sen-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "CT Pool Hoàng Huy Commerce",
+      "path": "/dia-diem-hoc-boi/ct-pool-hoang-huy-commerce-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi nước mặn Cựu Viên",
+      "path": "/dia-diem-hoc-boi/be-boi-nuoc-man-cuu-vien-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn mùa Hải Long",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-hai-long-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Aqua-Tots Swim Schools Hải Phòng",
+      "path": "/dia-diem-hoc-boi/aqua-tots-swim-schools-hai-phong-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi bốn mùa Hali Pool (Trung tâm Bơi Lặn Hà Linh)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-hali-pool-trung-tam-boi-lan-ha-linh-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Trung tâm Bơi lặn Biển Đông",
+      "path": "/dia-diem-hoc-boi/trung-tam-boi-lan-bien-dong-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Muối khoáng Trang Quan",
+      "path": "/dia-diem-hoc-boi/be-boi-muoi-khoang-trang-quan-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa KĐT Bắc Sông Cấm Thủy Nguyên",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-kdt-bac-song-cam-thuy-nguyen-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Văn hóa & Thể thao An Dương",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-van-hoa-the-thao-an-duong-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Quốc Tế Đồi Rồng Dragon Ocean",
+      "path": "/dia-diem-hoc-boi/be-boi-quoc-te-doi-rong-dragon-ocean-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Flamingo Cát Bà Beach Resort",
+      "path": "/dia-diem-hoc-boi/be-boi-flamingo-cat-ba-beach-resort-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trường Đại học Hải Phòng",
+      "path": "/dia-diem-hoc-boi/be-boi-truong-dai-hoc-hai-phong-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Tiên Lãng",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-tien-lang-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Vĩnh Bảo",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-vinh-bao-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hồ Sen",
+      "path": "/dia-diem-hoc-boi/be-boi-ho-sen-hai-phong/",
+      "province": "Hải Phòng",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Tỉnh (01 Hà Huy Tập)",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-tinh-01-ha-huy-tap-hue/",
+      "province": "Huế",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi nước ấm Star Fitness – The Manor Crown",
+      "path": "/dia-diem-hoc-boi/be-boi-nuoc-am-star-fitness-the-manor-crown-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Kình Ngư (Trung tâm Thể thao Dưới nước)",
+      "path": "/dia-diem-hoc-boi/be-boi-kinh-ngu-trung-tam-the-thao-duoi-nuoc-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Sân Vận Động Tự Do Huế",
+      "path": "/dia-diem-hoc-boi/be-boi-san-van-dong-tu-do-hue-hue/",
+      "province": "Huế",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Hoạt động Thanh thiếu nhi Thừa Thiên Huế",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-hoat-dong-thanh-thieu-nhi-thua-thien-hue-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thanh Thiếu Nhi Cơ sở Trương Gia Mô",
+      "path": "/dia-diem-hoc-boi/be-boi-thanh-thieu-nhi-co-so-truong-gia-mo-hue/",
+      "province": "Huế",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Park View",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-park-view-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Hương Giang Resort & Spa",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-huong-giang-resort-spa-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Tổ hợp Bể bơi Khu đô thị An Cựu City",
+      "path": "/dia-diem-hoc-boi/to-hop-be-boi-khu-do-thi-an-cuu-city-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Dolphin An Cựu (Trung tâm Dạy bơi An Cựu)",
+      "path": "/dia-diem-hoc-boi/be-boi-dolphin-an-cuu-trung-tam-day-boi-an-cuu-hue/",
+      "province": "Huế",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thiên nhiên BLUE Thủy Xuân",
+      "path": "/dia-diem-hoc-boi/be-boi-thien-nhien-blue-thuy-xuan-hue/",
+      "province": "Huế",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Sinh thái Làng Hành Hương (Pilgrimage Village Pool)",
+      "path": "/dia-diem-hoc-boi/be-boi-sinh-thai-lang-hanh-huong-pilgrimage-village-pool-hue/",
+      "province": "Huế",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Thừa Thiên Huế",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-thua-thien-hue-hue/",
+      "province": "Huế",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Cung An Định",
+      "path": "/dia-diem-hoc-boi/be-boi-cung-an-dinh-hue/",
+      "province": "Huế",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Thị xã Hương Thủy",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-thi-xa-huong-thuy-hue/",
+      "province": "Huế",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Hương Trà",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-huong-tra-hue/",
+      "province": "Huế",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bãi Biển Thuận An",
+      "path": "/dia-diem-hoc-boi/be-boi-bai-bien-thuan-an-hue/",
+      "province": "Huế",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Tỉnh",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-tinh-hue/",
+      "province": "Huế",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Hùng Quân",
+      "path": "/dia-diem-hoc-boi/ho-boi-hung-quan-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Công an TP. Cần Thơ",
+      "path": "/dia-diem-hoc-boi/ho-boi-cong-an-tp-can-tho-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Mường Thanh Luxury Cần Thơ",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-muong-thanh-luxury-can-tho-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Vinpearl Hotel Cần Thơ",
+      "path": "/dia-diem-hoc-boi/ho-boi-vinpearl-hotel-can-tho-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "CLB Bơi lội Quân Khu 9 (Hồ bơi QK9)",
+      "path": "/dia-diem-hoc-boi/clb-boi-loi-quan-khu-9-ho-boi-qk9-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Rạch Súc",
+      "path": "/dia-diem-hoc-boi/ho-boi-rach-suc-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi ĐH Nam Cần Thơ (DNC Pool)",
+      "path": "/dia-diem-hoc-boi/ho-boi-dh-nam-can-tho-dnc-pool-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nam Long 2 Central Lake",
+      "path": "/dia-diem-hoc-boi/ho-boi-nam-long-2-central-lake-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Minh Phương Cái Răng",
+      "path": "/dia-diem-hoc-boi/ho-boi-minh-phuong-cai-rang-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi KĐT Nam Long Cái Răng",
+      "path": "/dia-diem-hoc-boi/ho-boi-kdt-nam-long-cai-rang-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Quân Khu 9",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-quan-khu-9-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Văn hóa Thể thao Ô Môn",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-van-hoa-the-thao-o-mon-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Thốt Nốt",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-thot-not-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Làng Du Lịch Sinh Thái Mỹ Khánh",
+      "path": "/dia-diem-hoc-boi/ho-boi-lang-du-lich-sinh-thai-my-khanh-can-tho/",
+      "province": "Cần Thơ",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Sông Phố Biên Hòa",
+      "path": "/dia-diem-hoc-boi/ho-boi-song-pho-bien-hoa-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Babylon Trảng Dài",
+      "path": "/dia-diem-hoc-boi/ho-boi-babylon-trang-dai-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thảo Linh Long Bình",
+      "path": "/dia-diem-hoc-boi/ho-boi-thao-linh-long-binh-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Cát Tường Tân Hiệp",
+      "path": "/dia-diem-hoc-boi/ho-boi-cat-tuong-tan-hiep-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thủy Tiên Long Khánh",
+      "path": "/dia-diem-hoc-boi/ho-boi-thuy-tien-long-khanh-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nàng Quen Bảo Vinh",
+      "path": "/dia-diem-hoc-boi/ho-boi-nang-quen-bao-vinh-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Terra Flora Nhơn Trạch",
+      "path": "/dia-diem-hoc-boi/ho-boi-terra-flora-nhon-trach-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thành Đạt KCN Nhơn Trạch",
+      "path": "/dia-diem-hoc-boi/ho-boi-thanh-dat-kcn-nhon-trach-dong-nai/",
+      "province": "Đồng Nai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Nhà thi đấu Thể thao Dưới nước – Khu Liên hợp Thể thao Quảng Ninh",
+      "path": "/dia-diem-hoc-boi/nha-thi-dau-the-thao-duoi-nuoc-khu-lien-hop-the-thao-quang-ninh-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Lê Thánh Tông",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-le-thanh-tong-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa iFit Sapphire Hạ Long",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-ifit-sapphire-ha-long-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Central Luxury Hạ Long",
+      "path": "/dia-diem-hoc-boi/be-boi-central-luxury-ha-long-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khoáng Nóng Trung tâm Điều dưỡng Địa chất Cẩm Phả",
+      "path": "/dia-diem-hoc-boi/be-boi-khoang-nong-trung-tam-dieu-duong-dia-chat-cam-pha-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Green (Green Yoga & Fitness Cẩm Phả)",
+      "path": "/dia-diem-hoc-boi/be-boi-green-green-yoga-fitness-cam-pha-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hot Swimming Uông Bí",
+      "path": "/dia-diem-hoc-boi/hot-swimming-uong-bi-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Khu sinh thái Bể bơi Suối Ngọc Uông Bí",
+      "path": "/dia-diem-hoc-boi/khu-sinh-thai-be-boi-suoi-ngoc-uong-bi-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Cung Quy hoạch & Hội chợ Triển lãm Quảng Ninh",
+      "path": "/dia-diem-hoc-boi/be-boi-cung-quy-hoach-hoi-cho-trien-lam-quang-ninh-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Than Cẩm Phả",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-than-cam-pha-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Than Nam Mẫu Uông Bí",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-than-nam-mau-uong-bi-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Sonasea Vân Đồn Harbor City",
+      "path": "/dia-diem-hoc-boi/be-boi-sonasea-van-don-harbor-city-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Thị xã Quảng Yên",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-thi-xa-quang-yen-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Thị xã Đông Triều",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-thi-xa-dong-trieu-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bến Du Thuyền Tuần Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-ben-du-thuyen-tuan-chau-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Cung Thể thao Dưới nước Đại Yên",
+      "path": "/dia-diem-hoc-boi/cung-the-thao-duoi-nuoc-dai-yen-quang-ninh/",
+      "province": "Quảng Ninh",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa – Trường THPT Chuyên Bắc Ninh",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-truong-thpt-chuyen-bac-ninh-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Dolphin Lê Hồng Phong",
+      "path": "/dia-diem-hoc-boi/be-boi-dolphin-le-hong-phong-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Sky Garden Viglacera",
+      "path": "/dia-diem-hoc-boi/be-boi-sky-garden-viglacera-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Anh Vũ Yên Phong",
+      "path": "/dia-diem-hoc-boi/be-boi-anh-vu-yen-phong-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khánh Sinh Yên Phong",
+      "path": "/dia-diem-hoc-boi/be-boi-khanh-sinh-yen-phong-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Nhà Thi Đấu Bắc Giang",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-nha-thi-dau-bac-giang-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa ĐH Thể Dục Thể Thao Bắc Ninh",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-dh-the-duc-the-thao-bac-ninh-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Đào tạo VĐV Bắc Ninh",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-dao-tao-vdv-bac-ninh-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Quế Võ",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-que-vo-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi KCN Yên Phong Viglacera",
+      "path": "/dia-diem-hoc-boi/be-boi-kcn-yen-phong-viglacera-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Thuận Thành",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-thuan-thanh-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa KĐT Đình Trám Việt Yên",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-kdt-dinh-tram-viet-yen-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Dolphin Bắc Ninh",
+      "path": "/dia-diem-hoc-boi/be-boi-dolphin-bac-ninh-bac-ninh/",
+      "province": "Bắc Ninh",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trường Đại học Sư phạm Thái Nguyên",
+      "path": "/dia-diem-hoc-boi/be-boi-truong-dai-hoc-su-pham-thai-nguyen-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Prime (Prime Fitness)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-prime-prime-fitness-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Olympia Gia Sàng",
+      "path": "/dia-diem-hoc-boi/be-boi-olympia-gia-sang-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khu du lịch sinh thái Dũng Tân",
+      "path": "/dia-diem-hoc-boi/be-boi-khu-du-lich-sinh-thai-dung-tan-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Văn hóa Thể thao TP. Sông Công",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-van-hoa-the-thao-tp-song-cong-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hoàng Hải Phổ Yên",
+      "path": "/dia-diem-hoc-boi/be-boi-hoang-hai-pho-yen-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Phổ Yên – Trung tâm TDTT Phổ Yên",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-pho-yen-trung-tam-tdtt-pho-yen-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Prime Tháp Đôi",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-prime-thap-doi-thai-nguyen/",
+      "province": "Thái Nguyên",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Minh Phương (Minh Phương Four Seasons)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-minh-phuong-minh-phuong-four-seasons-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Việt Trì (Khu Liên hợp Thể thao Tỉnh)",
+      "path": "/dia-diem-hoc-boi/be-boi-viet-tri-khu-lien-hop-the-thao-tinh-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Happy Land Việt Trì",
+      "path": "/dia-diem-hoc-boi/be-boi-happy-land-viet-tri-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Fami Fitness & Yoga Center",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-fami-fitness-yoga-center-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Tỉnh Đội Vĩnh Phúc",
+      "path": "/dia-diem-hoc-boi/ho-boi-tinh-doi-vinh-phuc-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khu Liên hợp Thể thao tỉnh Phú Thọ",
+      "path": "/dia-diem-hoc-boi/be-boi-khu-lien-hop-the-thao-tinh-phu-tho-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Fami Fitness Vĩnh Yên",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-fami-fitness-vinh-yen-phu-tho/",
+      "province": "Phú Thọ",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Lavender Ninh Bình",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-lavender-ninh-binh-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Thể thao Mai Thế Hệ",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-the-thao-mai-the-he-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Tiêu Chuẩn Thi Đấu Sắc Màu Tam Điệp",
+      "path": "/dia-diem-hoc-boi/be-boi-tieu-chuan-thi-dau-sac-mau-tam-diep-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Dong Giao Garden Tam Điệp",
+      "path": "/dia-diem-hoc-boi/be-boi-dong-giao-garden-tam-diep-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khu sinh thái Lộc Vượng Nam Định",
+      "path": "/dia-diem-hoc-boi/be-boi-khu-sinh-thai-loc-vuong-nam-dinh-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Muối Khoáng Roman – Nam Định Tower",
+      "path": "/dia-diem-hoc-boi/be-boi-muoi-khoang-roman-nam-dinh-tower-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Tân Thủy – Sân vận động tỉnh Hà Nam",
+      "path": "/dia-diem-hoc-boi/be-boi-tan-thuy-san-van-dong-tinh-ha-nam-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa – Khách sạn Mường Thanh Luxury Hà Nam",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-khach-san-muong-thanh-luxury-ha-nam-ninh-binh/",
+      "province": "Ninh Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Solforest Ecopark",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-solforest-ecopark-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hệ thống Bể bơi Resort Ecopark (WestBay, Rừng Cọ, Vườn Tùng)",
+      "path": "/dia-diem-hoc-boi/he-thong-be-boi-resort-ecopark-westbay-rung-co-vuon-tung-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Minh Hoàng Yên Mỹ",
+      "path": "/dia-diem-hoc-boi/be-boi-minh-hoang-yen-my-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Aqua Water Park Yên Mỹ",
+      "path": "/dia-diem-hoc-boi/be-boi-aqua-water-park-yen-my-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hướng Dương Mỹ Hào",
+      "path": "/dia-diem-hoc-boi/be-boi-huong-duong-my-hao-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Forestia Park Phố Nối Mỹ Hào",
+      "path": "/dia-diem-hoc-boi/be-boi-forestia-park-pho-noi-my-hao-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Sunrise Swimming Pool – Khách sạn Selegend Thái Bình",
+      "path": "/dia-diem-hoc-boi/sunrise-swimming-pool-khach-san-selegend-thai-binh-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Eden Garden (Khách sạn Dầu Khí Thái Bình)",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-eden-garden-khach-san-dau-khi-thai-binh-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Eden Garden Thái Bình",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-eden-garden-thai-binh-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Minh Hoàng",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-minh-hoang-hung-yen/",
+      "province": "Hưng Yên",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Tổ hợp Thể thao Sun Sport Complex Thanh Hóa",
+      "path": "/dia-diem-hoc-boi/to-hop-the-thao-sun-sport-complex-thanh-hoa-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa RACER CITY",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-racer-city-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Vinhomes Star City",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-vinhomes-star-city-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi THPT Đào Duy Anh",
+      "path": "/dia-diem-hoc-boi/be-boi-thpt-dao-duy-anh-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Hạc Thành",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-hac-thanh-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hệ thống Bể bơi Quần thể FLC Sầm Sơn",
+      "path": "/dia-diem-hoc-boi/he-thong-be-boi-quan-the-flc-sam-son-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Dragon Sea Sầm Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-dragon-sea-sam-son-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm VHTT & Truyền thông Bỉm Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-vhtt-truyen-thong-bim-son-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trường Thành (Trường Thành Complex Bỉm Sơn)",
+      "path": "/dia-diem-hoc-boi/be-boi-truong-thanh-truong-thanh-complex-bim-son-thanh-hoa/",
+      "province": "Thanh Hóa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Pool Plus – VRC Vinh",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-pool-plus-vrc-vinh-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Elite Fitness Vinh",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-elite-fitness-vinh-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Kình Ngư",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-kinh-ngu-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Quân Khu 4",
+      "path": "/dia-diem-hoc-boi/be-boi-quan-khu-4-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nhà Văn Hóa Lao Động Nghệ An",
+      "path": "/dia-diem-hoc-boi/be-boi-nha-van-hoa-lao-dong-nghe-an-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Vô cực Khách sạn Summer Cửa Lò",
+      "path": "/dia-diem-hoc-boi/ho-boi-vo-cuc-khach-san-summer-cua-lo-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Mường Thanh Grand Cửa Lò",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-muong-thanh-grand-cua-lo-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm TDTT Huyện Diễn Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-tdtt-huyen-dien-chau-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Mường Thanh Diễn Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-muong-thanh-dien-chau-nghe-an/",
+      "province": "Nghệ An",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Tổ hợp Bể bơi Hào Quang Hà Tĩnh",
+      "path": "/dia-diem-hoc-boi/to-hop-be-boi-hao-quang-ha-tinh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Hà Tĩnh",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-thi-dau-tdtt-ha-tinh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Meliá Vinpearl Hà Tĩnh",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-melia-vinpearl-ha-tinh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Công Đoàn Hà Tĩnh",
+      "path": "/dia-diem-hoc-boi/be-boi-cong-doan-ha-tinh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Mường Thanh Grand Hà Tĩnh (Kỳ Anh)",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-muong-thanh-grand-ha-tinh-ky-anh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm VHTT & TT Thị xã Kỳ Anh",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-vhtt-tt-thi-xa-ky-anh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Thị xã Hồng Lĩnh",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-thi-xa-hong-linh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Như Nam Hồng Lĩnh",
+      "path": "/dia-diem-hoc-boi/be-boi-nhu-nam-hong-linh-ha-tinh/",
+      "province": "Hà Tĩnh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nhà Thiếu Nhi Quảng Bình",
+      "path": "/dia-diem-hoc-boi/be-boi-nha-thieu-nhi-quang-binh-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Regal Legend Pool",
+      "path": "/dia-diem-hoc-boi/be-boi-regal-legend-pool-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Mường Thanh Holiday Quảng Bình",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-muong-thanh-holiday-quang-binh-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn SAM Quảng Bình",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-sam-quang-binh-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Vincom Plaza Đông Hà",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-vincom-plaza-dong-ha-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Mường Thanh Grand Quảng Trị",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-muong-thanh-grand-quang-tri-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Hạnh Nguyên Đông Hà",
+      "path": "/dia-diem-hoc-boi/be-boi-hanh-nguyen-dong-ha-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Sư đoàn 968",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-su-doan-968-quang-binh/",
+      "province": "Quảng Bình",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Diên Hồng",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-hoat-dong-thanh-thieu-nhi-dien-hong-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu Dân Cư 577",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-dan-cu-577-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Sinh thái Cocoland River Beach Resort",
+      "path": "/dia-diem-hoc-boi/ho-boi-sinh-thai-cocoland-river-beach-resort-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Central Quảng Ngãi",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-central-quang-ngai-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Phú Yên (Cơ sở 2)",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-hoat-dong-thanh-thieu-nhi-phu-yen-co-so-2-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Yết Kiêu Tuy Hòa",
+      "path": "/dia-diem-hoc-boi/ho-boi-yet-kieu-tuy-hoa-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trường Quốc Tế Duy Tân Phú Yên",
+      "path": "/dia-diem-hoc-boi/ho-boi-truong-quoc-te-duy-tan-phu-yen-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Sala Tuy Hòa Beach",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-sala-tuy-hoa-beach-quang-ngai/",
+      "province": "Quảng Ngãi",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Trung tâm Phổ cập Bơi lội & Phòng chống Đuối nước Quy Nhơn",
+      "path": "/dia-diem-hoc-boi/trung-tam-pho-cap-boi-loi-phong-chong-duoi-nuoc-quy-nhon-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Sài Gòn Quy Nhơn",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-sai-gon-quy-nhon-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Trung tâm Dạy bơi Quy Nhơn (Cơ sở Tây Sơn)",
+      "path": "/dia-diem-hoc-boi/trung-tam-day-boi-quy-nhon-co-so-tay-son-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Anya Hotel Quy Nhơn",
+      "path": "/dia-diem-hoc-boi/ho-boi-anya-hotel-quy-nhon-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Quần thể Nghỉ dưỡng FLC Quy Nhơn",
+      "path": "/dia-diem-hoc-boi/ho-boi-quan-the-nghi-duong-flc-quy-nhon-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu Du Lịch Sinh Thái Cửa Biển (Seagate Park)",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-du-lich-sinh-thai-cua-bien-seagate-park-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thị xã An Nhơn",
+      "path": "/dia-diem-hoc-boi/ho-boi-thi-xa-an-nhon-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Công viên Nước An Nhơn (An Nhơn Water Park)",
+      "path": "/dia-diem-hoc-boi/cong-vien-nuoc-an-nhon-an-nhon-water-park-binh-dinh/",
+      "province": "Bình Định",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Yersin (Trung tâm VHTT & Thể thao Nha Trang)",
+      "path": "/dia-diem-hoc-boi/ho-boi-yersin-trung-tam-vhtt-the-thao-nha-trang-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 2,
+      "operators": 2,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Không Quân",
+      "path": "/dia-diem-hoc-boi/ho-boi-khong-quan-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 3,
+      "operators": 2,
+      "phones": 4,
+      "noindex": true
+    },
+    {
+      "name": "Lớp Dạy bơi Thầy Vinh Nha Trang",
+      "path": "/dia-diem-hoc-boi/lop-day-boi-thay-vinh-nha-trang-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Venus Fitness & Yoga (VCN Phước Hải)",
+      "path": "/dia-diem-hoc-boi/ho-boi-venus-fitness-yoga-vcn-phuoc-hai-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "MH Sport Nha Trang",
+      "path": "/dia-diem-hoc-boi/mh-sport-nha-trang-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Tòa nhà Sông Đà Nha Trang",
+      "path": "/dia-diem-hoc-boi/ho-boi-toa-nha-song-da-nha-trang-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT TP. Cam Ranh",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-tp-cam-ranh-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Cam Ranh (Hồ bơi Điện phân muối)",
+      "path": "/dia-diem-hoc-boi/ho-boi-cam-ranh-ho-boi-dien-phan-muoi-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Mường Thanh Luxury Viễn Triều",
+      "path": "/dia-diem-hoc-boi/ho-boi-muong-thanh-luxury-vien-trieu-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Cam Ranh",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-cam-ranh-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT Ninh Hòa",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-ninh-hoa-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Thể thao Diên Khánh",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-the-thao-dien-khanh-khanh-hoa/",
+      "province": "Khánh Hòa",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hệ thống Hồ bơi Trường Quốc Tế Hoàng Việt",
+      "path": "/dia-diem-hoc-boi/he-thong-ho-boi-truong-quoc-te-hoang-viet-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nước Nóng Victory School",
+      "path": "/dia-diem-hoc-boi/be-boi-nuoc-nong-victory-school-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Mường Thanh Luxury Buôn Ma Thuột",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-muong-thanh-luxury-buon-ma-thuot-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nhà Văn Hóa Thanh Thiếu Nhi Đắk Lắk",
+      "path": "/dia-diem-hoc-boi/ho-boi-nha-van-hoa-thanh-thieu-nhi-dak-lak-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Dr. Thanh Buôn Ma Thuột",
+      "path": "/dia-diem-hoc-boi/ho-boi-dr-thanh-buon-ma-thuot-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Kon Tum",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-thi-dau-tdtt-kon-tum-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Indochine Kon Tum",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-indochine-kon-tum-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm VHTT & TT TP. Gia Nghĩa (Đắk Nông)",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-vhtt-tt-tp-gia-nghia-dak-nong-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Đắk Nông Lodge (Gia Nghĩa)",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-dak-nong-lodge-gia-nghia-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Tổ hợp Hồ bơi Trường Quốc Tế Hoàng Việt",
+      "path": "/dia-diem-hoc-boi/to-hop-ho-boi-truong-quoc-te-hoang-viet-dak-lak/",
+      "province": "Đắk Lắk",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi nước ấm Phù Đổng Đà Lạt",
+      "path": "/dia-diem-hoc-boi/ho-boi-nuoc-am-phu-dong-da-lat-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi nước ấm Dalat Wonder",
+      "path": "/dia-diem-hoc-boi/ho-boi-nuoc-am-dalat-wonder-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi nước mặn Stillus Boutique Đà Lạt",
+      "path": "/dia-diem-hoc-boi/ho-boi-nuoc-man-stillus-boutique-da-lat-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Gia đình Vũ Hương",
+      "path": "/dia-diem-hoc-boi/ho-boi-gia-dinh-vu-huong-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Lộc Nga Bảo Lộc",
+      "path": "/dia-diem-hoc-boi/ho-boi-loc-nga-bao-loc-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Seri Bảo Lộc",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-seri-bao-loc-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Dona Đức Trọng",
+      "path": "/dia-diem-hoc-boi/ho-boi-dona-duc-trong-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm TDTT Huyện Đức Trọng",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-tdtt-huyen-duc-trong-lam-dong/",
+      "province": "Lâm Đồng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Bốn Mùa Meliá Vinpearl Tây Ninh",
+      "path": "/dia-diem-hoc-boi/ho-boi-bon-mua-melia-vinpearl-tay-ninh-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Sinh hoạt Thanh Thiếu Nhi Tây Ninh",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-sinh-hoat-thanh-thieu-nhi-tay-ninh-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Mai Anh Tây Ninh",
+      "path": "/dia-diem-hoc-boi/ho-boi-mai-anh-tay-ninh-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi CANA Tây Ninh",
+      "path": "/dia-diem-hoc-boi/ho-boi-cana-tay-ninh-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Gia đình Thảo My Hòa Thành",
+      "path": "/dia-diem-hoc-boi/ho-boi-gia-dinh-thao-my-hoa-thanh-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi 175 (Hồ bơi Tỉnh đội Long An)",
+      "path": "/dia-diem-hoc-boi/ho-boi-175-ho-boi-tinh-doi-long-an-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Hàng Giang Tân An",
+      "path": "/dia-diem-hoc-boi/ho-boi-hang-giang-tan-an-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Biển Đông Tân An",
+      "path": "/dia-diem-hoc-boi/ho-boi-bien-dong-tan-an-tay-ninh/",
+      "province": "Tây Ninh",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu Liên Hợp TDTT Đồng Tháp",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-lien-hop-tdtt-dong-thap-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Tỉnh Đồng Tháp",
+      "path": "/dia-diem-hoc-boi/ho-boi-trung-tam-hoat-dong-thanh-thieu-nhi-tinh-dong-thap-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Cao Lãnh",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-cao-lanh-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu Du Lịch Sinh Thái Sunny Cao Lãnh",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-du-lich-sinh-thai-sunny-cao-lanh-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Tỉnh Tiền Giang",
+      "path": "/dia-diem-hoc-boi/ho-boi-tinh-tien-giang-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thành phố Mỹ Tho",
+      "path": "/dia-diem-hoc-boi/ho-boi-thanh-pho-my-tho-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trường THPT Nguyễn Đình Chiểu",
+      "path": "/dia-diem-hoc-boi/ho-boi-truong-thpt-nguyen-dinh-chieu-dong-thap/",
+      "province": "Đồng Tháp",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Minh Anh Vĩnh Long",
+      "path": "/dia-diem-hoc-boi/ho-boi-minh-anh-vinh-long-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Công viên Nước Hoàng Hảo",
+      "path": "/dia-diem-hoc-boi/ho-boi-cong-vien-nuoc-hoang-hao-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Cá Heo Vĩnh Long",
+      "path": "/dia-diem-hoc-boi/ho-boi-ca-heo-vinh-long-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Muối Khoáng LPHOME Bến Tre",
+      "path": "/dia-diem-hoc-boi/ho-boi-muoi-khoang-lphome-ben-tre-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Hoàng Lam Bến Tre",
+      "path": "/dia-diem-hoc-boi/ho-boi-hoang-lam-ben-tre-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khu Du Lịch Sinh Thái Huỳnh Kha Trà Vinh",
+      "path": "/dia-diem-hoc-boi/ho-boi-khu-du-lich-sinh-thai-huynh-kha-tra-vinh-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nhà Thi Đấu Trà Vinh (Ao Bà Om)",
+      "path": "/dia-diem-hoc-boi/ho-boi-nha-thi-dau-tra-vinh-ao-ba-om-vinh-long/",
+      "province": "Vĩnh Long",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thành phố Long Xuyên",
+      "path": "/dia-diem-hoc-boi/ho-boi-thanh-pho-long-xuyen-an-giang/",
+      "province": "An Giang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Yết Kiêu Long Xuyên",
+      "path": "/dia-diem-hoc-boi/ho-boi-yet-kieu-long-xuyen-an-giang/",
+      "province": "An Giang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Công viên Nước Sao Vàng Long Xuyên",
+      "path": "/dia-diem-hoc-boi/cong-vien-nuoc-sao-vang-long-xuyen-an-giang/",
+      "province": "An Giang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Phú Cường Park (KĐT Lấn Biển)",
+      "path": "/dia-diem-hoc-boi/ho-boi-phu-cuong-park-kdt-lan-bien-an-giang/",
+      "province": "An Giang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi TTTM Go! Rạch Giá",
+      "path": "/dia-diem-hoc-boi/be-boi-tttm-go-rach-gia-an-giang/",
+      "province": "An Giang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Sài Gòn Rạch Giá",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-sai-gon-rach-gia-an-giang/",
+      "province": "An Giang",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Phú Cường Park Rạch Giá",
+      "path": "/dia-diem-hoc-boi/ho-boi-phu-cuong-park-rach-gia-an-giang/",
+      "province": "An Giang",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Mường Thanh Luxury Cà Mau",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-muong-thanh-luxury-ca-mau-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Phú Cường Cà Mau",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-phu-cuong-ca-mau-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Thanh Thế – Nhà Thiếu Nhi Cà Mau",
+      "path": "/dia-diem-hoc-boi/ho-boi-thanh-the-nha-thieu-nhi-ca-mau-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 2,
+      "operators": 1,
+      "phones": 3,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Bạch Đằng Cà Mau",
+      "path": "/dia-diem-hoc-boi/ho-boi-bach-dang-ca-mau-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Công Tử Bạc Liêu",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-cong-tu-bac-lieu-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trường Đại Học Bạc Liêu",
+      "path": "/dia-diem-hoc-boi/ho-boi-truong-dai-hoc-bac-lieu-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi TANK CLUB Sóc Trăng",
+      "path": "/dia-diem-hoc-boi/ho-boi-tank-club-soc-trang-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Nhà Thiếu Nhi Tỉnh Sóc Trăng",
+      "path": "/dia-diem-hoc-boi/ho-boi-nha-thieu-nhi-tinh-soc-trang-ca-mau/",
+      "province": "Cà Mau",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Trong Nhà Khách sạn Mường Thanh Luxury Cao Bằng",
+      "path": "/dia-diem-hoc-boi/ho-boi-trong-nha-khach-san-muong-thanh-luxury-cao-bang-cao-bang/",
+      "province": "Cao Bằng",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Tỉnh Cao Bằng",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-thi-dau-tdtt-tinh-cao-bang-cao-bang/",
+      "province": "Cao Bằng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Tân Giang",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-tan-giang-cao-bang/",
+      "province": "Cao Bằng",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Đào tạo & Thi đấu TDTT Cao Bằng",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-dao-tao-thi-dau-tdtt-cao-bang-cao-bang/",
+      "province": "Cao Bằng",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Mường Thanh Grand Lai Châu",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-muong-thanh-grand-lai-chau-lai-chau/",
+      "province": "Lai Châu",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Lai Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-thi-dau-tdtt-lai-chau-lai-chau/",
+      "province": "Lai Châu",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Đầu Nguồn",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-dau-nguon-lai-chau/",
+      "province": "Lai Châu",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Đầu Nguồn Lai Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-dau-nguon-lai-chau-lai-chau/",
+      "province": "Lai Châu",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Mường Thanh Grand Điện Biên Phủ",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-muong-thanh-grand-dien-bien-phu-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Điện Biên",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-thi-dau-tdtt-dien-bien-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khoáng Nóng Thiên Nhiên Thanh Luông",
+      "path": "/dia-diem-hoc-boi/be-boi-khoang-nong-thien-nhien-thanh-luong-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Him Lam Resort Điện Biên",
+      "path": "/dia-diem-hoc-boi/be-boi-him-lam-resort-dien-bien-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Đào tạo & Thi đấu TDTT tỉnh Điện Biên",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-dao-tao-thi-dau-tdtt-tinh-dien-bien-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Khu Bể Bơi Khoáng Nóng Thanh Luông & U Va",
+      "path": "/dia-diem-hoc-boi/khu-be-boi-khoang-nong-thanh-luong-u-va-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khu Du lịch Sinh thái Him Lam",
+      "path": "/dia-diem-hoc-boi/be-boi-khu-du-lich-sinh-thai-him-lam-dien-bien/",
+      "province": "Điện Biên",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi 4 Mùa Nước Ấm KGT Sơn La",
+      "path": "/dia-diem-hoc-boi/be-boi-4-mua-nuoc-am-kgt-son-la-son-la/",
+      "province": "Sơn La",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Mường Thanh Luxury Sơn La",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-muong-thanh-luxury-son-la-son-la/",
+      "province": "Sơn La",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện TDTT Tỉnh Sơn La",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-tdtt-tinh-son-la-son-la/",
+      "province": "Sơn La",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Thảo Nguyên Resort Mộc Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-thao-nguyen-resort-moc-chau-son-la/",
+      "province": "Sơn La",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Mường Thanh Holiday Mộc Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-muong-thanh-holiday-moc-chau-son-la/",
+      "province": "Sơn La",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi 4 Mùa Thị Trấn Hát Lót (Mai Sơn)",
+      "path": "/dia-diem-hoc-boi/be-boi-4-mua-thi-tran-hat-lot-mai-son-son-la/",
+      "province": "Sơn La",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Văn hóa Thể thao Huyện Mai Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-van-hoa-the-thao-huyen-mai-son-son-la/",
+      "province": "Sơn La",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Mường Thanh Luxury Sơn La",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-muong-thanh-luxury-son-la-son-la/",
+      "province": "Sơn La",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi 4 Mùa Thảo Nguyên Resort Mộc Châu",
+      "path": "/dia-diem-hoc-boi/be-boi-4-mua-thao-nguyen-resort-moc-chau-son-la/",
+      "province": "Sơn La",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Vincom Lạng Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-vincom-lang-son-lang-son/",
+      "province": "Lạng Sơn",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Mường Thanh Luxury Lạng Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-muong-thanh-luxury-lang-son-lang-son/",
+      "province": "Lạng Sơn",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Cung Thanh Thiếu Nhi Lạng Sơn",
+      "path": "/dia-diem-hoc-boi/be-boi-cung-thanh-thieu-nhi-lang-son-lang-son/",
+      "province": "Lạng Sơn",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trong Nhà Trường Anh Việt (Mai Pha)",
+      "path": "/dia-diem-hoc-boi/be-boi-trong-nha-truong-anh-viet-mai-pha-lang-son/",
+      "province": "Lạng Sơn",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Đức Huy Grand Hotel",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-duc-huy-grand-hotel-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Khách sạn Sapaly Lào Cai",
+      "path": "/dia-diem-hoc-boi/be-boi-khach-san-sapaly-lao-cai-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nhà Thi Đấu TDTT Tỉnh Lào Cai",
+      "path": "/dia-diem-hoc-boi/be-boi-nha-thi-dau-tdtt-tinh-lao-cai-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Pistachio Hotel Sapa",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-pistachio-hotel-sapa-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Nước Ấm Bốn Mùa – Silk Path Grand Resort & Spa Sapa",
+      "path": "/dia-diem-hoc-boi/be-boi-nuoc-am-bon-mua-silk-path-grand-resort-spa-sapa-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Trung tâm I Fitness & Yoga Yên Bái",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-trung-tam-i-fitness-yoga-yen-bai-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện TDTT Tỉnh Yên Bái",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-tdtt-tinh-yen-bai-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa I Fitness & Yoga Yên Bái",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-i-fitness-yoga-yen-bai-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Trung tâm Huấn luyện TDTT Lào Cai",
+      "path": "/dia-diem-hoc-boi/be-boi-trung-tam-huan-luyen-tdtt-lao-cai-lao-cai/",
+      "province": "Lào Cai",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Bốn Mùa Khách sạn Spa2 Ngọc Hà",
+      "path": "/dia-diem-hoc-boi/be-boi-bon-mua-khach-san-spa2-ngoc-ha-tuyen-quang/",
+      "province": "Tuyên Quang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Royal Plaza Center Tuyên Quang",
+      "path": "/dia-diem-hoc-boi/be-boi-royal-plaza-center-tuyen-quang-tuyen-quang/",
+      "province": "Tuyên Quang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi Thể thao Z113 Tuyên Quang",
+      "path": "/dia-diem-hoc-boi/be-boi-the-thao-z113-tuyen-quang-tuyen-quang/",
+      "province": "Tuyên Quang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 2,
+      "noindex": true
+    },
+    {
+      "name": "Tổ hợp Bơi lội Bốn Mùa H2T Hà Giang",
+      "path": "/dia-diem-hoc-boi/to-hop-boi-loi-bon-mua-h2t-ha-giang-tuyen-quang/",
+      "province": "Tuyên Quang",
+      "teachers": 1,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Hồ bơi Khách sạn Yên Biên Luxury Hà Giang",
+      "path": "/dia-diem-hoc-boi/ho-boi-khach-san-yen-bien-luxury-ha-giang-tuyen-quang/",
+      "province": "Tuyên Quang",
+      "teachers": 0,
+      "operators": 1,
+      "phones": 1,
+      "noindex": true
+    },
+    {
+      "name": "Bể bơi 4 Mùa Spa2 Ngọc Hà",
+      "path": "/dia-diem-hoc-boi/be-boi-4-mua-spa2-ngoc-ha-tuyen-quang/",
+      "province": "Tuyên Quang",
+      "teachers": 0,
+      "operators": 0,
+      "phones": 0,
+      "noindex": true
+    }
+  ]
+}

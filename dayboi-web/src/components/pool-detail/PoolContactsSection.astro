@@ -1,0 +1,12 @@
+---
+import SectionHeading from '../landing/ui/SectionHeading.astro';
+import ContactBlock from '../locality/ContactBlock.astro';
+import type {PoolDetailData} from '../../data/poolDetailTypes';
+export interface Props {contacts:NonNullable<PoolDetailData['contacts']>;}
+const {contacts}=Astro.props;
+---
+<section class="pd-contacts pd-panel" id="lien-he-dia-diem" aria-labelledby="contacts-heading">
+  <SectionHeading id="contacts-heading" title="Giáo viên & liên hệ địa điểm" icon="people" />
+  <p class="pd-caption">Liên hệ đúng chủ thể: học phí và lịch học hỏi giáo viên; vé, giờ sử dụng và nội quy hỏi ban quản lý. Thông tin theo hồ sơ hiện có, cần xác nhận lại trước khi hẹn.</p>
+  <div class="pd-contact-grid"><div><h3>Giáo viên / đơn vị dạy bơi</h3>{contacts.instructors.length?contacts.instructors.map(contact=><ContactBlock contact={contact} teacher lang="vi" />):<p class="pd-contact-empty">Hồ sơ chưa có liên hệ giáo viên riêng tại hồ này. Hỏi người phụ trách hồ hoặc tham khảo địa điểm khác trong khu vực.</p>}</div><div><h3>Ban quản lý / quầy vé</h3>{contacts.operators.length?contacts.operators.map(contact=><ContactBlock contact={contact} lang="vi" />):<p class="pd-contact-empty">Chưa có số liên hệ riêng của ban quản lý trong dữ liệu. Đối chiếu tại địa điểm hoặc nguồn công khai của cơ sở.</p>}</div></div>
+</section>

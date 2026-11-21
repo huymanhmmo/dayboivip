@@ -19,6 +19,9 @@ Các đường dẫn tính từ `dayboi-web/`. Hệ dùng chung hiện được 
 | Tài nguyên chung | `src/data/swimmingResources.ts`, `locality/heroImages.json` | 5 ảnh kỹ thuật, ảnh nhu cầu, derivative ảnh hoạt động hiện có |
 | Styles | `src/styles/region-directory.css`, `lai-thieu-layout.css`, `lai-thieu-header.css`, `lai-thieu-footer.css` | Scope địa phương, một lưới ngang; tên CSS Lái Thiêu giữ tương thích, không đồng nghĩa dữ liệu bị hardcode |
 | Lái Thiêu | `data/locality/laiThieuSite.ts`, các wrapper `LaiThieuHeader/Footer` | Cấp cấu hình riêng cho shared header/footer; không sao chép markup |
+| Registry đa vùng | `data/venues/catalog.js`, `aliases.json`, `routes.json` | Gom nguồn theo địa điểm, alias được đối chiếu, URL cố định và cờ index theo hồ |
+| Factory chi tiết đa vùng | `data/venues/buildVenueDetail.ts`, `pages/dia-diem-hoc-boi/[venue].astro` | Dữ liệu riêng, context hành chính có căn cứ, liên hệ nhiều chủ thể; route mỏng gọi mẫu Nhật An |
+| Liên hệ trang hồ | `pool-detail/PoolContactsSection.astro` → `locality/ContactBlock.astro` | Giữ tên, số và nguồn từng giáo viên/BQL; không gán đại diện mặc định |
 | Trang hồ | `components/pool-detail/`, `data/poolDetailTypes.ts`, `poolDetailPages.ts`, `pool-detail/` | Template chi tiết 20 hồ hiện có; nội dung từng hồ và điều kiện riêng |
 | Hành chính/danh bạ gốc | `data/communePages.js`, `communePoolsData.js`, `locations.js`, `locationResearch.js`, `locationAreas.js`, `geo/` | Nguồn hiện có, adapter không tự tạo khảo sát/giá/giáo viên |
 | Sau render | `src/middleware.ts` | Giữ sanitizer cũ; link liên hệ đúng dữ liệu được đánh dấu `data-directory-contact`, phải kiểm tra HTML output |
@@ -30,12 +33,14 @@ Dùng adapter và contract hiện có trước khi bổ sung lớp mới. Contac
 
 Hub Lái Thiêu `/hoc-boi-tphcm/lai-thieu/` vẫn dùng LocalLandingPage để giữ bản chuyên sâu đã duyệt. Các hồ của cụm gọi PoolDetailPage; header/footer của chúng đi qua wrapper mỏng tới LocalSiteHeader/Footer. Liên hệ riêng của cụm không trở thành mặc định toàn quốc.
 
-Không sao chép route, header hoặc footer cho từng phường. Nếu mở trang hồ ngoài cụm hiện có, factory chi tiết vẫn còn shared HLV/địa phương Lái Thiêu: truyền dữ liệu hồ/vùng tương ứng hoặc mở contract trước, không gọi factory cũ rồi chỉ thay tên.
+Không sao chép route, header hoặc footer cho từng phường. Hồ ngoài Lái Thiêu dùng `buildVenueDetail` từ registry đa vùng; hồ cũ giữ factory và URL đã duyệt. PoolDetailPage dùng `site`, `province`, `contacts` cho hồ đa vùng và giữ nhánh tương thích cho các hồ cũ. Không gọi factory Lái Thiêu rồi chỉ thay tên.
 
 ## Kiểm tra
 
 - `scripts/audit-locality-integrity.mjs`: địa điểm/liên hệ đối chiếu nguồn, link/anchor/ảnh, hub/logo và chính sách route/index.
 - `scripts/audit-locality-browser.mjs`: tỉnh/thành và đại diện xã/phường VI/EN, menu/filter/contact/FAQ và responsive.
+- `scripts/audit-venue-details.mjs`: toàn bộ trang hồ mới, từng vai trò/số/nguồn, liên kết hai chiều, canonical và baseline cũ.
+- `scripts/audit-venue-browser.mjs`: đại diện từng tỉnh, tên dài, nội khu, thiếu HLV, nhiều liên hệ và tương tác thực.
 - `scripts/audit-lai-thieu-pages.mjs`: hồi quy riêng hub + trang hồ Lái Thiêu.
 - `npm run build`, `npm run audit:seo:strict`: output và SEO toàn site.
 

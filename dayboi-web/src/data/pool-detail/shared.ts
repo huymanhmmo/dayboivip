@@ -3,7 +3,7 @@ import { laiThieuLanding } from '../localLandingPages';
 
 export const localContact = {hotline:'0986.456.678',phoneHref:'tel:0986456678',zaloHref:'https://zalo.me/0986456678'};
 export const sharedStyles = laiThieuLanding.techniques.map((s,i)=>({title:['Bơi ếch','Bơi sải','Bơi ngửa','Bơi bướm','Đứng nước'][i],href:s.href,image:s.image,imageAlt:s.imageAlt}));
-export const sharedInstructor: PoolDetailData['instructor'] = {
+export const sharedInstructor: NonNullable<PoolDetailData['instructor']> = {
   name:'Thầy Lê Văn Thông',qualification:'Kiện tướng Bơi lội',image:'/images/pool-detail/instructor-le-van-thong.webp',
   imageAlt:'Ảnh hướng dẫn bơi trong hồ sơ thầy Lê Văn Thông trên website Swim For Life',sourceUrl:'https://ocean-park.dayboi.vip/',
   description:'Phụ trách tư vấn chuyên môn cụm Lái Thiêu và vùng lân cận. Trao đổi mục tiêu, nền tảng và điều kiện dùng hồ trước khi thống nhất cách học.',

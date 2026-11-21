@@ -7,6 +7,7 @@ import {getLocationResearch} from '../src/data/locationResearch.js';
 import {communePools} from '../src/data/communePoolsData.js';
 import {getAllCommunePages} from '../src/data/communePages.js';
 import {publishedLocationAreas} from '../src/data/locationAreas.js';
+import {venueCatalog} from '../src/data/venues/catalog.js';
 const root=path.resolve('dist'),baselinePath=process.argv[2]||'node_modules/.dayboi-deploy-cli/locality-baseline.json';
 const baseline=fs.existsSync(baselinePath)?JSON.parse(fs.readFileSync(baselinePath,'utf8')):null;
 const failures=[],incomingAnchorFailures=[],ids=new Map(),reports=[];
@@ -20,7 +21,7 @@ const phoneTargets=value=>String(value||'').split(/\s*[/;|,]\s*/).map(s=>'tel:'+
 const fileFor=url=>path.join(root,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');
 const getIds=file=>{if(!ids.has(file)){const html=fs.readFileSync(file,'utf8');ids.set(file,new Set([...html.matchAll(/\sid="([^"]+)"/g)].map(m=>decode(m[1]))));}return ids.get(file);};
 const allFiles=[];function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory())walk(f);else if(e.name.endsWith('.html'))allFiles.push(f);}}walk(root);
-const provinceRaw=new Map(locations.map(l=>[l.slug,[...(getLocationResearch(l.slug)?.categories||[]).flatMap(c=>c.venues),...communePools.filter(v=>v.provinceSlug===l.slug),...(l.pools||[])]]));
+const provinceRaw=new Map(locations.map(l=>[l.slug,[...(getLocationResearch(l.slug)?.categories||[]).flatMap(c=>c.venues),...communePools.filter(v=>v.provinceSlug===l.slug),...(l.pools||[]),...venueCatalog.filter(v=>v.provinceSlug===l.slug)]]));
 const communes=new Map(getAllCommunePages().map(c=>[c.parentSlug+'/'+c.slug,c]));
 const areas=new Map(publishedLocationAreas.map(a=>[a.parentSlug+'/'+a.slug,a]));
 const regionFiles=new Set();let routeChanges=0,contactLinks=0,contactBlocks=0;

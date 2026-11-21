@@ -1,0 +1,217 @@
+[
+  {
+    "canonical": "Bể bơi Đại học Bách Khoa Hà Nội",
+    "alias": "Bể bơi Đại học Bách Khoa",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Bốn Mùa Vinhomes Times City",
+    "alias": "Bể bơi Vinhomes Times City",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi bốn mùa Khách sạn Bảo Sơn",
+    "alias": "Bể bơi Bảo Sơn",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Yết Kiêu (Trung tâm Thể thao Dưới nước Yết Kiêu)",
+    "alias": "Bể bơi Yết Kiêu",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Kỳ Đồng",
+    "alias": "Bể bơi Kỳ Đồng",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Lam Sơn (CLB Thể thao Dưới nước Lam Sơn)",
+    "alias": "Bể bơi Lam Sơn",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Tiên Phong (CLB Thể thao Tiên Phong)",
+    "alias": "Hồ bơi Tiên Phong",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi bốn mùa Aqua Dreams (Vinhomes Imperia)",
+    "alias": "Bể bơi Vinhomes Imperia",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi nước ấm Star Fitness – The Manor Crown",
+    "alias": "Bể bơi nước ấm Star Fitness",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "CLB Bơi lội Quân Khu 9 (Hồ bơi QK9)",
+    "alias": "CLB Bơi lội Quân Khu 9",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi ĐH Nam Cần Thơ (DNC Pool)",
+    "alias": "Hồ bơi ĐH Nam Cần Thơ (DNC)",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Khoáng Nóng Trung tâm Điều dưỡng Địa chất Cẩm Phả",
+    "alias": "Bể bơi Khoáng Nóng Cẩm Phả",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Bốn Mùa – Trường THPT Chuyên Bắc Ninh",
+    "alias": "Bể bơi Bốn Mùa Chuyên Bắc Ninh",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Trường Đại học Sư phạm Thái Nguyên",
+    "alias": "Bể bơi Trường ĐH Sư phạm Thái Nguyên",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Khu du lịch sinh thái Dũng Tân",
+    "alias": "Bể bơi Sinh thái Dũng Tân",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Bốn Mùa Minh Phương (Minh Phương Four Seasons)",
+    "alias": "Bể bơi Bốn Mùa Minh Phương",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Trung tâm Thể thao Mai Thế Hệ",
+    "alias": "Bể bơi Thể thao Mai Thế Hệ",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Tiêu Chuẩn Thi Đấu Sắc Màu Tam Điệp",
+    "alias": "Bể bơi Thi đấu Sắc Màu Tam Điệp",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Sunrise Swimming Pool – Khách sạn Selegend Thái Bình",
+    "alias": "Sunrise Swimming Pool - Khách Sạn Selegend",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hệ thống Bể bơi Quần thể FLC Sầm Sơn",
+    "alias": "Quần thể Bể bơi FLC Sầm Sơn",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Khách sạn Mường Thanh Grand Hà Tĩnh (Kỳ Anh)",
+    "alias": "Bể bơi Khách sạn Mường Thanh Grand Kỳ Anh",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Diên Hồng",
+    "alias": "Hồ bơi TT Hoạt Động Thanh Thiếu Nhi Diên Hồng",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Khu Dân Cư 577",
+    "alias": "Hồ bơi Khu Dân Cư 577 Quảng Ngãi",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Phú Yên (Cơ sở 2)",
+    "alias": "Hồ bơi TT Thanh Thiếu Nhi Phú Yên (Cơ sở 2)",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Trung tâm Phổ cập Bơi lội & Phòng chống Đuối nước Quy Nhơn",
+    "alias": "Trung tâm Phổ cập Bơi lội Quy Nhơn",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Quần thể Nghỉ dưỡng FLC Quy Nhơn",
+    "alias": "Hồ bơi FLC Quy Nhơn",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Yersin (Trung tâm VHTT & Thể thao Nha Trang)",
+    "alias": "Hồ bơi Yersin Nha Trang",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Không Quân",
+    "alias": "Hồ bơi Không Quân Nha Trang",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Venus Fitness & Yoga (VCN Phước Hải)",
+    "alias": "Hồ bơi Venus Fitness VCN Phước Hải",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi nước mặn Stillus Boutique Đà Lạt",
+    "alias": "Hồ bơi nước mặn Stillus Boutique",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Trung tâm Sinh hoạt Thanh Thiếu Nhi Tây Ninh",
+    "alias": "Hồ bơi TT Sinh Hoạt Thanh Thiếu Nhi Tây Ninh",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Tỉnh Đồng Tháp",
+    "alias": "Hồ bơi TT Hoạt Động Thanh Thiếu Nhi Đồng Tháp",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Công viên Nước Hoàng Hảo",
+    "alias": "Hồ bơi Công viên Nước Hoàng Hảo Vĩnh Long",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Khu Du Lịch Sinh Thái Huỳnh Kha Trà Vinh",
+    "alias": "Hồ bơi KDL Sinh Thái Huỳnh Kha Trà Vinh",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Trong Nhà Khách sạn Mường Thanh Luxury Cao Bằng",
+    "alias": "Bể bơi Khách sạn Mường Thanh Luxury Cao Bằng",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Thể thao Tân Giang",
+    "alias": "Bể bơi Tân Giang Cao Bằng",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Khách sạn Mường Thanh Grand Lai Châu",
+    "alias": "Bể bơi Khách sạn Mường Thanh Grand Lai Châu",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Khách sạn Mường Thanh Grand Điện Biên Phủ",
+    "alias": "Bể bơi Khách sạn Mường Thanh Grand Điện Biên Phủ",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Trung tâm Huấn luyện TDTT Tỉnh Sơn La",
+    "alias": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Sơn La",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Cung Thanh Thiếu Nhi Lạng Sơn",
+    "alias": "Bể bơi Cung Thiếu Nhi Lạng Sơn",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Bể bơi Trong Nhà Trường Anh Việt (Mai Pha)",
+    "alias": "Bể bơi Thể thao Anh Việt Mai Pha",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Tổ hợp Bơi lội Bốn Mùa H2T Hà Giang",
+    "alias": "Bể bơi Bốn Mùa H2T Hà Giang",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  },
+  {
+    "canonical": "Hồ bơi Khách sạn Yên Biên Luxury Hà Giang",
+    "alias": "Bể bơi Khách sạn Yên Biên Luxury Hà Giang",
+    "reason": "Tên riêng và địa chỉ trong dữ liệu cùng nhận diện một địa điểm; giữ các biến thể địa chỉ để đối chiếu."
+  }
+]

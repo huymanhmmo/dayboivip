@@ -2,6 +2,9 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import LaiThieuHeader from '../landing/LaiThieuHeader.astro';
 import LaiThieuFooter from '../landing/LaiThieuFooter.astro';
+import LocalSiteHeader from '../locality/LocalSiteHeader.astro';
+import LocalSiteFooter from '../locality/LocalSiteFooter.astro';
+import PoolContactsSection from './PoolContactsSection.astro';
 import PoolDetailHero from './PoolDetailHero.astro';
 import PoolQuickFacts from './PoolQuickFacts.astro';
 import PoolPhotoGallery from './PoolPhotoGallery.astro';
@@ -23,31 +26,33 @@ import '../../styles/local-swimming-techniques.css';
 import '../../styles/pool-detail.css';
 export interface Props { pool: PoolDetailData; }
 const {pool}=Astro.props;
-const breadcrumbs=[{name:'Trang chủ',url:'https://dayboi.vip/'},{name:'Học bơi TP.HCM',url:'https://dayboi.vip/hoc-boi-tphcm/'},{name:pool.areaName,url:`https://dayboi.vip${pool.areaHref||'/hoc-boi-tphcm/lai-thieu/'}`},{name:pool.name,url:pool.canonical}];
+const province=pool.province||{name:'TP.HCM',href:'/hoc-boi-tphcm/'};
+const areaHref=pool.areaHref||'/hoc-boi-tphcm/lai-thieu/';
+const breadcrumbs=[{name:'Trang chủ',url:'https://dayboi.vip/'},{name:'Học bơi '+province.name,url:'https://dayboi.vip'+province.href},...(areaHref!==province.href?[{name:pool.areaName,url:'https://dayboi.vip'+areaHref}]:[]),{name:pool.name,url:pool.canonical}];
 const schema={'@context':'https://schema.org','@graph':[
   {'@type':'WebPage','@id':`${pool.canonical}#page`,url:pool.canonical,name:pool.title,description:pool.description,dateModified:pool.updatedAt,inLanguage:'vi',about:{'@id':`${pool.canonical}#venue`}},
-  {'@type':'SportsActivityLocation','@id':`${pool.canonical}#venue`,name:pool.name,url:pool.canonical,address:{'@type':'PostalAddress',streetAddress:pool.address,addressRegion:'TP.HCM',addressCountry:'VN'}},
-  {'@type':'Person','@id':`${pool.canonical}#instructor`,name:pool.instructor.name.replace('Thầy ',''),jobTitle:pool.instructor.qualification,telephone:pool.hotline},
-  {'@type':'Service',name:`Tư vấn học bơi tại ${pool.name}`,areaServed:pool.areaName,provider:{'@id':`${pool.canonical}#instructor`},url:`${pool.canonical}#dang-ky`},
+  {'@type':'SportsActivityLocation','@id':`${pool.canonical}#venue`,name:pool.name,url:pool.canonical,address:{'@type':'PostalAddress',streetAddress:pool.address,addressRegion:province.name,addressCountry:'VN'}},
+  ...(pool.instructor?[{'@type':'Person','@id':`${pool.canonical}#instructor`,name:pool.instructor.name.replace('Thầy ',''),jobTitle:pool.instructor.qualification,telephone:pool.hotline},{'@type':'Service',name:`Tư vấn học bơi tại ${pool.name}`,areaServed:pool.areaName,provider:{'@id':`${pool.canonical}#instructor`},url:`${pool.canonical}#dang-ky`}]:[]),
   {'@type':'BreadcrumbList',itemListElement:breadcrumbs.map((b,i)=>({'@type':'ListItem',position:i+1,name:b.name,item:b.url}))},
   {'@type':'FAQPage',mainEntity:pool.faqs.map(f=>({'@type':'Question',name:f.question,acceptedAnswer:{'@type':'Answer',text:f.answer}}))},
 ]};
 ---
 <MainLayout title={pool.title} description={pool.description} canonicalUrl={pool.canonical} ogImage={pool.hero.src} schema={schema} noIndex={pool.noIndex}>
-  <div slot="header" class="sfl-landing pd-shell pd-header-shell"><LaiThieuHeader hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} currentPath={Astro.url.pathname} courseBaseHref={`/${pool.slug}/`} /></div>
-  <article class="sfl-landing pd-shell pd-page" data-variant={pool.variant}>
+  <div slot="header" class="sfl-landing pd-shell pd-header-shell">{pool.site?<LocalSiteHeader site={pool.site} currentPath={Astro.url.pathname} />:<LaiThieuHeader hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} currentPath={Astro.url.pathname} courseBaseHref={`/${pool.slug}/`} />}</div>
+  <article class="sfl-landing pd-shell pd-page" data-variant={pool.variant} data-directory-detail={pool.site?'true':undefined}>
     <PoolDetailHero pool={pool} />
     <PoolQuickFacts facts={pool.quickFacts} />
     <div class="sfl-container pd-content">
       <div class="pd-overview-row"><PoolPhotoGallery name={pool.name} photos={pool.photos} illustrations={pool.galleryIllustrations} note={pool.galleryNote} title={pool.galleryTitle} /><PoolFacilityReview facilities={pool.facilities} note={pool.facilityNote} /></div>
-      <div class="pd-program-row"><PoolCoursesSection name={pool.shortName} courses={pool.courses} intro={pool.courseIntro} /><PoolSwimmingStyles styles={pool.styles} /></div>
-      <div class="pd-practical-row"><PoolInstructorSection instructor={pool.instructor} phoneHref={pool.phoneHref} /><PoolLocationSection pool={pool} /><PoolPreparationSection items={pool.preparation} image={pool.preparationImage} /></div>
+      <div class="pd-program-row"><PoolCoursesSection name={pool.shortName} courses={pool.courses} intro={pool.courseIntro} title={pool.site?'Trao đổi chương trình học phù hợp':undefined} /><PoolSwimmingStyles styles={pool.styles} /></div>
+      {pool.contacts&&<PoolContactsSection contacts={pool.contacts} />}
+      <div class="pd-practical-row">{pool.instructor&&<PoolInstructorSection instructor={pool.instructor} phoneHref={pool.phoneHref} />}<PoolLocationSection pool={pool} /><PoolPreparationSection items={pool.preparation} image={pool.preparationImage} /></div>
       <div class="pd-information-row"><PoolTuitionSection name={pool.shortName} rows={pool.tuition} note={pool.tuitionNote} /><PoolFAQ items={pool.faqs} /></div>
       <PoolTestimonials items={pool.testimonials} />
       <PoolLearningGuide title={pool.guideTitle} intro={pool.guideIntro} items={pool.guide} sources={pool.sources} updatedAt={pool.updatedAt} />
-      <NearbyPools pools={pool.nearby} />
+      <NearbyPools pools={pool.nearby} title={pool.province?'Địa điểm khác tại '+pool.province.name:undefined} />
     </div>
-    <PoolEnrollmentCTA name={pool.name} hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} />
+    <PoolEnrollmentCTA name={pool.name} hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} mapsHref={pool.location.mapsSearchUrl} />
   </article>
-  <div slot="footer" class="sfl-landing pd-shell"><LaiThieuFooter hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} courseBaseHref={`/${pool.slug}/`} /></div>
+  <div slot="footer" class="sfl-landing pd-shell">{pool.site?<LocalSiteFooter site={pool.site} />:<LaiThieuFooter hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} courseBaseHref={`/${pool.slug}/`} />}</div>
 </MainLayout>

@@ -1,0 +1,8 @@
+---
+import PoolDetailPage from '../../components/pool-detail/PoolDetailPage.astro';
+import {newVenuePages} from '../../data/venues/catalog.js';
+import {buildVenueDetail} from '../../data/venues/buildVenueDetail';
+export function getStaticPaths(){return newVenuePages.map(venue=>({params:{venue:venue.slug},props:{venue}}));}
+const pool=buildVenueDetail(Astro.props.venue);
+---
+<PoolDetailPage pool={pool} />

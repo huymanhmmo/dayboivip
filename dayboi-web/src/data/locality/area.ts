@@ -19,7 +19,7 @@ export function buildAreaPage(input:{area?:any;commune?:any;isCommune?:boolean},
   const name=en?(isCommune?`${source.name} ${source.type==='xã'?'Commune':source.type==='phường'?'Ward':'Special Zone'}`:source.name):(isCommune?source.fullName:source.name);
   const nearbyOnly=isCommune&&!source.hasVenues;
   const rawVenues=isCommune?(source.hasVenues?source.directVenues:source.nearbyVenues):source.category.venues;
-  const venues=rawVenues.map((v,i)=>makeVenue(v,i,source.parentName,lang));
+  const venues=rawVenues.map((v,i)=>makeVenue({...v,provinceSlug:source.parentSlug},i,source.parentName,lang));
   const viSeo=isCommune?getCommuneSeoMeta(source,new Date().getFullYear()):null;
   const titleBase=`Học Bơi ${source.seoPlace}: Bể Bơi & Lớp Học`;
   const enTitles=[`Swimming Lessons & Pools in ${source.name}, ${parentName}`,`Swimming Pools & Local Lessons in ${source.name}, ${parentName}`,`Swimming in ${source.name}, ${parentName}: Pools & Lessons`,`Swimming in ${source.name}: Pools, Teachers & Local Guide`];

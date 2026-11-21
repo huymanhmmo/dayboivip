@@ -97,3 +97,15 @@ Không đăng ký lại cùng slug ở dynamic route và file route riêng. Trư
 5. Mở các địa điểm đủ dữ liệu theo đợt; giữ trạng thái chờ xác minh và dự án tương lai riêng. Chạy lại kiểm tra khi thay đổi component chung.
 
 Đây là cách mở rộng khi có yêu cầu triển khai. Tạo/cập nhật skill không đồng nghĩa với đã refactor website hoặc đã mở các khu vực mới.
+
+## Registry trang địa điểm đa vùng đã triển khai
+
+`data/venues/catalog.js` đọc trực tiếp research, communePools, locations và catalog Lái Thiêu; không lấy dữ liệu bổ sung tự sinh từ communePages làm hồ sơ giáo viên hoặc tọa độ hồ. Một hồ giữ một canonical dù có nhiều cách gọi hoặc nhiều hub giới thiệu. `aliases.json` chỉ gộp những mục đã đối chiếu tên riêng và địa chỉ; không dùng mức tương tự tên để tự gộp. Địa chỉ khác nhau được giữ để đối chiếu, không chọn đại bằng kết quả gần nhất.
+
+`routes.json` cố định URL các trang mới và trạng thái index từng hồ. Khi thêm hồ, đối chiếu identity, route trùng và nguồn trước khi thêm entry. Đổi tên hiển thị không tự đổi slug đã xuất bản. Không bỏ cơ chế kiểm tra route chưa đăng ký để làm build qua. Các trang mới hiện có thể xem nhưng giữ noindex trong đợt thiết kế; không đồng nhất việc render thành trang với đủ điều kiện index. Giữ các trang cũ và sitemap của chúng.
+
+`buildVenueDetail` dùng targetCommune rõ ràng; nếu chưa có, có thể về khu vực đã xuất bản hoặc tỉnh. Không chọn ngẫu nhiên một phường từ các kết quả khớp tên. Tỉnh phải có card tới mọi hồ trong registry, kể cả hồ starter không có trong research. Không mô tả các hồ khác cùng tỉnh là “lân cận” khi chưa có căn cứ khoảng cách.
+
+PoolDetailPage giữ mẫu Nhật An với các section nhỏ. `contacts` tách mảng operators/instructors; thiếu HLV thì nêu chưa có liên hệ riêng, không tạo chân dung hoặc lấy người đầu mảng làm hotline. CTA dẫn tới danh sách liên hệ hoặc Maps khi không có đầu mối chỉ định. Hình minh họa dùng chung có nhãn và không chứng minh điều kiện thực tế.
+
+Một địa điểm có route bài viết cũ cần được đối chiếu trước khi tạo URL mới. Nếu trang cũ đã là đích tìm hiểu hồ, nâng cấp ngay tại URL đó và giữ canonical/index; khai báo existingPage trong routes.json để dynamic route không xuất bản thêm bản sao. Tăng Bạt Hổ là trường hợp đã áp dụng.

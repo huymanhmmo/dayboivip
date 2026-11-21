@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-20T15:25:11.459Z",
-  "htmlFiles": 6838,
+  "checkedAt": "2026-11-20T15:50:13.287Z",
+  "htmlFiles": 7256,
   "directoryPages": 6723,
   "routeChanges": 0,
-  "contactBlocks": 35632,
-  "contactLinks": 35488,
+  "contactBlocks": 35656,
+  "contactLinks": 35500,
   "failures": [],
   "incomingAnchorFailures": [],
   "reports": [
@@ -245,7 +245,7 @@
     {
       "path": "en/swimming-lessons-an-giang/index.html",
       "level": "province",
-      "venues": 6,
+      "venues": 7,
       "contacts": 11
     },
     {
@@ -809,7 +809,7 @@
     {
       "path": "en/swimming-lessons-bac-ninh/index.html",
       "level": "province",
-      "venues": 12,
+      "venues": 13,
       "contacts": 17
     },
     {
@@ -3185,7 +3185,7 @@
     {
       "path": "en/swimming-lessons-cao-bang/index.html",
       "level": "province",
-      "venues": 3,
+      "venues": 4,
       "contacts": 5
     },
     {
@@ -4319,7 +4319,7 @@
     {
       "path": "en/swimming-lessons-dak-lak/index.html",
       "level": "province",
-      "venues": 9,
+      "venues": 10,
       "contacts": 18
     },
     {
@@ -4613,7 +4613,7 @@
     {
       "path": "en/swimming-lessons-dien-bien/index.html",
       "level": "province",
-      "venues": 4,
+      "venues": 7,
       "contacts": 6
     },
     {
@@ -6341,7 +6341,7 @@
     {
       "path": "en/swimming-lessons-ha-noi/index.html",
       "level": "province",
-      "venues": 61,
+      "venues": 62,
       "contacts": 109
     },
     {
@@ -7535,7 +7535,7 @@
     {
       "path": "en/swimming-lessons-hai-phong/index.html",
       "level": "province",
-      "venues": 20,
+      "venues": 21,
       "contacts": 36
     },
     {
@@ -8405,8 +8405,8 @@
     {
       "path": "en/swimming-lessons-ho-chi-minh/index.html",
       "level": "province",
-      "venues": 71,
-      "contacts": 138
+      "venues": 78,
+      "contacts": 150
     },
     {
       "path": "en/swimming-lessons-ho-chi-minh/khanh-hoi/index.html",
@@ -9083,7 +9083,7 @@
     {
       "path": "en/swimming-lessons-hue/index.html",
       "level": "province",
-      "venues": 17,
+      "venues": 18,
       "contacts": 34
     },
     {
@@ -9449,7 +9449,7 @@
     {
       "path": "en/swimming-lessons-hung-yen/index.html",
       "level": "province",
-      "venues": 8,
+      "venues": 10,
       "contacts": 16
     },
     {
@@ -10313,7 +10313,7 @@
     {
       "path": "en/swimming-lessons-lai-chau/index.html",
       "level": "province",
-      "venues": 3,
+      "venues": 4,
       "contacts": 5
     },
     {
@@ -11837,7 +11837,7 @@
     {
       "path": "en/swimming-lessons-lao-cai/index.html",
       "level": "province",
-      "venues": 7,
+      "venues": 9,
       "contacts": 12
     },
     {
@@ -14063,7 +14063,7 @@
     {
       "path": "en/swimming-lessons-phu-tho/index.html",
       "level": "province",
-      "venues": 5,
+      "venues": 7,
       "contacts": 10
     },
     {
@@ -15929,7 +15929,7 @@
     {
       "path": "en/swimming-lessons-quang-ninh/index.html",
       "level": "province",
-      "venues": 15,
+      "venues": 16,
       "contacts": 23
     },
     {
@@ -16217,7 +16217,7 @@
     {
       "path": "en/swimming-lessons-son-la/index.html",
       "level": "province",
-      "venues": 7,
+      "venues": 9,
       "contacts": 12
     },
     {
@@ -17297,7 +17297,7 @@
     {
       "path": "en/swimming-lessons-thai-nguyen/index.html",
       "level": "province",
-      "venues": 7,
+      "venues": 8,
       "contacts": 14
     },
     {
@@ -18899,7 +18899,7 @@
     {
       "path": "en/swimming-lessons-tuyen-quang/index.html",
       "level": "province",
-      "venues": 5,
+      "venues": 6,
       "contacts": 9
     },
     {
@@ -20417,7 +20417,7 @@
     {
       "path": "hoc-boi-an-giang/index.html",
       "level": "province",
-      "venues": 6,
+      "venues": 7,
       "contacts": 11
     },
     {
@@ -20981,7 +20981,7 @@
     {
       "path": "hoc-boi-bac-ninh/index.html",
       "level": "province",
-      "venues": 12,
+      "venues": 13,
       "contacts": 17
     },
     {
@@ -23357,7 +23357,7 @@
     {
       "path": "hoc-boi-cao-bang/index.html",
       "level": "province",
-      "venues": 3,
+      "venues": 4,
       "contacts": 5
     },
     {
@@ -24491,7 +24491,7 @@
     {
       "path": "hoc-boi-dak-lak/index.html",
       "level": "province",
-      "venues": 9,
+      "venues": 10,
       "contacts": 18
     },
     {
@@ -24785,7 +24785,7 @@
     {
       "path": "hoc-boi-dien-bien/index.html",
       "level": "province",
-      "venues": 4,
+      "venues": 7,
       "contacts": 6
     },
     {
@@ -26513,7 +26513,7 @@
     {
       "path": "hoc-boi-ha-noi/index.html",
       "level": "province",
-      "venues": 61,
+      "venues": 62,
       "contacts": 109
     },
     {
@@ -27707,7 +27707,7 @@
     {
       "path": "hoc-boi-hai-phong/index.html",
       "level": "province",
-      "venues": 20,
+      "venues": 21,
       "contacts": 36
     },
     {
@@ -28211,7 +28211,7 @@
     {
       "path": "hoc-boi-hue/index.html",
       "level": "province",
-      "venues": 17,
+      "venues": 18,
       "contacts": 34
     },
     {
@@ -28577,7 +28577,7 @@
     {
       "path": "hoc-boi-hung-yen/index.html",
       "level": "province",
-      "venues": 8,
+      "venues": 10,
       "contacts": 16
     },
     {
@@ -29441,7 +29441,7 @@
     {
       "path": "hoc-boi-lai-chau/index.html",
       "level": "province",
-      "venues": 3,
+      "venues": 4,
       "contacts": 5
     },
     {
@@ -30965,7 +30965,7 @@
     {
       "path": "hoc-boi-lao-cai/index.html",
       "level": "province",
-      "venues": 7,
+      "venues": 9,
       "contacts": 12
     },
     {
@@ -33191,7 +33191,7 @@
     {
       "path": "hoc-boi-phu-tho/index.html",
       "level": "province",
-      "venues": 5,
+      "venues": 7,
       "contacts": 10
     },
     {
@@ -35057,7 +35057,7 @@
     {
       "path": "hoc-boi-quang-ninh/index.html",
       "level": "province",
-      "venues": 15,
+      "venues": 16,
       "contacts": 23
     },
     {
@@ -35345,7 +35345,7 @@
     {
       "path": "hoc-boi-son-la/index.html",
       "level": "province",
-      "venues": 7,
+      "venues": 9,
       "contacts": 12
     },
     {
@@ -36425,7 +36425,7 @@
     {
       "path": "hoc-boi-thai-nguyen/index.html",
       "level": "province",
-      "venues": 7,
+      "venues": 8,
       "contacts": 14
     },
     {
@@ -38267,8 +38267,8 @@
     {
       "path": "hoc-boi-tphcm/index.html",
       "level": "province",
-      "venues": 71,
-      "contacts": 138
+      "venues": 78,
+      "contacts": 150
     },
     {
       "path": "hoc-boi-tphcm/khanh-hoi/index.html",
@@ -39065,7 +39065,7 @@
     {
       "path": "hoc-boi-tuyen-quang/index.html",
       "level": "province",
-      "venues": 5,
+      "venues": 6,
       "contacts": 9
     },
     {
