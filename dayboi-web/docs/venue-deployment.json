@@ -1,0 +1,48 @@
+{
+  "deployedAt": "2026-11-21T02:31:05.101319Z",
+  "domain": "https://dayboi.vip",
+  "worker": "dayboivip",
+  "versionId": "ab92f5ef-6fa0-4fa3-836b-2011cfaaca66",
+  "deploymentId": "a48e7a11-f103-4974-bece-d668a0b4c35d",
+  "previousVersionId": "91f75220-c3d1-47c4-832e-a76f488a04e8",
+  "sourceCommit": "746ddaa",
+  "preview": "https://ab92f5ef-dayboivip.huymanh.workers.dev",
+  "trafficPercent": 100,
+  "totalVenues": 438,
+  "newVenuePages": 417,
+  "upgradedExistingVenuePages": 1,
+  "retainedLaiThieuPages": 20,
+  "language": "vi",
+  "renderedHtmlFiles": 7255,
+  "indexableUrls": 845,
+  "newVenueIndexPolicy": "noindex, follow pending individual evidence review",
+  "verification": {
+    "allRolloutPages": 418,
+    "sourcePhoneLinks": 792,
+    "internalReferences": 17287,
+    "baselineHtmlPagesPreserved": 6838,
+    "localBrowser": {
+      "pages": 8,
+      "viewportCases": 64,
+      "checks": 382,
+      "failures": 0
+    },
+    "previewHttp": {
+      "pages": 528,
+      "paths": 645,
+      "failures": 0
+    },
+    "productionHttp": {
+      "pages": 528,
+      "paths": 645,
+      "failures": 0
+    },
+    "productionBrowser": {
+      "pages": 8,
+      "viewportCases": 16,
+      "checks": 142,
+      "failures": 0
+    }
+  },
+  "gitPush": false
+}

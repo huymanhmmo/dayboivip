@@ -54,3 +54,7 @@ Các báo cáo:
 Code chỉ commit tại máy theo lựa chọn của người dùng. Triển khai Worker dayboivip theo quyền đã được cấp trong phiên; không push GitHub.
 
 Trang Tăng Bạt Hổ dùng lại `/hoc-boi-tang-bat-ho/`, giữ canonical và trạng thái index đã có; không tạo thêm một URL chi tiết trùng địa điểm.
+
+## Triển khai và xác nhận trên domain chính
+
+Đã triển khai 100% lên dayboi.vip lúc 09:31 ngày 21/11/2026 (giờ Việt Nam), phiên bản `ab92f5ef-6fa0-4fa3-836b-2011cfaaca66`. Bản xem thử và production đều đối chiếu 528 trang / 645 đường dẫn với nội dung build, không có sai khác. Kiểm tra trình duyệt trên production: 8 trang, 16 trường hợp viewport desktop/mobile, 142 phép kiểm tra, không phát hiện lỗi. Chi tiết và phiên bản trước nằm trong `venue-deployment.json`.
