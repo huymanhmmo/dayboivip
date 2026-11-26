@@ -11,6 +11,7 @@ import RegionSkills from './RegionSkills.astro';
 import RegionPracticalGuide from './RegionPracticalGuide.astro';
 import RegionFAQ from './RegionFAQ.astro';
 import RelatedRegions from './RelatedRegions.astro';
+import GiaPhaPromo from '../common/GiaPhaPromo.astro';
 import type {RegionPageData} from '../../data/locality/types';
 import '../../styles/local-swimming-landing.css';
 import '../../styles/region-directory.css';
@@ -28,6 +29,11 @@ const {page}=Astro.props as {page:RegionPageData};
     <RegionPracticalGuide page={page} />
     <RegionFAQ items={page.faqs} lang={page.lang} />
     <RelatedRegions links={page.related} lang={page.lang} />
+    {page.lang === 'vi' && (
+      <div class="sfl-container" style="padding-bottom: clamp(2rem, 4vw, 3.5rem);">
+        <GiaPhaPromo variant="banner" lang="vi" placement={`region_${page.id}`} />
+      </div>
+    )}
   </article>
   <div slot="footer" class="sfl-landing rd-footer-shell"><LocalSiteFooter site={page.site} /></div>
 </MainLayout>

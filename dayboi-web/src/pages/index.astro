@@ -7,6 +7,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import CoachesSection from '../components/CoachesSection.astro';
+import GiaPhaPromo from '../components/common/GiaPhaPromo.astro';
 import '../styles/home-redesign.css';
 
 const schema = {
@@ -641,6 +642,15 @@ const sortedLocations = [...allProvinces].sort((a, b) => a.name.localeCompare(b.
   </section>
 
   <CoachesSection />
+
+  <!-- ============================================
+       ECOSYSTEM PROMO (GIAPHA.VIP)
+       ============================================ -->
+  <section class="section" id="ecosystem-promo" style="padding-block: 0 var(--space-12);">
+    <div class="container">
+      <GiaPhaPromo variant="banner" lang="vi" placement="homepage_bottom" />
+    </div>
+  </section>
 
   <!-- ============================================
        CTA BOTTOM

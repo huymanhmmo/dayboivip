@@ -20,6 +20,7 @@ import PoolTestimonials from './PoolTestimonials.astro';
 import PoolLearningGuide from './PoolLearningGuide.astro';
 import NearbyPools from './NearbyPools.astro';
 import PoolEnrollmentCTA from './PoolEnrollmentCTA.astro';
+import GiaPhaPromo from '../common/GiaPhaPromo.astro';
 import type { PoolDetailData } from '../../data/poolDetailTypes';
 import '../../styles/local-swimming-landing.css';
 import '../../styles/local-swimming-techniques.css';
@@ -51,6 +52,7 @@ const schema={'@context':'https://schema.org','@graph':[
       <PoolTestimonials items={pool.testimonials} />
       <PoolLearningGuide title={pool.guideTitle} intro={pool.guideIntro} items={pool.guide} sources={pool.sources} updatedAt={pool.updatedAt} />
       <NearbyPools pools={pool.nearby} title={pool.province?'Địa điểm khác tại '+pool.province.name:undefined} />
+      <GiaPhaPromo variant="banner" lang="vi" placement={`pool_${pool.slug}`} />
     </div>
     <PoolEnrollmentCTA name={pool.name} hotline={pool.hotline} phoneHref={pool.phoneHref} zaloHref={pool.zaloHref} mapsHref={pool.location.mapsSearchUrl} />
   </article>

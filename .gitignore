@@ -4,6 +4,7 @@ website/node_modules/
 # Build outputs
 website/dist/
 website/.astro/
+.cloudflare/
 
 # Logs
 website/npm-debug.log*

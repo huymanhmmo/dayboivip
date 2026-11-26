@@ -13,6 +13,7 @@ import LocalAreaInfoSection from './LocalAreaInfoSection.astro';
 import TestimonialsSection from './TestimonialsSection.astro';
 import EnrollmentCTA from './EnrollmentCTA.astro';
 import LaiThieuFooter from './LaiThieuFooter.astro';
+import GiaPhaPromo from '../common/GiaPhaPromo.astro';
 import type { LocalLandingData } from '../../data/localLandingPages';
 import '../../styles/local-swimming-landing.css';
 import '../../styles/local-swimming-techniques.css';
@@ -44,6 +45,9 @@ const schema = {
     <BenefitsSection benefits={data.benefits} />
     <LocalAreaInfoSection local={data.local} name={data.name} />
     <TestimonialsSection testimonials={data.testimonials} areaName={data.name} />
+    <div class="sfl-container" style="padding-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+      <GiaPhaPromo variant="banner" lang="vi" placement={`local_landing_${data.slug || 'lai_thieu'}`} />
+    </div>
     <EnrollmentCTA name={data.name} hotline={data.hotline} phoneHref={data.phoneHref} instructorLabel={instructorLabel} />
     <nav class="sfl-container sfl-breadcrumb" aria-label="Đường dẫn trang"><a href="/">Trang chủ</a><span aria-hidden="true">/</span><a href="/hoc-boi-tphcm/">Học bơi TP.HCM</a><span aria-hidden="true">/</span><span aria-current="page">{data.name}</span></nav>
   </article>
