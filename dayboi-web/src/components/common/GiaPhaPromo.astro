@@ -1,0 +1,443 @@
+---
+/**
+ * GiaPhaPromo.astro — Component tích hợp hệ sinh thái GiaPhả.Vip (cùng nhà sáng lập Nguyễn Huy Mạnh)
+ * Thiết kế theo ngôn ngữ Bridge Aesthetic (Aquatic Editorial x Vietnamese Heritage Jade & Gold)
+ * Tuân thủ nghiêm ngặt:
+ *  - Coalition for Better Ads (không popup, không sticky đè nội dung, có nhãn nhận diện rõ ràng)
+ *  - Google Link Spam Policy (rel="sponsored noopener" cho banner lặp lại, entity link cho hồ sơ tác giả)
+ *  - Core Web Vitals 100/100 (100% inline SVG, zero external JS, zero CLS)
+ */
+export interface Props {
+  variant?: 'sidebar' | 'banner' | 'author-badge';
+  lang?: 'vi' | 'en';
+  placement?: string;
+}
+
+const {
+  variant = 'sidebar',
+  lang = 'vi',
+  placement = variant,
+} = Astro.props;
+
+// Chỉ hiển thị trên giao diện tiếng Việt vì GiaPhả.Vip chuyên biệt cho văn hóa dòng họ Việt Nam
+const shouldRender = lang === 'vi';
+
+const cleanPlacement = placement.replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 48);
+const buildGiaPhaUrl = (path: string, medium: string, action: string) =>
+  `https://giapha.vip${path}?utm_source=dayboi.vip&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(`dayboi_${cleanPlacement}_${action}`)}`;
+
+const sidebarTreeUrl = buildGiaPhaUrl('/tao-cay-gia-pha', 'sidebar_card', 'tao_cay');
+const sidebarKinshipUrl = buildGiaPhaUrl('/cach-xung-ho', 'sidebar_card', 'xung_ho');
+const bannerTreeUrl = buildGiaPhaUrl('/tao-cay-gia-pha', 'horizontal_banner', 'tao_cay');
+const bannerHomeUrl = buildGiaPhaUrl('/', 'horizontal_banner', 'kham_pha');
+const authorHomeUrl = buildGiaPhaUrl('/', 'author_bio', 'entity_link');
+---
+
+{shouldRender && variant === 'sidebar' && (
+  <aside class="gp-promo gp-promo--sidebar" aria-label="Giới thiệu nền tảng Gia Phả Vip cùng nhà sáng lập">
+    <svg class="gp-promo__tree-bg" viewBox="0 0 120 130" fill="none" aria-hidden="true">
+      <defs>
+        <g id="gp-gold-sprig-sb" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+          <path d="M0 0q15-14 37-10M8-6q-2-9 9-14m-4 12q10 1 18-4M20-11q2-11 13-12m-7 13q6 5 17 1M29-11q7-6 15-5"/>
+          <g fill="currentColor" stroke="none">
+            <ellipse cx="10" cy="-15" rx="3" ry="1.6"/><ellipse cx="17" cy="-20" rx="3.5" ry="1.6"/>
+            <ellipse cx="19" cy="-15" rx="3" ry="1.4"/><ellipse cx="24" cy="-22" rx="3" ry="1.5"/>
+            <ellipse cx="32" cy="-24" rx="3.5" ry="1.6"/><ellipse cx="33" cy="-17" rx="3.4" ry="1.5"/>
+            <ellipse cx="28" cy="-12" rx="3.5" ry="1.6"/><ellipse cx="37" cy="-13" rx="3.5" ry="1.6"/>
+          </g>
+        </g>
+      </defs>
+      <path d="M64 17q-7 26 2 45t-4 42m4-35q4 24 17 40m-18-12q-6 10-19 13m16-7q-1 7-7 11m12-7 5 7M43 115h42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <use href="#gp-gold-sprig-sb" transform="translate(65 65) rotate(7) scale(1.05)"/>
+      <use href="#gp-gold-sprig-sb" transform="translate(62 68) scale(-1.05 1.05) rotate(7)"/>
+      <use href="#gp-gold-sprig-sb" transform="translate(64 52) rotate(-8) scale(1.2)"/>
+      <use href="#gp-gold-sprig-sb" transform="translate(61 55) scale(-1.2 1.2) rotate(-8)"/>
+      <use href="#gp-gold-sprig-sb" transform="translate(63 38) rotate(-14) scale(1.08)"/>
+      <use href="#gp-gold-sprig-sb" transform="translate(60 41) scale(-1.08 1.08) rotate(-14)"/>
+    </svg>
+
+    <div class="gp-promo__header">
+      <span class="gp-promo__mark" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="28" height="28">
+          <rect x="7" y="7" width="106" height="106" rx="19" fill="none" stroke="#D8B573" stroke-width="4"/>
+          <path d="M60 85V34M60 52Q51 35 39 33M60 52Q69 35 81 33M60 66Q43 47 29 47M60 66Q77 47 91 47" fill="none" stroke="#D8B573" stroke-width="5" stroke-linecap="round"/>
+          <path d="M24 87Q42 79 60 89 78 79 96 87v15q-18-8-36 1-18-9-36-1ZM60 89v14" fill="none" stroke="#D8B573" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="gp-promo__eyebrow">Dự án cùng nhà sáng lập</span>
+    </div>
+
+    <h3 class="gp-promo__title">Gìn Giữ Cội Nguồn & Kết Nối Thế Hệ Việt</h3>
+    <p class="gp-promo__desc">
+      Vẽ sơ đồ cây gia phả trực tuyến, tra cứu cách xưng hô Cửu tộc và lịch giỗ âm dương chuẩn phong tục Việt trên <strong>GiaPhả.Vip</strong>.
+    </p>
+
+    <div class="gp-promo__offer">
+      <span>✨ Miễn phí trọn đời gói Khởi Đầu (50 thành viên)</span>
+    </div>
+
+    <div class="gp-promo__actions">
+      <a
+        href={sidebarTreeUrl}
+        target="_blank"
+        rel="sponsored noopener"
+        class="gp-promo__btn gp-promo__btn--primary"
+        data-gp-promo-link
+        data-gp-placement={cleanPlacement}
+        data-gp-variant="sidebar"
+        data-gp-target="tao_cay_gia_pha"
+      >
+        <span>Tạo cây gia phả ngay</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+      <a
+        href={sidebarKinshipUrl}
+        target="_blank"
+        rel="sponsored noopener"
+        class="gp-promo__sublink"
+        data-gp-promo-link
+        data-gp-placement={cleanPlacement}
+        data-gp-variant="sidebar"
+        data-gp-target="tra_cuu_xung_ho"
+      >
+        Tra cứu xưng hô họ hàng →
+      </a>
+    </div>
+  </aside>
+)}
+
+{shouldRender && variant === 'banner' && (
+  <aside class="gp-promo gp-promo--banner" aria-label="Giới thiệu nền tảng Gia Phả Vip cùng nhà sáng lập">
+    <svg class="gp-promo__tree-bg gp-promo__tree-bg--banner" viewBox="0 0 120 130" fill="none" aria-hidden="true">
+      <defs>
+        <g id="gp-gold-sprig-bn" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+          <path d="M0 0q15-14 37-10M8-6q-2-9 9-14m-4 12q10 1 18-4M20-11q2-11 13-12m-7 13q6 5 17 1M29-11q7-6 15-5"/>
+          <g fill="currentColor" stroke="none">
+            <ellipse cx="10" cy="-15" rx="3" ry="1.6"/><ellipse cx="17" cy="-20" rx="3.5" ry="1.6"/>
+            <ellipse cx="19" cy="-15" rx="3" ry="1.4"/><ellipse cx="24" cy="-22" rx="3" ry="1.5"/>
+            <ellipse cx="32" cy="-24" rx="3.5" ry="1.6"/><ellipse cx="33" cy="-17" rx="3.4" ry="1.5"/>
+          </g>
+        </g>
+      </defs>
+      <path d="M64 17q-7 26 2 45t-4 42m4-35q4 24 17 40m-18-12q-6 10-19 13m16-7q-1 7-7 11m12-7 5 7M43 115h42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <use href="#gp-gold-sprig-bn" transform="translate(65 65) rotate(7) scale(1.05)"/>
+      <use href="#gp-gold-sprig-bn" transform="translate(62 68) scale(-1.05 1.05) rotate(7)"/>
+      <use href="#gp-gold-sprig-bn" transform="translate(64 52) rotate(-8) scale(1.2)"/>
+      <use href="#gp-gold-sprig-bn" transform="translate(61 55) scale(-1.2 1.2) rotate(-8)"/>
+      <use href="#gp-gold-sprig-bn" transform="translate(63 38) rotate(-14) scale(1.08)"/>
+      <use href="#gp-gold-sprig-bn" transform="translate(60 41) scale(-1.08 1.08) rotate(-14)"/>
+    </svg>
+
+    <div class="gp-promo__banner-grid">
+      <div class="gp-promo__banner-content">
+        <div class="gp-promo__header">
+          <span class="gp-promo__mark" aria-hidden="true">
+            <svg viewBox="0 0 120 120" width="26" height="26">
+              <rect x="7" y="7" width="106" height="106" rx="19" fill="none" stroke="#D8B573" stroke-width="4"/>
+              <path d="M60 85V34M60 52Q51 35 39 33M60 52Q69 35 81 33M60 66Q43 47 29 47M60 66Q77 47 91 47" fill="none" stroke="#D8B573" stroke-width="5" stroke-linecap="round"/>
+              <path d="M24 87Q42 79 60 89 78 79 96 87v15q-18-8-36 1-18-9-36-1ZM60 89v14" fill="none" stroke="#D8B573" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="gp-promo__eyebrow">Hệ sinh thái số cùng nhà sáng lập · GiaPhả.Vip</span>
+        </div>
+
+        <h3 class="gp-promo__banner-title">Lập Cây Gia Phả Dòng Họ & Lưu Giữ Di Sản Gia Đình Việt</h3>
+        <p class="gp-promo__banner-desc">
+          Nền tảng số hóa phả hệ trực quan giúp vẽ sơ đồ cây gia phả tự động (xuất in 300 DPI treo từ đường), tra cứu xưng hô 9 đời Cửu tộc và đồng bộ lịch giỗ âm lịch. <strong>Miễn phí trọn đời gói Khởi Đầu cho tối đa 50 thành viên.</strong>
+        </p>
+      </div>
+
+      <div class="gp-promo__banner-ctas">
+        <a
+          href={bannerTreeUrl}
+          target="_blank"
+          rel="sponsored noopener"
+          class="gp-promo__btn gp-promo__btn--primary"
+          data-gp-promo-link
+          data-gp-placement={cleanPlacement}
+          data-gp-variant="banner"
+          data-gp-target="tao_cay_gia_pha"
+        >
+          <span>Tạo cây gia phả miễn phí</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a
+          href={bannerHomeUrl}
+          target="_blank"
+          rel="sponsored noopener"
+          class="gp-promo__btn gp-promo__btn--outline"
+          data-gp-promo-link
+          data-gp-placement={cleanPlacement}
+          data-gp-variant="banner"
+          data-gp-target="trang_chu_giapha"
+        >
+          <span>Khám phá công cụ & lịch âm</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+)}
+
+{shouldRender && variant === 'author-badge' && (
+  <div class="gp-author-ecosystem">
+    <span class="gp-author-ecosystem__icon" aria-hidden="true">🌿</span>
+    <p class="gp-author-ecosystem__text">
+      Bên cạnh sứ mệnh phổ cập bơi phòng chống đuối nước, Thầy Nguyễn Huy Mạnh còn là nhà sáng lập nền tảng văn hóa{' '}
+      <a
+        href={authorHomeUrl}
+        target="_blank"
+        rel="noopener"
+        class="gp-author-ecosystem__link"
+        data-gp-promo-link
+        data-gp-placement={cleanPlacement}
+        data-gp-variant="author_badge"
+        data-gp-target="trang_chu_giapha"
+      >
+        GiaPhả.Vip — Số hóa cây gia phả & Gìn giữ cội nguồn dòng họ Việt
+      </a>.
+    </p>
+  </div>
+)}
+
+<style>
+  .gp-promo {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: var(--radius-xl, 1.5rem);
+    border: 1px solid rgba(216, 181, 115, 0.35);
+    background: linear-gradient(135deg, #072c22 0%, #103c2f 60%, #0b3529 100%);
+    color: #faf2e4;
+    box-shadow: 0 14px 34px rgba(5, 44, 62, 0.12);
+  }
+
+  .gp-promo--sidebar {
+    padding: 1.35rem 1.25rem;
+  }
+
+  .gp-promo__tree-bg {
+    position: absolute;
+    z-index: -1;
+    right: -24px;
+    bottom: -14px;
+    width: 155px;
+    height: auto;
+    color: #d8b573;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+
+  .gp-promo__header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .gp-promo__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .gp-promo__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d8b573;
+  }
+
+  .gp-promo__title {
+    margin: 0 0 0.5rem 0;
+    font-family: var(--font-heading, 'Be Vietnam Pro', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #fffdf8;
+    letter-spacing: -0.02em;
+  }
+
+  .gp-promo__desc {
+    margin: 0 0 0.85rem 0;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: rgba(250, 242, 228, 0.86);
+  }
+
+  .gp-promo__desc strong {
+    color: #f9cf83;
+    font-weight: 700;
+  }
+
+  .gp-promo__offer {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.5rem;
+    background: rgba(216, 181, 115, 0.14);
+    border: 1px solid rgba(216, 181, 115, 0.28);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #f9cf83;
+  }
+
+  .gp-promo__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .gp-promo__btn {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform 180ms ease, filter 180ms ease, background 180ms ease;
+    white-space: nowrap;
+  }
+
+  .gp-promo__btn--primary {
+    background: linear-gradient(180deg, #fff0cd 0%, #e9bc6b 100%);
+    color: #3b220c;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  }
+
+  .gp-promo__btn--primary:hover {
+    filter: brightness(1.06);
+    transform: translateY(-1px);
+    color: #261405;
+  }
+
+  .gp-promo__btn--outline {
+    border: 1px solid rgba(216, 181, 115, 0.45);
+    background: rgba(255, 255, 255, 0.05);
+    color: #faf2e4;
+  }
+
+  .gp-promo__btn--outline:hover {
+    background: rgba(216, 181, 115, 0.15);
+    color: #ffffff;
+  }
+
+  .gp-promo__sublink {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #d8b573;
+    text-decoration: none;
+  }
+
+  .gp-promo__sublink:hover {
+    color: #fff0cd;
+    text-decoration: underline;
+  }
+
+  /* Variant: Horizontal Banner */
+  .gp-promo--banner {
+    margin: var(--space-8, 2rem) auto 0;
+    padding: clamp(1.35rem, 3vw, 2rem) clamp(1.25rem, 3.5vw, 2.5rem);
+  }
+
+  .gp-promo__tree-bg--banner {
+    right: 12px;
+    bottom: -22px;
+    width: 190px;
+    opacity: 0.18;
+  }
+
+  .gp-promo__banner-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .gp-promo__banner-content {
+    flex: 1 1 460px;
+    max-width: 720px;
+  }
+
+  .gp-promo__banner-title {
+    margin: 0 0 0.5rem 0;
+    font-family: var(--font-heading, 'Be Vietnam Pro', sans-serif);
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: #fffdf8;
+    letter-spacing: -0.025em;
+  }
+
+  .gp-promo__banner-desc {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: rgba(250, 242, 228, 0.88);
+  }
+
+  .gp-promo__banner-desc strong {
+    color: #f9cf83;
+  }
+
+  .gp-promo__banner-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex-shrink: 0;
+    min-width: 230px;
+  }
+
+  /* Variant: Author Bio Ecosystem Pill */
+  .gp-author-ecosystem {
+    margin-top: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(90deg, rgba(16, 60, 47, 0.06), rgba(184, 135, 54, 0.08));
+    border-left: 3px solid #103c2f;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .gp-author-ecosystem__icon {
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  .gp-author-ecosystem__text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary, #29434d);
+  }
+
+  .gp-author-ecosystem__link {
+    font-weight: 700;
+    color: #103c2f;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .gp-author-ecosystem__link:hover {
+    color: #80571d;
+  }
+
+  @media (max-width: 768px) {
+    .gp-promo__banner-ctas {
+      width: 100%;
+    }
+    .gp-promo__btn {
+      width: 100%;
+    }
+  }
+</style>

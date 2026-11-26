@@ -4,6 +4,7 @@ import YouTubeVideo from '../components/YouTubeVideo.astro';
 import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
 import CoachesSection from '../components/CoachesSection.astro';
 import TechniqueSiloNav from '../components/technique/TechniqueSiloNav.astro';
+import GiaPhaPromo from '../components/common/GiaPhaPromo.astro';
 import { blogPosts } from '../data/blogPosts.js';
 
 import '../styles/technique-landing.css';
@@ -830,6 +831,7 @@ const alternateLang = isEn ? 'vi' : 'en';
     <section class="tl-section tl-section--alt">
       <div class="tl-section__container">
         <LocalDirectoryCTA lang={lang} />
+        <GiaPhaPromo variant="banner" lang={lang} placement={`technique_bottom_${technique.slug}`} />
       </div>
     </section>
 

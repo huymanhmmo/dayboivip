@@ -1,16 +1,20 @@
 ---
+import GiaPhaPromo from './common/GiaPhaPromo.astro';
+
 export interface Props {
   name?: string;
   role?: string;
   avatar?: string;
   bio?: string;
+  lang?: 'vi' | 'en';
 }
 
 const {
   name = 'Thầy Nguyễn Huy Mạnh',
   role = 'Giám Đốc & HLV Trưởng Swim For Life Việt Nam',
   avatar = '/images/team/thay-nguyen-huy-manh.png',
-  bio = 'Thầy Nguyễn Huy Mạnh tốt nghiệp khoa Giáo dục Thể chất trường Đại học Sư phạm Hà Nội. Với hơn 10 năm kinh nghiệm huấn luyện bơi lội từ cơ bản đến nâng cao, thầy đã phổ cập bơi thành công cho hơn 10.000 học sinh, đặc biệt nổi tiếng với các phương pháp sư phạm sư phạm dễ hiểu, tâm lý vững vàng hỗ trợ học viên nhát nước, sợ nước vượt qua nỗi sợ bơi lội.'
+  bio = 'Thầy Nguyễn Huy Mạnh tốt nghiệp khoa Giáo dục Thể chất trường Đại học Sư phạm Hà Nội. Với hơn 10 năm kinh nghiệm huấn luyện bơi lội từ cơ bản đến nâng cao, thầy đã phổ cập bơi thành công cho hơn 10.000 học sinh, đặc biệt nổi tiếng với các phương pháp sư phạm dễ hiểu, tâm lý vững vàng hỗ trợ học viên nhát nước, sợ nước vượt qua nỗi sợ bơi lội.',
+  lang = 'vi'
 } = Astro.props;
 ---
 
@@ -22,5 +26,6 @@ const {
     <h3 class="author-bio-footer-title">{name}</h3>
     <span class="author-bio-footer-role">{role}</span>
     <p class="author-bio-footer-text">{bio}</p>
+    <GiaPhaPromo variant="author-badge" lang={lang} placement="author_bio_box" />
   </div>
 </div>

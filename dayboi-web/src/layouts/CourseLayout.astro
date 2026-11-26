@@ -16,6 +16,7 @@ import CourseSiloNav from '../components/course/CourseSiloNav.astro';
 import RegistrationForm from '../components/RegistrationForm.astro';
 import CoachesSection from '../components/CoachesSection.astro';
 import LocalDirectoryCTA from '../components/LocalDirectoryCTA.astro';
+import GiaPhaPromo from '../components/common/GiaPhaPromo.astro';
 
 import '../styles/course-landing.css';
 import '../styles/template-redesign.css';
@@ -235,7 +236,12 @@ const isEnterprise = course.slug === 'doanh-nghiep' || course.slug === 'corporat
       </div>
     </section>
     ) : (
-      <section class="cl-section cl-section--alt"><div class="cl-section__container"><LocalDirectoryCTA lang={lang} /></div></section>
+      <section class="cl-section cl-section--alt">
+        <div class="cl-section__container">
+          <LocalDirectoryCTA lang={lang} />
+          <GiaPhaPromo variant="banner" lang={lang} placement={`course_bottom_${course.slug}`} />
+        </div>
+      </section>
     )}
   </div>
 </PageLayout>

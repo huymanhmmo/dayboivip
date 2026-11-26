@@ -149,6 +149,19 @@ const effectiveAlternateUrl = noIndex
       );
       revealElements.forEach((el) => observer.observe(el));
     }
+
+    // Track clicks to GiaPha.vip ecosystem banners in GA4
+    document.addEventListener('click', (e) => {
+      const target = e.target instanceof Element ? e.target.closest('[data-gp-promo-link]') : null;
+      if (target && typeof window.gtag === 'function') {
+        window.gtag('event', 'giapha_promo_click', {
+          placement: target.getAttribute('data-gp-placement') || 'unknown',
+          variant: target.getAttribute('data-gp-variant') || 'unknown',
+          destination: target.getAttribute('data-gp-target') || target.getAttribute('href') || '',
+          page_path: window.location.pathname
+        });
+      }
+    });
   </script>
 </body>
 </html>
