@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-11-21T02:27:54.896Z",
+  "checkedAt": "2026-11-27T12:13:25.257Z",
   "catalog": 438,
   "detailPages": 418,
   "newPages": 417,
   "baselineChecked": 6838,
   "contactLinks": 792,
-  "internalReferences": 17287,
+  "internalReferences": 18123,
   "failures": [],
   "pages": [
     {
@@ -15,7 +15,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 4,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Khách sạn La Thành",
@@ -24,7 +24,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 6,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi 115 Quán Thánh",
@@ -33,7 +33,7 @@
       "teachers": 3,
       "operators": 1,
       "phones": 5,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Khăn Quàng Đỏ",
@@ -42,7 +42,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Tăng Bạt Hổ",
@@ -60,7 +60,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Vinhomes Times City",
@@ -69,7 +69,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Aqua-Tots Hoàng Cầu",
@@ -78,7 +78,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Khách sạn Bảo Sơn",
@@ -87,7 +87,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 4,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Đặng Tiến Đông (Thái Thịnh)",
@@ -96,7 +96,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hapu Swimming Pool - Bể bơi nước mặn Hapulico",
@@ -105,7 +105,7 @@
       "teachers": 3,
       "operators": 1,
       "phones": 5,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Việt Đức Complex",
@@ -114,7 +114,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 4,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Aqua-Tots Cầu Giấy",
@@ -123,7 +123,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa số 7 Tôn Thất Thuyết",
@@ -132,7 +132,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Green Pool 24 Nguyễn Cơ Thạch",
@@ -141,7 +141,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Cung Thể thao Dưới nước Mỹ Đình",
@@ -150,7 +150,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 4,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Thắng Lợi",
@@ -159,7 +159,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Green Pool Thụy Khuê",
@@ -168,7 +168,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Aqua-Tots Tây Hồ",
@@ -177,7 +177,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Từ Liêm (Đức Diễn)",
@@ -186,7 +186,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Green Stars",
@@ -195,7 +195,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Green Pool Hoàng Mai",
@@ -204,7 +204,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nước Mặn Bốn Mùa Định Công",
@@ -213,7 +213,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Rainbow Linh Đàm",
@@ -222,7 +222,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Green Pool Thanh Trì",
@@ -231,7 +231,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Housinco Tân Triều",
@@ -240,7 +240,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hồ Gươm Plaza",
@@ -249,7 +249,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Thanh Hà (KĐT Thanh Hà Cienco 5)",
@@ -258,7 +258,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Học viện An Ninh Nhân Dân C500",
@@ -267,7 +267,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Mai Phúc (Long Biên)",
@@ -276,7 +276,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Olympia Việt Hưng",
@@ -285,7 +285,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Green House CT17 Việt Hưng",
@@ -294,7 +294,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Aqua-Tots Gia Lâm (Vinhomes Ocean Park)",
@@ -303,7 +303,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Mái Kính Sapphire 2 (Vinhomes Ocean Park 1)",
@@ -312,7 +312,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Khu Đô Thị Đặng Xá (Gia Lâm)",
@@ -321,7 +321,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Sapphire - Vinhomes Smart City",
@@ -330,7 +330,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa An Hưng - Dương Nội",
@@ -339,7 +339,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa 33C Phạm Ngũ Lão",
@@ -348,7 +348,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Cung Thiếu Nhi Đông Anh",
@@ -357,7 +357,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Hinode Royal Park",
@@ -366,7 +366,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi KĐT Tân Tây Đô",
@@ -375,7 +375,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Văn hóa & Thể thao Chương Mỹ",
@@ -384,7 +384,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Mê Linh Plaza",
@@ -393,7 +393,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao ĐH FPT Hòa Lạc",
@@ -402,7 +402,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa KĐT Thanh Hà",
@@ -411,7 +411,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Sóc Sơn",
@@ -420,7 +420,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Sinh Thái Bát Tràng",
@@ -429,7 +429,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Thị xã Sơn Tây",
@@ -438,7 +438,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Quốc Oai",
@@ -447,7 +447,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nhà Thi Đấu Thạch Thất",
@@ -456,7 +456,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Thường Tín",
@@ -465,7 +465,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Phú Xuyên",
@@ -474,7 +474,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Vân Đình",
@@ -483,7 +483,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Mỹ Đức",
@@ -492,7 +492,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Quảng Oai",
@@ -501,7 +501,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Phúc Thọ",
@@ -510,7 +510,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Nghĩa Tân",
@@ -519,7 +519,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Vườn Nhật Zen Park Smart City",
@@ -528,7 +528,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi KĐT FLC Premier Parc Đại Mỗ",
@@ -537,7 +537,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi ĐH Công Nghiệp Hà Nội",
@@ -546,7 +546,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Ecohome",
@@ -555,7 +555,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hapulico",
@@ -564,7 +564,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Yết Kiêu (Trung tâm Thể thao Dưới nước Yết Kiêu)",
@@ -573,7 +573,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi CLB Thể thao Nguyễn Bỉnh Khiêm",
@@ -582,7 +582,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Kỳ Đồng",
@@ -591,7 +591,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Victory",
@@ -600,7 +600,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi FOSCO",
@@ -609,7 +609,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Lam Sơn (CLB Thể thao Dưới nước Lam Sơn)",
@@ -618,7 +618,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Tản Đà",
@@ -627,7 +627,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nguyễn Tri Phương",
@@ -636,7 +636,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Công viên Văn hóa Lê Thị Riêng",
@@ -645,7 +645,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi nội khu Chung cư Res 11",
@@ -654,7 +654,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Phú Thọ (Trung tâm TDTT Phú Thọ)",
@@ -663,7 +663,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Rạch Miễu (Trung tâm TDTT Rạch Miễu)",
@@ -672,7 +672,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT Quân khu 7",
@@ -681,7 +681,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Cộng Hòa (Trung tâm Triển lãm Tân Bình)",
@@ -690,7 +690,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Triển lãm Tân Bình (Trung tâm VHTT Quận Tân Bình)",
@@ -699,7 +699,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Hải Quân (Trường Hải quân)",
@@ -708,7 +708,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Đại Đồng (Trung tâm TDTT Quận Bình Thạnh)",
@@ -717,7 +717,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Đạt Đức",
@@ -726,7 +726,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Làng Hoa",
@@ -735,7 +735,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Ánh Viên Swim Club",
@@ -744,7 +744,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Baby Fish Swim Academy Thảo Điền",
@@ -753,7 +753,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Australia Swim School Thảo Điền",
@@ -762,7 +762,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Vân Đồn (Trung tâm TDTT Quận 4)",
@@ -771,7 +771,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khánh Hội (Hồ bơi Vân Đồn 2)",
@@ -780,7 +780,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Jamona City",
@@ -789,7 +789,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Chung cư Golden Star",
@@ -798,7 +798,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Terra Mia",
@@ -807,7 +807,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Hòa Bình",
@@ -816,7 +816,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu Du lịch Bến Xưa",
@@ -825,7 +825,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Tô Ký",
@@ -834,7 +834,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nhà Thiếu nhi Huyện Hóc Môn",
@@ -843,7 +843,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Sư Đoàn 317",
@@ -852,7 +852,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Bảo Vân (CLB Bơi lội Bảo Vân)",
@@ -861,7 +861,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Maxim Vũng Tàu",
@@ -870,7 +870,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Chung cư Gateway Chí Linh (Luxury Pool)",
@@ -879,7 +879,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Cung Văn Hóa Lao Động TP.HCM",
@@ -888,7 +888,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Pullman Saigon Centre",
@@ -897,7 +897,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Hồ Xuân Hương",
@@ -906,7 +906,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT Quận 5",
@@ -915,7 +915,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Chung cư Lê Thành",
@@ -924,7 +924,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Celadon Sports & Resort Club",
@@ -933,7 +933,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Tân Tạo",
@@ -942,7 +942,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Phú Lâm Quận 6",
@@ -951,7 +951,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Quận 6",
@@ -960,7 +960,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Samland Giai Việt",
@@ -969,7 +969,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu căn hộ Vista Verde",
@@ -978,7 +978,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Củ Tỏi Hóc Môn",
@@ -987,7 +987,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu phức hợp Canary Ehome",
@@ -996,7 +996,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT Thị xã Bến Cát",
@@ -1005,7 +1005,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Masteri An Phú",
@@ -1014,7 +1014,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Sunrise Riverside Nhà Bè",
@@ -1023,7 +1023,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Củ Chi",
@@ -1032,7 +1032,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT Cần Giờ",
@@ -1041,7 +1041,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi The Imperial Hotel Vũng Tàu",
@@ -1050,7 +1050,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể dục Thể thao Bà Rịa",
@@ -1059,7 +1059,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Thị xã Phú Mỹ",
@@ -1068,7 +1068,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Vinhomes Central Park",
@@ -1077,7 +1077,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa 30/4",
@@ -1086,7 +1086,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Quân khu 5",
@@ -1095,7 +1095,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thành tích cao Đà Nẵng",
@@ -1104,7 +1104,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Fuji Swimming Club – FHOME",
@@ -1113,7 +1113,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trường Đại học Thể dục Thể thao Đà Nẵng",
@@ -1122,7 +1122,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thanh Khê",
@@ -1131,7 +1131,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Cen Skills – Khách sạn Mường Thanh Grand",
@@ -1140,7 +1140,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi nước ấm Meliã Vinpearl Danang Riverfront",
@@ -1149,7 +1149,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Caribe Hòa Xuân",
@@ -1158,7 +1158,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Bệnh viện Y học Cổ truyền Đà Nẵng",
@@ -1167,7 +1167,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Almanity Hoi An Wellness Resort",
@@ -1176,7 +1176,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Tỉnh Quảng Nam",
@@ -1185,7 +1185,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Điện Bàn",
@@ -1194,7 +1194,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Hòa Vang",
@@ -1203,7 +1203,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Quận Cẩm Lệ",
@@ -1212,7 +1212,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trường Đại học Bách Khoa Đà Nẵng",
@@ -1221,7 +1221,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bến Bính (Trung tâm Đua thuyền & Bơi lặn Hải Phòng)",
@@ -1230,7 +1230,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hạ Lý",
@@ -1239,7 +1239,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Aqua Dreams (Vinhomes Imperia)",
@@ -1248,7 +1248,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Cung Văn hóa Lao động Hữu nghị Việt – Tiệp",
@@ -1257,7 +1257,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Paradise Pool",
@@ -1266,7 +1266,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Hồ Sen (Trung tâm Thể thao Hồ Sen)",
@@ -1275,7 +1275,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "CT Pool Hoàng Huy Commerce",
@@ -1284,7 +1284,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi nước mặn Cựu Viên",
@@ -1293,7 +1293,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn mùa Hải Long",
@@ -1302,7 +1302,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Aqua-Tots Swim Schools Hải Phòng",
@@ -1311,7 +1311,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi bốn mùa Hali Pool (Trung tâm Bơi Lặn Hà Linh)",
@@ -1320,7 +1320,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Trung tâm Bơi lặn Biển Đông",
@@ -1329,7 +1329,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Muối khoáng Trang Quan",
@@ -1338,7 +1338,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa KĐT Bắc Sông Cấm Thủy Nguyên",
@@ -1347,7 +1347,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Văn hóa & Thể thao An Dương",
@@ -1356,7 +1356,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Quốc Tế Đồi Rồng Dragon Ocean",
@@ -1365,7 +1365,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Flamingo Cát Bà Beach Resort",
@@ -1374,7 +1374,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trường Đại học Hải Phòng",
@@ -1383,7 +1383,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Tiên Lãng",
@@ -1392,7 +1392,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Vĩnh Bảo",
@@ -1401,7 +1401,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hồ Sen",
@@ -1410,7 +1410,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Tỉnh (01 Hà Huy Tập)",
@@ -1419,7 +1419,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi nước ấm Star Fitness – The Manor Crown",
@@ -1428,7 +1428,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Kình Ngư (Trung tâm Thể thao Dưới nước)",
@@ -1437,7 +1437,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Sân Vận Động Tự Do Huế",
@@ -1446,7 +1446,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Hoạt động Thanh thiếu nhi Thừa Thiên Huế",
@@ -1455,7 +1455,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thanh Thiếu Nhi Cơ sở Trương Gia Mô",
@@ -1464,7 +1464,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Park View",
@@ -1473,7 +1473,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Hương Giang Resort & Spa",
@@ -1482,7 +1482,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Tổ hợp Bể bơi Khu đô thị An Cựu City",
@@ -1491,7 +1491,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Dolphin An Cựu (Trung tâm Dạy bơi An Cựu)",
@@ -1500,7 +1500,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thiên nhiên BLUE Thủy Xuân",
@@ -1509,7 +1509,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Sinh thái Làng Hành Hương (Pilgrimage Village Pool)",
@@ -1518,7 +1518,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Thừa Thiên Huế",
@@ -1527,7 +1527,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Cung An Định",
@@ -1536,7 +1536,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Thị xã Hương Thủy",
@@ -1545,7 +1545,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Hương Trà",
@@ -1554,7 +1554,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bãi Biển Thuận An",
@@ -1563,7 +1563,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Tỉnh",
@@ -1572,7 +1572,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Hùng Quân",
@@ -1581,7 +1581,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Công an TP. Cần Thơ",
@@ -1590,7 +1590,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Mường Thanh Luxury Cần Thơ",
@@ -1599,7 +1599,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Vinpearl Hotel Cần Thơ",
@@ -1608,7 +1608,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "CLB Bơi lội Quân Khu 9 (Hồ bơi QK9)",
@@ -1617,7 +1617,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Rạch Súc",
@@ -1626,7 +1626,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi ĐH Nam Cần Thơ (DNC Pool)",
@@ -1635,7 +1635,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nam Long 2 Central Lake",
@@ -1644,7 +1644,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Minh Phương Cái Răng",
@@ -1653,7 +1653,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi KĐT Nam Long Cái Răng",
@@ -1662,7 +1662,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Quân Khu 9",
@@ -1671,7 +1671,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Văn hóa Thể thao Ô Môn",
@@ -1680,7 +1680,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Thốt Nốt",
@@ -1689,7 +1689,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Làng Du Lịch Sinh Thái Mỹ Khánh",
@@ -1698,7 +1698,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Sông Phố Biên Hòa",
@@ -1707,7 +1707,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Babylon Trảng Dài",
@@ -1716,7 +1716,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thảo Linh Long Bình",
@@ -1725,7 +1725,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Cát Tường Tân Hiệp",
@@ -1734,7 +1734,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thủy Tiên Long Khánh",
@@ -1743,7 +1743,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nàng Quen Bảo Vinh",
@@ -1752,7 +1752,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Terra Flora Nhơn Trạch",
@@ -1761,7 +1761,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thành Đạt KCN Nhơn Trạch",
@@ -1770,7 +1770,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Nhà thi đấu Thể thao Dưới nước – Khu Liên hợp Thể thao Quảng Ninh",
@@ -1779,7 +1779,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Lê Thánh Tông",
@@ -1788,7 +1788,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa iFit Sapphire Hạ Long",
@@ -1797,7 +1797,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Central Luxury Hạ Long",
@@ -1806,7 +1806,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khoáng Nóng Trung tâm Điều dưỡng Địa chất Cẩm Phả",
@@ -1815,7 +1815,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Green (Green Yoga & Fitness Cẩm Phả)",
@@ -1824,7 +1824,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hot Swimming Uông Bí",
@@ -1833,7 +1833,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Khu sinh thái Bể bơi Suối Ngọc Uông Bí",
@@ -1842,7 +1842,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Cung Quy hoạch & Hội chợ Triển lãm Quảng Ninh",
@@ -1851,7 +1851,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Than Cẩm Phả",
@@ -1860,7 +1860,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Than Nam Mẫu Uông Bí",
@@ -1869,7 +1869,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Sonasea Vân Đồn Harbor City",
@@ -1878,7 +1878,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Thị xã Quảng Yên",
@@ -1887,7 +1887,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Thị xã Đông Triều",
@@ -1896,7 +1896,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bến Du Thuyền Tuần Châu",
@@ -1905,7 +1905,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Cung Thể thao Dưới nước Đại Yên",
@@ -1914,7 +1914,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa – Trường THPT Chuyên Bắc Ninh",
@@ -1923,7 +1923,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Dolphin Lê Hồng Phong",
@@ -1932,7 +1932,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Sky Garden Viglacera",
@@ -1941,7 +1941,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Anh Vũ Yên Phong",
@@ -1950,7 +1950,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khánh Sinh Yên Phong",
@@ -1959,7 +1959,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Nhà Thi Đấu Bắc Giang",
@@ -1968,7 +1968,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa ĐH Thể Dục Thể Thao Bắc Ninh",
@@ -1977,7 +1977,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Đào tạo VĐV Bắc Ninh",
@@ -1986,7 +1986,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Quế Võ",
@@ -1995,7 +1995,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi KCN Yên Phong Viglacera",
@@ -2004,7 +2004,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Thuận Thành",
@@ -2013,7 +2013,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa KĐT Đình Trám Việt Yên",
@@ -2022,7 +2022,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Dolphin Bắc Ninh",
@@ -2031,7 +2031,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trường Đại học Sư phạm Thái Nguyên",
@@ -2040,7 +2040,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Prime (Prime Fitness)",
@@ -2049,7 +2049,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Olympia Gia Sàng",
@@ -2058,7 +2058,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khu du lịch sinh thái Dũng Tân",
@@ -2067,7 +2067,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Văn hóa Thể thao TP. Sông Công",
@@ -2076,7 +2076,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hoàng Hải Phổ Yên",
@@ -2085,7 +2085,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Phổ Yên – Trung tâm TDTT Phổ Yên",
@@ -2094,7 +2094,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Prime Tháp Đôi",
@@ -2103,7 +2103,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Minh Phương (Minh Phương Four Seasons)",
@@ -2112,7 +2112,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Việt Trì (Khu Liên hợp Thể thao Tỉnh)",
@@ -2121,7 +2121,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Happy Land Việt Trì",
@@ -2130,7 +2130,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Fami Fitness & Yoga Center",
@@ -2139,7 +2139,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Tỉnh Đội Vĩnh Phúc",
@@ -2148,7 +2148,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khu Liên hợp Thể thao tỉnh Phú Thọ",
@@ -2157,7 +2157,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Fami Fitness Vĩnh Yên",
@@ -2166,7 +2166,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Lavender Ninh Bình",
@@ -2175,7 +2175,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Thể thao Mai Thế Hệ",
@@ -2184,7 +2184,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Tiêu Chuẩn Thi Đấu Sắc Màu Tam Điệp",
@@ -2193,7 +2193,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Dong Giao Garden Tam Điệp",
@@ -2202,7 +2202,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khu sinh thái Lộc Vượng Nam Định",
@@ -2211,7 +2211,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Muối Khoáng Roman – Nam Định Tower",
@@ -2220,7 +2220,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Tân Thủy – Sân vận động tỉnh Hà Nam",
@@ -2229,7 +2229,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa – Khách sạn Mường Thanh Luxury Hà Nam",
@@ -2238,7 +2238,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Solforest Ecopark",
@@ -2247,7 +2247,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hệ thống Bể bơi Resort Ecopark (WestBay, Rừng Cọ, Vườn Tùng)",
@@ -2256,7 +2256,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Minh Hoàng Yên Mỹ",
@@ -2265,7 +2265,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Aqua Water Park Yên Mỹ",
@@ -2274,7 +2274,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hướng Dương Mỹ Hào",
@@ -2283,7 +2283,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Forestia Park Phố Nối Mỹ Hào",
@@ -2292,7 +2292,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Sunrise Swimming Pool – Khách sạn Selegend Thái Bình",
@@ -2301,7 +2301,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Eden Garden (Khách sạn Dầu Khí Thái Bình)",
@@ -2310,7 +2310,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Eden Garden Thái Bình",
@@ -2319,7 +2319,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Minh Hoàng",
@@ -2328,7 +2328,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Tổ hợp Thể thao Sun Sport Complex Thanh Hóa",
@@ -2337,7 +2337,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa RACER CITY",
@@ -2346,7 +2346,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Vinhomes Star City",
@@ -2355,7 +2355,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi THPT Đào Duy Anh",
@@ -2364,7 +2364,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Hạc Thành",
@@ -2373,7 +2373,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hệ thống Bể bơi Quần thể FLC Sầm Sơn",
@@ -2382,7 +2382,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Dragon Sea Sầm Sơn",
@@ -2391,7 +2391,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm VHTT & Truyền thông Bỉm Sơn",
@@ -2400,7 +2400,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trường Thành (Trường Thành Complex Bỉm Sơn)",
@@ -2409,7 +2409,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Pool Plus – VRC Vinh",
@@ -2418,7 +2418,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Elite Fitness Vinh",
@@ -2427,7 +2427,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Kình Ngư",
@@ -2436,7 +2436,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Quân Khu 4",
@@ -2445,7 +2445,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nhà Văn Hóa Lao Động Nghệ An",
@@ -2454,7 +2454,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Vô cực Khách sạn Summer Cửa Lò",
@@ -2463,7 +2463,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Mường Thanh Grand Cửa Lò",
@@ -2472,7 +2472,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm TDTT Huyện Diễn Châu",
@@ -2481,7 +2481,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Mường Thanh Diễn Châu",
@@ -2490,7 +2490,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Tổ hợp Bể bơi Hào Quang Hà Tĩnh",
@@ -2499,7 +2499,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Hà Tĩnh",
@@ -2508,7 +2508,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Meliá Vinpearl Hà Tĩnh",
@@ -2517,7 +2517,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Công Đoàn Hà Tĩnh",
@@ -2526,7 +2526,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Mường Thanh Grand Hà Tĩnh (Kỳ Anh)",
@@ -2535,7 +2535,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm VHTT & TT Thị xã Kỳ Anh",
@@ -2544,7 +2544,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Thị xã Hồng Lĩnh",
@@ -2553,7 +2553,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Như Nam Hồng Lĩnh",
@@ -2562,7 +2562,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nhà Thiếu Nhi Quảng Bình",
@@ -2571,7 +2571,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Regal Legend Pool",
@@ -2580,7 +2580,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Mường Thanh Holiday Quảng Bình",
@@ -2589,7 +2589,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn SAM Quảng Bình",
@@ -2598,7 +2598,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Vincom Plaza Đông Hà",
@@ -2607,7 +2607,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Mường Thanh Grand Quảng Trị",
@@ -2616,7 +2616,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Hạnh Nguyên Đông Hà",
@@ -2625,7 +2625,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Sư đoàn 968",
@@ -2634,7 +2634,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Diên Hồng",
@@ -2643,7 +2643,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu Dân Cư 577",
@@ -2652,7 +2652,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Sinh thái Cocoland River Beach Resort",
@@ -2661,7 +2661,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Central Quảng Ngãi",
@@ -2670,7 +2670,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Phú Yên (Cơ sở 2)",
@@ -2679,7 +2679,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Yết Kiêu Tuy Hòa",
@@ -2688,7 +2688,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trường Quốc Tế Duy Tân Phú Yên",
@@ -2697,7 +2697,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Sala Tuy Hòa Beach",
@@ -2706,7 +2706,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Trung tâm Phổ cập Bơi lội & Phòng chống Đuối nước Quy Nhơn",
@@ -2715,7 +2715,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Sài Gòn Quy Nhơn",
@@ -2724,7 +2724,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Trung tâm Dạy bơi Quy Nhơn (Cơ sở Tây Sơn)",
@@ -2733,7 +2733,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Anya Hotel Quy Nhơn",
@@ -2742,7 +2742,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Quần thể Nghỉ dưỡng FLC Quy Nhơn",
@@ -2751,7 +2751,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu Du Lịch Sinh Thái Cửa Biển (Seagate Park)",
@@ -2760,7 +2760,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thị xã An Nhơn",
@@ -2769,7 +2769,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Công viên Nước An Nhơn (An Nhơn Water Park)",
@@ -2778,7 +2778,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Yersin (Trung tâm VHTT & Thể thao Nha Trang)",
@@ -2787,7 +2787,7 @@
       "teachers": 2,
       "operators": 2,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Không Quân",
@@ -2796,7 +2796,7 @@
       "teachers": 3,
       "operators": 2,
       "phones": 4,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Lớp Dạy bơi Thầy Vinh Nha Trang",
@@ -2805,7 +2805,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Venus Fitness & Yoga (VCN Phước Hải)",
@@ -2814,7 +2814,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "MH Sport Nha Trang",
@@ -2823,7 +2823,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Tòa nhà Sông Đà Nha Trang",
@@ -2832,7 +2832,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT TP. Cam Ranh",
@@ -2841,7 +2841,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Cam Ranh (Hồ bơi Điện phân muối)",
@@ -2850,7 +2850,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Mường Thanh Luxury Viễn Triều",
@@ -2859,7 +2859,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Cam Ranh",
@@ -2868,7 +2868,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT Ninh Hòa",
@@ -2877,7 +2877,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Thể thao Diên Khánh",
@@ -2886,7 +2886,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hệ thống Hồ bơi Trường Quốc Tế Hoàng Việt",
@@ -2895,7 +2895,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nước Nóng Victory School",
@@ -2904,7 +2904,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Mường Thanh Luxury Buôn Ma Thuột",
@@ -2913,7 +2913,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nhà Văn Hóa Thanh Thiếu Nhi Đắk Lắk",
@@ -2922,7 +2922,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Dr. Thanh Buôn Ma Thuột",
@@ -2931,7 +2931,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Kon Tum",
@@ -2940,7 +2940,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Indochine Kon Tum",
@@ -2949,7 +2949,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm VHTT & TT TP. Gia Nghĩa (Đắk Nông)",
@@ -2958,7 +2958,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Đắk Nông Lodge (Gia Nghĩa)",
@@ -2967,7 +2967,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Tổ hợp Hồ bơi Trường Quốc Tế Hoàng Việt",
@@ -2976,7 +2976,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi nước ấm Phù Đổng Đà Lạt",
@@ -2985,7 +2985,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi nước ấm Dalat Wonder",
@@ -2994,7 +2994,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi nước mặn Stillus Boutique Đà Lạt",
@@ -3003,7 +3003,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Gia đình Vũ Hương",
@@ -3012,7 +3012,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Lộc Nga Bảo Lộc",
@@ -3021,7 +3021,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Seri Bảo Lộc",
@@ -3030,7 +3030,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Dona Đức Trọng",
@@ -3039,7 +3039,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm TDTT Huyện Đức Trọng",
@@ -3048,7 +3048,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Bốn Mùa Meliá Vinpearl Tây Ninh",
@@ -3057,7 +3057,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Sinh hoạt Thanh Thiếu Nhi Tây Ninh",
@@ -3066,7 +3066,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Mai Anh Tây Ninh",
@@ -3075,7 +3075,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi CANA Tây Ninh",
@@ -3084,7 +3084,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Gia đình Thảo My Hòa Thành",
@@ -3093,7 +3093,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi 175 (Hồ bơi Tỉnh đội Long An)",
@@ -3102,7 +3102,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Hàng Giang Tân An",
@@ -3111,7 +3111,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Biển Đông Tân An",
@@ -3120,7 +3120,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu Liên Hợp TDTT Đồng Tháp",
@@ -3129,7 +3129,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trung tâm Hoạt động Thanh Thiếu Nhi Tỉnh Đồng Tháp",
@@ -3138,7 +3138,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Cao Lãnh",
@@ -3147,7 +3147,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu Du Lịch Sinh Thái Sunny Cao Lãnh",
@@ -3156,7 +3156,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Tỉnh Tiền Giang",
@@ -3165,7 +3165,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thành phố Mỹ Tho",
@@ -3174,7 +3174,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trường THPT Nguyễn Đình Chiểu",
@@ -3183,7 +3183,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Minh Anh Vĩnh Long",
@@ -3192,7 +3192,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Công viên Nước Hoàng Hảo",
@@ -3201,7 +3201,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Cá Heo Vĩnh Long",
@@ -3210,7 +3210,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Muối Khoáng LPHOME Bến Tre",
@@ -3219,7 +3219,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Hoàng Lam Bến Tre",
@@ -3228,7 +3228,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khu Du Lịch Sinh Thái Huỳnh Kha Trà Vinh",
@@ -3237,7 +3237,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nhà Thi Đấu Trà Vinh (Ao Bà Om)",
@@ -3246,7 +3246,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thành phố Long Xuyên",
@@ -3255,7 +3255,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Yết Kiêu Long Xuyên",
@@ -3264,7 +3264,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Công viên Nước Sao Vàng Long Xuyên",
@@ -3273,7 +3273,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Phú Cường Park (KĐT Lấn Biển)",
@@ -3282,7 +3282,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi TTTM Go! Rạch Giá",
@@ -3291,7 +3291,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Sài Gòn Rạch Giá",
@@ -3300,7 +3300,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Phú Cường Park Rạch Giá",
@@ -3309,7 +3309,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Mường Thanh Luxury Cà Mau",
@@ -3318,7 +3318,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Phú Cường Cà Mau",
@@ -3327,7 +3327,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Thanh Thế – Nhà Thiếu Nhi Cà Mau",
@@ -3336,7 +3336,7 @@
       "teachers": 2,
       "operators": 1,
       "phones": 3,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Bạch Đằng Cà Mau",
@@ -3345,7 +3345,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Công Tử Bạc Liêu",
@@ -3354,7 +3354,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trường Đại Học Bạc Liêu",
@@ -3363,7 +3363,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi TANK CLUB Sóc Trăng",
@@ -3372,7 +3372,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Nhà Thiếu Nhi Tỉnh Sóc Trăng",
@@ -3381,7 +3381,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Trong Nhà Khách sạn Mường Thanh Luxury Cao Bằng",
@@ -3390,7 +3390,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Tỉnh Cao Bằng",
@@ -3399,7 +3399,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Tân Giang",
@@ -3408,7 +3408,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Đào tạo & Thi đấu TDTT Cao Bằng",
@@ -3417,7 +3417,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Mường Thanh Grand Lai Châu",
@@ -3426,7 +3426,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Lai Châu",
@@ -3435,7 +3435,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Đầu Nguồn",
@@ -3444,7 +3444,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Đầu Nguồn Lai Châu",
@@ -3453,7 +3453,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Mường Thanh Grand Điện Biên Phủ",
@@ -3462,7 +3462,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện & Thi đấu TDTT Điện Biên",
@@ -3471,7 +3471,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khoáng Nóng Thiên Nhiên Thanh Luông",
@@ -3480,7 +3480,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Him Lam Resort Điện Biên",
@@ -3489,7 +3489,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Đào tạo & Thi đấu TDTT tỉnh Điện Biên",
@@ -3498,7 +3498,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Khu Bể Bơi Khoáng Nóng Thanh Luông & U Va",
@@ -3507,7 +3507,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khu Du lịch Sinh thái Him Lam",
@@ -3516,7 +3516,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi 4 Mùa Nước Ấm KGT Sơn La",
@@ -3525,7 +3525,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Mường Thanh Luxury Sơn La",
@@ -3534,7 +3534,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện TDTT Tỉnh Sơn La",
@@ -3543,7 +3543,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Thảo Nguyên Resort Mộc Châu",
@@ -3552,7 +3552,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Mường Thanh Holiday Mộc Châu",
@@ -3561,7 +3561,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi 4 Mùa Thị Trấn Hát Lót (Mai Sơn)",
@@ -3570,7 +3570,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Văn hóa Thể thao Huyện Mai Sơn",
@@ -3579,7 +3579,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Mường Thanh Luxury Sơn La",
@@ -3588,7 +3588,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi 4 Mùa Thảo Nguyên Resort Mộc Châu",
@@ -3597,7 +3597,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Vincom Lạng Sơn",
@@ -3606,7 +3606,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Mường Thanh Luxury Lạng Sơn",
@@ -3615,7 +3615,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Cung Thanh Thiếu Nhi Lạng Sơn",
@@ -3624,7 +3624,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trong Nhà Trường Anh Việt (Mai Pha)",
@@ -3633,7 +3633,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Đức Huy Grand Hotel",
@@ -3642,7 +3642,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Khách sạn Sapaly Lào Cai",
@@ -3651,7 +3651,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nhà Thi Đấu TDTT Tỉnh Lào Cai",
@@ -3660,7 +3660,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Pistachio Hotel Sapa",
@@ -3669,7 +3669,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Nước Ấm Bốn Mùa – Silk Path Grand Resort & Spa Sapa",
@@ -3678,7 +3678,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Trung tâm I Fitness & Yoga Yên Bái",
@@ -3687,7 +3687,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện TDTT Tỉnh Yên Bái",
@@ -3696,7 +3696,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa I Fitness & Yoga Yên Bái",
@@ -3705,7 +3705,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Trung tâm Huấn luyện TDTT Lào Cai",
@@ -3714,7 +3714,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Bốn Mùa Khách sạn Spa2 Ngọc Hà",
@@ -3723,7 +3723,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Royal Plaza Center Tuyên Quang",
@@ -3732,7 +3732,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi Thể thao Z113 Tuyên Quang",
@@ -3741,7 +3741,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 2,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Tổ hợp Bơi lội Bốn Mùa H2T Hà Giang",
@@ -3750,7 +3750,7 @@
       "teachers": 1,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Hồ bơi Khách sạn Yên Biên Luxury Hà Giang",
@@ -3759,7 +3759,7 @@
       "teachers": 0,
       "operators": 1,
       "phones": 1,
-      "noindex": true
+      "noindex": false
     },
     {
       "name": "Bể bơi 4 Mùa Spa2 Ngọc Hà",
@@ -3768,7 +3768,7 @@
       "teachers": 0,
       "operators": 0,
       "phones": 0,
-      "noindex": true
+      "noindex": false
     }
   ]
 }
