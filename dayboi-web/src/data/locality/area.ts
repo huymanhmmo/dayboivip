@@ -6,6 +6,7 @@ import {localPath,englishNames,EN_INDEXABLE_PROVINCES,makeVenue,cleanCopy} from 
 import {makeRegionSite,globalDirectory} from './navigation';
 import {regionFaqs} from './faq';
 import {makeRegionSchema} from './schema';
+import {communePracticalNotes} from './communeNotes';
 import type {RegionPageData} from './types';
 export function areaPaths(lang:'vi'|'en'){
   const communes=getAllCommunePages(),keys=new Set(communes.map(c=>c.parentSlug+'/'+c.slug));
@@ -35,7 +36,9 @@ export function buildAreaPage(input:{area?:any;commune?:any;isCommune?:boolean},
     image:parent?.image||source.parentImage||'/images/hero-swimming.webp',eyebrow:en?'YOUR LOCAL SWIMMING GUIDE':'CÙNG BẠN TÌM NƠI HỌC BƠI',
     lead:nearbyOnly?(en?`The current directory has no pool listing within ${source.name}. Explore nearby options and contact the named teachers or operators before choosing where to learn.`:`Dữ liệu hiện có chưa ghi nhận hồ bơi trong địa bàn ${name}. Bạn có thể tham khảo các địa điểm lân cận và trao đổi trực tiếp với giáo viên, đơn vị phụ trách trước khi chọn nơi học.`):(en?`Find pools and swimming lessons serving ${source.name}, ${parentName}. Compare access and contact each listed teacher or operator directly.`:`Khám phá hồ bơi và nơi dạy bơi tại ${name}, ${source.parentName}. Xem địa chỉ, điều kiện sử dụng và liên hệ đúng giáo viên hoặc đơn vị phụ trách từng địa điểm.`),
     reviewedAt:source.reviewedAt||'',venues,nearbyOnly,groups:[],communes:[],related,providers:[],previous,
-    localAdvice:cleanCopy(source.localAdvice||source.audienceFocus||''),faqs:regionFaqs(name,venues.length,nearbyOnly,isCommune?previous:[],lang),
+    localAdvice:cleanCopy((isCommune&&communePracticalNotes[`${source.parentSlug}/${source.slug}`]?.[lang]?.advice)||source.localAdvice||source.audienceFocus||''),
+    localNotes:isCommune?communePracticalNotes[`${source.parentSlug}/${source.slug}`]?.[lang]?.notes:undefined,
+    faqs:regionFaqs(name,venues.length,nearbyOnly,isCommune?previous:[],lang),
   };
   const site=makeRegionSite(page,localPath(source.parentSlug,undefined,lang));
   const result={...page,site};return {...result,schema:makeRegionSchema(result)};

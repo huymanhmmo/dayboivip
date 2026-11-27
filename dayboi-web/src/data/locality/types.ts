@@ -20,6 +20,6 @@ export interface RegionPageData {
   breadcrumbs:{label:string;href?:string}[];image:string;eyebrow:string;lead:string;reviewedAt:string;
   venues:RegionVenue[];nearbyOnly:boolean;groups:{id:string;label:string;description?:string;href?:string}[];
   communes:RegionLink[];related:RegionLink[];providers:Record<string,any>[];
-  previous:string[];localAdvice:string;faqs:{question:string;answer:string}[];
+  previous:string[];localAdvice:string;localNotes?:{label:string;value:string}[];faqs:{question:string;answer:string}[];
   site:LocalSiteConfig;schema:Record<string,any>;
 }
